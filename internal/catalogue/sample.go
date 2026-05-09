@@ -5,6 +5,8 @@ import (
 	"statos/internal/trading212"
 )
 
+const SampleEnrichmentRetrievedAt = "2026-05-09T12:00:00Z"
+
 func SampleData() ([]trading212.Instrument, []trading212.Exchange, map[string]enrichment.Profile) {
 	exchanges := []trading212.Exchange{
 		{ID: 1, Name: "NASDAQ"},
@@ -38,6 +40,10 @@ func SampleData() ([]trading212.Instrument, []trading212.Exchange, map[string]en
 		"VST_US_EQ":  {Symbol: "VST", Name: "Vistra Corp", Sector: "Utilities", Industry: "Independent Power Producers", Country: "United States", MarketCap: 55000000000, Source: "sample"},
 		"TSM_US_EQ":  {Symbol: "TSM", Name: "Taiwan Semiconductor Manufacturing Company Limited", Sector: "Technology", Industry: "Semiconductors", Country: "Taiwan", MarketCap: 800000000000, Source: "sample"},
 		"AAPL_US_EQ": {Symbol: "AAPL", Name: "Apple Inc", Sector: "Technology", Industry: "Consumer Electronics", Country: "United States", MarketCap: 2900000000000, Source: "sample"},
+	}
+	for ticker, profile := range profiles {
+		profile.RetrievedAt = SampleEnrichmentRetrievedAt
+		profiles[ticker] = profile
 	}
 	return instruments, exchanges, profiles
 }

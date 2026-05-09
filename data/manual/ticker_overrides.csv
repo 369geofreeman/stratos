@@ -1,6 +1,6 @@
-ticker,company_id,name,sector,industry,country,yahoo_symbol,source_url,last_reviewed
-NVDA_US_EQ,nvidia,NVIDIA Corporation,Technology,Semiconductors,United States,NVDA,https://www.nvidia.com/en-us/about-nvidia/,2026-05-09
-MSFT_US_EQ,microsoft,Microsoft Corporation,Technology,Software - Infrastructure,United States,MSFT,https://www.microsoft.com/en-us/investor,2026-05-09
-ASML_US_EQ,asml,ASML Holding N.V.,Technology,Semiconductor Equipment,Netherlands,ASML,https://www.asml.com/en/investors,2026-05-09
-VRT_US_EQ,vertiv,Vertiv Holdings Co,Industrials,Electrical Equipment,United States,VRT,https://investors.vertiv.com/,2026-05-09
-CEG_US_EQ,constellation_energy,Constellation Energy Corporation,Utilities,Independent Power Producers,United States,CEG,https://www.constellationenergy.com/investors.html,2026-05-09
+ticker,company_id,name,sector,industry,country,yahoo_symbol,market_cap,exchange,currency,source_url,last_reviewed
+NVDA_US_EQ,nvidia,NVIDIA Corporation,Technology,Semiconductors,United States,NVDA,,,,https://www.nvidia.com/en-us/about-nvidia/,2026-05-09
+MSFT_US_EQ,microsoft,Microsoft Corporation,Technology,Software - Infrastructure,United States,MSFT,,,,https://www.microsoft.com/en-us/investor,2026-05-09
+ASML_US_EQ,asml,ASML Holding N.V.,Technology,Semiconductor Equipment,Netherlands,ASML,,,,https://www.asml.com/en/investors,2026-05-09
+VRT_US_EQ,vertiv,Vertiv Holdings Co,Industrials,Electrical Equipment,United States,VRT,,,,https://investors.vertiv.com/,2026-05-09
+CEG_US_EQ,constellation_energy,Constellation Energy Corporation,Utilities,Independent Power Producers,United States,CEG,,,,https://www.constellationenergy.com/investors.html,2026-05-09

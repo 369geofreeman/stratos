@@ -13,6 +13,16 @@
     "enrichmentAttempted": 13,
     "enrichmentSucceeded": 12,
     "enrichmentFailed": 1,
+    "enrichmentCacheSchemaVersion": 1,
+    "enrichmentProvider": "sample",
+    "enrichmentCacheHitCount": 0,
+    "enrichmentCacheMissCount": 0,
+    "enrichmentCacheStaleCount": 0,
+    "enrichmentAmbiguousCount": 0,
+    "enrichmentFailureCount": 1,
+    "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
+    "enrichmentOldestRetrievedAt": "2026-05-09T12:00:00Z",
+    "enrichmentNewestRetrievedAt": "2026-05-09T12:00:00Z",
     "unclassifiedCount": 2,
     "emptyTickerCount": 0,
     "duplicateTickerCount": 0,
@@ -109,7 +119,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -161,7 +172,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -219,7 +231,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_high",
@@ -272,7 +285,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -333,7 +347,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_high",
@@ -392,7 +407,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_high",
@@ -445,7 +461,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -509,7 +526,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_high",
@@ -556,7 +574,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -608,7 +627,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -666,7 +686,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_high",
@@ -716,7 +737,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -1164,7 +1186,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -1194,7 +1217,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -1242,7 +1266,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "manual_high",
@@ -1285,7 +1310,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -1336,7 +1362,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "manual_high",
@@ -1379,7 +1406,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -1427,7 +1455,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "manual_high",
@@ -1482,7 +1511,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "manual_high",
@@ -1519,7 +1549,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -1561,7 +1592,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",
@@ -1629,7 +1661,8 @@
         },
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "manual_high",
@@ -1669,7 +1702,8 @@
       "sources": [
         {
           "kind": "enrichment",
-          "label": "sample"
+          "label": "sample",
+          "lastReviewed": "2026-05-09T12:00:00Z"
         }
       ],
       "identityConfidence": "rule_medium",

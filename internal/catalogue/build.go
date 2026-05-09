@@ -29,6 +29,8 @@ type BuildInput struct {
 	EnrichmentAttempted   int
 	EnrichmentSucceeded   int
 	EnrichmentFailed      int
+	EnrichmentDiagnostics EnrichmentDiagnostics
+	EnrichmentFailures    []EnrichmentFailure
 }
 
 func Build(input BuildInput) (*Catalogue, error) {
@@ -199,20 +201,23 @@ func Build(input BuildInput) (*Catalogue, error) {
 		industry := firstNonEmpty(tickerOverride.Industry, companyOverride.Industry, profile.Industry)
 		country := firstNonEmpty(tickerOverride.Country, companyOverride.Country, profile.Country)
 		yahooSymbol := firstNonEmpty(tickerOverride.YahooSymbol, profile.Symbol)
+		marketCap := firstNonZero(tickerOverride.MarketCap, profile.MarketCap)
 		companyName := firstNonEmpty(companyOverride.Name, tickerOverride.Name, profile.Name, raw.Name, raw.ShortName, raw.Ticker)
 		lastReviewed := firstNonEmpty(tickerOverride.LastReviewed, companyOverride.LastReviewed)
 		identitySources := identityOverride.Sources()
 
 		exchange := exchanges[raw.WorkingScheduleID]
 		listingID := raw.Ticker
+		listingExchangeName := firstNonEmpty(tickerOverride.Exchange, exchange.Name, profile.Exchange)
+		listingCurrencyCode := firstNonEmpty(tickerOverride.Currency, raw.CurrencyCode, profile.Currency)
 		listing := &Listing{
 			ID:           listingID,
 			Ticker:       raw.Ticker,
 			SecurityID:   securityID,
 			CompanyID:    companyID,
 			ExchangeCode: parts.ExchangeCode,
-			ExchangeName: firstNonEmpty(exchange.Name, profile.Exchange),
-			CurrencyCode: raw.CurrencyCode,
+			ExchangeName: listingExchangeName,
+			CurrencyCode: listingCurrencyCode,
 		}
 		listingByID[listingID] = listing
 
@@ -258,7 +263,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 		}
 		security.ListingIDs = appendUnique(security.ListingIDs, listingID)
 		security.TickerIDs = appendUnique(security.TickerIDs, raw.Ticker)
-		security.CurrencySet = appendUnique(security.CurrencySet, raw.CurrencyCode)
+		security.CurrencySet = appendUnique(security.CurrencySet, listingCurrencyCode)
 		security.StructureFlags = mergeFlags(security.StructureFlags, structureFlags)
 		security.IdentityConfidence = lowerConfidence(security.IdentityConfidence, securityConfidence)
 		security.IdentityReasons = appendUniqueMany(security.IdentityReasons, securityReasons...)
@@ -280,7 +285,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 		company.Country = firstNonEmpty(company.Country, country)
 		company.YahooSymbol = firstNonEmpty(company.YahooSymbol, yahooSymbol)
 		if company.MarketCap == 0 {
-			company.MarketCap = profile.MarketCap
+			company.MarketCap = marketCap
 		}
 		company.SecurityIDs = appendUnique(company.SecurityIDs, securityID)
 		company.ListingIDs = appendUnique(company.ListingIDs, listingID)
@@ -359,7 +364,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 			Type:               raw.Type,
 			InstrumentCategory: category,
 			StructureFlags:     structureFlags,
-			CurrencyCode:       raw.CurrencyCode,
+			CurrencyCode:       listingCurrencyCode,
 			ISIN:               raw.ISIN,
 			ExchangeCode:       parts.ExchangeCode,
 			ExchangeName:       listing.ExchangeName,
@@ -374,7 +379,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 			Sector:             sector,
 			Industry:           industry,
 			Country:            country,
-			MarketCap:          profile.MarketCap,
+			MarketCap:          marketCap,
 			Sources:            appendSources(nil, append(identitySources, sourceFromOverride(tickerOverride), sourceFromCompanyOverride(companyOverride), sourceFromProfile(profile))...),
 			IdentityConfidence: tickerConfidence,
 			IdentityReasons:    appendUniqueMany(nil, identityReasons...),
@@ -402,50 +407,61 @@ func Build(input BuildInput) (*Catalogue, error) {
 	industries := groupTickers(tickers, func(t *Ticker) string { return t.Industry })
 
 	cat := &Catalogue{
-		Tickers:        derefTickers(tickers),
-		Securities:     derefSecurities(securities),
-		Listings:       derefListings(listings),
-		Companies:      derefCompanies(companies),
-		Sectors:        sectors,
-		Industries:     industries,
-		Themes:         input.Manual.Themes,
-		SupplyChains:   input.Manual.SupplyChains,
-		Exposures:      input.Manual.Exposures,
-		Notes:          input.Manual.Notes,
-		Unclassified:   unclassified,
-		IdentityIssues: identityIssues,
+		Tickers:            derefTickers(tickers),
+		Securities:         derefSecurities(securities),
+		Listings:           derefListings(listings),
+		Companies:          derefCompanies(companies),
+		Sectors:            sectors,
+		Industries:         industries,
+		Themes:             input.Manual.Themes,
+		SupplyChains:       input.Manual.SupplyChains,
+		Exposures:          input.Manual.Exposures,
+		Notes:              input.Manual.Notes,
+		Unclassified:       unclassified,
+		IdentityIssues:     identityIssues,
+		EnrichmentFailures: append([]EnrichmentFailure(nil), input.EnrichmentFailures...),
 	}
 	cat.Manifest = BuildManifest{
-		BuiltAt:                   input.BuiltAt.UTC().Format(time.RFC3339),
-		SourceMode:                input.SourceMode,
-		Trading212Environment:     input.Trading212Environment,
-		Trading212BaseURL:         input.Trading212BaseURL,
-		Trading212FetchAt:         input.Trading212FetchAt,
-		InstrumentCount:           len(input.Instruments),
-		ExchangeCount:             len(input.Exchanges),
-		SecurityCount:             len(cat.Securities),
-		CompanyCount:              len(cat.Companies),
-		ListingCount:              len(cat.Listings),
-		ThemeCount:                len(cat.Themes),
-		ExposureCount:             len(cat.Exposures),
-		EnrichmentAttempted:       input.EnrichmentAttempted,
-		EnrichmentSucceeded:       input.EnrichmentSucceeded,
-		EnrichmentFailed:          input.EnrichmentFailed,
-		UnclassifiedCount:         len(cat.Unclassified),
-		EmptyTickerCount:          state.emptyTickerCount,
-		DuplicateTickerCount:      state.duplicateTickerCount,
-		DuplicateISINCount:        duplicateISINCount(tickersByISIN),
-		MissingISINCount:          state.missingISINCount,
-		IdentityCollisionCount:    identityCollisionCount(identityIssues),
-		IdentityOverrideCount:     len(state.matchedOverrideKeys),
-		IdentityIssueCount:        len(identityIssues),
-		InstrumentCategoryCounts:  state.categoryCounts,
-		StructureFlagCounts:       state.flagCounts,
-		RawSnapshotAt:             input.RawSnapshotAt,
-		RawSnapshots:              input.RawSnapshots,
-		Trading212HTTPDiagnostics: input.HTTPDiagnostics,
-		Trading212RateLimits:      input.RateLimits,
-		DataFreshness:             freshness(input.RawSnapshotAt, input.BuiltAt),
+		BuiltAt:                      input.BuiltAt.UTC().Format(time.RFC3339),
+		SourceMode:                   input.SourceMode,
+		Trading212Environment:        input.Trading212Environment,
+		Trading212BaseURL:            input.Trading212BaseURL,
+		Trading212FetchAt:            input.Trading212FetchAt,
+		InstrumentCount:              len(input.Instruments),
+		ExchangeCount:                len(input.Exchanges),
+		SecurityCount:                len(cat.Securities),
+		CompanyCount:                 len(cat.Companies),
+		ListingCount:                 len(cat.Listings),
+		ThemeCount:                   len(cat.Themes),
+		ExposureCount:                len(cat.Exposures),
+		EnrichmentAttempted:          input.EnrichmentAttempted,
+		EnrichmentSucceeded:          input.EnrichmentSucceeded,
+		EnrichmentFailed:             input.EnrichmentFailed,
+		EnrichmentCacheSchemaVersion: input.EnrichmentDiagnostics.CacheSchemaVersion,
+		EnrichmentProvider:           input.EnrichmentDiagnostics.Provider,
+		EnrichmentCacheHitCount:      input.EnrichmentDiagnostics.CacheHitCount,
+		EnrichmentCacheMissCount:     input.EnrichmentDiagnostics.CacheMissCount,
+		EnrichmentCacheStaleCount:    input.EnrichmentDiagnostics.CacheStaleCount,
+		EnrichmentAmbiguousCount:     input.EnrichmentDiagnostics.AmbiguousCount,
+		EnrichmentFailureCount:       input.EnrichmentDiagnostics.FailureCount,
+		EnrichmentFailureCSV:         input.EnrichmentDiagnostics.FailureCSV,
+		EnrichmentOldestRetrievedAt:  input.EnrichmentDiagnostics.OldestRetrievedAt,
+		EnrichmentNewestRetrievedAt:  input.EnrichmentDiagnostics.NewestRetrievedAt,
+		UnclassifiedCount:            len(cat.Unclassified),
+		EmptyTickerCount:             state.emptyTickerCount,
+		DuplicateTickerCount:         state.duplicateTickerCount,
+		DuplicateISINCount:           duplicateISINCount(tickersByISIN),
+		MissingISINCount:             state.missingISINCount,
+		IdentityCollisionCount:       identityCollisionCount(identityIssues),
+		IdentityOverrideCount:        len(state.matchedOverrideKeys),
+		IdentityIssueCount:           len(identityIssues),
+		InstrumentCategoryCounts:     state.categoryCounts,
+		StructureFlagCounts:          state.flagCounts,
+		RawSnapshotAt:                input.RawSnapshotAt,
+		RawSnapshots:                 input.RawSnapshots,
+		Trading212HTTPDiagnostics:    input.HTTPDiagnostics,
+		Trading212RateLimits:         input.RateLimits,
+		DataFreshness:                freshness(input.RawSnapshotAt, input.BuiltAt),
 	}
 	return cat, nil
 }
@@ -905,10 +921,21 @@ func freshness(rawSnapshotAt string, builtAt time.Time) string {
 }
 
 func sourceFromOverride(override taxonomy.TickerOverride) Source {
-	if override.SourceURL == "" {
+	if override.SourceURL == "" && !hasTickerEnrichmentOverride(override) {
 		return Source{}
 	}
 	return Source{Kind: "manual_ticker_override", URL: override.SourceURL, Label: "Ticker override", LastReviewed: override.LastReviewed}
+}
+
+func hasTickerEnrichmentOverride(override taxonomy.TickerOverride) bool {
+	return override.Name != "" ||
+		override.Sector != "" ||
+		override.Industry != "" ||
+		override.Country != "" ||
+		override.YahooSymbol != "" ||
+		override.MarketCap != 0 ||
+		override.Exchange != "" ||
+		override.Currency != ""
 }
 
 func sourceFromCompanyOverride(override taxonomy.CompanyOverride) Source {
@@ -1056,4 +1083,13 @@ func firstNonEmpty(values ...string) string {
 		}
 	}
 	return ""
+}
+
+func firstNonZero(values ...int64) int64 {
+	for _, value := range values {
+		if value != 0 {
+			return value
+		}
+	}
+	return 0
 }

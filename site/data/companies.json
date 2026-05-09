@@ -32,7 +32,8 @@
     "sources": [
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "rule_medium",
@@ -62,7 +63,8 @@
     "sources": [
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "rule_medium",
@@ -110,7 +112,8 @@
       },
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "manual_high",
@@ -153,7 +156,8 @@
     "sources": [
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "rule_medium",
@@ -204,7 +208,8 @@
       },
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "manual_high",
@@ -247,7 +252,8 @@
     "sources": [
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "rule_medium",
@@ -295,7 +301,8 @@
       },
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "manual_high",
@@ -350,7 +357,8 @@
       },
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "manual_high",
@@ -387,7 +395,8 @@
     "sources": [
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "rule_medium",
@@ -429,7 +438,8 @@
     "sources": [
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "rule_medium",
@@ -497,7 +507,8 @@
       },
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "manual_high",
@@ -537,7 +548,8 @@
     "sources": [
       {
         "kind": "enrichment",
-        "label": "sample"
+        "label": "sample",
+        "lastReviewed": "2026-05-09T12:00:00Z"
       }
     ],
     "identityConfidence": "rule_medium",

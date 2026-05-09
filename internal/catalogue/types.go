@@ -1,58 +1,85 @@
 package catalogue
 
 import (
+	"statos/internal/enrichment"
 	"statos/internal/taxonomy"
 	"statos/internal/trading212"
 )
 
 type Catalogue struct {
-	Manifest       BuildManifest          `json:"manifest"`
-	Tickers        []Ticker               `json:"tickers"`
-	Securities     []Security             `json:"securities"`
-	Listings       []Listing              `json:"listings"`
-	Companies      []Company              `json:"companies"`
-	Sectors        []GroupCount           `json:"sectors"`
-	Industries     []GroupCount           `json:"industries"`
-	Themes         []taxonomy.Theme       `json:"themes"`
-	SupplyChains   []taxonomy.SupplyChain `json:"supplyChains"`
-	Exposures      []taxonomy.Exposure    `json:"exposures"`
-	Notes          []taxonomy.Note        `json:"notes"`
-	Unclassified   []UnclassifiedRow      `json:"unclassified"`
-	IdentityIssues []IdentityIssue        `json:"identityIssues,omitempty"`
+	Manifest           BuildManifest          `json:"manifest"`
+	Tickers            []Ticker               `json:"tickers"`
+	Securities         []Security             `json:"securities"`
+	Listings           []Listing              `json:"listings"`
+	Companies          []Company              `json:"companies"`
+	Sectors            []GroupCount           `json:"sectors"`
+	Industries         []GroupCount           `json:"industries"`
+	Themes             []taxonomy.Theme       `json:"themes"`
+	SupplyChains       []taxonomy.SupplyChain `json:"supplyChains"`
+	Exposures          []taxonomy.Exposure    `json:"exposures"`
+	Notes              []taxonomy.Note        `json:"notes"`
+	Unclassified       []UnclassifiedRow      `json:"unclassified"`
+	IdentityIssues     []IdentityIssue        `json:"identityIssues,omitempty"`
+	EnrichmentFailures []EnrichmentFailure    `json:"-"`
 }
 
 type BuildManifest struct {
-	BuiltAt                   string                            `json:"builtAt"`
-	SourceMode                string                            `json:"sourceMode,omitempty"`
-	Trading212Environment     string                            `json:"trading212Environment,omitempty"`
-	Trading212BaseURL         string                            `json:"trading212BaseUrl,omitempty"`
-	Trading212FetchAt         string                            `json:"trading212FetchAt,omitempty"`
-	InstrumentCount           int                               `json:"instrumentCount"`
-	ExchangeCount             int                               `json:"exchangeCount"`
-	SecurityCount             int                               `json:"securityCount"`
-	CompanyCount              int                               `json:"companyCount"`
-	ListingCount              int                               `json:"listingCount"`
-	ThemeCount                int                               `json:"themeCount"`
-	ExposureCount             int                               `json:"exposureCount"`
-	EnrichmentAttempted       int                               `json:"enrichmentAttempted"`
-	EnrichmentSucceeded       int                               `json:"enrichmentSucceeded"`
-	EnrichmentFailed          int                               `json:"enrichmentFailed"`
-	UnclassifiedCount         int                               `json:"unclassifiedCount"`
-	EmptyTickerCount          int                               `json:"emptyTickerCount"`
-	DuplicateTickerCount      int                               `json:"duplicateTickerCount"`
-	DuplicateISINCount        int                               `json:"duplicateISINCount"`
-	MissingISINCount          int                               `json:"missingISINCount"`
-	IdentityCollisionCount    int                               `json:"identityCollisionCount"`
-	IdentityOverrideCount     int                               `json:"identityOverrideCount"`
-	IdentityIssueCount        int                               `json:"identityIssueCount"`
-	InstrumentCategoryCounts  map[string]int                    `json:"instrumentCategoryCounts,omitempty"`
-	StructureFlagCounts       map[string]int                    `json:"structureFlagCounts,omitempty"`
-	RawSnapshotAt             string                            `json:"rawSnapshotAt,omitempty"`
-	RawSnapshots              RawSnapshotSummary                `json:"rawSnapshots,omitempty"`
-	Trading212HTTPDiagnostics []trading212.EndpointDiagnostic   `json:"trading212HttpDiagnostics,omitempty"`
-	Trading212RateLimits      []trading212.RateLimitObservation `json:"trading212RateLimits,omitempty"`
-	DataFreshness             string                            `json:"dataFreshness,omitempty"`
+	BuiltAt                      string                            `json:"builtAt"`
+	SourceMode                   string                            `json:"sourceMode,omitempty"`
+	Trading212Environment        string                            `json:"trading212Environment,omitempty"`
+	Trading212BaseURL            string                            `json:"trading212BaseUrl,omitempty"`
+	Trading212FetchAt            string                            `json:"trading212FetchAt,omitempty"`
+	InstrumentCount              int                               `json:"instrumentCount"`
+	ExchangeCount                int                               `json:"exchangeCount"`
+	SecurityCount                int                               `json:"securityCount"`
+	CompanyCount                 int                               `json:"companyCount"`
+	ListingCount                 int                               `json:"listingCount"`
+	ThemeCount                   int                               `json:"themeCount"`
+	ExposureCount                int                               `json:"exposureCount"`
+	EnrichmentAttempted          int                               `json:"enrichmentAttempted"`
+	EnrichmentSucceeded          int                               `json:"enrichmentSucceeded"`
+	EnrichmentFailed             int                               `json:"enrichmentFailed"`
+	EnrichmentCacheSchemaVersion int                               `json:"enrichmentCacheSchemaVersion"`
+	EnrichmentProvider           string                            `json:"enrichmentProvider"`
+	EnrichmentCacheHitCount      int                               `json:"enrichmentCacheHitCount"`
+	EnrichmentCacheMissCount     int                               `json:"enrichmentCacheMissCount"`
+	EnrichmentCacheStaleCount    int                               `json:"enrichmentCacheStaleCount"`
+	EnrichmentAmbiguousCount     int                               `json:"enrichmentAmbiguousCount"`
+	EnrichmentFailureCount       int                               `json:"enrichmentFailureCount"`
+	EnrichmentFailureCSV         string                            `json:"enrichmentFailureCSV"`
+	EnrichmentOldestRetrievedAt  string                            `json:"enrichmentOldestRetrievedAt"`
+	EnrichmentNewestRetrievedAt  string                            `json:"enrichmentNewestRetrievedAt"`
+	UnclassifiedCount            int                               `json:"unclassifiedCount"`
+	EmptyTickerCount             int                               `json:"emptyTickerCount"`
+	DuplicateTickerCount         int                               `json:"duplicateTickerCount"`
+	DuplicateISINCount           int                               `json:"duplicateISINCount"`
+	MissingISINCount             int                               `json:"missingISINCount"`
+	IdentityCollisionCount       int                               `json:"identityCollisionCount"`
+	IdentityOverrideCount        int                               `json:"identityOverrideCount"`
+	IdentityIssueCount           int                               `json:"identityIssueCount"`
+	InstrumentCategoryCounts     map[string]int                    `json:"instrumentCategoryCounts,omitempty"`
+	StructureFlagCounts          map[string]int                    `json:"structureFlagCounts,omitempty"`
+	RawSnapshotAt                string                            `json:"rawSnapshotAt,omitempty"`
+	RawSnapshots                 RawSnapshotSummary                `json:"rawSnapshots,omitempty"`
+	Trading212HTTPDiagnostics    []trading212.EndpointDiagnostic   `json:"trading212HttpDiagnostics,omitempty"`
+	Trading212RateLimits         []trading212.RateLimitObservation `json:"trading212RateLimits,omitempty"`
+	DataFreshness                string                            `json:"dataFreshness,omitempty"`
 }
+
+type EnrichmentDiagnostics struct {
+	CacheSchemaVersion int
+	Provider           string
+	CacheHitCount      int
+	CacheMissCount     int
+	CacheStaleCount    int
+	AmbiguousCount     int
+	FailureCount       int
+	FailureCSV         string
+	OldestRetrievedAt  string
+	NewestRetrievedAt  string
+}
+
+type EnrichmentFailure = enrichment.Failure
 
 type RawSnapshotSummary struct {
 	Timestamp           string `json:"timestamp,omitempty"`

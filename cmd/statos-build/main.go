@@ -95,10 +95,14 @@ func run(args []string) error {
 			builtAt = time.Unix(0, 0).UTC()
 		}
 	}
+	source.EnrichmentDiagnostics.FailureCSV = manifestPath(filepath.Join(*siteDataDir, "enrichment_failures.csv"))
 
 	enrichmentAttempted := len(source.Instruments)
 	enrichmentSucceeded := len(source.Profiles)
-	enrichmentFailed := enrichmentAttempted - enrichmentSucceeded
+	enrichmentFailed := source.EnrichmentDiagnostics.FailureCount
+	if enrichmentFailed == 0 {
+		enrichmentFailed = enrichmentAttempted - enrichmentSucceeded
+	}
 	if enrichmentFailed < 0 {
 		enrichmentFailed = 0
 	}
@@ -120,6 +124,8 @@ func run(args []string) error {
 		EnrichmentAttempted:   enrichmentAttempted,
 		EnrichmentSucceeded:   enrichmentSucceeded,
 		EnrichmentFailed:      enrichmentFailed,
+		EnrichmentDiagnostics: source.EnrichmentDiagnostics,
+		EnrichmentFailures:    source.EnrichmentFailures,
 	})
 	if err != nil {
 		return err
@@ -153,6 +159,8 @@ type sourceData struct {
 	RawSnapshots          catalogue.RawSnapshotSummary
 	HTTPDiagnostics       []trading212.EndpointDiagnostic
 	RateLimits            []trading212.RateLimitObservation
+	EnrichmentDiagnostics catalogue.EnrichmentDiagnostics
+	EnrichmentFailures    []catalogue.EnrichmentFailure
 }
 
 func loadSourceData(ctx context.Context, opts sourceOptions) (sourceData, error) {
@@ -171,19 +179,23 @@ func loadSourceData(ctx context.Context, opts sourceOptions) (sourceData, error)
 		if err != nil {
 			return sourceData{}, err
 		}
+		replay := replayEnrichment(ctx, instruments, exchanges, opts.CacheDir)
 		return sourceData{
 			Instruments:           instruments,
 			Exchanges:             exchanges,
-			Profiles:              replayProfiles(ctx, instruments, exchanges, opts.CacheDir),
+			Profiles:              replay.Profiles,
 			SourceMode:            "raw_replay",
 			Trading212Environment: "raw_replay",
 			RawSnapshotAt:         rawSnapshots.Timestamp,
 			RawSnapshots:          rawSnapshots,
+			EnrichmentDiagnostics: replay.Diagnostics,
+			EnrichmentFailures:    replay.Failures,
 		}, nil
 	}
 
 	if opts.ForceSample || apiKey == "" || apiSecret == "" {
 		instruments, exchanges, profiles := catalogue.SampleData()
+		enrichmentRun := sampleEnrichment(instruments, profiles)
 		rawSnapshots, err := writeRawSnapshots(opts.RawDir, opts.BuiltAt, instruments, exchanges)
 		if err != nil {
 			return sourceData{}, err
@@ -196,6 +208,8 @@ func loadSourceData(ctx context.Context, opts sourceOptions) (sourceData, error)
 			Trading212Environment: "sample",
 			RawSnapshotAt:         rawSnapshots.Timestamp,
 			RawSnapshots:          rawSnapshots,
+			EnrichmentDiagnostics: enrichmentRun.Diagnostics,
+			EnrichmentFailures:    enrichmentRun.Failures,
 		}, nil
 	}
 
@@ -220,11 +234,11 @@ func loadSourceData(ctx context.Context, opts sourceOptions) (sourceData, error)
 	if err != nil {
 		return sourceData{}, err
 	}
-	profiles := enrichAll(ctx, instruments, opts.ProviderName, opts.CacheDir)
+	enrichmentRun := enrichAll(ctx, instruments, opts.ProviderName, opts.CacheDir)
 	return sourceData{
 		Instruments:           instruments,
 		Exchanges:             exchanges,
-		Profiles:              profiles,
+		Profiles:              enrichmentRun.Profiles,
 		SourceMode:            "live_fetch",
 		Trading212Environment: envName,
 		Trading212BaseURL:     baseURL,
@@ -233,31 +247,131 @@ func loadSourceData(ctx context.Context, opts sourceOptions) (sourceData, error)
 		RawSnapshots:          rawSnapshots,
 		HTTPDiagnostics:       diagnostics,
 		RateLimits:            trading212.RateLimitObservations(diagnostics),
+		EnrichmentDiagnostics: enrichmentRun.Diagnostics,
+		EnrichmentFailures:    enrichmentRun.Failures,
 	}, nil
 }
 
-func enrichAll(ctx context.Context, instruments []trading212.Instrument, providerName, cacheDir string) map[string]enrichment.Profile {
+type enrichmentRun struct {
+	Profiles    map[string]enrichment.Profile
+	Diagnostics catalogue.EnrichmentDiagnostics
+	Failures    []catalogue.EnrichmentFailure
+}
+
+func enrichAll(ctx context.Context, instruments []trading212.Instrument, providerName, cacheDir string) enrichmentRun {
 	var inner enrichment.Provider
 	if strings.EqualFold(providerName, "yahoo") {
 		inner = enrichment.YahooProvider{}
 	}
 	provider := enrichment.CacheProvider{Dir: cacheDir, Inner: inner}
-	out := map[string]enrichment.Profile{}
+	run := enrichmentRun{
+		Profiles: map[string]enrichment.Profile{},
+		Diagnostics: catalogue.EnrichmentDiagnostics{
+			CacheSchemaVersion: enrichment.CacheSchemaVersion,
+			Provider:           normalizedEnrichmentProvider(providerName),
+		},
+	}
 	for _, instrument := range instruments {
 		parts := catalogue.ParseBrokerTicker(instrument.Ticker)
-		profile, err := provider.Lookup(ctx, enrichment.Request{
+		req := enrichment.Request{
 			Ticker:       instrument.Ticker,
 			ISIN:         instrument.ISIN,
 			Name:         instrument.Name,
 			CurrencyCode: instrument.CurrencyCode,
 			ExchangeCode: parts.ExchangeCode,
-		})
-		if err != nil {
+		}
+		result, err := provider.Lookup(ctx, req)
+		observeEnrichmentResult(&run, req, result, err)
+		if err == nil && result.Status == enrichment.StatusHit {
+			run.Profiles[instrument.Ticker] = result.Profile
+		}
+	}
+	return run
+}
+
+func sampleEnrichment(instruments []trading212.Instrument, profiles map[string]enrichment.Profile) enrichmentRun {
+	run := enrichmentRun{
+		Profiles: profiles,
+		Diagnostics: catalogue.EnrichmentDiagnostics{
+			CacheSchemaVersion: enrichment.CacheSchemaVersion,
+			Provider:           "sample",
+		},
+	}
+	for _, instrument := range instruments {
+		req := enrichment.Request{Ticker: instrument.Ticker, ISIN: instrument.ISIN, Name: instrument.Name, CurrencyCode: instrument.CurrencyCode}
+		if profile, ok := profiles[instrument.Ticker]; ok {
+			result := enrichment.Result{
+				Provider:    "sample",
+				Request:     enrichment.RequestSnapshot{Ticker: instrument.Ticker, ISIN: instrument.ISIN, Name: instrument.Name, CandidateSymbols: enrichment.CandidateSymbols(instrument.Ticker)},
+				Profile:     profile,
+				Status:      enrichment.StatusHit,
+				RetrievedAt: profile.RetrievedAt,
+			}
+			observeEnrichmentResult(&run, req, result, nil)
 			continue
 		}
-		out[instrument.Ticker] = profile
+		result := enrichment.Result{
+			Provider: "sample",
+			Request: enrichment.RequestSnapshot{
+				Ticker:           instrument.Ticker,
+				ISIN:             instrument.ISIN,
+				Name:             instrument.Name,
+				CandidateSymbols: enrichment.CandidateSymbols(instrument.Ticker),
+			},
+			Status:           enrichment.StatusFailure,
+			Error:            "sample enrichment profile not defined",
+			AttemptedSymbols: enrichment.CandidateSymbols(instrument.Ticker),
+		}
+		observeEnrichmentResult(&run, req, result, errors.New(result.Error))
 	}
-	return out
+	return run
+}
+
+func observeEnrichmentResult(run *enrichmentRun, req enrichment.Request, result enrichment.Result, err error) {
+	switch result.CacheStatus {
+	case enrichment.CacheStatusHit:
+		run.Diagnostics.CacheHitCount++
+	case enrichment.CacheStatusMiss:
+		run.Diagnostics.CacheMissCount++
+	}
+	if result.Stale {
+		run.Diagnostics.CacheStaleCount++
+	}
+	if result.RetrievedAt != "" {
+		observeEnrichmentRetrievedAt(&run.Diagnostics, result.RetrievedAt)
+	}
+	if result.Status == enrichment.StatusAmbiguous {
+		run.Diagnostics.AmbiguousCount++
+	}
+	if err != nil || result.Status != enrichment.StatusHit {
+		run.Diagnostics.FailureCount++
+		run.Failures = append(run.Failures, enrichment.FailureFromResult(req, result, err))
+	}
+}
+
+func observeEnrichmentRetrievedAt(diagnostics *catalogue.EnrichmentDiagnostics, value string) {
+	parsed, err := time.Parse(time.RFC3339, value)
+	if err != nil {
+		return
+	}
+	normalized := parsed.UTC().Format(time.RFC3339)
+	if diagnostics.OldestRetrievedAt == "" {
+		diagnostics.OldestRetrievedAt = normalized
+	} else if oldest, err := time.Parse(time.RFC3339, diagnostics.OldestRetrievedAt); err == nil && parsed.Before(oldest) {
+		diagnostics.OldestRetrievedAt = normalized
+	}
+	if diagnostics.NewestRetrievedAt == "" {
+		diagnostics.NewestRetrievedAt = normalized
+	} else if newest, err := time.Parse(time.RFC3339, diagnostics.NewestRetrievedAt); err == nil && parsed.After(newest) {
+		diagnostics.NewestRetrievedAt = normalized
+	}
+}
+
+func normalizedEnrichmentProvider(providerName string) string {
+	if strings.EqualFold(providerName, "yahoo") {
+		return "yahoo"
+	}
+	return "cache"
 }
 
 const rawSnapshotStampLayout = "20060102T150405Z"
@@ -424,10 +538,10 @@ func rawStampToRFC3339(stamp string) string {
 	return parsed.UTC().Format(time.RFC3339)
 }
 
-func replayProfiles(ctx context.Context, instruments []trading212.Instrument, exchanges []trading212.Exchange, cacheDir string) map[string]enrichment.Profile {
+func replayEnrichment(ctx context.Context, instruments []trading212.Instrument, exchanges []trading212.Exchange, cacheDir string) enrichmentRun {
 	if matchesEmbeddedSampleRaw(instruments, exchanges) {
 		_, _, profiles := catalogue.SampleData()
-		return profiles
+		return sampleEnrichment(instruments, profiles)
 	}
 	return enrichAll(ctx, instruments, "cache", cacheDir)
 }

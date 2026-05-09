@@ -291,7 +291,7 @@ function renderExports() {
   content.innerHTML = `
     <div class="panel-head"><h2>Data exports</h2><p class="muted">Generated files are static and committed under site/data.</p></div>
     <div class="exports">
-      ${["catalogue.json", "tickers.csv", "securities.csv", "listings.csv", "identity_issues.csv", "companies.json", "sectors.json", "industries.json", "themes.json", "supply_chains.json", "search_index.json", "unclassified.csv", "build_manifest.json"].map((name) => `<a class="export-link" href="data/${name}">${name}</a>`).join("")}
+      ${["catalogue.json", "tickers.csv", "securities.csv", "listings.csv", "identity_issues.csv", "enrichment_failures.csv", "companies.json", "sectors.json", "industries.json", "themes.json", "supply_chains.json", "search_index.json", "unclassified.csv", "build_manifest.json"].map((name) => `<a class="export-link" href="data/${name}">${name}</a>`).join("")}
     </div>
     <div class="panel-head" style="margin-top:18px">
       <h2>Local browser data</h2>

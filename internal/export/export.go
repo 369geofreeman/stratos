@@ -54,6 +54,9 @@ func WriteSiteData(dir string, cat *catalogue.Catalogue) error {
 	if err := writeIdentityIssuesCSV(filepath.Join(dir, "identity_issues.csv"), cat.IdentityIssues); err != nil {
 		return err
 	}
+	if err := writeEnrichmentFailuresCSV(filepath.Join(dir, "enrichment_failures.csv"), cat.EnrichmentFailures); err != nil {
+		return err
+	}
 	return nil
 }
 
@@ -234,6 +237,25 @@ func writeIdentityIssuesCSV(path string, rows []catalogue.IdentityIssue) error {
 	}
 	for _, row := range rows {
 		if err := w.Write([]string{row.IssueCode, row.Ticker, row.ISIN, row.SecurityID, row.CompanyID, row.Name, row.Reason, row.SuggestedAction}); err != nil {
+			return err
+		}
+	}
+	return w.Error()
+}
+
+func writeEnrichmentFailuresCSV(path string, rows []catalogue.EnrichmentFailure) error {
+	file, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	w := csv.NewWriter(file)
+	defer w.Flush()
+	if err := w.Write([]string{"ticker", "isin", "name", "provider", "attempted_symbols", "status", "error", "next_action"}); err != nil {
+		return err
+	}
+	for _, row := range rows {
+		if err := w.Write([]string{row.Ticker, row.ISIN, row.Name, row.Provider, row.AttemptedSymbols, row.Status, row.Error, row.NextAction}); err != nil {
 			return err
 		}
 	}

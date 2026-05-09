@@ -12,6 +12,7 @@ site/data/supply_chains.json
 site/data/search_index.json
 site/data/unclassified.csv
 site/data/identity_issues.csv
+site/data/enrichment_failures.csv
 site/data/securities.csv
 site/data/listings.csv
 site/data/build_manifest.json

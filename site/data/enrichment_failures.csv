@@ -1,0 +1,2 @@
+ticker,isin,name,provider,attempted_symbols,status,error,next_action
+3SQQQ_US_EQ,US74347G4322,UltraPro Short QQQ -3X Daily ETF,sample,3SQQQ;3SQQQ_US_EQ,failure,sample enrichment profile not defined,retry provider later or add manual ticker override

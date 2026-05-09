@@ -1,6 +1,7 @@
 package export
 
 import (
+	"encoding/csv"
 	"os"
 	"path/filepath"
 	"testing"
@@ -19,14 +20,37 @@ func TestWriteSiteData(t *testing.T) {
 		Listings:       []catalogue.Listing{{ID: "ABC_US_EQ", Ticker: "ABC_US_EQ", CompanyID: "abc", SecurityID: "isin:US0000000001"}},
 		Companies:      []catalogue.Company{{ID: "abc", Name: "ABC Corp", TickerIDs: []string{"ABC_US_EQ"}}},
 		IdentityIssues: []catalogue.IdentityIssue{{IssueCode: "missing_isin", Ticker: "ABC_US_EQ", Reason: "test"}},
-		Themes:         []taxonomy.Theme{{ID: "ai", Name: "AI"}},
+		EnrichmentFailures: []catalogue.EnrichmentFailure{{
+			Ticker:           "ABC_US_EQ",
+			ISIN:             "US0000000001",
+			Name:             "ABC Corp",
+			Provider:         "cache",
+			AttemptedSymbols: "ABC;ABC_US_EQ",
+			Status:           "cache_miss",
+			Error:            "enrichment cache miss",
+			NextAction:       "populate enrichment cache",
+		}},
+		Themes: []taxonomy.Theme{{ID: "ai", Name: "AI"}},
 	}
 	if err := WriteSiteData(dir, cat); err != nil {
 		t.Fatal(err)
 	}
-	for _, name := range []string{"catalogue.json", "tickers.csv", "securities.csv", "listings.csv", "identity_issues.csv", "build_manifest.json", "search_index.json", "unclassified.csv"} {
+	for _, name := range []string{"catalogue.json", "tickers.csv", "securities.csv", "listings.csv", "identity_issues.csv", "enrichment_failures.csv", "build_manifest.json", "search_index.json", "unclassified.csv"} {
 		if _, err := os.Stat(filepath.Join(dir, name)); err != nil {
 			t.Fatalf("expected %s: %v", name, err)
 		}
+	}
+
+	file, err := os.Open(filepath.Join(dir, "enrichment_failures.csv"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer file.Close()
+	records, err := csv.NewReader(file).ReadAll()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(records) != 2 || records[0][0] != "ticker" || records[1][0] != "ABC_US_EQ" || records[1][5] != "cache_miss" {
+		t.Fatalf("enrichment_failures.csv records = %#v", records)
 	}
 }

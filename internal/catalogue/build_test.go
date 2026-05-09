@@ -300,6 +300,105 @@ func TestBuildIdentityIssuesAndManifestCounts(t *testing.T) {
 	}
 }
 
+func TestBuildManualEnrichmentOverridePrecedence(t *testing.T) {
+	manual := emptyManual()
+	manual.TickerOverrides = map[string]taxonomy.TickerOverride{
+		"ABC_US_EQ": {
+			Ticker:      "ABC_US_EQ",
+			CompanyID:   "abc",
+			Sector:      "Manual Sector",
+			Industry:    "Manual Industry",
+			Country:     "Manual Country",
+			YahooSymbol: "MANUAL",
+			MarketCap:   222,
+			Exchange:    "Manual Exchange",
+			Currency:    "GBP",
+		},
+	}
+	cat, err := Build(BuildInput{
+		Instruments: []trading212.Instrument{
+			{Ticker: "ABC_US_EQ", Name: "ABC Corp", ISIN: "US0000000001", Type: "STOCK", CurrencyCode: "USD", WorkingScheduleID: 1},
+		},
+		Exchanges: []trading212.Exchange{{ID: 1, Name: "Broker Exchange"}},
+		Profiles: map[string]enrichment.Profile{
+			"ABC_US_EQ": {Symbol: "PROVIDER", Sector: "Provider Sector", Industry: "Provider Industry", Country: "Provider Country", Exchange: "Provider Exchange", Currency: "EUR", MarketCap: 111, Source: "provider"},
+		},
+		Manual:  manual,
+		BuiltAt: time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	ticker := findTicker(t, cat, "ABC_US_EQ")
+	if ticker.Sector != "Manual Sector" || ticker.Industry != "Manual Industry" || ticker.Country != "Manual Country" || ticker.YahooSymbol != "MANUAL" {
+		t.Fatalf("manual classification fields did not win: %#v", ticker)
+	}
+	if ticker.MarketCap != 222 || ticker.ExchangeName != "Manual Exchange" || ticker.CurrencyCode != "GBP" {
+		t.Fatalf("manual market/listing fields did not win: %#v", ticker)
+	}
+	if cat.Listings[0].ExchangeName != "Manual Exchange" || cat.Listings[0].CurrencyCode != "GBP" {
+		t.Fatalf("listing = %#v", cat.Listings[0])
+	}
+	if cat.Companies[0].MarketCap != 222 {
+		t.Fatalf("company = %#v", cat.Companies[0])
+	}
+}
+
+func TestBuildManifestEnrichmentDiagnostics(t *testing.T) {
+	diagnostics := EnrichmentDiagnostics{
+		CacheSchemaVersion: 1,
+		Provider:           "cache",
+		CacheHitCount:      2,
+		CacheMissCount:     1,
+		CacheStaleCount:    1,
+		AmbiguousCount:     1,
+		FailureCount:       1,
+		FailureCSV:         "site/data/enrichment_failures.csv",
+		OldestRetrievedAt:  "2026-05-01T12:00:00Z",
+		NewestRetrievedAt:  "2026-05-09T12:00:00Z",
+	}
+	failures := []EnrichmentFailure{{
+		Ticker:           "ABC_US_EQ",
+		ISIN:             "US0000000001",
+		Name:             "ABC Corp",
+		Provider:         "cache",
+		AttemptedSymbols: "ABC;ABC_US_EQ",
+		Status:           "cache_miss",
+		Error:            "enrichment cache miss",
+		NextAction:       "populate cache",
+	}}
+	cat, err := Build(BuildInput{
+		Instruments: []trading212.Instrument{
+			{Ticker: "ABC_US_EQ", Name: "ABC Corp", ISIN: "US0000000001", Type: "STOCK", CurrencyCode: "USD"},
+		},
+		Manual:                emptyManual(),
+		BuiltAt:               time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC),
+		EnrichmentAttempted:   1,
+		EnrichmentFailed:      1,
+		EnrichmentDiagnostics: diagnostics,
+		EnrichmentFailures:    failures,
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	manifest := cat.Manifest
+	if manifest.EnrichmentCacheSchemaVersion != 1 ||
+		manifest.EnrichmentProvider != "cache" ||
+		manifest.EnrichmentCacheHitCount != 2 ||
+		manifest.EnrichmentCacheMissCount != 1 ||
+		manifest.EnrichmentCacheStaleCount != 1 ||
+		manifest.EnrichmentAmbiguousCount != 1 ||
+		manifest.EnrichmentFailureCount != 1 ||
+		manifest.EnrichmentFailureCSV != "site/data/enrichment_failures.csv" ||
+		manifest.EnrichmentOldestRetrievedAt != "2026-05-01T12:00:00Z" ||
+		manifest.EnrichmentNewestRetrievedAt != "2026-05-09T12:00:00Z" {
+		t.Fatalf("manifest enrichment diagnostics = %#v", manifest)
+	}
+	if len(cat.EnrichmentFailures) != 1 || cat.EnrichmentFailures[0].Ticker != "ABC_US_EQ" {
+		t.Fatalf("enrichment failures = %#v", cat.EnrichmentFailures)
+	}
+}
+
 func emptyManual() taxonomy.ManualData {
 	return taxonomy.ManualData{
 		CompanyOverrides: map[string]taxonomy.CompanyOverride{},

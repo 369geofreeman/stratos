@@ -3,6 +3,7 @@ package taxonomy
 import (
 	"os"
 	"path/filepath"
+	"strings"
 	"testing"
 )
 
@@ -67,6 +68,37 @@ func TestValidateIdentityOverrides(t *testing.T) {
 	}
 	if err := Validate(data); err == nil {
 		t.Fatal("expected invalid identity override category to fail validation")
+	}
+}
+
+func TestLoadTickerOverridesParsesManualEnrichmentFields(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "ticker_overrides.csv")
+	mustWrite(t, path, "ticker,company_id,name,sector,industry,country,yahoo_symbol,market_cap,exchange,currency,source_url,last_reviewed\nABC_US_EQ,abc,ABC Corp,Technology,Software,United States,ABC,12345,NASDAQ,USD,https://example.com,2026-05-09\n")
+	overrides, err := LoadTickerOverrides(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	override := overrides["ABC_US_EQ"]
+	if override.MarketCap != 12345 || override.Exchange != "NASDAQ" || override.Currency != "USD" {
+		t.Fatalf("override = %#v", override)
+	}
+}
+
+func TestLoadTickerOverridesRejectsMalformedMarketCap(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "ticker_overrides.csv")
+	mustWrite(t, path, "ticker,market_cap\nABC_US_EQ,12.5\n")
+	_, err := LoadTickerOverrides(path)
+	if err == nil || !strings.Contains(err.Error(), "row 2") || !strings.Contains(err.Error(), "market_cap") {
+		t.Fatalf("err = %v", err)
+	}
+}
+
+func TestLoadTickerOverridesRejectsUnknownColumn(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "ticker_overrides.csv")
+	mustWrite(t, path, "ticker,unexpected\nABC_US_EQ,value\n")
+	_, err := LoadTickerOverrides(path)
+	if err == nil || !strings.Contains(err.Error(), "unknown ticker override column") {
+		t.Fatalf("err = %v", err)
 	}
 }
 

@@ -9,7 +9,7 @@ The production site is static and suitable for GitHub Pages. A local Go CLI refr
 - Trading 212 metadata client for instruments and exchanges.
 - Timestamped Trading 212 raw snapshots with latest aliases, HTTP diagnostics, rate-limit observations, and raw replay mode.
 - Local builder command at `cmd/statos-build`.
-- Standard-library enrichment interface with cache-first Yahoo-compatible provider.
+- Standard-library enrichment interface with versioned cache-first Yahoo-compatible provider, stale-cache diagnostics, ambiguous-match handling, and failure exports.
 - Normalized catalogue model covering instruments, securities, companies, listings, classifications, themes, supply-chain layers, exposures, sources, and unclassified rows.
 - Manual taxonomy files under `data/manual`.
 - Static HTML/CSS/JS research UI with search, tables, supply-chain map, modal detail, watchlist, local notes/tags/colour labels, import/export, and unclassified review.
@@ -58,7 +58,7 @@ make smoke
 make preview
 ```
 
-`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist, including identity review CSVs, and checks that `catalogue.json` and `build_manifest.json` parse as JSON.
+`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist, including identity and enrichment review CSVs, and checks that `catalogue.json` and `build_manifest.json` parse as JSON.
 
 The underlying builder remains available directly:
 
@@ -98,9 +98,9 @@ Before publishing, regenerate data locally with `make sample` or `make refresh`,
 1. Fetch Trading 212 metadata from `GET /api/v0/equity/metadata/exchanges` and `GET /api/v0/equity/metadata/instruments`, or replay ignored raw snapshots with `--no-fetch`.
 2. Write raw snapshots into ignored `data/raw/trading212` during sample or live fetch runs.
 3. Normalize broker instruments into tickers, listings, securities, and companies.
-4. Resolve enrichment through cache and optional Yahoo-compatible lookup.
+4. Resolve enrichment through the versioned cache and optional Yahoo-compatible lookup.
 5. Apply manual overrides, themes, supply chains, exposures, and notes.
-6. Export JSON/CSV to committed `site/data`.
+6. Export JSON/CSV to committed `site/data`, including normalized enrichment diagnostics.
 
 ## Manual Taxonomy
 
@@ -118,15 +118,21 @@ Exposure rows include theme, layer, target, score, confidence, source URL, ratio
 
 Identity override rows can target a ticker, ISIN, security, or company and can force `override_security_id`, `override_company_id`, normalized category, structure flags, and confidence. Use this file for missing or misleading ISINs, ADR/GDR mappings, dual listings, ETFs, funds, and trusts where rule-based identity is not enough.
 
+Ticker override rows can also set enrichment overrides for `yahoo_symbol`, `sector`, `industry`, `country`, `market_cap`, `exchange`, and `currency`. `market_cap` must be an integer when present. These manual fields win over provider profile data.
+
 ## Enrichment
 
-Yahoo Finance does not provide a stable official public API. Statos treats Yahoo-style data as replaceable enrichment, not the source of truth. Set `STATOS_ENRICHMENT_PROVIDER=yahoo` only when you want the builder to attempt live enrichment and cache the response locally.
+Yahoo Finance does not provide a stable official public API. Statos treats Yahoo-style data as replaceable enrichment, not the source of truth. Set `STATOS_ENRICHMENT_PROVIDER=yahoo` only when you want the builder to attempt live enrichment and cache the response or failure locally.
+
+The default provider mode is cache-only. Cache misses, stale entries, cached failures, unknown cache schema versions, and ambiguous matches are surfaced in `site/data/build_manifest.json` and `site/data/enrichment_failures.csv`. Stale cache entries are still used by default so offline builds remain useful.
+
+Provider interface and cache contract details are documented in [Enrichment Provider Contract](docs/enrichment-provider.md).
 
 ## Safety
 
 `.env`, raw snapshots, enrichment caches, and `.gocache/` are ignored. Generated static outputs under `site/data` are intended to be committed.
 
-`site/data/build_manifest.json` includes the source mode, Trading 212 environment/base URL, fetch timestamp, raw snapshot path summary, per-endpoint HTTP diagnostics, observed Trading 212 rate-limit headers, and identity counts for missing tickers/ISINs, duplicates, collisions, categories, flags, and applied overrides. It never stores API keys, API secrets, or authorization headers.
+`site/data/build_manifest.json` includes the source mode, Trading 212 environment/base URL, fetch timestamp, raw snapshot path summary, per-endpoint HTTP diagnostics, observed Trading 212 rate-limit headers, enrichment cache/provider diagnostics, and identity counts for missing tickers/ISINs, duplicates, collisions, categories, flags, and applied overrides. It never stores API keys, API secrets, authorization headers, or raw provider responses.
 
 ## License
 

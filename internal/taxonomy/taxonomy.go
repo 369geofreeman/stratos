@@ -73,6 +73,9 @@ type TickerOverride struct {
 	Industry     string `json:"industry,omitempty"`
 	Country      string `json:"country,omitempty"`
 	YahooSymbol  string `json:"yahooSymbol,omitempty"`
+	MarketCap    int64  `json:"marketCap,omitempty"`
+	Exchange     string `json:"exchange,omitempty"`
+	Currency     string `json:"currency,omitempty"`
 	SourceURL    string `json:"sourceUrl,omitempty"`
 	LastReviewed string `json:"lastReviewed,omitempty"`
 }
@@ -242,26 +245,43 @@ func LoadCompanyOverrides(path string) (map[string]CompanyOverride, error) {
 }
 
 func LoadTickerOverrides(path string) (map[string]TickerOverride, error) {
-	rows, err := readCSV(path)
+	headers, rows, err := readCSVRows(path)
 	if err != nil {
 		return nil, err
 	}
+	allowedHeaders := map[string]bool{
+		"ticker": true, "company_id": true, "name": true, "sector": true, "industry": true,
+		"country": true, "yahoo_symbol": true, "market_cap": true, "exchange": true,
+		"currency": true, "source_url": true, "last_reviewed": true,
+	}
+	for _, header := range headers {
+		if !allowedHeaders[header] {
+			return nil, fmt.Errorf("%s has unknown ticker override column %q", path, header)
+		}
+	}
 	out := map[string]TickerOverride{}
 	for _, row := range rows {
-		ticker := row["ticker"]
+		ticker := row.Values["ticker"]
 		if ticker == "" {
 			continue
 		}
+		marketCap, err := parseOptionalInt(row.Values["market_cap"], path, row.Number, "market_cap")
+		if err != nil {
+			return nil, err
+		}
 		out[ticker] = TickerOverride{
 			Ticker:       ticker,
-			CompanyID:    row["company_id"],
-			Name:         row["name"],
-			Sector:       row["sector"],
-			Industry:     row["industry"],
-			Country:      row["country"],
-			YahooSymbol:  row["yahoo_symbol"],
-			SourceURL:    row["source_url"],
-			LastReviewed: row["last_reviewed"],
+			CompanyID:    row.Values["company_id"],
+			Name:         row.Values["name"],
+			Sector:       row.Values["sector"],
+			Industry:     row.Values["industry"],
+			Country:      row.Values["country"],
+			YahooSymbol:  row.Values["yahoo_symbol"],
+			MarketCap:    marketCap,
+			Exchange:     row.Values["exchange"],
+			Currency:     row.Values["currency"],
+			SourceURL:    row.Values["source_url"],
+			LastReviewed: row.Values["last_reviewed"],
 		}
 	}
 	return out, nil
@@ -416,33 +436,65 @@ func readYAMLLines(path string) ([]string, error) {
 	return lines, scanner.Err()
 }
 
+type csvRow struct {
+	Number int
+	Values map[string]string
+}
+
 func readCSV(path string) ([]map[string]string, error) {
-	file, err := os.Open(path)
+	_, rows, err := readCSVRows(path)
 	if err != nil {
 		return nil, err
+	}
+	out := make([]map[string]string, 0, len(rows))
+	for _, row := range rows {
+		out = append(out, row.Values)
+	}
+	return out, nil
+}
+
+func readCSVRows(path string) ([]string, []csvRow, error) {
+	file, err := os.Open(path)
+	if err != nil {
+		return nil, nil, err
 	}
 	defer file.Close()
 	reader := csv.NewReader(file)
 	reader.TrimLeadingSpace = true
 	records, err := reader.ReadAll()
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
 	if len(records) == 0 {
-		return nil, nil
+		return nil, nil, nil
 	}
 	headers := records[0]
-	var out []map[string]string
-	for _, record := range records[1:] {
+	var out []csvRow
+	for i, record := range records[1:] {
 		row := map[string]string{}
 		for i, header := range headers {
 			if i < len(record) {
 				row[header] = strings.TrimSpace(record[i])
 			}
 		}
-		out = append(out, row)
+		out = append(out, csvRow{Number: i + 2, Values: row})
 	}
-	return out, nil
+	return headers, out, nil
+}
+
+func parseOptionalInt(value string, path string, row int, field string) (int64, error) {
+	value = strings.TrimSpace(value)
+	if value == "" {
+		return 0, nil
+	}
+	parsed, err := strconv.ParseInt(value, 10, 64)
+	if err != nil {
+		return 0, fmt.Errorf("%s row %d has malformed %s %q: %w", path, row, field, value, err)
+	}
+	if parsed < 0 {
+		return 0, fmt.Errorf("%s row %d has negative %s %q", path, row, field, value)
+	}
+	return parsed, nil
 }
 
 func setThemeField(theme *Theme, field string) {

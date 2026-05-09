@@ -105,21 +105,21 @@ Definition of done:
 Goal: Enrich when possible, cache everything, and make failures useful.
 
 - [x] Decide the V1 enrichment mode: cache-only by default, optional Yahoo direct lookup.
-- [ ] Add provider result schema versioning in cache files.
-- [ ] Add cache TTL/staleness reporting without forcing network calls.
-- [ ] Add ISIN-first lookup path where provider supports it.
+- [x] Add provider result schema versioning in cache files.
+- [x] Add cache TTL/staleness reporting without forcing network calls.
+- [x] Add ISIN-first lookup path where provider supports it.
 - [x] Add ticker-derived Yahoo symbol candidates with exchange suffix mapping.
-- [ ] Add ambiguous-match handling with candidate lists instead of first-match trust.
+- [x] Add ambiguous-match handling with candidate lists instead of first-match trust.
 - [x] Add manual enrichment override fields for Yahoo symbol, sector, industry, and country.
-- [ ] Add manual enrichment override fields for market cap, exchange, and currency.
-- [ ] Add enrichment failure CSV with ticker, ISIN, attempted symbols, provider, error, and next action.
-- [ ] Add tests for cache hit, cache miss, provider failure, and ambiguous match.
-- [ ] Add provider interface documentation so Yahoo can be replaced later.
+- [x] Add manual enrichment override fields for market cap, exchange, and currency.
+- [x] Add enrichment failure CSV with ticker, ISIN, attempted symbols, provider, error, and next action.
+- [x] Add tests for cache hit, cache miss, provider failure, and ambiguous match.
+- [x] Add provider interface documentation so Yahoo can be replaced later.
 
 Definition of done:
 
 - [x] Enrichment can fail for many tickers without blocking catalogue generation.
-- [ ] Every enrichment value has a source and freshness signal.
+- [x] Every enrichment value has a source and freshness signal.
 - [x] Manual overrides win deterministically over provider data.
 
 ## Slice 5: Manual Taxonomy Workflow

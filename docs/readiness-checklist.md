@@ -147,23 +147,23 @@ Definition of done:
 
 Goal: Treat `site/data` as a stable frontend API.
 
-- [ ] Add documented JSON schemas or Go-generated contract docs for each `site/data` file.
-- [ ] Add schema/version fields to generated JSON.
-- [ ] Add `securities.json` and `listings.json` if the UI needs them independently.
-- [ ] Add `relationships.json` for peers, substitutes, upstream suppliers, downstream customers, and related plays.
-- [ ] Add `sources.json` if source reuse grows.
-- [ ] Ensure CSV headers are stable and documented.
+- [x] Add documented JSON schemas or Go-generated contract docs for each `site/data` file.
+- [x] Add schema/version fields to generated JSON.
+- [x] Add `securities.json` and `listings.json` if the UI needs them independently.
+- [x] Add `relationships.json` for peers, substitutes, upstream suppliers, downstream customers, and related plays.
+- [ ] Add `sources.json` if source reuse grows. Deferred for V1; entity-local `sources` arrays remain the stable contract until source IDs exist.
+- [x] Ensure CSV headers are stable and documented.
 - [x] Ensure generated file ordering is deterministic.
-- [ ] Add tests that compare sample output to golden files.
-- [ ] Add manifest checksums for generated outputs.
+- [x] Add tests that compare sample output to golden files.
+- [x] Add manifest checksums for generated outputs.
 - [x] Add backwards-compatible frontend handling for missing optional fields.
 
 Definition of done:
 
-- [ ] The frontend can be changed against a clear data contract.
+- [x] The frontend can be changed against a clear data contract.
 - [x] Generated outputs are deterministic enough to review in Git diffs.
 - [x] Manifest explains counts, freshness, and failures.
-- [ ] Manifest explains file/schema versions.
+- [x] Manifest explains file/schema versions.
 
 ## Slice 7: Frontend Core Research UX
 

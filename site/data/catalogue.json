@@ -1,5 +1,10 @@
 {
+  "dataContractVersion": 1,
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-09T12:00:00Z",
   "manifest": {
+    "dataContractVersion": 1,
+    "schemaVersion": 1,
     "builtAt": "2026-05-09T12:00:00Z",
     "sourceMode": "sample",
     "trading212Environment": "sample",
@@ -10,6 +15,7 @@
     "listingCount": 13,
     "themeCount": 7,
     "exposureCount": 11,
+    "relationshipCount": 0,
     "enrichmentAttempted": 13,
     "enrichmentSucceeded": 12,
     "enrichmentFailed": 1,
@@ -2063,6 +2069,7 @@
       "lastReviewed": "2026-05-09"
     }
   ],
+  "relationships": [],
   "notes": [
     {
       "targetType": "theme",

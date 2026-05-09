@@ -1,0 +1,2 @@
+ticker,name,isin,company_id,security_id,type,instrument_category,structure_flags,currency,exchange,yahoo_symbol,sector,industry,country,market_cap,directionality,identity_confidence,identity_reasons,themes,layers,unclassified
+ABC_US_EQ,ABC Corp,US0000000001,abc,isin:US0000000001,STOCK,stock,,USD,NASDAQ,,,,,0,long_or_unlevered,rule_high,,ai,chips,false

@@ -12,6 +12,7 @@ The production site is static and suitable for GitHub Pages. A local Go CLI refr
 - Standard-library enrichment interface with versioned cache-first Yahoo-compatible provider, stale-cache diagnostics, ambiguous-match handling, and failure exports.
 - Normalized catalogue model covering instruments, securities, companies, listings, classifications, themes, supply-chain layers, exposures, sources, and unclassified rows.
 - Manual taxonomy files under `data/manual`.
+- Versioned static data contract under `site/data`, with manifest checksums and standalone securities, listings, and relationships JSON exports.
 - Static HTML/CSS/JS research UI with search, tables, supply-chain map, modal detail, watchlist, local notes/tags/colour labels, import/export, and unclassified review.
 
 ## Requirements
@@ -58,7 +59,7 @@ make smoke
 make preview
 ```
 
-`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist, including identity and enrichment review CSVs, and checks that `catalogue.json` and `build_manifest.json` parse as JSON.
+`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist, including standalone securities/listings/relationships JSON and identity/enrichment review CSVs, and checks that generated JSON files parse.
 
 The underlying builder remains available directly:
 
@@ -96,6 +97,7 @@ Before publishing, regenerate data locally with `make sample` or `make refresh`,
 
 - [Product readiness checklist](docs/readiness-checklist.md)
 - [Weekly build checklist](docs/build-checklist.md)
+- [Generated data contract](docs/data-contract.md)
 - [Manual taxonomy workflow](docs/taxonomy-workflow.md)
 
 ## Data Flow
@@ -105,7 +107,7 @@ Before publishing, regenerate data locally with `make sample` or `make refresh`,
 3. Normalize broker instruments into tickers, listings, securities, and companies.
 4. Resolve enrichment through the versioned cache and optional Yahoo-compatible lookup.
 5. Apply manual overrides, themes, supply chains, exposures, and notes.
-6. Export JSON/CSV to committed `site/data`, including normalized enrichment diagnostics.
+6. Export versioned JSON/CSV to committed `site/data`, including normalized enrichment diagnostics and manifest checksum metadata.
 
 ## Manual Taxonomy
 
@@ -125,7 +127,7 @@ Exposure rows include theme, layer, target, score, confidence, source URL, ratio
 
 Use `classification_overrides.csv` for manual sector, industry, and country data separate from provider enrichment. It wins over legacy ticker/company classification columns, which still remain backward compatible.
 
-Use `relationships.csv` for reviewed peers, substitutes, upstream suppliers, downstream customers, and related plays. Relationship rows are loaded and validated now; full relationship graph exports are planned separately.
+Use `relationships.csv` for reviewed peers, substitutes, upstream suppliers, downstream customers, and related plays. Relationship rows are loaded, validated, and exported to `site/data/relationships.json` plus the bundled `catalogue.json`.
 
 Identity override rows can target a ticker, ISIN, security, or company and can force `override_security_id`, `override_company_id`, normalized category, structure flags, and confidence. Use this file for missing or misleading ISINs, ADR/GDR mappings, dual listings, ETFs, funds, and trusts where rule-based identity is not enough.
 
@@ -145,7 +147,7 @@ Provider interface and cache contract details are documented in [Enrichment Prov
 
 `.env`, raw snapshots, enrichment caches, and `.gocache/` are ignored. Generated static outputs under `site/data` are intended to be committed.
 
-`site/data/build_manifest.json` includes the source mode, Trading 212 environment/base URL, fetch timestamp, raw snapshot path summary, per-endpoint HTTP diagnostics, observed Trading 212 rate-limit headers, enrichment cache/provider diagnostics, and identity counts for missing tickers/ISINs, duplicates, collisions, categories, flags, and applied overrides. It never stores API keys, API secrets, authorization headers, or raw provider responses.
+`site/data/build_manifest.json` includes the source mode, Trading 212 environment/base URL, fetch timestamp, raw snapshot path summary, per-endpoint HTTP diagnostics, observed Trading 212 rate-limit headers, enrichment cache/provider diagnostics, identity counts for missing tickers/ISINs, duplicates, collisions, categories, flags, applied overrides, data contract/schema versions, and checksums for every generated `site/data` file. It never stores API keys, API secrets, authorization headers, or raw provider responses.
 
 ## License
 

@@ -1,0 +1,221 @@
+{
+  "dataContractVersion": 1,
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-09T12:00:00Z",
+  "manifest": {
+    "dataContractVersion": 1,
+    "schemaVersion": 1,
+    "builtAt": "2026-05-09T12:00:00Z",
+    "sourceMode": "sample",
+    "trading212Environment": "sample",
+    "instrumentCount": 1,
+    "exchangeCount": 1,
+    "securityCount": 1,
+    "companyCount": 1,
+    "listingCount": 1,
+    "themeCount": 1,
+    "exposureCount": 1,
+    "relationshipCount": 2,
+    "enrichmentAttempted": 1,
+    "enrichmentSucceeded": 0,
+    "enrichmentFailed": 1,
+    "enrichmentCacheSchemaVersion": 0,
+    "enrichmentProvider": "",
+    "enrichmentCacheHitCount": 0,
+    "enrichmentCacheMissCount": 0,
+    "enrichmentCacheStaleCount": 0,
+    "enrichmentAmbiguousCount": 0,
+    "enrichmentFailureCount": 1,
+    "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
+    "enrichmentOldestRetrievedAt": "",
+    "enrichmentNewestRetrievedAt": "",
+    "unclassifiedCount": 0,
+    "emptyTickerCount": 0,
+    "duplicateTickerCount": 0,
+    "duplicateISINCount": 0,
+    "missingISINCount": 0,
+    "identityCollisionCount": 0,
+    "identityOverrideCount": 0,
+    "identityIssueCount": 1,
+    "rawSnapshots": {},
+    "dataFreshness": "0h"
+  },
+  "tickers": [
+    {
+      "ticker": "ABC_US_EQ",
+      "name": "ABC Corp",
+      "type": "STOCK",
+      "instrumentCategory": "stock",
+      "currencyCode": "USD",
+      "isin": "US0000000001",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "securityId": "isin:US0000000001",
+      "companyId": "abc",
+      "listingId": "ABC_US_EQ",
+      "directionality": "long_or_unlevered",
+      "themeIds": [
+        "ai"
+      ],
+      "layerIds": [
+        "chips"
+      ],
+      "identityConfidence": "rule_high",
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    }
+  ],
+  "securities": [
+    {
+      "id": "isin:US0000000001",
+      "isin": "US0000000001",
+      "name": "ABC Corp",
+      "type": "STOCK",
+      "instrumentCategory": "stock",
+      "companyId": "abc",
+      "listingIds": [
+        "ABC_US_EQ"
+      ],
+      "tickerIds": [
+        "ABC_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ],
+      "identityConfidence": "rule_high"
+    }
+  ],
+  "listings": [
+    {
+      "id": "ABC_US_EQ",
+      "ticker": "ABC_US_EQ",
+      "securityId": "isin:US0000000001",
+      "companyId": "abc",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    }
+  ],
+  "companies": [
+    {
+      "id": "abc",
+      "name": "ABC Corp",
+      "primaryTicker": "ABC_US_EQ",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "US",
+      "securityIds": [
+        "isin:US0000000001"
+      ],
+      "listingIds": [
+        "ABC_US_EQ"
+      ],
+      "tickerIds": [
+        "ABC_US_EQ"
+      ],
+      "themeIds": [
+        "ai"
+      ],
+      "layerIds": [
+        "chips"
+      ],
+      "identityConfidence": "rule_high",
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    }
+  ],
+  "sectors": [
+    {
+      "id": "technology",
+      "name": "Technology",
+      "count": 1,
+      "tickers": [
+        "ABC_US_EQ"
+      ]
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "name": "Semiconductors",
+      "count": 1,
+      "tickers": [
+        "ABC_US_EQ"
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "ai",
+      "name": "AI",
+      "description": "Artificial intelligence"
+    }
+  ],
+  "supplyChains": [
+    {
+      "themeId": "ai",
+      "name": "AI chain",
+      "layers": [
+        {
+          "id": "chips",
+          "name": "Chips",
+          "order": 10
+        }
+      ]
+    }
+  ],
+  "exposures": [
+    {
+      "themeId": "ai",
+      "layerId": "chips",
+      "ticker": "ABC_US_EQ",
+      "companyId": "abc",
+      "exposureScore": 4,
+      "confidence": "manual_high",
+      "sourceUrl": "https://example.com/exposure",
+      "rationale": "Sample exposure",
+      "lastReviewed": "2026-05-09"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "peer",
+      "sourceTicker": "ABC_US_EQ",
+      "targetTicker": "XYZ_US_EQ",
+      "themeId": "ai",
+      "layerId": "chips",
+      "confidence": "manual_medium",
+      "sourceUrl": "https://example.com/peer",
+      "rationale": "Comparable company",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "relationshipType": "substitute",
+      "sourceTicker": "ABC_US_EQ",
+      "targetTicker": "DEF_US_EQ",
+      "themeId": "ai",
+      "layerId": "chips",
+      "confidence": "manual_low",
+      "sourceUrl": "https://example.com/substitute",
+      "rationale": "Alternative supplier",
+      "lastReviewed": "2026-05-09"
+    }
+  ],
+  "notes": [
+    {
+      "targetType": "ticker",
+      "targetId": "ABC_US_EQ",
+      "title": "ABC note",
+      "path": "data/manual/notes/abc.md",
+      "text": "Reviewed manually."
+    }
+  ],
+  "unclassified": null,
+  "identityIssues": [
+    {
+      "issueCode": "missing_isin",
+      "ticker": "ABC_US_EQ",
+      "reason": "test",
+      "suggestedAction": "review"
+    }
+  ]
+}

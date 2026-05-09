@@ -1,0 +1,11 @@
+[
+  {
+    "id": "ABC_US_EQ",
+    "ticker": "ABC_US_EQ",
+    "securityId": "isin:US0000000001",
+    "companyId": "abc",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  }
+]

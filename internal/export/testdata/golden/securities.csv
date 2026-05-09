@@ -1,0 +1,2 @@
+security_id,isin,name,type,instrument_category,structure_flags,company_id,listing_ids,ticker_ids,currency_set,identity_confidence,identity_reasons
+isin:US0000000001,US0000000001,ABC Corp,STOCK,stock,,abc,ABC_US_EQ,ABC_US_EQ,USD,rule_high,

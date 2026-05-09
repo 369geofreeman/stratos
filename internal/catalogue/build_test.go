@@ -455,6 +455,60 @@ func TestBuildManifestEnrichmentDiagnostics(t *testing.T) {
 	}
 }
 
+func TestBuildExportsManualRelationshipsInContract(t *testing.T) {
+	manual := emptyManual()
+	manual.Themes = []taxonomy.Theme{{ID: "ai", Name: "AI"}}
+	manual.SupplyChains = []taxonomy.SupplyChain{{
+		ThemeID: "ai",
+		Name:    "AI chain",
+		Layers:  []taxonomy.SupplyChainLayer{{ID: "chips", Name: "Chips", Order: 10}},
+	}}
+	manual.Relationships = []taxonomy.Relationship{
+		{
+			RelationshipType: "substitute",
+			SourceTicker:     "ABC_US_EQ",
+			TargetTicker:     "DEF_US_EQ",
+			ThemeID:          "ai",
+			LayerID:          "chips",
+			Confidence:       "manual_low",
+			SourceURL:        "https://example.com/substitute",
+			LastReviewed:     "2026-05-09",
+		},
+		{
+			RelationshipType: "peer",
+			SourceTicker:     "ABC_US_EQ",
+			TargetTicker:     "XYZ_US_EQ",
+			ThemeID:          "ai",
+			LayerID:          "chips",
+			Confidence:       "manual_medium",
+			SourceURL:        "https://example.com/peer",
+			LastReviewed:     "2026-05-09",
+		},
+	}
+	cat, err := Build(BuildInput{
+		Instruments: []trading212.Instrument{
+			{Ticker: "ABC_US_EQ", Name: "ABC Corp", ISIN: "US0000000001", Type: "STOCK", CurrencyCode: "USD"},
+		},
+		Manual:  manual,
+		BuiltAt: time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	if cat.DataContractVersion != DataContractVersion || cat.SchemaVersion != DataContractSchemaVersion {
+		t.Fatalf("catalogue contract versions = %d/%d", cat.DataContractVersion, cat.SchemaVersion)
+	}
+	if cat.Manifest.DataContractVersion != DataContractVersion || cat.Manifest.SchemaVersion != DataContractSchemaVersion {
+		t.Fatalf("manifest contract versions = %d/%d", cat.Manifest.DataContractVersion, cat.Manifest.SchemaVersion)
+	}
+	if cat.Manifest.RelationshipCount != 2 || len(cat.Relationships) != 2 {
+		t.Fatalf("relationship contract fields = count %d rows %#v", cat.Manifest.RelationshipCount, cat.Relationships)
+	}
+	if cat.Relationships[0].RelationshipType != "peer" || cat.Relationships[1].RelationshipType != "substitute" {
+		t.Fatalf("relationships not sorted deterministically: %#v", cat.Relationships)
+	}
+}
+
 func emptyManual() taxonomy.ManualData {
 	return taxonomy.ManualData{
 		CompanyOverrides: map[string]taxonomy.CompanyOverride{},

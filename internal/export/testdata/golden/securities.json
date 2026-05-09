@@ -1,0 +1,20 @@
+[
+  {
+    "id": "isin:US0000000001",
+    "isin": "US0000000001",
+    "name": "ABC Corp",
+    "type": "STOCK",
+    "instrumentCategory": "stock",
+    "companyId": "abc",
+    "listingIds": [
+      "ABC_US_EQ"
+    ],
+    "tickerIds": [
+      "ABC_US_EQ"
+    ],
+    "currencySet": [
+      "USD"
+    ],
+    "identityConfidence": "rule_high"
+  }
+]

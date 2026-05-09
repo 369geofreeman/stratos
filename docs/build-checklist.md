@@ -40,6 +40,9 @@ The builder should write:
 - `site/data/themes.json`
 - `site/data/supply_chains.json`
 - `site/data/search_index.json`
+- `site/data/securities.json`
+- `site/data/listings.json`
+- `site/data/relationships.json`
 - `site/data/unclassified.csv`
 - `site/data/identity_issues.csv`
 - `site/data/enrichment_failures.csv`
@@ -49,7 +52,7 @@ The builder should write:
 
 ## Review
 
-- Open `site/data/build_manifest.json` and check source mode, Trading 212 environment/base URL, raw snapshot paths, endpoint diagnostics, rate-limit observations, source counts, enrichment provider/cache hit/miss/stale/failure counts, unclassified counts, identity duplicate/collision counts, category/flag counts, and freshness.
+- Open `site/data/build_manifest.json` and check data contract/schema versions, generated file checksum metadata, source mode, Trading 212 environment/base URL, raw snapshot paths, endpoint diagnostics, rate-limit observations, source counts, enrichment provider/cache hit/miss/stale/failure counts, unclassified counts, identity duplicate/collision counts, category/flag counts, and freshness.
 - Review `site/data/enrichment_failures.csv` for cache misses, cached provider failures, ambiguous matches, and unknown cache schema rows.
 - Review `site/data/unclassified.csv`.
 - Print taxonomy coverage without network calls:
@@ -64,7 +67,8 @@ GOCACHE="$PWD/.gocache" go run ./cmd/statos-build taxonomy coverage
 GOCACHE="$PWD/.gocache" go run ./cmd/statos-build taxonomy exposure-template --out /tmp/statos-exposure-template.csv
 ```
 
-- Review `site/data/identity_issues.csv`, `site/data/securities.csv`, and `site/data/listings.csv` for low-confidence identity mappings, duplicate tickers, shared ISIN collisions, and manual override misses.
+- Review `site/data/identity_issues.csv`, `site/data/securities.csv`, `site/data/listings.csv`, `site/data/securities.json`, and `site/data/listings.json` for low-confidence identity mappings, duplicate tickers, shared ISIN collisions, and manual override misses.
+- Review `site/data/relationships.json` when manual relationship rows change.
 - Add or update exposures in `data/manual/exposures.csv`.
 - Add or update classification overrides in `data/manual/classification_overrides.csv` when provider sector, industry, or country values are missing or wrong.
 - Add or update relationship rows in `data/manual/relationships.csv` for peers, substitutes, suppliers, customers, and related plays.

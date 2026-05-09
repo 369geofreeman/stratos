@@ -6,24 +6,33 @@ import (
 	"statos/internal/trading212"
 )
 
+const DataContractVersion = 1
+const DataContractSchemaVersion = 1
+
 type Catalogue struct {
-	Manifest           BuildManifest          `json:"manifest"`
-	Tickers            []Ticker               `json:"tickers"`
-	Securities         []Security             `json:"securities"`
-	Listings           []Listing              `json:"listings"`
-	Companies          []Company              `json:"companies"`
-	Sectors            []GroupCount           `json:"sectors"`
-	Industries         []GroupCount           `json:"industries"`
-	Themes             []taxonomy.Theme       `json:"themes"`
-	SupplyChains       []taxonomy.SupplyChain `json:"supplyChains"`
-	Exposures          []taxonomy.Exposure    `json:"exposures"`
-	Notes              []taxonomy.Note        `json:"notes"`
-	Unclassified       []UnclassifiedRow      `json:"unclassified"`
-	IdentityIssues     []IdentityIssue        `json:"identityIssues,omitempty"`
-	EnrichmentFailures []EnrichmentFailure    `json:"-"`
+	DataContractVersion int                     `json:"dataContractVersion"`
+	SchemaVersion       int                     `json:"schemaVersion"`
+	GeneratedAt         string                  `json:"generatedAt,omitempty"`
+	Manifest            BuildManifest           `json:"manifest"`
+	Tickers             []Ticker                `json:"tickers"`
+	Securities          []Security              `json:"securities"`
+	Listings            []Listing               `json:"listings"`
+	Companies           []Company               `json:"companies"`
+	Sectors             []GroupCount            `json:"sectors"`
+	Industries          []GroupCount            `json:"industries"`
+	Themes              []taxonomy.Theme        `json:"themes"`
+	SupplyChains        []taxonomy.SupplyChain  `json:"supplyChains"`
+	Exposures           []taxonomy.Exposure     `json:"exposures"`
+	Relationships       []taxonomy.Relationship `json:"relationships"`
+	Notes               []taxonomy.Note         `json:"notes"`
+	Unclassified        []UnclassifiedRow       `json:"unclassified"`
+	IdentityIssues      []IdentityIssue         `json:"identityIssues,omitempty"`
+	EnrichmentFailures  []EnrichmentFailure     `json:"-"`
 }
 
 type BuildManifest struct {
+	DataContractVersion          int                               `json:"dataContractVersion"`
+	SchemaVersion                int                               `json:"schemaVersion"`
 	BuiltAt                      string                            `json:"builtAt"`
 	SourceMode                   string                            `json:"sourceMode,omitempty"`
 	Trading212Environment        string                            `json:"trading212Environment,omitempty"`
@@ -36,6 +45,7 @@ type BuildManifest struct {
 	ListingCount                 int                               `json:"listingCount"`
 	ThemeCount                   int                               `json:"themeCount"`
 	ExposureCount                int                               `json:"exposureCount"`
+	RelationshipCount            int                               `json:"relationshipCount"`
 	EnrichmentAttempted          int                               `json:"enrichmentAttempted"`
 	EnrichmentSucceeded          int                               `json:"enrichmentSucceeded"`
 	EnrichmentFailed             int                               `json:"enrichmentFailed"`
@@ -64,6 +74,16 @@ type BuildManifest struct {
 	Trading212HTTPDiagnostics    []trading212.EndpointDiagnostic   `json:"trading212HttpDiagnostics,omitempty"`
 	Trading212RateLimits         []trading212.RateLimitObservation `json:"trading212RateLimits,omitempty"`
 	DataFreshness                string                            `json:"dataFreshness,omitempty"`
+	GeneratedFiles               []GeneratedFile                   `json:"generatedFiles,omitempty"`
+}
+
+type GeneratedFile struct {
+	Path          string `json:"path"`
+	Format        string `json:"format"`
+	SchemaVersion int    `json:"schemaVersion"`
+	SHA256        string `json:"sha256"`
+	Bytes         int64  `json:"bytes"`
+	ChecksumMode  string `json:"checksumMode,omitempty"`
 }
 
 type EnrichmentDiagnostics struct {

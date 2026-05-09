@@ -1,0 +1,24 @@
+[
+  {
+    "relationshipType": "peer",
+    "sourceTicker": "ABC_US_EQ",
+    "targetTicker": "XYZ_US_EQ",
+    "themeId": "ai",
+    "layerId": "chips",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://example.com/peer",
+    "rationale": "Comparable company",
+    "lastReviewed": "2026-05-09"
+  },
+  {
+    "relationshipType": "substitute",
+    "sourceTicker": "ABC_US_EQ",
+    "targetTicker": "DEF_US_EQ",
+    "themeId": "ai",
+    "layerId": "chips",
+    "confidence": "manual_low",
+    "sourceUrl": "https://example.com/substitute",
+    "rationale": "Alternative supplier",
+    "lastReviewed": "2026-05-09"
+  }
+]

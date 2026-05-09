@@ -10,6 +10,9 @@ site/data/industries.json
 site/data/themes.json
 site/data/supply_chains.json
 site/data/search_index.json
+site/data/securities.json
+site/data/listings.json
+site/data/relationships.json
 site/data/unclassified.csv
 site/data/identity_issues.csv
 site/data/enrichment_failures.csv
@@ -40,7 +43,19 @@ import json
 import sys
 
 ok = True
-for path in ("site/data/catalogue.json", "site/data/build_manifest.json"):
+for path in (
+    "site/data/catalogue.json",
+    "site/data/companies.json",
+    "site/data/sectors.json",
+    "site/data/industries.json",
+    "site/data/themes.json",
+    "site/data/supply_chains.json",
+    "site/data/search_index.json",
+    "site/data/securities.json",
+    "site/data/listings.json",
+    "site/data/relationships.json",
+    "site/data/build_manifest.json",
+):
     try:
         with open(path, "r", encoding="utf-8") as handle:
             json.load(handle)
@@ -52,4 +67,4 @@ if not ok:
     sys.exit(1)
 PY
 
-printf 'smoke ok: generated site/data files are present and key JSON files parse\n'
+printf 'smoke ok: generated site/data files are present and generated JSON files parse\n'

@@ -1,0 +1,119 @@
+[
+  {
+    "id": "3SQQQ_US_EQ",
+    "ticker": "3SQQQ_US_EQ",
+    "securityId": "isin:US74347G4322",
+    "companyId": "ultrapro_short_qqq_3x_daily_etf",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "AAPL_US_EQ",
+    "ticker": "AAPL_US_EQ",
+    "securityId": "isin:US0378331005",
+    "companyId": "apple_inc",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "AMD_US_EQ",
+    "ticker": "AMD_US_EQ",
+    "securityId": "isin:US0079031078",
+    "companyId": "advanced_micro_devices_inc",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "ASML_US_EQ",
+    "ticker": "ASML_US_EQ",
+    "securityId": "isin:USN070592100",
+    "companyId": "asml",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "AVGO_US_EQ",
+    "ticker": "AVGO_US_EQ",
+    "securityId": "isin:US11135F1012",
+    "companyId": "broadcom_inc",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "CEG_US_EQ",
+    "ticker": "CEG_US_EQ",
+    "securityId": "isin:US21037T1097",
+    "companyId": "constellation_energy",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "MSFT_US_EQ",
+    "ticker": "MSFT_US_EQ",
+    "securityId": "isin:US5949181045",
+    "companyId": "microsoft",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "MU_US_EQ",
+    "ticker": "MU_US_EQ",
+    "securityId": "isin:US5951121038",
+    "companyId": "micron_technology_inc",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "NVDA_US_EQ",
+    "ticker": "NVDA_US_EQ",
+    "securityId": "isin:US67066G1040",
+    "companyId": "nvidia",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "SMCI_US_EQ",
+    "ticker": "SMCI_US_EQ",
+    "securityId": "isin:US86800U1043",
+    "companyId": "super_micro_computer_inc",
+    "exchangeCode": "US",
+    "exchangeName": "NASDAQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "TSM_US_EQ",
+    "ticker": "TSM_US_EQ",
+    "securityId": "isin:US8740391003",
+    "companyId": "taiwan_semiconductor_manufacturing_company_limited",
+    "exchangeCode": "US",
+    "exchangeName": "NYSE",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "VRT_US_EQ",
+    "ticker": "VRT_US_EQ",
+    "securityId": "isin:US92537N1081",
+    "companyId": "vertiv",
+    "exchangeCode": "US",
+    "exchangeName": "NYSE",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "VST_US_EQ",
+    "ticker": "VST_US_EQ",
+    "securityId": "isin:US92840M1027",
+    "companyId": "vistra_corp",
+    "exchangeCode": "US",
+    "exchangeName": "NYSE",
+    "currencyCode": "USD"
+  }
+]

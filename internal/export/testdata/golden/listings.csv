@@ -1,0 +1,2 @@
+listing_id,ticker,security_id,company_id,exchange_code,exchange_name,currency_code
+ABC_US_EQ,ABC_US_EQ,isin:US0000000001,abc,US,NASDAQ,USD

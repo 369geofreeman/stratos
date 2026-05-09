@@ -408,21 +408,27 @@ func Build(input BuildInput) (*Catalogue, error) {
 	industries := groupTickers(tickers, func(t *Ticker) string { return t.Industry })
 
 	cat := &Catalogue{
-		Tickers:            derefTickers(tickers),
-		Securities:         derefSecurities(securities),
-		Listings:           derefListings(listings),
-		Companies:          derefCompanies(companies),
-		Sectors:            sectors,
-		Industries:         industries,
-		Themes:             input.Manual.Themes,
-		SupplyChains:       input.Manual.SupplyChains,
-		Exposures:          input.Manual.Exposures,
-		Notes:              input.Manual.Notes,
-		Unclassified:       unclassified,
-		IdentityIssues:     identityIssues,
-		EnrichmentFailures: append([]EnrichmentFailure(nil), input.EnrichmentFailures...),
+		DataContractVersion: DataContractVersion,
+		SchemaVersion:       DataContractSchemaVersion,
+		GeneratedAt:         input.BuiltAt.UTC().Format(time.RFC3339),
+		Tickers:             derefTickers(tickers),
+		Securities:          derefSecurities(securities),
+		Listings:            derefListings(listings),
+		Companies:           derefCompanies(companies),
+		Sectors:             sectors,
+		Industries:          industries,
+		Themes:              input.Manual.Themes,
+		SupplyChains:        input.Manual.SupplyChains,
+		Exposures:           input.Manual.Exposures,
+		Relationships:       sortedRelationships(input.Manual.Relationships),
+		Notes:               input.Manual.Notes,
+		Unclassified:        unclassified,
+		IdentityIssues:      identityIssues,
+		EnrichmentFailures:  append([]EnrichmentFailure(nil), input.EnrichmentFailures...),
 	}
 	cat.Manifest = BuildManifest{
+		DataContractVersion:          DataContractVersion,
+		SchemaVersion:                DataContractSchemaVersion,
 		BuiltAt:                      input.BuiltAt.UTC().Format(time.RFC3339),
 		SourceMode:                   input.SourceMode,
 		Trading212Environment:        input.Trading212Environment,
@@ -435,6 +441,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 		ListingCount:                 len(cat.Listings),
 		ThemeCount:                   len(cat.Themes),
 		ExposureCount:                len(cat.Exposures),
+		RelationshipCount:            len(cat.Relationships),
 		EnrichmentAttempted:          input.EnrichmentAttempted,
 		EnrichmentSucceeded:          input.EnrichmentSucceeded,
 		EnrichmentFailed:             input.EnrichmentFailed,
@@ -465,6 +472,33 @@ func Build(input BuildInput) (*Catalogue, error) {
 		DataFreshness:                freshness(input.RawSnapshotAt, input.BuiltAt),
 	}
 	return cat, nil
+}
+
+func sortedRelationships(rows []taxonomy.Relationship) []taxonomy.Relationship {
+	out := make([]taxonomy.Relationship, 0, len(rows))
+	out = append(out, rows...)
+	sort.SliceStable(out, func(i, j int) bool {
+		return relationshipSortKey(out[i]) < relationshipSortKey(out[j])
+	})
+	return out
+}
+
+func relationshipSortKey(row taxonomy.Relationship) string {
+	return strings.Join([]string{
+		row.RelationshipType,
+		row.SourceTicker,
+		row.SourceISIN,
+		row.SourceCompanyID,
+		row.TargetTicker,
+		row.TargetISIN,
+		row.TargetCompanyID,
+		row.ThemeID,
+		row.LayerID,
+		row.Confidence,
+		row.SourceURL,
+		row.Rationale,
+		row.LastReviewed,
+	}, "\x00")
 }
 
 func Slug(value string) string {

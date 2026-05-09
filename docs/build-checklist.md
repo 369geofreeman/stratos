@@ -5,14 +5,15 @@ Use this checklist for the weekly manual refresh.
 ## Before Refresh
 
 - Confirm `.env` contains the intended Trading 212 environment.
-- Confirm no secrets or private raw snapshots are staged.
+- Confirm no secrets, private raw snapshots, enrichment caches, or `.gocache` files are staged.
 - Review recent manual taxonomy changes under `data/manual`.
 
 ## Refresh
 
 ```sh
-go run ./cmd/statos-build refresh
-go test ./...
+make refresh
+make test
+make smoke
 ```
 
 The builder should write:
@@ -34,13 +35,13 @@ The builder should write:
 - Review `site/data/unclassified.csv`.
 - Add or update exposures in `data/manual/exposures.csv`.
 - Add notes in `data/manual/notes`.
-- Re-run the builder after manual taxonomy edits.
+- Re-run `make refresh` after manual taxonomy edits.
+- Re-run `make smoke` before publishing or committing generated data.
 
 ## Preview
 
 ```sh
-cd site
-python3 -m http.server 4173
+make preview
 ```
 
 Open `http://localhost:4173` and check:
@@ -53,4 +54,4 @@ Open `http://localhost:4173` and check:
 
 ## Commit
 
-Commit source, manual data, and generated `site/data`. Do not commit `.env`, `data/raw`, or `data/cache`.
+Commit source, manual data, and generated `site/data`. Do not commit `.env`, `data/raw`, `data/cache`, `.gocache`, logs, or raw provider artifacts.

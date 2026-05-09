@@ -13,6 +13,12 @@ The production site is static and suitable for GitHub Pages. A local Go CLI refr
 - Manual taxonomy files under `data/manual`.
 - Static HTML/CSS/JS research UI with search, tables, supply-chain map, modal detail, watchlist, local notes/tags/colour labels, import/export, and unclassified review.
 
+## Requirements
+
+- Go 1.23 or newer, matching `go.mod`.
+- Python 3 for the local static preview and smoke-check JSON parsing.
+- `make` for the documented local shortcuts.
+
 ## Setup
 
 ```sh
@@ -22,20 +28,38 @@ cp .env.example .env
 Fill in Trading 212 credentials if you want to use live account metadata. With no credentials, the builder falls back to the sample dataset so the site remains usable during development.
 
 ```sh
-go run ./cmd/statos-build refresh
-go test ./...
+make sample
+make test
+make smoke
 ```
 
 Preview the site:
 
 ```sh
-cd site
-python3 -m http.server 4173
+make preview
 ```
 
 Open `http://localhost:4173`.
 
+The Make targets run Go with `GOCACHE="$PWD/.gocache"` so local builds work when the default Go build cache is not writable. `.gocache/` is ignored and should not be committed. If running Go manually in a restricted environment, use the same workaround:
+
+```sh
+GOCACHE="$PWD/.gocache" go test ./...
+```
+
 ## Builder Commands
+
+```sh
+make sample
+make refresh
+make test
+make smoke
+make preview
+```
+
+`make refresh` fetches Trading 212 metadata when credentials are present. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist and checks that `catalogue.json` and `build_manifest.json` parse as JSON.
+
+The underlying builder remains available directly:
 
 ```sh
 go run ./cmd/statos-build refresh
@@ -43,7 +67,24 @@ go run ./cmd/statos-build refresh --sample
 go run ./cmd/statos-build sample
 ```
 
-`refresh` fetches Trading 212 metadata when credentials are present. `sample` always uses the embedded sample universe and is useful for UI development.
+## GitHub Pages Deployment
+
+Statos keeps the static publish root in `site/`. GitHub Pages branch publishing only serves repository root `/` or `/docs`, so this repo uses GitHub Actions Pages deployment instead of moving or duplicating the site.
+
+The workflow at `.github/workflows/pages.yml` uploads the committed `site/` directory as the Pages artifact. It runs `make smoke` first, but it does not run `make refresh`, fetch Trading 212 data, call enrichment providers, or require Trading 212/Yahoo secrets. The `site/.nojekyll` file is included in the published root.
+
+Repository setup:
+
+1. In GitHub, open Settings -> Pages.
+2. Set Source to `GitHub Actions`.
+3. Push to `main` or run the `Deploy Pages` workflow manually.
+
+Before publishing, regenerate data locally with `make sample` or `make refresh`, review `site/data/unclassified.csv` and `site/data/build_manifest.json`, run `make test` and `make smoke`, then commit source, manual taxonomy, and generated `site/data`.
+
+## Project Checklists
+
+- [Product readiness checklist](docs/readiness-checklist.md)
+- [Weekly build checklist](docs/build-checklist.md)
 
 ## Data Flow
 
@@ -73,8 +114,8 @@ Yahoo Finance does not provide a stable official public API. Statos treats Yahoo
 
 ## Safety
 
-`.env`, raw snapshots, and cache files are ignored. Generated static outputs under `site/data` are intended to be committed.
+`.env`, raw snapshots, enrichment caches, and `.gocache/` are ignored. Generated static outputs under `site/data` are intended to be committed.
 
-## License
+## License
 
-PolyForm Noncommercial or CC BY-NC 4.0
+PolyForm Noncommercial License 1.0.0. See `LICENSE`.

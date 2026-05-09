@@ -58,7 +58,7 @@ make smoke
 make preview
 ```
 
-`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist and checks that `catalogue.json` and `build_manifest.json` parse as JSON.
+`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist, including identity review CSVs, and checks that `catalogue.json` and `build_manifest.json` parse as JSON.
 
 The underlying builder remains available directly:
 
@@ -110,10 +110,13 @@ Edit these committed files:
 - `data/manual/supply_chains.yml`
 - `data/manual/company_overrides.csv`
 - `data/manual/ticker_overrides.csv`
+- `data/manual/identity_overrides.csv`
 - `data/manual/exposures.csv`
 - `data/manual/notes/*.md`
 
 Exposure rows include theme, layer, target, score, confidence, source URL, rationale, and last reviewed date.
+
+Identity override rows can target a ticker, ISIN, security, or company and can force `override_security_id`, `override_company_id`, normalized category, structure flags, and confidence. Use this file for missing or misleading ISINs, ADR/GDR mappings, dual listings, ETFs, funds, and trusts where rule-based identity is not enough.
 
 ## Enrichment
 
@@ -123,7 +126,7 @@ Yahoo Finance does not provide a stable official public API. Statos treats Yahoo
 
 `.env`, raw snapshots, enrichment caches, and `.gocache/` are ignored. Generated static outputs under `site/data` are intended to be committed.
 
-`site/data/build_manifest.json` includes the source mode, Trading 212 environment/base URL, fetch timestamp, raw snapshot path summary, per-endpoint HTTP diagnostics, and observed Trading 212 rate-limit headers. It never stores API keys, API secrets, or authorization headers.
+`site/data/build_manifest.json` includes the source mode, Trading 212 environment/base URL, fetch timestamp, raw snapshot path summary, per-endpoint HTTP diagnostics, observed Trading 212 rate-limit headers, and identity counts for missing tickers/ISINs, duplicates, collisions, categories, flags, and applied overrides. It never stores API keys, API secrets, or authorization headers.
 
 ## License
 

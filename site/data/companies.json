@@ -35,6 +35,10 @@
         "label": "sample"
       }
     ],
+    "identityConfidence": "rule_medium",
+    "identityReasons": [
+      "company_id_from_name_slug"
+    ],
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
   {
@@ -60,6 +64,10 @@
         "kind": "enrichment",
         "label": "sample"
       }
+    ],
+    "identityConfidence": "rule_medium",
+    "identityReasons": [
+      "company_id_from_name_slug"
     ],
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
@@ -105,6 +113,10 @@
         "label": "sample"
       }
     ],
+    "identityConfidence": "manual_high",
+    "identityReasons": [
+      "company_id_from_ticker_override"
+    ],
     "lastReviewed": "2026-05-09",
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
@@ -143,6 +155,10 @@
         "kind": "enrichment",
         "label": "sample"
       }
+    ],
+    "identityConfidence": "rule_medium",
+    "identityReasons": [
+      "company_id_from_name_slug"
     ],
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
@@ -191,6 +207,10 @@
         "label": "sample"
       }
     ],
+    "identityConfidence": "manual_high",
+    "identityReasons": [
+      "company_id_from_ticker_override"
+    ],
     "lastReviewed": "2026-05-09",
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
@@ -229,6 +249,10 @@
         "kind": "enrichment",
         "label": "sample"
       }
+    ],
+    "identityConfidence": "rule_medium",
+    "identityReasons": [
+      "company_id_from_name_slug"
     ],
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
@@ -273,6 +297,10 @@
         "kind": "enrichment",
         "label": "sample"
       }
+    ],
+    "identityConfidence": "manual_high",
+    "identityReasons": [
+      "company_id_from_ticker_override"
     ],
     "lastReviewed": "2026-05-09",
     "lastRefreshed": "2026-05-09T12:00:00Z"
@@ -325,6 +353,10 @@
         "label": "sample"
       }
     ],
+    "identityConfidence": "manual_high",
+    "identityReasons": [
+      "company_id_from_ticker_override"
+    ],
     "lastReviewed": "2026-05-09",
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
@@ -357,6 +389,10 @@
         "kind": "enrichment",
         "label": "sample"
       }
+    ],
+    "identityConfidence": "rule_medium",
+    "identityReasons": [
+      "company_id_from_name_slug"
     ],
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
@@ -396,6 +432,10 @@
         "label": "sample"
       }
     ],
+    "identityConfidence": "rule_medium",
+    "identityReasons": [
+      "company_id_from_name_slug"
+    ],
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
   {
@@ -410,6 +450,11 @@
     ],
     "tickerIds": [
       "3SQQQ_US_EQ"
+    ],
+    "identityConfidence": "rule_low",
+    "identityReasons": [
+      "company_id_from_name_slug",
+      "fund_like_company_identity_needs_review"
     ],
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
@@ -455,6 +500,10 @@
         "label": "sample"
       }
     ],
+    "identityConfidence": "manual_high",
+    "identityReasons": [
+      "company_id_from_ticker_override"
+    ],
     "lastReviewed": "2026-05-09",
     "lastRefreshed": "2026-05-09T12:00:00Z"
   },
@@ -490,6 +539,10 @@
         "kind": "enrichment",
         "label": "sample"
       }
+    ],
+    "identityConfidence": "rule_medium",
+    "identityReasons": [
+      "company_id_from_name_slug"
     ],
     "lastRefreshed": "2026-05-09T12:00:00Z"
   }

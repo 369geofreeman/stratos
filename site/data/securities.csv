@@ -1,0 +1,14 @@
+security_id,isin,name,type,instrument_category,structure_flags,company_id,listing_ids,ticker_ids,currency_set,identity_confidence,identity_reasons
+isin:US0079031078,US0079031078,Advanced Micro Devices Inc,STOCK,stock,,advanced_micro_devices_inc,AMD_US_EQ,AMD_US_EQ,USD,rule_high,security_id_from_isin
+isin:US0378331005,US0378331005,Apple Inc,STOCK,stock,,apple_inc,AAPL_US_EQ,AAPL_US_EQ,USD,rule_high,security_id_from_isin
+isin:US11135F1012,US11135F1012,Broadcom Inc,STOCK,stock,,broadcom_inc,AVGO_US_EQ,AVGO_US_EQ,USD,rule_high,security_id_from_isin
+isin:US21037T1097,US21037T1097,Constellation Energy Corporation,STOCK,stock,,constellation_energy,CEG_US_EQ,CEG_US_EQ,USD,rule_high,security_id_from_isin
+isin:US5949181045,US5949181045,Microsoft Corporation,STOCK,stock,,microsoft,MSFT_US_EQ,MSFT_US_EQ,USD,rule_high,security_id_from_isin
+isin:US5951121038,US5951121038,Micron Technology Inc,STOCK,stock,,micron_technology_inc,MU_US_EQ,MU_US_EQ,USD,rule_high,security_id_from_isin
+isin:US67066G1040,US67066G1040,NVIDIA Corporation,STOCK,stock,,nvidia,NVDA_US_EQ,NVDA_US_EQ,USD,rule_high,security_id_from_isin
+isin:US74347G4322,US74347G4322,UltraPro Short QQQ -3X Daily ETF,ETF,etf,inverse;short;leveraged;fund_like,ultrapro_short_qqq_3x_daily_etf,3SQQQ_US_EQ,3SQQQ_US_EQ,USD,rule_high,security_id_from_isin
+isin:US86800U1043,US86800U1043,Super Micro Computer Inc,STOCK,stock,,super_micro_computer_inc,SMCI_US_EQ,SMCI_US_EQ,USD,rule_high,security_id_from_isin
+isin:US8740391003,US8740391003,Taiwan Semiconductor Manufacturing Company Limited,STOCK,stock,,taiwan_semiconductor_manufacturing_company_limited,TSM_US_EQ,TSM_US_EQ,USD,rule_high,security_id_from_isin
+isin:US92537N1081,US92537N1081,Vertiv Holdings Co,STOCK,stock,,vertiv,VRT_US_EQ,VRT_US_EQ,USD,rule_high,security_id_from_isin
+isin:US92840M1027,US92840M1027,Vistra Corp,STOCK,stock,,vistra_corp,VST_US_EQ,VST_US_EQ,USD,rule_high,security_id_from_isin
+isin:USN070592100,USN070592100,ASML Holding N.V.,STOCK,stock,,asml,ASML_US_EQ,ASML_US_EQ,USD,rule_high,security_id_from_isin

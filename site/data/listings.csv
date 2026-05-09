@@ -1,0 +1,14 @@
+listing_id,ticker,security_id,company_id,exchange_code,exchange_name,currency_code
+3SQQQ_US_EQ,3SQQQ_US_EQ,isin:US74347G4322,ultrapro_short_qqq_3x_daily_etf,US,NASDAQ,USD
+AAPL_US_EQ,AAPL_US_EQ,isin:US0378331005,apple_inc,US,NASDAQ,USD
+AMD_US_EQ,AMD_US_EQ,isin:US0079031078,advanced_micro_devices_inc,US,NASDAQ,USD
+ASML_US_EQ,ASML_US_EQ,isin:USN070592100,asml,US,NASDAQ,USD
+AVGO_US_EQ,AVGO_US_EQ,isin:US11135F1012,broadcom_inc,US,NASDAQ,USD
+CEG_US_EQ,CEG_US_EQ,isin:US21037T1097,constellation_energy,US,NASDAQ,USD
+MSFT_US_EQ,MSFT_US_EQ,isin:US5949181045,microsoft,US,NASDAQ,USD
+MU_US_EQ,MU_US_EQ,isin:US5951121038,micron_technology_inc,US,NASDAQ,USD
+NVDA_US_EQ,NVDA_US_EQ,isin:US67066G1040,nvidia,US,NASDAQ,USD
+SMCI_US_EQ,SMCI_US_EQ,isin:US86800U1043,super_micro_computer_inc,US,NASDAQ,USD
+TSM_US_EQ,TSM_US_EQ,isin:US8740391003,taiwan_semiconductor_manufacturing_company_limited,US,NYSE,USD
+VRT_US_EQ,VRT_US_EQ,isin:US92537N1081,vertiv,US,NYSE,USD
+VST_US_EQ,VST_US_EQ,isin:US92840M1027,vistra_corp,US,NYSE,USD

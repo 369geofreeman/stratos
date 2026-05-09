@@ -14,6 +14,23 @@
     "enrichmentSucceeded": 12,
     "enrichmentFailed": 1,
     "unclassifiedCount": 2,
+    "emptyTickerCount": 0,
+    "duplicateTickerCount": 0,
+    "duplicateISINCount": 0,
+    "missingISINCount": 0,
+    "identityCollisionCount": 0,
+    "identityOverrideCount": 0,
+    "identityIssueCount": 1,
+    "instrumentCategoryCounts": {
+      "etf": 1,
+      "stock": 12
+    },
+    "structureFlagCounts": {
+      "fund_like": 1,
+      "inverse": 1,
+      "leveraged": 1,
+      "short": 1
+    },
     "rawSnapshotAt": "2026-05-09T12:00:00Z",
     "rawSnapshots": {
       "timestamp": "2026-05-09T12:00:00Z",
@@ -31,9 +48,17 @@
     {
       "ticker": "3SQQQ_US_EQ",
       "brokerSymbol": "3SQQQ",
+      "brokerAssetCode": "EQ",
       "name": "UltraPro Short QQQ -3X Daily ETF",
       "shortName": "Short QQQ 3x",
       "type": "ETF",
+      "instrumentCategory": "etf",
+      "structureFlags": [
+        "inverse",
+        "short",
+        "leveraged",
+        "fund_like"
+      ],
       "currencyCode": "USD",
       "isin": "US74347G4322",
       "exchangeCode": "US",
@@ -45,15 +70,26 @@
       "companyId": "ultrapro_short_qqq_3x_daily_etf",
       "listingId": "3SQQQ_US_EQ",
       "directionality": "inverse_or_short",
+      "identityConfidence": "rule_low",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_name_slug",
+        "fund_like_company_identity_needs_review",
+        "category_from_trading212_type",
+        "structure_flags_from_name_or_ticker"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": true
     },
     {
       "ticker": "AAPL_US_EQ",
       "brokerSymbol": "AAPL",
+      "brokerAssetCode": "EQ",
       "name": "Apple Inc",
       "shortName": "Apple",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US0378331005",
       "exchangeCode": "US",
@@ -76,15 +112,24 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_name_slug",
+        "category_from_trading212_type"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": true
     },
     {
       "ticker": "AMD_US_EQ",
       "brokerSymbol": "AMD",
+      "brokerAssetCode": "EQ",
       "name": "Advanced Micro Devices Inc",
       "shortName": "AMD",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US0079031078",
       "exchangeCode": "US",
@@ -119,15 +164,24 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_name_slug",
+        "category_from_trading212_type"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
     },
     {
       "ticker": "ASML_US_EQ",
       "brokerSymbol": "ASML",
+      "brokerAssetCode": "EQ",
       "name": "ASML Holding N.V.",
       "shortName": "ASML",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "USN070592100",
       "exchangeCode": "US",
@@ -168,6 +222,13 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_ticker_override",
+        "category_from_trading212_type"
+      ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
@@ -175,9 +236,11 @@
     {
       "ticker": "AVGO_US_EQ",
       "brokerSymbol": "AVGO",
+      "brokerAssetCode": "EQ",
       "name": "Broadcom Inc",
       "shortName": "Broadcom",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US11135F1012",
       "exchangeCode": "US",
@@ -212,15 +275,24 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_name_slug",
+        "category_from_trading212_type"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
     },
     {
       "ticker": "CEG_US_EQ",
       "brokerSymbol": "CEG",
+      "brokerAssetCode": "EQ",
       "name": "Constellation Energy Corporation",
       "shortName": "Constellation Energy",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US21037T1097",
       "exchangeCode": "US",
@@ -264,6 +336,13 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_ticker_override",
+        "category_from_trading212_type"
+      ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
@@ -271,9 +350,11 @@
     {
       "ticker": "MSFT_US_EQ",
       "brokerSymbol": "MSFT",
+      "brokerAssetCode": "EQ",
       "name": "Microsoft Corporation",
       "shortName": "Microsoft",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US5949181045",
       "exchangeCode": "US",
@@ -314,6 +395,13 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_ticker_override",
+        "category_from_trading212_type"
+      ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
@@ -321,9 +409,11 @@
     {
       "ticker": "MU_US_EQ",
       "brokerSymbol": "MU",
+      "brokerAssetCode": "EQ",
       "name": "Micron Technology Inc",
       "shortName": "Micron",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US5951121038",
       "exchangeCode": "US",
@@ -358,15 +448,24 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_name_slug",
+        "category_from_trading212_type"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
     },
     {
       "ticker": "NVDA_US_EQ",
       "brokerSymbol": "NVDA",
+      "brokerAssetCode": "EQ",
       "name": "NVIDIA Corporation",
       "shortName": "NVIDIA",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US67066G1040",
       "exchangeCode": "US",
@@ -413,6 +512,13 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_ticker_override",
+        "category_from_trading212_type"
+      ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
@@ -420,9 +526,11 @@
     {
       "ticker": "SMCI_US_EQ",
       "brokerSymbol": "SMCI",
+      "brokerAssetCode": "EQ",
       "name": "Super Micro Computer Inc",
       "shortName": "Supermicro",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US86800U1043",
       "exchangeCode": "US",
@@ -451,15 +559,24 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_name_slug",
+        "category_from_trading212_type"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
     },
     {
       "ticker": "TSM_US_EQ",
       "brokerSymbol": "TSM",
+      "brokerAssetCode": "EQ",
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
       "shortName": "TSMC",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US8740391003",
       "exchangeCode": "US",
@@ -494,15 +611,24 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_name_slug",
+        "category_from_trading212_type"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
     },
     {
       "ticker": "VRT_US_EQ",
       "brokerSymbol": "VRT",
+      "brokerAssetCode": "EQ",
       "name": "Vertiv Holdings Co",
       "shortName": "Vertiv",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US92537N1081",
       "exchangeCode": "US",
@@ -543,6 +669,13 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_ticker_override",
+        "category_from_trading212_type"
+      ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
@@ -550,9 +683,11 @@
     {
       "ticker": "VST_US_EQ",
       "brokerSymbol": "VST",
+      "brokerAssetCode": "EQ",
       "name": "Vistra Corp",
       "shortName": "Vistra",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "currencyCode": "USD",
       "isin": "US92840M1027",
       "exchangeCode": "US",
@@ -584,6 +719,13 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "broker_ticker_parsed",
+        "security_id_from_isin",
+        "company_id_from_name_slug",
+        "category_from_trading212_type"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z",
       "unclassified": false
     }
@@ -594,6 +736,7 @@
       "isin": "US0079031078",
       "name": "Advanced Micro Devices Inc",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "advanced_micro_devices_inc",
       "listingIds": [
         "AMD_US_EQ"
@@ -603,6 +746,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -610,6 +757,7 @@
       "isin": "US0378331005",
       "name": "Apple Inc",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "apple_inc",
       "listingIds": [
         "AAPL_US_EQ"
@@ -619,6 +767,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -626,6 +778,7 @@
       "isin": "US11135F1012",
       "name": "Broadcom Inc",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "broadcom_inc",
       "listingIds": [
         "AVGO_US_EQ"
@@ -635,6 +788,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -642,6 +799,7 @@
       "isin": "US21037T1097",
       "name": "Constellation Energy Corporation",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "constellation_energy",
       "listingIds": [
         "CEG_US_EQ"
@@ -651,6 +809,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -658,6 +820,7 @@
       "isin": "US5949181045",
       "name": "Microsoft Corporation",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "microsoft",
       "listingIds": [
         "MSFT_US_EQ"
@@ -667,6 +830,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -674,6 +841,7 @@
       "isin": "US5951121038",
       "name": "Micron Technology Inc",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "micron_technology_inc",
       "listingIds": [
         "MU_US_EQ"
@@ -683,6 +851,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -690,6 +862,7 @@
       "isin": "US67066G1040",
       "name": "NVIDIA Corporation",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "nvidia",
       "listingIds": [
         "NVDA_US_EQ"
@@ -699,6 +872,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -706,6 +883,13 @@
       "isin": "US74347G4322",
       "name": "UltraPro Short QQQ -3X Daily ETF",
       "type": "ETF",
+      "instrumentCategory": "etf",
+      "structureFlags": [
+        "inverse",
+        "short",
+        "leveraged",
+        "fund_like"
+      ],
       "companyId": "ultrapro_short_qqq_3x_daily_etf",
       "listingIds": [
         "3SQQQ_US_EQ"
@@ -715,6 +899,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -722,6 +910,7 @@
       "isin": "US86800U1043",
       "name": "Super Micro Computer Inc",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "super_micro_computer_inc",
       "listingIds": [
         "SMCI_US_EQ"
@@ -731,6 +920,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -738,6 +931,7 @@
       "isin": "US8740391003",
       "name": "Taiwan Semiconductor Manufacturing Company Limited",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "taiwan_semiconductor_manufacturing_company_limited",
       "listingIds": [
         "TSM_US_EQ"
@@ -747,6 +941,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -754,6 +952,7 @@
       "isin": "US92537N1081",
       "name": "Vertiv Holdings Co",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "vertiv",
       "listingIds": [
         "VRT_US_EQ"
@@ -763,6 +962,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -770,6 +973,7 @@
       "isin": "US92840M1027",
       "name": "Vistra Corp",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "vistra_corp",
       "listingIds": [
         "VST_US_EQ"
@@ -779,6 +983,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     },
     {
@@ -786,6 +994,7 @@
       "isin": "USN070592100",
       "name": "ASML Holding N.V.",
       "type": "STOCK",
+      "instrumentCategory": "stock",
       "companyId": "asml",
       "listingIds": [
         "ASML_US_EQ"
@@ -795,6 +1004,10 @@
       ],
       "currencySet": [
         "USD"
+      ],
+      "identityConfidence": "rule_high",
+      "identityReasons": [
+        "security_id_from_isin"
       ]
     }
   ],
@@ -954,6 +1167,10 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "company_id_from_name_slug"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
     {
@@ -979,6 +1196,10 @@
           "kind": "enrichment",
           "label": "sample"
         }
+      ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "company_id_from_name_slug"
       ],
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
@@ -1024,6 +1245,10 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "manual_high",
+      "identityReasons": [
+        "company_id_from_ticker_override"
+      ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
@@ -1062,6 +1287,10 @@
           "kind": "enrichment",
           "label": "sample"
         }
+      ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "company_id_from_name_slug"
       ],
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
@@ -1110,6 +1339,10 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "manual_high",
+      "identityReasons": [
+        "company_id_from_ticker_override"
+      ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
@@ -1148,6 +1381,10 @@
           "kind": "enrichment",
           "label": "sample"
         }
+      ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "company_id_from_name_slug"
       ],
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
@@ -1192,6 +1429,10 @@
           "kind": "enrichment",
           "label": "sample"
         }
+      ],
+      "identityConfidence": "manual_high",
+      "identityReasons": [
+        "company_id_from_ticker_override"
       ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z"
@@ -1244,6 +1485,10 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "manual_high",
+      "identityReasons": [
+        "company_id_from_ticker_override"
+      ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
@@ -1276,6 +1521,10 @@
           "kind": "enrichment",
           "label": "sample"
         }
+      ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "company_id_from_name_slug"
       ],
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
@@ -1315,6 +1564,10 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "company_id_from_name_slug"
+      ],
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
     {
@@ -1329,6 +1582,11 @@
       ],
       "tickerIds": [
         "3SQQQ_US_EQ"
+      ],
+      "identityConfidence": "rule_low",
+      "identityReasons": [
+        "company_id_from_name_slug",
+        "fund_like_company_identity_needs_review"
       ],
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
@@ -1374,6 +1632,10 @@
           "label": "sample"
         }
       ],
+      "identityConfidence": "manual_high",
+      "identityReasons": [
+        "company_id_from_ticker_override"
+      ],
       "lastReviewed": "2026-05-09",
       "lastRefreshed": "2026-05-09T12:00:00Z"
     },
@@ -1409,6 +1671,10 @@
           "kind": "enrichment",
           "label": "sample"
         }
+      ],
+      "identityConfidence": "rule_medium",
+      "identityReasons": [
+        "company_id_from_name_slug"
       ],
       "lastRefreshed": "2026-05-09T12:00:00Z"
     }
@@ -1791,6 +2057,18 @@
       "name": "Apple Inc",
       "isin": "US0378331005",
       "reason": "missing theme exposure"
+    }
+  ],
+  "identityIssues": [
+    {
+      "issueCode": "low_confidence_company_identity",
+      "ticker": "3SQQQ_US_EQ",
+      "isin": "US74347G4322",
+      "securityId": "isin:US74347G4322",
+      "companyId": "ultrapro_short_qqq_3x_daily_etf",
+      "name": "UltraPro Short QQQ -3X Daily ETF",
+      "reason": "company_id_from_name_slug; fund_like_company_identity_needs_review",
+      "suggestedAction": "review company identity and add override_company_id when appropriate"
     }
   ]
 }

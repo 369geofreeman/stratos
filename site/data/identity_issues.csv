@@ -1,0 +1,2 @@
+issue_code,ticker,isin,security_id,company_id,name,reason,suggested_action
+low_confidence_company_identity,3SQQQ_US_EQ,US74347G4322,isin:US74347G4322,ultrapro_short_qqq_3x_daily_etf,UltraPro Short QQQ -3X Daily ETF,company_id_from_name_slug; fund_like_company_identity_needs_review,review company identity and add override_company_id when appropriate

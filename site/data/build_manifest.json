@@ -13,6 +13,23 @@
   "enrichmentSucceeded": 12,
   "enrichmentFailed": 1,
   "unclassifiedCount": 2,
+  "emptyTickerCount": 0,
+  "duplicateTickerCount": 0,
+  "duplicateISINCount": 0,
+  "missingISINCount": 0,
+  "identityCollisionCount": 0,
+  "identityOverrideCount": 0,
+  "identityIssueCount": 1,
+  "instrumentCategoryCounts": {
+    "etf": 1,
+    "stock": 12
+  },
+  "structureFlagCounts": {
+    "fund_like": 1,
+    "inverse": 1,
+    "leveraged": 1,
+    "short": 1
+  },
   "rawSnapshotAt": "2026-05-09T12:00:00Z",
   "rawSnapshots": {
     "timestamp": "2026-05-09T12:00:00Z",

@@ -40,12 +40,16 @@ The builder should write:
 - `site/data/supply_chains.json`
 - `site/data/search_index.json`
 - `site/data/unclassified.csv`
+- `site/data/identity_issues.csv`
+- `site/data/securities.csv`
+- `site/data/listings.csv`
 - `site/data/build_manifest.json`
 
 ## Review
 
-- Open `site/data/build_manifest.json` and check source mode, Trading 212 environment/base URL, raw snapshot paths, endpoint diagnostics, rate-limit observations, source counts, enrichment failures, unclassified counts, and freshness.
+- Open `site/data/build_manifest.json` and check source mode, Trading 212 environment/base URL, raw snapshot paths, endpoint diagnostics, rate-limit observations, source counts, enrichment failures, unclassified counts, identity duplicate/collision counts, category/flag counts, and freshness.
 - Review `site/data/unclassified.csv`.
+- Review `site/data/identity_issues.csv`, `site/data/securities.csv`, and `site/data/listings.csv` for low-confidence identity mappings, duplicate tickers, shared ISIN collisions, and manual override misses.
 - Add or update exposures in `data/manual/exposures.csv`.
 - Add notes in `data/manual/notes`.
 - Re-run `make refresh` after manual taxonomy edits.

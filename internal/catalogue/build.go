@@ -49,48 +49,159 @@ func Build(input BuildInput) (*Catalogue, error) {
 		return instruments[i].Ticker < instruments[j].Ticker
 	})
 
+	state := newIdentityBuildState()
+	processable := make([]trading212.Instrument, 0, len(instruments))
+	seenTickers := map[string]bool{}
+	for _, raw := range instruments {
+		raw.Ticker = strings.TrimSpace(raw.Ticker)
+		if raw.Ticker == "" {
+			state.emptyTickerCount++
+			state.addIssue(IdentityIssue{
+				IssueCode:       "missing_ticker",
+				Name:            firstNonEmpty(raw.Name, raw.ShortName),
+				ISIN:            raw.ISIN,
+				Reason:          "Trading 212 instrument has an empty ticker and cannot be exported as a broker-level row",
+				SuggestedAction: "review the raw snapshot or wait for corrected broker metadata",
+			})
+			continue
+		}
+		if seenTickers[raw.Ticker] {
+			state.duplicateTickerCount++
+			state.addIssue(IdentityIssue{
+				IssueCode:       "duplicate_ticker",
+				Ticker:          raw.Ticker,
+				ISIN:            raw.ISIN,
+				Name:            firstNonEmpty(raw.Name, raw.ShortName),
+				Reason:          "multiple Trading 212 instruments share the same broker ticker; only the first sorted row is exported",
+				SuggestedAction: "add a manual identity override or inspect the raw Trading 212 snapshot",
+			})
+			continue
+		}
+		seenTickers[raw.Ticker] = true
+		if raw.ISIN == "" {
+			state.missingISINCount++
+		}
+		processable = append(processable, raw)
+	}
+
 	securityByID := map[string]*Security{}
 	companyByID := map[string]*Company{}
 	listingByID := map[string]*Listing{}
 	tickerByID := map[string]*Ticker{}
 	companyBySecurity := map[string]string{}
-	securityByISIN := map[string]string{}
+	companyConfidenceBySecurity := map[string]string{}
+	companyReasonsBySecurity := map[string][]string{}
+	securityByISIN := map[string][]string{}
+	tickersByISIN := map[string][]string{}
+	companiesByISIN := map[string][]string{}
+	isinsBySecurity := map[string][]string{}
+	companiesBySecurity := map[string][]string{}
+	categoriesBySecurity := map[string][]string{}
 
-	for _, raw := range instruments {
+	for _, raw := range processable {
 		if override := input.Manual.TickerOverrides[raw.Ticker]; override.CompanyID != "" {
 			companyBySecurity[securityID(raw)] = override.CompanyID
+			companyConfidenceBySecurity[securityID(raw)] = "manual_high"
+			companyReasonsBySecurity[securityID(raw)] = []string{"company_id_from_ticker_override"}
 		}
 	}
 
-	for _, raw := range instruments {
-		if raw.Ticker == "" {
-			continue
-		}
+	for _, raw := range processable {
 		parts := ParseBrokerTicker(raw.Ticker)
 		profile := input.Profiles[raw.Ticker]
 		tickerOverride := input.Manual.TickerOverrides[raw.Ticker]
 
 		name := firstNonEmpty(tickerOverride.Name, profile.Name, raw.Name, raw.ShortName, raw.Ticker)
-		securityID := securityID(raw)
-		if raw.ISIN != "" {
-			securityByISIN[raw.ISIN] = securityID
+		baseSecurityID := securityID(raw)
+		companyID := firstNonEmpty(tickerOverride.CompanyID, companyBySecurity[baseSecurityID])
+		companyConfidence := ""
+		companyReasons := []string{}
+		switch {
+		case tickerOverride.CompanyID != "":
+			companyConfidence = "manual_high"
+			companyReasons = append(companyReasons, "company_id_from_ticker_override")
+		case companyBySecurity[baseSecurityID] != "":
+			companyConfidence = firstNonEmpty(companyConfidenceBySecurity[baseSecurityID], "rule_medium")
+			companyReasons = append(companyReasons, companyReasonsBySecurity[baseSecurityID]...)
 		}
-		companyID := firstNonEmpty(tickerOverride.CompanyID, companyBySecurity[securityID])
 		if companyID == "" {
 			companyID = Slug(name)
+			companyConfidence = "rule_medium"
+			companyReasons = append(companyReasons, "company_id_from_name_slug")
 		}
 		if companyID == "" {
 			companyID = Slug(raw.Ticker)
+			companyConfidence = "rule_low"
+			companyReasons = append(companyReasons, "company_id_from_ticker_slug")
 		}
-		companyBySecurity[securityID] = companyID
-		companyOverride := input.Manual.CompanyOverrides[companyID]
+		identityOverride := resolveIdentityOverrides(raw, baseSecurityID, companyID, input.Manual.IdentityOverrides, state)
+		securityID := firstNonEmpty(identityOverride.SecurityID, baseSecurityID)
+		if identityOverride.CompanyID == "" && tickerOverride.CompanyID == "" && companyBySecurity[securityID] != "" {
+			companyID = companyBySecurity[securityID]
+			companyConfidence = firstNonEmpty(companyConfidenceBySecurity[securityID], companyConfidence)
+			companyReasons = append(companyReasons, companyReasonsBySecurity[securityID]...)
+		}
+		if identityOverride.CompanyID != "" {
+			companyID = identityOverride.CompanyID
+			companyConfidence = firstNonEmpty(identityOverride.Confidence, "manual_high")
+			companyReasons = append(companyReasons, "company_id_from_identity_override")
+		}
 
+		category, categoryReasons := ClassifyInstrumentCategory(raw)
+		if identityOverride.Category != "" {
+			category = identityOverride.Category
+			categoryReasons = append(categoryReasons, "category_from_identity_override")
+		}
+		structureFlags := DetectStructureFlags(category, raw.Ticker, raw.Name, raw.ShortName)
+		if len(identityOverride.Flags) > 0 {
+			structureFlags = mergeFlags(structureFlags, identityOverride.Flags)
+		}
+		flagReasons := []string{}
+		if len(structureFlags) > 0 {
+			flagReasons = append(flagReasons, "structure_flags_from_name_or_ticker")
+		}
+		if len(identityOverride.Flags) > 0 {
+			flagReasons = append(flagReasons, "structure_flags_from_identity_override")
+		}
+		if companyConfidence == "rule_medium" {
+			switch {
+			case raw.ISIN == "":
+				companyConfidence = "rule_low"
+				companyReasons = append(companyReasons, "missing_isin_company_identity_needs_review")
+			case containsString(structureFlags, "adr"), containsString(structureFlags, "gdr"):
+				companyConfidence = "rule_low"
+				companyReasons = append(companyReasons, "depositary_receipt_company_identity_needs_review")
+			case containsString(structureFlags, "fund_like"):
+				companyConfidence = "rule_low"
+				companyReasons = append(companyReasons, "fund_like_company_identity_needs_review")
+			}
+		}
+		if companyBySecurity[securityID] == "" {
+			companyBySecurity[securityID] = companyID
+			companyConfidenceBySecurity[securityID] = companyConfidence
+			companyReasonsBySecurity[securityID] = append([]string(nil), companyReasons...)
+		}
+		if raw.ISIN != "" {
+			securityByISIN[raw.ISIN] = appendUnique(securityByISIN[raw.ISIN], securityID)
+			tickersByISIN[raw.ISIN] = appendUnique(tickersByISIN[raw.ISIN], raw.Ticker)
+			companiesByISIN[raw.ISIN] = appendUnique(companiesByISIN[raw.ISIN], companyID)
+		}
+		isinsBySecurity[securityID] = appendUnique(isinsBySecurity[securityID], raw.ISIN)
+		companiesBySecurity[securityID] = appendUnique(companiesBySecurity[securityID], companyID)
+		categoriesBySecurity[securityID] = appendUnique(categoriesBySecurity[securityID], category)
+		state.categoryCounts[category]++
+		for _, flag := range structureFlags {
+			state.flagCounts[flag]++
+		}
+
+		companyOverride := input.Manual.CompanyOverrides[companyID]
 		sector := firstNonEmpty(tickerOverride.Sector, companyOverride.Sector, profile.Sector)
 		industry := firstNonEmpty(tickerOverride.Industry, companyOverride.Industry, profile.Industry)
 		country := firstNonEmpty(tickerOverride.Country, companyOverride.Country, profile.Country)
 		yahooSymbol := firstNonEmpty(tickerOverride.YahooSymbol, profile.Symbol)
 		companyName := firstNonEmpty(companyOverride.Name, tickerOverride.Name, profile.Name, raw.Name, raw.ShortName, raw.Ticker)
 		lastReviewed := firstNonEmpty(tickerOverride.LastReviewed, companyOverride.LastReviewed)
+		identitySources := identityOverride.Sources()
 
 		exchange := exchanges[raw.WorkingScheduleID]
 		listingID := raw.Ticker
@@ -106,26 +217,60 @@ func Build(input BuildInput) (*Catalogue, error) {
 		listingByID[listingID] = listing
 
 		security := securityByID[securityID]
+		securityConfidence, securityReasons := securityIdentity(raw, identityOverride)
 		if security == nil {
 			security = &Security{
-				ID:        securityID,
-				ISIN:      raw.ISIN,
-				Name:      name,
-				Type:      raw.Type,
-				CompanyID: companyID,
+				ID:                 securityID,
+				ISIN:               raw.ISIN,
+				Name:               name,
+				Type:               raw.Type,
+				InstrumentCategory: category,
+				StructureFlags:     structureFlags,
+				CompanyID:          companyID,
+				IdentityConfidence: securityConfidence,
+				IdentityReasons:    append([]string(nil), securityReasons...),
 			}
 			securityByID[securityID] = security
+		}
+		if security.CompanyID != companyID {
+			state.addIssue(IdentityIssue{
+				IssueCode:       "security_id_multiple_companies",
+				Ticker:          raw.Ticker,
+				ISIN:            raw.ISIN,
+				SecurityID:      securityID,
+				CompanyID:       companyID,
+				Name:            name,
+				Reason:          fmt.Sprintf("security already belongs to company_id %q but ticker maps to %q", security.CompanyID, companyID),
+				SuggestedAction: "split the security with identity_overrides.csv or force one company mapping manually",
+			})
+		}
+		if security.InstrumentCategory != "" && security.InstrumentCategory != category {
+			state.addIssue(IdentityIssue{
+				IssueCode:       "security_category_collision",
+				Ticker:          raw.Ticker,
+				ISIN:            raw.ISIN,
+				SecurityID:      securityID,
+				CompanyID:       companyID,
+				Name:            name,
+				Reason:          fmt.Sprintf("security already has category %q but ticker classified as %q", security.InstrumentCategory, category),
+				SuggestedAction: "review the ISIN grouping or add an identity override",
+			})
 		}
 		security.ListingIDs = appendUnique(security.ListingIDs, listingID)
 		security.TickerIDs = appendUnique(security.TickerIDs, raw.Ticker)
 		security.CurrencySet = appendUnique(security.CurrencySet, raw.CurrencyCode)
+		security.StructureFlags = mergeFlags(security.StructureFlags, structureFlags)
+		security.IdentityConfidence = lowerConfidence(security.IdentityConfidence, securityConfidence)
+		security.IdentityReasons = appendUniqueMany(security.IdentityReasons, securityReasons...)
 
 		company := companyByID[companyID]
 		if company == nil {
 			company = &Company{
-				ID:            companyID,
-				Name:          companyName,
-				PrimaryTicker: raw.Ticker,
+				ID:                 companyID,
+				Name:               companyName,
+				PrimaryTicker:      raw.Ticker,
+				IdentityConfidence: companyConfidence,
+				IdentityReasons:    append([]string(nil), companyReasons...),
 			}
 			companyByID[companyID] = company
 		}
@@ -142,37 +287,105 @@ func Build(input BuildInput) (*Catalogue, error) {
 		company.TickerIDs = appendUnique(company.TickerIDs, raw.Ticker)
 		company.LastReviewed = firstNonEmpty(company.LastReviewed, lastReviewed)
 		company.LastRefreshed = input.BuiltAt.Format(time.RFC3339)
-		company.Sources = appendSources(company.Sources, sourceFromOverride(tickerOverride), sourceFromCompanyOverride(companyOverride), sourceFromProfile(profile))
+		company.Sources = appendSources(company.Sources, append(identitySources, sourceFromOverride(tickerOverride), sourceFromCompanyOverride(companyOverride), sourceFromProfile(profile))...)
+		company.IdentityConfidence = lowerConfidence(company.IdentityConfidence, companyConfidence)
+		company.IdentityReasons = appendUniqueMany(company.IdentityReasons, companyReasons...)
+
+		identityReasons := []string{}
+		if parts.Uncertain {
+			identityReasons = append(identityReasons, "broker_ticker_parse_"+parts.Reason)
+			state.addIssue(IdentityIssue{
+				IssueCode:       "broker_ticker_parse_uncertain",
+				Ticker:          raw.Ticker,
+				ISIN:            raw.ISIN,
+				SecurityID:      securityID,
+				CompanyID:       companyID,
+				Name:            name,
+				Reason:          parts.Reason,
+				SuggestedAction: "review whether the broker ticker suffix should be handled by the parser",
+			})
+		} else {
+			identityReasons = append(identityReasons, "broker_ticker_parsed")
+		}
+		if raw.ISIN == "" {
+			identityReasons = append(identityReasons, "missing_isin_fallback_to_ticker")
+			state.addIssue(IdentityIssue{
+				IssueCode:       "missing_isin",
+				Ticker:          raw.Ticker,
+				SecurityID:      securityID,
+				CompanyID:       companyID,
+				Name:            name,
+				Reason:          "security_id falls back to broker ticker because ISIN is missing",
+				SuggestedAction: "add a manual identity override if the ticker should merge with another security",
+			})
+		}
+		if category == CategoryOther {
+			state.addIssue(IdentityIssue{
+				IssueCode:       "unknown_instrument_category",
+				Ticker:          raw.Ticker,
+				ISIN:            raw.ISIN,
+				SecurityID:      securityID,
+				CompanyID:       companyID,
+				Name:            name,
+				Reason:          "Trading 212 type did not map to a normalized instrument category",
+				SuggestedAction: "add category to identity_overrides.csv if this instrument should be classified",
+			})
+		}
+		if companyConfidence == "rule_low" {
+			state.addIssue(IdentityIssue{
+				IssueCode:       "low_confidence_company_identity",
+				Ticker:          raw.Ticker,
+				ISIN:            raw.ISIN,
+				SecurityID:      securityID,
+				CompanyID:       companyID,
+				Name:            name,
+				Reason:          strings.Join(companyReasons, "; "),
+				SuggestedAction: "review company identity and add override_company_id when appropriate",
+			})
+		}
+		identityReasons = append(identityReasons, securityReasons...)
+		identityReasons = append(identityReasons, companyReasons...)
+		identityReasons = append(identityReasons, categoryReasons...)
+		identityReasons = append(identityReasons, flagReasons...)
+		identityReasons = append(identityReasons, identityOverride.Reasons...)
+		tickerConfidence := lowerConfidence(securityConfidence, companyConfidence, identityOverride.Confidence)
 
 		ticker := &Ticker{
-			Ticker:            raw.Ticker,
-			BrokerSymbol:      parts.Symbol,
-			Name:              name,
-			ShortName:         raw.ShortName,
-			Type:              raw.Type,
-			CurrencyCode:      raw.CurrencyCode,
-			ISIN:              raw.ISIN,
-			ExchangeCode:      parts.ExchangeCode,
-			ExchangeName:      listing.ExchangeName,
-			WorkingScheduleID: raw.WorkingScheduleID,
-			MaxOpenQuantity:   raw.MaxOpenQuantity,
-			ExtendedHours:     raw.ExtendedHours,
-			SecurityID:        securityID,
-			CompanyID:         companyID,
-			ListingID:         listingID,
-			Directionality:    DetectDirectionality(raw.Ticker, raw.Name, raw.ShortName),
-			YahooSymbol:       yahooSymbol,
-			Sector:            sector,
-			Industry:          industry,
-			Country:           country,
-			MarketCap:         profile.MarketCap,
-			Sources:           appendSources(nil, sourceFromOverride(tickerOverride), sourceFromCompanyOverride(companyOverride), sourceFromProfile(profile)),
-			LastReviewed:      lastReviewed,
-			LastRefreshed:     input.BuiltAt.Format(time.RFC3339),
+			Ticker:             raw.Ticker,
+			BrokerSymbol:       parts.Symbol,
+			BrokerAssetCode:    parts.AssetCode,
+			Name:               name,
+			ShortName:          raw.ShortName,
+			Type:               raw.Type,
+			InstrumentCategory: category,
+			StructureFlags:     structureFlags,
+			CurrencyCode:       raw.CurrencyCode,
+			ISIN:               raw.ISIN,
+			ExchangeCode:       parts.ExchangeCode,
+			ExchangeName:       listing.ExchangeName,
+			WorkingScheduleID:  raw.WorkingScheduleID,
+			MaxOpenQuantity:    raw.MaxOpenQuantity,
+			ExtendedHours:      raw.ExtendedHours,
+			SecurityID:         securityID,
+			CompanyID:          companyID,
+			ListingID:          listingID,
+			Directionality:     DetectDirectionality(raw.Ticker, raw.Name, raw.ShortName),
+			YahooSymbol:        yahooSymbol,
+			Sector:             sector,
+			Industry:           industry,
+			Country:            country,
+			MarketCap:          profile.MarketCap,
+			Sources:            appendSources(nil, append(identitySources, sourceFromOverride(tickerOverride), sourceFromCompanyOverride(companyOverride), sourceFromProfile(profile))...),
+			IdentityConfidence: tickerConfidence,
+			IdentityReasons:    appendUniqueMany(nil, identityReasons...),
+			LastReviewed:       lastReviewed,
+			LastRefreshed:      input.BuiltAt.Format(time.RFC3339),
 		}
 		tickerByID[raw.Ticker] = ticker
 	}
 
+	addIdentityGroupIssues(tickersByISIN, companiesByISIN, isinsBySecurity, companiesBySecurity, categoriesBySecurity, state)
+	addUnknownOverrideIssues(input.Manual.IdentityOverrides, state)
 	applyExposures(input.Manual.Exposures, tickerByID, companyByID, securityByISIN)
 	addRelatedTickers(tickerByID, companyByID)
 
@@ -184,21 +397,23 @@ func Build(input BuildInput) (*Catalogue, error) {
 		ticker.Unclassified = isUnclassified(ticker)
 	}
 	unclassified := buildUnclassified(tickers)
+	identityIssues := sortedIdentityIssues(state.issues)
 	sectors := groupTickers(tickers, func(t *Ticker) string { return t.Sector })
 	industries := groupTickers(tickers, func(t *Ticker) string { return t.Industry })
 
 	cat := &Catalogue{
-		Tickers:      derefTickers(tickers),
-		Securities:   derefSecurities(securities),
-		Listings:     derefListings(listings),
-		Companies:    derefCompanies(companies),
-		Sectors:      sectors,
-		Industries:   industries,
-		Themes:       input.Manual.Themes,
-		SupplyChains: input.Manual.SupplyChains,
-		Exposures:    input.Manual.Exposures,
-		Notes:        input.Manual.Notes,
-		Unclassified: unclassified,
+		Tickers:        derefTickers(tickers),
+		Securities:     derefSecurities(securities),
+		Listings:       derefListings(listings),
+		Companies:      derefCompanies(companies),
+		Sectors:        sectors,
+		Industries:     industries,
+		Themes:         input.Manual.Themes,
+		SupplyChains:   input.Manual.SupplyChains,
+		Exposures:      input.Manual.Exposures,
+		Notes:          input.Manual.Notes,
+		Unclassified:   unclassified,
+		IdentityIssues: identityIssues,
 	}
 	cat.Manifest = BuildManifest{
 		BuiltAt:                   input.BuiltAt.UTC().Format(time.RFC3339),
@@ -217,6 +432,15 @@ func Build(input BuildInput) (*Catalogue, error) {
 		EnrichmentSucceeded:       input.EnrichmentSucceeded,
 		EnrichmentFailed:          input.EnrichmentFailed,
 		UnclassifiedCount:         len(cat.Unclassified),
+		EmptyTickerCount:          state.emptyTickerCount,
+		DuplicateTickerCount:      state.duplicateTickerCount,
+		DuplicateISINCount:        duplicateISINCount(tickersByISIN),
+		MissingISINCount:          state.missingISINCount,
+		IdentityCollisionCount:    identityCollisionCount(identityIssues),
+		IdentityOverrideCount:     len(state.matchedOverrideKeys),
+		IdentityIssueCount:        len(identityIssues),
+		InstrumentCategoryCounts:  state.categoryCounts,
+		StructureFlagCounts:       state.flagCounts,
 		RawSnapshotAt:             input.RawSnapshotAt,
 		RawSnapshots:              input.RawSnapshots,
 		Trading212HTTPDiagnostics: input.HTTPDiagnostics,
@@ -224,41 +448,6 @@ func Build(input BuildInput) (*Catalogue, error) {
 		DataFreshness:             freshness(input.RawSnapshotAt, input.BuiltAt),
 	}
 	return cat, nil
-}
-
-type BrokerTickerParts struct {
-	Symbol       string
-	ExchangeCode string
-	AssetCode    string
-}
-
-func ParseBrokerTicker(ticker string) BrokerTickerParts {
-	parts := strings.Split(ticker, "_")
-	if len(parts) >= 3 {
-		return BrokerTickerParts{
-			Symbol:       strings.Join(parts[:len(parts)-2], "_"),
-			ExchangeCode: parts[len(parts)-2],
-			AssetCode:    parts[len(parts)-1],
-		}
-	}
-	return BrokerTickerParts{Symbol: ticker}
-}
-
-func DetectDirectionality(values ...string) string {
-	joined := " " + strings.ToUpper(strings.Join(values, " ")) + " "
-	shortMarkers := []string{" SHORT ", " INVERSE ", " -1X ", " -2X ", " -3X ", " 1S ", " 2S ", " 3S ", " X1S ", " X2S ", " X3S "}
-	for _, marker := range shortMarkers {
-		if strings.Contains(joined, marker) || strings.Contains(joined, strings.TrimSpace(marker)) {
-			return "inverse_or_short"
-		}
-	}
-	leveragedMarkers := []string{" LEVERAGED ", " LEVERAGE ", " 2X ", " 3X ", " X2 ", " X3 "}
-	for _, marker := range leveragedMarkers {
-		if strings.Contains(joined, marker) {
-			return "leveraged_long"
-		}
-	}
-	return "long_or_unlevered"
 }
 
 func Slug(value string) string {
@@ -285,7 +474,304 @@ func securityID(raw trading212.Instrument) string {
 	return "ticker:" + raw.Ticker
 }
 
-func applyExposures(exposures []taxonomy.Exposure, tickers map[string]*Ticker, companies map[string]*Company, securityByISIN map[string]string) {
+type identityBuildState struct {
+	issues               []IdentityIssue
+	emptyTickerCount     int
+	duplicateTickerCount int
+	missingISINCount     int
+	categoryCounts       map[string]int
+	flagCounts           map[string]int
+	matchedOverrideKeys  map[string]bool
+}
+
+func newIdentityBuildState() *identityBuildState {
+	return &identityBuildState{
+		categoryCounts:      map[string]int{},
+		flagCounts:          map[string]int{},
+		matchedOverrideKeys: map[string]bool{},
+	}
+}
+
+func (state *identityBuildState) addIssue(issue IdentityIssue) {
+	state.issues = append(state.issues, issue)
+}
+
+type resolvedIdentityOverride struct {
+	SecurityID string
+	CompanyID  string
+	Category   string
+	Flags      []string
+	Confidence string
+	Reasons    []string
+	sources    []Source
+}
+
+func (override resolvedIdentityOverride) Sources() []Source {
+	return override.sources
+}
+
+func resolveIdentityOverrides(raw trading212.Instrument, baseSecurityID string, companyID string, overrides []taxonomy.IdentityOverride, state *identityBuildState) resolvedIdentityOverride {
+	matches := matchingIdentityOverrides(raw, baseSecurityID, companyID, overrides)
+	resolved := resolvedIdentityOverride{}
+	for _, override := range matches {
+		key := catalogueIdentityOverrideKey(override)
+		state.matchedOverrideKeys[key] = true
+		if override.OverrideSecurityID != "" {
+			if resolved.SecurityID != "" && resolved.SecurityID != override.OverrideSecurityID {
+				state.addIssue(identityOverrideConflictIssue(raw, baseSecurityID, companyID, "override_security_id", resolved.SecurityID, override.OverrideSecurityID))
+			}
+			resolved.SecurityID = override.OverrideSecurityID
+			resolved.Reasons = appendUnique(resolved.Reasons, "security_id_from_identity_override")
+		}
+		if override.OverrideCompanyID != "" {
+			if resolved.CompanyID != "" && resolved.CompanyID != override.OverrideCompanyID {
+				state.addIssue(identityOverrideConflictIssue(raw, baseSecurityID, companyID, "override_company_id", resolved.CompanyID, override.OverrideCompanyID))
+			}
+			resolved.CompanyID = override.OverrideCompanyID
+			resolved.Reasons = appendUnique(resolved.Reasons, "company_id_from_identity_override")
+		}
+		if override.Category != "" {
+			if resolved.Category != "" && resolved.Category != override.Category {
+				state.addIssue(identityOverrideConflictIssue(raw, baseSecurityID, companyID, "category", resolved.Category, override.Category))
+			}
+			resolved.Category = override.Category
+			resolved.Reasons = appendUnique(resolved.Reasons, "category_from_identity_override")
+		}
+		if len(override.Flags) > 0 {
+			resolved.Flags = mergeFlags(resolved.Flags, override.Flags)
+			resolved.Reasons = appendUnique(resolved.Reasons, "structure_flags_from_identity_override")
+		}
+		if override.Confidence != "" {
+			if resolved.Confidence != "" && resolved.Confidence != override.Confidence {
+				state.addIssue(identityOverrideConflictIssue(raw, baseSecurityID, companyID, "confidence", resolved.Confidence, override.Confidence))
+			}
+			resolved.Confidence = override.Confidence
+		}
+		if override.Reason != "" {
+			resolved.Reasons = appendUnique(resolved.Reasons, "manual_identity_reason:"+override.Reason)
+		}
+		if override.SourceURL != "" {
+			resolved.sources = appendSources(resolved.sources, Source{
+				Kind:         "manual_identity_override",
+				URL:          override.SourceURL,
+				Label:        "Identity override",
+				LastReviewed: override.LastReviewed,
+			})
+		}
+	}
+	return resolved
+}
+
+func matchingIdentityOverrides(raw trading212.Instrument, baseSecurityID string, companyID string, overrides []taxonomy.IdentityOverride) []taxonomy.IdentityOverride {
+	precedence := []string{"company", "security", "isin", "ticker"}
+	out := []taxonomy.IdentityOverride{}
+	for _, targetType := range precedence {
+		for _, override := range overrides {
+			if override.TargetType != targetType {
+				continue
+			}
+			switch override.TargetType {
+			case "ticker":
+				if override.Ticker == raw.Ticker {
+					out = append(out, override)
+				}
+			case "isin":
+				if override.ISIN != "" && override.ISIN == raw.ISIN {
+					out = append(out, override)
+				}
+			case "security":
+				if override.SecurityID == baseSecurityID {
+					out = append(out, override)
+				}
+			case "company":
+				if override.CompanyID == companyID {
+					out = append(out, override)
+				}
+			}
+		}
+	}
+	return out
+}
+
+func identityOverrideConflictIssue(raw trading212.Instrument, securityID string, companyID string, field string, oldValue string, newValue string) IdentityIssue {
+	return IdentityIssue{
+		IssueCode:       "manual_override_conflict",
+		Ticker:          raw.Ticker,
+		ISIN:            raw.ISIN,
+		SecurityID:      securityID,
+		CompanyID:       companyID,
+		Name:            firstNonEmpty(raw.Name, raw.ShortName, raw.Ticker),
+		Reason:          fmt.Sprintf("identity overrides set conflicting %s values %q and %q; the more specific later override won", field, oldValue, newValue),
+		SuggestedAction: "remove the conflict or make the intended override target more specific",
+	}
+}
+
+func securityIdentity(raw trading212.Instrument, override resolvedIdentityOverride) (string, []string) {
+	if override.SecurityID != "" {
+		return firstNonEmpty(override.Confidence, "manual_high"), []string{"security_id_from_identity_override"}
+	}
+	if raw.ISIN != "" {
+		return "rule_high", []string{"security_id_from_isin"}
+	}
+	return "rule_low", []string{"security_id_from_missing_isin_ticker_fallback"}
+}
+
+func addIdentityGroupIssues(tickersByISIN map[string][]string, companiesByISIN map[string][]string, isinsBySecurity map[string][]string, companiesBySecurity map[string][]string, categoriesBySecurity map[string][]string, state *identityBuildState) {
+	for isin, companies := range companiesByISIN {
+		if len(companies) <= 1 {
+			continue
+		}
+		state.addIssue(IdentityIssue{
+			IssueCode:       "shared_isin_multiple_companies",
+			Ticker:          strings.Join(sortedStringSet(tickersByISIN[isin]), ";"),
+			ISIN:            isin,
+			CompanyID:       strings.Join(sortedStringSet(companies), ";"),
+			Reason:          "one ISIN maps to multiple company IDs",
+			SuggestedAction: "review whether the ISIN should be split with override_security_id or mapped to one company",
+		})
+	}
+	for securityID, isins := range isinsBySecurity {
+		nonEmptyISINs := []string{}
+		for _, isin := range isins {
+			if isin != "" {
+				nonEmptyISINs = appendUnique(nonEmptyISINs, isin)
+			}
+		}
+		if len(nonEmptyISINs) > 1 {
+			state.addIssue(IdentityIssue{
+				IssueCode:       "security_id_multiple_isins",
+				ISIN:            strings.Join(sortedStringSet(nonEmptyISINs), ";"),
+				SecurityID:      securityID,
+				Reason:          "one security ID contains multiple ISINs",
+				SuggestedAction: "confirm the manual merge is intentional or split the securities",
+			})
+		}
+		if len(companiesBySecurity[securityID]) > 1 {
+			state.addIssue(IdentityIssue{
+				IssueCode:       "security_id_multiple_companies",
+				SecurityID:      securityID,
+				CompanyID:       strings.Join(sortedStringSet(companiesBySecurity[securityID]), ";"),
+				Reason:          "one security ID maps to multiple companies",
+				SuggestedAction: "split the security or force one company mapping manually",
+			})
+		}
+		if len(categoriesBySecurity[securityID]) > 1 {
+			state.addIssue(IdentityIssue{
+				IssueCode:       "security_category_collision",
+				SecurityID:      securityID,
+				Reason:          "one security ID maps to multiple instrument categories: " + strings.Join(sortedStringSet(categoriesBySecurity[securityID]), ";"),
+				SuggestedAction: "review the grouping and add an identity override if needed",
+			})
+		}
+	}
+}
+
+func addUnknownOverrideIssues(overrides []taxonomy.IdentityOverride, state *identityBuildState) {
+	for _, override := range overrides {
+		key := catalogueIdentityOverrideKey(override)
+		if state.matchedOverrideKeys[key] {
+			continue
+		}
+		issue := IdentityIssue{
+			IssueCode:       "manual_override_unknown_" + override.TargetType,
+			Ticker:          override.Ticker,
+			ISIN:            override.ISIN,
+			SecurityID:      override.SecurityID,
+			CompanyID:       override.CompanyID,
+			Reason:          "manual identity override did not match any Trading 212 instrument in this build",
+			SuggestedAction: "remove the row, correct the target, or keep it only if the instrument is expected to reappear",
+		}
+		if override.TargetType == "ticker" {
+			issue.IssueCode = "manual_override_unknown_ticker"
+		}
+		state.addIssue(issue)
+	}
+}
+
+func catalogueIdentityOverrideKey(override taxonomy.IdentityOverride) string {
+	switch override.TargetType {
+	case "ticker":
+		return "ticker:" + override.Ticker
+	case "isin":
+		return "isin:" + override.ISIN
+	case "security":
+		return "security:" + override.SecurityID
+	case "company":
+		return "company:" + override.CompanyID
+	default:
+		return override.TargetType + ":"
+	}
+}
+
+func duplicateISINCount(tickersByISIN map[string][]string) int {
+	count := 0
+	for _, tickers := range tickersByISIN {
+		if len(tickers) > 1 {
+			count++
+		}
+	}
+	return count
+}
+
+func identityCollisionCount(issues []IdentityIssue) int {
+	count := 0
+	for _, issue := range issues {
+		switch issue.IssueCode {
+		case "duplicate_ticker", "shared_isin_multiple_companies", "security_id_multiple_isins", "security_id_multiple_companies", "security_category_collision", "manual_override_conflict":
+			count++
+		}
+	}
+	return count
+}
+
+func sortedIdentityIssues(issues []IdentityIssue) []IdentityIssue {
+	out := append([]IdentityIssue(nil), issues...)
+	sort.SliceStable(out, func(i, j int) bool {
+		a := out[i].IssueCode + "|" + out[i].Ticker + "|" + out[i].ISIN + "|" + out[i].SecurityID + "|" + out[i].CompanyID + "|" + out[i].Reason
+		b := out[j].IssueCode + "|" + out[j].Ticker + "|" + out[j].ISIN + "|" + out[j].SecurityID + "|" + out[j].CompanyID + "|" + out[j].Reason
+		return a < b
+	})
+	return out
+}
+
+func lowerConfidence(values ...string) string {
+	out := ""
+	for _, value := range values {
+		if value == "" {
+			continue
+		}
+		if out == "" || confidenceRank(value) < confidenceRank(out) {
+			out = value
+		}
+	}
+	return out
+}
+
+func confidenceRank(value string) int {
+	switch value {
+	case "rule_low":
+		return 1
+	case "rule_medium":
+		return 2
+	case "manual_medium":
+		return 3
+	case "rule_high":
+		return 4
+	case "manual_high":
+		return 5
+	default:
+		return 0
+	}
+}
+
+func appendUniqueMany(values []string, additions ...string) []string {
+	for _, value := range additions {
+		values = appendUnique(values, value)
+	}
+	return values
+}
+
+func applyExposures(exposures []taxonomy.Exposure, tickers map[string]*Ticker, companies map[string]*Company, securityByISIN map[string][]string) {
 	companyIDsForExposure := func(exposure taxonomy.Exposure) []string {
 		ids := []string{}
 		if exposure.CompanyID != "" {
@@ -297,10 +783,11 @@ func applyExposures(exposures []taxonomy.Exposure, tickers map[string]*Ticker, c
 			}
 		}
 		if exposure.ISIN != "" {
-			securityID := securityByISIN[exposure.ISIN]
-			for _, ticker := range tickers {
-				if ticker.SecurityID == securityID {
-					ids = append(ids, ticker.CompanyID)
+			for _, securityID := range securityByISIN[exposure.ISIN] {
+				for _, ticker := range tickers {
+					if ticker.SecurityID == securityID {
+						ids = append(ids, ticker.CompanyID)
+					}
 				}
 			}
 		}

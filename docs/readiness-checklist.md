@@ -81,23 +81,24 @@ Goal: Separate broker tickers, listings, securities, and companies cleanly.
 
 - [x] Add first-pass broker ticker parser for Trading 212-style ticker suffixes.
 - [ ] Expand broker ticker parser with observed Trading 212 ticker patterns from the full universe.
+- [x] Expand broker ticker parser with common/sample Trading 212-style patterns.
 - [x] Confirm ISIN grouping across multiple exchange/currency listings.
-- [ ] Add manual identity merge/split overrides for cases where ISIN is missing or misleading.
+- [x] Add manual identity merge/split overrides for cases where ISIN is missing or misleading.
 - [x] Add first-pass company ID override support through ticker overrides.
-- [ ] Expand company ID override support for ADRs, dual listings, funds, trusts, and ETFs.
-- [ ] Add classification for instrument category: stock, ETF, trust, fund, warrant, crypto, forex, other.
+- [x] Expand company ID override support for ADRs, dual listings, funds, trusts, and ETFs.
+- [x] Add classification for instrument category: stock, ETF, trust, fund, warrant, crypto, forex, other.
 - [x] Add first-pass directionality flags for inverse, short, and leveraged instruments.
-- [ ] Expand flags for synthetic, hedged, accumulating, distributing, ADR, GDR, and fund-like instruments.
-- [ ] Add tests for inverse/short/leveraged markers from real tickers.
-- [ ] Add duplicate and collision reports to the manifest.
-- [ ] Add CSV output for securities and listings if needed for manual review.
-- [ ] Add identity confidence fields and reasons.
+- [x] Expand flags for synthetic, hedged, accumulating, distributing, ADR, GDR, and fund-like instruments.
+- [x] Add tests for inverse/short/leveraged markers from real tickers.
+- [x] Add duplicate and collision reports to the manifest.
+- [x] Add CSV output for securities and listings if needed for manual review.
+- [x] Add identity confidence fields and reasons.
 
 Definition of done:
 
-- [ ] One company can correctly own multiple securities/listings/tickers.
-- [ ] Ambiguous identities are exported to review queues.
-- [ ] No instrument is dropped without an explicit manifest count and reason.
+- [x] One company can correctly own multiple securities/listings/tickers.
+- [x] Ambiguous identities are exported to review queues.
+- [x] No instrument is dropped without an explicit manifest count and reason.
 
 ## Slice 4: Enrichment Provider Layer
 

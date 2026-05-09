@@ -42,7 +42,16 @@ func WriteSiteData(dir string, cat *catalogue.Catalogue) error {
 	if err := writeTickersCSV(filepath.Join(dir, "tickers.csv"), cat.Tickers); err != nil {
 		return err
 	}
+	if err := writeSecuritiesCSV(filepath.Join(dir, "securities.csv"), cat.Securities); err != nil {
+		return err
+	}
+	if err := writeListingsCSV(filepath.Join(dir, "listings.csv"), cat.Listings); err != nil {
+		return err
+	}
 	if err := writeUnclassifiedCSV(filepath.Join(dir, "unclassified.csv"), cat.Unclassified); err != nil {
+		return err
+	}
+	if err := writeIdentityIssuesCSV(filepath.Join(dir, "identity_issues.csv"), cat.IdentityIssues); err != nil {
 		return err
 	}
 	return nil
@@ -107,7 +116,7 @@ func writeTickersCSV(path string, tickers []catalogue.Ticker) error {
 	defer file.Close()
 	w := csv.NewWriter(file)
 	defer w.Flush()
-	headers := []string{"ticker", "name", "isin", "company_id", "security_id", "type", "currency", "exchange", "yahoo_symbol", "sector", "industry", "country", "market_cap", "directionality", "themes", "layers", "unclassified"}
+	headers := []string{"ticker", "name", "isin", "company_id", "security_id", "type", "instrument_category", "structure_flags", "currency", "exchange", "yahoo_symbol", "sector", "industry", "country", "market_cap", "directionality", "identity_confidence", "identity_reasons", "themes", "layers", "unclassified"}
 	if err := w.Write(headers); err != nil {
 		return err
 	}
@@ -119,6 +128,8 @@ func writeTickersCSV(path string, tickers []catalogue.Ticker) error {
 			ticker.CompanyID,
 			ticker.SecurityID,
 			ticker.Type,
+			ticker.InstrumentCategory,
+			joinCSVList(ticker.StructureFlags),
 			ticker.CurrencyCode,
 			ticker.ExchangeName,
 			ticker.YahooSymbol,
@@ -127,11 +138,64 @@ func writeTickersCSV(path string, tickers []catalogue.Ticker) error {
 			ticker.Country,
 			strconv.FormatInt(ticker.MarketCap, 10),
 			ticker.Directionality,
+			ticker.IdentityConfidence,
+			joinCSVList(ticker.IdentityReasons),
 			joinCSVList(ticker.ThemeIDs),
 			joinCSVList(ticker.LayerIDs),
 			strconv.FormatBool(ticker.Unclassified),
 		}
 		if err := w.Write(row); err != nil {
+			return err
+		}
+	}
+	return w.Error()
+}
+
+func writeSecuritiesCSV(path string, rows []catalogue.Security) error {
+	file, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	w := csv.NewWriter(file)
+	defer w.Flush()
+	if err := w.Write([]string{"security_id", "isin", "name", "type", "instrument_category", "structure_flags", "company_id", "listing_ids", "ticker_ids", "currency_set", "identity_confidence", "identity_reasons"}); err != nil {
+		return err
+	}
+	for _, row := range rows {
+		if err := w.Write([]string{
+			row.ID,
+			row.ISIN,
+			row.Name,
+			row.Type,
+			row.InstrumentCategory,
+			joinCSVList(row.StructureFlags),
+			row.CompanyID,
+			joinCSVList(row.ListingIDs),
+			joinCSVList(row.TickerIDs),
+			joinCSVList(row.CurrencySet),
+			row.IdentityConfidence,
+			joinCSVList(row.IdentityReasons),
+		}); err != nil {
+			return err
+		}
+	}
+	return w.Error()
+}
+
+func writeListingsCSV(path string, rows []catalogue.Listing) error {
+	file, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	w := csv.NewWriter(file)
+	defer w.Flush()
+	if err := w.Write([]string{"listing_id", "ticker", "security_id", "company_id", "exchange_code", "exchange_name", "currency_code"}); err != nil {
+		return err
+	}
+	for _, row := range rows {
+		if err := w.Write([]string{row.ID, row.Ticker, row.SecurityID, row.CompanyID, row.ExchangeCode, row.ExchangeName, row.CurrencyCode}); err != nil {
 			return err
 		}
 	}
@@ -151,6 +215,25 @@ func writeUnclassifiedCSV(path string, rows []catalogue.UnclassifiedRow) error {
 	}
 	for _, row := range rows {
 		if err := w.Write([]string{row.Ticker, row.CompanyID, row.Name, row.ISIN, row.Reason}); err != nil {
+			return err
+		}
+	}
+	return w.Error()
+}
+
+func writeIdentityIssuesCSV(path string, rows []catalogue.IdentityIssue) error {
+	file, err := os.Create(path)
+	if err != nil {
+		return err
+	}
+	defer file.Close()
+	w := csv.NewWriter(file)
+	defer w.Flush()
+	if err := w.Write([]string{"issue_code", "ticker", "isin", "security_id", "company_id", "name", "reason", "suggested_action"}); err != nil {
+		return err
+	}
+	for _, row := range rows {
+		if err := w.Write([]string{row.IssueCode, row.Ticker, row.ISIN, row.SecurityID, row.CompanyID, row.Name, row.Reason, row.SuggestedAction}); err != nil {
 			return err
 		}
 	}

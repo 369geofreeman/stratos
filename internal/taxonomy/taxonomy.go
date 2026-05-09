@@ -12,12 +12,13 @@ import (
 )
 
 type ManualData struct {
-	Themes           []Theme
-	SupplyChains     []SupplyChain
-	Exposures        []Exposure
-	CompanyOverrides map[string]CompanyOverride
-	TickerOverrides  map[string]TickerOverride
-	Notes            []Note
+	Themes            []Theme
+	SupplyChains      []SupplyChain
+	Exposures         []Exposure
+	CompanyOverrides  map[string]CompanyOverride
+	TickerOverrides   map[string]TickerOverride
+	IdentityOverrides []IdentityOverride
+	Notes             []Note
 }
 
 type Theme struct {
@@ -76,6 +77,22 @@ type TickerOverride struct {
 	LastReviewed string `json:"lastReviewed,omitempty"`
 }
 
+type IdentityOverride struct {
+	TargetType         string   `json:"targetType"`
+	Ticker             string   `json:"ticker,omitempty"`
+	ISIN               string   `json:"isin,omitempty"`
+	SecurityID         string   `json:"securityId,omitempty"`
+	CompanyID          string   `json:"companyId,omitempty"`
+	OverrideSecurityID string   `json:"overrideSecurityId,omitempty"`
+	OverrideCompanyID  string   `json:"overrideCompanyId,omitempty"`
+	Category           string   `json:"category,omitempty"`
+	Flags              []string `json:"flags,omitempty"`
+	Confidence         string   `json:"confidence,omitempty"`
+	Reason             string   `json:"reason,omitempty"`
+	SourceURL          string   `json:"sourceUrl,omitempty"`
+	LastReviewed       string   `json:"lastReviewed,omitempty"`
+}
+
 type Note struct {
 	TargetType string   `json:"targetType"`
 	TargetID   string   `json:"targetId"`
@@ -101,6 +118,9 @@ func Load(dir string) (ManualData, error) {
 		return ManualData{}, err
 	}
 	if data.TickerOverrides, err = LoadTickerOverrides(filepath.Join(dir, "ticker_overrides.csv")); err != nil {
+		return ManualData{}, err
+	}
+	if data.IdentityOverrides, err = LoadIdentityOverrides(filepath.Join(dir, "identity_overrides.csv")); err != nil {
 		return ManualData{}, err
 	}
 	if data.Exposures, err = LoadExposures(filepath.Join(dir, "exposures.csv")); err != nil {
@@ -247,6 +267,42 @@ func LoadTickerOverrides(path string) (map[string]TickerOverride, error) {
 	return out, nil
 }
 
+func LoadIdentityOverrides(path string) ([]IdentityOverride, error) {
+	rows, err := readCSV(path)
+	if os.IsNotExist(err) {
+		return nil, nil
+	}
+	if err != nil {
+		return nil, err
+	}
+	var out []IdentityOverride
+	for i, row := range rows {
+		if blankRow(row) {
+			continue
+		}
+		override := IdentityOverride{
+			TargetType:         row["target_type"],
+			Ticker:             row["ticker"],
+			ISIN:               row["isin"],
+			SecurityID:         row["security_id"],
+			CompanyID:          row["company_id"],
+			OverrideSecurityID: row["override_security_id"],
+			OverrideCompanyID:  row["override_company_id"],
+			Category:           row["category"],
+			Flags:              splitSemicolonList(row["flags"]),
+			Confidence:         row["confidence"],
+			Reason:             row["reason"],
+			SourceURL:          row["source_url"],
+			LastReviewed:       row["last_reviewed"],
+		}
+		if override.TargetType == "" {
+			return nil, fmt.Errorf("identity_overrides.csv row %d has empty target_type", i+2)
+		}
+		out = append(out, override)
+	}
+	return out, nil
+}
+
 func LoadExposures(path string) ([]Exposure, error) {
 	rows, err := readCSV(path)
 	if err != nil {
@@ -272,6 +328,15 @@ func LoadExposures(path string) ([]Exposure, error) {
 		})
 	}
 	return out, nil
+}
+
+func blankRow(row map[string]string) bool {
+	for _, value := range row {
+		if strings.TrimSpace(value) != "" {
+			return false
+		}
+	}
+	return true
 }
 
 func LoadNotes(dir string) ([]Note, error) {
@@ -456,6 +521,20 @@ func splitList(value string) []string {
 	return out
 }
 
+func splitSemicolonList(value string) []string {
+	parts := strings.FieldsFunc(value, func(r rune) bool {
+		return r == ';' || r == ','
+	})
+	out := make([]string, 0, len(parts))
+	for _, part := range parts {
+		part = strings.TrimSpace(part)
+		if part != "" {
+			out = append(out, part)
+		}
+	}
+	return out
+}
+
 func countIndent(line string) int {
 	return len(line) - len(strings.TrimLeft(line, " "))
 }
@@ -485,5 +564,108 @@ func Validate(data ManualData) error {
 			return fmt.Errorf("exposure references unknown layer %q for theme %q", exposure.LayerID, exposure.ThemeID)
 		}
 	}
+	if err := validateIdentityOverrides(data.IdentityOverrides); err != nil {
+		return err
+	}
 	return nil
+}
+
+func validateIdentityOverrides(overrides []IdentityOverride) error {
+	seen := map[string]IdentityOverride{}
+	for i, override := range overrides {
+		row := i + 2
+		switch override.TargetType {
+		case "ticker":
+			if override.Ticker == "" {
+				return fmt.Errorf("identity_overrides.csv row %d target_type ticker requires ticker", row)
+			}
+		case "isin":
+			if override.ISIN == "" {
+				return fmt.Errorf("identity_overrides.csv row %d target_type isin requires isin", row)
+			}
+		case "security":
+			if override.SecurityID == "" {
+				return fmt.Errorf("identity_overrides.csv row %d target_type security requires security_id", row)
+			}
+		case "company":
+			if override.CompanyID == "" {
+				return fmt.Errorf("identity_overrides.csv row %d target_type company requires company_id", row)
+			}
+		default:
+			return fmt.Errorf("identity_overrides.csv row %d has unknown target_type %q", row, override.TargetType)
+		}
+		if override.OverrideSecurityID == "" && override.OverrideCompanyID == "" && override.Category == "" && len(override.Flags) == 0 && override.Confidence == "" {
+			return fmt.Errorf("identity_overrides.csv row %d has no override fields", row)
+		}
+		if override.Category != "" && !validIdentityCategory(override.Category) {
+			return fmt.Errorf("identity_overrides.csv row %d has unknown category %q", row, override.Category)
+		}
+		if override.Confidence != "" && !validIdentityConfidence(override.Confidence) {
+			return fmt.Errorf("identity_overrides.csv row %d has unknown confidence %q", row, override.Confidence)
+		}
+		for _, flag := range override.Flags {
+			if !validIdentityFlag(flag) {
+				return fmt.Errorf("identity_overrides.csv row %d has unknown flag %q", row, flag)
+			}
+		}
+		key := identityOverrideKey(override)
+		if existing, ok := seen[key]; ok && conflictingIdentityOverride(existing, override) {
+			return fmt.Errorf("identity_overrides.csv row %d conflicts with another override for %s", row, key)
+		}
+		seen[key] = override
+	}
+	return nil
+}
+
+func identityOverrideKey(override IdentityOverride) string {
+	switch override.TargetType {
+	case "ticker":
+		return "ticker:" + override.Ticker
+	case "isin":
+		return "isin:" + override.ISIN
+	case "security":
+		return "security:" + override.SecurityID
+	case "company":
+		return "company:" + override.CompanyID
+	default:
+		return override.TargetType + ":"
+	}
+}
+
+func conflictingIdentityOverride(a, b IdentityOverride) bool {
+	return conflicts(a.OverrideSecurityID, b.OverrideSecurityID) ||
+		conflicts(a.OverrideCompanyID, b.OverrideCompanyID) ||
+		conflicts(a.Category, b.Category) ||
+		conflicts(a.Confidence, b.Confidence)
+}
+
+func conflicts(a, b string) bool {
+	return a != "" && b != "" && a != b
+}
+
+func validIdentityCategory(value string) bool {
+	switch value {
+	case "stock", "etf", "fund", "investment_trust", "warrant", "crypto", "forex", "bond", "commodity", "other":
+		return true
+	default:
+		return false
+	}
+}
+
+func validIdentityFlag(value string) bool {
+	switch value {
+	case "inverse", "short", "leveraged", "synthetic", "hedged", "accumulating", "distributing", "adr", "gdr", "fund_like":
+		return true
+	default:
+		return false
+	}
+}
+
+func validIdentityConfidence(value string) bool {
+	switch value {
+	case "manual_high", "manual_medium", "rule_high", "rule_medium", "rule_low":
+		return true
+	default:
+		return false
+	}
 }

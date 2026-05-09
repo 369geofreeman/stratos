@@ -12,8 +12,8 @@ The production site is static and suitable for GitHub Pages. A local Go CLI refr
 - Standard-library enrichment interface with versioned cache-first Yahoo-compatible provider, stale-cache diagnostics, ambiguous-match handling, and failure exports.
 - Normalized catalogue model covering instruments, securities, companies, listings, classifications, themes, supply-chain layers, exposures, sources, and unclassified rows.
 - Manual taxonomy files under `data/manual`.
-- Versioned static data contract under `site/data`, with manifest checksums and standalone securities, listings, and relationships JSON exports.
-- Static HTML/CSS/JS research UI with search, tables, supply-chain map, modal detail, watchlist, local notes/tags/colour labels, import/export, and unclassified review.
+- Versioned static data contract under `site/data`, with manifest checksums, startup/ticker-index slices, and standalone securities, listings, and relationships JSON exports.
+- Static HTML/CSS/JS research UI with sliced startup loading, bounded long-list rendering, search, tables, supply-chain map, modal detail, watchlist, local notes/tags/colour labels, import/export, and unclassified review.
 
 ## Requirements
 
@@ -62,7 +62,7 @@ make smoke
 make preview
 ```
 
-`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make update-site-data` runs refresh, tests, smoke checks, and a manifest summary. `make update-live-data` runs the same refresh flow but fails if the generated manifest still reports sample data. Large enrichment runs log progress roughly every 60 seconds. `make clean-rate-limited-enrichment-cache` removes ignored Yahoo 429 cache entries so a later retry is not blocked by cached rate-limit failures. `make smoke` verifies the expected generated `site/data` files exist, including standalone securities/listings/relationships JSON and identity/enrichment review CSVs, and checks that generated JSON files parse.
+`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make update-site-data` runs refresh, tests, smoke checks, and a manifest summary. `make update-live-data` runs the same refresh flow but fails if the generated manifest still reports sample data. Large enrichment runs log progress roughly every 60 seconds. `make clean-rate-limited-enrichment-cache` removes ignored Yahoo 429 cache entries so a later retry is not blocked by cached rate-limit failures. `make smoke` verifies the expected generated `site/data` files exist, including the app bootstrap, ticker index, standalone securities/listings/relationships JSON, JSON/CSV review queues, and identity/enrichment review CSVs, and checks that generated JSON files parse.
 
 The underlying builder remains available directly:
 
@@ -112,7 +112,7 @@ Before publishing real account data, regenerate locally with `make update-live-d
 3. Normalize broker instruments into tickers, listings, securities, and companies.
 4. Resolve enrichment through the versioned cache and optional Yahoo-compatible lookup.
 5. Apply manual overrides, themes, supply chains, exposures, and notes.
-6. Export versioned JSON/CSV to committed `site/data`, including normalized enrichment diagnostics and manifest checksum metadata.
+6. Export versioned JSON/CSV to committed `site/data`, including the full catalogue artifact, small frontend loading slices, normalized enrichment diagnostics, and manifest checksum metadata.
 
 ## Manual Taxonomy
 

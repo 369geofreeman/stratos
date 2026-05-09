@@ -25,6 +25,8 @@ var IdentityIssuesCSVHeader = []string{"issue_code", "ticker", "isin", "security
 var EnrichmentFailuresCSVHeader = []string{"ticker", "isin", "name", "provider", "attempted_symbols", "status", "error", "next_action"}
 
 var GeneratedSiteDataFiles = []string{
+	"app_bootstrap.json",
+	"tickers_index.json",
 	"catalogue.json",
 	"companies.json",
 	"sectors.json",
@@ -35,6 +37,7 @@ var GeneratedSiteDataFiles = []string{
 	"securities.json",
 	"listings.json",
 	"relationships.json",
+	"unclassified.json",
 	"tickers.csv",
 	"securities.csv",
 	"listings.csv",
@@ -45,12 +48,83 @@ var GeneratedSiteDataFiles = []string{
 }
 
 const buildManifestChecksumMode = "projection_excludes_generatedFiles"
+const appBootstrapChecksumMode = "projection_excludes_generatedFiles"
+const groupSummaryTickerLimit = 12
 
 type generatedOutput struct {
 	name          string
 	format        string
 	schemaVersion int
 	bytes         []byte
+}
+
+type AppBootstrap struct {
+	DataContractVersion int                       `json:"dataContractVersion"`
+	SchemaVersion       int                       `json:"schemaVersion"`
+	GeneratedAt         string                    `json:"generatedAt,omitempty"`
+	Manifest            catalogue.BuildManifest   `json:"manifest"`
+	Themes              []taxonomy.Theme          `json:"themes"`
+	SupplyChains        []taxonomy.SupplyChain    `json:"supplyChains"`
+	Exposures           []taxonomy.Exposure       `json:"exposures,omitempty"`
+	ThemeCounts         map[string]int            `json:"themeCounts,omitempty"`
+	Sectors             []GroupSummary            `json:"sectors"`
+	Industries          []GroupSummary            `json:"industries"`
+	Counts              AppBootstrapCounts        `json:"counts"`
+	GeneratedFiles      []catalogue.GeneratedFile `json:"generatedFiles,omitempty"`
+}
+
+type AppBootstrapCounts struct {
+	TickerCount       int `json:"tickerCount"`
+	CompanyCount      int `json:"companyCount"`
+	SecurityCount     int `json:"securityCount"`
+	ListingCount      int `json:"listingCount"`
+	ThemeCount        int `json:"themeCount"`
+	SupplyChainCount  int `json:"supplyChainCount"`
+	ExposureCount     int `json:"exposureCount"`
+	RelationshipCount int `json:"relationshipCount"`
+	UnclassifiedCount int `json:"unclassifiedCount"`
+}
+
+type GroupSummary struct {
+	ID      string   `json:"id"`
+	Name    string   `json:"name"`
+	Count   int      `json:"count"`
+	Tickers []string `json:"tickers,omitempty"`
+}
+
+type TickerIndex struct {
+	DataContractVersion int              `json:"dataContractVersion"`
+	SchemaVersion       int              `json:"schemaVersion"`
+	GeneratedAt         string           `json:"generatedAt,omitempty"`
+	Tickers             []TickerIndexRow `json:"tickers"`
+}
+
+type TickerIndexRow struct {
+	Ticker             string   `json:"ticker"`
+	Name               string   `json:"name"`
+	ISIN               string   `json:"isin,omitempty"`
+	CompanyID          string   `json:"companyId"`
+	SecurityID         string   `json:"securityId"`
+	ListingID          string   `json:"listingId"`
+	Type               string   `json:"type,omitempty"`
+	InstrumentCategory string   `json:"instrumentCategory,omitempty"`
+	StructureFlags     []string `json:"structureFlags,omitempty"`
+	CurrencyCode       string   `json:"currencyCode,omitempty"`
+	ExchangeCode       string   `json:"exchangeCode,omitempty"`
+	ExchangeName       string   `json:"exchangeName,omitempty"`
+	YahooSymbol        string   `json:"yahooSymbol,omitempty"`
+	Sector             string   `json:"sector,omitempty"`
+	Industry           string   `json:"industry,omitempty"`
+	Country            string   `json:"country,omitempty"`
+	MarketCap          int64    `json:"marketCap,omitempty"`
+	Directionality     string   `json:"directionality,omitempty"`
+	IdentityConfidence string   `json:"identityConfidence,omitempty"`
+	ThemeIDs           []string `json:"themeIds,omitempty"`
+	LayerIDs           []string `json:"layerIds,omitempty"`
+	RelatedTickers     []string `json:"relatedTickers,omitempty"`
+	LastReviewed       string   `json:"lastReviewed,omitempty"`
+	LastRefreshed      string   `json:"lastRefreshed,omitempty"`
+	Unclassified       bool     `json:"unclassified"`
 }
 
 type SearchDocument struct {
@@ -104,6 +178,7 @@ func buildSiteDataOutputs(cat *catalogue.Catalogue) ([]generatedOutput, error) {
 		name  string
 		value any
 	}{
+		{"tickers_index.json", BuildTickerIndex(&contractCat)},
 		{"catalogue.json", contractCat},
 		{"companies.json", contractCat.Companies},
 		{"sectors.json", contractCat.Sectors},
@@ -114,14 +189,19 @@ func buildSiteDataOutputs(cat *catalogue.Catalogue) ([]generatedOutput, error) {
 		{"securities.json", contractCat.Securities},
 		{"listings.json", contractCat.Listings},
 		{"relationships.json", contractCat.Relationships},
+		{"unclassified.json", contractCat.Unclassified},
 	}
-	outputs := make([]generatedOutput, 0, len(GeneratedSiteDataFiles))
+	outputByName := map[string]generatedOutput{}
 	for _, def := range defs {
-		b, err := marshalJSON(def.value)
+		marshal := marshalJSON
+		if def.name == "tickers_index.json" || def.name == "unclassified.json" {
+			marshal = marshalCompactJSON
+		}
+		b, err := marshal(def.value)
 		if err != nil {
 			return nil, err
 		}
-		outputs = append(outputs, generatedOutput{name: def.name, format: "json", schemaVersion: catalogue.DataContractSchemaVersion, bytes: b})
+		outputByName[def.name] = generatedOutput{name: def.name, format: "json", schemaVersion: catalogue.DataContractSchemaVersion, bytes: b}
 	}
 
 	csvDefs := []struct {
@@ -146,31 +226,68 @@ func buildSiteDataOutputs(cat *catalogue.Catalogue) ([]generatedOutput, error) {
 		if def.err != nil {
 			return nil, def.err
 		}
-		outputs = append(outputs, generatedOutput{name: def.name, format: "csv", schemaVersion: catalogue.DataContractSchemaVersion, bytes: def.data})
+		outputByName[def.name] = generatedOutput{name: def.name, format: "csv", schemaVersion: catalogue.DataContractSchemaVersion, bytes: def.data}
 	}
 
-	manifestProjection := contractCat.Manifest
-	manifestProjection.GeneratedFiles = nil
-	projectionBytes, err := marshalJSON(manifestProjection)
+	files, err := generatedFileMetadataForContract(contractCat, outputByName)
 	if err != nil {
 		return nil, err
 	}
-	generatedFiles := generatedFileMetadata(outputs)
-	generatedFiles = append(generatedFiles, catalogue.GeneratedFile{
-		Path:          canonicalSiteDataPath("build_manifest.json"),
-		Format:        "json",
-		SchemaVersion: catalogue.DataContractSchemaVersion,
-		SHA256:        sha256Hex(projectionBytes),
-		Bytes:         int64(len(projectionBytes)),
-		ChecksumMode:  buildManifestChecksumMode,
-	})
-	manifestBytes, _, err := marshalManifestWithFileMetadata(manifestProjection, generatedFiles)
+	appBootstrapBytes, manifestBytes, files, err := marshalCircularMetadataOutputs(contractCat, files)
 	if err != nil {
 		return nil, err
 	}
-	outputs = append(outputs, generatedOutput{name: "build_manifest.json", format: "json", schemaVersion: catalogue.DataContractSchemaVersion, bytes: manifestBytes})
+	outputByName["app_bootstrap.json"] = generatedOutput{name: "app_bootstrap.json", format: "json", schemaVersion: catalogue.DataContractSchemaVersion, bytes: appBootstrapBytes}
+	outputByName["build_manifest.json"] = generatedOutput{name: "build_manifest.json", format: "json", schemaVersion: catalogue.DataContractSchemaVersion, bytes: manifestBytes}
 
+	outputs := make([]generatedOutput, 0, len(GeneratedSiteDataFiles))
+	for _, name := range GeneratedSiteDataFiles {
+		output, ok := outputByName[name]
+		if !ok {
+			return nil, fmt.Errorf("missing generated output %s", name)
+		}
+		outputs = append(outputs, output)
+	}
 	return outputs, nil
+}
+
+func BuildTickerIndex(cat *catalogue.Catalogue) TickerIndex {
+	rows := make([]TickerIndexRow, 0, len(cat.Tickers))
+	for _, ticker := range cat.Tickers {
+		rows = append(rows, TickerIndexRow{
+			Ticker:             ticker.Ticker,
+			Name:               ticker.Name,
+			ISIN:               ticker.ISIN,
+			CompanyID:          ticker.CompanyID,
+			SecurityID:         ticker.SecurityID,
+			ListingID:          ticker.ListingID,
+			Type:               ticker.Type,
+			InstrumentCategory: ticker.InstrumentCategory,
+			StructureFlags:     ticker.StructureFlags,
+			CurrencyCode:       ticker.CurrencyCode,
+			ExchangeCode:       ticker.ExchangeCode,
+			ExchangeName:       ticker.ExchangeName,
+			YahooSymbol:        ticker.YahooSymbol,
+			Sector:             ticker.Sector,
+			Industry:           ticker.Industry,
+			Country:            ticker.Country,
+			MarketCap:          ticker.MarketCap,
+			Directionality:     ticker.Directionality,
+			IdentityConfidence: ticker.IdentityConfidence,
+			ThemeIDs:           ticker.ThemeIDs,
+			LayerIDs:           ticker.LayerIDs,
+			RelatedTickers:     ticker.RelatedTickers,
+			LastReviewed:       ticker.LastReviewed,
+			LastRefreshed:      ticker.LastRefreshed,
+			Unclassified:       ticker.Unclassified,
+		})
+	}
+	return TickerIndex{
+		DataContractVersion: catalogue.DataContractVersion,
+		SchemaVersion:       catalogue.DataContractSchemaVersion,
+		GeneratedAt:         cat.GeneratedAt,
+		Tickers:             rows,
+	}
 }
 
 func BuildSearchIndex(cat *catalogue.Catalogue) []SearchDocument {
@@ -269,6 +386,183 @@ func relationshipSortKey(row taxonomy.Relationship) string {
 	}, "\x00")
 }
 
+func generatedFileMetadataForContract(contractCat catalogue.Catalogue, outputByName map[string]generatedOutput) ([]catalogue.GeneratedFile, error) {
+	files := make([]catalogue.GeneratedFile, 0, len(GeneratedSiteDataFiles))
+
+	appBootstrapProjection := buildAppBootstrap(contractCat, nil)
+	appBootstrapProjectionBytes, err := marshalCompactJSON(appBootstrapProjection)
+	if err != nil {
+		return nil, err
+	}
+
+	manifestProjection := contractCat.Manifest
+	manifestProjection.GeneratedFiles = nil
+	manifestProjectionBytes, err := marshalJSON(manifestProjection)
+	if err != nil {
+		return nil, err
+	}
+
+	for _, name := range GeneratedSiteDataFiles {
+		switch name {
+		case "app_bootstrap.json":
+			files = append(files, catalogue.GeneratedFile{
+				Path:          canonicalSiteDataPath(name),
+				Format:        "json",
+				SchemaVersion: catalogue.DataContractSchemaVersion,
+				SHA256:        sha256Hex(appBootstrapProjectionBytes),
+				Bytes:         int64(len(appBootstrapProjectionBytes)),
+				ChecksumMode:  appBootstrapChecksumMode,
+			})
+		case "build_manifest.json":
+			files = append(files, catalogue.GeneratedFile{
+				Path:          canonicalSiteDataPath(name),
+				Format:        "json",
+				SchemaVersion: catalogue.DataContractSchemaVersion,
+				SHA256:        sha256Hex(manifestProjectionBytes),
+				Bytes:         int64(len(manifestProjectionBytes)),
+				ChecksumMode:  buildManifestChecksumMode,
+			})
+		default:
+			output, ok := outputByName[name]
+			if !ok {
+				return nil, fmt.Errorf("missing generated output metadata for %s", name)
+			}
+			files = append(files, catalogue.GeneratedFile{
+				Path:          canonicalSiteDataPath(output.name),
+				Format:        output.format,
+				SchemaVersion: output.schemaVersion,
+				SHA256:        sha256Hex(output.bytes),
+				Bytes:         int64(len(output.bytes)),
+			})
+		}
+	}
+	return files, nil
+}
+
+func marshalCircularMetadataOutputs(contractCat catalogue.Catalogue, files []catalogue.GeneratedFile) ([]byte, []byte, []catalogue.GeneratedFile, error) {
+	appBootstrapIndex := generatedFileIndex(files, "app_bootstrap.json")
+	buildManifestIndex := generatedFileIndex(files, "build_manifest.json")
+	if appBootstrapIndex < 0 || buildManifestIndex < 0 {
+		return nil, nil, nil, fmt.Errorf("app bootstrap and build manifest metadata entries are required")
+	}
+	files = append([]catalogue.GeneratedFile(nil), files...)
+
+	var appBootstrapBytes []byte
+	var manifestBytes []byte
+	for i := 0; i < 12; i++ {
+		var err error
+		appBootstrap := buildAppBootstrap(contractCat, files)
+		appBootstrapBytes, err = marshalCompactJSON(appBootstrap)
+		if err != nil {
+			return nil, nil, nil, err
+		}
+
+		manifest := contractCat.Manifest
+		manifest.GeneratedFiles = files
+		manifestBytes, err = marshalJSON(manifest)
+		if err != nil {
+			return nil, nil, nil, err
+		}
+
+		changed := false
+		if files[appBootstrapIndex].Bytes != int64(len(appBootstrapBytes)) {
+			files[appBootstrapIndex].Bytes = int64(len(appBootstrapBytes))
+			changed = true
+		}
+		if files[buildManifestIndex].Bytes != int64(len(manifestBytes)) {
+			files[buildManifestIndex].Bytes = int64(len(manifestBytes))
+			changed = true
+		}
+		if !changed {
+			return appBootstrapBytes, manifestBytes, files, nil
+		}
+	}
+
+	appBootstrap := buildAppBootstrap(contractCat, files)
+	var err error
+	appBootstrapBytes, err = marshalCompactJSON(appBootstrap)
+	if err != nil {
+		return nil, nil, nil, err
+	}
+	manifest := contractCat.Manifest
+	manifest.GeneratedFiles = files
+	manifestBytes, err = marshalJSON(manifest)
+	if err != nil {
+		return nil, nil, nil, err
+	}
+	return appBootstrapBytes, manifestBytes, files, nil
+}
+
+func generatedFileIndex(files []catalogue.GeneratedFile, name string) int {
+	path := canonicalSiteDataPath(name)
+	for i, file := range files {
+		if file.Path == path {
+			return i
+		}
+	}
+	return -1
+}
+
+func buildAppBootstrap(cat catalogue.Catalogue, generatedFiles []catalogue.GeneratedFile) AppBootstrap {
+	manifest := cat.Manifest
+	manifest.GeneratedFiles = nil
+	files := append([]catalogue.GeneratedFile(nil), generatedFiles...)
+	return AppBootstrap{
+		DataContractVersion: catalogue.DataContractVersion,
+		SchemaVersion:       catalogue.DataContractSchemaVersion,
+		GeneratedAt:         cat.GeneratedAt,
+		Manifest:            manifest,
+		Themes:              cat.Themes,
+		SupplyChains:        cat.SupplyChains,
+		Exposures:           cat.Exposures,
+		ThemeCounts:         countTickersByTheme(cat.Tickers),
+		Sectors:             summarizeGroups(cat.Sectors, groupSummaryTickerLimit),
+		Industries:          summarizeGroups(cat.Industries, groupSummaryTickerLimit),
+		Counts: AppBootstrapCounts{
+			TickerCount:       len(cat.Tickers),
+			CompanyCount:      len(cat.Companies),
+			SecurityCount:     len(cat.Securities),
+			ListingCount:      len(cat.Listings),
+			ThemeCount:        len(cat.Themes),
+			SupplyChainCount:  len(cat.SupplyChains),
+			ExposureCount:     len(cat.Exposures),
+			RelationshipCount: len(cat.Relationships),
+			UnclassifiedCount: len(cat.Unclassified),
+		},
+		GeneratedFiles: files,
+	}
+}
+
+func summarizeGroups(groups []catalogue.GroupCount, tickerLimit int) []GroupSummary {
+	out := make([]GroupSummary, 0, len(groups))
+	for _, group := range groups {
+		tickers := group.Tickers
+		if tickerLimit >= 0 && len(tickers) > tickerLimit {
+			tickers = tickers[:tickerLimit]
+		}
+		out = append(out, GroupSummary{
+			ID:      group.ID,
+			Name:    group.Name,
+			Count:   group.Count,
+			Tickers: append([]string(nil), tickers...),
+		})
+	}
+	return out
+}
+
+func countTickersByTheme(tickers []catalogue.Ticker) map[string]int {
+	out := map[string]int{}
+	for _, ticker := range tickers {
+		for _, themeID := range ticker.ThemeIDs {
+			out[themeID]++
+		}
+	}
+	if len(out) == 0 {
+		return nil
+	}
+	return out
+}
+
 func generatedFileMetadata(outputs []generatedOutput) []catalogue.GeneratedFile {
 	files := make([]catalogue.GeneratedFile, 0, len(outputs))
 	for _, output := range outputs {
@@ -319,6 +613,15 @@ func sha256Hex(b []byte) string {
 
 func marshalJSON(value any) ([]byte, error) {
 	b, err := json.MarshalIndent(value, "", "  ")
+	if err != nil {
+		return nil, fmt.Errorf("marshal JSON: %w", err)
+	}
+	b = append(b, '\n')
+	return b, nil
+}
+
+func marshalCompactJSON(value any) ([]byte, error) {
+	b, err := json.Marshal(value)
 	if err != nil {
 		return nil, fmt.Errorf("marshal JSON: %w", err)
 	}

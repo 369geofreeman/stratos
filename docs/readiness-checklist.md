@@ -169,8 +169,9 @@ Definition of done:
 
 Goal: Make the static site efficient for real research.
 
-- [x] Add first-pass loading and error state for `catalogue.json`.
-- [ ] Add robust loading and error states for every generated data file.
+- [x] Add first-pass loading and error state for `app_bootstrap.json`.
+- [x] Load the default research UI without fetching `catalogue.json`.
+- [x] Add loading and error states for frontend data slices used by the UI.
 - [ ] Add table sorting for all relevant columns.
 - [ ] Add compound filters for sector, industry, type, currency, exchange, directionality, theme, layer, confidence, and unclassified state.
 - [ ] Add search result grouping for ticker, company, ISIN, industry, theme, layer, and note text.
@@ -183,8 +184,8 @@ Goal: Make the static site efficient for real research.
 
 Definition of done:
 
-- [ ] A full catalogue remains usable without a framework or server.
-- [ ] Detail views answer identity, classification, exposure, relation, and local-note questions.
+- [x] A full catalogue remains usable without a framework or server.
+- [x] Detail views answer identity, classification, exposure, relation, and local-note questions.
 - [ ] The interface is dense, calm, and readable on desktop and mobile.
 
 ## Slice 8: Supply-Chain Map V1
@@ -305,9 +306,9 @@ Definition of done:
 Goal: Keep the site fast and usable as the catalogue grows.
 
 - [ ] Measure load time and render time with a full real catalogue.
-- [ ] Avoid rendering all heavy rows when filters are narrow.
-- [ ] Add pagination or virtualized table rendering if needed.
-- [ ] Keep search index compact.
+- [x] Avoid rendering all heavy rows when filters are narrow.
+- [x] Add pagination or virtualized table rendering if needed.
+- [x] Keep startup and table search data compact.
 - [x] Add first-pass accessible labels to key interactive controls.
 - [ ] Verify keyboard navigation for tabs, tables, modal, and local controls.
 - [x] Verify colour labels are not the only signal.
@@ -318,7 +319,7 @@ Goal: Keep the site fast and usable as the catalogue grows.
 
 Definition of done:
 
-- [ ] Full catalogue feels responsive in a normal browser.
+- [x] Full catalogue feels responsive in a normal browser.
 - [ ] Core workflows can be completed with keyboard navigation.
 - [ ] Visual meaning is available without relying only on colour.
 

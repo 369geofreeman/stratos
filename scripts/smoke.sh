@@ -2,6 +2,8 @@
 set -eu
 
 expected_files="
+site/data/app_bootstrap.json
+site/data/tickers_index.json
 site/data/catalogue.json
 site/data/tickers.csv
 site/data/companies.json
@@ -13,6 +15,7 @@ site/data/search_index.json
 site/data/securities.json
 site/data/listings.json
 site/data/relationships.json
+site/data/unclassified.json
 site/data/unclassified.csv
 site/data/identity_issues.csv
 site/data/enrichment_failures.csv
@@ -44,6 +47,8 @@ import sys
 
 ok = True
 for path in (
+    "site/data/app_bootstrap.json",
+    "site/data/tickers_index.json",
     "site/data/catalogue.json",
     "site/data/companies.json",
     "site/data/sectors.json",
@@ -54,6 +59,7 @@ for path in (
     "site/data/securities.json",
     "site/data/listings.json",
     "site/data/relationships.json",
+    "site/data/unclassified.json",
     "site/data/build_manifest.json",
 ):
     try:

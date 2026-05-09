@@ -358,6 +358,11 @@ tr:last-child td {
   font-weight: 700;
 }
 
+.supply-card > strong {
+  display: block;
+  font-size: 13px;
+}
+
 .supply-card .meta {
   margin-top: 5px;
   color: var(--muted);
@@ -467,6 +472,32 @@ tr:last-child td {
   background: var(--surface);
 }
 
+.loading {
+  display: grid;
+  gap: 5px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.loading strong {
+  font-size: 15px;
+}
+
+.loading span {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.list-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
 .exports {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -482,6 +513,42 @@ tr:last-child td {
   color: var(--blue);
   text-decoration: none;
   font-weight: 650;
+}
+
+.export-link strong,
+.export-link span {
+  display: block;
+}
+
+.export-link span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.local-export-head {
+  margin-top: 18px;
+}
+
+.detail-card {
+  margin-top: 12px;
+}
+
+.relationship-list {
+  display: grid;
+  gap: 7px;
+}
+
+.relationship-list div {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.relationship-list span {
+  color: var(--muted);
 }
 
 @media (max-width: 980px) {

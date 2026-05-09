@@ -1,11 +1,11 @@
 {
   "dataContractVersion": 1,
   "schemaVersion": 1,
-  "builtAt": "2026-05-09T19:09:20Z",
+  "builtAt": "2026-05-09T20:19:35Z",
   "sourceMode": "live_fetch",
   "trading212Environment": "live",
   "trading212BaseUrl": "https://live.trading212.com/api/v0",
-  "trading212FetchAt": "2026-05-09T19:09:20.848642Z",
+  "trading212FetchAt": "2026-05-09T20:19:35.772962Z",
   "instrumentCount": 16985,
   "exchangeCount": 17,
   "securityCount": 13772,
@@ -18,15 +18,15 @@
   "enrichmentSucceeded": 0,
   "enrichmentFailed": 16985,
   "enrichmentCacheSchemaVersion": 1,
-  "enrichmentProvider": "yahoo",
+  "enrichmentProvider": "cache",
   "enrichmentCacheHitCount": 0,
   "enrichmentCacheMissCount": 16985,
   "enrichmentCacheStaleCount": 0,
   "enrichmentAmbiguousCount": 0,
   "enrichmentFailureCount": 16985,
   "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
-  "enrichmentOldestRetrievedAt": "2026-05-09T19:09:21Z",
-  "enrichmentNewestRetrievedAt": "2026-05-09T19:16:54Z",
+  "enrichmentOldestRetrievedAt": "",
+  "enrichmentNewestRetrievedAt": "",
   "unclassifiedCount": 16975,
   "emptyTickerCount": 0,
   "duplicateTickerCount": 0,
@@ -53,12 +53,12 @@
     "short": 416,
     "synthetic": 143
   },
-  "rawSnapshotAt": "2026-05-09T19:09:20Z",
+  "rawSnapshotAt": "2026-05-09T20:19:35Z",
   "rawSnapshots": {
-    "timestamp": "2026-05-09T19:09:20Z",
+    "timestamp": "2026-05-09T20:19:35Z",
     "directory": "data/raw/trading212",
-    "instrumentsPath": "data/raw/trading212/instruments_20260509T190920Z.json",
-    "exchangesPath": "data/raw/trading212/exchanges_20260509T190920Z.json",
+    "instrumentsPath": "data/raw/trading212/instruments_20260509T201935Z.json",
+    "exchangesPath": "data/raw/trading212/exchanges_20260509T201935Z.json",
     "instrumentsLatest": "data/raw/trading212/instruments_latest.json",
     "exchangesLatest": "data/raw/trading212/exchanges_latest.json",
     "instrumentFileCount": 16985,
@@ -68,34 +68,34 @@
     {
       "endpointName": "exchanges",
       "path": "/equity/metadata/exchanges",
-      "requestStartedAt": "2026-05-09T19:09:20.848813Z",
-      "responseReceivedAt": "2026-05-09T19:09:21.022476Z",
-      "durationMillis": 173,
+      "requestStartedAt": "2026-05-09T20:19:35.772964Z",
+      "responseReceivedAt": "2026-05-09T20:19:35.943129Z",
+      "durationMillis": 170,
       "statusCode": 200,
       "status": "200 OK",
       "rateLimit": {
         "limit": "1",
         "period": "30",
         "remaining": "0",
-        "reset": "1778353791",
-        "resetAt": "2026-05-09T19:09:51Z",
+        "reset": "1778358005",
+        "resetAt": "2026-05-09T20:20:05Z",
         "used": "1"
       }
     },
     {
       "endpointName": "instruments",
       "path": "/equity/metadata/instruments",
-      "requestStartedAt": "2026-05-09T19:09:21.025435Z",
-      "responseReceivedAt": "2026-05-09T19:09:21.155563Z",
-      "durationMillis": 130,
+      "requestStartedAt": "2026-05-09T20:19:35.949692Z",
+      "responseReceivedAt": "2026-05-09T20:19:36.089425Z",
+      "durationMillis": 139,
       "statusCode": 200,
       "status": "200 OK",
       "rateLimit": {
         "limit": "1",
         "period": "50",
         "remaining": "0",
-        "reset": "1778353811",
-        "resetAt": "2026-05-09T19:10:11Z",
+        "reset": "1778358026",
+        "resetAt": "2026-05-09T20:20:26Z",
         "used": "1"
       }
     }
@@ -107,8 +107,8 @@
       "limit": "1",
       "period": "30",
       "remaining": "0",
-      "reset": "1778353791",
-      "resetAt": "2026-05-09T19:09:51Z",
+      "reset": "1778358005",
+      "resetAt": "2026-05-09T20:20:05Z",
       "used": "1"
     },
     {
@@ -117,25 +117,40 @@
       "limit": "1",
       "period": "50",
       "remaining": "0",
-      "reset": "1778353811",
-      "resetAt": "2026-05-09T19:10:11Z",
+      "reset": "1778358026",
+      "resetAt": "2026-05-09T20:20:26Z",
       "used": "1"
     }
   ],
   "dataFreshness": "0h",
   "generatedFiles": [
     {
+      "path": "site/data/app_bootstrap.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "b24c617067d6cc5c9840f48b43186364540337bb21e35093e79695f56f253065",
+      "bytes": 13879,
+      "checksumMode": "projection_excludes_generatedFiles"
+    },
+    {
+      "path": "site/data/tickers_index.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "04550f5e09e46d72760c6378d0dee387915e61677d8d07b64c528c5542045891",
+      "bytes": 7216086
+    },
+    {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "88247e1ada91d80a4dcc96301d30dfa979f51a0e7e1a028e90336761cc187ae4",
-      "bytes": 44333286
+      "sha256": "0136aa89dff00afcf5915d097e75c0935dc762b6280457ea89a5d7f29696dc33",
+      "bytes": 44333246
     },
     {
       "path": "site/data/companies.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "cf6e9b84aea280848181ea7b3d2cc483bd32f5e1cb3614f49fe0c6a0fc25f394",
+      "sha256": "2c3b8742feb83d1bfabd2530639137c7fc19460bbae6f31594c816522f59a537",
       "bytes": 5767450
     },
     {
@@ -195,6 +210,13 @@
       "bytes": 3
     },
     {
+      "path": "site/data/unclassified.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "14aaffc9416469ebf350d5cf1900fe7c2c7871ee74a070ce75f21c3379c554ba",
+      "bytes": 3095544
+    },
+    {
       "path": "site/data/tickers.csv",
       "format": "csv",
       "schemaVersion": 1,
@@ -233,15 +255,15 @@
       "path": "site/data/enrichment_failures.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "05738e2df9a6296dac2704b8e4a7597ad9407b07f840fb968234fcbf13e7201e",
-      "bytes": 3628924
+      "sha256": "d2725eadae99b4825c2805ab401f62ca7d03bea1be9d938ed9e4fb89f1a5dab5",
+      "bytes": 3177535
     },
     {
       "path": "site/data/build_manifest.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "8ff4b276bd10d0ae141ad01d57667676df4f706b1a1d16f4dc4502ff8cc9ddc8",
-      "bytes": 7315,
+      "sha256": "1a8a6158187d67cacfd103f2105d1e11499df531b7da9cdae48aaa6bdc3727d1",
+      "bytes": 7980,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

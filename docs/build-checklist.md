@@ -46,6 +46,8 @@ GOCACHE="$PWD/.gocache" go run ./cmd/statos-build refresh --no-fetch --input-raw
 
 The builder should write:
 
+- `site/data/app_bootstrap.json`
+- `site/data/tickers_index.json`
 - `site/data/catalogue.json`
 - `site/data/tickers.csv`
 - `site/data/companies.json`
@@ -57,6 +59,7 @@ The builder should write:
 - `site/data/securities.json`
 - `site/data/listings.json`
 - `site/data/relationships.json`
+- `site/data/unclassified.json`
 - `site/data/unclassified.csv`
 - `site/data/identity_issues.csv`
 - `site/data/enrichment_failures.csv`
@@ -66,7 +69,7 @@ The builder should write:
 
 ## Review
 
-- Open `site/data/build_manifest.json` and check data contract/schema versions, generated file checksum metadata, source mode, Trading 212 environment/base URL, raw snapshot paths, endpoint diagnostics, rate-limit observations, source counts, enrichment provider/cache hit/miss/stale/failure counts, unclassified counts, identity duplicate/collision counts, category/flag counts, and freshness.
+- Open `site/data/build_manifest.json` and check data contract/schema versions, generated file checksum metadata for all generated files including `app_bootstrap.json` and `tickers_index.json`, source mode, Trading 212 environment/base URL, raw snapshot paths, endpoint diagnostics, rate-limit observations, source counts, enrichment provider/cache hit/miss/stale/failure counts, unclassified counts, identity duplicate/collision counts, category/flag counts, and freshness.
 - Review `site/data/enrichment_failures.csv` for cache misses, cached provider failures, ambiguous matches, and unknown cache schema rows.
 - Review `site/data/unclassified.csv`.
 - Print taxonomy coverage without network calls:
@@ -98,7 +101,8 @@ make preview
 
 Open `http://localhost:4173` and check:
 
-- Global search returns tickers, companies, ISINs, sectors, industries, themes, and notes.
+- Initial page load does not request `site/data/catalogue.json`; the default ticker view loads from `app_bootstrap.json` and `tickers_index.json`.
+- Global search returns tickers, companies/security names, ISINs, sectors, industries, themes, and local notes/tags.
 - Supply-chain map rows contain expected cards.
 - Ticker modal has identity, classification, sources, related tickers, and local note controls.
 - Watchlist, tags, colour labels, import, and export work from browser local storage.

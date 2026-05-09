@@ -37,6 +37,21 @@
   "dataFreshness": "0h",
   "generatedFiles": [
     {
+      "path": "site/data/app_bootstrap.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "39900d977e333f2eaf99218354152b3c92eef1147ab5f24bb05e4d233860c903",
+      "bytes": 5096,
+      "checksumMode": "projection_excludes_generatedFiles"
+    },
+    {
+      "path": "site/data/tickers_index.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "030f222360bc3daa7e5afbd999dd3bd2f934157f86f266d9bbaffaf9ae328ec8",
+      "bytes": 509
+    },
+    {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 1,
@@ -107,6 +122,13 @@
       "bytes": 622
     },
     {
+      "path": "site/data/unclassified.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "38e0b9de817f645c4bec37c0d4a3e58baecccb040f5718dc069a72c7385a0bed",
+      "bytes": 5
+    },
+    {
       "path": "site/data/tickers.csv",
       "format": "csv",
       "schemaVersion": 1,
@@ -153,7 +175,7 @@
       "format": "json",
       "schemaVersion": 1,
       "sha256": "e10248da5d9efefad2463997273c9274b79c7e7d005a730e5dbdb2c0b4788463",
-      "bytes": 4682,
+      "bytes": 5376,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

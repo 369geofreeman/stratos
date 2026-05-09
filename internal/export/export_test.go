@@ -54,6 +54,27 @@ func TestStandaloneJSONExportsMatchCatalogue(t *testing.T) {
 		t.Fatal(err)
 	}
 
+	var bootstrap AppBootstrap
+	readJSON(t, filepath.Join(dir, "app_bootstrap.json"), &bootstrap)
+	if bootstrap.Manifest.GeneratedFiles != nil {
+		t.Fatalf("app_bootstrap embedded manifest should not carry generatedFiles: %#v", bootstrap.Manifest.GeneratedFiles)
+	}
+	if len(bootstrap.GeneratedFiles) != len(GeneratedSiteDataFiles) {
+		t.Fatalf("app_bootstrap generatedFiles = %d, want %d", len(bootstrap.GeneratedFiles), len(GeneratedSiteDataFiles))
+	}
+	if bootstrap.Counts.TickerCount != len(cat.Tickers) || bootstrap.Counts.CompanyCount != len(cat.Companies) {
+		t.Fatalf("app_bootstrap counts = %#v", bootstrap.Counts)
+	}
+
+	var tickerIndex TickerIndex
+	readJSON(t, filepath.Join(dir, "tickers_index.json"), &tickerIndex)
+	if len(tickerIndex.Tickers) != len(cat.Tickers) || tickerIndex.Tickers[0].Ticker != cat.Tickers[0].Ticker {
+		t.Fatalf("tickers_index.json = %#v", tickerIndex.Tickers)
+	}
+	if tickerIndex.Tickers[0].CompanyID != cat.Tickers[0].CompanyID || tickerIndex.Tickers[0].SecurityID != cat.Tickers[0].SecurityID {
+		t.Fatalf("tickers_index identity fields = %#v", tickerIndex.Tickers[0])
+	}
+
 	var securities []catalogue.Security
 	readJSON(t, filepath.Join(dir, "securities.json"), &securities)
 	if !reflect.DeepEqual(securities, cat.Securities) {
@@ -74,6 +95,12 @@ func TestStandaloneJSONExportsMatchCatalogue(t *testing.T) {
 	}
 	if relationships[0].RelationshipType != "peer" || relationships[1].RelationshipType != "substitute" {
 		t.Fatalf("relationships were not sorted deterministically: %#v", relationships)
+	}
+
+	var unclassified []catalogue.UnclassifiedRow
+	readJSON(t, filepath.Join(dir, "unclassified.json"), &unclassified)
+	if !reflect.DeepEqual(unclassified, cat.Unclassified) {
+		t.Fatalf("unclassified.json = %#v, want %#v", unclassified, cat.Unclassified)
 	}
 }
 
@@ -115,6 +142,25 @@ func TestManifestContractMetadataAndChecksumCoverage(t *testing.T) {
 		}
 		if file.Bytes != int64(len(b)) {
 			t.Fatalf("%s bytes = %d, want %d", file.Path, file.Bytes, len(b))
+		}
+		if name == "app_bootstrap.json" {
+			if file.ChecksumMode != appBootstrapChecksumMode {
+				t.Fatalf("app_bootstrap checksumMode = %q", file.ChecksumMode)
+			}
+			var bootstrap AppBootstrap
+			if err := json.Unmarshal(b, &bootstrap); err != nil {
+				t.Fatal(err)
+			}
+			projection := bootstrap
+			projection.GeneratedFiles = nil
+			projectionBytes, err := marshalCompactJSON(projection)
+			if err != nil {
+				t.Fatal(err)
+			}
+			if file.SHA256 != shaHex(projectionBytes) {
+				t.Fatalf("app_bootstrap projection sha256 = %s, want %s", file.SHA256, shaHex(projectionBytes))
+			}
+			continue
 		}
 		if name == "build_manifest.json" {
 			if file.ChecksumMode != buildManifestChecksumMode {
@@ -211,8 +257,11 @@ func TestWriteSiteDataGoldenSnapshot(t *testing.T) {
 	}
 
 	for _, name := range []string{
+		"app_bootstrap.json",
+		"tickers_index.json",
 		"build_manifest.json",
 		"catalogue.json",
+		"unclassified.json",
 		"tickers.csv",
 		"securities.csv",
 		"listings.csv",

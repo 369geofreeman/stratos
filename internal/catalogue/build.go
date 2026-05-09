@@ -197,13 +197,14 @@ func Build(input BuildInput) (*Catalogue, error) {
 		}
 
 		companyOverride := input.Manual.CompanyOverrides[companyID]
-		sector := firstNonEmpty(tickerOverride.Sector, companyOverride.Sector, profile.Sector)
-		industry := firstNonEmpty(tickerOverride.Industry, companyOverride.Industry, profile.Industry)
-		country := firstNonEmpty(tickerOverride.Country, companyOverride.Country, profile.Country)
+		classificationOverride := resolveClassificationOverrides(raw, companyID, input.Manual.ClassificationOverrides)
+		sector := firstNonEmpty(classificationOverride.Sector, tickerOverride.Sector, companyOverride.Sector, profile.Sector)
+		industry := firstNonEmpty(classificationOverride.Industry, tickerOverride.Industry, companyOverride.Industry, profile.Industry)
+		country := firstNonEmpty(classificationOverride.Country, tickerOverride.Country, companyOverride.Country, profile.Country)
 		yahooSymbol := firstNonEmpty(tickerOverride.YahooSymbol, profile.Symbol)
 		marketCap := firstNonZero(tickerOverride.MarketCap, profile.MarketCap)
 		companyName := firstNonEmpty(companyOverride.Name, tickerOverride.Name, profile.Name, raw.Name, raw.ShortName, raw.Ticker)
-		lastReviewed := firstNonEmpty(tickerOverride.LastReviewed, companyOverride.LastReviewed)
+		lastReviewed := firstNonEmpty(classificationOverride.LastReviewed, tickerOverride.LastReviewed, companyOverride.LastReviewed)
 		identitySources := identityOverride.Sources()
 
 		exchange := exchanges[raw.WorkingScheduleID]
@@ -292,7 +293,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 		company.TickerIDs = appendUnique(company.TickerIDs, raw.Ticker)
 		company.LastReviewed = firstNonEmpty(company.LastReviewed, lastReviewed)
 		company.LastRefreshed = input.BuiltAt.Format(time.RFC3339)
-		company.Sources = appendSources(company.Sources, append(identitySources, sourceFromOverride(tickerOverride), sourceFromCompanyOverride(companyOverride), sourceFromProfile(profile))...)
+		company.Sources = appendSources(company.Sources, append(append(identitySources, classificationOverride.Sources()...), sourceFromOverride(tickerOverride), sourceFromCompanyOverride(companyOverride), sourceFromProfile(profile))...)
 		company.IdentityConfidence = lowerConfidence(company.IdentityConfidence, companyConfidence)
 		company.IdentityReasons = appendUniqueMany(company.IdentityReasons, companyReasons...)
 
@@ -380,7 +381,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 			Industry:           industry,
 			Country:            country,
 			MarketCap:          marketCap,
-			Sources:            appendSources(nil, append(identitySources, sourceFromOverride(tickerOverride), sourceFromCompanyOverride(companyOverride), sourceFromProfile(profile))...),
+			Sources:            appendSources(nil, append(append(identitySources, classificationOverride.Sources()...), sourceFromOverride(tickerOverride), sourceFromCompanyOverride(companyOverride), sourceFromProfile(profile))...),
 			IdentityConfidence: tickerConfidence,
 			IdentityReasons:    appendUniqueMany(nil, identityReasons...),
 			LastReviewed:       lastReviewed,
@@ -524,6 +525,58 @@ type resolvedIdentityOverride struct {
 
 func (override resolvedIdentityOverride) Sources() []Source {
 	return override.sources
+}
+
+type resolvedClassificationOverride struct {
+	Sector       string
+	Industry     string
+	Country      string
+	LastReviewed string
+	sources      []Source
+}
+
+func (override resolvedClassificationOverride) Sources() []Source {
+	return override.sources
+}
+
+func resolveClassificationOverrides(raw trading212.Instrument, companyID string, overrides []taxonomy.ClassificationOverride) resolvedClassificationOverride {
+	resolved := resolvedClassificationOverride{}
+	// Apply broad rows first and specific rows last inside the dedicated classification file.
+	for _, targetType := range []string{"company", "isin", "ticker"} {
+		for _, override := range overrides {
+			if override.TargetType != targetType {
+				continue
+			}
+			switch override.TargetType {
+			case "company":
+				if override.CompanyID != companyID {
+					continue
+				}
+			case "isin":
+				if override.ISIN == "" || override.ISIN != raw.ISIN {
+					continue
+				}
+			case "ticker":
+				if override.Ticker != raw.Ticker {
+					continue
+				}
+			}
+			if override.Sector != "" {
+				resolved.Sector = override.Sector
+			}
+			if override.Industry != "" {
+				resolved.Industry = override.Industry
+			}
+			if override.Country != "" {
+				resolved.Country = override.Country
+			}
+			if override.LastReviewed != "" {
+				resolved.LastReviewed = override.LastReviewed
+			}
+			resolved.sources = appendSources(resolved.sources, sourceFromClassificationOverride(override))
+		}
+	}
+	return resolved
 }
 
 func resolveIdentityOverrides(raw trading212.Instrument, baseSecurityID string, companyID string, overrides []taxonomy.IdentityOverride, state *identityBuildState) resolvedIdentityOverride {
@@ -767,14 +820,16 @@ func confidenceRank(value string) int {
 	switch value {
 	case "rule_low":
 		return 1
-	case "rule_medium":
+	case "manual_low":
 		return 2
-	case "manual_medium":
+	case "rule_medium":
 		return 3
-	case "rule_high":
+	case "manual_medium":
 		return 4
-	case "manual_high":
+	case "rule_high":
 		return 5
+	case "manual_high":
+		return 6
 	default:
 		return 0
 	}
@@ -925,6 +980,13 @@ func sourceFromOverride(override taxonomy.TickerOverride) Source {
 		return Source{}
 	}
 	return Source{Kind: "manual_ticker_override", URL: override.SourceURL, Label: "Ticker override", LastReviewed: override.LastReviewed}
+}
+
+func sourceFromClassificationOverride(override taxonomy.ClassificationOverride) Source {
+	if override.SourceURL == "" && override.Sector == "" && override.Industry == "" && override.Country == "" {
+		return Source{}
+	}
+	return Source{Kind: "manual_classification_override", URL: override.SourceURL, Label: "Classification override", LastReviewed: override.LastReviewed}
 }
 
 func hasTickerEnrichmentOverride(override taxonomy.TickerOverride) bool {

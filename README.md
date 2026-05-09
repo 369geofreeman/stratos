@@ -68,9 +68,13 @@ go run ./cmd/statos-build refresh --sample
 go run ./cmd/statos-build refresh --no-fetch
 go run ./cmd/statos-build refresh --no-fetch --input-raw-dir data/raw/trading212
 go run ./cmd/statos-build sample
+go run ./cmd/statos-build taxonomy coverage
+go run ./cmd/statos-build taxonomy exposure-template
 ```
 
 `refresh --no-fetch` rebuilds from `instruments_latest.json` and `exchanges_latest.json` in `data/raw/trading212` by default. Use `--input-raw-dir` to replay an alternate raw snapshot directory. Replay does not call Trading 212 and uses cache-only enrichment.
+
+The `taxonomy coverage` and `taxonomy exposure-template` commands read generated `site/data` files only. They do not fetch Trading 212 or enrichment data.
 
 Live Trading 212 fetches read credentials only from `.env` or the process environment. Set `STATOS_TRADING212_ENV=demo` or `live`, or set `STATOS_TRADING212_BASE_URL` explicitly. Successful fetches write timestamped ignored raw files plus `*_latest.json` aliases under `data/raw/trading212`.
 
@@ -92,6 +96,7 @@ Before publishing, regenerate data locally with `make sample` or `make refresh`,
 
 - [Product readiness checklist](docs/readiness-checklist.md)
 - [Weekly build checklist](docs/build-checklist.md)
+- [Manual taxonomy workflow](docs/taxonomy-workflow.md)
 
 ## Data Flow
 
@@ -110,15 +115,23 @@ Edit these committed files:
 - `data/manual/supply_chains.yml`
 - `data/manual/company_overrides.csv`
 - `data/manual/ticker_overrides.csv`
+- `data/manual/classification_overrides.csv`
 - `data/manual/identity_overrides.csv`
 - `data/manual/exposures.csv`
+- `data/manual/relationships.csv`
 - `data/manual/notes/*.md`
 
-Exposure rows include theme, layer, target, score, confidence, source URL, rationale, and last reviewed date.
+Exposure rows include theme, layer, target, score, confidence, source URL, rationale, and last reviewed date. Exposure scores must parse as numbers from `0` to `5`, confidence must use an allowed manual/rule confidence value, source URLs must be absolute HTTP(S), and reviewed dates use `YYYY-MM-DD`.
+
+Use `classification_overrides.csv` for manual sector, industry, and country data separate from provider enrichment. It wins over legacy ticker/company classification columns, which still remain backward compatible.
+
+Use `relationships.csv` for reviewed peers, substitutes, upstream suppliers, downstream customers, and related plays. Relationship rows are loaded and validated now; full relationship graph exports are planned separately.
 
 Identity override rows can target a ticker, ISIN, security, or company and can force `override_security_id`, `override_company_id`, normalized category, structure flags, and confidence. Use this file for missing or misleading ISINs, ADR/GDR mappings, dual listings, ETFs, funds, and trusts where rule-based identity is not enough.
 
 Ticker override rows can also set enrichment overrides for `yahoo_symbol`, `sector`, `industry`, `country`, `market_cap`, `exchange`, and `currency`. `market_cap` must be an integer when present. These manual fields win over provider profile data.
+
+Detailed review steps are in [Manual Taxonomy Workflow](docs/taxonomy-workflow.md).
 
 ## Enrichment
 

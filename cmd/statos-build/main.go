@@ -3,10 +3,12 @@ package main
 import (
 	"bytes"
 	"context"
+	"encoding/csv"
 	"encoding/json"
 	"errors"
 	"flag"
 	"fmt"
+	"io"
 	"log"
 	"os"
 	"path/filepath"
@@ -37,6 +39,9 @@ func run(args []string) error {
 		command = args[0]
 		args = args[1:]
 	}
+	if command == "taxonomy" {
+		return runTaxonomy(args, os.Stdout)
+	}
 	fs := flag.NewFlagSet(command, flag.ExitOnError)
 	forceSample := fs.Bool("sample", false, "use embedded sample data")
 	manualDir := fs.String("manual-dir", "data/manual", "manual taxonomy directory")
@@ -53,7 +58,7 @@ func run(args []string) error {
 	switch command {
 	case "refresh", "sample":
 	default:
-		return fmt.Errorf("unknown command %q; use refresh or sample", command)
+		return fmt.Errorf("unknown command %q; use refresh, sample, or taxonomy", command)
 	}
 	if command == "sample" {
 		*forceSample = true
@@ -135,6 +140,279 @@ func run(args []string) error {
 	}
 	log.Printf("wrote %s: %d tickers, %d companies, %d unclassified", *siteDataDir, len(cat.Tickers), len(cat.Companies), len(cat.Unclassified))
 	return nil
+}
+
+func runTaxonomy(args []string, stdout io.Writer) error {
+	if len(args) == 0 {
+		return fmt.Errorf("taxonomy requires a subcommand: coverage or exposure-template")
+	}
+	subcommand := args[0]
+	args = args[1:]
+	switch subcommand {
+	case "coverage":
+		fs := flag.NewFlagSet("taxonomy coverage", flag.ExitOnError)
+		cataloguePath := fs.String("catalogue", "site/data/catalogue.json", "generated catalogue JSON path")
+		if err := fs.Parse(args); err != nil {
+			return err
+		}
+		cat, err := readCatalogue(*cataloguePath)
+		if err != nil {
+			return err
+		}
+		_, err = fmt.Fprint(stdout, taxonomyCoverageReport(cat))
+		return err
+	case "exposure-template":
+		fs := flag.NewFlagSet("taxonomy exposure-template", flag.ExitOnError)
+		unclassifiedPath := fs.String("unclassified", "site/data/unclassified.csv", "generated unclassified CSV path")
+		outPath := fs.String("out", "", "output CSV path; defaults to stdout")
+		allowManualOut := fs.Bool("allow-manual-out", false, "allow writing directly to data/manual/exposures.csv")
+		if err := fs.Parse(args); err != nil {
+			return err
+		}
+		rows, err := readUnclassifiedForTemplate(*unclassifiedPath)
+		if err != nil {
+			return err
+		}
+		if *outPath == "" {
+			return writeExposureTemplate(stdout, rows)
+		}
+		if !*allowManualOut && sameCleanPath(*outPath, filepath.Join("data", "manual", "exposures.csv")) {
+			return fmt.Errorf("refusing to write directly to data/manual/exposures.csv without --allow-manual-out")
+		}
+		file, err := os.Create(*outPath)
+		if err != nil {
+			return err
+		}
+		defer file.Close()
+		return writeExposureTemplate(file, rows)
+	default:
+		return fmt.Errorf("unknown taxonomy subcommand %q; use coverage or exposure-template", subcommand)
+	}
+}
+
+func readCatalogue(path string) (*catalogue.Catalogue, error) {
+	b, err := os.ReadFile(path)
+	if err != nil {
+		return nil, err
+	}
+	var cat catalogue.Catalogue
+	if err := json.Unmarshal(b, &cat); err != nil {
+		return nil, fmt.Errorf("decode catalogue %s: %w", path, err)
+	}
+	return &cat, nil
+}
+
+func taxonomyCoverageReport(cat *catalogue.Catalogue) string {
+	var b strings.Builder
+	layerByTheme := supplyChainLayers(cat)
+	exposuresByLayer := map[string][]taxonomy.Exposure{}
+	for _, exposure := range cat.Exposures {
+		exposuresByLayer[exposure.ThemeID+"|"+exposure.LayerID] = append(exposuresByLayer[exposure.ThemeID+"|"+exposure.LayerID], exposure)
+	}
+
+	fmt.Fprintln(&b, "# Theme coverage")
+	fmt.Fprintln(&b, "theme_id\ttheme_name\texposed_tickers\texposed_companies\tcovered_layers\ttotal_layers")
+	themes := append([]taxonomy.Theme(nil), cat.Themes...)
+	sort.SliceStable(themes, func(i, j int) bool { return themes[i].ID < themes[j].ID })
+	for _, theme := range themes {
+		tickerCount := countTickersForTheme(cat.Tickers, theme.ID)
+		companyCount := countCompaniesForTheme(cat.Companies, theme.ID)
+		coveredLayers := countCoveredLayers(theme.ID, layerByTheme[theme.ID], exposuresByLayer)
+		fmt.Fprintf(&b, "%s\t%s\t%d\t%d\t%d\t%d\n", theme.ID, theme.Name, tickerCount, companyCount, coveredLayers, len(layerByTheme[theme.ID]))
+	}
+
+	fmt.Fprintln(&b)
+	fmt.Fprintln(&b, "# Layer coverage")
+	fmt.Fprintln(&b, "theme_id\tlayer_id\tlayer_name\texposure_rows\tconfidence_mix")
+	for _, theme := range themes {
+		layers := append([]taxonomy.SupplyChainLayer(nil), layerByTheme[theme.ID]...)
+		sort.SliceStable(layers, func(i, j int) bool {
+			if layers[i].Order == layers[j].Order {
+				return layers[i].ID < layers[j].ID
+			}
+			return layers[i].Order < layers[j].Order
+		})
+		for _, layer := range layers {
+			exposures := exposuresByLayer[theme.ID+"|"+layer.ID]
+			fmt.Fprintf(&b, "%s\t%s\t%s\t%d\t%s\n", theme.ID, layer.ID, layer.Name, len(exposures), confidenceMix(exposures))
+		}
+	}
+
+	fmt.Fprintln(&b)
+	fmt.Fprintln(&b, "# Sector counts")
+	fmt.Fprintln(&b, "sector\tcount")
+	for _, group := range sortedGroupCounts(cat.Sectors) {
+		fmt.Fprintf(&b, "%s\t%d\n", group.Name, group.Count)
+	}
+
+	fmt.Fprintln(&b)
+	fmt.Fprintln(&b, "# Industry counts")
+	fmt.Fprintln(&b, "industry\tcount")
+	for _, group := range sortedGroupCounts(cat.Industries) {
+		fmt.Fprintf(&b, "%s\t%d\n", group.Name, group.Count)
+	}
+
+	fmt.Fprintln(&b)
+	fmt.Fprintln(&b, "# Unclassified")
+	fmt.Fprintln(&b, "unclassified_count")
+	fmt.Fprintf(&b, "%d\n", len(cat.Unclassified))
+	return b.String()
+}
+
+func supplyChainLayers(cat *catalogue.Catalogue) map[string][]taxonomy.SupplyChainLayer {
+	out := map[string][]taxonomy.SupplyChainLayer{}
+	for _, chain := range cat.SupplyChains {
+		out[chain.ThemeID] = append(out[chain.ThemeID], chain.Layers...)
+	}
+	return out
+}
+
+func countTickersForTheme(tickers []catalogue.Ticker, themeID string) int {
+	count := 0
+	for _, ticker := range tickers {
+		if contains(themeID, ticker.ThemeIDs) {
+			count++
+		}
+	}
+	return count
+}
+
+func countCompaniesForTheme(companies []catalogue.Company, themeID string) int {
+	count := 0
+	for _, company := range companies {
+		if contains(themeID, company.ThemeIDs) {
+			count++
+		}
+	}
+	return count
+}
+
+func countCoveredLayers(themeID string, layers []taxonomy.SupplyChainLayer, exposuresByLayer map[string][]taxonomy.Exposure) int {
+	count := 0
+	for _, layer := range layers {
+		if len(exposuresByLayer[themeID+"|"+layer.ID]) > 0 {
+			count++
+		}
+	}
+	return count
+}
+
+func confidenceMix(exposures []taxonomy.Exposure) string {
+	if len(exposures) == 0 {
+		return ""
+	}
+	counts := map[string]int{}
+	for _, exposure := range exposures {
+		counts[exposure.Confidence]++
+	}
+	order := []string{"manual_high", "manual_medium", "manual_low", "rule_high", "rule_medium", "rule_low"}
+	parts := []string{}
+	for _, confidence := range order {
+		if counts[confidence] > 0 {
+			parts = append(parts, fmt.Sprintf("%s=%d", confidence, counts[confidence]))
+		}
+	}
+	extras := []string{}
+	for confidence := range counts {
+		if !contains(confidence, order) {
+			extras = append(extras, confidence)
+		}
+	}
+	sort.Strings(extras)
+	for _, confidence := range extras {
+		parts = append(parts, fmt.Sprintf("%s=%d", confidence, counts[confidence]))
+	}
+	return strings.Join(parts, ";")
+}
+
+func sortedGroupCounts(groups []catalogue.GroupCount) []catalogue.GroupCount {
+	out := append([]catalogue.GroupCount(nil), groups...)
+	sort.SliceStable(out, func(i, j int) bool {
+		return out[i].Name < out[j].Name
+	})
+	return out
+}
+
+func readUnclassifiedForTemplate(path string) ([]catalogue.UnclassifiedRow, error) {
+	file, err := os.Open(path)
+	if err != nil {
+		return nil, err
+	}
+	defer file.Close()
+	reader := csv.NewReader(file)
+	reader.TrimLeadingSpace = true
+	records, err := reader.ReadAll()
+	if err != nil {
+		return nil, fmt.Errorf("%s: %w", path, err)
+	}
+	if len(records) == 0 {
+		return nil, nil
+	}
+	wantHeaders := []string{"ticker", "company_id", "name", "isin", "reason"}
+	if len(records[0]) != len(wantHeaders) {
+		return nil, fmt.Errorf("%s has unexpected unclassified header", path)
+	}
+	for i, header := range wantHeaders {
+		if strings.TrimSpace(records[0][i]) != header {
+			return nil, fmt.Errorf("%s has unexpected unclassified header column %d %q", path, i+1, records[0][i])
+		}
+	}
+	rows := []catalogue.UnclassifiedRow{}
+	seen := map[string]bool{}
+	for i, record := range records[1:] {
+		if len(record) != len(wantHeaders) {
+			return nil, fmt.Errorf("%s row %d has %d fields, want %d", path, i+2, len(record), len(wantHeaders))
+		}
+		row := catalogue.UnclassifiedRow{
+			Ticker:    strings.TrimSpace(record[0]),
+			CompanyID: strings.TrimSpace(record[1]),
+			Name:      strings.TrimSpace(record[2]),
+			ISIN:      strings.TrimSpace(record[3]),
+			Reason:    strings.TrimSpace(record[4]),
+		}
+		if row.Ticker == "" || seen[row.Ticker] {
+			continue
+		}
+		seen[row.Ticker] = true
+		rows = append(rows, row)
+	}
+	sort.SliceStable(rows, func(i, j int) bool { return rows[i].Ticker < rows[j].Ticker })
+	return rows, nil
+}
+
+func writeExposureTemplate(w io.Writer, rows []catalogue.UnclassifiedRow) error {
+	writer := csv.NewWriter(w)
+	headers := []string{"theme_id", "layer_id", "ticker", "isin", "company_id", "exposure_score", "confidence", "source_url", "rationale", "last_reviewed"}
+	if err := writer.Write(headers); err != nil {
+		return err
+	}
+	for _, row := range rows {
+		if err := writer.Write([]string{"", "", row.Ticker, row.ISIN, row.CompanyID, "", "", "", "", ""}); err != nil {
+			return err
+		}
+	}
+	writer.Flush()
+	return writer.Error()
+}
+
+func sameCleanPath(a, b string) bool {
+	cleanA := filepath.Clean(a)
+	cleanB := filepath.Clean(b)
+	if cleanA == cleanB {
+		return true
+	}
+	absA, errA := filepath.Abs(cleanA)
+	absB, errB := filepath.Abs(cleanB)
+	return errA == nil && errB == nil && absA == absB
+}
+
+func contains(value string, values []string) bool {
+	for _, existing := range values {
+		if existing == value {
+			return true
+		}
+	}
+	return false
 }
 
 type sourceOptions struct {

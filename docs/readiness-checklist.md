@@ -126,21 +126,21 @@ Definition of done:
 
 Goal: Make taxonomy improvement fast and safe.
 
-- [ ] Validate `themes.yml` and `supply_chains.yml` structure with useful error messages.
+- [x] Validate `themes.yml` and `supply_chains.yml` structure with useful error messages.
 - [x] Validate exposure rows reference known themes and layers.
-- [ ] Validate exposure scores and confidence values.
-- [ ] Validate reviewed dates and source URLs.
-- [ ] Add manual files for peer groups and relationships.
-- [ ] Add manual files for sector/industry overrides separate from provider enrichment.
-- [ ] Add note frontmatter validation.
-- [ ] Add command to print taxonomy coverage by theme, layer, sector, and industry.
-- [ ] Add command to generate empty exposure templates from unclassified rows.
-- [ ] Add docs for how to review `unclassified.csv` and update manual files.
+- [x] Validate exposure scores and confidence values.
+- [x] Validate reviewed dates and source URLs.
+- [x] Add manual files for peer groups and relationships.
+- [x] Add manual files for sector/industry overrides separate from provider enrichment.
+- [x] Add note frontmatter validation.
+- [x] Add command to print taxonomy coverage by theme, layer, sector, and industry.
+- [x] Add command to generate empty exposure templates from unclassified rows.
+- [x] Add docs for how to review `unclassified.csv` and update manual files.
 
 Definition of done:
 
-- [ ] Bad manual taxonomy fails fast before writing generated outputs.
-- [ ] Review workflow turns unclassified rows into suggested manual edits.
+- [x] Bad manual taxonomy fails fast before writing generated outputs.
+- [x] Review workflow turns unclassified rows into suggested manual edits.
 - [x] Themes can coexist without hard-coding AI infrastructure assumptions.
 
 ## Slice 6: Static Data Contract

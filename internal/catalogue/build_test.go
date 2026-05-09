@@ -344,6 +344,62 @@ func TestBuildManualEnrichmentOverridePrecedence(t *testing.T) {
 	}
 }
 
+func TestBuildClassificationOverridePrecedence(t *testing.T) {
+	manual := emptyManual()
+	manual.TickerOverrides = map[string]taxonomy.TickerOverride{
+		"ABC_US_EQ": {
+			Ticker:    "ABC_US_EQ",
+			CompanyID: "abc",
+			Sector:    "Old Manual Sector",
+			Industry:  "Old Manual Industry",
+			Country:   "Old Manual Country",
+		},
+	}
+	manual.CompanyOverrides = map[string]taxonomy.CompanyOverride{
+		"abc": {CompanyID: "abc", Sector: "Company Sector", Industry: "Company Industry", Country: "Company Country"},
+	}
+	manual.ClassificationOverrides = []taxonomy.ClassificationOverride{
+		{
+			TargetType:   "ticker",
+			Ticker:       "ABC_US_EQ",
+			Sector:       "Classification Sector",
+			Industry:     "Classification Industry",
+			Country:      "Classification Country",
+			SourceURL:    "https://example.com/classification",
+			LastReviewed: "2026-05-09",
+		},
+	}
+	cat, err := Build(BuildInput{
+		Instruments: []trading212.Instrument{
+			{Ticker: "ABC_US_EQ", Name: "ABC Corp", ISIN: "US0000000001", Type: "STOCK", CurrencyCode: "USD"},
+		},
+		Profiles: map[string]enrichment.Profile{
+			"ABC_US_EQ": {Sector: "Provider Sector", Industry: "Provider Industry", Country: "Provider Country"},
+		},
+		Manual:  manual,
+		BuiltAt: time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	ticker := findTicker(t, cat, "ABC_US_EQ")
+	if ticker.Sector != "Classification Sector" || ticker.Industry != "Classification Industry" || ticker.Country != "Classification Country" {
+		t.Fatalf("classification override did not win: %#v", ticker)
+	}
+	if ticker.LastReviewed != "2026-05-09" {
+		t.Fatalf("last reviewed = %q", ticker.LastReviewed)
+	}
+	foundSource := false
+	for _, source := range ticker.Sources {
+		if source.Kind == "manual_classification_override" {
+			foundSource = true
+		}
+	}
+	if !foundSource {
+		t.Fatalf("classification source missing: %#v", ticker.Sources)
+	}
+}
+
 func TestBuildManifestEnrichmentDiagnostics(t *testing.T) {
 	diagnostics := EnrichmentDiagnostics{
 		CacheSchemaVersion: 1,

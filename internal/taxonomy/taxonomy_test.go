@@ -93,12 +93,245 @@ func TestLoadTickerOverridesRejectsMalformedMarketCap(t *testing.T) {
 	}
 }
 
+func TestLoadCompanyOverridesRejectsMissingCompanyID(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "company_overrides.csv")
+	mustWrite(t, path, "company_id,name,sector,industry,country,source_url,last_reviewed\n"+
+		",ABC Corp,Technology,Software,United States,https://example.com,2026-05-09\n")
+	_, err := LoadCompanyOverrides(path)
+	if err == nil || !strings.Contains(err.Error(), "row 2") || !strings.Contains(err.Error(), "requires company_id") {
+		t.Fatalf("err = %v", err)
+	}
+}
+
+func TestLoadTickerOverridesRejectsMissingTicker(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "ticker_overrides.csv")
+	mustWrite(t, path, "ticker,company_id,name,sector,industry,country,yahoo_symbol,market_cap,exchange,currency,source_url,last_reviewed\n"+
+		",abc,ABC Corp,Technology,Software,United States,ABC,,,,https://example.com,2026-05-09\n")
+	_, err := LoadTickerOverrides(path)
+	if err == nil || !strings.Contains(err.Error(), "row 2") || !strings.Contains(err.Error(), "requires ticker") {
+		t.Fatalf("err = %v", err)
+	}
+}
+
 func TestLoadTickerOverridesRejectsUnknownColumn(t *testing.T) {
 	path := filepath.Join(t.TempDir(), "ticker_overrides.csv")
 	mustWrite(t, path, "ticker,unexpected\nABC_US_EQ,value\n")
 	_, err := LoadTickerOverrides(path)
-	if err == nil || !strings.Contains(err.Error(), "unknown ticker override column") {
+	if err == nil || !strings.Contains(err.Error(), "unknown column") {
 		t.Fatalf("err = %v", err)
+	}
+}
+
+func TestLoadTickerOverridesRejectsDuplicateHeaders(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "ticker_overrides.csv")
+	mustWrite(t, path, "ticker,ticker\nABC_US_EQ,XYZ_US_EQ\n")
+	_, err := LoadTickerOverrides(path)
+	requireErrContains(t, err, "duplicate header")
+}
+
+func TestLoadThemesRejectsDuplicateIDs(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "themes.yml")
+	mustWrite(t, path, `themes:
+  - id: ai
+    name: AI
+  - id: ai
+    name: Duplicate
+`)
+	_, err := LoadThemes(path)
+	requireErrContains(t, err, "duplicate theme id")
+}
+
+func TestLoadThemesRejectsMissingName(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "themes.yml")
+	mustWrite(t, path, `themes:
+  - id: ai
+    description: Missing name
+`)
+	_, err := LoadThemes(path)
+	requireErrContains(t, err, "empty name")
+}
+
+func TestLoadThemesRejectsInvalidColor(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "themes.yml")
+	mustWrite(t, path, `themes:
+  - id: ai
+    name: AI
+    color: blue
+`)
+	_, err := LoadThemes(path)
+	requireErrContains(t, err, "invalid color")
+}
+
+func TestLoadThemesRejectsUnknownYAMLField(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "themes.yml")
+	mustWrite(t, path, `themes:
+  - id: ai
+    name: AI
+    unexpected: value
+`)
+	_, err := LoadThemes(path)
+	requireErrContains(t, err, "unknown theme field")
+}
+
+func TestLoadSupplyChainsRejectsMissingAndDuplicateLayerIDs(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "supply_chains.yml")
+	mustWrite(t, path, `supply_chains:
+  - theme_id: ai
+    name: AI chain
+    layers:
+      - name: Missing ID
+        order: 10
+`)
+	_, err := LoadSupplyChains(path)
+	requireErrContains(t, err, "empty id")
+
+	mustWrite(t, path, `supply_chains:
+  - theme_id: ai
+    name: AI chain
+    layers:
+      - id: chips
+        name: Chips
+        order: 10
+      - id: chips
+        name: Duplicate
+        order: 20
+`)
+	_, err = LoadSupplyChains(path)
+	requireErrContains(t, err, "duplicate layer id")
+}
+
+func TestLoadSupplyChainsRejectsMalformedLayerOrder(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "supply_chains.yml")
+	mustWrite(t, path, `supply_chains:
+  - theme_id: ai
+    name: AI chain
+    layers:
+      - id: chips
+        name: Chips
+        order: early
+`)
+	_, err := LoadSupplyChains(path)
+	requireErrContains(t, err, "not an integer")
+}
+
+func TestLoadExposuresRejectsMalformedScore(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "exposures.csv")
+	mustWrite(t, path, exposureHeader()+"ai,chips,ABC_US_EQ,,,not-a-number,manual_high,https://example.com,test,2026-05-09\n")
+	_, err := LoadExposures(path)
+	requireErrContains(t, err, "malformed exposure_score")
+}
+
+func TestLoadExposuresRejectsScoreOutOfRange(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "exposures.csv")
+	mustWrite(t, path, exposureHeader()+"ai,chips,ABC_US_EQ,,,6,manual_high,https://example.com,test,2026-05-09\n")
+	_, err := LoadExposures(path)
+	requireErrContains(t, err, "outside 0..5")
+}
+
+func TestLoadExposuresRejectsInvalidConfidence(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "exposures.csv")
+	mustWrite(t, path, exposureHeader()+"ai,chips,ABC_US_EQ,,,3,guess,https://example.com,test,2026-05-09\n")
+	_, err := LoadExposures(path)
+	requireErrContains(t, err, "unknown confidence")
+}
+
+func TestLoadExposuresRejectsMissingTarget(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "exposures.csv")
+	mustWrite(t, path, exposureHeader()+"ai,chips,,,,3,manual_high,https://example.com,test,2026-05-09\n")
+	_, err := LoadExposures(path)
+	requireErrContains(t, err, "requires at least one")
+}
+
+func TestLoadExposuresRejectsBadDateAndURL(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "exposures.csv")
+	mustWrite(t, path, exposureHeader()+"ai,chips,ABC_US_EQ,,,3,manual_high,not-a-url,test,2026-05-09\n")
+	_, err := LoadExposures(path)
+	requireErrContains(t, err, "invalid source_url")
+
+	mustWrite(t, path, exposureHeader()+"ai,chips,ABC_US_EQ,,,3,manual_high,https://example.com,test,09/05/2026\n")
+	_, err = LoadExposures(path)
+	requireErrContains(t, err, "invalid last_reviewed")
+}
+
+func TestLoadClassificationOverrides(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "classification_overrides.csv")
+	mustWrite(t, path, "target_type,ticker,isin,company_id,sector,industry,country,source_url,last_reviewed\n"+
+		"ticker,ABC_US_EQ,,,Manual Sector,Manual Industry,Manual Country,https://example.com,2026-05-09\n")
+	overrides, err := LoadClassificationOverrides(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(overrides) != 1 || overrides[0].Ticker != "ABC_US_EQ" || overrides[0].Sector != "Manual Sector" {
+		t.Fatalf("overrides = %#v", overrides)
+	}
+}
+
+func TestLoadClassificationOverridesRejectsInvalidTarget(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "classification_overrides.csv")
+	mustWrite(t, path, "target_type,ticker,isin,company_id,sector,industry,country,source_url,last_reviewed\n"+
+		"ticker,ABC_US_EQ,US0000000001,,Manual Sector,,,https://example.com,2026-05-09\n")
+	_, err := LoadClassificationOverrides(path)
+	requireErrContains(t, err, "must not set isin")
+}
+
+func TestLoadRelationshipsValidatesRows(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "relationships.csv")
+	mustWrite(t, path, "relationship_type,source_ticker,source_isin,source_company_id,target_ticker,target_isin,target_company_id,theme_id,layer_id,confidence,source_url,rationale,last_reviewed\n"+
+		"peer,ABC_US_EQ,,,XYZ_US_EQ,,,ai,chips,manual_medium,https://example.com,Peers,2026-05-09\n")
+	rows, err := LoadRelationships(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(rows) != 1 || rows[0].RelationshipType != "peer" {
+		t.Fatalf("relationships = %#v", rows)
+	}
+
+	mustWrite(t, path, "relationship_type,source_ticker,source_isin,source_company_id,target_ticker,target_isin,target_company_id,theme_id,layer_id,confidence,source_url,rationale,last_reviewed\n"+
+		"peer,ABC_US_EQ,US0000000001,,XYZ_US_EQ,,,ai,chips,manual_medium,https://example.com,Peers,2026-05-09\n")
+	_, err = LoadRelationships(path)
+	requireErrContains(t, err, "exactly one source")
+}
+
+func TestLoadNotesValidatesFrontmatter(t *testing.T) {
+	dir := t.TempDir()
+	mustWrite(t, filepath.Join(dir, "good.md"), `---
+target_type: ticker
+target_id: ABC_US_EQ
+title: ABC note
+tags: b, a, b
+---
+
+Body.
+`)
+	notes, err := LoadNotes(dir)
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(notes) != 1 || strings.Join(notes[0].Tags, ",") != "a,b" {
+		t.Fatalf("notes = %#v", notes)
+	}
+
+	mustWrite(t, filepath.Join(dir, "bad.md"), `---
+target_type: ticker
+target_id: ABC_US_EQ
+title: Bad note
+unexpected: value
+---
+
+Body.
+`)
+	_, err = LoadNotes(dir)
+	requireErrContains(t, err, "unknown note frontmatter key")
+}
+
+func exposureHeader() string {
+	return "theme_id,layer_id,ticker,isin,company_id,exposure_score,confidence,source_url,rationale,last_reviewed\n"
+}
+
+func requireErrContains(t *testing.T, err error, want string) {
+	t.Helper()
+	if err == nil || !strings.Contains(err.Error(), want) {
+		t.Fatalf("err = %v, want substring %q", err, want)
 	}
 }
 

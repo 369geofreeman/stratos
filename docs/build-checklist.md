@@ -7,6 +7,7 @@ Use this checklist for the weekly manual refresh.
 - Confirm `.env` contains the intended Trading 212 environment.
 - Confirm no secrets, private raw snapshots, enrichment caches, or `.gocache` files are staged.
 - Review recent manual taxonomy changes under `data/manual`.
+- Keep [Manual Taxonomy Workflow](taxonomy-workflow.md) open for file purposes and validation rules.
 
 ## Refresh
 
@@ -51,8 +52,22 @@ The builder should write:
 - Open `site/data/build_manifest.json` and check source mode, Trading 212 environment/base URL, raw snapshot paths, endpoint diagnostics, rate-limit observations, source counts, enrichment provider/cache hit/miss/stale/failure counts, unclassified counts, identity duplicate/collision counts, category/flag counts, and freshness.
 - Review `site/data/enrichment_failures.csv` for cache misses, cached provider failures, ambiguous matches, and unknown cache schema rows.
 - Review `site/data/unclassified.csv`.
+- Print taxonomy coverage without network calls:
+
+```sh
+GOCACHE="$PWD/.gocache" go run ./cmd/statos-build taxonomy coverage
+```
+
+- Generate an exposure template when unclassified rows need theme/layer review:
+
+```sh
+GOCACHE="$PWD/.gocache" go run ./cmd/statos-build taxonomy exposure-template --out /tmp/statos-exposure-template.csv
+```
+
 - Review `site/data/identity_issues.csv`, `site/data/securities.csv`, and `site/data/listings.csv` for low-confidence identity mappings, duplicate tickers, shared ISIN collisions, and manual override misses.
 - Add or update exposures in `data/manual/exposures.csv`.
+- Add or update classification overrides in `data/manual/classification_overrides.csv` when provider sector, industry, or country values are missing or wrong.
+- Add or update relationship rows in `data/manual/relationships.csv` for peers, substitutes, suppliers, customers, and related plays.
 - Add notes in `data/manual/notes`.
 - Re-run `make refresh` after manual taxonomy edits.
 - Re-run `make smoke` before publishing or committing generated data.

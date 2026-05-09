@@ -1,0 +1,17 @@
+{
+  "builtAt": "2026-05-09T12:00:00Z",
+  "trading212Environment": "sample",
+  "instrumentCount": 13,
+  "exchangeCount": 2,
+  "securityCount": 13,
+  "companyCount": 13,
+  "listingCount": 13,
+  "themeCount": 7,
+  "exposureCount": 11,
+  "enrichmentAttempted": 13,
+  "enrichmentSucceeded": 12,
+  "enrichmentFailed": 1,
+  "unclassifiedCount": 2,
+  "rawSnapshotAt": "2026-05-09T12:00:00Z",
+  "dataFreshness": "0h"
+}

@@ -1,0 +1,3 @@
+ticker,company_id,name,isin,reason
+3SQQQ_US_EQ,ultrapro_short_qqq_3x_daily_etf,UltraPro Short QQQ -3X Daily ETF,US74347G4322,missing sector; missing industry; missing theme exposure
+AAPL_US_EQ,apple_inc,Apple Inc,US0378331005,missing theme exposure

@@ -1,0 +1,69 @@
+[
+  {
+    "themeId": "ai_infrastructure",
+    "name": "AI infrastructure supply chain",
+    "description": "Layered map of power, physical infrastructure, silicon, networking, and cloud demand.",
+    "layers": [
+      {
+        "id": "power_generation",
+        "name": "Power generation",
+        "description": "Generation assets and power providers exposed to data-centre load growth.",
+        "order": 10
+      },
+      {
+        "id": "grid_equipment",
+        "name": "Grid and electrical equipment",
+        "description": "Transformers, switchgear, power distribution, and grid services.",
+        "order": 20
+      },
+      {
+        "id": "cooling_and_power",
+        "name": "Data-centre cooling and power",
+        "description": "Thermal management, UPS, power shelves, and data-centre infrastructure.",
+        "order": 30
+      },
+      {
+        "id": "semiconductor_equipment",
+        "name": "Semiconductor equipment",
+        "description": "Lithography, deposition, etch, inspection, and process control.",
+        "order": 40
+      },
+      {
+        "id": "foundry_and_packaging",
+        "name": "Foundry and packaging",
+        "description": "Leading-edge wafer manufacturing and advanced packaging capacity.",
+        "order": 50
+      },
+      {
+        "id": "memory",
+        "name": "HBM and memory",
+        "description": "High-bandwidth memory and supporting memory supply.",
+        "order": 60
+      },
+      {
+        "id": "accelerators",
+        "name": "AI accelerators and ASICs",
+        "description": "GPUs, custom silicon, networking silicon, and accelerator platforms.",
+        "order": 70
+      },
+      {
+        "id": "networking",
+        "name": "Optical and networking",
+        "description": "Switching, optical interconnect, fibre, and high-speed connectivity.",
+        "order": 80
+      },
+      {
+        "id": "systems",
+        "name": "Systems and integration",
+        "description": "Servers, racks, EMS, and AI factory integration.",
+        "order": 90
+      },
+      {
+        "id": "cloud",
+        "name": "Cloud and hyperscalers",
+        "description": "Cloud platforms and AI compute buyers.",
+        "order": 100
+      }
+    ]
+  }
+]

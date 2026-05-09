@@ -1,0 +1,14 @@
+ticker,name,isin,company_id,security_id,type,currency,exchange,yahoo_symbol,sector,industry,country,market_cap,directionality,themes,layers,unclassified
+3SQQQ_US_EQ,UltraPro Short QQQ -3X Daily ETF,US74347G4322,ultrapro_short_qqq_3x_daily_etf,isin:US74347G4322,ETF,USD,NASDAQ,,,,,0,inverse_or_short,,,true
+AAPL_US_EQ,Apple Inc,US0378331005,apple_inc,isin:US0378331005,STOCK,USD,NASDAQ,AAPL,Technology,Consumer Electronics,United States,2900000000000,long_or_unlevered,,,true
+AMD_US_EQ,Advanced Micro Devices Inc,US0079031078,advanced_micro_devices_inc,isin:US0079031078,STOCK,USD,NASDAQ,AMD,Technology,Semiconductors,United States,250000000000,long_or_unlevered,ai_infrastructure,accelerators,false
+ASML_US_EQ,ASML Holding N.V.,USN070592100,asml,isin:USN070592100,STOCK,USD,NASDAQ,ASML,Technology,Semiconductor Equipment,Netherlands,350000000000,long_or_unlevered,ai_infrastructure,semiconductor_equipment,false
+AVGO_US_EQ,Broadcom Inc,US11135F1012,broadcom_inc,isin:US11135F1012,STOCK,USD,NASDAQ,AVGO,Technology,Semiconductors,United States,700000000000,long_or_unlevered,ai_infrastructure,accelerators,false
+CEG_US_EQ,Constellation Energy Corporation,US21037T1097,constellation_energy,isin:US21037T1097,STOCK,USD,NASDAQ,CEG,Utilities,Independent Power Producers,United States,90000000000,long_or_unlevered,ai_infrastructure,power_generation,false
+MSFT_US_EQ,Microsoft Corporation,US5949181045,microsoft,isin:US5949181045,STOCK,USD,NASDAQ,MSFT,Technology,Software - Infrastructure,United States,3100000000000,long_or_unlevered,ai_infrastructure,cloud,false
+MU_US_EQ,Micron Technology Inc,US5951121038,micron_technology_inc,isin:US5951121038,STOCK,USD,NASDAQ,MU,Technology,Semiconductors,United States,130000000000,long_or_unlevered,ai_infrastructure,memory,false
+NVDA_US_EQ,NVIDIA Corporation,US67066G1040,nvidia,isin:US67066G1040,STOCK,USD,NASDAQ,NVDA,Technology,Semiconductors,United States,3000000000000,long_or_unlevered,ai_infrastructure,accelerators,false
+SMCI_US_EQ,Super Micro Computer Inc,US86800U1043,super_micro_computer_inc,isin:US86800U1043,STOCK,USD,NASDAQ,SMCI,Technology,Computer Hardware,United States,30000000000,long_or_unlevered,ai_infrastructure,systems,false
+TSM_US_EQ,Taiwan Semiconductor Manufacturing Company Limited,US8740391003,taiwan_semiconductor_manufacturing_company_limited,isin:US8740391003,STOCK,USD,NYSE,TSM,Technology,Semiconductors,Taiwan,800000000000,long_or_unlevered,ai_infrastructure,foundry_and_packaging,false
+VRT_US_EQ,Vertiv Holdings Co,US92537N1081,vertiv,isin:US92537N1081,STOCK,USD,NYSE,VRT,Industrials,Electrical Equipment,United States,45000000000,long_or_unlevered,ai_infrastructure,cooling_and_power,false
+VST_US_EQ,Vistra Corp,US92840M1027,vistra_corp,isin:US92840M1027,STOCK,USD,NYSE,VST,Utilities,Independent Power Producers,United States,55000000000,long_or_unlevered,ai_infrastructure,power_generation,false

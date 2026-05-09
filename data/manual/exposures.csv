@@ -1,0 +1,12 @@
+theme_id,layer_id,ticker,isin,company_id,exposure_score,confidence,source_url,rationale,last_reviewed
+ai_infrastructure,accelerators,NVDA_US_EQ,,nvidia,5,manual_high,https://investor.nvidia.com/financial-info/quarterly-results/default.aspx,Primary merchant GPU accelerator supplier for AI training and inference.,2026-05-09
+ai_infrastructure,cloud,MSFT_US_EQ,,microsoft,4,manual_high,https://www.microsoft.com/en-us/investor,Azure is a major buyer and seller of AI infrastructure capacity.,2026-05-09
+ai_infrastructure,semiconductor_equipment,ASML_US_EQ,,asml,5,manual_high,https://www.asml.com/en/investors,Leading-edge EUV lithography exposure for advanced AI chips.,2026-05-09
+ai_infrastructure,cooling_and_power,VRT_US_EQ,,vertiv,5,manual_high,https://investors.vertiv.com/,Data-centre power and cooling infrastructure exposure.,2026-05-09
+ai_infrastructure,power_generation,CEG_US_EQ,,constellation_energy,4,manual_medium,https://www.constellationenergy.com/investors.html,Nuclear-heavy power generation exposed to data-centre electricity demand.,2026-05-09
+ai_infrastructure,accelerators,AMD_US_EQ,,advanced_micro_devices_inc,3,manual_medium,https://ir.amd.com/,GPU and accelerator alternative with data-centre AI exposure.,2026-05-09
+ai_infrastructure,accelerators,AVGO_US_EQ,,broadcom_inc,4,manual_medium,https://investors.broadcom.com/,Custom AI silicon and networking exposure.,2026-05-09
+ai_infrastructure,memory,MU_US_EQ,,micron_technology_inc,4,manual_medium,https://investors.micron.com/,High-bandwidth memory and data-centre memory exposure.,2026-05-09
+ai_infrastructure,systems,SMCI_US_EQ,,super_micro_computer_inc,4,manual_medium,https://ir.supermicro.com/,AI server and rack integration exposure.,2026-05-09
+ai_infrastructure,power_generation,VST_US_EQ,,vistra_corp,4,manual_medium,https://investor.vistracorp.com/,Power generation exposure to data-centre load growth.,2026-05-09
+ai_infrastructure,foundry_and_packaging,TSM_US_EQ,,taiwan_semiconductor_manufacturing_company_limited,5,manual_high,https://investor.tsmc.com/,Leading-edge foundry exposure for AI accelerator production.,2026-05-09

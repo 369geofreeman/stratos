@@ -1,0 +1,311 @@
+[
+  {
+    "id": "3SQQQ_US_EQ",
+    "type": "ticker",
+    "title": "3SQQQ_US_EQ",
+    "subtitle": "UltraPro Short QQQ -3X Daily ETF",
+    "text": "3SQQQ_US_EQ UltraPro Short QQQ -3X Daily ETF US74347G4322",
+    "tickers": [
+      "3SQQQ_US_EQ"
+    ]
+  },
+  {
+    "id": "AAPL_US_EQ",
+    "type": "ticker",
+    "title": "AAPL_US_EQ",
+    "subtitle": "Apple Inc",
+    "text": "AAPL_US_EQ Apple Inc US0378331005 Technology Consumer Electronics AAPL",
+    "tickers": [
+      "AAPL_US_EQ"
+    ]
+  },
+  {
+    "id": "AMD_US_EQ",
+    "type": "ticker",
+    "title": "AMD_US_EQ",
+    "subtitle": "Advanced Micro Devices Inc",
+    "text": "AMD_US_EQ Advanced Micro Devices Inc US0079031078 Technology Semiconductors AMD",
+    "tickers": [
+      "AMD_US_EQ"
+    ]
+  },
+  {
+    "id": "ASML_US_EQ",
+    "type": "ticker",
+    "title": "ASML_US_EQ",
+    "subtitle": "ASML Holding N.V.",
+    "text": "ASML_US_EQ ASML Holding N.V. USN070592100 Technology Semiconductor Equipment ASML",
+    "tickers": [
+      "ASML_US_EQ"
+    ]
+  },
+  {
+    "id": "AVGO_US_EQ",
+    "type": "ticker",
+    "title": "AVGO_US_EQ",
+    "subtitle": "Broadcom Inc",
+    "text": "AVGO_US_EQ Broadcom Inc US11135F1012 Technology Semiconductors AVGO",
+    "tickers": [
+      "AVGO_US_EQ"
+    ]
+  },
+  {
+    "id": "CEG_US_EQ",
+    "type": "ticker",
+    "title": "CEG_US_EQ",
+    "subtitle": "Constellation Energy Corporation",
+    "text": "CEG_US_EQ Constellation Energy Corporation US21037T1097 Utilities Independent Power Producers CEG",
+    "tickers": [
+      "CEG_US_EQ"
+    ]
+  },
+  {
+    "id": "MSFT_US_EQ",
+    "type": "ticker",
+    "title": "MSFT_US_EQ",
+    "subtitle": "Microsoft Corporation",
+    "text": "MSFT_US_EQ Microsoft Corporation US5949181045 Technology Software - Infrastructure MSFT",
+    "tickers": [
+      "MSFT_US_EQ"
+    ]
+  },
+  {
+    "id": "MU_US_EQ",
+    "type": "ticker",
+    "title": "MU_US_EQ",
+    "subtitle": "Micron Technology Inc",
+    "text": "MU_US_EQ Micron Technology Inc US5951121038 Technology Semiconductors MU",
+    "tickers": [
+      "MU_US_EQ"
+    ]
+  },
+  {
+    "id": "NVDA_US_EQ",
+    "type": "ticker",
+    "title": "NVDA_US_EQ",
+    "subtitle": "NVIDIA Corporation",
+    "text": "NVDA_US_EQ NVIDIA Corporation US67066G1040 Technology Semiconductors NVDA",
+    "tickers": [
+      "NVDA_US_EQ"
+    ]
+  },
+  {
+    "id": "SMCI_US_EQ",
+    "type": "ticker",
+    "title": "SMCI_US_EQ",
+    "subtitle": "Super Micro Computer Inc",
+    "text": "SMCI_US_EQ Super Micro Computer Inc US86800U1043 Technology Computer Hardware SMCI",
+    "tickers": [
+      "SMCI_US_EQ"
+    ]
+  },
+  {
+    "id": "TSM_US_EQ",
+    "type": "ticker",
+    "title": "TSM_US_EQ",
+    "subtitle": "Taiwan Semiconductor Manufacturing Company Limited",
+    "text": "TSM_US_EQ Taiwan Semiconductor Manufacturing Company Limited US8740391003 Technology Semiconductors TSM",
+    "tickers": [
+      "TSM_US_EQ"
+    ]
+  },
+  {
+    "id": "VRT_US_EQ",
+    "type": "ticker",
+    "title": "VRT_US_EQ",
+    "subtitle": "Vertiv Holdings Co",
+    "text": "VRT_US_EQ Vertiv Holdings Co US92537N1081 Industrials Electrical Equipment VRT",
+    "tickers": [
+      "VRT_US_EQ"
+    ]
+  },
+  {
+    "id": "VST_US_EQ",
+    "type": "ticker",
+    "title": "VST_US_EQ",
+    "subtitle": "Vistra Corp",
+    "text": "VST_US_EQ Vistra Corp US92840M1027 Utilities Independent Power Producers VST",
+    "tickers": [
+      "VST_US_EQ"
+    ]
+  },
+  {
+    "id": "advanced_micro_devices_inc",
+    "type": "company",
+    "title": "Advanced Micro Devices Inc",
+    "subtitle": "AMD_US_EQ",
+    "text": "advanced_micro_devices_inc Advanced Micro Devices Inc Technology Semiconductors United States AMD",
+    "tickers": [
+      "AMD_US_EQ"
+    ]
+  },
+  {
+    "id": "apple_inc",
+    "type": "company",
+    "title": "Apple Inc",
+    "subtitle": "AAPL_US_EQ",
+    "text": "apple_inc Apple Inc Technology Consumer Electronics United States AAPL",
+    "tickers": [
+      "AAPL_US_EQ"
+    ]
+  },
+  {
+    "id": "asml",
+    "type": "company",
+    "title": "ASML Holding N.V.",
+    "subtitle": "ASML_US_EQ",
+    "text": "asml ASML Holding N.V. Technology Semiconductor Equipment Netherlands ASML",
+    "tickers": [
+      "ASML_US_EQ"
+    ]
+  },
+  {
+    "id": "broadcom_inc",
+    "type": "company",
+    "title": "Broadcom Inc",
+    "subtitle": "AVGO_US_EQ",
+    "text": "broadcom_inc Broadcom Inc Technology Semiconductors United States AVGO",
+    "tickers": [
+      "AVGO_US_EQ"
+    ]
+  },
+  {
+    "id": "constellation_energy",
+    "type": "company",
+    "title": "Constellation Energy Corporation",
+    "subtitle": "CEG_US_EQ",
+    "text": "constellation_energy Constellation Energy Corporation Utilities Independent Power Producers United States CEG",
+    "tickers": [
+      "CEG_US_EQ"
+    ]
+  },
+  {
+    "id": "micron_technology_inc",
+    "type": "company",
+    "title": "Micron Technology Inc",
+    "subtitle": "MU_US_EQ",
+    "text": "micron_technology_inc Micron Technology Inc Technology Semiconductors United States MU",
+    "tickers": [
+      "MU_US_EQ"
+    ]
+  },
+  {
+    "id": "microsoft",
+    "type": "company",
+    "title": "Microsoft Corporation",
+    "subtitle": "MSFT_US_EQ",
+    "text": "microsoft Microsoft Corporation Technology Software - Infrastructure United States MSFT",
+    "tickers": [
+      "MSFT_US_EQ"
+    ]
+  },
+  {
+    "id": "nvidia",
+    "type": "company",
+    "title": "NVIDIA Corporation",
+    "subtitle": "NVDA_US_EQ",
+    "text": "nvidia NVIDIA Corporation Technology Semiconductors United States NVDA",
+    "tickers": [
+      "NVDA_US_EQ"
+    ]
+  },
+  {
+    "id": "super_micro_computer_inc",
+    "type": "company",
+    "title": "Super Micro Computer Inc",
+    "subtitle": "SMCI_US_EQ",
+    "text": "super_micro_computer_inc Super Micro Computer Inc Technology Computer Hardware United States SMCI",
+    "tickers": [
+      "SMCI_US_EQ"
+    ]
+  },
+  {
+    "id": "taiwan_semiconductor_manufacturing_company_limited",
+    "type": "company",
+    "title": "Taiwan Semiconductor Manufacturing Company Limited",
+    "subtitle": "TSM_US_EQ",
+    "text": "taiwan_semiconductor_manufacturing_company_limited Taiwan Semiconductor Manufacturing Company Limited Technology Semiconductors Taiwan TSM",
+    "tickers": [
+      "TSM_US_EQ"
+    ]
+  },
+  {
+    "id": "ultrapro_short_qqq_3x_daily_etf",
+    "type": "company",
+    "title": "UltraPro Short QQQ -3X Daily ETF",
+    "subtitle": "3SQQQ_US_EQ",
+    "text": "ultrapro_short_qqq_3x_daily_etf UltraPro Short QQQ -3X Daily ETF",
+    "tickers": [
+      "3SQQQ_US_EQ"
+    ]
+  },
+  {
+    "id": "vertiv",
+    "type": "company",
+    "title": "Vertiv Holdings Co",
+    "subtitle": "VRT_US_EQ",
+    "text": "vertiv Vertiv Holdings Co Industrials Electrical Equipment United States VRT",
+    "tickers": [
+      "VRT_US_EQ"
+    ]
+  },
+  {
+    "id": "vistra_corp",
+    "type": "company",
+    "title": "Vistra Corp",
+    "subtitle": "VST_US_EQ",
+    "text": "vistra_corp Vistra Corp Utilities Independent Power Producers United States VST",
+    "tickers": [
+      "VST_US_EQ"
+    ]
+  },
+  {
+    "id": "ai_infrastructure",
+    "type": "theme",
+    "title": "AI infrastructure",
+    "text": "ai_infrastructure AI infrastructure Physical and silicon supply chain for training and inference buildout."
+  },
+  {
+    "id": "energy",
+    "type": "theme",
+    "title": "Energy",
+    "text": "energy Energy Power generation, grid, storage, fuels, and efficiency."
+  },
+  {
+    "id": "defence",
+    "type": "theme",
+    "title": "Defence",
+    "text": "defence Defence Defence primes, electronics, autonomy, cyber, and industrial capacity."
+  },
+  {
+    "id": "healthcare",
+    "type": "theme",
+    "title": "Healthcare",
+    "text": "healthcare Healthcare Biopharma, devices, tools, care delivery, and healthcare infrastructure."
+  },
+  {
+    "id": "fintech",
+    "type": "theme",
+    "title": "Fintech",
+    "text": "fintech Fintech Payments, capital markets infrastructure, banking software, and data rails."
+  },
+  {
+    "id": "semiconductors",
+    "type": "theme",
+    "title": "Semiconductors",
+    "text": "semiconductors Semiconductors Semiconductor equipment, materials, manufacturing, memory, logic, and design."
+  },
+  {
+    "id": "commodities",
+    "type": "theme",
+    "title": "Commodities",
+    "text": "commodities Commodities Miners, processors, transport, and end-market commodity exposure."
+  },
+  {
+    "id": "data/manual/notes/ai-infrastructure.md",
+    "type": "note",
+    "title": "AI infrastructure starting taxonomy",
+    "subtitle": "theme:ai_infrastructure",
+    "text": "AI infrastructure starting taxonomy theme ai_infrastructure Initial taxonomy focuses on the loop from power and electrical infrastructure through silicon, systems, networking, and cloud demand. Scores are deliberately conservative until reviewed against filings and transcripts."
+  }
+]

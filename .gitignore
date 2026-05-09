@@ -1,0 +1,15 @@
+.env
+.DS_Store
+
+# Private/generated local data.
+data/raw/
+data/cache/
+
+# Go/editor noise.
+.gocache/
+bin/
+coverage.out
+*.test
+
+# Logs.
+*.log

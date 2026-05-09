@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Statos</title>
+    <link rel="stylesheet" href="assets/styles.css">
+  </head>
+  <body>
+    <main class="app">
+      <header class="topbar">
+        <div>
+          <h1>Statos</h1>
+          <p id="buildMeta">Loading catalogue...</p>
+        </div>
+        <div class="searchbar">
+          <input id="globalSearch" type="search" placeholder="Search ticker, company, ISIN, industry, theme, or note">
+          <select id="themeFilter" aria-label="Theme filter"></select>
+          <select id="sectorFilter" aria-label="Sector filter"></select>
+          <select id="localFilter" aria-label="Local filter">
+            <option value="">All local states</option>
+            <option value="watchlist">Watchlist</option>
+            <option value="tagged">Tagged</option>
+            <option value="coloured">Colour labelled</option>
+          </select>
+        </div>
+      </header>
+
+      <section class="metrics" id="metrics"></section>
+
+      <nav class="tabs" aria-label="Views">
+        <button class="active" data-view="tickers">Tickers</button>
+        <button data-view="themes">Themes</button>
+        <button data-view="supply">Supply chain</button>
+        <button data-view="sectors">Sectors</button>
+        <button data-view="watchlist">Watchlist</button>
+        <button data-view="unclassified">Unclassified</button>
+        <button data-view="exports">Exports</button>
+      </nav>
+
+      <section id="content" class="content"></section>
+    </main>
+
+    <dialog id="detailModal" class="modal">
+      <form method="dialog" class="modal-head">
+        <div>
+          <h2 id="modalTitle"></h2>
+          <p id="modalSubtitle"></p>
+        </div>
+        <button value="close" class="icon-button" aria-label="Close">Close</button>
+      </form>
+      <div id="modalBody" class="modal-body"></div>
+    </dialog>
+
+    <input id="importFile" type="file" accept="application/json" hidden>
+    <script src="assets/app.js"></script>
+  </body>
+</html>

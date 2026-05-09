@@ -1,0 +1,6 @@
+company_id,name,sector,industry,country,source_url,last_reviewed
+nvidia,NVIDIA Corporation,Technology,Semiconductors,United States,https://www.nvidia.com/en-us/about-nvidia/,2026-05-09
+microsoft,Microsoft Corporation,Technology,Software - Infrastructure,United States,https://www.microsoft.com/en-us/investor,2026-05-09
+asml,ASML Holding N.V.,Technology,Semiconductor Equipment,Netherlands,https://www.asml.com/en/investors,2026-05-09
+vertiv,Vertiv Holdings Co,Industrials,Electrical Equipment,United States,https://investors.vertiv.com/,2026-05-09
+constellation_energy,Constellation Energy Corporation,Utilities,Independent Power Producers,United States,https://www.constellationenergy.com/investors.html,2026-05-09

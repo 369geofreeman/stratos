@@ -1,0 +1,1785 @@
+{
+  "manifest": {
+    "builtAt": "2026-05-09T12:00:00Z",
+    "trading212Environment": "sample",
+    "instrumentCount": 13,
+    "exchangeCount": 2,
+    "securityCount": 13,
+    "companyCount": 13,
+    "listingCount": 13,
+    "themeCount": 7,
+    "exposureCount": 11,
+    "enrichmentAttempted": 13,
+    "enrichmentSucceeded": 12,
+    "enrichmentFailed": 1,
+    "unclassifiedCount": 2,
+    "rawSnapshotAt": "2026-05-09T12:00:00Z",
+    "dataFreshness": "0h"
+  },
+  "tickers": [
+    {
+      "ticker": "3SQQQ_US_EQ",
+      "brokerSymbol": "3SQQQ",
+      "name": "UltraPro Short QQQ -3X Daily ETF",
+      "shortName": "Short QQQ 3x",
+      "type": "ETF",
+      "currencyCode": "USD",
+      "isin": "US74347G4322",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US74347G4322",
+      "companyId": "ultrapro_short_qqq_3x_daily_etf",
+      "listingId": "3SQQQ_US_EQ",
+      "directionality": "inverse_or_short",
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": true
+    },
+    {
+      "ticker": "AAPL_US_EQ",
+      "brokerSymbol": "AAPL",
+      "name": "Apple Inc",
+      "shortName": "Apple",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US0378331005",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US0378331005",
+      "companyId": "apple_inc",
+      "listingId": "AAPL_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "AAPL",
+      "sector": "Technology",
+      "industry": "Consumer Electronics",
+      "country": "United States",
+      "marketCap": 2900000000000,
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": true
+    },
+    {
+      "ticker": "AMD_US_EQ",
+      "brokerSymbol": "AMD",
+      "name": "Advanced Micro Devices Inc",
+      "shortName": "AMD",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US0079031078",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US0079031078",
+      "companyId": "advanced_micro_devices_inc",
+      "listingId": "AMD_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "AMD",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "United States",
+      "marketCap": 250000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "accelerators"
+      ],
+      "relatedTickers": [
+        "AVGO_US_EQ",
+        "MU_US_EQ",
+        "NVDA_US_EQ",
+        "TSM_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "ASML_US_EQ",
+      "brokerSymbol": "ASML",
+      "name": "ASML Holding N.V.",
+      "shortName": "ASML",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "USN070592100",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:USN070592100",
+      "companyId": "asml",
+      "listingId": "ASML_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "ASML",
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment",
+      "country": "Netherlands",
+      "marketCap": 350000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "semiconductor_equipment"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://www.asml.com/en/investors",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://www.asml.com/en/investors",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "AVGO_US_EQ",
+      "brokerSymbol": "AVGO",
+      "name": "Broadcom Inc",
+      "shortName": "Broadcom",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US11135F1012",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US11135F1012",
+      "companyId": "broadcom_inc",
+      "listingId": "AVGO_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "AVGO",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "United States",
+      "marketCap": 700000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "accelerators"
+      ],
+      "relatedTickers": [
+        "AMD_US_EQ",
+        "MU_US_EQ",
+        "NVDA_US_EQ",
+        "TSM_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "CEG_US_EQ",
+      "brokerSymbol": "CEG",
+      "name": "Constellation Energy Corporation",
+      "shortName": "Constellation Energy",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US21037T1097",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US21037T1097",
+      "companyId": "constellation_energy",
+      "listingId": "CEG_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "CEG",
+      "sector": "Utilities",
+      "industry": "Independent Power Producers",
+      "country": "United States",
+      "marketCap": 90000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "power_generation"
+      ],
+      "relatedTickers": [
+        "VST_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://www.constellationenergy.com/investors.html",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://www.constellationenergy.com/investors.html",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "MSFT_US_EQ",
+      "brokerSymbol": "MSFT",
+      "name": "Microsoft Corporation",
+      "shortName": "Microsoft",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US5949181045",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US5949181045",
+      "companyId": "microsoft",
+      "listingId": "MSFT_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "MSFT",
+      "sector": "Technology",
+      "industry": "Software - Infrastructure",
+      "country": "United States",
+      "marketCap": 3100000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "cloud"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://www.microsoft.com/en-us/investor",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://www.microsoft.com/en-us/investor",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "MU_US_EQ",
+      "brokerSymbol": "MU",
+      "name": "Micron Technology Inc",
+      "shortName": "Micron",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US5951121038",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US5951121038",
+      "companyId": "micron_technology_inc",
+      "listingId": "MU_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "MU",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "United States",
+      "marketCap": 130000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "memory"
+      ],
+      "relatedTickers": [
+        "AMD_US_EQ",
+        "AVGO_US_EQ",
+        "NVDA_US_EQ",
+        "TSM_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "NVDA_US_EQ",
+      "brokerSymbol": "NVDA",
+      "name": "NVIDIA Corporation",
+      "shortName": "NVIDIA",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US67066G1040",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US67066G1040",
+      "companyId": "nvidia",
+      "listingId": "NVDA_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "NVDA",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "United States",
+      "marketCap": 3000000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "accelerators"
+      ],
+      "relatedTickers": [
+        "AMD_US_EQ",
+        "AVGO_US_EQ",
+        "MU_US_EQ",
+        "TSM_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://www.nvidia.com/en-us/about-nvidia/",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://www.nvidia.com/en-us/about-nvidia/",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "SMCI_US_EQ",
+      "brokerSymbol": "SMCI",
+      "name": "Super Micro Computer Inc",
+      "shortName": "Supermicro",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US86800U1043",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "workingScheduleId": 1,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US86800U1043",
+      "companyId": "super_micro_computer_inc",
+      "listingId": "SMCI_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "SMCI",
+      "sector": "Technology",
+      "industry": "Computer Hardware",
+      "country": "United States",
+      "marketCap": 30000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "systems"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "TSM_US_EQ",
+      "brokerSymbol": "TSM",
+      "name": "Taiwan Semiconductor Manufacturing Company Limited",
+      "shortName": "TSMC",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US8740391003",
+      "exchangeCode": "US",
+      "exchangeName": "NYSE",
+      "workingScheduleId": 2,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US8740391003",
+      "companyId": "taiwan_semiconductor_manufacturing_company_limited",
+      "listingId": "TSM_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "TSM",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "Taiwan",
+      "marketCap": 800000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "foundry_and_packaging"
+      ],
+      "relatedTickers": [
+        "AMD_US_EQ",
+        "AVGO_US_EQ",
+        "MU_US_EQ",
+        "NVDA_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "VRT_US_EQ",
+      "brokerSymbol": "VRT",
+      "name": "Vertiv Holdings Co",
+      "shortName": "Vertiv",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US92537N1081",
+      "exchangeCode": "US",
+      "exchangeName": "NYSE",
+      "workingScheduleId": 2,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US92537N1081",
+      "companyId": "vertiv",
+      "listingId": "VRT_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "VRT",
+      "sector": "Industrials",
+      "industry": "Electrical Equipment",
+      "country": "United States",
+      "marketCap": 45000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "cooling_and_power"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://investors.vertiv.com/",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://investors.vertiv.com/",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    },
+    {
+      "ticker": "VST_US_EQ",
+      "brokerSymbol": "VST",
+      "name": "Vistra Corp",
+      "shortName": "Vistra",
+      "type": "STOCK",
+      "currencyCode": "USD",
+      "isin": "US92840M1027",
+      "exchangeCode": "US",
+      "exchangeName": "NYSE",
+      "workingScheduleId": 2,
+      "maxOpenQuantity": 100000,
+      "extendedHours": true,
+      "securityId": "isin:US92840M1027",
+      "companyId": "vistra_corp",
+      "listingId": "VST_US_EQ",
+      "directionality": "long_or_unlevered",
+      "yahooSymbol": "VST",
+      "sector": "Utilities",
+      "industry": "Independent Power Producers",
+      "country": "United States",
+      "marketCap": 55000000000,
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "power_generation"
+      ],
+      "relatedTickers": [
+        "CEG_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z",
+      "unclassified": false
+    }
+  ],
+  "securities": [
+    {
+      "id": "isin:US0079031078",
+      "isin": "US0079031078",
+      "name": "Advanced Micro Devices Inc",
+      "type": "STOCK",
+      "companyId": "advanced_micro_devices_inc",
+      "listingIds": [
+        "AMD_US_EQ"
+      ],
+      "tickerIds": [
+        "AMD_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US0378331005",
+      "isin": "US0378331005",
+      "name": "Apple Inc",
+      "type": "STOCK",
+      "companyId": "apple_inc",
+      "listingIds": [
+        "AAPL_US_EQ"
+      ],
+      "tickerIds": [
+        "AAPL_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US11135F1012",
+      "isin": "US11135F1012",
+      "name": "Broadcom Inc",
+      "type": "STOCK",
+      "companyId": "broadcom_inc",
+      "listingIds": [
+        "AVGO_US_EQ"
+      ],
+      "tickerIds": [
+        "AVGO_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US21037T1097",
+      "isin": "US21037T1097",
+      "name": "Constellation Energy Corporation",
+      "type": "STOCK",
+      "companyId": "constellation_energy",
+      "listingIds": [
+        "CEG_US_EQ"
+      ],
+      "tickerIds": [
+        "CEG_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US5949181045",
+      "isin": "US5949181045",
+      "name": "Microsoft Corporation",
+      "type": "STOCK",
+      "companyId": "microsoft",
+      "listingIds": [
+        "MSFT_US_EQ"
+      ],
+      "tickerIds": [
+        "MSFT_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US5951121038",
+      "isin": "US5951121038",
+      "name": "Micron Technology Inc",
+      "type": "STOCK",
+      "companyId": "micron_technology_inc",
+      "listingIds": [
+        "MU_US_EQ"
+      ],
+      "tickerIds": [
+        "MU_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US67066G1040",
+      "isin": "US67066G1040",
+      "name": "NVIDIA Corporation",
+      "type": "STOCK",
+      "companyId": "nvidia",
+      "listingIds": [
+        "NVDA_US_EQ"
+      ],
+      "tickerIds": [
+        "NVDA_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US74347G4322",
+      "isin": "US74347G4322",
+      "name": "UltraPro Short QQQ -3X Daily ETF",
+      "type": "ETF",
+      "companyId": "ultrapro_short_qqq_3x_daily_etf",
+      "listingIds": [
+        "3SQQQ_US_EQ"
+      ],
+      "tickerIds": [
+        "3SQQQ_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US86800U1043",
+      "isin": "US86800U1043",
+      "name": "Super Micro Computer Inc",
+      "type": "STOCK",
+      "companyId": "super_micro_computer_inc",
+      "listingIds": [
+        "SMCI_US_EQ"
+      ],
+      "tickerIds": [
+        "SMCI_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US8740391003",
+      "isin": "US8740391003",
+      "name": "Taiwan Semiconductor Manufacturing Company Limited",
+      "type": "STOCK",
+      "companyId": "taiwan_semiconductor_manufacturing_company_limited",
+      "listingIds": [
+        "TSM_US_EQ"
+      ],
+      "tickerIds": [
+        "TSM_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US92537N1081",
+      "isin": "US92537N1081",
+      "name": "Vertiv Holdings Co",
+      "type": "STOCK",
+      "companyId": "vertiv",
+      "listingIds": [
+        "VRT_US_EQ"
+      ],
+      "tickerIds": [
+        "VRT_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:US92840M1027",
+      "isin": "US92840M1027",
+      "name": "Vistra Corp",
+      "type": "STOCK",
+      "companyId": "vistra_corp",
+      "listingIds": [
+        "VST_US_EQ"
+      ],
+      "tickerIds": [
+        "VST_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    },
+    {
+      "id": "isin:USN070592100",
+      "isin": "USN070592100",
+      "name": "ASML Holding N.V.",
+      "type": "STOCK",
+      "companyId": "asml",
+      "listingIds": [
+        "ASML_US_EQ"
+      ],
+      "tickerIds": [
+        "ASML_US_EQ"
+      ],
+      "currencySet": [
+        "USD"
+      ]
+    }
+  ],
+  "listings": [
+    {
+      "id": "3SQQQ_US_EQ",
+      "ticker": "3SQQQ_US_EQ",
+      "securityId": "isin:US74347G4322",
+      "companyId": "ultrapro_short_qqq_3x_daily_etf",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "AAPL_US_EQ",
+      "ticker": "AAPL_US_EQ",
+      "securityId": "isin:US0378331005",
+      "companyId": "apple_inc",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "AMD_US_EQ",
+      "ticker": "AMD_US_EQ",
+      "securityId": "isin:US0079031078",
+      "companyId": "advanced_micro_devices_inc",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "ASML_US_EQ",
+      "ticker": "ASML_US_EQ",
+      "securityId": "isin:USN070592100",
+      "companyId": "asml",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "AVGO_US_EQ",
+      "ticker": "AVGO_US_EQ",
+      "securityId": "isin:US11135F1012",
+      "companyId": "broadcom_inc",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "CEG_US_EQ",
+      "ticker": "CEG_US_EQ",
+      "securityId": "isin:US21037T1097",
+      "companyId": "constellation_energy",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "MSFT_US_EQ",
+      "ticker": "MSFT_US_EQ",
+      "securityId": "isin:US5949181045",
+      "companyId": "microsoft",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "MU_US_EQ",
+      "ticker": "MU_US_EQ",
+      "securityId": "isin:US5951121038",
+      "companyId": "micron_technology_inc",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "NVDA_US_EQ",
+      "ticker": "NVDA_US_EQ",
+      "securityId": "isin:US67066G1040",
+      "companyId": "nvidia",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "SMCI_US_EQ",
+      "ticker": "SMCI_US_EQ",
+      "securityId": "isin:US86800U1043",
+      "companyId": "super_micro_computer_inc",
+      "exchangeCode": "US",
+      "exchangeName": "NASDAQ",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "TSM_US_EQ",
+      "ticker": "TSM_US_EQ",
+      "securityId": "isin:US8740391003",
+      "companyId": "taiwan_semiconductor_manufacturing_company_limited",
+      "exchangeCode": "US",
+      "exchangeName": "NYSE",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "VRT_US_EQ",
+      "ticker": "VRT_US_EQ",
+      "securityId": "isin:US92537N1081",
+      "companyId": "vertiv",
+      "exchangeCode": "US",
+      "exchangeName": "NYSE",
+      "currencyCode": "USD"
+    },
+    {
+      "id": "VST_US_EQ",
+      "ticker": "VST_US_EQ",
+      "securityId": "isin:US92840M1027",
+      "companyId": "vistra_corp",
+      "exchangeCode": "US",
+      "exchangeName": "NYSE",
+      "currencyCode": "USD"
+    }
+  ],
+  "companies": [
+    {
+      "id": "advanced_micro_devices_inc",
+      "name": "Advanced Micro Devices Inc",
+      "primaryTicker": "AMD_US_EQ",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "United States",
+      "yahooSymbol": "AMD",
+      "marketCap": 250000000000,
+      "securityIds": [
+        "isin:US0079031078"
+      ],
+      "listingIds": [
+        "AMD_US_EQ"
+      ],
+      "tickerIds": [
+        "AMD_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "accelerators"
+      ],
+      "relatedTickers": [
+        "AVGO_US_EQ",
+        "MU_US_EQ",
+        "NVDA_US_EQ",
+        "TSM_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "apple_inc",
+      "name": "Apple Inc",
+      "primaryTicker": "AAPL_US_EQ",
+      "sector": "Technology",
+      "industry": "Consumer Electronics",
+      "country": "United States",
+      "yahooSymbol": "AAPL",
+      "marketCap": 2900000000000,
+      "securityIds": [
+        "isin:US0378331005"
+      ],
+      "listingIds": [
+        "AAPL_US_EQ"
+      ],
+      "tickerIds": [
+        "AAPL_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "asml",
+      "name": "ASML Holding N.V.",
+      "primaryTicker": "ASML_US_EQ",
+      "sector": "Technology",
+      "industry": "Semiconductor Equipment",
+      "country": "Netherlands",
+      "yahooSymbol": "ASML",
+      "marketCap": 350000000000,
+      "securityIds": [
+        "isin:USN070592100"
+      ],
+      "listingIds": [
+        "ASML_US_EQ"
+      ],
+      "tickerIds": [
+        "ASML_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "semiconductor_equipment"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://www.asml.com/en/investors",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://www.asml.com/en/investors",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "broadcom_inc",
+      "name": "Broadcom Inc",
+      "primaryTicker": "AVGO_US_EQ",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "United States",
+      "yahooSymbol": "AVGO",
+      "marketCap": 700000000000,
+      "securityIds": [
+        "isin:US11135F1012"
+      ],
+      "listingIds": [
+        "AVGO_US_EQ"
+      ],
+      "tickerIds": [
+        "AVGO_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "accelerators"
+      ],
+      "relatedTickers": [
+        "AMD_US_EQ",
+        "MU_US_EQ",
+        "NVDA_US_EQ",
+        "TSM_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "constellation_energy",
+      "name": "Constellation Energy Corporation",
+      "primaryTicker": "CEG_US_EQ",
+      "sector": "Utilities",
+      "industry": "Independent Power Producers",
+      "country": "United States",
+      "yahooSymbol": "CEG",
+      "marketCap": 90000000000,
+      "securityIds": [
+        "isin:US21037T1097"
+      ],
+      "listingIds": [
+        "CEG_US_EQ"
+      ],
+      "tickerIds": [
+        "CEG_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "power_generation"
+      ],
+      "relatedTickers": [
+        "VST_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://www.constellationenergy.com/investors.html",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://www.constellationenergy.com/investors.html",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "micron_technology_inc",
+      "name": "Micron Technology Inc",
+      "primaryTicker": "MU_US_EQ",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "United States",
+      "yahooSymbol": "MU",
+      "marketCap": 130000000000,
+      "securityIds": [
+        "isin:US5951121038"
+      ],
+      "listingIds": [
+        "MU_US_EQ"
+      ],
+      "tickerIds": [
+        "MU_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "memory"
+      ],
+      "relatedTickers": [
+        "AMD_US_EQ",
+        "AVGO_US_EQ",
+        "NVDA_US_EQ",
+        "TSM_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "microsoft",
+      "name": "Microsoft Corporation",
+      "primaryTicker": "MSFT_US_EQ",
+      "sector": "Technology",
+      "industry": "Software - Infrastructure",
+      "country": "United States",
+      "yahooSymbol": "MSFT",
+      "marketCap": 3100000000000,
+      "securityIds": [
+        "isin:US5949181045"
+      ],
+      "listingIds": [
+        "MSFT_US_EQ"
+      ],
+      "tickerIds": [
+        "MSFT_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "cloud"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://www.microsoft.com/en-us/investor",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://www.microsoft.com/en-us/investor",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "nvidia",
+      "name": "NVIDIA Corporation",
+      "primaryTicker": "NVDA_US_EQ",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "United States",
+      "yahooSymbol": "NVDA",
+      "marketCap": 3000000000000,
+      "securityIds": [
+        "isin:US67066G1040"
+      ],
+      "listingIds": [
+        "NVDA_US_EQ"
+      ],
+      "tickerIds": [
+        "NVDA_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "accelerators"
+      ],
+      "relatedTickers": [
+        "AMD_US_EQ",
+        "AVGO_US_EQ",
+        "MU_US_EQ",
+        "TSM_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://www.nvidia.com/en-us/about-nvidia/",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://www.nvidia.com/en-us/about-nvidia/",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "super_micro_computer_inc",
+      "name": "Super Micro Computer Inc",
+      "primaryTicker": "SMCI_US_EQ",
+      "sector": "Technology",
+      "industry": "Computer Hardware",
+      "country": "United States",
+      "yahooSymbol": "SMCI",
+      "marketCap": 30000000000,
+      "securityIds": [
+        "isin:US86800U1043"
+      ],
+      "listingIds": [
+        "SMCI_US_EQ"
+      ],
+      "tickerIds": [
+        "SMCI_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "systems"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "taiwan_semiconductor_manufacturing_company_limited",
+      "name": "Taiwan Semiconductor Manufacturing Company Limited",
+      "primaryTicker": "TSM_US_EQ",
+      "sector": "Technology",
+      "industry": "Semiconductors",
+      "country": "Taiwan",
+      "yahooSymbol": "TSM",
+      "marketCap": 800000000000,
+      "securityIds": [
+        "isin:US8740391003"
+      ],
+      "listingIds": [
+        "TSM_US_EQ"
+      ],
+      "tickerIds": [
+        "TSM_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "foundry_and_packaging"
+      ],
+      "relatedTickers": [
+        "AMD_US_EQ",
+        "AVGO_US_EQ",
+        "MU_US_EQ",
+        "NVDA_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "ultrapro_short_qqq_3x_daily_etf",
+      "name": "UltraPro Short QQQ -3X Daily ETF",
+      "primaryTicker": "3SQQQ_US_EQ",
+      "securityIds": [
+        "isin:US74347G4322"
+      ],
+      "listingIds": [
+        "3SQQQ_US_EQ"
+      ],
+      "tickerIds": [
+        "3SQQQ_US_EQ"
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "vertiv",
+      "name": "Vertiv Holdings Co",
+      "primaryTicker": "VRT_US_EQ",
+      "sector": "Industrials",
+      "industry": "Electrical Equipment",
+      "country": "United States",
+      "yahooSymbol": "VRT",
+      "marketCap": 45000000000,
+      "securityIds": [
+        "isin:US92537N1081"
+      ],
+      "listingIds": [
+        "VRT_US_EQ"
+      ],
+      "tickerIds": [
+        "VRT_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "cooling_and_power"
+      ],
+      "sources": [
+        {
+          "kind": "manual_ticker_override",
+          "url": "https://investors.vertiv.com/",
+          "label": "Ticker override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "manual_company_override",
+          "url": "https://investors.vertiv.com/",
+          "label": "Company override",
+          "lastReviewed": "2026-05-09"
+        },
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastReviewed": "2026-05-09",
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    },
+    {
+      "id": "vistra_corp",
+      "name": "Vistra Corp",
+      "primaryTicker": "VST_US_EQ",
+      "sector": "Utilities",
+      "industry": "Independent Power Producers",
+      "country": "United States",
+      "yahooSymbol": "VST",
+      "marketCap": 55000000000,
+      "securityIds": [
+        "isin:US92840M1027"
+      ],
+      "listingIds": [
+        "VST_US_EQ"
+      ],
+      "tickerIds": [
+        "VST_US_EQ"
+      ],
+      "themeIds": [
+        "ai_infrastructure"
+      ],
+      "layerIds": [
+        "power_generation"
+      ],
+      "relatedTickers": [
+        "CEG_US_EQ"
+      ],
+      "sources": [
+        {
+          "kind": "enrichment",
+          "label": "sample"
+        }
+      ],
+      "lastRefreshed": "2026-05-09T12:00:00Z"
+    }
+  ],
+  "sectors": [
+    {
+      "id": "technology",
+      "name": "Technology",
+      "count": 9,
+      "tickers": [
+        "AAPL_US_EQ",
+        "AMD_US_EQ",
+        "ASML_US_EQ",
+        "AVGO_US_EQ",
+        "MSFT_US_EQ",
+        "MU_US_EQ",
+        "NVDA_US_EQ",
+        "SMCI_US_EQ",
+        "TSM_US_EQ"
+      ]
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities",
+      "count": 2,
+      "tickers": [
+        "CEG_US_EQ",
+        "VST_US_EQ"
+      ]
+    },
+    {
+      "id": "industrials",
+      "name": "Industrials",
+      "count": 1,
+      "tickers": [
+        "VRT_US_EQ"
+      ]
+    },
+    {
+      "id": "unclassified",
+      "name": "Unclassified",
+      "count": 1,
+      "tickers": [
+        "3SQQQ_US_EQ"
+      ]
+    }
+  ],
+  "industries": [
+    {
+      "id": "semiconductors",
+      "name": "Semiconductors",
+      "count": 5,
+      "tickers": [
+        "AMD_US_EQ",
+        "AVGO_US_EQ",
+        "MU_US_EQ",
+        "NVDA_US_EQ",
+        "TSM_US_EQ"
+      ]
+    },
+    {
+      "id": "independent_power_producers",
+      "name": "Independent Power Producers",
+      "count": 2,
+      "tickers": [
+        "CEG_US_EQ",
+        "VST_US_EQ"
+      ]
+    },
+    {
+      "id": "computer_hardware",
+      "name": "Computer Hardware",
+      "count": 1,
+      "tickers": [
+        "SMCI_US_EQ"
+      ]
+    },
+    {
+      "id": "consumer_electronics",
+      "name": "Consumer Electronics",
+      "count": 1,
+      "tickers": [
+        "AAPL_US_EQ"
+      ]
+    },
+    {
+      "id": "electrical_equipment",
+      "name": "Electrical Equipment",
+      "count": 1,
+      "tickers": [
+        "VRT_US_EQ"
+      ]
+    },
+    {
+      "id": "semiconductor_equipment",
+      "name": "Semiconductor Equipment",
+      "count": 1,
+      "tickers": [
+        "ASML_US_EQ"
+      ]
+    },
+    {
+      "id": "software_infrastructure",
+      "name": "Software - Infrastructure",
+      "count": 1,
+      "tickers": [
+        "MSFT_US_EQ"
+      ]
+    },
+    {
+      "id": "unclassified",
+      "name": "Unclassified",
+      "count": 1,
+      "tickers": [
+        "3SQQQ_US_EQ"
+      ]
+    }
+  ],
+  "themes": [
+    {
+      "id": "ai_infrastructure",
+      "name": "AI infrastructure",
+      "description": "Physical and silicon supply chain for training and inference buildout.",
+      "color": "#2563eb"
+    },
+    {
+      "id": "energy",
+      "name": "Energy",
+      "description": "Power generation, grid, storage, fuels, and efficiency.",
+      "color": "#15803d"
+    },
+    {
+      "id": "defence",
+      "name": "Defence",
+      "description": "Defence primes, electronics, autonomy, cyber, and industrial capacity.",
+      "color": "#7c2d12"
+    },
+    {
+      "id": "healthcare",
+      "name": "Healthcare",
+      "description": "Biopharma, devices, tools, care delivery, and healthcare infrastructure.",
+      "color": "#be123c"
+    },
+    {
+      "id": "fintech",
+      "name": "Fintech",
+      "description": "Payments, capital markets infrastructure, banking software, and data rails.",
+      "color": "#6d28d9"
+    },
+    {
+      "id": "semiconductors",
+      "name": "Semiconductors",
+      "description": "Semiconductor equipment, materials, manufacturing, memory, logic, and design.",
+      "color": "#0f766e"
+    },
+    {
+      "id": "commodities",
+      "name": "Commodities",
+      "description": "Miners, processors, transport, and end-market commodity exposure.",
+      "color": "#a16207"
+    }
+  ],
+  "supplyChains": [
+    {
+      "themeId": "ai_infrastructure",
+      "name": "AI infrastructure supply chain",
+      "description": "Layered map of power, physical infrastructure, silicon, networking, and cloud demand.",
+      "layers": [
+        {
+          "id": "power_generation",
+          "name": "Power generation",
+          "description": "Generation assets and power providers exposed to data-centre load growth.",
+          "order": 10
+        },
+        {
+          "id": "grid_equipment",
+          "name": "Grid and electrical equipment",
+          "description": "Transformers, switchgear, power distribution, and grid services.",
+          "order": 20
+        },
+        {
+          "id": "cooling_and_power",
+          "name": "Data-centre cooling and power",
+          "description": "Thermal management, UPS, power shelves, and data-centre infrastructure.",
+          "order": 30
+        },
+        {
+          "id": "semiconductor_equipment",
+          "name": "Semiconductor equipment",
+          "description": "Lithography, deposition, etch, inspection, and process control.",
+          "order": 40
+        },
+        {
+          "id": "foundry_and_packaging",
+          "name": "Foundry and packaging",
+          "description": "Leading-edge wafer manufacturing and advanced packaging capacity.",
+          "order": 50
+        },
+        {
+          "id": "memory",
+          "name": "HBM and memory",
+          "description": "High-bandwidth memory and supporting memory supply.",
+          "order": 60
+        },
+        {
+          "id": "accelerators",
+          "name": "AI accelerators and ASICs",
+          "description": "GPUs, custom silicon, networking silicon, and accelerator platforms.",
+          "order": 70
+        },
+        {
+          "id": "networking",
+          "name": "Optical and networking",
+          "description": "Switching, optical interconnect, fibre, and high-speed connectivity.",
+          "order": 80
+        },
+        {
+          "id": "systems",
+          "name": "Systems and integration",
+          "description": "Servers, racks, EMS, and AI factory integration.",
+          "order": 90
+        },
+        {
+          "id": "cloud",
+          "name": "Cloud and hyperscalers",
+          "description": "Cloud platforms and AI compute buyers.",
+          "order": 100
+        }
+      ]
+    }
+  ],
+  "exposures": [
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "accelerators",
+      "ticker": "NVDA_US_EQ",
+      "companyId": "nvidia",
+      "exposureScore": 5,
+      "confidence": "manual_high",
+      "sourceUrl": "https://investor.nvidia.com/financial-info/quarterly-results/default.aspx",
+      "rationale": "Primary merchant GPU accelerator supplier for AI training and inference.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "cloud",
+      "ticker": "MSFT_US_EQ",
+      "companyId": "microsoft",
+      "exposureScore": 4,
+      "confidence": "manual_high",
+      "sourceUrl": "https://www.microsoft.com/en-us/investor",
+      "rationale": "Azure is a major buyer and seller of AI infrastructure capacity.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "semiconductor_equipment",
+      "ticker": "ASML_US_EQ",
+      "companyId": "asml",
+      "exposureScore": 5,
+      "confidence": "manual_high",
+      "sourceUrl": "https://www.asml.com/en/investors",
+      "rationale": "Leading-edge EUV lithography exposure for advanced AI chips.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "cooling_and_power",
+      "ticker": "VRT_US_EQ",
+      "companyId": "vertiv",
+      "exposureScore": 5,
+      "confidence": "manual_high",
+      "sourceUrl": "https://investors.vertiv.com/",
+      "rationale": "Data-centre power and cooling infrastructure exposure.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "power_generation",
+      "ticker": "CEG_US_EQ",
+      "companyId": "constellation_energy",
+      "exposureScore": 4,
+      "confidence": "manual_medium",
+      "sourceUrl": "https://www.constellationenergy.com/investors.html",
+      "rationale": "Nuclear-heavy power generation exposed to data-centre electricity demand.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "accelerators",
+      "ticker": "AMD_US_EQ",
+      "companyId": "advanced_micro_devices_inc",
+      "exposureScore": 3,
+      "confidence": "manual_medium",
+      "sourceUrl": "https://ir.amd.com/",
+      "rationale": "GPU and accelerator alternative with data-centre AI exposure.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "accelerators",
+      "ticker": "AVGO_US_EQ",
+      "companyId": "broadcom_inc",
+      "exposureScore": 4,
+      "confidence": "manual_medium",
+      "sourceUrl": "https://investors.broadcom.com/",
+      "rationale": "Custom AI silicon and networking exposure.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "memory",
+      "ticker": "MU_US_EQ",
+      "companyId": "micron_technology_inc",
+      "exposureScore": 4,
+      "confidence": "manual_medium",
+      "sourceUrl": "https://investors.micron.com/",
+      "rationale": "High-bandwidth memory and data-centre memory exposure.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "systems",
+      "ticker": "SMCI_US_EQ",
+      "companyId": "super_micro_computer_inc",
+      "exposureScore": 4,
+      "confidence": "manual_medium",
+      "sourceUrl": "https://ir.supermicro.com/",
+      "rationale": "AI server and rack integration exposure.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "power_generation",
+      "ticker": "VST_US_EQ",
+      "companyId": "vistra_corp",
+      "exposureScore": 4,
+      "confidence": "manual_medium",
+      "sourceUrl": "https://investor.vistracorp.com/",
+      "rationale": "Power generation exposure to data-centre load growth.",
+      "lastReviewed": "2026-05-09"
+    },
+    {
+      "themeId": "ai_infrastructure",
+      "layerId": "foundry_and_packaging",
+      "ticker": "TSM_US_EQ",
+      "companyId": "taiwan_semiconductor_manufacturing_company_limited",
+      "exposureScore": 5,
+      "confidence": "manual_high",
+      "sourceUrl": "https://investor.tsmc.com/",
+      "rationale": "Leading-edge foundry exposure for AI accelerator production.",
+      "lastReviewed": "2026-05-09"
+    }
+  ],
+  "notes": [
+    {
+      "targetType": "theme",
+      "targetId": "ai_infrastructure",
+      "title": "AI infrastructure starting taxonomy",
+      "tags": [
+        "ai",
+        "infrastructure",
+        "supply-chain"
+      ],
+      "path": "data/manual/notes/ai-infrastructure.md",
+      "text": "Initial taxonomy focuses on the loop from power and electrical infrastructure through silicon, systems, networking, and cloud demand. Scores are deliberately conservative until reviewed against filings and transcripts."
+    }
+  ],
+  "unclassified": [
+    {
+      "ticker": "3SQQQ_US_EQ",
+      "companyId": "ultrapro_short_qqq_3x_daily_etf",
+      "name": "UltraPro Short QQQ -3X Daily ETF",
+      "isin": "US74347G4322",
+      "reason": "missing sector; missing industry; missing theme exposure"
+    },
+    {
+      "ticker": "AAPL_US_EQ",
+      "companyId": "apple_inc",
+      "name": "Apple Inc",
+      "isin": "US0378331005",
+      "reason": "missing theme exposure"
+    }
+  ]
+}

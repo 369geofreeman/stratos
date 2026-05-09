@@ -1,0 +1,130 @@
+package catalogue
+
+import "statos/internal/taxonomy"
+
+type Catalogue struct {
+	Manifest     BuildManifest          `json:"manifest"`
+	Tickers      []Ticker               `json:"tickers"`
+	Securities   []Security             `json:"securities"`
+	Listings     []Listing              `json:"listings"`
+	Companies    []Company              `json:"companies"`
+	Sectors      []GroupCount           `json:"sectors"`
+	Industries   []GroupCount           `json:"industries"`
+	Themes       []taxonomy.Theme       `json:"themes"`
+	SupplyChains []taxonomy.SupplyChain `json:"supplyChains"`
+	Exposures    []taxonomy.Exposure    `json:"exposures"`
+	Notes        []taxonomy.Note        `json:"notes"`
+	Unclassified []UnclassifiedRow      `json:"unclassified"`
+}
+
+type BuildManifest struct {
+	BuiltAt               string `json:"builtAt"`
+	Trading212Environment string `json:"trading212Environment,omitempty"`
+	InstrumentCount       int    `json:"instrumentCount"`
+	ExchangeCount         int    `json:"exchangeCount"`
+	SecurityCount         int    `json:"securityCount"`
+	CompanyCount          int    `json:"companyCount"`
+	ListingCount          int    `json:"listingCount"`
+	ThemeCount            int    `json:"themeCount"`
+	ExposureCount         int    `json:"exposureCount"`
+	EnrichmentAttempted   int    `json:"enrichmentAttempted"`
+	EnrichmentSucceeded   int    `json:"enrichmentSucceeded"`
+	EnrichmentFailed      int    `json:"enrichmentFailed"`
+	UnclassifiedCount     int    `json:"unclassifiedCount"`
+	RawSnapshotAt         string `json:"rawSnapshotAt,omitempty"`
+	DataFreshness         string `json:"dataFreshness,omitempty"`
+}
+
+type Ticker struct {
+	Ticker            string   `json:"ticker"`
+	BrokerSymbol      string   `json:"brokerSymbol,omitempty"`
+	Name              string   `json:"name"`
+	ShortName         string   `json:"shortName,omitempty"`
+	Type              string   `json:"type,omitempty"`
+	CurrencyCode      string   `json:"currencyCode,omitempty"`
+	ISIN              string   `json:"isin,omitempty"`
+	ExchangeCode      string   `json:"exchangeCode,omitempty"`
+	ExchangeName      string   `json:"exchangeName,omitempty"`
+	WorkingScheduleID int64    `json:"workingScheduleId,omitempty"`
+	MaxOpenQuantity   float64  `json:"maxOpenQuantity,omitempty"`
+	ExtendedHours     bool     `json:"extendedHours,omitempty"`
+	SecurityID        string   `json:"securityId"`
+	CompanyID         string   `json:"companyId"`
+	ListingID         string   `json:"listingId"`
+	Directionality    string   `json:"directionality"`
+	YahooSymbol       string   `json:"yahooSymbol,omitempty"`
+	Sector            string   `json:"sector,omitempty"`
+	Industry          string   `json:"industry,omitempty"`
+	Country           string   `json:"country,omitempty"`
+	MarketCap         int64    `json:"marketCap,omitempty"`
+	ThemeIDs          []string `json:"themeIds,omitempty"`
+	LayerIDs          []string `json:"layerIds,omitempty"`
+	RelatedTickers    []string `json:"relatedTickers,omitempty"`
+	Sources           []Source `json:"sources,omitempty"`
+	LastReviewed      string   `json:"lastReviewed,omitempty"`
+	LastRefreshed     string   `json:"lastRefreshed,omitempty"`
+	Unclassified      bool     `json:"unclassified"`
+}
+
+type Security struct {
+	ID          string   `json:"id"`
+	ISIN        string   `json:"isin,omitempty"`
+	Name        string   `json:"name"`
+	Type        string   `json:"type,omitempty"`
+	CompanyID   string   `json:"companyId"`
+	ListingIDs  []string `json:"listingIds"`
+	TickerIDs   []string `json:"tickerIds"`
+	CurrencySet []string `json:"currencySet,omitempty"`
+}
+
+type Listing struct {
+	ID           string `json:"id"`
+	Ticker       string `json:"ticker"`
+	SecurityID   string `json:"securityId"`
+	CompanyID    string `json:"companyId"`
+	ExchangeCode string `json:"exchangeCode,omitempty"`
+	ExchangeName string `json:"exchangeName,omitempty"`
+	CurrencyCode string `json:"currencyCode,omitempty"`
+}
+
+type Company struct {
+	ID             string   `json:"id"`
+	Name           string   `json:"name"`
+	PrimaryTicker  string   `json:"primaryTicker,omitempty"`
+	Sector         string   `json:"sector,omitempty"`
+	Industry       string   `json:"industry,omitempty"`
+	Country        string   `json:"country,omitempty"`
+	YahooSymbol    string   `json:"yahooSymbol,omitempty"`
+	MarketCap      int64    `json:"marketCap,omitempty"`
+	SecurityIDs    []string `json:"securityIds"`
+	ListingIDs     []string `json:"listingIds"`
+	TickerIDs      []string `json:"tickerIds"`
+	ThemeIDs       []string `json:"themeIds,omitempty"`
+	LayerIDs       []string `json:"layerIds,omitempty"`
+	RelatedTickers []string `json:"relatedTickers,omitempty"`
+	Sources        []Source `json:"sources,omitempty"`
+	LastReviewed   string   `json:"lastReviewed,omitempty"`
+	LastRefreshed  string   `json:"lastRefreshed,omitempty"`
+}
+
+type Source struct {
+	Kind         string `json:"kind"`
+	URL          string `json:"url,omitempty"`
+	Label        string `json:"label,omitempty"`
+	LastReviewed string `json:"lastReviewed,omitempty"`
+}
+
+type GroupCount struct {
+	ID      string   `json:"id"`
+	Name    string   `json:"name"`
+	Count   int      `json:"count"`
+	Tickers []string `json:"tickers,omitempty"`
+}
+
+type UnclassifiedRow struct {
+	Ticker    string `json:"ticker"`
+	CompanyID string `json:"companyId,omitempty"`
+	Name      string `json:"name"`
+	ISIN      string `json:"isin,omitempty"`
+	Reason    string `json:"reason"`
+}

@@ -1,0 +1,43 @@
+[
+  {
+    "id": "technology",
+    "name": "Technology",
+    "count": 9,
+    "tickers": [
+      "AAPL_US_EQ",
+      "AMD_US_EQ",
+      "ASML_US_EQ",
+      "AVGO_US_EQ",
+      "MSFT_US_EQ",
+      "MU_US_EQ",
+      "NVDA_US_EQ",
+      "SMCI_US_EQ",
+      "TSM_US_EQ"
+    ]
+  },
+  {
+    "id": "utilities",
+    "name": "Utilities",
+    "count": 2,
+    "tickers": [
+      "CEG_US_EQ",
+      "VST_US_EQ"
+    ]
+  },
+  {
+    "id": "industrials",
+    "name": "Industrials",
+    "count": 1,
+    "tickers": [
+      "VRT_US_EQ"
+    ]
+  },
+  {
+    "id": "unclassified",
+    "name": "Unclassified",
+    "count": 1,
+    "tickers": [
+      "3SQQQ_US_EQ"
+    ]
+  }
+]

@@ -1,0 +1,71 @@
+[
+  {
+    "id": "semiconductors",
+    "name": "Semiconductors",
+    "count": 5,
+    "tickers": [
+      "AMD_US_EQ",
+      "AVGO_US_EQ",
+      "MU_US_EQ",
+      "NVDA_US_EQ",
+      "TSM_US_EQ"
+    ]
+  },
+  {
+    "id": "independent_power_producers",
+    "name": "Independent Power Producers",
+    "count": 2,
+    "tickers": [
+      "CEG_US_EQ",
+      "VST_US_EQ"
+    ]
+  },
+  {
+    "id": "computer_hardware",
+    "name": "Computer Hardware",
+    "count": 1,
+    "tickers": [
+      "SMCI_US_EQ"
+    ]
+  },
+  {
+    "id": "consumer_electronics",
+    "name": "Consumer Electronics",
+    "count": 1,
+    "tickers": [
+      "AAPL_US_EQ"
+    ]
+  },
+  {
+    "id": "electrical_equipment",
+    "name": "Electrical Equipment",
+    "count": 1,
+    "tickers": [
+      "VRT_US_EQ"
+    ]
+  },
+  {
+    "id": "semiconductor_equipment",
+    "name": "Semiconductor Equipment",
+    "count": 1,
+    "tickers": [
+      "ASML_US_EQ"
+    ]
+  },
+  {
+    "id": "software_infrastructure",
+    "name": "Software - Infrastructure",
+    "count": 1,
+    "tickers": [
+      "MSFT_US_EQ"
+    ]
+  },
+  {
+    "id": "unclassified",
+    "name": "Unclassified",
+    "count": 1,
+    "tickers": [
+      "3SQQQ_US_EQ"
+    ]
+  }
+]

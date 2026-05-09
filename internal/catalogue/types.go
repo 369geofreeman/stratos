@@ -1,6 +1,9 @@
 package catalogue
 
-import "statos/internal/taxonomy"
+import (
+	"statos/internal/taxonomy"
+	"statos/internal/trading212"
+)
 
 type Catalogue struct {
 	Manifest     BuildManifest          `json:"manifest"`
@@ -18,21 +21,38 @@ type Catalogue struct {
 }
 
 type BuildManifest struct {
-	BuiltAt               string `json:"builtAt"`
-	Trading212Environment string `json:"trading212Environment,omitempty"`
-	InstrumentCount       int    `json:"instrumentCount"`
-	ExchangeCount         int    `json:"exchangeCount"`
-	SecurityCount         int    `json:"securityCount"`
-	CompanyCount          int    `json:"companyCount"`
-	ListingCount          int    `json:"listingCount"`
-	ThemeCount            int    `json:"themeCount"`
-	ExposureCount         int    `json:"exposureCount"`
-	EnrichmentAttempted   int    `json:"enrichmentAttempted"`
-	EnrichmentSucceeded   int    `json:"enrichmentSucceeded"`
-	EnrichmentFailed      int    `json:"enrichmentFailed"`
-	UnclassifiedCount     int    `json:"unclassifiedCount"`
-	RawSnapshotAt         string `json:"rawSnapshotAt,omitempty"`
-	DataFreshness         string `json:"dataFreshness,omitempty"`
+	BuiltAt                   string                            `json:"builtAt"`
+	SourceMode                string                            `json:"sourceMode,omitempty"`
+	Trading212Environment     string                            `json:"trading212Environment,omitempty"`
+	Trading212BaseURL         string                            `json:"trading212BaseUrl,omitempty"`
+	Trading212FetchAt         string                            `json:"trading212FetchAt,omitempty"`
+	InstrumentCount           int                               `json:"instrumentCount"`
+	ExchangeCount             int                               `json:"exchangeCount"`
+	SecurityCount             int                               `json:"securityCount"`
+	CompanyCount              int                               `json:"companyCount"`
+	ListingCount              int                               `json:"listingCount"`
+	ThemeCount                int                               `json:"themeCount"`
+	ExposureCount             int                               `json:"exposureCount"`
+	EnrichmentAttempted       int                               `json:"enrichmentAttempted"`
+	EnrichmentSucceeded       int                               `json:"enrichmentSucceeded"`
+	EnrichmentFailed          int                               `json:"enrichmentFailed"`
+	UnclassifiedCount         int                               `json:"unclassifiedCount"`
+	RawSnapshotAt             string                            `json:"rawSnapshotAt,omitempty"`
+	RawSnapshots              RawSnapshotSummary                `json:"rawSnapshots,omitempty"`
+	Trading212HTTPDiagnostics []trading212.EndpointDiagnostic   `json:"trading212HttpDiagnostics,omitempty"`
+	Trading212RateLimits      []trading212.RateLimitObservation `json:"trading212RateLimits,omitempty"`
+	DataFreshness             string                            `json:"dataFreshness,omitempty"`
+}
+
+type RawSnapshotSummary struct {
+	Timestamp           string `json:"timestamp,omitempty"`
+	Directory           string `json:"directory,omitempty"`
+	InstrumentsPath     string `json:"instrumentsPath,omitempty"`
+	ExchangesPath       string `json:"exchangesPath,omitempty"`
+	InstrumentsLatest   string `json:"instrumentsLatest,omitempty"`
+	ExchangesLatest     string `json:"exchangesLatest,omitempty"`
+	InstrumentFileCount int    `json:"instrumentFileCount,omitempty"`
+	ExchangeFileCount   int    `json:"exchangeFileCount,omitempty"`
 }
 
 type Ticker struct {

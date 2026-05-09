@@ -7,6 +7,7 @@ The production site is static and suitable for GitHub Pages. A local Go CLI refr
 ## Current Scope
 
 - Trading 212 metadata client for instruments and exchanges.
+- Timestamped Trading 212 raw snapshots with latest aliases, HTTP diagnostics, rate-limit observations, and raw replay mode.
 - Local builder command at `cmd/statos-build`.
 - Standard-library enrichment interface with cache-first Yahoo-compatible provider.
 - Normalized catalogue model covering instruments, securities, companies, listings, classifications, themes, supply-chain layers, exposures, sources, and unclassified rows.
@@ -57,15 +58,21 @@ make smoke
 make preview
 ```
 
-`make refresh` fetches Trading 212 metadata when credentials are present. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist and checks that `catalogue.json` and `build_manifest.json` parse as JSON.
+`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist and checks that `catalogue.json` and `build_manifest.json` parse as JSON.
 
 The underlying builder remains available directly:
 
 ```sh
 go run ./cmd/statos-build refresh
 go run ./cmd/statos-build refresh --sample
+go run ./cmd/statos-build refresh --no-fetch
+go run ./cmd/statos-build refresh --no-fetch --input-raw-dir data/raw/trading212
 go run ./cmd/statos-build sample
 ```
+
+`refresh --no-fetch` rebuilds from `instruments_latest.json` and `exchanges_latest.json` in `data/raw/trading212` by default. Use `--input-raw-dir` to replay an alternate raw snapshot directory. Replay does not call Trading 212 and uses cache-only enrichment.
+
+Live Trading 212 fetches read credentials only from `.env` or the process environment. Set `STATOS_TRADING212_ENV=demo` or `live`, or set `STATOS_TRADING212_BASE_URL` explicitly. Successful fetches write timestamped ignored raw files plus `*_latest.json` aliases under `data/raw/trading212`.
 
 ## GitHub Pages Deployment
 
@@ -88,8 +95,8 @@ Before publishing, regenerate data locally with `make sample` or `make refresh`,
 
 ## Data Flow
 
-1. Fetch Trading 212 metadata from `GET /api/v0/equity/metadata/exchanges` and `GET /api/v0/equity/metadata/instruments`.
-2. Write raw snapshots into ignored `data/raw/trading212`.
+1. Fetch Trading 212 metadata from `GET /api/v0/equity/metadata/exchanges` and `GET /api/v0/equity/metadata/instruments`, or replay ignored raw snapshots with `--no-fetch`.
+2. Write raw snapshots into ignored `data/raw/trading212` during sample or live fetch runs.
 3. Normalize broker instruments into tickers, listings, securities, and companies.
 4. Resolve enrichment through cache and optional Yahoo-compatible lookup.
 5. Apply manual overrides, themes, supply chains, exposures, and notes.
@@ -115,6 +122,8 @@ Yahoo Finance does not provide a stable official public API. Statos treats Yahoo
 ## Safety
 
 `.env`, raw snapshots, enrichment caches, and `.gocache/` are ignored. Generated static outputs under `site/data` are intended to be committed.
+
+`site/data/build_manifest.json` includes the source mode, Trading 212 environment/base URL, fetch timestamp, raw snapshot path summary, per-endpoint HTTP diagnostics, and observed Trading 212 rate-limit headers. It never stores API keys, API secrets, or authorization headers.
 
 ## License
 

@@ -16,6 +16,19 @@ make test
 make smoke
 ```
 
+To rebuild from the latest ignored Trading 212 raw snapshots without calling Trading 212:
+
+```sh
+GOCACHE="$PWD/.gocache" go run ./cmd/statos-build refresh --no-fetch
+make smoke
+```
+
+To replay an alternate raw snapshot directory:
+
+```sh
+GOCACHE="$PWD/.gocache" go run ./cmd/statos-build refresh --no-fetch --input-raw-dir data/raw/trading212
+```
+
 The builder should write:
 
 - `site/data/catalogue.json`
@@ -31,7 +44,7 @@ The builder should write:
 
 ## Review
 
-- Open `site/data/build_manifest.json` and check source counts, enrichment failures, unclassified counts, and freshness.
+- Open `site/data/build_manifest.json` and check source mode, Trading 212 environment/base URL, raw snapshot paths, endpoint diagnostics, rate-limit observations, source counts, enrichment failures, unclassified counts, and freshness.
 - Review `site/data/unclassified.csv`.
 - Add or update exposures in `data/manual/exposures.csv`.
 - Add notes in `data/manual/notes`.
@@ -54,4 +67,4 @@ Open `http://localhost:4173` and check:
 
 ## Commit
 
-Commit source, manual data, and generated `site/data`. Do not commit `.env`, `data/raw`, `data/cache`, `.gocache`, logs, or raw provider artifacts.
+Commit source, manual data, and generated `site/data`. Do not commit `.env`, `data/raw`, `data/cache`, `.gocache`, logs, or raw provider artifacts. `git ls-files .env data/raw data/cache .gocache` should print nothing.

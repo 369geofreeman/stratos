@@ -41,9 +41,32 @@ func TestBuildGroupsByISINAndAppliesExposure(t *testing.T) {
 			{Ticker: "ABC_US_EQ", Name: "ABC Corp", ISIN: "US0000000001", Type: "STOCK", CurrencyCode: "USD"},
 			{Ticker: "ABC_L_EQ", Name: "ABC Corp", ISIN: "US0000000001", Type: "STOCK", CurrencyCode: "GBP"},
 		},
-		Profiles: map[string]enrichment.Profile{},
-		Manual:   manual,
-		BuiltAt:  time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC),
+		Profiles:              map[string]enrichment.Profile{},
+		Manual:                manual,
+		BuiltAt:               time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC),
+		SourceMode:            "live_fetch",
+		Trading212Environment: "demo",
+		Trading212BaseURL:     trading212.DemoBaseURL,
+		Trading212FetchAt:     "2026-05-09T12:00:00Z",
+		RawSnapshotAt:         "2026-05-09T12:00:00Z",
+		RawSnapshots: RawSnapshotSummary{
+			Timestamp:         "2026-05-09T12:00:00Z",
+			InstrumentsLatest: "data/raw/trading212/instruments_latest.json",
+			ExchangesLatest:   "data/raw/trading212/exchanges_latest.json",
+		},
+		HTTPDiagnostics: []trading212.EndpointDiagnostic{{
+			EndpointName: "instruments",
+			Path:         "/equity/metadata/instruments",
+			StatusCode:   200,
+			RateLimit:    trading212.RateLimitHeaders{Limit: "1", Period: "50", Remaining: "0"},
+		}},
+		RateLimits: []trading212.RateLimitObservation{{
+			EndpointName: "instruments",
+			Path:         "/equity/metadata/instruments",
+			Limit:        "1",
+			Period:       "50",
+			Remaining:    "0",
+		}},
 	})
 	if err != nil {
 		t.Fatal(err)
@@ -56,5 +79,8 @@ func TestBuildGroupsByISINAndAppliesExposure(t *testing.T) {
 	}
 	if len(cat.Tickers[0].ThemeIDs) == 0 {
 		t.Fatalf("exposure was not applied to ticker: %#v", cat.Tickers[0])
+	}
+	if cat.Manifest.SourceMode != "live_fetch" || cat.Manifest.Trading212BaseURL != trading212.DemoBaseURL || len(cat.Manifest.Trading212HTTPDiagnostics) != 1 || len(cat.Manifest.Trading212RateLimits) != 1 {
+		t.Fatalf("manifest did not preserve Trading 212 diagnostics: %#v", cat.Manifest)
 	}
 }

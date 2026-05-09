@@ -1,0 +1,31 @@
+[
+  {
+    "id": 1,
+    "name": "NASDAQ",
+    "workingSchedules": [
+      {
+        "id": 101,
+        "name": "Regular Trading Hours",
+        "events": [
+          {
+            "date": "2026-01-01",
+            "type": "CLOSED"
+          }
+        ],
+        "newFieldFromApi": "ignored"
+      }
+    ],
+    "newFieldFromApi": "ignored"
+  },
+  {
+    "id": 2,
+    "name": "NYSE",
+    "workingSchedules": [
+      {
+        "id": 201,
+        "name": "Regular Trading Hours",
+        "events": []
+      }
+    ]
+  }
+]

@@ -1,0 +1,27 @@
+[
+  {
+    "addedOn": "2019-08-24T14:15:22Z",
+    "currencyCode": "USD",
+    "extendedHours": true,
+    "isin": "US0378331005",
+    "maxOpenQuantity": 1234.5,
+    "name": "Apple Inc",
+    "shortName": "Apple",
+    "ticker": "AAPL_US_EQ",
+    "type": "STOCK",
+    "workingScheduleId": 1,
+    "newFieldFromApi": "ignored"
+  },
+  {
+    "addedOn": "2020-01-02T03:04:05Z",
+    "currencyCode": "USD",
+    "extendedHours": false,
+    "isin": "US74347G4322",
+    "maxOpenQuantity": 500,
+    "name": "UltraPro Short QQQ -3X Daily ETF",
+    "shortName": "Short QQQ 3x",
+    "ticker": "3SQQQ_US_EQ",
+    "type": "ETF",
+    "workingScheduleId": 2
+  }
+]

@@ -61,19 +61,19 @@ Goal: Reliably collect the broker universe from the official metadata endpoints.
 - [ ] Verify `GET /equity/metadata/instruments` against a real demo or live account.
 - [ ] Verify `GET /equity/metadata/exchanges` against a real demo or live account.
 - [ ] Confirm auth works with `.env` values only.
-- [ ] Record rate-limit headers in raw metadata or build diagnostics.
-- [ ] Add friendly errors for 401, 403, 408, 429, and malformed responses.
+- [x] Record rate-limit headers in raw metadata or build diagnostics.
+- [x] Add friendly errors for 401, 403, 408, 429, and malformed responses.
 - [x] Ensure raw snapshots are timestamped and `latest` aliases are written.
-- [ ] Add `--no-fetch` mode to rebuild from the latest raw snapshots.
-- [ ] Add `--input-raw-dir` or equivalent for replaying older snapshots.
-- [ ] Add tests with fixture JSON matching Trading 212 instrument/exchange responses.
-- [ ] Add manifest fields for Trading 212 endpoint, account environment, fetch timestamp, and rate-limit observations.
+- [x] Add `--no-fetch` mode to rebuild from the latest raw snapshots.
+- [x] Add `--input-raw-dir` or equivalent for replaying older snapshots.
+- [x] Add tests with fixture JSON matching Trading 212 instrument/exchange responses.
+- [x] Add manifest fields for Trading 212 endpoint, account environment, fetch timestamp, and rate-limit observations.
 
 Definition of done:
 
 - [ ] One live refresh produces raw snapshots and deterministic generated output.
 - [ ] A replay from raw snapshots produces the same normalized output.
-- [ ] API failures are visible and do not silently produce partial confidence.
+- [x] API failures are visible and do not silently produce partial confidence.
 
 ## Slice 3: Identity Resolution And Normalization
 

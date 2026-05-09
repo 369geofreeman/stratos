@@ -1,5 +1,6 @@
 {
   "builtAt": "2026-05-09T12:00:00Z",
+  "sourceMode": "sample",
   "trading212Environment": "sample",
   "instrumentCount": 13,
   "exchangeCount": 2,
@@ -13,5 +14,15 @@
   "enrichmentFailed": 1,
   "unclassifiedCount": 2,
   "rawSnapshotAt": "2026-05-09T12:00:00Z",
+  "rawSnapshots": {
+    "timestamp": "2026-05-09T12:00:00Z",
+    "directory": "data/raw/trading212",
+    "instrumentsPath": "data/raw/trading212/instruments_20260509T120000Z.json",
+    "exchangesPath": "data/raw/trading212/exchanges_20260509T120000Z.json",
+    "instrumentsLatest": "data/raw/trading212/instruments_latest.json",
+    "exchangesLatest": "data/raw/trading212/exchanges_latest.json",
+    "instrumentFileCount": 13,
+    "exchangeFileCount": 2
+  },
   "dataFreshness": "0h"
 }

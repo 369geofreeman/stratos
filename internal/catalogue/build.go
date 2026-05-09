@@ -18,8 +18,14 @@ type BuildInput struct {
 	Profiles              map[string]enrichment.Profile
 	Manual                taxonomy.ManualData
 	BuiltAt               time.Time
+	SourceMode            string
 	Trading212Environment string
+	Trading212BaseURL     string
+	Trading212FetchAt     string
 	RawSnapshotAt         string
+	RawSnapshots          RawSnapshotSummary
+	HTTPDiagnostics       []trading212.EndpointDiagnostic
+	RateLimits            []trading212.RateLimitObservation
 	EnrichmentAttempted   int
 	EnrichmentSucceeded   int
 	EnrichmentFailed      int
@@ -195,21 +201,27 @@ func Build(input BuildInput) (*Catalogue, error) {
 		Unclassified: unclassified,
 	}
 	cat.Manifest = BuildManifest{
-		BuiltAt:               input.BuiltAt.UTC().Format(time.RFC3339),
-		Trading212Environment: input.Trading212Environment,
-		InstrumentCount:       len(input.Instruments),
-		ExchangeCount:         len(input.Exchanges),
-		SecurityCount:         len(cat.Securities),
-		CompanyCount:          len(cat.Companies),
-		ListingCount:          len(cat.Listings),
-		ThemeCount:            len(cat.Themes),
-		ExposureCount:         len(cat.Exposures),
-		EnrichmentAttempted:   input.EnrichmentAttempted,
-		EnrichmentSucceeded:   input.EnrichmentSucceeded,
-		EnrichmentFailed:      input.EnrichmentFailed,
-		UnclassifiedCount:     len(cat.Unclassified),
-		RawSnapshotAt:         input.RawSnapshotAt,
-		DataFreshness:         freshness(input.RawSnapshotAt, input.BuiltAt),
+		BuiltAt:                   input.BuiltAt.UTC().Format(time.RFC3339),
+		SourceMode:                input.SourceMode,
+		Trading212Environment:     input.Trading212Environment,
+		Trading212BaseURL:         input.Trading212BaseURL,
+		Trading212FetchAt:         input.Trading212FetchAt,
+		InstrumentCount:           len(input.Instruments),
+		ExchangeCount:             len(input.Exchanges),
+		SecurityCount:             len(cat.Securities),
+		CompanyCount:              len(cat.Companies),
+		ListingCount:              len(cat.Listings),
+		ThemeCount:                len(cat.Themes),
+		ExposureCount:             len(cat.Exposures),
+		EnrichmentAttempted:       input.EnrichmentAttempted,
+		EnrichmentSucceeded:       input.EnrichmentSucceeded,
+		EnrichmentFailed:          input.EnrichmentFailed,
+		UnclassifiedCount:         len(cat.Unclassified),
+		RawSnapshotAt:             input.RawSnapshotAt,
+		RawSnapshots:              input.RawSnapshots,
+		Trading212HTTPDiagnostics: input.HTTPDiagnostics,
+		Trading212RateLimits:      input.RateLimits,
+		DataFreshness:             freshness(input.RawSnapshotAt, input.BuiltAt),
 	}
 	return cat, nil
 }

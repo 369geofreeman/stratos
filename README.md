@@ -54,12 +54,15 @@ GOCACHE="$PWD/.gocache" go test ./...
 ```sh
 make sample
 make refresh
+make update-site-data
+make update-live-data
+make clean-rate-limited-enrichment-cache
 make test
 make smoke
 make preview
 ```
 
-`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make smoke` verifies the expected generated `site/data` files exist, including standalone securities/listings/relationships JSON and identity/enrichment review CSVs, and checks that generated JSON files parse.
+`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make update-site-data` runs refresh, tests, smoke checks, and a manifest summary. `make update-live-data` runs the same refresh flow but fails if the generated manifest still reports sample data. Large enrichment runs log progress roughly every 60 seconds. `make clean-rate-limited-enrichment-cache` removes ignored Yahoo 429 cache entries so a later retry is not blocked by cached rate-limit failures. `make smoke` verifies the expected generated `site/data` files exist, including standalone securities/listings/relationships JSON and identity/enrichment review CSVs, and checks that generated JSON files parse.
 
 The underlying builder remains available directly:
 
@@ -77,7 +80,9 @@ go run ./cmd/statos-build taxonomy exposure-template
 
 The `taxonomy coverage` and `taxonomy exposure-template` commands read generated `site/data` files only. They do not fetch Trading 212 or enrichment data.
 
-Live Trading 212 fetches read credentials only from `.env` or the process environment. Set `STATOS_TRADING212_ENV=demo` or `live`, or set `STATOS_TRADING212_BASE_URL` explicitly. Successful fetches write timestamped ignored raw files plus `*_latest.json` aliases under `data/raw/trading212`.
+Live Trading 212 fetches read credentials only from `.env` or the process environment. Set `STATOS_TRADING212_ENV=demo` or `live`, or set `STATOS_TRADING212_BASE_URL` explicitly. The metadata endpoints used by Statos do not require an account ID. Successful fetches write timestamped ignored raw files plus `*_latest.json` aliases under `data/raw/trading212`.
+
+Optional enrichment pacing can be set with `STATOS_ENRICHMENT_DELAY`, for example `STATOS_ENRICHMENT_DELAY=2s`, or with `go run ./cmd/statos-build refresh --enrichment-delay 2s`.
 
 ## GitHub Pages Deployment
 
@@ -91,7 +96,7 @@ Repository setup:
 2. Set Source to `GitHub Actions`.
 3. Push to `main` or run the `Deploy Pages` workflow manually.
 
-Before publishing, regenerate data locally with `make sample` or `make refresh`, review `site/data/unclassified.csv` and `site/data/build_manifest.json`, run `make test` and `make smoke`, then commit source, manual taxonomy, and generated `site/data`.
+Before publishing real account data, regenerate locally with `make update-live-data`, review `site/data/unclassified.csv` and `site/data/build_manifest.json`, then commit source, manual taxonomy, and generated `site/data`.
 
 ## Project Checklists
 
@@ -140,6 +145,8 @@ Detailed review steps are in [Manual Taxonomy Workflow](docs/taxonomy-workflow.m
 Yahoo Finance does not provide a stable official public API. Statos treats Yahoo-style data as replaceable enrichment, not the source of truth. Set `STATOS_ENRICHMENT_PROVIDER=yahoo` only when you want the builder to attempt live enrichment and cache the response or failure locally.
 
 The default provider mode is cache-only. Cache misses, stale entries, cached failures, unknown cache schema versions, and ambiguous matches are surfaced in `site/data/build_manifest.json` and `site/data/enrichment_failures.csv`. Stale cache entries are still used by default so offline builds remain useful.
+
+Yahoo 429 rate-limit failures are treated as transient and are not cached by new runs. If an older run cached 429 failures, run `make clean-rate-limited-enrichment-cache` before retrying live enrichment. For large Yahoo runs, set `STATOS_ENRICHMENT_DELAY` to pace requests.
 
 Provider interface and cache contract details are documented in [Enrichment Provider Contract](docs/enrichment-provider.md).
 

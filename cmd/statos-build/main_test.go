@@ -171,6 +171,23 @@ func TestManualValidationFailureDoesNotWriteGeneratedOutputs(t *testing.T) {
 	}
 }
 
+func TestParseOptionalDuration(t *testing.T) {
+	got, err := parseOptionalDuration("1500ms")
+	if err != nil {
+		t.Fatal(err)
+	}
+	if got != 1500*time.Millisecond {
+		t.Fatalf("duration = %s", got)
+	}
+	got, err = parseOptionalDuration("")
+	if err != nil || got != 0 {
+		t.Fatalf("blank duration = %s, err = %v", got, err)
+	}
+	if _, err := parseOptionalDuration("slow"); err == nil {
+		t.Fatal("expected invalid duration error")
+	}
+}
+
 func writeBadManual(t *testing.T, dir string) {
 	t.Helper()
 	mustWriteFile(t, filepath.Join(dir, "themes.yml"), `themes:

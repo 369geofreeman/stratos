@@ -1,88 +1,156 @@
 {
   "dataContractVersion": 1,
   "schemaVersion": 1,
-  "builtAt": "2026-05-09T12:00:00Z",
-  "sourceMode": "sample",
-  "trading212Environment": "sample",
-  "instrumentCount": 13,
-  "exchangeCount": 2,
-  "securityCount": 13,
-  "companyCount": 13,
-  "listingCount": 13,
+  "builtAt": "2026-05-09T19:09:20Z",
+  "sourceMode": "live_fetch",
+  "trading212Environment": "live",
+  "trading212BaseUrl": "https://live.trading212.com/api/v0",
+  "trading212FetchAt": "2026-05-09T19:09:20.848642Z",
+  "instrumentCount": 16985,
+  "exchangeCount": 17,
+  "securityCount": 13772,
+  "companyCount": 13001,
+  "listingCount": 16985,
   "themeCount": 7,
   "exposureCount": 11,
   "relationshipCount": 0,
-  "enrichmentAttempted": 13,
-  "enrichmentSucceeded": 12,
-  "enrichmentFailed": 1,
+  "enrichmentAttempted": 16985,
+  "enrichmentSucceeded": 0,
+  "enrichmentFailed": 16985,
   "enrichmentCacheSchemaVersion": 1,
-  "enrichmentProvider": "sample",
+  "enrichmentProvider": "yahoo",
   "enrichmentCacheHitCount": 0,
-  "enrichmentCacheMissCount": 0,
+  "enrichmentCacheMissCount": 16985,
   "enrichmentCacheStaleCount": 0,
   "enrichmentAmbiguousCount": 0,
-  "enrichmentFailureCount": 1,
+  "enrichmentFailureCount": 16985,
   "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
-  "enrichmentOldestRetrievedAt": "2026-05-09T12:00:00Z",
-  "enrichmentNewestRetrievedAt": "2026-05-09T12:00:00Z",
-  "unclassifiedCount": 2,
+  "enrichmentOldestRetrievedAt": "2026-05-09T19:09:21Z",
+  "enrichmentNewestRetrievedAt": "2026-05-09T19:16:54Z",
+  "unclassifiedCount": 16975,
   "emptyTickerCount": 0,
   "duplicateTickerCount": 0,
-  "duplicateISINCount": 0,
+  "duplicateISINCount": 2187,
   "missingISINCount": 0,
   "identityCollisionCount": 0,
   "identityOverrideCount": 0,
-  "identityIssueCount": 1,
+  "identityIssueCount": 15215,
   "instrumentCategoryCounts": {
-    "etf": 1,
-    "stock": 12
+    "etf": 5849,
+    "investment_trust": 45,
+    "stock": 11069,
+    "warrant": 22
   },
   "structureFlagCounts": {
-    "fund_like": 1,
-    "inverse": 1,
-    "leveraged": 1,
-    "short": 1
+    "accumulating": 2813,
+    "adr": 6,
+    "distributing": 1623,
+    "fund_like": 5894,
+    "gdr": 4,
+    "hedged": 84,
+    "inverse": 255,
+    "leveraged": 820,
+    "short": 416,
+    "synthetic": 143
   },
-  "rawSnapshotAt": "2026-05-09T12:00:00Z",
+  "rawSnapshotAt": "2026-05-09T19:09:20Z",
   "rawSnapshots": {
-    "timestamp": "2026-05-09T12:00:00Z",
+    "timestamp": "2026-05-09T19:09:20Z",
     "directory": "data/raw/trading212",
-    "instrumentsPath": "data/raw/trading212/instruments_20260509T120000Z.json",
-    "exchangesPath": "data/raw/trading212/exchanges_20260509T120000Z.json",
+    "instrumentsPath": "data/raw/trading212/instruments_20260509T190920Z.json",
+    "exchangesPath": "data/raw/trading212/exchanges_20260509T190920Z.json",
     "instrumentsLatest": "data/raw/trading212/instruments_latest.json",
     "exchangesLatest": "data/raw/trading212/exchanges_latest.json",
-    "instrumentFileCount": 13,
-    "exchangeFileCount": 2
+    "instrumentFileCount": 16985,
+    "exchangeFileCount": 17
   },
+  "trading212HttpDiagnostics": [
+    {
+      "endpointName": "exchanges",
+      "path": "/equity/metadata/exchanges",
+      "requestStartedAt": "2026-05-09T19:09:20.848813Z",
+      "responseReceivedAt": "2026-05-09T19:09:21.022476Z",
+      "durationMillis": 173,
+      "statusCode": 200,
+      "status": "200 OK",
+      "rateLimit": {
+        "limit": "1",
+        "period": "30",
+        "remaining": "0",
+        "reset": "1778353791",
+        "resetAt": "2026-05-09T19:09:51Z",
+        "used": "1"
+      }
+    },
+    {
+      "endpointName": "instruments",
+      "path": "/equity/metadata/instruments",
+      "requestStartedAt": "2026-05-09T19:09:21.025435Z",
+      "responseReceivedAt": "2026-05-09T19:09:21.155563Z",
+      "durationMillis": 130,
+      "statusCode": 200,
+      "status": "200 OK",
+      "rateLimit": {
+        "limit": "1",
+        "period": "50",
+        "remaining": "0",
+        "reset": "1778353811",
+        "resetAt": "2026-05-09T19:10:11Z",
+        "used": "1"
+      }
+    }
+  ],
+  "trading212RateLimits": [
+    {
+      "endpointName": "exchanges",
+      "path": "/equity/metadata/exchanges",
+      "limit": "1",
+      "period": "30",
+      "remaining": "0",
+      "reset": "1778353791",
+      "resetAt": "2026-05-09T19:09:51Z",
+      "used": "1"
+    },
+    {
+      "endpointName": "instruments",
+      "path": "/equity/metadata/instruments",
+      "limit": "1",
+      "period": "50",
+      "remaining": "0",
+      "reset": "1778353811",
+      "resetAt": "2026-05-09T19:10:11Z",
+      "used": "1"
+    }
+  ],
   "dataFreshness": "0h",
   "generatedFiles": [
     {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "ade12f0010fb8daecffbe009cc1cfb90d269d6d3de4bff7986204078e542c76a",
-      "bytes": 56799
+      "sha256": "88247e1ada91d80a4dcc96301d30dfa979f51a0e7e1a028e90336761cc187ae4",
+      "bytes": 44333286
     },
     {
       "path": "site/data/companies.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "f32f73523a20298ff8e80f4c1e7147e367e0aa3d2fcfeafdfb3187f282385dc1",
-      "bytes": 12778
+      "sha256": "cf6e9b84aea280848181ea7b3d2cc483bd32f5e1cb3614f49fe0c6a0fc25f394",
+      "bytes": 5767450
     },
     {
       "path": "site/data/sectors.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "be435ff47b223c9ffe3b59f557afac28176b95de36c1672044abe06360707cb8",
-      "bytes": 649
+      "sha256": "8b8a569cc41f3bfe9d9f696d277934cdeb3b1f2e275084c89c944efbfdb508c0",
+      "bytes": 318109
     },
     {
       "path": "site/data/industries.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "11dc0e8d875661004535f1408ba6c933e5ec1acfe1b1529239e90ac0e6705ef6",
-      "bytes": 1187
+      "sha256": "7864f0170eaf5a76a0fcfd7df6f8dde15188360a542a54465c61ca10f66bd694",
+      "bytes": 318419
     },
     {
       "path": "site/data/themes.json",
@@ -102,22 +170,22 @@
       "path": "site/data/search_index.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "cfc01acbc4113c5884ba40489e680b88db78edb638e9bfa71f95220948030883",
-      "bytes": 8753
+      "sha256": "46318f82ad7ce0b85b7cb5084b614017571c518c58055abfb73adf8558a5754a",
+      "bytes": 6897620
     },
     {
       "path": "site/data/securities.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "7ca626f6703ef2dd8fceb9a7568d6a443b86317bdac75763b52ef3c53a87416f",
-      "bytes": 5703
+      "sha256": "95cd3a372166d3155342089f1dc874d2412c910a3caf4615a71b29ff9f459239",
+      "bytes": 6327041
     },
     {
       "path": "site/data/listings.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "5d59bbe415a132aab6a82a4c74e0d3dad2ad22467b79957dfa2292b8b3ef2528",
-      "bytes": 2853
+      "sha256": "84529006365461f33a2966022d69d2a0440be8a0020d62ea5661be338796a64d",
+      "bytes": 3456770
     },
     {
       "path": "site/data/relationships.json",
@@ -130,50 +198,50 @@
       "path": "site/data/tickers.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "9f6fbf532cdb6a06fb17085a03364d8f5b6517876bdfa1c52b774ffbf7673cdb",
-      "bytes": 4597
+      "sha256": "834a9546c65108053ea7ede36bcebaa5567ec66d6a58acad0723b834213536a2",
+      "bytes": 5035790
     },
     {
       "path": "site/data/securities.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "19cb834f6a1e49aa85b7a93246d64afe3d200ea105cc6dca1992e8309186e294",
-      "bytes": 2036
+      "sha256": "bfd56fd51eb2df35a68020267d418ef69c670cddd5c95336283010e3cb574ac5",
+      "bytes": 2098175
     },
     {
       "path": "site/data/listings.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "b10e8f3c9403fce9eeabe8f8a0157532a664b246ad5e581ac3832416c47a1637",
-      "bytes": 1009
+      "sha256": "d4c126fb909073c946e7fa992600ce875fd023a52ad5c8cdf60e66bb1166ae55",
+      "bytes": 1232438
     },
     {
       "path": "site/data/unclassified.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "17e7f388eaa47c1e1290745d11b98976d01f202da6472e62b527793b00f04518",
-      "bytes": 249
+      "sha256": "ad4b511e86ce9292e5671ea9088e9c50936ee8b12a815d5c25156ffd5454a7a8",
+      "bytes": 2140354
     },
     {
       "path": "site/data/identity_issues.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "c472c3bc05512408d2f02e96eeef95d019b014fed03e98a54d508ff85580e8c7",
-      "bytes": 351
+      "sha256": "9d6de0360348556bcef0a37936036372ffccfcb7b7789b4a0781e39e0e9f2b63",
+      "bytes": 3943014
     },
     {
       "path": "site/data/enrichment_failures.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "056b9623cce71967e14dc235f61e854015b4691214fefd3baca132246f81ea19",
-      "bytes": 249
+      "sha256": "05738e2df9a6296dac2704b8e4a7597ad9407b07f840fb968234fcbf13e7201e",
+      "bytes": 3628924
     },
     {
       "path": "site/data/build_manifest.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "ef8e9d773b1a6ebb6586581f3a5bfa03a5fd390fdb9459265708341eebb45633",
-      "bytes": 5400,
+      "sha256": "8ff4b276bd10d0ae141ad01d57667676df4f706b1a1d16f4dc4502ff8cc9ddc8",
+      "bytes": 7315,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

@@ -36,6 +36,7 @@ var (
 	ErrCacheMiss          = errors.New("enrichment cache miss")
 	ErrAmbiguousMatch     = errors.New("ambiguous enrichment match")
 	ErrUnknownCacheSchema = errors.New("unknown enrichment cache schema")
+	ErrRateLimited        = errors.New("enrichment provider rate limited")
 )
 
 type Request struct {
@@ -189,6 +190,9 @@ func (p CacheProvider) Lookup(ctx context.Context, req Request) (Result, error) 
 	result, err := p.Inner.Lookup(ctx, req)
 	result = p.withDefaults(req, result, err, path)
 	result.CacheStatus = CacheStatusMiss
+	if isTransientProviderFailure(err, result) {
+		return result, err
+	}
 	if mkErr := os.MkdirAll(p.Dir, 0o755); mkErr != nil {
 		return result, mkErr
 	}
@@ -251,6 +255,9 @@ func (p YahooProvider) Lookup(ctx context.Context, req Request) (Result, error) 
 		message += ": " + lastErr.Error()
 	}
 	result.Error = message
+	if errors.Is(lastErr, ErrRateLimited) {
+		return result, fmt.Errorf("%w: %s", ErrRateLimited, message)
+	}
 	return result, errors.New(message)
 }
 
@@ -258,9 +265,13 @@ func (p YahooProvider) resolveSymbols(ctx context.Context, req Request) ([]strin
 	var symbols []string
 	var candidates []Candidate
 	var searchErrors []string
+	rateLimited := false
 	if req.ISIN != "" {
 		found, err := p.searchCandidates(ctx, req.ISIN, "isin_search")
 		if err != nil {
+			if errors.Is(err, ErrRateLimited) {
+				rateLimited = true
+			}
 			searchErrors = append(searchErrors, err.Error())
 		} else {
 			plausible := plausibleCandidates(found)
@@ -279,6 +290,9 @@ func (p YahooProvider) resolveSymbols(ctx context.Context, req Request) ([]strin
 	if len(symbols) == 0 && req.Name != "" {
 		found, err := p.searchCandidates(ctx, req.Name, "name_search")
 		if err != nil {
+			if errors.Is(err, ErrRateLimited) {
+				rateLimited = true
+			}
 			searchErrors = append(searchErrors, err.Error())
 		} else {
 			plausible := plausibleCandidates(found)
@@ -297,6 +311,9 @@ func (p YahooProvider) resolveSymbols(ctx context.Context, req Request) ([]strin
 		message := fmt.Sprintf("no yahoo symbol candidates for %s", req.Ticker)
 		if len(searchErrors) > 0 {
 			message += ": " + strings.Join(searchErrors, "; ")
+		}
+		if rateLimited {
+			return nil, candidates, fmt.Errorf("%w: %s", ErrRateLimited, message)
 		}
 		return nil, candidates, errors.New(message)
 	}
@@ -411,6 +428,9 @@ func (p YahooProvider) doJSON(req *http.Request, out any) error {
 	}
 	defer resp.Body.Close()
 	if resp.StatusCode < 200 || resp.StatusCode >= 300 {
+		if resp.StatusCode == http.StatusTooManyRequests {
+			return fmt.Errorf("%w: yahoo returned %s", ErrRateLimited, resp.Status)
+		}
 		return fmt.Errorf("yahoo returned %s", resp.Status)
 	}
 	return json.NewDecoder(resp.Body).Decode(out)
@@ -629,6 +649,9 @@ func FailureFromResult(req Request, result Result, err error) Failure {
 }
 
 func NextAction(status string, message string) string {
+	if isRateLimitMessage(message) {
+		return "wait for provider rate limit to reset, clear rate-limited cache entries, then retry with slower enrichment"
+	}
 	switch status {
 	case StatusCacheMiss:
 		return "run with STATOS_ENRICHMENT_PROVIDER=yahoo to populate cache or add manual ticker override"
@@ -644,6 +667,28 @@ func NextAction(status string, message string) string {
 	default:
 		return "review enrichment diagnostics"
 	}
+}
+
+func isTransientProviderFailure(err error, result Result) bool {
+	if errors.Is(err, ErrRateLimited) {
+		return true
+	}
+	message := strings.Join([]string{result.Error, errorString(err)}, " ")
+	return isRateLimitMessage(message)
+}
+
+func isRateLimitMessage(message string) bool {
+	normalized := strings.ToLower(message)
+	return strings.Contains(normalized, "429 too many requests") ||
+		strings.Contains(normalized, "rate limit") ||
+		strings.Contains(normalized, "rate-limited")
+}
+
+func errorString(err error) string {
+	if err == nil {
+		return ""
+	}
+	return err.Error()
 }
 
 func attemptedSymbols(result Result) []string {

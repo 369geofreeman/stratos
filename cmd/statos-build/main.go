@@ -51,6 +51,7 @@ func run(args []string) error {
 	inputRawDir := fs.String("input-raw-dir", "", "raw Trading 212 snapshot directory to replay; defaults to --raw-dir")
 	cacheDir := fs.String("cache-dir", "data/cache/enrichment", "enrichment cache directory")
 	providerName := fs.String("provider", getenvDefault("STATOS_ENRICHMENT_PROVIDER", "cache"), "enrichment provider: cache or yahoo")
+	enrichmentDelayValue := fs.String("enrichment-delay", getenvDefault("STATOS_ENRICHMENT_DELAY", ""), "optional delay between enrichment lookups, such as 500ms or 2s")
 	if err := fs.Parse(args); err != nil {
 		return err
 	}
@@ -65,6 +66,10 @@ func run(args []string) error {
 	}
 	if *noFetch && *forceSample {
 		return fmt.Errorf("choose either sample data or --no-fetch raw replay, not both")
+	}
+	enrichmentDelay, err := parseOptionalDuration(*enrichmentDelayValue)
+	if err != nil {
+		return fmt.Errorf("invalid --enrichment-delay: %w", err)
 	}
 
 	builtAt := time.Now().UTC()
@@ -82,13 +87,14 @@ func run(args []string) error {
 
 	ctx := context.Background()
 	source, err := loadSourceData(ctx, sourceOptions{
-		ForceSample:  *forceSample,
-		NoFetch:      *noFetch,
-		BuiltAt:      builtAt,
-		RawDir:       *rawDir,
-		InputRawDir:  *inputRawDir,
-		ProviderName: *providerName,
-		CacheDir:     *cacheDir,
+		ForceSample:     *forceSample,
+		NoFetch:         *noFetch,
+		BuiltAt:         builtAt,
+		RawDir:          *rawDir,
+		InputRawDir:     *inputRawDir,
+		ProviderName:    *providerName,
+		CacheDir:        *cacheDir,
+		EnrichmentDelay: enrichmentDelay,
 	})
 	if err != nil {
 		return err
@@ -416,13 +422,14 @@ func contains(value string, values []string) bool {
 }
 
 type sourceOptions struct {
-	ForceSample  bool
-	NoFetch      bool
-	BuiltAt      time.Time
-	RawDir       string
-	InputRawDir  string
-	ProviderName string
-	CacheDir     string
+	ForceSample     bool
+	NoFetch         bool
+	BuiltAt         time.Time
+	RawDir          string
+	InputRawDir     string
+	ProviderName    string
+	CacheDir        string
+	EnrichmentDelay time.Duration
 }
 
 type sourceData struct {
@@ -512,7 +519,7 @@ func loadSourceData(ctx context.Context, opts sourceOptions) (sourceData, error)
 	if err != nil {
 		return sourceData{}, err
 	}
-	enrichmentRun := enrichAll(ctx, instruments, opts.ProviderName, opts.CacheDir)
+	enrichmentRun := enrichAll(ctx, instruments, opts.ProviderName, opts.CacheDir, opts.EnrichmentDelay)
 	return sourceData{
 		Instruments:           instruments,
 		Exchanges:             exchanges,
@@ -536,7 +543,10 @@ type enrichmentRun struct {
 	Failures    []catalogue.EnrichmentFailure
 }
 
-func enrichAll(ctx context.Context, instruments []trading212.Instrument, providerName, cacheDir string) enrichmentRun {
+const enrichmentProgressInterval = 60 * time.Second
+const enrichmentProgressMinInstruments = 1000
+
+func enrichAll(ctx context.Context, instruments []trading212.Instrument, providerName, cacheDir string, delay time.Duration) enrichmentRun {
 	var inner enrichment.Provider
 	if strings.EqualFold(providerName, "yahoo") {
 		inner = enrichment.YahooProvider{}
@@ -549,7 +559,13 @@ func enrichAll(ctx context.Context, instruments []trading212.Instrument, provide
 			Provider:           normalizedEnrichmentProvider(providerName),
 		},
 	}
-	for _, instrument := range instruments {
+	started := time.Now()
+	nextProgressAt := started.Add(enrichmentProgressInterval)
+	reportProgress := len(instruments) >= enrichmentProgressMinInstruments
+	if reportProgress {
+		log.Printf("enrichment started: provider=%s instruments=%d delay=%s", run.Diagnostics.Provider, len(instruments), delay)
+	}
+	for index, instrument := range instruments {
 		parts := catalogue.ParseBrokerTicker(instrument.Ticker)
 		req := enrichment.Request{
 			Ticker:       instrument.Ticker,
@@ -563,8 +579,39 @@ func enrichAll(ctx context.Context, instruments []trading212.Instrument, provide
 		if err == nil && result.Status == enrichment.StatusHit {
 			run.Profiles[instrument.Ticker] = result.Profile
 		}
+		if reportProgress && time.Now().After(nextProgressAt) {
+			logEnrichmentProgress(run, index+1, len(instruments), started)
+			nextProgressAt = time.Now().Add(enrichmentProgressInterval)
+		}
+		if delay > 0 && index+1 < len(instruments) {
+			select {
+			case <-ctx.Done():
+				return run
+			case <-time.After(delay):
+			}
+		}
+	}
+	if reportProgress {
+		logEnrichmentProgress(run, len(instruments), len(instruments), started)
 	}
 	return run
+}
+
+func logEnrichmentProgress(run enrichmentRun, processed, total int, started time.Time) {
+	elapsed := time.Since(started).Round(time.Second)
+	log.Printf(
+		"enrichment progress: provider=%s processed=%d/%d hits=%d failures=%d ambiguous=%d cache_hits=%d cache_misses=%d stale=%d elapsed=%s",
+		run.Diagnostics.Provider,
+		processed,
+		total,
+		len(run.Profiles),
+		run.Diagnostics.FailureCount,
+		run.Diagnostics.AmbiguousCount,
+		run.Diagnostics.CacheHitCount,
+		run.Diagnostics.CacheMissCount,
+		run.Diagnostics.CacheStaleCount,
+		elapsed,
+	)
 }
 
 func sampleEnrichment(instruments []trading212.Instrument, profiles map[string]enrichment.Profile) enrichmentRun {
@@ -821,7 +868,7 @@ func replayEnrichment(ctx context.Context, instruments []trading212.Instrument, 
 		_, _, profiles := catalogue.SampleData()
 		return sampleEnrichment(instruments, profiles)
 	}
-	return enrichAll(ctx, instruments, "cache", cacheDir)
+	return enrichAll(ctx, instruments, "cache", cacheDir, 0)
 }
 
 func matchesEmbeddedSampleRaw(instruments []trading212.Instrument, exchanges []trading212.Exchange) bool {
@@ -900,4 +947,12 @@ func getenvDefault(key, fallback string) string {
 		return fallback
 	}
 	return value
+}
+
+func parseOptionalDuration(value string) (time.Duration, error) {
+	value = strings.TrimSpace(value)
+	if value == "" || value == "0" {
+		return 0, nil
+	}
+	return time.ParseDuration(value)
 }

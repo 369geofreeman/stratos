@@ -4,6 +4,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"net/http"
 	"os"
@@ -168,6 +169,25 @@ func TestCacheProviderProviderFailureCached(t *testing.T) {
 	}
 }
 
+func TestCacheProviderDoesNotCacheRateLimitFailure(t *testing.T) {
+	dir := t.TempDir()
+	req := Request{Ticker: "RATE_US_EQ", ISIN: "US0000000006", Name: "Rate Limited Corp"}
+	inner := &stubProvider{
+		result: Result{Status: StatusFailure, Error: "yahoo returned 429 Too Many Requests"},
+		err:    fmt.Errorf("%w: yahoo returned 429 Too Many Requests", ErrRateLimited),
+	}
+	result, err := (CacheProvider{Dir: dir, Inner: inner}).Lookup(context.Background(), req)
+	if !errors.Is(err, ErrRateLimited) {
+		t.Fatalf("err = %v, want ErrRateLimited", err)
+	}
+	if result.Status != StatusFailure || result.CacheStatus != CacheStatusMiss {
+		t.Fatalf("result = %#v", result)
+	}
+	if _, statErr := os.Stat(CachePath(dir, req)); !errors.Is(statErr, os.ErrNotExist) {
+		t.Fatalf("rate-limited failure should not be cached; stat err = %v", statErr)
+	}
+}
+
 func TestYahooProviderAmbiguousMatch(t *testing.T) {
 	client := &http.Client{Transport: roundTripFunc(func(r *http.Request) (*http.Response, error) {
 		if strings.Contains(r.URL.Path, "/quoteSummary/") {
@@ -191,6 +211,39 @@ func TestYahooProviderAmbiguousMatch(t *testing.T) {
 	}
 	if result.Status != StatusAmbiguous || len(result.Candidates) != 2 || result.Profile.Symbol != "" {
 		t.Fatalf("result = %#v", result)
+	}
+}
+
+func TestYahooProviderQuoteSummaryRateLimitIsTyped(t *testing.T) {
+	client := &http.Client{Transport: roundTripFunc(func(r *http.Request) (*http.Response, error) {
+		switch {
+		case strings.HasPrefix(r.URL.Path, "/v1/finance/search"):
+			return jsonHTTPResponse(t, map[string]any{
+				"quotes": []map[string]any{
+					{"symbol": "ABC", "longname": "ABC Corp", "quoteType": "EQUITY"},
+				},
+			}), nil
+		case strings.HasPrefix(r.URL.Path, "/v10/finance/quoteSummary/ABC"):
+			return statusHTTPResponse(http.StatusTooManyRequests, "429 Too Many Requests"), nil
+		default:
+			t.Fatalf("unexpected request path %s", r.URL.Path)
+		}
+		return nil, errors.New("unreachable")
+	})}
+
+	result, err := (YahooProvider{BaseURL: "https://yahoo.test", HTTPClient: client}).Lookup(context.Background(), Request{
+		Ticker: "ABC_US_EQ",
+		ISIN:   "US0000000006",
+		Name:   "ABC Corp",
+	})
+	if !errors.Is(err, ErrRateLimited) {
+		t.Fatalf("err = %v, want ErrRateLimited", err)
+	}
+	if result.Status != StatusFailure || !strings.Contains(result.Error, "429 Too Many Requests") {
+		t.Fatalf("result = %#v", result)
+	}
+	if NextAction(result.Status, result.Error) != "wait for provider rate limit to reset, clear rate-limited cache entries, then retry with slower enrichment" {
+		t.Fatalf("next action = %q", NextAction(result.Status, result.Error))
 	}
 }
 
@@ -347,5 +400,14 @@ func jsonHTTPResponse(t *testing.T, value any) *http.Response {
 		Status:     "200 OK",
 		Header:     http.Header{"Content-Type": []string{"application/json"}},
 		Body:       io.NopCloser(strings.NewReader(string(b))),
+	}
+}
+
+func statusHTTPResponse(code int, status string) *http.Response {
+	return &http.Response{
+		StatusCode: code,
+		Status:     status,
+		Header:     http.Header{"Content-Type": []string{"application/json"}},
+		Body:       io.NopCloser(strings.NewReader("{}")),
 	}
 }

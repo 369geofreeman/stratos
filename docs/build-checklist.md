@@ -12,9 +12,23 @@ Use this checklist for the weekly manual refresh.
 ## Refresh
 
 ```sh
-make refresh
-make test
-make smoke
+make update-live-data
+```
+
+Use `make update-site-data` only when sample fallback is acceptable. For publishable account data, `make update-live-data` should report `sourceMode=live_fetch` and fail if the builder fell back to sample data.
+
+If Yahoo enrichment reports widespread `429 Too Many Requests` rows, wait for the provider limit to reset, then run:
+
+```sh
+make clean-rate-limited-enrichment-cache
+STATOS_ENRICHMENT_DELAY=2s make update-live-data
+```
+
+You can also put the delay in `.env`:
+
+```sh
+STATOS_ENRICHMENT_DELAY=2s
+make update-live-data
 ```
 
 To rebuild from the latest ignored Trading 212 raw snapshots without calling Trading 212:

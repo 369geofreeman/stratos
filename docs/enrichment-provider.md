@@ -54,6 +54,8 @@ The builder uses `CacheProvider` in front of live providers. Cache files are ign
 
 Unknown schema versions are reported as `unknown_schema` failures and are not trusted. Stale entries are still usable by default, but stale counts and oldest/newest retrieval timestamps are written to `site/data/build_manifest.json`.
 
+Yahoo `429 Too Many Requests` responses are treated as transient rate-limit failures and should not be cached by new runs. If older cache files contain 429 failures, run `make clean-rate-limited-enrichment-cache` before retrying enrichment. Large live runs can be paced with `STATOS_ENRICHMENT_DELAY`, such as `2s`.
+
 ## Yahoo-Compatible Provider
 
 Yahoo Finance does not provide a stable official public developer API. The optional Yahoo-compatible provider is enrichment only. yfinance documents that it is not affiliated with, endorsed by, or vetted by Yahoo and that it uses publicly available APIs for research and educational purposes: <https://ranaroussi.github.io/yfinance/index.html>.

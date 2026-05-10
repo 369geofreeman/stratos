@@ -110,6 +110,8 @@ Goal: Enrich when possible, cache everything, and make failures useful.
 - [x] Add ISIN-first lookup path where provider supports it.
 - [x] Add ticker-derived Yahoo symbol candidates with exchange suffix mapping.
 - [x] Deduplicate enrichment lookups by ISIN identity and fan results back out to tickers.
+- [x] Add optional local yfinance cache warmer with persistent rate-limit state.
+- [x] Add a two-level ignored yfinance provider cache for identity mappings and symbol fundamentals.
 - [x] Add ambiguous-match handling with candidate lists instead of first-match trust.
 - [x] Add manual enrichment override fields for Yahoo symbol, sector, industry, and country.
 - [x] Add manual enrichment override fields for market cap, exchange, and currency.

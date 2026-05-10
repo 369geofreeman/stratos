@@ -17,6 +17,22 @@ make update-live-data
 
 Use `make update-site-data` only when sample fallback is acceptable. For publishable account data, `make update-live-data` should report `sourceMode=live_fetch` and fail if the builder fell back to sample data.
 
+To enrich using the optional yfinance cache warmer instead of the direct Go Yahoo-compatible provider:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python3 -m pip install -r requirements-enrichment.txt
+make update-live-data-yfinance
+```
+
+For a small probe first:
+
+```sh
+python3 scripts/enrich_yfinance.py --limit 100
+STATOS_ENRICHMENT_PROVIDER=cache make refresh
+make smoke
+```
+
 If Yahoo enrichment reports widespread `429 Too Many Requests` rows, wait for the provider limit to reset, then run:
 
 ```sh

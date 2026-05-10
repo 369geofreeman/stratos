@@ -56,13 +56,15 @@ make sample
 make refresh
 make update-site-data
 make update-live-data
+make enrich-yfinance
+make update-live-data-yfinance
 make clean-rate-limited-enrichment-cache
 make test
 make smoke
 make preview
 ```
 
-`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make update-site-data` runs refresh, tests, smoke checks, and a manifest summary. `make update-live-data` runs the same refresh flow but fails if the generated manifest still reports sample data. Large enrichment runs log progress roughly every 60 seconds. `make clean-rate-limited-enrichment-cache` removes ignored Yahoo 429 cache entries so a later retry is not blocked by cached rate-limit failures. `make smoke` verifies the expected generated `site/data` files exist, including the app bootstrap, ticker index, standalone securities/listings/relationships JSON, JSON/CSV review queues, and identity/enrichment review CSVs, and checks that generated JSON files parse.
+`make refresh` fetches Trading 212 metadata when credentials are present. With no credentials it falls back to the embedded sample dataset. `make sample` always uses the embedded sample universe and is useful for UI development. `make update-site-data` runs refresh, tests, smoke checks, and a manifest summary. `make update-live-data` runs the same refresh flow but fails if the generated manifest still reports sample data. `make enrich-yfinance` uses the optional local Python/yfinance helper to populate ignored enrichment cache files from the latest raw universe. `make update-live-data-yfinance` first refreshes Trading 212 metadata in cache-only mode, warms yfinance cache, then refreshes the generated site from that cache. Large enrichment runs log progress roughly every 60 seconds. `make clean-rate-limited-enrichment-cache` removes ignored Yahoo 429 cache entries so a later retry is not blocked by cached rate-limit failures. `make smoke` verifies the expected generated `site/data` files exist, including the app bootstrap, ticker index, standalone securities/listings/relationships JSON, JSON/CSV review queues, and identity/enrichment review CSVs, and checks that generated JSON files parse.
 
 The underlying builder remains available directly:
 
@@ -83,6 +85,24 @@ The `taxonomy coverage` and `taxonomy exposure-template` commands read generated
 Live Trading 212 fetches read credentials only from `.env` or the process environment. Set `STATOS_TRADING212_ENV=demo` or `live`, or set `STATOS_TRADING212_BASE_URL` explicitly. The metadata endpoints used by Statos do not require an account ID. Successful fetches write timestamped ignored raw files plus `*_latest.json` aliases under `data/raw/trading212`.
 
 Optional enrichment pacing can be set with `STATOS_ENRICHMENT_DELAY`, for example `STATOS_ENRICHMENT_DELAY=2s`, or with `go run ./cmd/statos-build refresh --enrichment-delay 2s`.
+
+For the optional yfinance helper, install the local-only dependency first. A project virtualenv is recommended and is ignored by Git:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python3 -m pip install -r requirements-enrichment.txt
+```
+
+Then populate the ignored local cache and rebuild using cache-only enrichment:
+
+```sh
+make enrich-yfinance
+STATOS_ENRICHMENT_PROVIDER=cache make refresh
+```
+
+The helper deduplicates by ISIN identity, stores a separate ignored provider cache under `data/cache/yfinance`, uses a persistent local rate-limit state file, and stops without caching provider rate-limit failures if yfinance reports a 429/rate-limit condition. Use `STATOS_YFINANCE_MIN_INTERVAL`, `STATOS_YFINANCE_CACHE_MAX_AGE_HOURS`, or `python3 scripts/enrich_yfinance.py --limit 100` for a small probe run.
+
+Make uses `.venv/bin/python3` automatically when that file exists. Override with `PYTHON=/path/to/python make ...` if you want a different interpreter.
 
 ## GitHub Pages Deployment
 
@@ -142,7 +162,7 @@ Detailed review steps are in [Manual Taxonomy Workflow](docs/taxonomy-workflow.m
 
 ## Enrichment
 
-Yahoo Finance does not provide a stable official public API. Statos treats Yahoo-style data as replaceable enrichment, not the source of truth. Set `STATOS_ENRICHMENT_PROVIDER=yahoo` only when you want the builder to attempt live enrichment and cache the response or failure locally.
+Yahoo Finance does not provide a stable official public API. Statos treats Yahoo-style data as replaceable enrichment, not the source of truth. Prefer the optional local yfinance helper for larger runs, then run the Go builder in cache-only mode. Set `STATOS_ENRICHMENT_PROVIDER=yahoo` only when you specifically want the Go builder to attempt direct Yahoo-compatible HTTP enrichment.
 
 The default provider mode is cache-only. Cache misses, stale entries, cached failures, unknown cache schema versions, and ambiguous matches are surfaced in `site/data/build_manifest.json` and `site/data/enrichment_failures.csv`. Stale cache entries are still used by default so offline builds remain useful.
 

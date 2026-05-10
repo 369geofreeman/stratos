@@ -7,6 +7,8 @@ data/cache/
 
 # Go/editor noise.
 .gocache/
+.venv/
+__pycache__/
 bin/
 coverage.out
 *.test

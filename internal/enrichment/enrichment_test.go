@@ -22,6 +22,42 @@ func TestCandidateSymbols(t *testing.T) {
 	}
 }
 
+func TestCandidateSymbolsUsesBroaderExchangeSuffixMap(t *testing.T) {
+	got := CandidateSymbols("ABRA_CA_EQ")
+	want := []string{"ABRA.TO", "ABRA", "ABRA_CA_EQ"}
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("CandidateSymbols() = %#v, want %#v", got, want)
+	}
+}
+
+func TestCachePathUsesISINIdentityWhenPresent(t *testing.T) {
+	dir := t.TempDir()
+	first := Request{Ticker: "ABC_US_EQ", ISIN: "US0000000001", Name: "ABC Corp"}
+	second := Request{Ticker: "ABC_L_EQ", ISIN: "US0000000001", Name: "ABC Corp London"}
+	if CachePath(dir, first) != CachePath(dir, second) {
+		t.Fatalf("same ISIN cache paths differ: %q vs %q", CachePath(dir, first), CachePath(dir, second))
+	}
+
+	withoutISIN := Request{Ticker: "ABC_L_EQ", Name: "ABC Corp London"}
+	if CachePath(dir, first) == CachePath(dir, withoutISIN) {
+		t.Fatalf("ISIN and ticker fallback cache paths should differ: %q", CachePath(dir, first))
+	}
+}
+
+func TestRequestSnapshotUsesPrecomputedCandidateSymbols(t *testing.T) {
+	req := Request{
+		Ticker:           "ABC_US_EQ",
+		ISIN:             "US0000000001",
+		Name:             "ABC Corp",
+		CandidateSymbols: []string{"ABC.L", "ABC", "ABC.L"},
+	}
+	got := requestSnapshot(req).CandidateSymbols
+	want := []string{"ABC.L", "ABC"}
+	if !reflect.DeepEqual(got, want) {
+		t.Fatalf("candidate symbols = %#v, want %#v", got, want)
+	}
+}
+
 func TestCacheProviderHitReturningProfile(t *testing.T) {
 	dir := t.TempDir()
 	req := Request{Ticker: "VOD_L_EQ", ISIN: "GB00BH4HKS39", Name: "Vodafone Group plc"}

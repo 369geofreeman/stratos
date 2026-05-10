@@ -146,6 +146,8 @@ Yahoo Finance does not provide a stable official public API. Statos treats Yahoo
 
 The default provider mode is cache-only. Cache misses, stale entries, cached failures, unknown cache schema versions, and ambiguous matches are surfaced in `site/data/build_manifest.json` and `site/data/enrichment_failures.csv`. Stale cache entries are still used by default so offline builds remain useful.
 
+Enrichment is attempted once per identity, using ISIN where available, then fanned out to every Trading 212 ticker sharing that identity. This avoids repeating the same Yahoo/cache lookup for duplicate exchange or currency listings while keeping ticker-level failure rows for manual review.
+
 Yahoo 429 rate-limit failures are treated as transient and are not cached by new runs. If an older run cached 429 failures, run `make clean-rate-limited-enrichment-cache` before retrying live enrichment. For large Yahoo runs, set `STATOS_ENRICHMENT_DELAY` to pace requests.
 
 Provider interface and cache contract details are documented in [Enrichment Provider Contract](docs/enrichment-provider.md).

@@ -2,6 +2,7 @@ package main
 
 import (
 	"bytes"
+	"context"
 	"encoding/json"
 	"os"
 	"path/filepath"
@@ -10,7 +11,9 @@ import (
 	"time"
 
 	"statos/internal/catalogue"
+	"statos/internal/enrichment"
 	"statos/internal/taxonomy"
+	"statos/internal/trading212"
 )
 
 func TestReadRawSnapshotsMissingLatestFailsClearly(t *testing.T) {
@@ -186,6 +189,85 @@ func TestParseOptionalDuration(t *testing.T) {
 	if _, err := parseOptionalDuration("slow"); err == nil {
 		t.Fatal("expected invalid duration error")
 	}
+}
+
+func TestEnrichAllGroupsByISINAndFansOutProfile(t *testing.T) {
+	instruments := []trading212.Instrument{
+		{Ticker: "ABC_US_EQ", ISIN: "US0000000001", Name: "ABC Corp", CurrencyCode: "USD"},
+		{Ticker: "ABC_L_EQ", ISIN: "US0000000001", Name: "ABC Corp", CurrencyCode: "GBP"},
+		{Ticker: "XYZ_US_EQ", ISIN: "US0000000002", Name: "XYZ Corp", CurrencyCode: "USD"},
+	}
+	provider := &recordingEnrichmentProvider{
+		result: enrichment.Result{
+			Provider: "stub",
+			Status:   enrichment.StatusHit,
+			Profile:  enrichment.Profile{Symbol: "ABC", Sector: "Technology", Source: "stub"},
+		},
+	}
+
+	run := enrichAllWithProvider(context.Background(), instruments, provider, "stub", 0)
+
+	if provider.calls != 2 {
+		t.Fatalf("provider calls = %d, want one call per ISIN identity", provider.calls)
+	}
+	if len(run.Profiles) != 3 || run.Profiles["ABC_US_EQ"].Sector != "Technology" || run.Profiles["ABC_L_EQ"].Sector != "Technology" {
+		t.Fatalf("profiles = %#v", run.Profiles)
+	}
+	gotCandidates := provider.requests[0].CandidateSymbols
+	wantCandidates := []string{"ABC.L", "ABC", "ABC_L_EQ", "ABC_US_EQ"}
+	if strings.Join(gotCandidates, "|") != strings.Join(wantCandidates, "|") {
+		t.Fatalf("identity candidates = %#v, want %#v", gotCandidates, wantCandidates)
+	}
+}
+
+func TestEnrichAllIdentityFailureFansOutButCountsCacheOnce(t *testing.T) {
+	instruments := []trading212.Instrument{
+		{Ticker: "ABC_US_EQ", ISIN: "US0000000001", Name: "ABC Corp", CurrencyCode: "USD"},
+		{Ticker: "ABC_L_EQ", ISIN: "US0000000001", Name: "ABC Corp", CurrencyCode: "GBP"},
+	}
+	provider := &recordingEnrichmentProvider{
+		result: enrichment.Result{
+			Provider:    "cache",
+			Status:      enrichment.StatusCacheMiss,
+			Error:       enrichment.ErrCacheMiss.Error(),
+			CacheStatus: enrichment.CacheStatusMiss,
+		},
+		err: enrichment.ErrCacheMiss,
+	}
+
+	run := enrichAllWithProvider(context.Background(), instruments, provider, "cache", 0)
+
+	if provider.calls != 1 {
+		t.Fatalf("provider calls = %d, want one call for shared ISIN identity", provider.calls)
+	}
+	if run.Diagnostics.CacheMissCount != 1 {
+		t.Fatalf("cache miss count = %d, want identity-level miss count", run.Diagnostics.CacheMissCount)
+	}
+	if run.Diagnostics.FailureCount != 2 || len(run.Failures) != 2 {
+		t.Fatalf("failures = count %d rows %#v, want one row per ticker", run.Diagnostics.FailureCount, run.Failures)
+	}
+}
+
+type recordingEnrichmentProvider struct {
+	result   enrichment.Result
+	err      error
+	calls    int
+	requests []enrichment.Request
+}
+
+func (p *recordingEnrichmentProvider) Lookup(_ context.Context, req enrichment.Request) (enrichment.Result, error) {
+	p.calls++
+	p.requests = append(p.requests, req)
+	result := p.result
+	if result.Request.Ticker == "" {
+		result.Request = enrichment.RequestSnapshot{
+			Ticker:           req.Ticker,
+			ISIN:             req.ISIN,
+			Name:             req.Name,
+			CandidateSymbols: req.CandidateSymbols,
+		}
+	}
+	return result, p.err
 }
 
 func writeBadManual(t *testing.T, dir string) {

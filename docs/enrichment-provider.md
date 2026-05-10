@@ -10,7 +10,7 @@ Providers implement `internal/enrichment.Provider`:
 Lookup(context.Context, enrichment.Request) (enrichment.Result, error)
 ```
 
-`Request` is built from the Trading 212 row. Providers may use `Ticker`, `ISIN`, `Name`, `CurrencyCode`, and `ExchangeCode`, but they must not redefine the source universe or write generated `site/data` files directly.
+`Request` is built from Trading 212 metadata. The builder groups instruments by identity before live/cache enrichment: `ISIN` is used where available, with ticker fallback only when ISIN is missing. Providers may use `Ticker`, `ISIN`, `Name`, `CurrencyCode`, `ExchangeCode`, and precomputed `CandidateSymbols`, but they must not redefine the source universe or write generated `site/data` files directly.
 
 `Result` has explicit normalized fields:
 
@@ -24,7 +24,7 @@ Ambiguous matches must not be silently applied. Return `StatusAmbiguous`, preser
 
 ## Cache Contract
 
-The builder uses `CacheProvider` in front of live providers. Cache files are ignored under `data/cache/enrichment` and use a versioned envelope:
+The builder uses `CacheProvider` in front of live providers. Cache files are ignored under `data/cache/enrichment`, are keyed by ISIN identity when possible, and use a versioned envelope:
 
 ```json
 {
@@ -54,13 +54,15 @@ The builder uses `CacheProvider` in front of live providers. Cache files are ign
 
 Unknown schema versions are reported as `unknown_schema` failures and are not trusted. Stale entries are still usable by default, but stale counts and oldest/newest retrieval timestamps are written to `site/data/build_manifest.json`.
 
+Cache hit/miss/stale counts are identity-level provider/cache observations. Enrichment failure rows remain ticker-level so each Trading 212 ticker still has an explicit review action when its shared identity lookup fails.
+
 Yahoo `429 Too Many Requests` responses are treated as transient rate-limit failures and should not be cached by new runs. If older cache files contain 429 failures, run `make clean-rate-limited-enrichment-cache` before retrying enrichment. Large live runs can be paced with `STATOS_ENRICHMENT_DELAY`, such as `2s`.
 
 ## Yahoo-Compatible Provider
 
 Yahoo Finance does not provide a stable official public developer API. The optional Yahoo-compatible provider is enrichment only. yfinance documents that it is not affiliated with, endorsed by, or vetted by Yahoo and that it uses publicly available APIs for research and educational purposes: <https://ranaroussi.github.io/yfinance/index.html>.
 
-The Yahoo-compatible provider tries ISIN search first, then deterministic symbols derived from the Trading 212 ticker. For non-US listings with a known Yahoo exchange suffix, the exchange-suffixed symbol is attempted before the base symbol and raw broker ticker. If search returns multiple plausible equity/fund candidates, the result is marked ambiguous and provider fields are not applied.
+The Yahoo-compatible provider tries ISIN search first, then deterministic symbols derived from every Trading 212 ticker in the identity group. For non-US listings with a known Yahoo exchange suffix, the exchange-suffixed symbol is attempted before the base symbol and raw broker ticker. If search returns multiple plausible equity/fund candidates, the result is marked ambiguous and provider fields are not applied.
 
 ## Generated Diagnostics
 

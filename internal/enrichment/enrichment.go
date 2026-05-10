@@ -40,11 +40,12 @@ var (
 )
 
 type Request struct {
-	Ticker       string
-	ISIN         string
-	Name         string
-	CurrencyCode string
-	ExchangeCode string
+	Ticker           string
+	ISIN             string
+	Name             string
+	CurrencyCode     string
+	ExchangeCode     string
+	CandidateSymbols []string
 }
 
 type RequestSnapshot struct {
@@ -286,7 +287,7 @@ func (p YahooProvider) resolveSymbols(ctx context.Context, req Request) ([]strin
 		}
 	}
 
-	symbols = appendUniqueStrings(symbols, CandidateSymbols(req.Ticker)...)
+	symbols = appendUniqueStrings(symbols, requestCandidateSymbols(req)...)
 	if len(symbols) == 0 && req.Name != "" {
 		found, err := p.searchCandidates(ctx, req.Name, "name_search")
 		if err != nil {
@@ -476,20 +477,56 @@ func CandidateSymbols(t212Ticker string) []string {
 
 func yahooSuffix(exchange string) string {
 	switch strings.ToUpper(exchange) {
-	case "L", "LN", "LSE":
-		return ".L"
+	case "AT":
+		return ".VI"
+	case "AU":
+		return ".AX"
+	case "BE":
+		return ".BR"
+	case "CA":
+		return ".TO"
+	case "CH":
+		return ".SW"
+	case "CZ":
+		return ".PR"
 	case "DE", "XETRA":
 		return ".DE"
-	case "PA":
-		return ".PA"
-	case "AS":
-		return ".AS"
-	case "MI":
-		return ".MI"
-	case "MC":
+	case "DK":
+		return ".CO"
+	case "ES", "MC":
 		return ".MC"
-	case "SW":
-		return ".SW"
+	case "FI":
+		return ".HE"
+	case "FR", "PA":
+		return ".PA"
+	case "GB", "UK", "L", "LN", "LSE":
+		return ".L"
+	case "GR":
+		return ".AT"
+	case "HK":
+		return ".HK"
+	case "HU":
+		return ".BD"
+	case "IE":
+		return ".IR"
+	case "IT", "MI":
+		return ".MI"
+	case "JP":
+		return ".T"
+	case "NL", "AS":
+		return ".AS"
+	case "NO":
+		return ".OL"
+	case "NZ":
+		return ".NZ"
+	case "PL":
+		return ".WA"
+	case "PT":
+		return ".LS"
+	case "SE":
+		return ".ST"
+	case "SG":
+		return ".SI"
 	case "US", "NASDAQ", "NYSE":
 		return ""
 	default:
@@ -498,9 +535,12 @@ func yahooSuffix(exchange string) string {
 }
 
 func cacheKey(req Request) string {
+	if isin := strings.ToUpper(strings.TrimSpace(req.ISIN)); isin != "" {
+		h := sha1.Sum([]byte("ISIN|" + isin))
+		return hex.EncodeToString(h[:])
+	}
 	h := sha1.Sum([]byte(strings.Join([]string{
 		strings.ToUpper(req.Ticker),
-		strings.ToUpper(req.ISIN),
 		strings.ToUpper(req.Name),
 	}, "|")))
 	return hex.EncodeToString(h[:])
@@ -515,7 +555,7 @@ func requestSnapshot(req Request) RequestSnapshot {
 		Ticker:           req.Ticker,
 		ISIN:             req.ISIN,
 		Name:             req.Name,
-		CandidateSymbols: CandidateSymbols(req.Ticker),
+		CandidateSymbols: requestCandidateSymbols(req),
 	}
 }
 
@@ -610,7 +650,7 @@ func cacheMissResult(req Request, path string) Result {
 		Request:          requestSnapshot(req),
 		Status:           StatusCacheMiss,
 		Error:            ErrCacheMiss.Error(),
-		AttemptedSymbols: CandidateSymbols(req.Ticker),
+		AttemptedSymbols: requestCandidateSymbols(req),
 		CacheStatus:      CacheStatusMiss,
 		CachePath:        path,
 	}
@@ -622,7 +662,7 @@ func failureResult(req Request, path string, message string) Result {
 		Request:          requestSnapshot(req),
 		Status:           StatusFailure,
 		Error:            message,
-		AttemptedSymbols: CandidateSymbols(req.Ticker),
+		AttemptedSymbols: requestCandidateSymbols(req),
 		CachePath:        path,
 	}
 }
@@ -702,6 +742,13 @@ func attemptedSymbols(result Result) []string {
 		out = appendUniqueStrings(out, result.Profile.Symbol)
 	}
 	return out
+}
+
+func requestCandidateSymbols(req Request) []string {
+	if len(req.CandidateSymbols) > 0 {
+		return appendUniqueStrings(nil, req.CandidateSymbols...)
+	}
+	return CandidateSymbols(req.Ticker)
 }
 
 func providerName(provider Provider) string {

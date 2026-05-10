@@ -546,44 +546,55 @@ type enrichmentRun struct {
 const enrichmentProgressInterval = 60 * time.Second
 const enrichmentProgressMinInstruments = 1000
 
+type enrichmentGroup struct {
+	Key         string
+	Request     enrichment.Request
+	Instruments []trading212.Instrument
+}
+
 func enrichAll(ctx context.Context, instruments []trading212.Instrument, providerName, cacheDir string, delay time.Duration) enrichmentRun {
 	var inner enrichment.Provider
 	if strings.EqualFold(providerName, "yahoo") {
 		inner = enrichment.YahooProvider{}
 	}
 	provider := enrichment.CacheProvider{Dir: cacheDir, Inner: inner}
+	return enrichAllWithProvider(ctx, instruments, provider, normalizedEnrichmentProvider(providerName), delay)
+}
+
+func enrichAllWithProvider(ctx context.Context, instruments []trading212.Instrument, provider enrichment.Provider, providerName string, delay time.Duration) enrichmentRun {
 	run := enrichmentRun{
 		Profiles: map[string]enrichment.Profile{},
 		Diagnostics: catalogue.EnrichmentDiagnostics{
 			CacheSchemaVersion: enrichment.CacheSchemaVersion,
-			Provider:           normalizedEnrichmentProvider(providerName),
+			Provider:           providerName,
 		},
 	}
+	groups := buildEnrichmentGroups(instruments)
 	started := time.Now()
 	nextProgressAt := started.Add(enrichmentProgressInterval)
 	reportProgress := len(instruments) >= enrichmentProgressMinInstruments
 	if reportProgress {
-		log.Printf("enrichment started: provider=%s instruments=%d delay=%s", run.Diagnostics.Provider, len(instruments), delay)
+		log.Printf("enrichment started: provider=%s tickers=%d identities=%d delay=%s", run.Diagnostics.Provider, len(instruments), len(groups), delay)
 	}
-	for index, instrument := range instruments {
-		parts := catalogue.ParseBrokerTicker(instrument.Ticker)
-		req := enrichment.Request{
-			Ticker:       instrument.Ticker,
-			ISIN:         instrument.ISIN,
-			Name:         instrument.Name,
-			CurrencyCode: instrument.CurrencyCode,
-			ExchangeCode: parts.ExchangeCode,
-		}
-		result, err := provider.Lookup(ctx, req)
-		observeEnrichmentResult(&run, req, result, err)
+	processedTickers := 0
+	for index, group := range groups {
+		result, err := provider.Lookup(ctx, group.Request)
+		observeEnrichmentProviderResult(&run, result)
 		if err == nil && result.Status == enrichment.StatusHit {
-			run.Profiles[instrument.Ticker] = result.Profile
+			for _, instrument := range group.Instruments {
+				run.Profiles[instrument.Ticker] = result.Profile
+			}
+		} else {
+			for _, instrument := range group.Instruments {
+				recordEnrichmentFailure(&run, enrichmentRequestForInstrument(instrument), result, err)
+			}
 		}
+		processedTickers += len(group.Instruments)
 		if reportProgress && time.Now().After(nextProgressAt) {
-			logEnrichmentProgress(run, index+1, len(instruments), started)
+			logEnrichmentProgress(run, index+1, len(groups), processedTickers, len(instruments), started)
 			nextProgressAt = time.Now().Add(enrichmentProgressInterval)
 		}
-		if delay > 0 && index+1 < len(instruments) {
+		if delay > 0 && index+1 < len(groups) {
 			select {
 			case <-ctx.Done():
 				return run
@@ -592,18 +603,95 @@ func enrichAll(ctx context.Context, instruments []trading212.Instrument, provide
 		}
 	}
 	if reportProgress {
-		logEnrichmentProgress(run, len(instruments), len(instruments), started)
+		logEnrichmentProgress(run, len(groups), len(groups), len(instruments), len(instruments), started)
 	}
 	return run
 }
 
-func logEnrichmentProgress(run enrichmentRun, processed, total int, started time.Time) {
+func buildEnrichmentGroups(instruments []trading212.Instrument) []enrichmentGroup {
+	groupByKey := map[string]int{}
+	var groups []enrichmentGroup
+	for _, instrument := range instruments {
+		key := enrichmentIdentityKey(instrument)
+		index, ok := groupByKey[key]
+		if !ok {
+			groupByKey[key] = len(groups)
+			groups = append(groups, enrichmentGroup{Key: key})
+			index = len(groups) - 1
+		}
+		groups[index].Instruments = append(groups[index].Instruments, instrument)
+	}
+	for index := range groups {
+		sort.SliceStable(groups[index].Instruments, func(i, j int) bool {
+			return strings.ToUpper(groups[index].Instruments[i].Ticker) < strings.ToUpper(groups[index].Instruments[j].Ticker)
+		})
+		groups[index].Request = enrichmentRequestForGroup(groups[index].Instruments)
+	}
+	sort.SliceStable(groups, func(i, j int) bool {
+		return groups[i].Key < groups[j].Key
+	})
+	return groups
+}
+
+func enrichmentIdentityKey(instrument trading212.Instrument) string {
+	if isin := strings.ToUpper(strings.TrimSpace(instrument.ISIN)); isin != "" {
+		return "isin:" + isin
+	}
+	if ticker := strings.ToUpper(strings.TrimSpace(instrument.Ticker)); ticker != "" {
+		return "ticker:" + ticker
+	}
+	return "name:" + strings.ToUpper(strings.TrimSpace(instrument.Name))
+}
+
+func enrichmentRequestForGroup(instruments []trading212.Instrument) enrichment.Request {
+	if len(instruments) == 0 {
+		return enrichment.Request{}
+	}
+	req := enrichmentRequestForInstrument(instruments[0])
+	var candidates []string
+	for _, instrument := range instruments {
+		candidates = appendUniqueCandidateSymbols(candidates, enrichment.CandidateSymbols(instrument.Ticker)...)
+	}
+	req.CandidateSymbols = candidates
+	return req
+}
+
+func enrichmentRequestForInstrument(instrument trading212.Instrument) enrichment.Request {
+	parts := catalogue.ParseBrokerTicker(instrument.Ticker)
+	return enrichment.Request{
+		Ticker:       instrument.Ticker,
+		ISIN:         instrument.ISIN,
+		Name:         instrument.Name,
+		CurrencyCode: instrument.CurrencyCode,
+		ExchangeCode: parts.ExchangeCode,
+	}
+}
+
+func appendUniqueCandidateSymbols(existing []string, additions ...string) []string {
+	seen := map[string]bool{}
+	for _, value := range existing {
+		seen[strings.ToUpper(value)] = true
+	}
+	for _, value := range additions {
+		value = strings.TrimSpace(value)
+		key := strings.ToUpper(value)
+		if value != "" && !seen[key] {
+			existing = append(existing, value)
+			seen[key] = true
+		}
+	}
+	return existing
+}
+
+func logEnrichmentProgress(run enrichmentRun, processedIdentities, totalIdentities, processedTickers, totalTickers int, started time.Time) {
 	elapsed := time.Since(started).Round(time.Second)
 	log.Printf(
-		"enrichment progress: provider=%s processed=%d/%d hits=%d failures=%d ambiguous=%d cache_hits=%d cache_misses=%d stale=%d elapsed=%s",
+		"enrichment progress: provider=%s identities=%d/%d tickers=%d/%d hits=%d failures=%d ambiguous=%d cache_hits=%d cache_misses=%d stale=%d elapsed=%s",
 		run.Diagnostics.Provider,
-		processed,
-		total,
+		processedIdentities,
+		totalIdentities,
+		processedTickers,
+		totalTickers,
 		len(run.Profiles),
 		run.Diagnostics.FailureCount,
 		run.Diagnostics.AmbiguousCount,
@@ -623,7 +711,7 @@ func sampleEnrichment(instruments []trading212.Instrument, profiles map[string]e
 		},
 	}
 	for _, instrument := range instruments {
-		req := enrichment.Request{Ticker: instrument.Ticker, ISIN: instrument.ISIN, Name: instrument.Name, CurrencyCode: instrument.CurrencyCode}
+		req := enrichmentRequestForInstrument(instrument)
 		if profile, ok := profiles[instrument.Ticker]; ok {
 			result := enrichment.Result{
 				Provider:    "sample",
@@ -653,6 +741,13 @@ func sampleEnrichment(instruments []trading212.Instrument, profiles map[string]e
 }
 
 func observeEnrichmentResult(run *enrichmentRun, req enrichment.Request, result enrichment.Result, err error) {
+	observeEnrichmentProviderResult(run, result)
+	if err != nil || result.Status != enrichment.StatusHit {
+		recordEnrichmentFailure(run, req, result, err)
+	}
+}
+
+func observeEnrichmentProviderResult(run *enrichmentRun, result enrichment.Result) {
 	switch result.CacheStatus {
 	case enrichment.CacheStatusHit:
 		run.Diagnostics.CacheHitCount++
@@ -668,10 +763,11 @@ func observeEnrichmentResult(run *enrichmentRun, req enrichment.Request, result 
 	if result.Status == enrichment.StatusAmbiguous {
 		run.Diagnostics.AmbiguousCount++
 	}
-	if err != nil || result.Status != enrichment.StatusHit {
-		run.Diagnostics.FailureCount++
-		run.Failures = append(run.Failures, enrichment.FailureFromResult(req, result, err))
-	}
+}
+
+func recordEnrichmentFailure(run *enrichmentRun, req enrichment.Request, result enrichment.Result, err error) {
+	run.Diagnostics.FailureCount++
+	run.Failures = append(run.Failures, enrichment.FailureFromResult(req, result, err))
 }
 
 func observeEnrichmentRetrievedAt(diagnostics *catalogue.EnrichmentDiagnostics, value string) {

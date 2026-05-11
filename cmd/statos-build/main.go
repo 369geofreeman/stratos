@@ -107,6 +107,10 @@ func run(args []string) error {
 		}
 	}
 	source.EnrichmentDiagnostics.FailureCSV = manifestPath(filepath.Join(*siteDataDir, "enrichment_failures.csv"))
+	previousManifest, err := readPreviousManifest(filepath.Join(*siteDataDir, "build_manifest.json"))
+	if err != nil {
+		return err
+	}
 
 	enrichmentAttempted := len(source.Instruments)
 	enrichmentSucceeded := len(source.Profiles)
@@ -137,6 +141,7 @@ func run(args []string) error {
 		EnrichmentFailed:      enrichmentFailed,
 		EnrichmentDiagnostics: source.EnrichmentDiagnostics,
 		EnrichmentFailures:    source.EnrichmentFailures,
+		PreviousManifest:      previousManifest,
 	})
 	if err != nil {
 		return err
@@ -146,6 +151,21 @@ func run(args []string) error {
 	}
 	log.Printf("wrote %s: %d tickers, %d companies, %d unclassified", *siteDataDir, len(cat.Tickers), len(cat.Companies), len(cat.Unclassified))
 	return nil
+}
+
+func readPreviousManifest(path string) (*catalogue.BuildManifest, error) {
+	b, err := os.ReadFile(path)
+	if errors.Is(err, os.ErrNotExist) {
+		return nil, nil
+	}
+	if err != nil {
+		return nil, err
+	}
+	var manifest catalogue.BuildManifest
+	if err := json.Unmarshal(b, &manifest); err != nil {
+		return nil, fmt.Errorf("decode previous build manifest %s: %w", path, err)
+	}
+	return &manifest, nil
 }
 
 func runTaxonomy(args []string, stdout io.Writer) error {
@@ -355,7 +375,7 @@ func readUnclassifiedForTemplate(path string) ([]catalogue.UnclassifiedRow, erro
 		return nil, nil
 	}
 	wantHeaders := []string{"ticker", "company_id", "name", "isin", "reason"}
-	if len(records[0]) != len(wantHeaders) {
+	if len(records[0]) != len(wantHeaders) && len(records[0]) != len(wantHeaders)+1 {
 		return nil, fmt.Errorf("%s has unexpected unclassified header", path)
 	}
 	for i, header := range wantHeaders {
@@ -363,11 +383,15 @@ func readUnclassifiedForTemplate(path string) ([]catalogue.UnclassifiedRow, erro
 			return nil, fmt.Errorf("%s has unexpected unclassified header column %d %q", path, i+1, records[0][i])
 		}
 	}
+	hasReasonCodes := len(records[0]) == len(wantHeaders)+1
+	if hasReasonCodes && strings.TrimSpace(records[0][len(wantHeaders)]) != "reason_codes" {
+		return nil, fmt.Errorf("%s has unexpected unclassified header column %d %q", path, len(wantHeaders)+1, records[0][len(wantHeaders)])
+	}
 	rows := []catalogue.UnclassifiedRow{}
 	seen := map[string]bool{}
 	for i, record := range records[1:] {
-		if len(record) != len(wantHeaders) {
-			return nil, fmt.Errorf("%s row %d has %d fields, want %d", path, i+2, len(record), len(wantHeaders))
+		if len(record) != len(records[0]) {
+			return nil, fmt.Errorf("%s row %d has %d fields, want %d", path, i+2, len(record), len(records[0]))
 		}
 		row := catalogue.UnclassifiedRow{
 			Ticker:    strings.TrimSpace(record[0]),
@@ -375,6 +399,9 @@ func readUnclassifiedForTemplate(path string) ([]catalogue.UnclassifiedRow, erro
 			Name:      strings.TrimSpace(record[2]),
 			ISIN:      strings.TrimSpace(record[3]),
 			Reason:    strings.TrimSpace(record[4]),
+		}
+		if hasReasonCodes {
+			row.ReasonCodes = splitSemicolonCSVList(record[5])
 		}
 		if row.Ticker == "" || seen[row.Ticker] {
 			continue
@@ -384,6 +411,18 @@ func readUnclassifiedForTemplate(path string) ([]catalogue.UnclassifiedRow, erro
 	}
 	sort.SliceStable(rows, func(i, j int) bool { return rows[i].Ticker < rows[j].Ticker })
 	return rows, nil
+}
+
+func splitSemicolonCSVList(value string) []string {
+	parts := strings.Split(value, ";")
+	out := make([]string, 0, len(parts))
+	for _, part := range parts {
+		part = strings.TrimSpace(part)
+		if part != "" {
+			out = append(out, part)
+		}
+	}
+	return out
 }
 
 func writeExposureTemplate(w io.Writer, rows []catalogue.UnclassifiedRow) error {

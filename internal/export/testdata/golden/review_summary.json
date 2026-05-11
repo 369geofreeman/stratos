@@ -1,0 +1,27 @@
+{
+  "generatedAt": "2026-05-09T12:00:00Z",
+  "totalCount": 1,
+  "byQueue": {
+    "taxonomy": 1
+  },
+  "byReasonCode": {
+    "missing_sector": 1
+  },
+  "bySeverity": {
+    "medium": 1
+  },
+  "taxonomyGaps": {
+    "sector": 1
+  },
+  "enrichmentStatuses": {},
+  "identityIssueTypes": {},
+  "staleReviewBuckets": {},
+  "staleReviewThresholdDays": {
+    "manual_high": 180,
+    "manual_medium": 120,
+    "rule_low": 60
+  },
+  "suggestedManualFileCounts": {
+    "data/manual/classification_overrides.csv": 1
+  }
+}

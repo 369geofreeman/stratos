@@ -12,6 +12,7 @@ import (
 	"sort"
 	"strconv"
 	"strings"
+	"time"
 
 	"statos/internal/catalogue"
 	"statos/internal/taxonomy"
@@ -20,9 +21,10 @@ import (
 var TickersCSVHeader = []string{"ticker", "name", "isin", "company_id", "security_id", "type", "instrument_category", "structure_flags", "currency", "exchange", "yahoo_symbol", "sector", "industry", "country", "market_cap", "directionality", "identity_confidence", "identity_reasons", "themes", "layers", "unclassified"}
 var SecuritiesCSVHeader = []string{"security_id", "isin", "name", "type", "instrument_category", "structure_flags", "company_id", "listing_ids", "ticker_ids", "currency_set", "identity_confidence", "identity_reasons"}
 var ListingsCSVHeader = []string{"listing_id", "ticker", "security_id", "company_id", "exchange_code", "exchange_name", "currency_code"}
-var UnclassifiedCSVHeader = []string{"ticker", "company_id", "name", "isin", "reason"}
+var UnclassifiedCSVHeader = []string{"ticker", "company_id", "name", "isin", "reason", "reason_codes"}
 var IdentityIssuesCSVHeader = []string{"issue_code", "ticker", "isin", "security_id", "company_id", "name", "reason", "suggested_action"}
 var EnrichmentFailuresCSVHeader = []string{"ticker", "isin", "name", "provider", "attempted_symbols", "status", "error", "next_action"}
+var ReviewIssuesCSVHeader = []string{"queue", "reason_code", "severity", "ticker", "isin", "company_id", "security_id", "name", "sector", "industry", "theme_ids", "layer_ids", "source_file", "source_row", "suggested_action", "suggested_manual_file", "suggested_csv_row", "last_reviewed", "last_refreshed"}
 
 var GeneratedSiteDataFiles = []string{
 	"app_bootstrap.json",
@@ -38,18 +40,31 @@ var GeneratedSiteDataFiles = []string{
 	"listings.json",
 	"relationships.json",
 	"unclassified.json",
+	"review_queues.json",
+	"review_summary.json",
 	"tickers.csv",
 	"securities.csv",
 	"listings.csv",
 	"unclassified.csv",
+	"taxonomy_issues.csv",
+	"enrichment_issues.csv",
 	"identity_issues.csv",
 	"enrichment_failures.csv",
+	"stale_reviews.csv",
+	"suggested_classification_overrides.csv",
+	"suggested_exposures.csv",
+	"suggested_ticker_overrides.csv",
+	"suggested_identity_overrides.csv",
 	"build_manifest.json",
 }
 
 const buildManifestChecksumMode = "projection_excludes_generatedFiles"
 const appBootstrapChecksumMode = "projection_excludes_generatedFiles"
 const groupSummaryTickerLimit = 12
+const manualFileClassificationOverrides = "data/manual/classification_overrides.csv"
+const manualFileExposures = "data/manual/exposures.csv"
+const manualFileTickerOverrides = "data/manual/ticker_overrides.csv"
+const manualFileIdentityOverrides = "data/manual/identity_overrides.csv"
 
 type generatedOutput struct {
 	name          string
@@ -142,9 +157,16 @@ func CSVHeaders() map[string][]string {
 		"securities.csv":          SecuritiesCSVHeader,
 		"listings.csv":            ListingsCSVHeader,
 		"unclassified.csv":        UnclassifiedCSVHeader,
+		"taxonomy_issues.csv":     ReviewIssuesCSVHeader,
+		"enrichment_issues.csv":   ReviewIssuesCSVHeader,
 		"identity_issues.csv":     IdentityIssuesCSVHeader,
 		"enrichment_failures.csv": EnrichmentFailuresCSVHeader,
+		"stale_reviews.csv":       ReviewIssuesCSVHeader,
 	}
+	headers["suggested_classification_overrides.csv"] = taxonomy.ClassificationOverridesCSVHeader
+	headers["suggested_exposures.csv"] = taxonomy.ExposureCSVHeader
+	headers["suggested_ticker_overrides.csv"] = taxonomy.TickerOverridesCSVHeader
+	headers["suggested_identity_overrides.csv"] = taxonomy.IdentityOverridesCSVHeader
 	out := map[string][]string{}
 	for name, header := range headers {
 		out[name] = append([]string(nil), header...)
@@ -190,11 +212,13 @@ func buildSiteDataOutputs(cat *catalogue.Catalogue) ([]generatedOutput, error) {
 		{"listings.json", contractCat.Listings},
 		{"relationships.json", contractCat.Relationships},
 		{"unclassified.json", contractCat.Unclassified},
+		{"review_queues.json", contractCat.ReviewQueues},
+		{"review_summary.json", contractCat.ReviewSummary},
 	}
 	outputByName := map[string]generatedOutput{}
 	for _, def := range defs {
 		marshal := marshalJSON
-		if def.name == "tickers_index.json" || def.name == "unclassified.json" {
+		if def.name == "tickers_index.json" || def.name == "unclassified.json" || def.name == "review_queues.json" {
 			marshal = marshalCompactJSON
 		}
 		b, err := marshal(def.value)
@@ -213,15 +237,29 @@ func buildSiteDataOutputs(cat *catalogue.Catalogue) ([]generatedOutput, error) {
 		{name: "securities.csv"},
 		{name: "listings.csv"},
 		{name: "unclassified.csv"},
+		{name: "taxonomy_issues.csv"},
+		{name: "enrichment_issues.csv"},
 		{name: "identity_issues.csv"},
 		{name: "enrichment_failures.csv"},
+		{name: "stale_reviews.csv"},
+		{name: "suggested_classification_overrides.csv"},
+		{name: "suggested_exposures.csv"},
+		{name: "suggested_ticker_overrides.csv"},
+		{name: "suggested_identity_overrides.csv"},
 	}
 	csvDefs[0].data, csvDefs[0].err = marshalTickersCSV(contractCat.Tickers)
 	csvDefs[1].data, csvDefs[1].err = marshalSecuritiesCSV(contractCat.Securities)
 	csvDefs[2].data, csvDefs[2].err = marshalListingsCSV(contractCat.Listings)
 	csvDefs[3].data, csvDefs[3].err = marshalUnclassifiedCSV(contractCat.Unclassified)
-	csvDefs[4].data, csvDefs[4].err = marshalIdentityIssuesCSV(contractCat.IdentityIssues)
-	csvDefs[5].data, csvDefs[5].err = marshalEnrichmentFailuresCSV(contractCat.EnrichmentFailures)
+	csvDefs[4].data, csvDefs[4].err = marshalReviewIssuesCSV(contractCat.ReviewQueues, catalogue.ReviewQueueTaxonomy)
+	csvDefs[5].data, csvDefs[5].err = marshalReviewIssuesCSV(contractCat.ReviewQueues, catalogue.ReviewQueueEnrichment)
+	csvDefs[6].data, csvDefs[6].err = marshalIdentityIssuesCSV(contractCat.IdentityIssues)
+	csvDefs[7].data, csvDefs[7].err = marshalEnrichmentFailuresCSV(contractCat.EnrichmentFailures)
+	csvDefs[8].data, csvDefs[8].err = marshalReviewIssuesCSV(contractCat.ReviewQueues, catalogue.ReviewQueueStale)
+	csvDefs[9].data, csvDefs[9].err = marshalSuggestedManualCSV(contractCat.ReviewQueues, manualFileClassificationOverrides, taxonomy.ClassificationOverridesCSVHeader)
+	csvDefs[10].data, csvDefs[10].err = marshalSuggestedManualCSV(contractCat.ReviewQueues, manualFileExposures, taxonomy.ExposureCSVHeader)
+	csvDefs[11].data, csvDefs[11].err = marshalSuggestedManualCSV(contractCat.ReviewQueues, manualFileTickerOverrides, taxonomy.TickerOverridesCSVHeader)
+	csvDefs[12].data, csvDefs[12].err = marshalSuggestedManualCSV(contractCat.ReviewQueues, manualFileIdentityOverrides, taxonomy.IdentityOverridesCSVHeader)
 	for _, def := range csvDefs {
 		if def.err != nil {
 			return nil, def.err
@@ -344,6 +382,9 @@ func catalogueWithContractMetadata(cat *catalogue.Catalogue) catalogue.Catalogue
 		out.GeneratedAt = out.Manifest.BuiltAt
 	}
 	out.Relationships = sortedRelationships(out.Relationships)
+	if out.ReviewSummary.ByQueue == nil {
+		out.ReviewSummary = catalogue.BuildReviewSummary(out.ReviewQueues, parseManifestTime(out.Manifest.BuiltAt))
+	}
 	out.Manifest = manifestWithContractMetadata(out.Manifest)
 	out.Manifest.GeneratedFiles = nil
 	return out
@@ -356,7 +397,21 @@ func manifestWithContractMetadata(manifest catalogue.BuildManifest) catalogue.Bu
 	if manifest.SchemaVersion == 0 {
 		manifest.SchemaVersion = catalogue.DataContractSchemaVersion
 	}
+	if manifest.ReviewQueueCounts == nil {
+		manifest.ReviewQueueCounts = map[string]int{}
+	}
+	if manifest.ReviewReasonCounts == nil {
+		manifest.ReviewReasonCounts = map[string]int{}
+	}
 	return manifest
+}
+
+func parseManifestTime(value string) time.Time {
+	parsed, err := time.Parse(time.RFC3339, value)
+	if err != nil {
+		return time.Time{}
+	}
+	return parsed
 }
 
 func sortedRelationships(rows []taxonomy.Relationship) []taxonomy.Relationship {
@@ -691,7 +746,7 @@ func marshalListingsCSV(rows []catalogue.Listing) ([]byte, error) {
 func marshalUnclassifiedCSV(rows []catalogue.UnclassifiedRow) ([]byte, error) {
 	records := make([][]string, 0, len(rows))
 	for _, row := range rows {
-		records = append(records, []string{row.Ticker, row.CompanyID, row.Name, row.ISIN, row.Reason})
+		records = append(records, []string{row.Ticker, row.CompanyID, row.Name, row.ISIN, row.Reason, joinCSVList(row.ReasonCodes)})
 	}
 	return marshalCSV(UnclassifiedCSVHeader, records)
 }
@@ -710,6 +765,70 @@ func marshalEnrichmentFailuresCSV(rows []catalogue.EnrichmentFailure) ([]byte, e
 		records = append(records, []string{row.Ticker, row.ISIN, row.Name, row.Provider, row.AttemptedSymbols, row.Status, row.Error, row.NextAction})
 	}
 	return marshalCSV(EnrichmentFailuresCSVHeader, records)
+}
+
+func marshalReviewIssuesCSV(rows []catalogue.ReviewQueueRow, queue string) ([]byte, error) {
+	records := make([][]string, 0, len(rows))
+	for _, row := range rows {
+		if row.Queue != queue {
+			continue
+		}
+		records = append(records, []string{
+			row.Queue,
+			row.ReasonCode,
+			row.Severity,
+			row.Ticker,
+			row.ISIN,
+			row.CompanyID,
+			row.SecurityID,
+			row.Name,
+			row.Sector,
+			row.Industry,
+			joinCSVList(row.ThemeIDs),
+			joinCSVList(row.LayerIDs),
+			row.SourceFile,
+			strconv.Itoa(row.SourceRow),
+			row.SuggestedAction,
+			row.SuggestedManualFile,
+			row.SuggestedCSVRow,
+			row.LastReviewed,
+			row.LastRefreshed,
+		})
+	}
+	return marshalCSV(ReviewIssuesCSVHeader, records)
+}
+
+func marshalSuggestedManualCSV(rows []catalogue.ReviewQueueRow, manualFile string, header []string) ([]byte, error) {
+	records := [][]string{}
+	seen := map[string]bool{}
+	for _, row := range rows {
+		if row.SuggestedManualFile != manualFile || row.SuggestedCSVRow == "" {
+			continue
+		}
+		record, err := parseCSVRecord(row.SuggestedCSVRow)
+		if err != nil {
+			return nil, err
+		}
+		if len(record) != len(header) {
+			return nil, fmt.Errorf("suggested row for %s has %d fields, want %d", manualFile, len(record), len(header))
+		}
+		key := strings.Join(record, "\x00")
+		if seen[key] {
+			continue
+		}
+		seen[key] = true
+		records = append(records, record)
+	}
+	return marshalCSV(header, records)
+}
+
+func parseCSVRecord(value string) ([]string, error) {
+	reader := csv.NewReader(strings.NewReader(value + "\n"))
+	record, err := reader.Read()
+	if err != nil {
+		return nil, err
+	}
+	return record, nil
 }
 
 func marshalCSV(header []string, records [][]string) ([]byte, error) {

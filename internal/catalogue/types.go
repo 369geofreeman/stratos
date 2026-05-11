@@ -26,6 +26,8 @@ type Catalogue struct {
 	Relationships       []taxonomy.Relationship `json:"relationships"`
 	Notes               []taxonomy.Note         `json:"notes"`
 	Unclassified        []UnclassifiedRow       `json:"unclassified"`
+	ReviewQueues        []ReviewQueueRow        `json:"-"`
+	ReviewSummary       ReviewSummary           `json:"-"`
 	IdentityIssues      []IdentityIssue         `json:"identityIssues,omitempty"`
 	EnrichmentFailures  []EnrichmentFailure     `json:"-"`
 }
@@ -67,6 +69,11 @@ type BuildManifest struct {
 	IdentityCollisionCount       int                               `json:"identityCollisionCount"`
 	IdentityOverrideCount        int                               `json:"identityOverrideCount"`
 	IdentityIssueCount           int                               `json:"identityIssueCount"`
+	ReviewQueueCounts            map[string]int                    `json:"reviewQueueCounts"`
+	ReviewReasonCounts           map[string]int                    `json:"reviewReasonCounts"`
+	ReviewQueueDeltas            map[string]int                    `json:"reviewQueueDeltas,omitempty"`
+	ReviewReasonDeltas           map[string]int                    `json:"reviewReasonDeltas,omitempty"`
+	PreviousBuildAt              string                            `json:"previousBuildAt,omitempty"`
 	InstrumentCategoryCounts     map[string]int                    `json:"instrumentCategoryCounts,omitempty"`
 	StructureFlagCounts          map[string]int                    `json:"structureFlagCounts,omitempty"`
 	RawSnapshotAt                string                            `json:"rawSnapshotAt,omitempty"`
@@ -97,6 +104,45 @@ type EnrichmentDiagnostics struct {
 	FailureCSV         string
 	OldestRetrievedAt  string
 	NewestRetrievedAt  string
+}
+
+type ReviewQueueRow struct {
+	Queue               string   `json:"queue"`
+	ReasonCode          string   `json:"reasonCode"`
+	Severity            string   `json:"severity"`
+	Ticker              string   `json:"ticker,omitempty"`
+	ISIN                string   `json:"isin,omitempty"`
+	CompanyID           string   `json:"companyId,omitempty"`
+	SecurityID          string   `json:"securityId,omitempty"`
+	Name                string   `json:"name,omitempty"`
+	Sector              string   `json:"sector,omitempty"`
+	Industry            string   `json:"industry,omitempty"`
+	ThemeIDs            []string `json:"themeIds,omitempty"`
+	LayerIDs            []string `json:"layerIds,omitempty"`
+	SourceFile          string   `json:"sourceFile,omitempty"`
+	SourceRow           int      `json:"sourceRow,omitempty"`
+	SuggestedAction     string   `json:"suggestedAction,omitempty"`
+	SuggestedManualFile string   `json:"suggestedManualFile,omitempty"`
+	SuggestedCSVRow     string   `json:"suggestedCsvRow,omitempty"`
+	LastReviewed        string   `json:"lastReviewed,omitempty"`
+	LastRefreshed       string   `json:"lastRefreshed,omitempty"`
+	IssueType           string   `json:"issueType,omitempty"`
+	StaleBucket         string   `json:"staleBucket,omitempty"`
+	suggestedCSVFields  []string
+}
+
+type ReviewSummary struct {
+	GeneratedAt               string         `json:"generatedAt,omitempty"`
+	TotalCount                int            `json:"totalCount"`
+	ByQueue                   map[string]int `json:"byQueue"`
+	ByReasonCode              map[string]int `json:"byReasonCode"`
+	BySeverity                map[string]int `json:"bySeverity"`
+	TaxonomyGaps              map[string]int `json:"taxonomyGaps"`
+	EnrichmentStatuses        map[string]int `json:"enrichmentStatuses"`
+	IdentityIssueTypes        map[string]int `json:"identityIssueTypes"`
+	StaleReviewBuckets        map[string]int `json:"staleReviewBuckets"`
+	StaleReviewThresholdDays  map[string]int `json:"staleReviewThresholdDays"`
+	SuggestedManualFileCounts map[string]int `json:"suggestedManualFileCounts"`
 }
 
 type EnrichmentFailure = enrichment.Failure
@@ -210,11 +256,12 @@ type GroupCount struct {
 }
 
 type UnclassifiedRow struct {
-	Ticker    string `json:"ticker"`
-	CompanyID string `json:"companyId,omitempty"`
-	Name      string `json:"name"`
-	ISIN      string `json:"isin,omitempty"`
-	Reason    string `json:"reason"`
+	Ticker      string   `json:"ticker"`
+	CompanyID   string   `json:"companyId,omitempty"`
+	Name        string   `json:"name"`
+	ISIN        string   `json:"isin,omitempty"`
+	Reason      string   `json:"reason"`
+	ReasonCodes []string `json:"reasonCodes,omitempty"`
 }
 
 type IdentityIssue struct {

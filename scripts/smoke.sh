@@ -16,9 +16,18 @@ site/data/securities.json
 site/data/listings.json
 site/data/relationships.json
 site/data/unclassified.json
+site/data/review_queues.json
+site/data/review_summary.json
 site/data/unclassified.csv
+site/data/taxonomy_issues.csv
+site/data/enrichment_issues.csv
 site/data/identity_issues.csv
 site/data/enrichment_failures.csv
+site/data/stale_reviews.csv
+site/data/suggested_classification_overrides.csv
+site/data/suggested_exposures.csv
+site/data/suggested_ticker_overrides.csv
+site/data/suggested_identity_overrides.csv
 site/data/securities.csv
 site/data/listings.csv
 site/data/build_manifest.json
@@ -60,6 +69,8 @@ for path in (
     "site/data/listings.json",
     "site/data/relationships.json",
     "site/data/unclassified.json",
+    "site/data/review_queues.json",
+    "site/data/review_summary.json",
     "site/data/build_manifest.json",
 ):
     try:

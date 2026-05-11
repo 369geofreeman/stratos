@@ -39,7 +39,39 @@ GOCACHE="$PWD/.gocache" go run ./cmd/statos-build refresh --no-fetch
 make smoke
 ```
 
-Open `site/data/unclassified.csv`. Each row names the ticker, company ID, ISIN, and missing classification or exposure reason. Use it to decide whether to add a classification override, an exposure row, an identity override, or a note.
+Open the static site and use the Review queues view, or inspect:
+
+- `site/data/review_summary.json` for counts by queue, reason, severity, taxonomy gap, enrichment status, identity issue type, stale bucket, and suggested manual file.
+- `site/data/review_queues.json` for compact structured rows with stable reason codes.
+- `site/data/taxonomy_issues.csv` for missing sector, industry, company ID, ISIN, and theme exposure work.
+- `site/data/enrichment_issues.csv` and `site/data/enrichment_failures.csv` for enrichment cache/provider work.
+- `site/data/identity_issues.csv` for collisions, duplicates, low-confidence mappings, and unmatched identity overrides.
+- `site/data/stale_reviews.csv` for manual rows or notes whose `last_reviewed` date is missing or old.
+
+`site/data/unclassified.csv` is still generated for compatibility, but the structured queue files are the primary review workflow.
+
+## Suggested Manual Rows
+
+The builder writes paste-friendly suggestion files with exact manual headers:
+
+- `site/data/suggested_classification_overrides.csv`
+- `site/data/suggested_exposures.csv`
+- `site/data/suggested_ticker_overrides.csv`
+- `site/data/suggested_identity_overrides.csv`
+
+Suggested rows pre-fill identifiers only. Fill sector, industry, theme, layer, confidence, source URL, rationale, override fields, and `last_reviewed` yourself before pasting into `data/manual`.
+
+The Review queues UI also exposes `suggestedCsvRow` per row and a copy button when a template is available.
+
+## Stale Review Rules
+
+Manual rows with missing `last_reviewed` are stale immediately. Reviewed rows age out using these thresholds:
+
+- `manual_high` and `rule_high`: 180 days.
+- `manual_medium`, `rule_medium`, and manual rows without a confidence column: 120 days.
+- `manual_low` and `rule_low`: 60 days.
+
+Stale checks apply to `exposures.csv`, `classification_overrides.csv`, `company_overrides.csv`, `ticker_overrides.csv`, `identity_overrides.csv`, `relationships.csv`, and note frontmatter when `last_reviewed` is present or missing.
 
 ## Coverage Command
 
@@ -115,10 +147,11 @@ target_type: ticker
 target_id: NVDA_US_EQ
 title: NVIDIA AI infrastructure note
 tags: ai, accelerators
+last_reviewed: 2026-05-10
 ---
 ```
 
-When frontmatter is present, `target_type`, `target_id`, and `title` are required. Supported target types are `ticker`, `company`, `security`, `sector`, `industry`, `theme`, and `layer`. Empty note bodies fail validation.
+When frontmatter is present, `target_type`, `target_id`, and `title` are required. `last_reviewed` is optional but recommended so notes do not enter the stale-review queue immediately. Supported target types are `ticker`, `company`, `security`, `sector`, `industry`, `theme`, and `layer`. Empty note bodies fail validation.
 
 ## Validation Errors
 

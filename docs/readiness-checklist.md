@@ -241,22 +241,22 @@ Definition of done:
 
 Goal: Turn uncertainty into visible worklists.
 
-- [ ] Expand `unclassified.csv` reasons into structured reason codes.
-- [ ] Add UI filters by reason: missing sector, missing industry, missing theme, missing company ID, enrichment failed, identity ambiguous, stale review.
-- [ ] Add generated suggested override rows where possible.
-- [ ] Add separate queues for identity issues, enrichment issues, taxonomy issues, and stale manual reviews.
-- [ ] Add counts by sector/industry/theme gap.
-- [ ] Add "copy CSV row" or "copy manual template" helpers in the UI.
-- [ ] Add reviewed-date aging thresholds.
-- [ ] Add manifest trend fields if previous build manifest is available.
-- [ ] Add tests for queue generation.
-- [ ] Document a weekly review process.
+- [x] Expand `unclassified.csv` reasons into structured reason codes.
+- [x] Add UI filters by reason: missing sector, missing industry, missing theme, missing company ID, enrichment failed, identity ambiguous, stale review.
+- [x] Add generated suggested override rows where possible.
+- [x] Add separate queues for identity issues, enrichment issues, taxonomy issues, and stale manual reviews.
+- [x] Add counts by sector/industry/theme gap.
+- [x] Add "copy CSV row" or "copy manual template" helpers in the UI.
+- [x] Add reviewed-date aging thresholds.
+- [x] Add manifest trend fields if previous build manifest is available.
+- [x] Add tests for queue generation.
+- [x] Document a weekly review process.
 
 Definition of done:
 
 - [x] The site makes missing classification work obvious.
-- [ ] Manual taxonomy editing is guided by generated queues.
-- [ ] Refreshes do not hide regressions in coverage.
+- [x] Manual taxonomy editing is guided by generated queues.
+- [x] Refreshes do not hide regressions in coverage.
 
 ## Slice 11: Relationships And Peer Groups
 

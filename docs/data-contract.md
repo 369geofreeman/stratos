@@ -21,6 +21,8 @@ Non-breaking changes may add optional fields or new generated files. A breaking 
 - `builtAt`: builder timestamp in RFC3339.
 - `sourceMode`, `trading212Environment`, `trading212BaseUrl`, `trading212FetchAt`: source provenance.
 - Count fields such as `instrumentCount`, `securityCount`, `companyCount`, `listingCount`, `themeCount`, `exposureCount`, `relationshipCount`, and review/failure counts.
+- `reviewQueueCounts`, `reviewReasonCounts`: structured review queue counts by queue and stable reason code.
+- `reviewQueueDeltas`, `reviewReasonDeltas`, `previousBuildAt`: trend fields included when a previous `site/data/build_manifest.json` was available before generation.
 - `rawSnapshots`, `trading212HttpDiagnostics`, `trading212RateLimits`: replay and live fetch diagnostics when available.
 - `dataFreshness`: coarse age of the source snapshot.
 - `generatedFiles`: ordered metadata for every generated `site/data` file.
@@ -44,7 +46,9 @@ These files are intended for frontend loading:
 
 - `app_bootstrap.json`: startup slice used by `site/assets/app.js`; includes manifest counts, taxonomy summaries, supply-chain definitions, exposure rows, generated file metadata, and truncated sector/industry ticker samples.
 - `tickers_index.json`: compact ticker rows used for the main table, watchlist, filtering, sorting, search, and modal identity fields.
-- `unclassified.json`: JSON review queue used by the unclassified UI.
+- `review_queues.json`: compact structured review queue used by the review UI.
+- `review_summary.json`: aggregate review counts by queue, reason, severity, gap, enrichment status, identity type, stale bucket, and suggested manual file.
+- `unclassified.json`: legacy taxonomy gap queue mirroring `unclassified.csv`; retained for compatibility.
 - `companies.json`: lazy-loaded when opening ticker/company detail modals for company identity and sources.
 - `securities.json`, `listings.json`, `relationships.json`: standalone normalized identity and manual relationship slices.
 - `sectors.json`, `industries.json`, `themes.json`, `supply_chains.json`: standalone exports matching the bundled catalogue arrays.
@@ -58,8 +62,15 @@ These files are primarily for human review and spreadsheet workflows:
 - `securities.csv`
 - `listings.csv`
 - `unclassified.csv`
+- `taxonomy_issues.csv`
+- `enrichment_issues.csv`
 - `identity_issues.csv`
 - `enrichment_failures.csv`
+- `stale_reviews.csv`
+- `suggested_classification_overrides.csv`
+- `suggested_exposures.csv`
+- `suggested_ticker_overrides.csv`
+- `suggested_identity_overrides.csv`
 
 ## JSON Files
 
@@ -83,7 +94,7 @@ Each ticker row is intentionally compact and includes table/filter/search fields
 
 ### build_manifest.json
 
-Top-level object using the manifest fields described above. This file and `app_bootstrap.json` use `checksumMode: "projection_excludes_generatedFiles"`.
+Top-level object using the manifest fields described above. This file and `app_bootstrap.json` use `checksumMode: "projection_excludes_generatedFiles"`. Review trend deltas compare the current generated review counts with the previous manifest on disk, if one existed before the builder wrote the new file.
 
 ### companies.json
 
@@ -136,7 +147,46 @@ No standalone `sources.json` is generated in contract V1. Entity-local `sources`
 
 ### unclassified.json
 
-Top-level array matching `catalogue.unclassified`. Rows include `ticker`, optional `companyId`, `name`, optional `isin`, and `reason`. This mirrors `unclassified.csv` for fast static UI loading without CSV parsing.
+Top-level array matching `catalogue.unclassified`. Rows include `ticker`, optional `companyId`, `name`, optional `isin`, `reason`, and optional `reasonCodes`. This mirrors `unclassified.csv` for compatibility. New review UI code uses `review_queues.json`.
+
+### review_queues.json
+
+Top-level compact array of structured review rows. Rows are sorted deterministically and intentionally avoid full catalogue objects and raw provider payloads. Stable fields include `queue`, `reasonCode`, `severity`, optional `ticker`, optional `isin`, optional `companyId`, optional `securityId`, optional `name`, optional `sector`, optional `industry`, optional `themeIds`, optional `layerIds`, optional `sourceFile`, optional `sourceRow`, optional `suggestedAction`, optional `suggestedManualFile`, optional `suggestedCsvRow`, optional `lastReviewed`, optional `lastRefreshed`, optional `issueType`, and optional `staleBucket`.
+
+Allowed `queue` values are `taxonomy`, `enrichment`, `identity`, and `stale_review`. Allowed `severity` values are `high`, `medium`, and `low`.
+
+Generated reason codes are stable snake_case values:
+
+- `missing_sector`: ticker has no sector after manual overrides and enrichment.
+- `missing_industry`: ticker has no industry after manual overrides and enrichment.
+- `missing_theme_exposure`: ticker has no reviewed theme/layer exposure.
+- `missing_company_id`: row cannot be attached to a stable company ID.
+- `missing_isin`: Trading 212 metadata lacks an ISIN or an identity row needs ISIN review.
+- `missing_ticker`: Trading 212 metadata lacks a broker ticker.
+- `identity_low_confidence`: identity mapping used a low-confidence rule or uncertain ticker parse.
+- `identity_collision`: ISIN/security/company/category mappings conflict.
+- `identity_duplicate_ticker`: duplicate broker ticker was dropped.
+- `identity_override_unmatched`: manual identity override did not match this build.
+- `identity_unknown_category`: instrument category could not be normalized.
+- `enrichment_failed`: enrichment failed for a provider/cache reason that is not more specific.
+- `enrichment_ambiguous`: enrichment returned multiple plausible matches and no provider fields were applied.
+- `enrichment_cache_miss`: cache-only enrichment had no cache entry.
+- `enrichment_stale`: stale or schema-stale enrichment cache data needs refresh.
+- `manual_review_stale`: manual row or note exceeded its review age threshold, or lacks `last_reviewed`.
+
+`suggestedCsvRow` is a single CSV record with the exact field order of `suggestedManualFile`. It is intentionally incomplete where taxonomy judgment is required.
+
+### review_summary.json
+
+Top-level object with `generatedAt`, `totalCount`, `byQueue`, `byReasonCode`, `bySeverity`, `taxonomyGaps`, `enrichmentStatuses`, `identityIssueTypes`, `staleReviewBuckets`, `staleReviewThresholdDays`, and `suggestedManualFileCounts`.
+
+Stale review thresholds are:
+
+- `manual_high`: stale at 180 days.
+- `manual_medium`: stale at 120 days.
+- `rule_low`: stale at 60 days.
+
+Rows with missing `last_reviewed` are stale immediately. Rows with `manual_high` or `rule_high` use the 180-day bucket, rows with `manual_low` or `rule_low` use the 60-day bucket, and other manual rows use the 120-day bucket.
 
 ## CSV Files
 
@@ -162,9 +212,21 @@ Broker listing row keyed by Trading 212 ticker.
 
 ### unclassified.csv
 
-Header: `ticker,company_id,name,isin,reason`
+Header: `ticker,company_id,name,isin,reason,reason_codes`
 
-Human review queue for rows missing useful theme/classification coverage.
+Human review queue for rows missing useful theme/classification coverage. `reason` is retained for readability; `reason_codes` is a semicolon-delimited list of stable reason codes.
+
+### taxonomy_issues.csv
+
+Header: `queue,reason_code,severity,ticker,isin,company_id,security_id,name,sector,industry,theme_ids,layer_ids,source_file,source_row,suggested_action,suggested_manual_file,suggested_csv_row,last_reviewed,last_refreshed`
+
+Structured taxonomy review rows for missing sector, industry, company ID, ISIN, and theme exposure gaps.
+
+### enrichment_issues.csv
+
+Header: `queue,reason_code,severity,ticker,isin,company_id,security_id,name,sector,industry,theme_ids,layer_ids,source_file,source_row,suggested_action,suggested_manual_file,suggested_csv_row,last_reviewed,last_refreshed`
+
+Structured enrichment review rows derived from provider/cache failures. These rows do not include raw provider responses or ambiguous candidate payloads.
 
 ### identity_issues.csv
 
@@ -177,6 +239,36 @@ Human review queue for identity collisions, missing identifiers, duplicate ticke
 Header: `ticker,isin,name,provider,attempted_symbols,status,error,next_action`
 
 Human review queue for enrichment cache/provider misses, stale or failed rows, ambiguous matches, and cache schema issues.
+
+### stale_reviews.csv
+
+Header: `queue,reason_code,severity,ticker,isin,company_id,security_id,name,sector,industry,theme_ids,layer_ids,source_file,source_row,suggested_action,suggested_manual_file,suggested_csv_row,last_reviewed,last_refreshed`
+
+Structured stale manual-review rows for manual CSV files and note frontmatter with `last_reviewed`.
+
+### suggested_classification_overrides.csv
+
+Header: `target_type,ticker,isin,company_id,sector,industry,country,source_url,last_reviewed`
+
+Paste-friendly blank classification override records. The header exactly matches `data/manual/classification_overrides.csv`.
+
+### suggested_exposures.csv
+
+Header: `theme_id,layer_id,ticker,isin,company_id,exposure_score,confidence,source_url,rationale,last_reviewed`
+
+Paste-friendly blank exposure records. The header exactly matches `data/manual/exposures.csv`.
+
+### suggested_ticker_overrides.csv
+
+Header: `ticker,company_id,name,sector,industry,country,yahoo_symbol,market_cap,exchange,currency,source_url,last_reviewed`
+
+Paste-friendly blank ticker override records. The header exactly matches `data/manual/ticker_overrides.csv`.
+
+### suggested_identity_overrides.csv
+
+Header: `target_type,ticker,isin,security_id,company_id,override_security_id,override_company_id,category,flags,confidence,reason,source_url,last_reviewed`
+
+Paste-friendly blank identity override records. The header exactly matches `data/manual/identity_overrides.csv`.
 
 ## Compatibility Expectations
 

@@ -89,6 +89,46 @@ func TestRunNoFetchUsesRawSnapshotTimestamp(t *testing.T) {
 	}
 }
 
+func TestRunSampleManifestTrendFieldsAreIdempotent(t *testing.T) {
+	siteDataDir := t.TempDir()
+	rawDir := t.TempDir()
+	cacheDir := t.TempDir()
+	args := []string{
+		"sample",
+		"--site-data-dir", siteDataDir,
+		"--raw-dir", rawDir,
+		"--manual-dir", filepath.Join("..", "..", "data", "manual"),
+		"--cache-dir", cacheDir,
+	}
+
+	if err := run(args); err != nil {
+		t.Fatal(err)
+	}
+	first := mustReadFile(t, filepath.Join(siteDataDir, "build_manifest.json"))
+	var firstManifest catalogue.BuildManifest
+	if err := json.Unmarshal(first, &firstManifest); err != nil {
+		t.Fatal(err)
+	}
+	if firstManifest.PreviousBuildAt != "" || firstManifest.ReviewQueueDeltas != nil || firstManifest.ReviewReasonDeltas != nil {
+		t.Fatalf("first deterministic sample build had trend fields: %#v", firstManifest)
+	}
+
+	if err := run(args); err != nil {
+		t.Fatal(err)
+	}
+	second := mustReadFile(t, filepath.Join(siteDataDir, "build_manifest.json"))
+	var secondManifest catalogue.BuildManifest
+	if err := json.Unmarshal(second, &secondManifest); err != nil {
+		t.Fatal(err)
+	}
+	if secondManifest.PreviousBuildAt != "" || secondManifest.ReviewQueueDeltas != nil || secondManifest.ReviewReasonDeltas != nil {
+		t.Fatalf("second identical sample build gained trend fields: %#v", secondManifest)
+	}
+	if !bytes.Equal(first, second) {
+		t.Fatalf("identical sample builds produced different build_manifest.json")
+	}
+}
+
 func TestTaxonomyCoverageCommandOutput(t *testing.T) {
 	path := filepath.Join(t.TempDir(), "catalogue.json")
 	cat := catalogue.Catalogue{
@@ -136,9 +176,9 @@ func TestTaxonomyCoverageCommandOutput(t *testing.T) {
 
 func TestTaxonomyExposureTemplateCommandOutput(t *testing.T) {
 	path := filepath.Join(t.TempDir(), "unclassified.csv")
-	mustWriteFile(t, path, "ticker,company_id,name,isin,reason\n"+
-		"XYZ_US_EQ,xyz,XYZ Corp,US0000000002,missing theme exposure\n"+
-		"ABC_US_EQ,abc,ABC Corp,US0000000001,missing theme exposure\n")
+	mustWriteFile(t, path, "ticker,company_id,name,isin,reason,reason_codes\n"+
+		"XYZ_US_EQ,xyz,XYZ Corp,US0000000002,missing theme exposure,missing_theme_exposure\n"+
+		"ABC_US_EQ,abc,ABC Corp,US0000000001,missing theme exposure,missing_theme_exposure\n")
 
 	var out bytes.Buffer
 	if err := runTaxonomy([]string{"exposure-template", "--unclassified", path}, &out); err != nil {
@@ -149,6 +189,20 @@ func TestTaxonomyExposureTemplateCommandOutput(t *testing.T) {
 		",,XYZ_US_EQ,US0000000002,xyz,,,,,\n"
 	if out.String() != want {
 		t.Fatalf("template output = %q, want %q", out.String(), want)
+	}
+}
+
+func TestTaxonomyExposureTemplateAcceptsLegacyUnclassifiedCSV(t *testing.T) {
+	path := filepath.Join(t.TempDir(), "unclassified.csv")
+	mustWriteFile(t, path, "ticker,company_id,name,isin,reason\n"+
+		"XYZ_US_EQ,xyz,XYZ Corp,US0000000002,missing theme exposure\n")
+
+	var out bytes.Buffer
+	if err := runTaxonomy([]string{"exposure-template", "--unclassified", path}, &out); err != nil {
+		t.Fatal(err)
+	}
+	if !strings.Contains(out.String(), ",,XYZ_US_EQ,US0000000002,xyz,,,,,") {
+		t.Fatalf("template output = %q", out.String())
 	}
 }
 
@@ -310,4 +364,13 @@ func mustWriteFile(t *testing.T, path, text string) {
 	if err := os.WriteFile(path, []byte(text), 0o644); err != nil {
 		t.Fatal(err)
 	}
+}
+
+func mustReadFile(t *testing.T, path string) []byte {
+	t.Helper()
+	b, err := os.ReadFile(path)
+	if err != nil {
+		t.Fatal(err)
+	}
+	return b
 }

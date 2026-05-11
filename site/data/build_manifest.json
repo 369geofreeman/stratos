@@ -1,11 +1,11 @@
 {
   "dataContractVersion": 1,
   "schemaVersion": 1,
-  "builtAt": "2026-05-10T18:02:26Z",
+  "builtAt": "2026-05-10T19:00:01Z",
   "sourceMode": "live_fetch",
   "trading212Environment": "live",
   "trading212BaseUrl": "https://live.trading212.com/api/v0",
-  "trading212FetchAt": "2026-05-10T18:02:26.876552Z",
+  "trading212FetchAt": "2026-05-10T19:00:01.417147Z",
   "instrumentCount": 16985,
   "exchangeCount": 17,
   "securityCount": 13772,
@@ -35,6 +35,35 @@
   "identityCollisionCount": 0,
   "identityOverrideCount": 0,
   "identityIssueCount": 15215,
+  "reviewQueueCounts": {
+    "enrichment": 9425,
+    "identity": 15215,
+    "stale_review": 1,
+    "taxonomy": 36066
+  },
+  "reviewReasonCounts": {
+    "enrichment_failed": 9425,
+    "identity_low_confidence": 15215,
+    "manual_review_stale": 1,
+    "missing_industry": 9551,
+    "missing_sector": 9551,
+    "missing_theme_exposure": 16964
+  },
+  "reviewQueueDeltas": {
+    "enrichment": 0,
+    "identity": 0,
+    "stale_review": 0,
+    "taxonomy": 0
+  },
+  "reviewReasonDeltas": {
+    "enrichment_failed": 0,
+    "identity_low_confidence": 0,
+    "manual_review_stale": 0,
+    "missing_industry": 0,
+    "missing_sector": 0,
+    "missing_theme_exposure": 0
+  },
+  "previousBuildAt": "2026-05-10T18:59:00Z",
   "instrumentCategoryCounts": {
     "etf": 5849,
     "investment_trust": 45,
@@ -53,12 +82,12 @@
     "short": 416,
     "synthetic": 143
   },
-  "rawSnapshotAt": "2026-05-10T18:02:26Z",
+  "rawSnapshotAt": "2026-05-10T19:00:01Z",
   "rawSnapshots": {
-    "timestamp": "2026-05-10T18:02:26Z",
+    "timestamp": "2026-05-10T19:00:01Z",
     "directory": "data/raw/trading212",
-    "instrumentsPath": "data/raw/trading212/instruments_20260510T180226Z.json",
-    "exchangesPath": "data/raw/trading212/exchanges_20260510T180226Z.json",
+    "instrumentsPath": "data/raw/trading212/instruments_20260510T190001Z.json",
+    "exchangesPath": "data/raw/trading212/exchanges_20260510T190001Z.json",
     "instrumentsLatest": "data/raw/trading212/instruments_latest.json",
     "exchangesLatest": "data/raw/trading212/exchanges_latest.json",
     "instrumentFileCount": 16985,
@@ -68,34 +97,34 @@
     {
       "endpointName": "exchanges",
       "path": "/equity/metadata/exchanges",
-      "requestStartedAt": "2026-05-10T18:02:26.876716Z",
-      "responseReceivedAt": "2026-05-10T18:02:27.052307Z",
-      "durationMillis": 175,
+      "requestStartedAt": "2026-05-10T19:00:01.417298Z",
+      "responseReceivedAt": "2026-05-10T19:00:01.527862Z",
+      "durationMillis": 110,
       "statusCode": 200,
       "status": "200 OK",
       "rateLimit": {
         "limit": "1",
         "period": "30",
         "remaining": "0",
-        "reset": "1778436177",
-        "resetAt": "2026-05-10T18:02:57Z",
+        "reset": "1778439631",
+        "resetAt": "2026-05-10T19:00:31Z",
         "used": "1"
       }
     },
     {
       "endpointName": "instruments",
       "path": "/equity/metadata/instruments",
-      "requestStartedAt": "2026-05-10T18:02:27.055348Z",
-      "responseReceivedAt": "2026-05-10T18:02:27.160534Z",
-      "durationMillis": 105,
+      "requestStartedAt": "2026-05-10T19:00:01.533624Z",
+      "responseReceivedAt": "2026-05-10T19:00:01.659859Z",
+      "durationMillis": 126,
       "statusCode": 200,
       "status": "200 OK",
       "rateLimit": {
         "limit": "1",
         "period": "50",
         "remaining": "0",
-        "reset": "1778436197",
-        "resetAt": "2026-05-10T18:03:17Z",
+        "reset": "1778439651",
+        "resetAt": "2026-05-10T19:00:51Z",
         "used": "1"
       }
     }
@@ -107,8 +136,8 @@
       "limit": "1",
       "period": "30",
       "remaining": "0",
-      "reset": "1778436177",
-      "resetAt": "2026-05-10T18:02:57Z",
+      "reset": "1778439631",
+      "resetAt": "2026-05-10T19:00:31Z",
       "used": "1"
     },
     {
@@ -117,8 +146,8 @@
       "limit": "1",
       "period": "50",
       "remaining": "0",
-      "reset": "1778436197",
-      "resetAt": "2026-05-10T18:03:17Z",
+      "reset": "1778439651",
+      "resetAt": "2026-05-10T19:00:51Z",
       "used": "1"
     }
   ],
@@ -128,29 +157,29 @@
       "path": "site/data/app_bootstrap.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "e0556326d52ed80a7d954ac012ff0432154e2810ce91ae169721ddd879262357",
-      "bytes": 47501,
+      "sha256": "f27551fcd71288297ad0b394eda38b1a6fde19b6b3d81f99e9fbf211f51374ac",
+      "bytes": 49592,
       "checksumMode": "projection_excludes_generatedFiles"
     },
     {
       "path": "site/data/tickers_index.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "81cb8457c7d72b555dfcecff2287fb160fdf62d155fb14dd388c398e56b06559",
+      "sha256": "39b4c591380fb8e6a80b9fd7337c1e70d90e69fc9bf88af40c3dee51d5c47e3d",
       "bytes": 20619338
     },
     {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "616de2ca3dbb337eef3898b5a38381c55b61d894468b065cc4bb2788c252596e",
-      "bytes": 90265490
+      "sha256": "f2724edf4ade795bd9ad2e95a9a65e30391205be0dd818c1da83aaf2e461913a",
+      "bytes": 91884671
     },
     {
       "path": "site/data/companies.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "2a6818887c8d4031f526ef1b898c8c53d18924593e0722d2cf3d5160bdf65fdd",
+      "sha256": "d1f42f378832842f23cb8b7faad84208d038343c9cfe9bf6ddb5e9c354b237f8",
       "bytes": 25459286
     },
     {
@@ -213,8 +242,22 @@
       "path": "site/data/unclassified.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "6140ca657b8a3fb6356cfc343c0fac5d51a26584a6b1788aac6221feac4e3f3e",
-      "bytes": 2936734
+      "sha256": "48512c551c030b10d244aea643327358b82a6b695bfb198c327fbeb6a2f2ed65",
+      "bytes": 3976094
+    },
+    {
+      "path": "site/data/review_queues.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "204b440dbef3680b5ce200a06b79d71bd422b8c87ab9af10aeabd28f46240163",
+      "bytes": 34734482
+    },
+    {
+      "path": "site/data/review_summary.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "34b88fbc7b8d75b28b78bef1085d89ff17e40b9ca495910a8bfc4275ae4491fd",
+      "bytes": 1106
     },
     {
       "path": "site/data/tickers.csv",
@@ -241,8 +284,22 @@
       "path": "site/data/unclassified.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "bd42d28e32c505319f53b01894d264547acd20fef88b6428c0a25d1a07d704cd",
-      "bytes": 1986582
+      "sha256": "0ac3536593e7b227527d316f562af74b168a80ba3e2feba358a4f1a762e8fd11",
+      "bytes": 2682399
+    },
+    {
+      "path": "site/data/taxonomy_issues.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "10e029a213399c5a55dacddbeb54a11fb63ca332d522059cf410e46e4173859e",
+      "bytes": 11738773
+    },
+    {
+      "path": "site/data/enrichment_issues.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "5845c58e9a68948fbcde7a4bde5f293d6dad21b406a6e52edefb4ad0f114ef7f",
+      "bytes": 3153575
     },
     {
       "path": "site/data/identity_issues.csv",
@@ -259,11 +316,46 @@
       "bytes": 1806783
     },
     {
+      "path": "site/data/stale_reviews.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "8ad97be49906f581d3f4299798e77306e721440e6f1f564b74ea0eda573248d9",
+      "bytes": 445
+    },
+    {
+      "path": "site/data/suggested_classification_overrides.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "06030292ee67ffecef8d725f6119417c18957be9918bfc85172caade6ab8e487",
+      "bytes": 225022
+    },
+    {
+      "path": "site/data/suggested_exposures.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "c0cc8722be2b77db602de7f500e23dc09b53f87f301e6d68524ed2ad55a59041",
+      "bytes": 936116
+    },
+    {
+      "path": "site/data/suggested_ticker_overrides.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "80eb45501548292c8bfa7dd80638f26e3bd455b7c95a843777465ce2c748d584",
+      "bytes": 456178
+    },
+    {
+      "path": "site/data/suggested_identity_overrides.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "fa7756b0e6a91b45d482d37b27980fd8cbfbc01dafad979fb1c3e5144a99adcb",
+      "bytes": 250148
+    },
+    {
       "path": "site/data/build_manifest.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "c806195f3c2375d93be6c9d830f4a8beff64714a0a0463dea10203b1675ad032",
-      "bytes": 8023,
+      "sha256": "7e9479abe6f70562f6f48888c18bf548d9b06cd39c461ada86fd3da2781a88b8",
+      "bytes": 10716,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

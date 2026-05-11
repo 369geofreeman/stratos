@@ -10,10 +10,10 @@ The production site is static and suitable for GitHub Pages. A local Go CLI refr
 - Timestamped Trading 212 raw snapshots with latest aliases, HTTP diagnostics, rate-limit observations, and raw replay mode.
 - Local builder command at `cmd/statos-build`.
 - Standard-library enrichment interface with versioned cache-first Yahoo-compatible provider, stale-cache diagnostics, ambiguous-match handling, and failure exports.
-- Normalized catalogue model covering instruments, securities, companies, listings, classifications, themes, supply-chain layers, exposures, sources, and unclassified rows.
+- Normalized catalogue model covering instruments, securities, companies, listings, classifications, themes, supply-chain layers, exposures, sources, unclassified rows, and structured review queues.
 - Manual taxonomy files under `data/manual`.
 - Versioned static data contract under `site/data`, with manifest checksums, startup/ticker-index slices, and standalone securities, listings, and relationships JSON exports.
-- Static HTML/CSS/JS research UI with sliced startup loading, bounded long-list rendering, search, tables, supply-chain map, modal detail, watchlist, local notes/tags/colour labels, import/export, and unclassified review.
+- Static HTML/CSS/JS research UI with sliced startup loading, bounded long-list rendering, search, tables, supply-chain map, modal detail, watchlist, local notes/tags/colour labels, import/export, and structured review queues.
 
 ## Requirements
 
@@ -116,7 +116,7 @@ Repository setup:
 2. Set Source to `GitHub Actions`.
 3. Push to `main` or run the `Deploy Pages` workflow manually.
 
-Before publishing real account data, regenerate locally with `make update-live-data`, review `site/data/unclassified.csv` and `site/data/build_manifest.json`, then commit source, manual taxonomy, and generated `site/data`.
+Before publishing real account data, regenerate locally with `make update-live-data`, review `site/data/review_summary.json`, `site/data/review_queues.json`, and `site/data/build_manifest.json`, then commit source, manual taxonomy, and generated `site/data`.
 
 ## Project Checklists
 
@@ -132,7 +132,7 @@ Before publishing real account data, regenerate locally with `make update-live-d
 3. Normalize broker instruments into tickers, listings, securities, and companies.
 4. Resolve enrichment through the versioned cache and optional Yahoo-compatible lookup.
 5. Apply manual overrides, themes, supply chains, exposures, and notes.
-6. Export versioned JSON/CSV to committed `site/data`, including the full catalogue artifact, small frontend loading slices, normalized enrichment diagnostics, and manifest checksum metadata.
+6. Export versioned JSON/CSV to committed `site/data`, including the full catalogue artifact, small frontend loading slices, normalized enrichment diagnostics, structured review queues, suggested manual rows, and manifest checksum metadata.
 
 ## Manual Taxonomy
 
@@ -160,11 +160,24 @@ Ticker override rows can also set enrichment overrides for `yahoo_symbol`, `sect
 
 Detailed review steps are in [Manual Taxonomy Workflow](docs/taxonomy-workflow.md).
 
+## Review Queues
+
+The builder turns taxonomy gaps, enrichment failures, identity issues, and stale manual rows into `site/data/review_queues.json` plus focused CSVs:
+
+- `taxonomy_issues.csv`
+- `enrichment_issues.csv`
+- `identity_issues.csv`
+- `stale_reviews.csv`
+
+`review_summary.json` counts rows by queue, reason code, severity, taxonomy gap, enrichment status, identity issue type, stale bucket, and suggested manual file. When a previous manifest exists before generation, `build_manifest.json` also includes review count deltas and `previousBuildAt`.
+
+Suggested manual row files use the exact current manual headers and pre-fill identifiers only: `suggested_classification_overrides.csv`, `suggested_exposures.csv`, `suggested_ticker_overrides.csv`, and `suggested_identity_overrides.csv`.
+
 ## Enrichment
 
 Yahoo Finance does not provide a stable official public API. Statos treats Yahoo-style data as replaceable enrichment, not the source of truth. Prefer the optional local yfinance helper for larger runs, then run the Go builder in cache-only mode. Set `STATOS_ENRICHMENT_PROVIDER=yahoo` only when you specifically want the Go builder to attempt direct Yahoo-compatible HTTP enrichment.
 
-The default provider mode is cache-only. Cache misses, stale entries, cached failures, unknown cache schema versions, and ambiguous matches are surfaced in `site/data/build_manifest.json` and `site/data/enrichment_failures.csv`. Stale cache entries are still used by default so offline builds remain useful.
+The default provider mode is cache-only. Cache misses, stale entries, cached failures, unknown cache schema versions, and ambiguous matches are surfaced in `site/data/build_manifest.json`, `site/data/enrichment_failures.csv`, and the structured enrichment review queue. Stale cache entries are still used by default so offline builds remain useful.
 
 Enrichment is attempted once per identity, using ISIN where available, then fanned out to every Trading 212 ticker sharing that identity. This avoids repeating the same Yahoo/cache lookup for duplicate exchange or currency listings while keeping ticker-level failure rows for manual review.
 
@@ -176,7 +189,7 @@ Provider interface and cache contract details are documented in [Enrichment Prov
 
 `.env`, raw snapshots, enrichment caches, and `.gocache/` are ignored. Generated static outputs under `site/data` are intended to be committed.
 
-`site/data/build_manifest.json` includes the source mode, Trading 212 environment/base URL, fetch timestamp, raw snapshot path summary, per-endpoint HTTP diagnostics, observed Trading 212 rate-limit headers, enrichment cache/provider diagnostics, identity counts for missing tickers/ISINs, duplicates, collisions, categories, flags, applied overrides, data contract/schema versions, and checksums for every generated `site/data` file. It never stores API keys, API secrets, authorization headers, or raw provider responses.
+`site/data/build_manifest.json` includes the source mode, Trading 212 environment/base URL, fetch timestamp, raw snapshot path summary, per-endpoint HTTP diagnostics, observed Trading 212 rate-limit headers, enrichment cache/provider diagnostics, identity counts for missing tickers/ISINs, duplicates, collisions, categories, flags, applied overrides, review queue counts and deltas, data contract/schema versions, and checksums for every generated `site/data` file. It never stores API keys, API secrets, authorization headers, or raw provider responses.
 
 ## License
 

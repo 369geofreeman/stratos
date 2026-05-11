@@ -37,6 +37,12 @@
     "identityCollisionCount": 0,
     "identityOverrideCount": 0,
     "identityIssueCount": 1,
+    "reviewQueueCounts": {
+      "taxonomy": 1
+    },
+    "reviewReasonCounts": {
+      "missing_sector": 1
+    },
     "rawSnapshots": {},
     "dataFreshness": "0h"
   },

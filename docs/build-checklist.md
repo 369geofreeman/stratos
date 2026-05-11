@@ -76,31 +76,55 @@ The builder should write:
 - `site/data/listings.json`
 - `site/data/relationships.json`
 - `site/data/unclassified.json`
+- `site/data/review_queues.json`
+- `site/data/review_summary.json`
 - `site/data/unclassified.csv`
+- `site/data/taxonomy_issues.csv`
+- `site/data/enrichment_issues.csv`
 - `site/data/identity_issues.csv`
 - `site/data/enrichment_failures.csv`
+- `site/data/stale_reviews.csv`
+- `site/data/suggested_classification_overrides.csv`
+- `site/data/suggested_exposures.csv`
+- `site/data/suggested_ticker_overrides.csv`
+- `site/data/suggested_identity_overrides.csv`
 - `site/data/securities.csv`
 - `site/data/listings.csv`
 - `site/data/build_manifest.json`
 
 ## Review
 
-- Open `site/data/build_manifest.json` and check data contract/schema versions, generated file checksum metadata for all generated files including `app_bootstrap.json` and `tickers_index.json`, source mode, Trading 212 environment/base URL, raw snapshot paths, endpoint diagnostics, rate-limit observations, source counts, enrichment provider/cache hit/miss/stale/failure counts, unclassified counts, identity duplicate/collision counts, category/flag counts, and freshness.
-- Review `site/data/enrichment_failures.csv` for cache misses, cached provider failures, ambiguous matches, and unknown cache schema rows.
-- Review `site/data/unclassified.csv`.
+- Open `site/data/build_manifest.json` and check data contract/schema versions, generated file checksum metadata for all generated files including `app_bootstrap.json`, `tickers_index.json`, and review queue files; source mode; Trading 212 environment/base URL; raw snapshot paths; endpoint diagnostics; rate-limit observations; source counts; enrichment provider/cache hit/miss/stale/failure counts; unclassified counts; identity duplicate/collision counts; review queue counts, reason counts, and deltas; category/flag counts; and freshness.
+- Open `site/data/review_summary.json` to pick the highest-impact queue/reason bucket for the week.
+- Review `site/data/review_queues.json` through the static Review queues UI, or use the focused CSVs below.
+- Review `site/data/taxonomy_issues.csv` for missing sector, industry, company ID, ISIN, and theme exposure work.
+- Review `site/data/enrichment_issues.csv` and `site/data/enrichment_failures.csv` for cache misses, cached provider failures, ambiguous matches, and unknown cache schema rows.
+- Review `site/data/identity_issues.csv` for low-confidence identity mappings, duplicate tickers, shared ISIN collisions, and manual override misses.
+- Review `site/data/stale_reviews.csv` for manual rows or notes that need a fresh source check.
 - Print taxonomy coverage without network calls:
 
 ```sh
 GOCACHE="$PWD/.gocache" go run ./cmd/statos-build taxonomy coverage
 ```
 
-- Generate an exposure template when unclassified rows need theme/layer review:
+- Use generated manual row suggestions to reduce copy/paste:
+
+```sh
+site/data/suggested_classification_overrides.csv
+site/data/suggested_exposures.csv
+site/data/suggested_ticker_overrides.csv
+site/data/suggested_identity_overrides.csv
+```
+
+Fill the blank judgment fields before pasting suggested rows into `data/manual`.
+
+- Generate an exposure template from legacy unclassified rows when needed:
 
 ```sh
 GOCACHE="$PWD/.gocache" go run ./cmd/statos-build taxonomy exposure-template --out /tmp/statos-exposure-template.csv
 ```
 
-- Review `site/data/identity_issues.csv`, `site/data/securities.csv`, `site/data/listings.csv`, `site/data/securities.json`, and `site/data/listings.json` for low-confidence identity mappings, duplicate tickers, shared ISIN collisions, and manual override misses.
+- Review `site/data/securities.csv`, `site/data/listings.csv`, `site/data/securities.json`, and `site/data/listings.json` when identity queue rows point to security/listing problems.
 - Review `site/data/relationships.json` when manual relationship rows change.
 - Add or update exposures in `data/manual/exposures.csv`.
 - Add or update classification overrides in `data/manual/classification_overrides.csv` when provider sector, industry, or country values are missing or wrong.
@@ -122,7 +146,7 @@ Open `http://localhost:4173` and check:
 - Supply-chain map rows contain expected cards.
 - Ticker modal has identity, classification, sources, related tickers, and local note controls.
 - Watchlist, tags, colour labels, import, and export work from browser local storage.
-- Unclassified queue is visible and actionable.
+- Review queues are visible, filterable by queue/reason/severity/gap, and suggested manual rows can be copied.
 
 ## Commit
 

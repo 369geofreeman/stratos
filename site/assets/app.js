@@ -18,19 +18,30 @@ const DEFAULT_EXPORTS = [
   "listings.json",
   "relationships.json",
   "unclassified.json",
+  "review_queues.json",
+  "review_summary.json",
   "tickers.csv",
   "securities.csv",
   "listings.csv",
   "unclassified.csv",
+  "taxonomy_issues.csv",
+  "enrichment_issues.csv",
   "identity_issues.csv",
   "enrichment_failures.csv",
+  "stale_reviews.csv",
+  "suggested_classification_overrides.csv",
+  "suggested_exposures.csv",
+  "suggested_ticker_overrides.csv",
+  "suggested_identity_overrides.csv",
   "build_manifest.json"
 ];
 
 const state = {
   bootstrap: null,
   tickers: null,
-  unclassified: null,
+  reviewQueues: null,
+  reviewSummary: null,
+  visibleReviewRows: [],
   detail: null,
   view: "tickers",
   query: "",
@@ -38,6 +49,7 @@ const state = {
   sector: "",
   localFilter: "",
   sort: { key: "ticker", dir: "asc" },
+  reviewFilters: { queue: "", reason: "", severity: "", gap: "", search: "" },
   listWindows: {},
   promises: {},
   maps: {
@@ -55,6 +67,11 @@ const state = {
 
 const $ = (selector) => document.querySelector(selector);
 const content = $("#content");
+const applyReviewSearch = debounce((value) => {
+  state.reviewFilters.search = value.trim().toLowerCase();
+  resetListWindows();
+  render();
+}, 180);
 
 init();
 
@@ -103,6 +120,8 @@ function bindEvents() {
     render();
   });
   content.addEventListener("click", handleContentClick);
+  content.addEventListener("change", handleContentChange);
+  content.addEventListener("input", handleContentInput);
   $("#modalBody").addEventListener("click", handleContentClick);
   $("#importFile").addEventListener("change", importLocalFile);
 }
@@ -363,44 +382,104 @@ function renderWatchlist() {
 }
 
 function renderUnclassified() {
-  if (!state.tickers) {
-    renderTickerIndexLoading("Loading review queue index", "Fetching compact ticker rows before filtering review rows.");
+  if (!state.reviewQueues) {
+    ensureReviewQueues().then(render).catch(showContentError);
+    content.innerHTML = loadingBlock("Loading review queues", "Fetching structured taxonomy, enrichment, identity, and stale-review rows.");
     return;
   }
-  if (!state.unclassified) {
-    ensureUnclassified().then(render).catch(showContentError);
-    content.innerHTML = loadingBlock("Loading unclassified queue", "Fetching the JSON review queue slice.");
-    return;
-  }
-  const rows = state.unclassified.filter((row) => {
-    const ticker = tickerByID(row.ticker);
-    return !ticker || tickerMatches(ticker);
-  });
+  const rows = filteredReviewRows();
+  state.visibleReviewRows = rows;
   content.innerHTML = `
     <div class="panel-head">
-      <h2>Unclassified queue</h2>
-      <p class="muted">${num(rows.length)} rows need review</p>
+      <h2>Review queues</h2>
+      <p class="muted">${num(rows.length)} shown from ${num(state.reviewQueues.length)} structured rows</p>
     </div>
-    ${renderUnclassifiedTable(rows)}
+    ${renderReviewToolbar()}
+    ${renderReasonCounts()}
+    ${renderReviewTable(rows)}
   `;
 }
 
-function renderUnclassifiedTable(rows) {
-  if (!rows.length) return `<div class="empty">No unclassified rows match the current filters.</div>`;
-  const listID = "unclassified";
+function renderReviewToolbar() {
+  const filters = state.reviewFilters;
+  const reasons = sortedKeys(state.reviewSummary?.byReasonCode || countBy(state.reviewQueues, "reasonCode"));
+  const queues = sortedKeys(state.reviewSummary?.byQueue || countBy(state.reviewQueues, "queue"));
+  const severities = ["high", "medium", "low"].filter((severity) => (state.reviewSummary?.bySeverity || {})[severity] || state.reviewQueues.some((row) => row.severity === severity));
+  return `
+    <div class="review-toolbar">
+      <input id="reviewSearch" type="search" value="${esc(filters.search)}" placeholder="Search review rows, identifiers, source files, or actions">
+      <select data-review-filter="queue" aria-label="Review queue filter">
+        <option value="">All queues</option>
+        ${queues.map((queue) => `<option value="${esc(queue)}" ${filters.queue === queue ? "selected" : ""}>${esc(labelForQueue(queue))}</option>`).join("")}
+      </select>
+      <select data-review-filter="reason" aria-label="Reason code filter">
+        <option value="">All reasons</option>
+        ${reasons.map((reason) => `<option value="${esc(reason)}" ${filters.reason === reason ? "selected" : ""}>${esc(reason)}</option>`).join("")}
+      </select>
+      <select data-review-filter="severity" aria-label="Severity filter">
+        <option value="">All severities</option>
+        ${severities.map((severity) => `<option value="${esc(severity)}" ${filters.severity === severity ? "selected" : ""}>${esc(severity)}</option>`).join("")}
+      </select>
+      <select data-review-filter="gap" aria-label="Taxonomy gap filter">
+        <option value="">All gaps</option>
+        <option value="sector" ${filters.gap === "sector" ? "selected" : ""}>Sector gap</option>
+        <option value="industry" ${filters.gap === "industry" ? "selected" : ""}>Industry gap</option>
+        <option value="theme" ${filters.gap === "theme" ? "selected" : ""}>Theme gap</option>
+      </select>
+    </div>
+  `;
+}
+
+function renderReasonCounts() {
+  const counts = state.reviewSummary?.byReasonCode || countBy(state.reviewQueues, "reasonCode");
+  const items = sortedEntries(counts).slice(0, 18);
+  if (!items.length) return "";
+  return `
+    <div class="reason-counts">
+      ${items.map(([reason, count]) => `<button class="chip" data-action="review-reason" data-reason="${esc(reason)}">${esc(reason)} ${num(count)}</button>`).join("")}
+    </div>
+  `;
+}
+
+function renderReviewTable(rows) {
+  if (!rows.length) return `<div class="empty">No review rows match the current filters.</div>`;
+  const listID = "review-queues";
   const visible = visibleCount(listID, INITIAL_TABLE_ROWS);
   const page = rows.slice(0, visible);
   return `
     <div class="table-wrap">
       <table>
-        <thead><tr><th>Ticker</th><th>Name</th><th>ISIN</th><th>Reason</th></tr></thead>
+        <thead><tr><th>Queue</th><th>Security</th><th>Classification</th><th>Action</th><th>Manual row</th></tr></thead>
         <tbody>
-          ${page.map((row) => `
+          ${page.map((row, index) => `
             <tr>
-              <td><button class="ticker-link" data-action="open" data-ticker="${esc(row.ticker)}">${esc(row.ticker)}</button></td>
-              <td>${esc(row.name)}</td>
-              <td>${esc(row.isin || "")}</td>
-              <td>${esc(row.reason)}</td>
+              <td>
+                <div class="chips">
+                  <span class="chip">${esc(labelForQueue(row.queue))}</span>
+                  <span class="chip ${esc(row.severity || "")}">${esc(row.severity || "unknown")}</span>
+                </div>
+                <div class="muted reason-code">${esc(row.reasonCode || "")}</div>
+              </td>
+              <td>
+                ${row.ticker ? `<button class="ticker-link" data-action="open" data-ticker="${esc(row.ticker)}">${esc(row.ticker)}</button>` : `<strong>${esc(row.companyId || row.securityId || row.isin || "Unresolved")}</strong>`}
+                <div><strong>${esc(row.name || "")}</strong></div>
+                <div class="muted">${esc([row.isin, row.companyId, row.securityId].filter(Boolean).join(" - "))}</div>
+              </td>
+              <td>
+                <div>${esc(row.sector || "No sector")} / ${esc(row.industry || "No industry")}</div>
+                <div class="chips review-chips">${chips([...(row.themeIds || []), ...(row.layerIds || [])])}</div>
+              </td>
+              <td>
+                <div>${esc(row.suggestedAction || "")}</div>
+                <div class="muted">${esc(sourceLabel(row))}</div>
+              </td>
+              <td>
+                ${row.suggestedCsvRow ? `
+                  <button class="small-button" data-action="copy-review-row" data-review-index="${esc(String(index))}">Copy row</button>
+                  <div class="muted">${esc(row.suggestedManualFile || "")}</div>
+                  <code class="csv-snippet">${esc(row.suggestedCsvRow)}</code>
+                ` : `<span class="muted">${esc(row.suggestedManualFile || "No template")}</span>`}
+              </td>
             </tr>
           `).join("")}
         </tbody>
@@ -474,6 +553,35 @@ function handleContentClick(event) {
   if (action === "sort") sortBy(button.dataset.key);
   if (action === "export-local") exportLocal();
   if (action === "import-local") $("#importFile").click();
+  if (action === "review-reason") {
+    state.reviewFilters.reason = button.dataset.reason || "";
+    resetListWindows();
+    render();
+  }
+  if (action === "copy-review-row") {
+    const row = state.visibleReviewRows[Number(button.dataset.reviewIndex || 0)];
+    if (row && row.suggestedCsvRow) {
+      copyText(row.suggestedCsvRow).then(() => {
+        button.textContent = "Copied";
+        window.setTimeout(() => {
+          button.textContent = "Copy row";
+        }, 900);
+      }).catch((error) => window.alert(error.message));
+    }
+  }
+}
+
+function handleContentChange(event) {
+  const field = event.target.closest("[data-review-filter]");
+  if (!field) return;
+  state.reviewFilters[field.dataset.reviewFilter] = field.value;
+  resetListWindows();
+  render();
+}
+
+function handleContentInput(event) {
+  if (event.target.id !== "reviewSearch") return;
+  applyReviewSearch(event.target.value);
 }
 
 async function openTicker(tickerID) {
@@ -625,6 +733,28 @@ function filteredTickers() {
   return rows;
 }
 
+function filteredReviewRows() {
+  const filters = state.reviewFilters;
+  return state.reviewQueues.filter((row) => {
+    if (filters.queue && row.queue !== filters.queue) return false;
+    if (filters.reason && row.reasonCode !== filters.reason) return false;
+    if (filters.severity && row.severity !== filters.severity) return false;
+    if (filters.gap && !reviewMatchesGap(row, filters.gap)) return false;
+    if (state.theme && !(row.themeIds || []).includes(state.theme)) return false;
+    if (state.sector && row.sector !== state.sector) return false;
+    if (filters.search && !(row._searchText || "").includes(filters.search)) return false;
+    if (state.query && !(row._searchText || "").includes(state.query)) return false;
+    return true;
+  });
+}
+
+function reviewMatchesGap(row, gap) {
+  if (gap === "sector") return row.reasonCode === "missing_sector";
+  if (gap === "industry") return row.reasonCode === "missing_industry";
+  if (gap === "theme") return row.reasonCode === "missing_theme_exposure";
+  return true;
+}
+
 function tickerMatches(ticker) {
   if (state.theme && !(ticker.themeIds || []).includes(state.theme)) return false;
   if (state.sector && ticker.sector !== state.sector) return false;
@@ -635,6 +765,28 @@ function tickerMatches(ticker) {
   if (!state.query) return true;
   const localText = `${(local.tags || []).join(" ")} ${local.notes || ""}`.toLowerCase();
   return (ticker._searchText || "").includes(state.query) || localText.includes(state.query);
+}
+
+function buildReviewSearchText(row) {
+  return [
+    row.queue,
+    row.reasonCode,
+    row.severity,
+    row.ticker,
+    row.name,
+    row.isin,
+    row.companyId,
+    row.securityId,
+    row.sector,
+    row.industry,
+    row.sourceFile,
+    row.suggestedAction,
+    row.suggestedManualFile,
+    row.issueType,
+    row.staleBucket,
+    ...(row.themeIds || []),
+    ...(row.layerIds || [])
+  ].filter(Boolean).join(" ").toLowerCase();
 }
 
 function sortBy(key) {
@@ -764,15 +916,20 @@ function buildTickerSearchText(ticker) {
   ].filter(Boolean).join(" ").toLowerCase();
 }
 
-async function ensureUnclassified() {
-  if (state.unclassified) return state.unclassified;
-  if (!state.promises.unclassified) {
-    state.promises.unclassified = fetchJSON("data/unclassified.json").then((data) => {
-      state.unclassified = Array.isArray(data) ? data : (data.unclassified || []);
-      return state.unclassified;
+async function ensureReviewQueues() {
+  if (state.reviewQueues) return state.reviewQueues;
+  if (!state.promises.reviewQueues) {
+    state.promises.reviewQueues = Promise.all([
+      fetchJSON("data/review_queues.json"),
+      fetchJSON("data/review_summary.json")
+    ]).then(([queues, summary]) => {
+      state.reviewQueues = asArray(queues);
+      state.reviewSummary = summary && typeof summary === "object" ? summary : {};
+      for (const row of state.reviewQueues) row._searchText = buildReviewSearchText(row);
+      return state.reviewQueues;
     });
   }
-  return state.promises.unclassified;
+  return state.promises.reviewQueues;
 }
 
 async function ensureDetailData() {
@@ -877,8 +1034,41 @@ function themeNames(ids) {
   return (ids || []).map(themeName);
 }
 
+function labelForQueue(queue) {
+  if (queue === "stale_review") return "Stale review";
+  if (!queue) return "";
+  return queue.charAt(0).toUpperCase() + queue.slice(1);
+}
+
+function sourceLabel(row) {
+  const source = row.sourceFile ? `${row.sourceFile}${row.sourceRow ? `:${row.sourceRow}` : ""}` : "";
+  const reviewed = row.lastReviewed ? `reviewed ${row.lastReviewed}` : "";
+  return [source, reviewed].filter(Boolean).join(" - ");
+}
+
 function chips(values) {
   return (values || []).filter(Boolean).map((value) => `<span class="chip">${esc(String(value))}</span>`).join("");
+}
+
+function countBy(rows, key) {
+  const out = {};
+  for (const row of rows || []) {
+    const value = row[key];
+    if (!value) continue;
+    out[value] = (out[value] || 0) + 1;
+  }
+  return out;
+}
+
+function sortedKeys(object) {
+  return Object.keys(object || {}).sort((a, b) => a.localeCompare(b));
+}
+
+function sortedEntries(object) {
+  return Object.entries(object || {}).sort((a, b) => {
+    if (b[1] === a[1]) return a[0].localeCompare(b[0]);
+    return Number(b[1] || 0) - Number(a[1] || 0);
+  });
 }
 
 function compareValues(a, b) {
@@ -904,6 +1094,23 @@ function uniqueStrings(values) {
 
 function asArray(value) {
   return Array.isArray(value) ? value : [];
+}
+
+async function copyText(text) {
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  document.body.appendChild(textarea);
+  textarea.select();
+  const ok = document.execCommand("copy");
+  textarea.remove();
+  if (!ok) throw new Error("Copy failed");
 }
 
 function debounce(fn, wait) {

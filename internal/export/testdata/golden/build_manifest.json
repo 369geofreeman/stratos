@@ -33,6 +33,12 @@
   "identityCollisionCount": 0,
   "identityOverrideCount": 0,
   "identityIssueCount": 1,
+  "reviewQueueCounts": {
+    "taxonomy": 1
+  },
+  "reviewReasonCounts": {
+    "missing_sector": 1
+  },
   "rawSnapshots": {},
   "dataFreshness": "0h",
   "generatedFiles": [
@@ -40,8 +46,8 @@
       "path": "site/data/app_bootstrap.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "39900d977e333f2eaf99218354152b3c92eef1147ab5f24bb05e4d233860c903",
-      "bytes": 5096,
+      "sha256": "519e7fcad60cf0659b5e7d6d83c1a6abe2f2ad31ba970bb607c2840418fcd508",
+      "bytes": 6679,
       "checksumMode": "projection_excludes_generatedFiles"
     },
     {
@@ -55,8 +61,8 @@
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "2595f7856ab4858adf5d7eda587c4db5d9ed22867129e7b8cda733e784ad2e8c",
-      "bytes": 5043
+      "sha256": "105a0151be0118cf6cf25897652afd75ac7fd885cebbeb1cb29afda734eef2fd",
+      "bytes": 5158
     },
     {
       "path": "site/data/companies.json",
@@ -129,6 +135,20 @@
       "bytes": 5
     },
     {
+      "path": "site/data/review_queues.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "7ace610ab8fb71b11b7375483d3dcd520566a4d8110785b45601d397adfab774",
+      "bytes": 570
+    },
+    {
+      "path": "site/data/review_summary.json",
+      "format": "json",
+      "schemaVersion": 1,
+      "sha256": "99399b109583a56d7522471568b81a4e7736a0608dc84160bad50f6de57f8214",
+      "bytes": 508
+    },
+    {
       "path": "site/data/tickers.csv",
       "format": "csv",
       "schemaVersion": 1,
@@ -153,8 +173,22 @@
       "path": "site/data/unclassified.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "a42b3126e5ecafddb73309bbd886779c98ee160f4016615ef6b5d08962da9b4c",
-      "bytes": 35
+      "sha256": "56d6b464b418c857389134c3a54daeb0194c7468188850fdceb1827ba402775a",
+      "bytes": 48
+    },
+    {
+      "path": "site/data/taxonomy_issues.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "fd9a0fdf8200b550e64783f934c3e13760fa332210816113cd790b3fef65cbcb",
+      "bytes": 522
+    },
+    {
+      "path": "site/data/enrichment_issues.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "bf26a4b91ccb765d4c56c17ff3b227fbc59216f678d7333c4f0fbb11d5166bc1",
+      "bytes": 212
     },
     {
       "path": "site/data/identity_issues.csv",
@@ -171,11 +205,46 @@
       "bytes": 180
     },
     {
+      "path": "site/data/stale_reviews.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "bf26a4b91ccb765d4c56c17ff3b227fbc59216f678d7333c4f0fbb11d5166bc1",
+      "bytes": 212
+    },
+    {
+      "path": "site/data/suggested_classification_overrides.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "def3725038088308dfbb95a39f41d2987f3b150c957f2387d2cb32e5cd51b2ff",
+      "bytes": 108
+    },
+    {
+      "path": "site/data/suggested_exposures.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "884b92a779b657f4d6e974cb4f2ef028db3ee94ac1345e20669699cd0cb1dc24",
+      "bytes": 102
+    },
+    {
+      "path": "site/data/suggested_ticker_overrides.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "5c4caaf94c890c565cd12486be8e0aa0b70e4cd03a6e2a3b568ddb9b599c91f2",
+      "bytes": 114
+    },
+    {
+      "path": "site/data/suggested_identity_overrides.csv",
+      "format": "csv",
+      "schemaVersion": 1,
+      "sha256": "444e11f4c786706aca07f8f3569a21474c7322c120b65b55201c99cc60e1ba64",
+      "bytes": 146
+    },
+    {
       "path": "site/data/build_manifest.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "e10248da5d9efefad2463997273c9274b79c7e7d005a730e5dbdb2c0b4788463",
-      "bytes": 5376,
+      "sha256": "4445e5232f81d89d16bf22662ccb9c4df7cc2405e8a0f294a8c9870a42d808c8",
+      "bytes": 7435,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

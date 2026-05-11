@@ -31,6 +31,7 @@ type BuildInput struct {
 	EnrichmentFailed      int
 	EnrichmentDiagnostics EnrichmentDiagnostics
 	EnrichmentFailures    []EnrichmentFailure
+	PreviousManifest      *BuildManifest
 }
 
 func Build(input BuildInput) (*Catalogue, error) {
@@ -406,6 +407,15 @@ func Build(input BuildInput) (*Catalogue, error) {
 	identityIssues := sortedIdentityIssues(state.issues)
 	sectors := groupTickers(tickers, func(t *Ticker) string { return t.Sector })
 	industries := groupTickers(tickers, func(t *Ticker) string { return t.Industry })
+	reviewQueues := BuildReviewQueues(ReviewInput{
+		Tickers:            derefTickers(tickers),
+		Unclassified:       unclassified,
+		IdentityIssues:     identityIssues,
+		EnrichmentFailures: input.EnrichmentFailures,
+		Manual:             input.Manual,
+		BuiltAt:            input.BuiltAt,
+	})
+	reviewSummary := BuildReviewSummary(reviewQueues, input.BuiltAt)
 
 	cat := &Catalogue{
 		DataContractVersion: DataContractVersion,
@@ -423,6 +433,8 @@ func Build(input BuildInput) (*Catalogue, error) {
 		Relationships:       sortedRelationships(input.Manual.Relationships),
 		Notes:               input.Manual.Notes,
 		Unclassified:        unclassified,
+		ReviewQueues:        reviewQueues,
+		ReviewSummary:       reviewSummary,
 		IdentityIssues:      identityIssues,
 		EnrichmentFailures:  append([]EnrichmentFailure(nil), input.EnrichmentFailures...),
 	}
@@ -463,6 +475,8 @@ func Build(input BuildInput) (*Catalogue, error) {
 		IdentityCollisionCount:       identityCollisionCount(identityIssues),
 		IdentityOverrideCount:        len(state.matchedOverrideKeys),
 		IdentityIssueCount:           len(identityIssues),
+		ReviewQueueCounts:            reviewSummary.ByQueue,
+		ReviewReasonCounts:           reviewSummary.ByReasonCode,
 		InstrumentCategoryCounts:     state.categoryCounts,
 		StructureFlagCounts:          state.flagCounts,
 		RawSnapshotAt:                input.RawSnapshotAt,
@@ -471,6 +485,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 		Trading212RateLimits:         input.RateLimits,
 		DataFreshness:                freshness(input.RawSnapshotAt, input.BuiltAt),
 	}
+	addReviewManifestDeltas(&cat.Manifest, input.PreviousManifest)
 	return cat, nil
 }
 
@@ -961,11 +976,12 @@ func buildUnclassified(tickers []*Ticker) []UnclassifiedRow {
 			continue
 		}
 		out = append(out, UnclassifiedRow{
-			Ticker:    ticker.Ticker,
-			CompanyID: ticker.CompanyID,
-			Name:      ticker.Name,
-			ISIN:      ticker.ISIN,
-			Reason:    strings.Join(reasons, "; "),
+			Ticker:      ticker.Ticker,
+			CompanyID:   ticker.CompanyID,
+			Name:        ticker.Name,
+			ISIN:        ticker.ISIN,
+			Reason:      strings.Join(reasons, "; "),
+			ReasonCodes: ReasonCodesForUnclassifiedReason(strings.Join(reasons, "; ")),
 		})
 	}
 	return out

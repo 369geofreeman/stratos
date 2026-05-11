@@ -1,0 +1,2 @@
+queue,reason_code,severity,ticker,isin,company_id,security_id,name,sector,industry,theme_ids,layer_ids,source_file,source_row,suggested_action,suggested_manual_file,suggested_csv_row,last_reviewed,last_refreshed
+taxonomy,missing_sector,medium,ABC_US_EQ,US0000000001,abc,isin:US0000000001,ABC Corp,Technology,Semiconductors,ai,chips,site/data/unclassified.csv,2,add reviewed sector and industry fields in classification_overrides.csv,data/manual/classification_overrides.csv,"ticker,ABC_US_EQ,,,,,,,",,2026-05-09T12:00:00Z

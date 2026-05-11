@@ -14,6 +14,13 @@ import (
 	"time"
 )
 
+var ExposureCSVHeader = []string{"theme_id", "layer_id", "ticker", "isin", "company_id", "exposure_score", "confidence", "source_url", "rationale", "last_reviewed"}
+var CompanyOverridesCSVHeader = []string{"company_id", "name", "sector", "industry", "country", "source_url", "last_reviewed"}
+var TickerOverridesCSVHeader = []string{"ticker", "company_id", "name", "sector", "industry", "country", "yahoo_symbol", "market_cap", "exchange", "currency", "source_url", "last_reviewed"}
+var ClassificationOverridesCSVHeader = []string{"target_type", "ticker", "isin", "company_id", "sector", "industry", "country", "source_url", "last_reviewed"}
+var IdentityOverridesCSVHeader = []string{"target_type", "ticker", "isin", "security_id", "company_id", "override_security_id", "override_company_id", "category", "flags", "confidence", "reason", "source_url", "last_reviewed"}
+var RelationshipsCSVHeader = []string{"relationship_type", "source_ticker", "source_isin", "source_company_id", "target_ticker", "target_isin", "target_company_id", "theme_id", "layer_id", "confidence", "source_url", "rationale", "last_reviewed"}
+
 type ManualData struct {
 	Themes                  []Theme
 	SupplyChains            []SupplyChain
@@ -149,12 +156,13 @@ type Relationship struct {
 }
 
 type Note struct {
-	TargetType string   `json:"targetType"`
-	TargetID   string   `json:"targetId"`
-	Title      string   `json:"title"`
-	Tags       []string `json:"tags,omitempty"`
-	Path       string   `json:"path"`
-	Text       string   `json:"text"`
+	TargetType   string   `json:"targetType"`
+	TargetID     string   `json:"targetId"`
+	Title        string   `json:"title"`
+	Tags         []string `json:"tags,omitempty"`
+	LastReviewed string   `json:"lastReviewed,omitempty"`
+	Path         string   `json:"path"`
+	Text         string   `json:"text"`
 }
 
 func Load(dir string) (ManualData, error) {
@@ -395,7 +403,7 @@ func LoadSupplyChains(path string) ([]SupplyChain, error) {
 }
 
 func LoadCompanyOverrides(path string) (map[string]CompanyOverride, error) {
-	rows, err := readManualCSV(path, []string{"company_id", "name", "sector", "industry", "country", "source_url", "last_reviewed"}, false)
+	rows, err := readManualCSV(path, CompanyOverridesCSVHeader, false)
 	if err != nil {
 		return nil, err
 	}
@@ -430,10 +438,7 @@ func LoadCompanyOverrides(path string) (map[string]CompanyOverride, error) {
 }
 
 func LoadTickerOverrides(path string) (map[string]TickerOverride, error) {
-	rows, err := readManualCSV(path, []string{
-		"ticker", "company_id", "name", "sector", "industry", "country", "yahoo_symbol",
-		"market_cap", "exchange", "currency", "source_url", "last_reviewed",
-	}, false)
+	rows, err := readManualCSV(path, TickerOverridesCSVHeader, false)
 	if err != nil {
 		return nil, err
 	}
@@ -477,7 +482,7 @@ func LoadTickerOverrides(path string) (map[string]TickerOverride, error) {
 }
 
 func LoadClassificationOverrides(path string) ([]ClassificationOverride, error) {
-	rows, err := readManualCSV(path, []string{"target_type", "ticker", "isin", "company_id", "sector", "industry", "country", "source_url", "last_reviewed"}, true)
+	rows, err := readManualCSV(path, ClassificationOverridesCSVHeader, true)
 	if err != nil {
 		return nil, err
 	}
@@ -514,10 +519,7 @@ func LoadClassificationOverrides(path string) ([]ClassificationOverride, error) 
 }
 
 func LoadIdentityOverrides(path string) ([]IdentityOverride, error) {
-	rows, err := readManualCSV(path, []string{
-		"target_type", "ticker", "isin", "security_id", "company_id", "override_security_id",
-		"override_company_id", "category", "flags", "confidence", "reason", "source_url", "last_reviewed",
-	}, true)
+	rows, err := readManualCSV(path, IdentityOverridesCSVHeader, true)
 	if err != nil {
 		return nil, err
 	}
@@ -555,7 +557,7 @@ func LoadIdentityOverrides(path string) ([]IdentityOverride, error) {
 }
 
 func LoadExposures(path string) ([]Exposure, error) {
-	rows, err := readManualCSV(path, []string{"theme_id", "layer_id", "ticker", "isin", "company_id", "exposure_score", "confidence", "source_url", "rationale", "last_reviewed"}, false)
+	rows, err := readManualCSV(path, ExposureCSVHeader, false)
 	if err != nil {
 		return nil, err
 	}
@@ -591,11 +593,7 @@ func LoadExposures(path string) ([]Exposure, error) {
 }
 
 func LoadRelationships(path string) ([]Relationship, error) {
-	rows, err := readManualCSV(path, []string{
-		"relationship_type", "source_ticker", "source_isin", "source_company_id",
-		"target_ticker", "target_isin", "target_company_id", "theme_id", "layer_id",
-		"confidence", "source_url", "rationale", "last_reviewed",
-	}, true)
+	rows, err := readManualCSV(path, RelationshipsCSVHeader, true)
 	if err != nil {
 		return nil, err
 	}
@@ -698,6 +696,11 @@ func loadNote(path string) (Note, error) {
 				note.Title = value
 			case "tags":
 				note.Tags = sortedUnique(splitList(value))
+			case "last_reviewed":
+				if err := validateOptionalReviewDate(path, lineNo, "last_reviewed", value); err != nil {
+					return Note{}, err
+				}
+				note.LastReviewed = value
 			default:
 				return Note{}, fmt.Errorf("%s:%d unknown note frontmatter key %q", path, lineNo, key)
 			}

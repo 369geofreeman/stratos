@@ -45,6 +45,19 @@ func TestWriteSiteDataWritesExpectedFiles(t *testing.T) {
 	if len(records) != 2 || records[0][0] != "ticker" || records[1][0] != "ABC_US_EQ" || records[1][5] != "cache_miss" {
 		t.Fatalf("enrichment_failures.csv records = %#v", records)
 	}
+
+	file, err = os.Open(filepath.Join(dir, "suggested_classification_overrides.csv"))
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer file.Close()
+	records, err = csv.NewReader(file).ReadAll()
+	if err != nil {
+		t.Fatal(err)
+	}
+	if len(records) != 2 || !reflect.DeepEqual(records[0], taxonomy.ClassificationOverridesCSVHeader) || records[1][0] != "ticker" || records[1][1] != "ABC_US_EQ" {
+		t.Fatalf("suggested_classification_overrides.csv records = %#v", records)
+	}
 }
 
 func TestStandaloneJSONExportsMatchCatalogue(t *testing.T) {
@@ -101,6 +114,17 @@ func TestStandaloneJSONExportsMatchCatalogue(t *testing.T) {
 	readJSON(t, filepath.Join(dir, "unclassified.json"), &unclassified)
 	if !reflect.DeepEqual(unclassified, cat.Unclassified) {
 		t.Fatalf("unclassified.json = %#v, want %#v", unclassified, cat.Unclassified)
+	}
+
+	var reviewQueues []catalogue.ReviewQueueRow
+	readJSON(t, filepath.Join(dir, "review_queues.json"), &reviewQueues)
+	if !reflect.DeepEqual(reviewQueues, cat.ReviewQueues) {
+		t.Fatalf("review_queues.json = %#v, want %#v", reviewQueues, cat.ReviewQueues)
+	}
+	var reviewSummary catalogue.ReviewSummary
+	readJSON(t, filepath.Join(dir, "review_summary.json"), &reviewSummary)
+	if reviewSummary.TotalCount != len(cat.ReviewQueues) || reviewSummary.ByReasonCode[catalogue.ReasonMissingSector] != 1 {
+		t.Fatalf("review_summary.json = %#v", reviewSummary)
 	}
 }
 
@@ -191,10 +215,17 @@ func TestCSVHeaderStability(t *testing.T) {
 		"tickers.csv":             {"ticker", "name", "isin", "company_id", "security_id", "type", "instrument_category", "structure_flags", "currency", "exchange", "yahoo_symbol", "sector", "industry", "country", "market_cap", "directionality", "identity_confidence", "identity_reasons", "themes", "layers", "unclassified"},
 		"securities.csv":          {"security_id", "isin", "name", "type", "instrument_category", "structure_flags", "company_id", "listing_ids", "ticker_ids", "currency_set", "identity_confidence", "identity_reasons"},
 		"listings.csv":            {"listing_id", "ticker", "security_id", "company_id", "exchange_code", "exchange_name", "currency_code"},
-		"unclassified.csv":        {"ticker", "company_id", "name", "isin", "reason"},
+		"unclassified.csv":        {"ticker", "company_id", "name", "isin", "reason", "reason_codes"},
+		"taxonomy_issues.csv":     {"queue", "reason_code", "severity", "ticker", "isin", "company_id", "security_id", "name", "sector", "industry", "theme_ids", "layer_ids", "source_file", "source_row", "suggested_action", "suggested_manual_file", "suggested_csv_row", "last_reviewed", "last_refreshed"},
+		"enrichment_issues.csv":   {"queue", "reason_code", "severity", "ticker", "isin", "company_id", "security_id", "name", "sector", "industry", "theme_ids", "layer_ids", "source_file", "source_row", "suggested_action", "suggested_manual_file", "suggested_csv_row", "last_reviewed", "last_refreshed"},
 		"identity_issues.csv":     {"issue_code", "ticker", "isin", "security_id", "company_id", "name", "reason", "suggested_action"},
 		"enrichment_failures.csv": {"ticker", "isin", "name", "provider", "attempted_symbols", "status", "error", "next_action"},
+		"stale_reviews.csv":       {"queue", "reason_code", "severity", "ticker", "isin", "company_id", "security_id", "name", "sector", "industry", "theme_ids", "layer_ids", "source_file", "source_row", "suggested_action", "suggested_manual_file", "suggested_csv_row", "last_reviewed", "last_refreshed"},
 	}
+	want["suggested_classification_overrides.csv"] = taxonomy.ClassificationOverridesCSVHeader
+	want["suggested_exposures.csv"] = taxonomy.ExposureCSVHeader
+	want["suggested_ticker_overrides.csv"] = taxonomy.TickerOverridesCSVHeader
+	want["suggested_identity_overrides.csv"] = taxonomy.IdentityOverridesCSVHeader
 	if !reflect.DeepEqual(CSVHeaders(), want) {
 		t.Fatalf("CSVHeaders() = %#v, want %#v", CSVHeaders(), want)
 	}
@@ -262,12 +293,18 @@ func TestWriteSiteDataGoldenSnapshot(t *testing.T) {
 		"build_manifest.json",
 		"catalogue.json",
 		"unclassified.json",
+		"review_queues.json",
+		"review_summary.json",
 		"tickers.csv",
 		"securities.csv",
 		"listings.csv",
 		"securities.json",
 		"listings.json",
 		"relationships.json",
+		"taxonomy_issues.csv",
+		"enrichment_issues.csv",
+		"stale_reviews.csv",
+		"suggested_classification_overrides.csv",
 	} {
 		got, err := os.ReadFile(filepath.Join(dir, name))
 		if err != nil {
@@ -279,7 +316,7 @@ func TestWriteSiteDataGoldenSnapshot(t *testing.T) {
 
 func testCatalogue() *catalogue.Catalogue {
 	builtAt := time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC).Format(time.RFC3339)
-	return &catalogue.Catalogue{
+	cat := &catalogue.Catalogue{
 		DataContractVersion: catalogue.DataContractVersion,
 		SchemaVersion:       catalogue.DataContractSchemaVersion,
 		GeneratedAt:         builtAt,
@@ -416,6 +453,30 @@ func testCatalogue() *catalogue.Catalogue {
 			NextAction:       "populate enrichment cache",
 		}},
 	}
+	cat.ReviewQueues = []catalogue.ReviewQueueRow{{
+		Queue:               catalogue.ReviewQueueTaxonomy,
+		ReasonCode:          catalogue.ReasonMissingSector,
+		Severity:            catalogue.ReviewSeverityMedium,
+		Ticker:              "ABC_US_EQ",
+		ISIN:                "US0000000001",
+		CompanyID:           "abc",
+		SecurityID:          "isin:US0000000001",
+		Name:                "ABC Corp",
+		Sector:              "Technology",
+		Industry:            "Semiconductors",
+		ThemeIDs:            []string{"ai"},
+		LayerIDs:            []string{"chips"},
+		SourceFile:          "site/data/unclassified.csv",
+		SourceRow:           2,
+		SuggestedAction:     "add reviewed sector and industry fields in classification_overrides.csv",
+		SuggestedManualFile: "data/manual/classification_overrides.csv",
+		SuggestedCSVRow:     "ticker,ABC_US_EQ,,,,,,,",
+		LastRefreshed:       builtAt,
+	}}
+	cat.ReviewSummary = catalogue.BuildReviewSummary(cat.ReviewQueues, time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC))
+	cat.Manifest.ReviewQueueCounts = cat.ReviewSummary.ByQueue
+	cat.Manifest.ReviewReasonCounts = cat.ReviewSummary.ByReasonCode
+	return cat
 }
 
 func readJSON(t *testing.T, path string, target any) {

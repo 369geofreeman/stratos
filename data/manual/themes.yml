@@ -27,3 +27,23 @@ themes:
     name: Commodities
     description: Miners, processors, transport, and end-market commodity exposure.
     color: "#a16207"
+  - id: financial_system
+    name: Financial system
+    description: Banks, insurers, asset managers, exchanges, brokers, credit data, and market infrastructure.
+    color: "#0369a1"
+  - id: enterprise_software
+    name: Enterprise software
+    description: Enterprise SaaS, infrastructure software, developer tools, data, security, and IT services.
+    color: "#4f46e5"
+  - id: industrial_automation
+    name: Industrial automation
+    description: Automation, machinery, electrification, controls, engineering, and industrial technology.
+    color: "#c2410c"
+  - id: consumer_brands
+    name: Consumer brands
+    description: Retail, apparel, luxury, beverages, household products, restaurants, and durable consumer franchises.
+    color: "#db2777"
+  - id: transport_logistics
+    name: Transport and logistics
+    description: Rail, parcel, freight, shipping, airlines, airports, ports, and transport infrastructure.
+    color: "#475569"

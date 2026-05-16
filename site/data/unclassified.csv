@@ -1,15 +1,9 @@
 ticker,company_id,name,isin,reason,reason_codes
-04Qd_EQ,nordea_bank_abp,Nordea Bank Abp,FI4000297767,missing theme exposure,missing_theme_exposure
-096d_EQ,hubspot_inc,"HubSpot, Inc.",US4435731009,missing theme exposure,missing_theme_exposure
-0GSd_EQ,guidewire_software_inc,"Guidewire Software, Inc.",US40171V1008,missing theme exposure,missing_theme_exposure
 0MEd_EQ,twist_bioscience_corporation,Twist Bioscience Corporation,US90184D1000,missing theme exposure,missing_theme_exposure
 0NUd_EQ,nutanix_inc,"Nutanix, Inc.",US67059N1081,missing theme exposure,missing_theme_exposure
-0OKd_EQ,okta_inc,"Okta, Inc.",US6792951054,missing theme exposure,missing_theme_exposure
-0PYd_EQ,paycom_software_inc,"Paycom Software, Inc.",US70432V1026,missing theme exposure,missing_theme_exposure
 0Q0d_EQ,stoneco_ltd,StoneCo Ltd.,KYG851581069,missing theme exposure,missing_theme_exposure
 0QFd_EQ,moderna_inc,"Moderna, Inc.",US60770K1079,missing theme exposure,missing_theme_exposure
 0UBd_EQ,ubs_group_ag_n,UBS Group AG                  N,CH0244767585,missing theme exposure,missing_theme_exposure
-0ZCd_EQ,zscaler_inc,"Zscaler, Inc.",US98980G1022,missing theme exposure,missing_theme_exposure
 11Cd_EQ,11_bit_studios,11 bit studios,PL11BTS00015,missing sector; missing industry,missing_sector;missing_industry
 11Ld_EQ,canopy_growth_corporation,Canopy Growth Corporation,CA1380357048,missing theme exposure,missing_theme_exposure
 12Fd_EQ,fortis_inc,Fortis Inc.,CA3495531079,missing theme exposure,missing_theme_exposure
@@ -54,16 +48,12 @@ ticker,company_id,name,isin,reason,reason_codes
 2ZPd_EQ,avio,Avio,IT0005119810,missing sector; missing industry,missing_sector;missing_industry
 307d_EQ,shopify_inc,Shopify Inc.,CA82509L1076,missing theme exposure,missing_theme_exposure
 32Ad_EQ,aegean_airlines,Aegean Airlines,GRS495003006,missing sector; missing industry,missing_sector;missing_industry
-37Cd_EQ,cnh_industrial_n_v,CNH Industrial N.V.,NL0010545661,missing theme exposure,missing_theme_exposure
 39EAd_EQ,ganfeng_lithium_group,Ganfeng Lithium Group,CNE1000031W9,missing sector; missing industry,missing_sector;missing_industry
 3AG1d_EQ,softbank,SoftBank,JP3732000009,missing sector; missing industry,missing_sector;missing_industry
 3BXd_EQ,box,Box,US10316T1043,missing sector; missing industry,missing_sector;missing_industry
 3CPd_EQ,xiaomi,Xiaomi,KYG9830T1067,missing sector; missing industry,missing_sector;missing_industry
-3E1d_EQ,elastic_n_v,Elastic N.V.,NL0013056914,missing theme exposure,missing_theme_exposure
 3FOd_EQ,franco_nevada_corporation,Franco-Nevada Corporation,CA3518581051,missing theme exposure,missing_theme_exposure
-3HMd_EQ,msci_inc,MSCI Inc.,US55354G1004,missing theme exposure,missing_theme_exposure
 3ITNd_EQ,audius_se,audius SE,DE000A40ET13,missing theme exposure,missing_theme_exposure
-3QDd_EQ,datadog_inc,"Datadog, Inc.",US23804L1035,missing theme exposure,missing_theme_exposure
 3S9d_EQ,sunrun_inc_r,Sunrun Inc.                   R,US86771W1053,missing theme exposure,missing_theme_exposure
 3SQ1d_EQ,aht_syngas_technology_n_v,AHT Syngas Technology N.V.,NL0010872388,missing theme exposure,missing_theme_exposure
 3UXd_EQ,cleanspark_inc,"CleanSpark, Inc.",US18452B2097,missing theme exposure,missing_theme_exposure
@@ -78,13 +68,10 @@ ticker,company_id,name,isin,reason,reason_codes
 4DSd_EQ,daldrup_söhne_aktiengesellschaft,Daldrup & Söhne Aktiengesellschaft,DE0007830572,missing theme exposure,missing_theme_exposure
 4GBLl_EQ,4global,4Global,GB00BLH36N37,missing sector; missing industry,missing_sector;missing_industry
 4GEd_EQ,grupo_mexico,Grupo Mexico,MXP370841019,missing sector; missing industry,missing_sector;missing_industry
-4S0d_EQ,servicenow_inc,"ServiceNow, Inc.",US81762P1021,missing theme exposure,missing_theme_exposure
 4X0d_EQ,steyr_motors_ag,Steyr Motors AG,AT0000A3FW25,missing theme exposure,missing_theme_exposure
-526d_EQ,mongodb,MongoDB,US60937P1066,missing sector; missing industry,missing_sector;missing_industry
 55H0d_EQ,mp_materials,MP Materials,US5533681012,missing theme exposure,missing_theme_exposure
 58Hd_EQ,davide_campari_milano,Davide Campari-Milano,NL0015435975,missing sector; missing industry,missing_sector;missing_industry
 5BGd_EQ,b2gold_corp,B2Gold Corp.,CA11777Q2099,missing theme exposure,missing_theme_exposure
-5Q5d_EQ,snowflake_inc,Snowflake Inc.,US8334451098,missing theme exposure,missing_theme_exposure
 6B6d_EQ,monday_com_ltd,monday.com Ltd.,IL0011762130,missing theme exposure,missing_theme_exposure
 6BFd_EQ,bakkafrost,Bakkafrost,FO0000000179,missing sector; missing industry,missing_sector;missing_industry
 6MKd_EQ,merck_co_inc,"Merck & Co., Inc.",US58933Y1055,missing theme exposure,missing_theme_exposure
@@ -110,11 +97,9 @@ ticker,company_id,name,isin,reason,reason_codes
 855d_EQ,upstart_holdings_inc,"Upstart Holdings, Inc.",US91680M1071,missing theme exposure,missing_theme_exposure
 88El_EQ,88_energy_limited,88 Energy Limited,AU00000088E2,missing theme exposure,missing_theme_exposure
 8BZd_EQ,sony_financial_group,Sony Financial Group,JP3435350008,missing sector; missing industry,missing_sector;missing_industry
-8CFd_EQ,cloudflare,Cloudflare,US18915M1071,missing sector; missing industry,missing_sector;missing_industry
 8FRd_EQ,victoria_s_secret_co,Victoria's Secret & Co,US9264001028,missing sector; missing industry,missing_sector;missing_industry
 8GCd_EQ,glencore_plc,Glencore plc,JE00B4T3BW64,missing theme exposure,missing_theme_exposure
 8JO1d_EQ,volvo_car,Volvo Car,SE0021628898,missing sector; missing industry,missing_sector;missing_industry
-8K2d_EQ,gitlab_inc,GitLab Inc.,US37637K1088,missing theme exposure,missing_theme_exposure
 8T8d_EQ,transmedics_group_inc,"TransMedics Group, Inc.",US89377M1099,missing theme exposure,missing_theme_exposure
 8TRAd_EQ,traton_se,Traton SE,DE000TRAT0N7,missing theme exposure,missing_theme_exposure
 8XPd_EQ,xpeng,XPeng,KYG982AW1003,missing sector; missing industry,missing_sector;missing_industry
@@ -211,7 +196,6 @@ ACLX_US_EQ,arcellx,Arcellx,US03940C1009,missing sector; missing industry,missing
 ACM_US_EQ,aecom,AECOM,US00766T1007,missing theme exposure,missing_theme_exposure
 ACNB_US_EQ,acnb_corporation,ACNB Corporation,US0008681092,missing theme exposure,missing_theme_exposure
 ACND_US_EQ,marketwise,MarketWise,US57064P2065,missing sector; missing industry,missing_sector;missing_industry
-ACN_US_EQ,accenture_plc,Accenture plc,IE00B4BNMY34,missing theme exposure,missing_theme_exposure
 ACOG_US_EQ,alpha_cognition_inc,Alpha Cognition Inc.,CA02074J5017,missing theme exposure,missing_theme_exposure
 ACON_US_EQ,aclarion_inc,"Aclarion, Inc.",US6551874091,missing theme exposure,missing_theme_exposure
 ACOX_CA_EQ,atco_class_i,Atco (Class I),CA0467894006,missing sector; missing industry,missing_sector;missing_industry
@@ -223,7 +207,6 @@ ACR_US_EQ,acres_commercial_realty,ACRES Commercial Realty,US00489Q1022,missing s
 ACSAY_US_EQ,acs_actividades_de_construccion_y_servicios,ACS Actividades de Construccion y Servicios,US00089H1068,missing sector; missing industry,missing_sector;missing_industry
 ACSOl_EQ,accesso_technology_group_plc,accesso Technology Group plc,GB0001771426,missing theme exposure,missing_theme_exposure
 ACST_US_EQ,grace_therapeutics,Grace Therapeutics,US00439U1043,missing sector; missing industry,missing_sector;missing_industry
-ACSe_EQ,acs_actividades_de_construcción_y_servicios_s_a,"ACS, Actividades de Construcción y Servicios, S.A.",ES0167050915,missing theme exposure,missing_theme_exposure
 ACTD_US_EQ,opal_fuels,OPAL Fuels,US68347P1030,missing sector; missing industry,missing_sector;missing_industry
 ACTG_US_EQ,acacia_research,Acacia Research,US0038813079,missing sector; missing industry,missing_sector;missing_industry
 ACTHF_US_EQ,aduro_clean_technologies,Aduro Clean Technologies,CA0074082060,missing sector; missing industry,missing_sector;missing_industry
@@ -239,8 +222,6 @@ ADAG_US_EQ,adagene_inc,Adagene Inc.,US0053291078,missing theme exposure,missing_
 ADAL_US_EQ,anthemis_digital_acquisitions_i_corp,Anthemis Digital Acquisitions I Corp,KYG039591063,missing sector; missing industry,missing_sector;missing_industry
 ADAP_US_EQ,adaptimmune_therapeutics,Adaptimmune Therapeutics,US00653A1079,missing sector; missing industry,missing_sector;missing_industry
 ADAl_EQ,adams,Adams,IM00B986V543,missing sector; missing industry,missing_sector;missing_industry
-ADBE_US_EQ,adobe_inc,Adobe Inc.,US00724F1012,missing theme exposure,missing_theme_exposure
-ADBd_EQ,adobe_inc,Adobe Inc.,US00724F1012,missing theme exposure,missing_theme_exposure
 ADCT_US_EQ,adc_therapeutics_sa,ADC Therapeutics SA,CH0499880968,missing theme exposure,missing_theme_exposure
 ADC_US_EQ,agree_realty,Agree Realty,US0084921008,missing sector; missing industry,missing_sector;missing_industry
 ADEN_CA_EQ,adentra_inc,ADENTRA Inc.,CA00686A1084,missing theme exposure,missing_theme_exposure
@@ -260,12 +241,9 @@ ADOC_US_EQ,australian_oilseeds,Australian Oilseeds,KYG070411098,missing sector; 
 ADOCp_EQ,adocia_sa,Adocia SA,FR0011184241,missing theme exposure,missing_theme_exposure
 ADOM_US_EQ,envirotech_vehicles,Envirotech Vehicles,US29414V3087,missing sector; missing industry,missing_sector;missing_industry
 ADPT_US_EQ,adaptive_biotechnologies_corporation,Adaptive Biotechnologies Corporation,US00650F1093,missing theme exposure,missing_theme_exposure
-ADP_US_EQ,automatic_data_processing_inc,Automatic Data Processing Inc,US0530151036,missing theme exposure,missing_theme_exposure
-ADPd_EQ,automatic_data_processing_inc,Automatic Data Processing Inc,US0530151036,missing theme exposure,missing_theme_exposure
 ADRA_US_EQ,alliance_entertainment,Alliance Entertainment,US01861F1021,missing sector; missing industry,missing_sector;missing_industry
 ADRNY_US_EQ,ahold_delhaize,Ahold Delhaize,US5004675014,missing sector; missing industry,missing_sector;missing_industry
 ADRZY_US_EQ,andritz_ag,Andritz AG,US0345221024,missing theme exposure,missing_theme_exposure
-ADSK_US_EQ,autodesk_inc,"Autodesk, Inc.",US0527691069,missing theme exposure,missing_theme_exposure
 ADS_US_EQ,bread_financial,Bread Financial,US0185811082,missing sector; missing industry,missing_sector;missing_industry
 ADTI_US_EQ,adapti,Adapti,US8139241074,missing sector; missing industry,missing_sector;missing_industry
 ADTN_US_EQ,adtran_holdings_inc,"ADTRAN Holdings, Inc.",US00486H1059,missing theme exposure,missing_theme_exposure
@@ -281,7 +259,6 @@ ADXN_US_EQ,addex_therapeutics_ltd,Addex Therapeutics Ltd,US00654J2069,missing th
 ADXe_EQ,audax_renovables_s_a,"Audax Renovables, S.A.",ES0136463017,missing theme exposure,missing_theme_exposure
 AE9d_EQ,agnico_eagle_mines_limited,Agnico Eagle Mines Limited,CA0084741085,missing theme exposure,missing_theme_exposure
 AEBI_US_EQ,aebi_schmidt_holding_ag,Aebi Schmidt Holding AG,CH0027352993,missing theme exposure,missing_theme_exposure
-AEC1d_EQ,american_express_company,American Express Company,US0258161092,missing theme exposure,missing_theme_exposure
 AEE_US_EQ,ameren,Ameren,US0236081024,missing sector; missing industry,missing_sector;missing_industry
 AEG_US_EQ,aegon,Aegon,US0076CA1045,missing sector; missing industry,missing_sector;missing_industry
 AEGl_EQ,active_energy_group_plc,Active Energy Group Plc,GB00BPG7NS80,missing theme exposure,missing_theme_exposure
@@ -400,7 +377,6 @@ AJAX_US_EQ,cazoo,Cazoo,KYG2007L1216,missing sector; missing industry,missing_sec
 AJAXl_EQ,ajax_resources,Ajax Resources,GB00BLNBD412,missing sector; missing industry,missing_sector;missing_industry
 AJINY_US_EQ,ajinomoto,Ajinomoto,US0097073086,missing sector; missing industry,missing_sector;missing_industry
 AJX_US_EQ,rithm_property_trust,Rithm Property Trust,US38983D8544,missing sector; missing industry,missing_sector;missing_industry
-AK1d_EQ,ametek_inc,AMETEK Inc,US0311001004,missing theme exposure,missing_theme_exposure
 AK3d_EQ,akamai_technologies,Akamai Technologies,US00971T1016,missing sector; missing industry,missing_sector;missing_industry
 AKAM_US_EQ,akamai_technologies,Akamai Technologies,US00971T1016,missing sector; missing industry,missing_sector;missing_industry
 AKAN_US_EQ,akanda_corp,Akanda Corp.,CA00971M7008,missing theme exposure,missing_theme_exposure
@@ -453,7 +429,6 @@ ALF1_US_EQ,centurion_acquisition,Centurion Acquisition,KYG203151009,missing sect
 ALFAl_EQ,alfa_financial_software_holdings_plc,Alfa Financial Software Holdings PLC,GB00BDHXPG30,missing theme exposure,missing_theme_exposure
 ALFENa_EQ,alfen_n_v,Alfen N.V.,NL0012817175,missing theme exposure,missing_theme_exposure
 ALFLOp_EQ,sas_florentaise,SAS Florentaise,FR001400GO75,missing theme exposure,missing_theme_exposure
-ALFVY_US_EQ,alfa_laval_ab_publ,Alfa Laval AB (publ),US0153931011,missing theme exposure,missing_theme_exposure
 ALF_US_EQ,alfi,Alfi,US00161P1093,missing sector; missing industry,missing_sector;missing_industry
 ALGM_US_EQ,allegro_microsystems_inc,"Allegro MicroSystems, Inc.",US01749D1054,missing theme exposure,missing_theme_exposure
 ALGN_US_EQ,align_technology_inc,Align Technology Inc,US0162551016,missing theme exposure,missing_theme_exposure
@@ -556,7 +531,6 @@ AMC_US_EQ,amc_entertainment,AMC Entertainment,US00165C3025,missing sector; missi
 AMCl_EQ,crism_therapeutics_corporation,CRISM Therapeutics Corporation,VGG042401262,missing theme exposure,missing_theme_exposure
 AMEH_US_EQ,astrana_health,Astrana Health,US03763A2078,missing sector; missing industry,missing_sector;missing_industry
 AMENe_EQ,aeternal_mentis_s_a,"Aeternal Mentis, S.A.",ES0105588000,missing theme exposure,missing_theme_exposure
-AME_US_EQ,ametek_inc,AMETEK Inc,US0311001004,missing theme exposure,missing_theme_exposure
 AMFC_US_EQ,amb_financial_corp,AMB Financial Corp.,US0019841032,missing theme exposure,missing_theme_exposure
 AMGN_US_EQ,amgen_inc,Amgen Inc.,US0311621009,missing theme exposure,missing_theme_exposure
 AMGOl_EQ,amigo_resources_plc,Amigo Resources PLC,GB00BFFK8T45,missing theme exposure,missing_theme_exposure
@@ -811,9 +785,7 @@ ATHX_US_EQ,athersys,Athersys,US04744L2051,missing sector; missing industry,missi
 ATH_CA_EQ,athabasca_oil_corporation,Athabasca Oil Corporation,CA04682R1073,missing theme exposure,missing_theme_exposure
 ATIF_US_EQ,atif_holdings,ATIF Holdings,VGG0602B1186,missing sector; missing industry,missing_sector;missing_industry
 ATKR_US_EQ,atkore_inc,Atkore Inc.,US0476491081,missing theme exposure,missing_theme_exposure
-ATLCY_US_EQ,atlas_copco_ab_publ,Atlas Copco AB (publ),US0492558053,missing theme exposure,missing_theme_exposure
 ATLC_US_EQ,atlanticus,Atlanticus,US04914Y1029,missing sector; missing industry,missing_sector;missing_industry
-ATLKY_US_EQ,atlas_copco_ab_publ,Atlas Copco AB (publ),US0492557063,missing theme exposure,missing_theme_exposure
 ATLO_US_EQ,ames_national,Ames National,US0310011004,missing sector; missing industry,missing_sector;missing_industry
 ATLX_US_EQ,atlas_lithium_corporation,Atlas Lithium Corporation,US1058613068,missing theme exposure,missing_theme_exposure
 ATMAl_EQ,atlas_mara,Atlas Mara,VGG0697K1066,missing sector; missing industry,missing_sector;missing_industry
@@ -850,7 +822,6 @@ AUBN_US_EQ,auburn_national_bancorp,Auburn National BanCorp,US0504731078,missing 
 AUB_US_EQ,atlantic_union_bankshares_corporation,Atlantic Union Bankshares Corporation,US04911A1079,missing theme exposure,missing_theme_exposure
 AUBp_EQ,aubay_société_anonyme,Aubay Société Anonyme,FR0000063737,missing theme exposure,missing_theme_exposure
 AUDC_US_EQ,audiocodes_ltd,AudioCodes Ltd.,IL0010829658,missing theme exposure,missing_theme_exposure
-AUDd_EQ,autodesk_inc,"Autodesk, Inc.",US0527691069,missing theme exposure,missing_theme_exposure
 AUGO_US_EQ,aura_minerals_inc,Aura Minerals Inc.,VGG069731120,missing theme exposure,missing_theme_exposure
 AUGRp_EQ,augros_cosmetic_packaging,Augros Cosmetic Packaging,FR0000061780,missing sector; missing industry,missing_sector;missing_industry
 AUID_US_EQ,authid_inc,authID Inc.,US46264C3051,missing theme exposure,missing_theme_exposure
@@ -910,7 +881,6 @@ AXGN_US_EQ,axogen_inc,"Axogen, Inc.",US05463X1063,missing theme exposure,missing
 AXIAPC_US_EQ,axia_energia,Axia Energia,US15236F1003,missing sector; missing industry,missing_sector;missing_industry
 AXLA_US_EQ,axcella_health,Axcella Health,US05454B2043,missing sector; missing industry,missing_sector;missing_industry
 AXLl_EQ,arrow_exploration_corp,Arrow Exploration Corp.,CA04274P1053,missing theme exposure,missing_theme_exposure
-AXP_US_EQ,american_express_company,American Express Company,US0258161092,missing theme exposure,missing_theme_exposure
 AXR_US_EQ,amrep,AMREP,US0321591051,missing sector; missing industry,missing_sector;missing_industry
 AXSM_US_EQ,axsome_therapeutics_inc,"Axsome Therapeutics, Inc.",US05464T1043,missing theme exposure,missing_theme_exposure
 AXS_US_EQ,axis_capital,Axis Capital,BMG0692U1099,missing sector; missing industry,missing_sector;missing_industry
@@ -941,7 +911,6 @@ B5Ad_EQ,bauer,Bauer,DE000A40ETC9,missing sector; missing industry,missing_sector
 B8FKd_EQ,biofrontera_ag,Biofrontera AG,DE000A4BGGM7,missing theme exposure,missing_theme_exposure
 BABl_EQ,babcock_international_group_plc,Babcock International Group PLC,GB0009697037,missing theme exposure,missing_theme_exposure
 BACQ_US_EQ,merlin,Merlin,US5901061003,missing sector; missing industry,missing_sector;missing_industry
-BAC_US_EQ,bank_of_america_corporation,Bank of America Corporation,US0605051046,missing theme exposure,missing_theme_exposure
 BAESY_US_EQ,bae_systems_plc,BAE Systems plc,US05523R1077,missing theme exposure,missing_theme_exposure
 BAFN_US_EQ,bayfirst_financial_corp,BayFirst Financial Corp.,US07279B1044,missing theme exposure,missing_theme_exposure
 BAK_US_EQ,braskem_s_a,Braskem S.A.,US1055321053,missing theme exposure,missing_theme_exposure
@@ -1187,7 +1156,6 @@ BN9d_EQ,bank_of_new_york_mellon_corp,Bank of New York Mellon Corp,US0640581007,m
 BNB_BE_EQ,banque_nationale_de_belgique_sa,Banque nationale de Belgique SA,BE0003008019,missing theme exposure,missing_theme_exposure
 BNCC_US_EQ,bnccorp_inc,"BNCCORP, Inc.",US0559361086,missing theme exposure,missing_theme_exposure
 BNCDY_US_EQ,banca_mediolanum,Banca Mediolanum,US05970D1063,missing sector; missing industry,missing_sector;missing_industry
-BNCl_EQ,banco_santander_s_a,"Banco Santander, S.A.",ES0113900J37,missing theme exposure,missing_theme_exposure
 BNED_US_EQ,barnes_noble_education,Barnes & Noble Education,US06777U2006,missing sector; missing industry,missing_sector;missing_industry
 BNE_CA_EQ,bonterra_energy_corp,Bonterra Energy Corp.,CA0985461049,missing theme exposure,missing_theme_exposure
 BNGO_US_EQ,bionano_genomics_inc,"Bionano Genomics, Inc.",US09075F4046,missing theme exposure,missing_theme_exposure
@@ -1285,7 +1253,6 @@ BSRR_US_EQ,sierra_bancorp,Sierra Bancorp,US82620P1021,missing theme exposure,mis
 BSVN_US_EQ,bank7_corp,Bank7 Corp.,US06652N1072,missing theme exposure,missing_theme_exposure
 BSX_US_EQ,boston_scientific_corporation,Boston Scientific Corporation,US1011371077,missing theme exposure,missing_theme_exposure
 BSXd_EQ,boston_scientific_corporation,Boston Scientific Corporation,US1011371077,missing theme exposure,missing_theme_exposure
-BSY_US_EQ,bentley_systems,Bentley Systems,US08265T2087,missing sector; missing industry,missing_sector;missing_industry
 BTAI_US_EQ,bioxcel_therapeutics_inc,"BioXcel Therapeutics, Inc.",US09075P2048,missing theme exposure,missing_theme_exposure
 BTBT_US_EQ,bit_digital_inc,"Bit Digital, Inc.",KYG1144A1058,missing theme exposure,missing_theme_exposure
 BTCS_US_EQ,btcs_inc,BTCS Inc.,US05581M4042,missing theme exposure,missing_theme_exposure
@@ -1371,7 +1338,6 @@ CA1d_EQ,circus_se,Circus SE,DE000A2YN355,missing theme exposure,missing_theme_ex
 CA8Ad_EQ,caci_international_inc,CACI International Inc,US1271903049,missing theme exposure,missing_theme_exposure
 CAAP_US_EQ,corp_america_airports,Corp America Airports,LU1756447840,missing sector; missing industry,missing_sector;missing_industry
 CABA_US_EQ,cabaletta_bio_inc,"Cabaletta Bio, Inc.",US12674W1099,missing theme exposure,missing_theme_exposure
-CABKe_EQ,caixabank_s_a,"CaixaBank, S.A.",ES0140609019,missing theme exposure,missing_theme_exposure
 CABPl_EQ,cab_payments_holdings_limited,CAB Payments Holdings Limited,GB00BMCYKB41,missing theme exposure,missing_theme_exposure
 CACC_US_EQ,credit_acceptance,Credit Acceptance,US2253101016,missing sector; missing industry,missing_sector;missing_industry
 CACI_US_EQ,caci_international_inc,CACI International Inc,US1271903049,missing theme exposure,missing_theme_exposure
@@ -1396,7 +1362,6 @@ CAN_US_EQ,canaan_inc,Canaan Inc.,US1347481020,missing theme exposure,missing_the
 CAPA_US_EQ,quantum_si,Quantum-Si,US74765K1051,missing sector; missing industry,missing_sector;missing_industry
 CAPDl_EQ,capital_limited,Capital Limited,BMG022411000,missing theme exposure,missing_theme_exposure
 CAPR_US_EQ,capricor_therapeutics_inc,"Capricor Therapeutics, Inc.",US14070B3096,missing theme exposure,missing_theme_exposure
-CAPp_EQ,capgemini_se,Capgemini SE,FR0000125338,missing theme exposure,missing_theme_exposure
 CARA_US_EQ,tvardi_therapeutics,Tvardi Therapeutics,US1407553072,missing sector; missing industry,missing_sector;missing_industry
 CARE_US_EQ,carter_bankshares_inc,"Carter Bankshares, Inc.",US1461031064,missing theme exposure,missing_theme_exposure
 CARL_US_EQ,carlsmed_inc,"Carlsmed, Inc.",US14280C1053,missing theme exposure,missing_theme_exposure
@@ -1406,10 +1371,8 @@ CARV_US_EQ,carver_bancorp_inc,"Carver Bancorp, Inc.",US1468756044,missing theme 
 CASH_US_EQ,pathward_financial,Pathward Financial,US59100U1088,missing sector; missing industry,missing_sector;missing_industry
 CASI_US_EQ,casi_pharmaceuticals_holdings,CASI Pharmaceuticals Holdings,KYG1933S1012,missing sector; missing industry,missing_sector;missing_industry
 CASK_US_EQ,ip_strategy_holdings,IP Strategy Holdings,US42727R3021,missing sector; missing industry,missing_sector;missing_industry
-CAT1d_EQ,caterpillar_inc,Caterpillar Inc.,US1491231015,missing theme exposure,missing_theme_exposure
 CATS_US_EQ,ontrak,Ontrak,US6833734014,missing sector; missing industry,missing_sector;missing_industry
 CATY_US_EQ,cathay_general_bancorp,Cathay General Bancorp,US1491501045,missing theme exposure,missing_theme_exposure
-CAT_US_EQ,caterpillar_inc,Caterpillar Inc.,US1491231015,missing theme exposure,missing_theme_exposure
 CBAN_US_EQ,colony_bankcorp_inc,"Colony Bankcorp, Inc.",US19623P1012,missing theme exposure,missing_theme_exposure
 CBAT_US_EQ,cbak_energy_technology,CBAK Energy Technology,US14986C1027,missing sector; missing industry,missing_sector;missing_industry
 CBAVe_EQ,clínica_baviera_s_a,"Clínica Baviera, S.A.",ES0119037010,missing theme exposure,missing_theme_exposure
@@ -1545,7 +1508,6 @@ CGA_US_EQ,enlightify,Enlightify,US16943W2044,missing sector; missing industry,mi
 CGBD_US_EQ,carlyle_secured_lending,Carlyle Secured Lending,US8722801029,missing sector; missing industry,missing_sector;missing_industry
 CGBS_US_EQ,crown_lng,Crown LNG,JE00BPSKDR41,missing sector; missing industry,missing_sector;missing_industry
 CGC_US_EQ,canopy_growth_corporation,Canopy Growth Corporation,CA1380357048,missing theme exposure,missing_theme_exposure
-CGEMY_US_EQ,capgemini_se,Capgemini SE,US13961R1005,missing theme exposure,missing_theme_exposure
 CGEM_US_EQ,cullinan_therapeutics,Cullinan Therapeutics,US2300311063,missing sector; missing industry,missing_sector;missing_industry
 CGEN_US_EQ,compugen_ltd,Compugen Ltd.,IL0010852080,missing theme exposure,missing_theme_exposure
 CGG_CA_EQ,china_gold_international_resources_corp_ltd,China Gold International Resources Corp. Ltd.,CA16890P1036,missing theme exposure,missing_theme_exposure
@@ -1588,7 +1550,6 @@ CHGd_EQ,chapters_group_ag,CHAPTERS Group AG,DE0006618309,missing theme exposure,
 CHGl_EQ,chemring_group_plc,Chemring Group PLC,GB00B45C9X44,missing theme exposure,missing_theme_exposure
 CHHE_US_EQ,china_health_industries,China Health Industries,US1693981045,missing sector; missing industry,missing_sector;missing_industry
 CHKK_US_EQ,expand_energy,Expand Energy,US1651677353,missing sector; missing industry,missing_sector;missing_industry
-CHKP_US_EQ,check_point_software_technologies,Check Point Software Technologies,IL0010824113,missing sector; missing industry,missing_sector;missing_industry
 CHLd_EQ,china_life_insurance,China Life Insurance,CNE1000002L3,missing sector; missing industry,missing_sector;missing_industry
 CHMG_US_EQ,chemung_financial_corporation,Chemung Financial Corporation,US1640241014,missing theme exposure,missing_theme_exposure
 CHNR_US_EQ,china_natural_resources_inc,"China Natural Resources, Inc.",VGG2110U1259,missing theme exposure,missing_theme_exposure
@@ -1699,13 +1660,10 @@ CMCOMa_EQ,cm_com_n_v,CM.com N.V.,NL0012747059,missing theme exposure,missing_the
 CMCO_US_EQ,columbus_mckinnon,Columbus McKinnon,US1993331057,missing sector; missing industry,missing_sector;missing_industry
 CMCXl_EQ,cmc_markets_plc,CMC Markets Plc,GB00B14SKR37,missing theme exposure,missing_theme_exposure
 CMC_US_EQ,commercial_metals,Commercial Metals,US2017231034,missing sector; missing industry,missing_sector;missing_industry
-CMCd_EQ,jpmorgan_chase_co,JPMorgan Chase & Co.,US46625H1005,missing theme exposure,missing_theme_exposure
 CMDB_US_EQ,costamare_bulkers_holdings,Costamare Bulkers Holdings,MHY2001C1012,missing sector; missing industry,missing_sector;missing_industry
 CMETl_EQ,capital_metals_limited,Capital Metals Limited,GB00BMF75608,missing theme exposure,missing_theme_exposure
-CME_US_EQ,cme_group_inc,CME Group Inc.,US12572Q1058,missing theme exposure,missing_theme_exposure
 CMGR_US_EQ,clubhouse_media,ClubHouse Media,US18949C1099,missing sector; missing industry,missing_sector;missing_industry
 CMG_CA_EQ,computer_modelling_group_ltd,Computer Modelling Group Ltd.,CA2052491057,missing theme exposure,missing_theme_exposure
-CMI_US_EQ,cummins_inc,Cummins Inc.,US2310211063,missing theme exposure,missing_theme_exposure
 CMLF_US_EQ,genedx_holdings,GeneDx Holdings,US81663L2007,missing sector; missing industry,missing_sector;missing_industry
 CMLS_US_EQ,cumulus_media,Cumulus Media,US2310828015,missing sector; missing industry,missing_sector;missing_industry
 CMLl_EQ,cml_microsystems_plc,CML Microsystems plc,GB0001602944,missing theme exposure,missing_theme_exposure
@@ -1721,7 +1679,6 @@ CMS_US_EQ,cms_energy_corporation,CMS Energy Corporation,US1258961002,missing the
 CMTL_US_EQ,comtech_telecommunications_corp,Comtech Telecommunications Corp.,US2058262096,missing theme exposure,missing_theme_exposure
 CMTV_US_EQ,community_bancorp,Community Bancorp,US20343A1016,missing theme exposure,missing_theme_exposure
 CMT_US_EQ,core_molding_technologies_inc,"Core Molding Technologies, Inc.",US2186831002,missing theme exposure,missing_theme_exposure
-CMWAY_US_EQ,commonwealth_bank_of_australia,Commonwealth Bank of Australia,US2027126000,missing theme exposure,missing_theme_exposure
 CM_CA_EQ,canadian_imperial_bank_of_commerce,Canadian Imperial Bank of Commerce,CA1360691010,missing theme exposure,missing_theme_exposure
 CM_US_EQ,canadian_imperial_bank_of_commerce,Canadian Imperial Bank of Commerce,CA1360691010,missing theme exposure,missing_theme_exposure
 CNAF_US_EQ,commercial_national_financial_corporation,Commercial National Financial Corporation,US2022171050,missing theme exposure,missing_theme_exposure
@@ -1740,7 +1697,6 @@ CNEl_EQ,capricorn_energy_plc,Capricorn Energy PLC,GB00BNKT5L33,missing theme exp
 CNFR_US_EQ,presurance_holdings,Presurance Holdings,US20731J1025,missing sector; missing industry,missing_sector;missing_industry
 CNF_US_EQ,cnfinance,CNFinance,US18979T2042,missing sector; missing industry,missing_sector;missing_industry
 CNGl_EQ,china_nonferrous_gold,China Nonferrous Gold,KYG215771042,missing sector; missing industry,missing_sector;missing_industry
-CNHI_US_EQ,cnh_industrial_n_v,CNH Industrial N.V.,NL0010545661,missing theme exposure,missing_theme_exposure
 CNL_CA_EQ,collective_mining_ltd,Collective Mining Ltd.,CA19425C1005,missing theme exposure,missing_theme_exposure
 CNL_US_EQ,collective_mining_ltd,Collective Mining Ltd.,CA19425C1005,missing theme exposure,missing_theme_exposure
 CNMD_US_EQ,conmed,CONMED,US2074101013,missing sector; missing industry,missing_sector;missing_industry
@@ -1806,7 +1762,6 @@ COVA_US_EQ,ecarx_holdings,ECARX Holdings,KYG292011031,missing sector; missing in
 COVTY_US_EQ,covestro_ag,Covestro AG,US22304D2071,missing theme exposure,missing_theme_exposure
 COXe_EQ,cox_energy_s_a_b_de_c_v,"Cox Energy, S.A.B. de C.V.",MX01CO0U0028,missing theme exposure,missing_theme_exposure
 COYA_US_EQ,coya_therapeutics_inc,"Coya Therapeutics, Inc.",US22407B1089,missing theme exposure,missing_theme_exposure
-COZd_EQ,cognizant_technology_solutions_corp,Cognizant Technology Solutions Corp,US1924461023,missing theme exposure,missing_theme_exposure
 CO_US_EQ,global_cord_blood,Global Cord Blood,KYG393421030,missing sector; missing industry,missing_sector;missing_industry
 CPAA_US_EQ,advantage_solutions,Advantage Solutions,US00791N2018,missing sector; missing industry,missing_sector;missing_industry
 CPAC_US_EQ,cementos_pacasmayo,Cementos Pacasmayo,US15126Q2084,missing sector; missing industry,missing_sector;missing_industry
@@ -1833,7 +1788,6 @@ CPSS_US_EQ,consumer_portfolio_services_inc,"Consumer Portfolio Services, Inc.",U
 CPST_US_EQ,capstone_energy,Capstone Energy+,US14067D6076,missing sector; missing industry,missing_sector;missing_industry
 CPTK_US_EQ,crown_proptech_acquisitions,Crown PropTech Acquisitions,KYG257411028,missing sector; missing industry,missing_sector;missing_industry
 CPUH_US_EQ,allurion_technologies,Allurion Technologies,US02008G2012,missing sector; missing industry,missing_sector;missing_industry
-CPWd_EQ,check_point_software_technologies,Check Point Software Technologies,IL0010824113,missing sector; missing industry,missing_sector;missing_industry
 CPX_CA_EQ,capital_power_corporation,Capital Power Corporation,CA14042M1023,missing theme exposure,missing_theme_exposure
 CPXd_EQ,capsensixx,capsensixx,DE000A2G9M17,missing sector; missing industry,missing_sector;missing_industry
 CPXl_EQ,cap_xx_limited,CAP-XX Limited,AU0000XINAS1,missing theme exposure,missing_theme_exposure
@@ -1867,7 +1821,6 @@ CRLBF_US_EQ,cresco_labs_inc,Cresco Labs Inc.,CA22587M1068,missing theme exposure
 CRL_US_EQ,charles_river_laboratories_international_inc,"Charles River Laboratories International, Inc.",US1598641074,missing theme exposure,missing_theme_exposure
 CRMD_US_EQ,cormedix_inc,CorMedix Inc.,US21900C3088,missing theme exposure,missing_theme_exposure
 CRMZ_US_EQ,creditriskmonitor_com_inc,"CreditRiskMonitor.com, Inc.",US2254261058,missing theme exposure,missing_theme_exposure
-CRM_US_EQ,salesforce_inc,"Salesforce, Inc.",US79466L3024,missing theme exposure,missing_theme_exposure
 CRNC_US_EQ,cerence_inc,Cerence Inc.,US1567271093,missing theme exposure,missing_theme_exposure
 CRNT_US_EQ,ceragon_networks_ltd,Ceragon Networks Ltd.,IL0010851660,missing theme exposure,missing_theme_exposure
 CRNX_US_EQ,crinetics_pharmaceuticals_inc,"Crinetics Pharmaceuticals, Inc.",US22663K1079,missing theme exposure,missing_theme_exposure
@@ -1914,7 +1867,6 @@ CSSE_US_EQ,chicken_soup_for_the_soul_entertainment,Chicken Soup For The Soul Ent
 CSTA_US_EQ,constellation_acquisition_corp_i,Constellation Acquisition Corp I,KYG2R18K1053,missing sector; missing industry,missing_sector;missing_industry
 CSTL_US_EQ,castle_biosciences_inc,"Castle Biosciences, Inc.",US14843C1053,missing theme exposure,missing_theme_exposure
 CSTM_US_EQ,constellium_se,Constellium SE,FR0013467479,missing theme exposure,missing_theme_exposure
-CSU_CA_EQ,constellation_software_inc,Constellation Software Inc.,CA21037X1006,missing theme exposure,missing_theme_exposure
 CSU_US_EQ,sonida_senior_living,Sonida Senior Living,US1404752032,missing sector; missing industry,missing_sector;missing_industry
 CSWA_CA_EQ,corby_spirit_and_wine_class_a,Corby Spirit and Wine (Class A),CA2183491083,missing sector; missing industry,missing_sector;missing_industry
 CSWB_CA_EQ,corby_spirit_and_wine_class_b,Corby Spirit and Wine (Class B),CA2183492073,missing sector; missing industry,missing_sector;missing_industry
@@ -1940,7 +1892,6 @@ CTMX_US_EQ,cytomx_therapeutics,CytomX Therapeutics,US23284F1057,missing sector; 
 CTM_US_EQ,castellum_inc,"Castellum, Inc.",US14838T2042,missing theme exposure,missing_theme_exposure
 CTNM_US_EQ,contineum_therapeutics_inc,"Contineum Therapeutics, Inc.",US21217B1008,missing theme exposure,missing_theme_exposure
 CTRA_US_EQ,alpha_metallurgical_resources,Alpha Metallurgical Resources,US0207641061,missing sector; missing industry,missing_sector;missing_industry
-CTSH_US_EQ,cognizant_technology_solutions_corp,Cognizant Technology Solutions Corp,US1924461023,missing theme exposure,missing_theme_exposure
 CTSO_US_EQ,cytosorbents,CytoSorbents,US23283X2062,missing sector; missing industry,missing_sector;missing_industry
 CTST_US_EQ,canntrust,CannTrust,CA1378002077,missing sector; missing industry,missing_sector;missing_industry
 CTS_US_EQ,cts_corporation,CTS Corporation,US1265011056,missing theme exposure,missing_theme_exposure
@@ -1952,7 +1903,6 @@ CUBI_US_EQ,customers_bancorp_inc,"Customers Bancorp, Inc.",US23204G1004,missing 
 CUEN_US_EQ,cuentas_inc,Cuentas Inc.,US2297943001,missing theme exposure,missing_theme_exposure
 CUE_US_EQ,cue_biopharma,Cue Biopharma,US22978P2056,missing sector; missing industry,missing_sector;missing_industry
 CULL_US_EQ,cullman_bancorp_inc,"Cullman Bancorp, Inc.",US2301531081,missing theme exposure,missing_theme_exposure
-CUMd_EQ,cummins_inc,Cummins Inc.,US2310211063,missing theme exposure,missing_theme_exposure
 CUPR_US_EQ,cuprina_holdings_cayman_limited,Cuprina Holdings (Cayman) Limited,KYG2592E1026,missing theme exposure,missing_theme_exposure
 CUPU_CA_EQ,caribbean_utilities_co,Caribbean Utilities Co,KYG1899E1465,missing sector; missing industry,missing_sector;missing_industry
 CURA_CA_EQ,curaleaf_holdings_inc,"Curaleaf Holdings, Inc.",CA23126M1023,missing theme exposure,missing_theme_exposure
@@ -2005,8 +1955,6 @@ CYANl_EQ,cyanconnode_holdings_plc,CyanConnode Holdings plc,GB00BF93WP34,missing 
 CYBAl_EQ,narf_industries_plc,Narf Industries Plc,GB00BMH18M70,missing theme exposure,missing_theme_exposure
 CYBN_US_EQ,cybin,Cybin,CA23256X4075,missing sector; missing industry,missing_sector;missing_industry
 CYBQY_US_EQ,cyberdyne_inc,CYBERDYNE Inc.,US23249A1007,missing theme exposure,missing_theme_exposure
-CYBR_US_EQ,cyberark_software,CyberArk Software,IL0011334468,missing sector; missing industry,missing_sector;missing_industry
-CYBd_EQ,cyberark_software,CyberArk Software,IL0011334468,missing sector; missing industry,missing_sector;missing_industry
 CYCC_US_EQ,bio_green_med_solution,Bio Green Med Solution,US23254L8761,missing sector; missing industry,missing_sector;missing_industry
 CYCN_US_EQ,cyclerion_therapeutics_inc,"Cyclerion Therapeutics, Inc.",US23255M2044,missing theme exposure,missing_theme_exposure
 CYDVF_US_EQ,century_lithium_corp,Century Lithium Corp.,CA1566151066,missing theme exposure,missing_theme_exposure
@@ -2029,7 +1977,6 @@ CZFS_US_EQ,citizens_financial_services_inc,"Citizens Financial Services, Inc.",U
 CZMWY_US_EQ,carl_zeiss_meditec_ag,Carl Zeiss Meditec AG,US14218T1051,missing theme exposure,missing_theme_exposure
 CZNC_US_EQ,citizens_northern_corporation,Citizens & Northern Corporation,US1729221069,missing theme exposure,missing_theme_exposure
 CZWI_US_EQ,citizens_community_bancorp,Citizens Community Bancorp,US1749031043,missing sector; missing industry,missing_sector;missing_industry
-C_US_EQ,citigroup_inc,Citigroup Inc.,US1729674242,missing theme exposure,missing_theme_exposure
 D2Gd_EQ,orsted,Orsted,DK0060094928,missing sector; missing industry,missing_sector;missing_industry
 D4Sd_EQ,daiichi_sankyo,Daiichi Sankyo,JP3475350009,missing sector; missing industry,missing_sector;missing_industry
 D4T4l_EQ,celebrus_technologies_plc,Celebrus Technologies plc,GB0001351955,missing theme exposure,missing_theme_exposure
@@ -2045,7 +1992,6 @@ DAN_US_EQ,dana,Dana,US2358252052,missing sector; missing industry,missing_sector
 DARE_US_EQ,daré_bioscience_inc,"Daré Bioscience, Inc.",US23666P2002,missing theme exposure,missing_theme_exposure
 DARd1_EQ,datron_ag,DATRON AG,DE000A0V9LA7,missing theme exposure,missing_theme_exposure
 DASH_US_EQ,doordash,DoorDash,US25809K1051,missing sector; missing industry,missing_sector;missing_industry
-DASTY_US_EQ,dassault_systèmes_se,Dassault Systèmes SE,US2375451083,missing theme exposure,missing_theme_exposure
 DATS_US_EQ,myseumai,MyseumAI,US23816M2061,missing sector; missing industry,missing_sector;missing_industry
 DAVA_US_EQ,endava,Endava,US29260V1052,missing sector; missing industry,missing_sector;missing_industry
 DB1d_EQ,deutsche_börse_ag,Deutsche Börse AG,DE0005810055,missing theme exposure,missing_theme_exposure
@@ -2055,7 +2001,6 @@ DBI_US_EQ,designer_brands,Designer Brands,US2505651081,missing sector; missing i
 DBKd_EQ,deutsche_bank_aktiengesellschaft,Deutsche Bank Aktiengesellschaft,DE0005140008,missing theme exposure,missing_theme_exposure
 DBM_CA_EQ,doman_building_materials_group_ltd,Doman Building Materials Group Ltd.,CA25703L1004,missing theme exposure,missing_theme_exposure
 DBOEY_US_EQ,deutsche_börse_ag,Deutsche Börse AG,US2515421061,missing theme exposure,missing_theme_exposure
-DBSDY_US_EQ,dbs_group_holdings_ltd,DBS Group Holdings Ltd,US23304Y1001,missing theme exposure,missing_theme_exposure
 DBVT_US_EQ,dbv_technologies_s_a,DBV Technologies S.A.,US23306J3095,missing theme exposure,missing_theme_exposure
 DBVp_EQ,dbv_technologies_s_a,DBV Technologies S.A.,FR0010417345,missing theme exposure,missing_theme_exposure
 DBX_US_EQ,dropbox,Dropbox,US26210C1045,missing sector; missing industry,missing_sector;missing_industry
@@ -2067,7 +2012,6 @@ DCBO_US_EQ,docebo_inc,Docebo Inc.,CA25609L1058,missing theme exposure,missing_th
 DCCl_EQ,dcc_plc,DCC plc,IE0002424939,missing theme exposure,missing_theme_exposure
 DCI_US_EQ,donaldson,Donaldson,US2576511099,missing sector; missing industry,missing_sector;missing_industry
 DCO_US_EQ,ducommun,Ducommun,US2641471097,missing sector; missing industry,missing_sector;missing_industry
-DCOd_EQ,deere_company,Deere & Company,US2441991054,missing theme exposure,missing_theme_exposure
 DCRB_US_EQ,hyzon_motors,Hyzon Motors,US44951Y2019,missing sector; missing industry,missing_sector;missing_industry
 DCRC_US_EQ,solid_power,Solid Power,US83422N1054,missing sector; missing industry,missing_sector;missing_industry
 DCRN_US_EQ,tritium_dcfc,Tritium DCFC,AU0000325136,missing sector; missing industry,missing_sector;missing_industry
@@ -2079,7 +2023,6 @@ DD2d_EQ,doordash,DoorDash,US25809K1051,missing sector; missing industry,missing_
 DDD_US_EQ,3d_systems,3D Systems,US88554D2053,missing sector; missing industry,missing_sector;missing_industry
 DDI_US_EQ,doubledown_interactive,DoubleDown Interactive,US25862B1098,missing sector; missing industry,missing_sector;missing_industry
 DDMX_US_EQ,codere_online_luxembourg,Codere Online Luxembourg,LU2405144788,missing sector; missing industry,missing_sector;missing_industry
-DDOG_US_EQ,datadog_inc,"Datadog, Inc.",US23804L1035,missing theme exposure,missing_theme_exposure
 DD_US_EQ,dupont_de_nemours,DuPont de Nemours,US26614N1028,missing sector; missing industry,missing_sector;missing_industry
 DEAC_US_EQ,draftkings,DraftKings,US26142V1052,missing sector; missing industry,missing_sector;missing_industry
 DEA_US_EQ,easterly_government_properties,Easterly Government Properties,US27616P3010,missing sector; missing industry,missing_sector;missing_industry
@@ -2093,7 +2036,6 @@ DERM_US_EQ,journey_medical,Journey Medical,US48115J1097,missing sector; missing 
 DESTl_EQ,destiny_pharma,Destiny Pharma,GB00BDHSP575,missing sector; missing industry,missing_sector;missing_industry
 DEVLd_EQ,dbs_group,DBS Group,SG1L01001701,missing sector; missing industry,missing_sector;missing_industry
 DEZd_EQ,deutz_aktiengesellschaft,DEUTZ Aktiengesellschaft,DE0006305006,missing theme exposure,missing_theme_exposure
-DE_US_EQ,deere_company,Deere & Company,US2441991054,missing theme exposure,missing_theme_exposure
 DFCHl_EQ,distribution_finance_capital_holdings_plc,Distribution Finance Capital Holdings plc,GB00BJ7HMR72,missing theme exposure,missing_theme_exposure
 DFFN_US_EQ,cervomed,CervoMed,US15713L1098,missing sector; missing industry,missing_sector;missing_industry
 DFIN_US_EQ,donnelley_financial_solutions_inc,"Donnelley Financial Solutions, Inc.",US25787G1004,missing theme exposure,missing_theme_exposure
@@ -2110,7 +2052,6 @@ DGNX_US_EQ,diginex,Diginex,KYG286871127,missing sector; missing industry,missing
 DGOCl_EQ,diversified_energy_company,Diversified Energy Company,US25520W1071,missing theme exposure,missing_theme_exposure
 DGRLY_US_EQ,delek,Delek,US24664R2067,missing sector; missing industry,missing_sector;missing_industry
 DGX_US_EQ,quest_diagnostics,Quest Diagnostics,US74834L1008,missing sector; missing industry,missing_sector;missing_industry
-DGp_EQ,vinci_sa,Vinci SA,FR0000125486,missing theme exposure,missing_theme_exposure
 DHAC_US_EQ,vsee_health,VSee Health,US92919Y1029,missing sector; missing industry,missing_sector;missing_industry
 DHCA_US_EQ,brand_engagement_network,Brand Engagement Network,US1049322076,missing sector; missing industry,missing_sector;missing_industry
 DHC_US_EQ,diversified_healthcare_trust,Diversified Healthcare Trust,US25525P1075,missing sector; missing industry,missing_sector;missing_industry
@@ -2194,10 +2135,8 @@ DPLMl_EQ,diploma_plc,Diploma PLC,GB0001826634,missing theme exposure,missing_the
 DPMLF_US_EQ,dpm_metals_inc,DPM Metals Inc.,CA26139R1091,missing theme exposure,missing_theme_exposure
 DPM_CA_EQ,dpm_metals_inc,DPM Metals Inc.,CA26139R1091,missing theme exposure,missing_theme_exposure
 DPRO_US_EQ,draganfly_inc,Draganfly Inc.,CA26142Q3044,missing theme exposure,missing_theme_exposure
-DPSGY_US_EQ,dhl_group,DHL Group,US25157Y2028,missing sector; missing industry,missing_sector;missing_industry
 DPS_US_EQ,keurig_dr_pepper,Keurig Dr Pepper,US49271V1008,missing sector; missing industry,missing_sector;missing_industry
 DPW_US_EQ,hyperscale_data,Hyperscale Data,US09175M8047,missing sector; missing industry,missing_sector;missing_industry
-DPWd_EQ,dhl_group,DHL Group,DE0005552004,missing sector; missing industry,missing_sector;missing_industry
 DQJCY_US_EQ,pan_pacific_international,Pan Pacific International,US69807K1051,missing sector; missing industry,missing_sector;missing_industry
 DQ_US_EQ,daqo_new_energy_corp,Daqo New Energy Corp.,US23703Q2030,missing theme exposure,missing_theme_exposure
 DR0d_EQ,deutsche_rohstoff_ag,Deutsche Rohstoff AG,DE000A0XYG76,missing theme exposure,missing_theme_exposure
@@ -2222,8 +2161,6 @@ DSCVl_EQ,discoverie_group_plc,discoverIE Group plc,GB0000055888,missing theme ex
 DSDVY_US_EQ,dsv,DSV,US26251A1088,missing sector; missing industry,missing_sector;missing_industry
 DSGN_US_EQ,design_therapeutics_inc,"Design Therapeutics, Inc.",US25056L1035,missing theme exposure,missing_theme_exposure
 DSGT_US_EQ,dsg_global_inc,DSG Global Inc.,US23340C2035,missing theme exposure,missing_theme_exposure
-DSGX_US_EQ,the_descartes_systems_group_inc,The Descartes Systems Group Inc.,CA2499061083,missing theme exposure,missing_theme_exposure
-DSG_CA_EQ,the_descartes_systems_group_inc,The Descartes Systems Group Inc.,CA2499061083,missing theme exposure,missing_theme_exposure
 DSGl_EQ,dillistone_group_plc,Dillistone Group Plc,GB00B13QQB40,missing theme exposure,missing_theme_exposure
 DSMa_EQ,dsm_firmenich_ag,DSM-Firmenich AG,CH1216478797,missing theme exposure,missing_theme_exposure
 DSNKY_US_EQ,daiichi_sankyo_company_limited,"Daiichi Sankyo Company, Limited",US23381D1028,missing theme exposure,missing_theme_exposure
@@ -2232,7 +2169,6 @@ DSP_US_EQ,viant_technology_inc,Viant Technology Inc.,US92557A1016,missing theme 
 DSVSF_US_EQ,discovery_silver_corp,Discovery Silver Corp.,CA2546771072,missing theme exposure,missing_theme_exposure
 DSV_CA_EQ,discovery_silver_corp,Discovery Silver Corp.,CA2546771072,missing theme exposure,missing_theme_exposure
 DSWL_US_EQ,deswell_industries_inc,"Deswell Industries, Inc.",VG2506391011,missing theme exposure,missing_theme_exposure
-DSYp_EQ,dassault_systèmes_se,Dassault Systèmes SE,FR0014003TT8,missing theme exposure,missing_theme_exposure
 DS_US_EQ,golf_entertainment_group,Golf Entertainment Group,US2620775062,missing sector; missing industry,missing_sector;missing_industry
 DTCK_US_EQ,davis_commodities,Davis Commodities,KYG2677P1138,missing sector; missing industry,missing_sector;missing_industry
 DTC_US_EQ,solo_brands,Solo Brands,US83425V2034,missing sector; missing industry,missing_sector;missing_industry
@@ -2247,7 +2183,6 @@ DTOL_CA_EQ,d2l_inc,D2L Inc.,CA23344V1085,missing theme exposure,missing_theme_ex
 DTRK_US_EQ,datatrak_international_inc,"DATATRAK International, Inc.",US2381342094,missing theme exposure,missing_theme_exposure
 DTSS_US_EQ,datasea_intelligent_technology_ltd,Datasea Intelligent Technology Ltd.,VGG2659M1041,missing theme exposure,missing_theme_exposure
 DTST_US_EQ,data_storage,Data Storage,US23786R2013,missing sector; missing industry,missing_sector;missing_industry
-DT_US_EQ,dynatrace_inc,"Dynatrace, Inc.",US2681501092,missing theme exposure,missing_theme_exposure
 DUEd_EQ,duerr,Duerr,DE0005565204,missing sector; missing industry,missing_sector;missing_industry
 DUFRY_US_EQ,avolta,Avolta,US26433T1088,missing sector; missing industry,missing_sector;missing_industry
 DULd_EQ,alnylam_pharmaceuticals_inc,"Alnylam Pharmaceuticals, Inc.",US02043Q1076,missing theme exposure,missing_theme_exposure
@@ -2260,7 +2195,6 @@ DUTd_EQ,moody_s,Moody's,US6153691059,missing sector; missing industry,missing_se
 DVA_US_EQ,davita_inc,DaVita Inc.,US23918K1088,missing theme exposure,missing_theme_exposure
 DVN_US_EQ,devon_energy_corporation,Devon Energy Corporation,US25179M1036,missing theme exposure,missing_theme_exposure
 DWAC_US_EQ,trump_media_technology_group,Trump Media & Technology Group,US25400Q1058,missing sector; missing industry,missing_sector;missing_industry
-DWDd_EQ,morgan_stanley,Morgan Stanley,US6174464486,missing theme exposure,missing_theme_exposure
 DWIN_US_EQ,foxo_technologies,FOXO Technologies,US3514715032,missing sector; missing industry,missing_sector;missing_industry
 DWLl_EQ,dowlais_group,Dowlais Group,GB00BMWRZ071,missing sector; missing industry,missing_sector;missing_industry
 DWOG_US_EQ,deep_well_oil_gas,Deep Well Oil & Gas,US2437981051,missing sector; missing industry,missing_sector;missing_industry
@@ -2433,8 +2367,6 @@ EML_US_EQ,eastern,Eastern,US2763171046,missing sector; missing industry,missing_
 EMLl_EQ,emmerson_plc,Emmerson PLC,IM00BDHDTX83,missing theme exposure,missing_theme_exposure
 EMN_US_EQ,eastman_chemical_company,Eastman Chemical Company,US2774321002,missing theme exposure,missing_theme_exposure
 EMPA_CA_EQ,empire_co,Empire Co,CA2918434077,missing sector; missing industry,missing_sector;missing_industry
-EMR_US_EQ,emerson_electric_co_r,EMERSON ELECTRIC CO.          R,US2910111044,missing theme exposure,missing_theme_exposure
-EMRd_EQ,emerson_electric_co_r,EMERSON ELECTRIC CO.          R,US2910111044,missing theme exposure,missing_theme_exposure
 EMSNs_EQ,ems_chemie_holding_ag,EMS-CHEMIE HOLDING AG,CH0016440353,missing theme exposure,missing_theme_exposure
 EMYB_US_EQ,embassy_bancorp_inc,"Embassy Bancorp, Inc.",US2907911026,missing theme exposure,missing_theme_exposure
 EN3d_EQ,enbridge_inc,Enbridge Inc.,CA29250N1050,missing theme exposure,missing_theme_exposure
@@ -2468,7 +2400,6 @@ ENQl_EQ,enquest_plc,EnQuest PLC,GB00B635TG28,missing theme exposure,missing_them
 ENRGY_BB_EQ,energyvision,EnergyVision,BE0974499312,missing sector; missing industry,missing_sector;missing_industry
 ENRSs_EQ,enerside_energy_s_a,"Enerside Energy, S.A.",ES0105634002,missing theme exposure,missing_theme_exposure
 ENR_US_EQ,energizer_holdings_inc,"Energizer Holdings, Inc.",US29272W1099,missing theme exposure,missing_theme_exposure
-ENRd_EQ,siemens_energy_ag,Siemens Energy AG,DE000ENER6Y0,missing theme exposure,missing_theme_exposure
 ENSG_US_EQ,ensign_group,Ensign Group,US29358P1012,missing sector; missing industry,missing_sector;missing_industry
 ENSIl_EQ,ensilica_plc,EnSilica plc,GB00BN7F1618,missing theme exposure,missing_theme_exposure
 ENSV_US_EQ,enservco_corporation,Enservco Corporation,US29358Y2019,missing theme exposure,missing_theme_exposure
@@ -2545,7 +2476,6 @@ ESQ_US_EQ,esquire_financial_holdings_inc,"Esquire Financial Holdings, Inc.",US29
 ESSC_US_EQ,robo_ai,Robo.ai,KYG6693P1220,missing sector; missing industry,missing_sector;missing_industry
 ESS_US_EQ,essex_property_trust,Essex Property Trust,US2971781057,missing sector; missing industry,missing_sector;missing_industry
 ESTA_US_EQ,establishment_labs_holdings_inc,Establishment Labs Holdings Inc.,VGG312491084,missing theme exposure,missing_theme_exposure
-ESTC_US_EQ,elastic_n_v,Elastic N.V.,NL0013056914,missing theme exposure,missing_theme_exposure
 ESTl_EQ,east_star_resources_plc,East Star Resources Plc,GB00BN92HZ16,missing theme exposure,missing_theme_exposure
 ESYSl_EQ,essensys_plc,essensys plc,GB00BJL1ZF49,missing theme exposure,missing_theme_exposure
 ES_US_EQ,eversource_energy,Eversource Energy,US30040W1080,missing sector; missing industry,missing_sector;missing_industry
@@ -2645,7 +2575,6 @@ FALGp_EQ,fermentalg,FERMENTALG,FR0011271600,missing theme exposure,missing_theme
 FAMI_US_EQ,farmmi_inc,Farmmi Inc,KYG332771495,missing sector; missing industry,missing_sector;missing_industry
 FANG_US_EQ,diamondback_energy_inc,"Diamondback Energy, Inc.",US25278X1090,missing theme exposure,missing_theme_exposure
 FANH_US_EQ,aifu,AIFU,KYG3314G1102,missing sector; missing industry,missing_sector;missing_industry
-FANUY_US_EQ,fanuc_corporation,Fanuc Corporation,US3073051027,missing theme exposure,missing_theme_exposure
 FARNl_EQ,faron_pharmaceuticals_oy,Faron Pharmaceuticals Oy,FI4000153309,missing theme exposure,missing_theme_exposure
 FAR_CA_EQ,foraco_international_sa,Foraco International SA,FR0010492199,missing theme exposure,missing_theme_exposure
 FARl_EQ,ferro_alloy_resources_limited,Ferro-Alloy Resources Limited,GG00BGDYDZ69,missing theme exposure,missing_theme_exposure
@@ -2705,8 +2634,6 @@ FENC_US_EQ,fennec_pharmaceuticals,Fennec Pharmaceuticals,CA31447P1009,missing se
 FENG_US_EQ,phoenix_new_media,Phoenix New Media,US71910C2026,missing sector; missing industry,missing_sector;missing_industry
 FERGY_US_EQ,ferguson_enterprises_inc,Ferguson Enterprises Inc.,US31488V1070,missing theme exposure,missing_theme_exposure
 FERGl_EQ,ferguson_enterprises_inc,Ferguson Enterprises Inc.,US31488V1070,missing theme exposure,missing_theme_exposure
-FER_US_EQ,ferrovial_n_v,Ferrovial N.V.,NL0015001FS8,missing theme exposure,missing_theme_exposure
-FERe_EQ,ferrovial_n_v,Ferrovial N.V.,NL0015001FS8,missing theme exposure,missing_theme_exposure
 FET_US_EQ,forum_energy_technologies_inc,"Forum Energy Technologies, Inc.",US34984V2097,missing theme exposure,missing_theme_exposure
 FEYd_EQ,fuelcell_energy_inc,"FuelCell Energy, Inc.",US35952H7008,missing theme exposure,missing_theme_exposure
 FE_US_EQ,firstenergy_corp,FirstEnergy Corp.,US3379321074,missing theme exposure,missing_theme_exposure
@@ -2754,7 +2681,6 @@ FINV_US_EQ,finvolution,FinVolution,US31810T1016,missing sector; missing industry
 FINW_US_EQ,finwise_bancorp,Finwise Bancorp,US31813A1097,missing sector; missing industry,missing_sector;missing_industry
 FINs_EQ,georg_fischer_ag,Georg Fischer AG,CH1169151003,missing theme exposure,missing_theme_exposure
 FISI_US_EQ,financial_institutions_inc,"Financial Institutions, Inc.",US3175854047,missing theme exposure,missing_theme_exposure
-FITB_US_EQ,fifth_third_bancorp,Fifth Third Bancorp,US3167731005,missing theme exposure,missing_theme_exposure
 FIVEl_EQ,x5_retail_group,X5 Retail Group,US98387E2054,missing sector; missing industry,missing_sector;missing_industry
 FIVN_US_EQ,five9_inc,"Five9, Inc.",US3383071012,missing theme exposure,missing_theme_exposure
 FIXX_US_EQ,q32_bio,Q32 Bio,US7469641051,missing sector; missing industry,missing_sector;missing_industry
@@ -2763,7 +2689,6 @@ FJET_US_EQ,starfighters_space_inc,"Starfighters Space, Inc.",US85529M1045,missin
 FJKd_EQ,fujikura,Fujikura,JP3811000003,missing sector; missing industry,missing_sector;missing_industry
 FJTCY_US_EQ,fujitec_co_ltd,"Fujitec Co., Ltd.",US35958W1071,missing theme exposure,missing_theme_exposure
 FJTNY_US_EQ,fuji_media,Fuji Media,US3595821030,missing sector; missing industry,missing_sector;missing_industry
-FJTSY_US_EQ,fujitsu_limited,Fujitsu Limited,US3595903044,missing theme exposure,missing_theme_exposure
 FJZd_EQ,zijin_mining_group,Zijin Mining Group,CNE100000502,missing sector; missing industry,missing_sector;missing_industry
 FKA_AT_EQ,frauenthal_holding_ag,Frauenthal Holding AG,AT0000762406,missing theme exposure,missing_theme_exposure
 FKEl_EQ,fiske_plc,Fiske plc,GB0003353157,missing theme exposure,missing_theme_exposure
@@ -2817,12 +2742,10 @@ FNV_US_EQ,franco_nevada_corporation,Franco-Nevada Corporation,CA3518581051,missi
 FNWB_US_EQ,first_northwest_bancorp,First Northwest Bancorp,US3358341077,missing theme exposure,missing_theme_exposure
 FNXl_EQ,fonix_plc,Fonix Plc,GB00BN789668,missing theme exposure,missing_theme_exposure
 FN_CA_EQ,first_national_financial,First National Financial,CA33564P1036,missing sector; missing industry,missing_sector;missing_industry
-FO8d_EQ,fortinet_inc,"Fortinet, Inc.",US34959E1091,missing theme exposure,missing_theme_exposure
 FOGl_EQ,falcon_oil_gas_ltd,Falcon Oil & Gas Ltd.,CA3060711015,missing theme exposure,missing_theme_exposure
 FOJCY_US_EQ,fortum,Fortum,US34959F1066,missing sector; missing industry,missing_sector;missing_industry
 FOM_CA_EQ,foran_mining_corporation,Foran Mining Corporation,CA3449112018,missing theme exposure,missing_theme_exposure
 FONR_US_EQ,fonar,FONAR,US3444374058,missing sector; missing industry,missing_sector;missing_industry
-FOOd_EQ,salesforce_inc,"Salesforce, Inc.",US79466L3024,missing theme exposure,missing_theme_exposure
 FORA_US_EQ,forian_inc,Forian Inc.,US34630N1063,missing theme exposure,missing_theme_exposure
 FORD_US_EQ,forward_industries,Forward Industries,US3499321038,missing sector; missing industry,missing_sector;missing_industry
 FORE_US_EQ,p3_health_partners,P3 Health Partners,US7444132044,missing sector; missing industry,missing_sector;missing_industry
@@ -2855,7 +2778,6 @@ FRFC_US_EQ,first_robinson_financial_corporation,First Robinson Financial Corpora
 FRGl_EQ,firering_strategic_minerals_plc,Firering Strategic Minerals Plc,CY0109692117,missing theme exposure,missing_theme_exposure
 FRME_US_EQ,first_merchants,First Merchants,US3208171096,missing sector; missing industry,missing_sector;missing_industry
 FRMI_US_EQ,fermi,Fermi,US3149111086,missing sector; missing industry,missing_sector;missing_industry
-FROG_US_EQ,jfrog_ltd,JFrog Ltd.,IL0011684185,missing theme exposure,missing_theme_exposure
 FRO_US_EQ,frontline_plc,Frontline plc,CY0200352116,missing theme exposure,missing_theme_exposure
 FRPl_EQ,frp_advisory_group_plc,FRP Advisory Group plc,GB00BL9BW044,missing theme exposure,missing_theme_exposure
 FRSB_US_EQ,first_resource_bancorp_inc,"First Resource Bancorp, Inc.",US33617D1072,missing theme exposure,missing_theme_exposure
@@ -2899,13 +2821,11 @@ FTI_US_EQ,technipfmc_plc,TechnipFMC plc,GB00BDSFG982,missing theme exposure,miss
 FTK_US_EQ,flotek_industries_inc,"Flotek Industries, Inc.",US3433894090,missing theme exposure,missing_theme_exposure
 FTKd_EQ,flatexdegiro_se,flatexDEGIRO SE,DE000FTG1111,missing theme exposure,missing_theme_exposure
 FTMR_US_EQ,fortem_resources,Fortem Resources,US34961A1034,missing sector; missing industry,missing_sector;missing_industry
-FTNT_US_EQ,fortinet_inc,"Fortinet, Inc.",US34959E1091,missing theme exposure,missing_theme_exposure
 FTOC_US_EQ,payoneer_global,Payoneer Global,US70451X1046,missing sector; missing industry,missing_sector;missing_industry
 FTRE_US_EQ,fortrea_holdings_inc,Fortrea Holdings Inc.,US34965K1079,missing theme exposure,missing_theme_exposure
 FTS_CA_EQ,fortis_inc,Fortis Inc.,CA3495531079,missing theme exposure,missing_theme_exposure
 FTS_US_EQ,fortis_inc,Fortis Inc.,CA3495531079,missing theme exposure,missing_theme_exposure
 FTT_CA_EQ,finning_international_inc,Finning International Inc.,CA3180714048,missing theme exposure,missing_theme_exposure
-FTV_US_EQ,fortive,Fortive,US34959J1088,missing sector; missing industry,missing_sector;missing_industry
 FUCd_EQ,fanuc,FANUC,JP3802400006,missing sector; missing industry,missing_sector;missing_industry
 FUJ1d_EQ,fujitsu,Fujitsu,JP3818000006,missing sector; missing industry,missing_sector;missing_industry
 FUJHY_US_EQ,subaru,Subaru,US86428V1044,missing sector; missing industry,missing_sector;missing_industry
@@ -3049,8 +2969,6 @@ GHSI_US_EQ,guardion_health_sciences,Guardion Health Sciences,US40145Q5009,missin
 GH_US_EQ,guardant_health_inc,"Guardant Health, Inc.",US40131M1099,missing theme exposure,missing_theme_exposure
 GIAC_US_EQ,freightos,Freightos,KYG514051013,missing sector; missing industry,missing_sector;missing_industry
 GIA_US_EQ,qt_imaging_holdings,QT Imaging Holdings,US7469623075,missing sector; missing industry,missing_sector;missing_industry
-GIBA_CA_EQ,cgi_inc,CGI Inc.,CA12532H1047,missing theme exposure,missing_theme_exposure
-GIB_US_EQ,cgi_inc,CGI Inc.,CA12532H1047,missing theme exposure,missing_theme_exposure
 GIG1_US_EQ,gigcapital7,GigCapital7,US37518P1012,missing sector; missing industry,missing_sector;missing_industry
 GIGA_US_EQ,giga_tronics,Giga-tronics,US3751753043,missing sector; missing industry,missing_sector;missing_industry
 GIGAa_EQ,gigas_hosting_s_a,"Gigas Hosting, S.A.",ES0105093001,missing theme exposure,missing_theme_exposure
@@ -3154,7 +3072,6 @@ GOLD_CA_EQ,goldmining_inc,GoldMining Inc.,CA38149E1016,missing theme exposure,mi
 GOOD_US_EQ,gladstone_commercial,Gladstone Commercial,US3765361080,missing sector; missing industry,missing_sector;missing_industry
 GORO_US_EQ,gold_resource,Gold Resource,US38068T1051,missing sector; missing industry,missing_sector;missing_industry
 GOSS_US_EQ,gossamer_bio_inc,"Gossamer Bio, Inc.",US38341P1021,missing theme exposure,missing_theme_exposure
-GOSd_EQ,the_goldman_sachs_group_inc,"The Goldman Sachs Group, Inc.",US38141G1040,missing theme exposure,missing_theme_exposure
 GOVB_US_EQ,gouverneur_bancorp,Gouverneur Bancorp,US38358M1099,missing sector; missing industry,missing_sector;missing_industry
 GOVX_US_EQ,geovax_labs_inc,"GeoVax Labs, Inc.",US3736787058,missing theme exposure,missing_theme_exposure
 GPAC_US_EQ,stardust_power,Stardust Power,US8549362007,missing sector; missing industry,missing_sector;missing_industry
@@ -3222,7 +3139,6 @@ GSTl_EQ,gstechnologies_ltd,GSTechnologies Ltd.,VGG4164C1005,missing theme exposu
 GSVRF_US_EQ,guanajuato_silver,Guanajuato Silver,CA40066W1068,missing sector; missing industry,missing_sector;missing_industry
 GSX_US_EQ,gaotu_techedu,Gaotu Techedu,US36257Y1091,missing sector; missing industry,missing_sector;missing_industry
 GSY_CA_EQ,goeasy_ltd,goeasy Ltd.,CA3803551074,missing theme exposure,missing_theme_exposure
-GS_US_EQ,the_goldman_sachs_group_inc,"The Goldman Sachs Group, Inc.",US38141G1040,missing theme exposure,missing_theme_exposure
 GTBIF_US_EQ,green_thumb_industries_inc,Green Thumb Industries Inc.,CA39342L1085,missing theme exposure,missing_theme_exposure
 GTBP_US_EQ,gt_biopharma_inc,"GT Biopharma, Inc.",US36254L3087,missing theme exposure,missing_theme_exposure
 GTCH_US_EQ,gbt_technologies,GBT Technologies,US3615483084,missing sector; missing industry,missing_sector;missing_industry
@@ -3233,7 +3149,6 @@ GTE_CA_EQ,gran_tierra_energy_inc,Gran Tierra Energy Inc.,US38500T2006,missing th
 GTE_US_EQ,gran_tierra_energy_inc,Gran Tierra Energy Inc.,US38500T2006,missing theme exposure,missing_theme_exposure
 GTEl_EQ,gran_tierra_energy_inc,Gran Tierra Energy Inc.,US38500T2006,missing theme exposure,missing_theme_exposure
 GTII_US_EQ,global_tech_industries,Global Tech Industries,US37955R1077,missing sector; missing industry,missing_sector;missing_industry
-GTLB_US_EQ,gitlab_inc,GitLab Inc.,US37637K1088,missing theme exposure,missing_theme_exposure
 GTLS_US_EQ,chart_industries_inc,"Chart Industries, Inc.",US16115Q3083,missing theme exposure,missing_theme_exposure
 GTMAY_US_EQ,grupo_tmm,Grupo TMM,US40051D3035,missing sector; missing industry,missing_sector;missing_industry
 GTN/A_US_EQ,gray_media_class_a,Gray Media (Class A),US3893752051,missing sector; missing industry,missing_sector;missing_industry
@@ -3255,7 +3170,6 @@ GVH_US_EQ,globavend_holdings,Globavend Holdings,KYG3R39B1165,missing sector; mis
 GVPl_EQ,gabelli_value_plus_trust,Gabelli Value Plus + Trust,GB00BTLJYS47,missing sector; missing industry,missing_sector;missing_industry
 GWAC_US_EQ,cipher_digital,Cipher Digital,US17253J1060,missing sector; missing industry,missing_sector;missing_industry
 GWMOl_EQ,great_western_mining_corporation_plc,Great Western Mining Corporation PLC,IE000T78CHJ8,missing theme exposure,missing_theme_exposure
-GWRE_US_EQ,guidewire_software_inc,"Guidewire Software, Inc.",US40171V1008,missing theme exposure,missing_theme_exposure
 GWW_US_EQ,w_w_grainger_inc,"W.W. Grainger, Inc.",US3848021040,missing theme exposure,missing_theme_exposure
 GXGX_US_EQ,celularity,Celularity,US1511902041,missing sector; missing industry,missing_sector;missing_industry
 GXII_US_EQ,niocorp_developments,NioCorp Developments,CA6544846091,missing sector; missing industry,missing_sector;missing_industry
@@ -3286,7 +3200,6 @@ HAWPY_US_EQ,haw_par,Haw Par,US4196641074,missing sector; missing industry,missin
 HAYDl_EQ,haydale_plc,Haydale plc,GB00BKWQ1135,missing theme exposure,missing_theme_exposure
 HAYW_US_EQ,hayward_holdings_inc,"Hayward Holdings, Inc.",US4212981009,missing theme exposure,missing_theme_exposure
 HBAN_US_EQ,huntington_bancshares,Huntington Bancshares,US4461501045,missing sector; missing industry,missing_sector;missing_industry
-HBC11d_EQ,hsbc_holdings_plc,HSBC Holdings plc,GB0005405286,missing theme exposure,missing_theme_exposure
 HBCP_US_EQ,home_bancorp_inc,"Home Bancorp, Inc.",US43689E1073,missing theme exposure,missing_theme_exposure
 HBIA_US_EQ,hills_bancorp,Hills BanCorp,US4316431059,missing sector; missing industry,missing_sector;missing_industry
 HBIO_US_EQ,harvard_bioscience_inc,"Harvard Bioscience, Inc.",US4169062043,missing theme exposure,missing_theme_exposure
@@ -3426,7 +3339,6 @@ HOOK_US_EQ,hookipa_pharma_inc,HOOKIPA Pharma Inc.,US43906K2096,missing theme exp
 HOPE_US_EQ,hope_bancorp_inc,"Hope Bancorp, Inc.",US43940T1097,missing theme exposure,missing_theme_exposure
 HORI_US_EQ,emerging_markets_horizon,Emerging Markets Horizon,KYG3033X1051,missing sector; missing industry,missing_sector;missing_industry
 HOTH_US_EQ,hoth_therapeutics_inc,"Hoth Therapeutics, Inc.",US44148G2049,missing theme exposure,missing_theme_exposure
-HOTd_EQ,hochtief_aktiengesellschaft,HOCHTIEF Aktiengesellschaft,DE0006070006,missing theme exposure,missing_theme_exposure
 HOTl_EQ,henderson_opportunities_trust,Henderson Opportunities Trust,GB00BSHRGN41,missing sector; missing industry,missing_sector;missing_industry
 HOWL_US_EQ,werewolf_therapeutics_inc,"Werewolf Therapeutics, Inc.",US95075A1079,missing theme exposure,missing_theme_exposure
 HOp_EQ,thales_s_a,Thales S.A.,FR0000121329,missing theme exposure,missing_theme_exposure
@@ -3450,8 +3362,6 @@ HRTH_US_EQ,harte_hanks,Harte Hanks,US4161962026,missing sector; missing industry
 HRTX_US_EQ,heron_therapeutics_inc,"Heron Therapeutics, Inc.",US4277461020,missing theme exposure,missing_theme_exposure
 HRYU_US_EQ,global_interactive_technologies,Global Interactive Technologies,US4112922046,missing sector; missing industry,missing_sector;missing_industry
 HSAQ_US_EQ,orchestra_biomed_holdings,Orchestra BioMed Holdings,US68572M1062,missing sector; missing industry,missing_sector;missing_industry
-HSBAl_EQ,hsbc_holdings_plc,HSBC Holdings plc,GB0005405286,missing theme exposure,missing_theme_exposure
-HSBC_US_EQ,hsbc_holdings_plc,HSBC Holdings plc,US4042804066,missing theme exposure,missing_theme_exposure
 HSBKl_EQ,halyk_bank_of_kazakhstan_joint_stock_company,Halyk Bank of Kazakhstan Joint Stock Company,US46627J3023,missing theme exposure,missing_theme_exposure
 HSCS_US_EQ,heartsciences,HeartSciences,US42254E3027,missing sector; missing industry,missing_sector;missing_industry
 HSC_US_EQ,enviri,Enviri,US4158641070,missing sector; missing industry,missing_sector;missing_industry
@@ -3473,7 +3383,6 @@ HTGM_US_EQ,htg_molecular_diagnostics,HTG Molecular Diagnostics,US40434H3021,miss
 HTGl_EQ,hunting_plc,Hunting PLC,GB0004478896,missing theme exposure,missing_theme_exposure
 HTHT_US_EQ,h_world,H World,US44332N1063,missing sector; missing industry,missing_sector;missing_industry
 HUBNs_EQ,huber_suhner_ag,Huber+Suhner AG,CH0030380734,missing theme exposure,missing_theme_exposure
-HUBS_US_EQ,hubspot_inc,"HubSpot, Inc.",US4435731009,missing theme exposure,missing_theme_exposure
 HUDA_US_EQ,hudson_acquisition_i,Hudson Acquisition I,US44364H1005,missing sector; missing industry,missing_sector;missing_industry
 HUDI_US_EQ,huadi_international_group_co_ltd,"Huadi International Group Co., Ltd.",KYG4645E1052,missing theme exposure,missing_theme_exposure
 HUGE_US_EQ,quantum_biopharma,Quantum BioPharma,CA74764Y2050,missing sector; missing industry,missing_sector;missing_industry
@@ -3496,7 +3405,6 @@ HWDJY_US_EQ,howden_joinery,Howden Joinery,US4428791028,missing sector; missing i
 HWKN_US_EQ,hawkins_inc,"Hawkins, Inc.",US4202611095,missing theme exposure,missing_theme_exposure
 HWO_CA_EQ,high_arctic_energy_services_inc,High Arctic Energy Services Inc,CA42964L1094,missing theme exposure,missing_theme_exposure
 HWX_CA_EQ,headwater_exploration_inc,Headwater Exploration Inc.,CA4220961078,missing theme exposure,missing_theme_exposure
-HXGBY_US_EQ,hexagon_ab_publ,Hexagon AB (publ),US4282631070,missing theme exposure,missing_theme_exposure
 HXGd_EQ,hexagon,Hexagon,SE0015961909,missing sector; missing industry,missing_sector;missing_industry
 HXL_US_EQ,hexcel,Hexcel,US4282911084,missing sector; missing industry,missing_sector;missing_industry
 HX_US_EQ,akso_health,Akso Health,US98422P1084,missing sector; missing industry,missing_sector;missing_industry
@@ -3532,17 +3440,14 @@ IBDRY_US_EQ,iberdrola,Iberdrola,US4507371015,missing sector; missing industry,mi
 IBEX_US_EQ,ibex_limited,IBEX Limited,BMG4690M1010,missing theme exposure,missing_theme_exposure
 IBEe_EQ,iberdrola_s_a,"Iberdrola, S.A.",ES0144580Y14,missing theme exposure,missing_theme_exposure
 IBIO_US_EQ,ibio_inc,"iBio, Inc.",US4510337086,missing theme exposure,missing_theme_exposure
-IBKR_US_EQ,interactive_brokers_group_inc,"Interactive Brokers Group, Inc.",US45841N1072,missing theme exposure,missing_theme_exposure
 IBN_US_EQ,icici_bank,ICICI Bank,US45104G1040,missing sector; missing industry,missing_sector;missing_industry
 IBOC_US_EQ,international_bancshares,International Bancshares,US4590441030,missing sector; missing industry,missing_sector;missing_industry
 IBO_US_EQ,impact_biomedical_inc,Impact BioMedical Inc.,US45259L2051,missing theme exposure,missing_theme_exposure
 IBTA_US_EQ,ibotta_inc,"Ibotta, Inc.",US4510511060,missing theme exposure,missing_theme_exposure
 IBTl_EQ,international_biotechnology_trust,International Biotechnology Trust,GB0004559349,missing sector; missing industry,missing_sector;missing_industry
 IBUd_EQ,ibu_tec_advanced_materials_ag,IBU-tec advanced materials AG,DE000A0XYHT5,missing theme exposure,missing_theme_exposure
-IC2d_EQ,intercontinental_exchange_inc_r,Intercontinental Exchange Inc.R,US45866F1049,missing theme exposure,missing_theme_exposure
 ICCC_US_EQ,immucell,ImmuCell,US4525253062,missing sector; missing industry,missing_sector;missing_industry
 ICCM_US_EQ,icecure_medical_ltd,IceCure Medical Ltd,IL0011224156,missing theme exposure,missing_theme_exposure
-ICE_US_EQ,intercontinental_exchange_inc_r,Intercontinental Exchange Inc.R,US45866F1049,missing theme exposure,missing_theme_exposure
 ICG_US_EQ,intchains_group_limited,Intchains Group Limited,US45828E1047,missing theme exposure,missing_theme_exposure
 ICHR_US_EQ,ichor_holdings_ltd,"Ichor Holdings, Ltd.",KYG4740B1059,missing theme exposure,missing_theme_exposure
 ICKd_EQ,industrial_commercial_bank_of_china,Industrial & Commercial Bank of China,CNE1000003G1,missing sector; missing industry,missing_sector;missing_industry
@@ -3573,7 +3478,6 @@ IDXX_US_EQ,idexx_laboratories_inc,IDEXX Laboratories Inc,US45168D1046,missing th
 IDYA_US_EQ,ideaya_biosciences_inc,"IDEAYA Biosciences, Inc.",US45166A1025,missing theme exposure,missing_theme_exposure
 IEHC_US_EQ,ieh,IEH,US44949K1079,missing sector; missing industry,missing_sector;missing_industry
 IESC_US_EQ,ies_holdings_inc,"IES Holdings, Inc.",US44951W1062,missing theme exposure,missing_theme_exposure
-IESd_EQ,intesa_sanpaolo_s_p_a,Intesa Sanpaolo S.p.A.,IT0000072618,missing theme exposure,missing_theme_exposure
 IESl_EQ,invinity_energy_systems_plc,Invinity Energy Systems plc,GB00BS9F9D74,missing theme exposure,missing_theme_exposure
 IEX_US_EQ,idex,IDEX,US45167R1041,missing sector; missing industry,missing_sector;missing_industry
 IE_CA_EQ,ivanhoe_electric_inc,Ivanhoe Electric Inc.,US46578C1080,missing theme exposure,missing_theme_exposure
@@ -3613,7 +3517,6 @@ IKT_US_EQ,inhibikase_therapeutics_inc,"Inhibikase Therapeutics, Inc.",US45719W20
 ILKAY_US_EQ,iluka_resources_limited,Iluka Resources Limited,US4523631046,missing theme exposure,missing_theme_exposure
 ILM1d_EQ,medios_ag,Medios AG,DE000A1MMCC8,missing theme exposure,missing_theme_exposure
 ILMN_US_EQ,illumina_inc,"Illumina, Inc.",US4523271090,missing theme exposure,missing_theme_exposure
-ILTd_EQ,illinois_tool_works_inc,Illinois Tool Works Inc.,US4523081093,missing theme exposure,missing_theme_exposure
 ILUd_EQ,illumina_inc,"Illumina, Inc.",US4523271090,missing theme exposure,missing_theme_exposure
 IMAB_US_EQ,novabridge_biosciences,NovaBridge Biosciences,US44975P1030,missing sector; missing industry,missing_sector;missing_industry
 IMAC_US_EQ,imac_holdings,Imac Holdings,US44967K3023,missing sector; missing industry,missing_sector;missing_industry
@@ -3764,7 +3667,6 @@ IRRX_US_EQ,uinta_infrastructure_group,Uinta Infrastructure Group,US45836M1062,mi
 IRRl_EQ,atlantic_lithium_limited,Atlantic Lithium Limited,AU0000237554,missing theme exposure,missing_theme_exposure
 IRTC_US_EQ,irhythm_holdings,iRhythm Holdings,US4500561067,missing sector; missing industry,missing_sector;missing_industry
 IRWD_US_EQ,ironwood_pharmaceuticals_inc,"Ironwood Pharmaceuticals, Inc.",US46333X1081,missing theme exposure,missing_theme_exposure
-IR_US_EQ,ingersoll_rand_inc,Ingersoll Rand Inc.,US45687V1061,missing theme exposure,missing_theme_exposure
 ISBA_US_EQ,isabella_bank,Isabella Bank,US4642141059,missing sector; missing industry,missing_sector;missing_industry
 ISDR_US_EQ,access_newswire,ACCESS Newswire,US46520M2044,missing sector; missing industry,missing_sector;missing_industry
 ISENF_US_EQ,isoenergy_ltd,IsoEnergy Ltd.,CA46500E8678,missing theme exposure,missing_theme_exposure
@@ -3795,7 +3697,6 @@ ITRN_US_EQ,ituran_location_and_control_ltd,Ituran Location and Control Ltd.,IL00
 ITT_US_EQ,itt_inc,ITT Inc.,US45073V1089,missing theme exposure,missing_theme_exposure
 ITUB_US_EQ,itau_unibanco_holding,Itau Unibanco Holding,US4655621062,missing sector; missing industry,missing_sector;missing_industry
 ITUd_EQ,intuit_inc,Intuit Inc.,US4612021034,missing theme exposure,missing_theme_exposure
-ITW_US_EQ,illinois_tool_works_inc,Illinois Tool Works Inc.,US4523081093,missing theme exposure,missing_theme_exposure
 ITXl_EQ,itaconix_plc,Itaconix plc,GB00BPK3YZ68,missing theme exposure,missing_theme_exposure
 IT_US_EQ,gartner_inc,"Gartner, Inc.",US3666511072,missing theme exposure,missing_theme_exposure
 IU2d_EQ,yara_international,Yara International,NO0010208051,missing sector; missing industry,missing_sector;missing_industry
@@ -3879,7 +3780,6 @@ JNJd_EQ,johnson_johnson,Johnson & Johnson,US4781601046,missing theme exposure,mi
 JNVR_US_EQ,defi_development,DeFi Development,US47100L3015,missing sector; missing industry,missing_sector;missing_industry
 JOGl_EQ,jersey_oil_and_gas_plc,Jersey Oil and Gas Plc,GB00BYN5YK77,missing theme exposure,missing_theme_exposure
 JOY_CA_EQ,journey_energy_inc,Journey Energy Inc.,CA48113W1023,missing theme exposure,missing_theme_exposure
-JPM_US_EQ,jpmorgan_chase_co,JPMorgan Chase & Co.,US46625H1005,missing theme exposure,missing_theme_exposure
 JPPHY_US_EQ,japan_post,Japan Post,US47109W1009,missing sector; missing industry,missing_sector;missing_industry
 JPSWY_US_EQ,japan_steel_works,Japan Steel Works,US4711003057,missing sector; missing industry,missing_sector;missing_industry
 JPS_US_EQ,nuveen_preferred_income_securities_fund,Nuveen Preferred & Income Securities Fund,US67073B1061,missing sector; missing industry,missing_sector;missing_industry
@@ -4000,7 +3900,6 @@ KMPH_US_EQ,zevra_therapeutics,Zevra Therapeutics,US4884452065,missing sector; mi
 KMPR_US_EQ,kemper,Kemper,US4884011002,missing sector; missing industry,missing_sector;missing_industry
 KMRl_EQ,kenmare_resources_plc,Kenmare Resources plc,IE00BDC5DG00,missing theme exposure,missing_theme_exposure
 KMTS_US_EQ,kestra_medical_technologies,Kestra Medical Technologies,BMG524411052,missing sector; missing industry,missing_sector;missing_industry
-KMTUY_US_EQ,komatsu_ltd,Komatsu Ltd.,US5004584018,missing theme exposure,missing_theme_exposure
 KNBl_EQ,kanabo_group_plc,Kanabo Group Plc,GB00BYQCS703,missing theme exposure,missing_theme_exposure
 KNF_US_EQ,knife_river,Knife River,US4988941047,missing sector; missing industry,missing_sector;missing_industry
 KNOP_US_EQ,knot_offshore_partners_lp,KNOT Offshore Partners LP,MHY481251012,missing theme exposure,missing_theme_exposure
@@ -4079,7 +3978,6 @@ KWR_US_EQ,quaker_chemical,Quaker Chemical,US7473161070,missing sector; missing i
 KWSd_EQ,kws_saat_se_co_kgaa,KWS SAAT SE & Co. KGaA,DE0007074007,missing theme exposure,missing_theme_exposure
 KXIAY_US_EQ,kioxia_holdings,Kioxia Holdings,US49726J1088,missing sector; missing industry,missing_sector;missing_industry
 KXS_CA_EQ,kinaxis_inc,Kinaxis Inc.,CA49448Q1090,missing theme exposure,missing_theme_exposure
-KY6d_EQ,interactive_brokers_group_inc,"Interactive Brokers Group, Inc.",US45841N1072,missing theme exposure,missing_theme_exposure
 KYCH_US_EQ,zooz_strategy,Zooz Strategy,IL0011741845,missing sector; missing industry,missing_sector;missing_industry
 KYMR_US_EQ,kymera_therapeutics_inc,"Kymera Therapeutics, Inc.",US5015751044,missing theme exposure,missing_theme_exposure
 KYSEY_US_EQ,kyushu_electric_power,Kyushu Electric Power,US5015901037,missing sector; missing industry,missing_sector;missing_industry
@@ -4165,7 +4063,6 @@ LGND_US_EQ,ligand_pharmaceuticals,Ligand Pharmaceuticals,US53220K5048,missing se
 LGN_US_EQ,legence_corp,Legence Corp.,US52476L1098,missing theme exposure,missing_theme_exposure
 LGO_CA_EQ,largo_inc,Largo Inc.,CA5170971017,missing theme exposure,missing_theme_exposure
 LGO_US_EQ,largo_inc,Largo Inc.,CA5170971017,missing theme exposure,missing_theme_exposure
-LGRDY_US_EQ,legrand_sa,Legrand SA,US5246711049,missing theme exposure,missing_theme_exposure
 LGST_US_EQ,tevogen_bio_holdings,Tevogen Bio Holdings,US88165K2006,missing sector; missing industry,missing_sector;missing_industry
 LGTO_US_EQ,southland_holdings,Southland Holdings,US84445C1009,missing sector; missing industry,missing_sector;missing_industry
 LGVC_US_EQ,holdco_nuvo_group_dg,HOLDCO NUVO GROUP DG,IL0012023656,missing sector; missing industry,missing_sector;missing_industry
@@ -4206,11 +4103,9 @@ LJAQ_US_EQ,moolec_science,Moolec Science,KYG6223S1259,missing sector; missing in
 LKCO_US_EQ,luokung_technology,Luokung Technology,VGG569811141,missing sector; missing industry,missing_sector;missing_industry
 LKFN_US_EQ,lakeland_financial,Lakeland Financial,US5116561003,missing sector; missing industry,missing_sector;missing_industry
 LK_US_EQ,luckin_coffee,Luckin Coffee,US54951L1098,missing sector; missing industry,missing_sector;missing_industry
-LLDd_EQ,lloyds_banking_group_plc,Lloyds Banking Group plc,GB0008706128,missing theme exposure,missing_theme_exposure
 LLESY_US_EQ,lendlease,Lendlease,US5260232054,missing sector; missing industry,missing_sector;missing_industry
 LLIT_US_EQ,newegg_commerce,Newegg Commerce,VGG6483G2099,missing sector; missing industry,missing_sector;missing_industry
 LLKKF_US_EQ,lake_resources,Lake Resources,AU000000LKE1,missing sector; missing industry,missing_sector;missing_industry
-LLOYl_EQ,lloyds_banking_group_plc,Lloyds Banking Group plc,GB0008706128,missing theme exposure,missing_theme_exposure
 LLYVA1_US_EQ,liberty_live_holdings,Liberty Live Holdings,US5309091008,missing sector; missing industry,missing_sector;missing_industry
 LL_US_EQ,ll_flooring,LL Flooring,US55003T1079,missing sector; missing industry,missing_sector;missing_industry
 LMAO_US_EQ,seastar_medical,SeaStar Medical,US81256L3024,missing sector; missing industry,missing_sector;missing_industry
@@ -4265,14 +4160,12 @@ LQDA_US_EQ,liquidia,Liquidia,US53635D2027,missing sector; missing industry,missi
 LQR_US_EQ,lqr_house,LQR House,US50215C3079,missing sector; missing industry,missing_sector;missing_industry
 LRLCY_US_EQ,l_oreal,L'Oreal,US5021172037,missing sector; missing industry,missing_sector;missing_industry
 LRMR_US_EQ,larimar_therapeutics_inc,"Larimar Therapeutics, Inc.",US5171251003,missing theme exposure,missing_theme_exposure
-LRp_EQ,legrand_sa,Legrand SA,FR0010307819,missing theme exposure,missing_theme_exposure
 LSAC_US_EQ,vincerx_pharma,Vincerx Pharma,US92731L3042,missing sector; missing industry,missing_sector;missing_industry
 LSAIl_EQ,sorted_group_holdings_plc,Sorted Group Holdings Plc,GB00BPDX2041,missing theme exposure,missing_theme_exposure
 LSBK_US_EQ,lake_shore_bancorp_inc,"Lake Shore Bancorp, Inc.",US5107041098,missing theme exposure,missing_theme_exposure
 LSCC_US_EQ,lattice_semiconductor,Lattice Semiconductor,US5184151042,missing sector; missing industry,missing_sector;missing_industry
 LSDI_US_EQ,lucy_scientific_discovery,Lucy Scientific Discovery,CA54960E2033,missing sector; missing industry,missing_sector;missing_industry
 LSE_US_EQ,leishen_energy_holding,Leishen Energy Holding,KYG5462C1069,missing sector; missing industry,missing_sector;missing_industry
-LSEl_EQ,london_stock_exchange_group_plc,London Stock Exchange Group plc,GB00B0SWJX34,missing theme exposure,missing_theme_exposure
 LSFG_US_EQ,lifestore_financial_group,Lifestore Financial Group,US53224B1044,missing sector; missing industry,missing_sector;missing_industry
 LSPD_CA_EQ,lightspeed_commerce_inc,Lightspeed Commerce Inc.,CA53229C1077,missing theme exposure,missing_theme_exposure
 LSPD_US_EQ,lightspeed_commerce_inc,Lightspeed Commerce Inc.,CA53229C1077,missing theme exposure,missing_theme_exposure
@@ -4284,7 +4177,6 @@ LTBR_US_EQ,lightbridge,Lightbridge,US53224K3023,missing sector; missing industry
 LTECd_EQ,logitech_international_s_a,Logitech International S.A.,CH0025751329,missing theme exposure,missing_theme_exposure
 LTMCF_US_EQ,lithium_chile_inc,Lithium Chile Inc.,CA53681G1090,missing theme exposure,missing_theme_exposure
 LTM_US_EQ,latam_airlines,Latam Airlines,US51817R2058,missing sector; missing industry,missing_sector;missing_industry
-LTODl_EQ,larsen_toubro_limited,Larsen & Toubro Limited,USY5217N1183,missing theme exposure,missing_theme_exposure
 LTRN_US_EQ,lantern_pharma_inc,Lantern Pharma Inc.,US51654W1018,missing theme exposure,missing_theme_exposure
 LTRX_US_EQ,lantronix_inc,"Lantronix, Inc.",US5165482036,missing theme exposure,missing_theme_exposure
 LUCD_US_EQ,lucid_diagnostics_inc,Lucid Diagnostics Inc.,US54948X1090,missing theme exposure,missing_theme_exposure
@@ -4433,7 +4325,6 @@ MCY_US_EQ,mercury_general,Mercury General,US5894001008,missing sector; missing i
 MC_US_EQ,moelis_company,Moelis & Company,US60786M1053,missing theme exposure,missing_theme_exposure
 MDA_CA_EQ,mda_space_ltd,MDA Space Ltd.,CA55293N1096,missing theme exposure,missing_theme_exposure
 MDA_US_EQ,mda_space_ltd,MDA Space Ltd.,CA55293N1096,missing theme exposure,missing_theme_exposure
-MDB_US_EQ,mongodb,MongoDB,US60937P1066,missing sector; missing industry,missing_sector;missing_industry
 MDCA_US_EQ,stagwell,Stagwell,US85256A1097,missing sector; missing industry,missing_sector;missing_industry
 MDCX_US_EQ,medicus_pharma_ltd,Medicus Pharma Ltd.,CA58471K2020,missing theme exposure,missing_theme_exposure
 MDFe_EQ,duro_felguera_s_a,"Duro Felguera, S.A.",ES0162600003,missing theme exposure,missing_theme_exposure
@@ -4508,7 +4399,6 @@ MGYR_US_EQ,magyar_bancorp_inc,"Magyar Bancorp, Inc.",US55977T2087,missing theme 
 MGY_US_EQ,magnolia_oil_gas,Magnolia Oil & Gas,US5596631094,missing sector; missing industry,missing_sector;missing_industry
 MHH_US_EQ,mastech_digital,Mastech Digital,US57633B1008,missing sector; missing industry,missing_sector;missing_industry
 MHLD_US_EQ,kestrel_group,Kestrel Group,BMG5260K1027,missing sector; missing industry,missing_sector;missing_industry
-MHLd_EQ,s_p_global_inc,S&P Global Inc.,US78409V1044,missing theme exposure,missing_theme_exposure
 MHNl_EQ,menhaden_resource_efficiency,Menhaden Resource Efficiency,GB00BZ0XWD04,missing sector; missing industry,missing_sector;missing_industry
 MHUA_US_EQ,meihua_international_medical_technologies,Meihua International Medical Technologies,KYG5966G1165,missing sector; missing industry,missing_sector;missing_industry
 MHVYF_US_EQ,mitsubishi_heavy_industries_ltd,"Mitsubishi Heavy Industries, Ltd.",JP3900000005,missing theme exposure,missing_theme_exposure
@@ -4516,7 +4406,6 @@ MIAX_US_EQ,miami_international_holdings_inc,"Miami International Holdings, Inc."
 MICR_US_EQ,micron_solutions_inc,MICRON SOLUTIONS INC,US59511X2045,missing theme exposure,missing_theme_exposure
 MICT_US_EQ,tingo_group,Tingo Group,US55328R1095,missing sector; missing industry,missing_sector;missing_industry
 MIDD_US_EQ,middleby,Middleby,US5962781010,missing sector; missing industry,missing_sector;missing_industry
-MIELY_US_EQ,mitsubishi_electric_corporation,Mitsubishi Electric Corporation,US6067762012,missing theme exposure,missing_theme_exposure
 MIGAd_EQ,strategy,Strategy,US5949724083,missing sector; missing industry,missing_sector;missing_industry
 MIGI_US_EQ,big_digital_energy,Big Digital Energy,US57778N4060,missing sector; missing industry,missing_sector;missing_industry
 MIHd_EQ,mitsubishi_heavy_industries_ltd,"Mitsubishi Heavy Industries, Ltd.",JP3900000005,missing theme exposure,missing_theme_exposure
@@ -4629,7 +4518,6 @@ MPTI_US_EQ,m_tron_industries_inc,"M-tron Industries, Inc.",US55380K1097,missing 
 MPVD_CA_EQ,mountain_province_diamonds_inc,Mountain Province Diamonds Inc.,CA62426E4022,missing theme exposure,missing_theme_exposure
 MPW_US_EQ,medical_properties_trust,Medical Properties Trust,US58463J3041,missing sector; missing industry,missing_sector;missing_industry
 MPX_US_EQ,marine_products,Marine Products,US5684271084,missing sector; missing industry,missing_sector;missing_industry
-MQBKY_US_EQ,macquarie_group_limited,Macquarie Group Limited,US55607P2048,missing theme exposure,missing_theme_exposure
 MQ_US_EQ,marqeta,Marqeta,US57142B1044,missing sector; missing industry,missing_sector;missing_industry
 MRAAY_US_EQ,murata_manufacturing,Murata Manufacturing,US6264251025,missing sector; missing industry,missing_sector;missing_industry
 MRAI_US_EQ,marpai_inc,"Marpai, Inc.",US5713542083,missing theme exposure,missing_theme_exposure
@@ -4654,7 +4542,6 @@ MSA_CA_EQ,mineros_s_a,Mineros S.A.,COC07PA00027,missing theme exposure,missing_t
 MSBC_US_EQ,mission_bancorp,Mission Bancorp,US6050151066,missing theme exposure,missing_theme_exposure
 MSBI_US_EQ,midland_states_bancorp,Midland States Bancorp,US5977421057,missing sector; missing industry,missing_sector;missing_industry
 MSB_US_EQ,mesabi_trust,Mesabi Trust,US5906721015,missing theme exposure,missing_theme_exposure
-MSCI_US_EQ,msci_inc,MSCI Inc.,US55354G1004,missing theme exposure,missing_theme_exposure
 MSCL_CA_EQ,satellos_bioscience_inc,Satellos Bioscience Inc.,CA80401L8033,missing theme exposure,missing_theme_exposure
 MSEX_US_EQ,middlesex_water,Middlesex Water,US5966801087,missing sector; missing industry,missing_sector;missing_industry
 MSGE1_US_EQ,madison_square_garden_entertainment,Madison Square Garden Entertainment,US5582561032,missing sector; missing industry,missing_sector;missing_industry
@@ -4671,7 +4558,6 @@ MSTR_US_EQ,strategy,Strategy,US5949724083,missing sector; missing industry,missi
 MSWV_US_EQ,main_street_financial_services,Main Street Financial Services,US56035X1081,missing sector; missing industry,missing_sector;missing_industry
 MSW_US_EQ,ming_shing_group_holdings_limited,Ming Shing Group Holdings Limited,KYG614401068,missing theme exposure,missing_theme_exposure
 MSYSl_EQ,metir_plc,Metir plc,GB00BMWC8365,missing theme exposure,missing_theme_exposure
-MS_US_EQ,morgan_stanley,Morgan Stanley,US6174464486,missing theme exposure,missing_theme_exposure
 MTAC_US_EQ,trisalus_life_sciences,TriSalus Life Sciences,US89680M1018,missing sector; missing industry,missing_sector;missing_industry
 MTA_US_EQ,metalla_royalty_streaming_ltd,Metalla Royalty & Streaming Ltd.,CA59124U6051,missing theme exposure,missing_theme_exposure
 MTAd_EQ,wartsila_oyj,Wartsila OYJ,FI0009003727,missing sector; missing industry,missing_sector;missing_industry
@@ -4680,7 +4566,6 @@ MTB_US_EQ,m_t_bank,M&T Bank,US55261F1049,missing sector; missing industry,missin
 MTCR_US_EQ,metacrine_inc,"Metacrine, Inc.",US59101E1038,missing sector; missing industry,missing_sector;missing_industry
 MTC_US_EQ,mmtec,MMTEC,VGG6181K1223,missing sector; missing industry,missing_sector;missing_industry
 MTDR_US_EQ,matador_resources,Matador Resources,US5764852050,missing sector; missing industry,missing_sector;missing_industry
-MTD_US_EQ,mettler_toledo_international_inc,Mettler-Toledo International Inc.,US5926881054,missing theme exposure,missing_theme_exposure
 MTECl_EQ,made_tech_group_plc,Made Tech Group Plc,GB00BLGYDT21,missing theme exposure,missing_theme_exposure
 MTEK_CA_EQ,metatek_group_ltd,Metatek-Group Ltd.,CA59140H1091,missing theme exposure,missing_theme_exposure
 MTEK_US_EQ,maris_tech_ltd,Maris-Tech Ltd.,IL0011789042,missing theme exposure,missing_theme_exposure
@@ -4715,7 +4600,6 @@ MTZ_US_EQ,mastec,MasTec,US5763231090,missing sector; missing industry,missing_se
 MT_US_EQ,arcelormittal,ArcelorMittal,US03938L2034,missing sector; missing industry,missing_sector;missing_industry
 MTa_EQ,arcelormittal_s_a,ArcelorMittal S.A.,LU1598757687,missing theme exposure,missing_theme_exposure
 MUBd_EQ,muehlbauer,Muehlbauer,DE0006627201,missing sector; missing industry,missing_sector;missing_industry
-MUFG_US_EQ,mitsubishi_ufj_financial_group_inc,"Mitsubishi UFJ Financial Group, Inc.",US6068221042,missing theme exposure,missing_theme_exposure
 MUMd_EQ,mensch_und_maschine_software_se,Mensch und Maschine Software SE,DE0006580806,missing theme exposure,missing_theme_exposure
 MUR_US_EQ,murphy_oil,Murphy Oil,US6267171022,missing sector; missing industry,missing_sector;missing_industry
 MUSTl_EQ,defi_development_corporation_uk_plc,DeFi Development Corporation UK PLC,GB00BQYLVW97,missing theme exposure,missing_theme_exposure
@@ -4730,7 +4614,6 @@ MWC_US_EQ,micware,Micware,US59490A1007,missing sector; missing industry,missing_
 MWEl1_EQ,m_t_i_wireless_edge_ltd,M.T.I Wireless Edge Ltd.,IL0010958762,missing theme exposure,missing_theme_exposure
 MWH_US_EQ,solv_energy_inc,"SOLV Energy, Inc.",US78475V1035,missing theme exposure,missing_theme_exposure
 MWK_US_EQ,aterian,Aterian,US02156U2006,missing sector; missing industry,missing_sector;missing_industry
-MX4Ad_EQ,cme_group_inc,CME Group Inc.,US12572Q1058,missing theme exposure,missing_theme_exposure
 MXCT_US_EQ,maxcyte_inc,"MaxCyte, Inc.",US57777K1060,missing theme exposure,missing_theme_exposure
 MXC_US_EQ,mexco_energy,Mexco Energy,US5927701012,missing sector; missing industry,missing_sector;missing_industry
 MXG_CA_EQ,maxim_power_corp,Maxim Power Corp.,CA57773Y2096,missing theme exposure,missing_theme_exposure
@@ -4763,7 +4646,6 @@ NANOl_EQ,nanoco_group_plc,Nanoco Group plc,GB00B01JLR99,missing theme exposure,m
 NANOp_EQ,nanobiotix_s_a,Nanobiotix S.A.,FR0011341205,missing theme exposure,missing_theme_exposure
 NANX_US_EQ,solesence,Solesence,US6300791018,missing sector; missing industry,missing_sector;missing_industry
 NAOV_US_EQ,envue_medical,ENvue Medical,US63008J8844,missing sector; missing industry,missing_sector;missing_industry
-NAQd_EQ,nasdaq_inc,"Nasdaq, Inc.",US6311031081,missing theme exposure,missing_theme_exposure
 NASB_US_EQ,nasb_financial_inc,"NASB Financial, Inc.",US6289681099,missing theme exposure,missing_theme_exposure
 NATL_US_EQ,ncr_atleos,NCR Atleos,US63001N1063,missing sector; missing industry,missing_sector;missing_industry
 NAT_US_EQ,nordic_american_tankers,Nordic American Tankers,BMG657731060,missing sector; missing industry,missing_sector;missing_industry
@@ -4790,7 +4672,6 @@ NBY_US_EQ,stablecoin_development,Stablecoin Development,US66987P5089,missing sec
 NCAC_US_EQ,psyence_biomedical_ltd,Psyence Biomedical Ltd,CA74449F4078,missing sector; missing industry,missing_sector;missing_industry
 NCBDY_US_EQ,bandai_namco,Bandai Namco,US0598311076,missing sector; missing industry,missing_sector;missing_industry
 NCBS_US_EQ,nicolet_bankshares,Nicolet Bankshares,US65406E1029,missing sector; missing industry,missing_sector;missing_industry
-NCBd_EQ,bank_of_america_corporation,Bank of America Corporation,US0605051046,missing theme exposure,missing_theme_exposure
 NCCLl_EQ,solgenics,Solgenics,VGG640631039,missing sector; missing industry,missing_sector;missing_industry
 NCCl_EQ,ncc_group_plc,NCC Group plc,GB00B01QGK86,missing theme exposure,missing_theme_exposure
 NCH2d_EQ,thyssenkrupp_nucera_ag_co_kgaa,thyssenkrupp nucera AG & Co. KGaA,DE000NCA0001,missing theme exposure,missing_theme_exposure
@@ -4803,7 +4684,6 @@ NCSM_US_EQ,ncs_multistage_holdings_inc,"NCS Multistage Holdings, Inc.",US6288772
 NCTY_US_EQ,the9,The9,US88337K4013,missing sector; missing industry,missing_sector;missing_industry
 NCYTl_EQ,novacyt_s_a,Novacyt S.A.,FR0010397232,missing theme exposure,missing_theme_exposure
 NC_US_EQ,nacco_industries_inc,"NACCO Industries, Inc.",US6295791031,missing theme exposure,missing_theme_exposure
-NDAQ_US_EQ,nasdaq_inc,"Nasdaq, Inc.",US6311031081,missing theme exposure,missing_theme_exposure
 NDBKY_US_EQ,nedbank,Nedbank,US63975K1043,missing sector; missing industry,missing_sector;missing_industry
 NDEKY_US_EQ,nitto_denko_corporation,Nitto Denko Corporation,US6548022069,missing theme exposure,missing_theme_exposure
 NDM_CA_EQ,northern_dynasty_minerals_ltd,Northern Dynasty Minerals Ltd.,CA66510M2040,missing theme exposure,missing_theme_exposure
@@ -4830,7 +4710,6 @@ NERV_US_EQ,minerva_neurosciences_inc,"Minerva Neurosciences, Inc.",US6033802058,
 NESR_US_EQ,national_energy_services_reunited_corp,National Energy Services Reunited Corp.,VGG6375R1073,missing theme exposure,missing_theme_exposure
 NETC_US_EQ,vast_renewables,Vast Renewables,AU0000288284,missing sector; missing industry,missing_sector;missing_industry
 NETE_US_EQ,bollinger_innovations,Bollinger Innovations,US62526P8775,missing sector; missing industry,missing_sector;missing_industry
-NET_US_EQ,cloudflare,Cloudflare,US18915M1071,missing sector; missing industry,missing_sector;missing_industry
 NETl_EQ,netcall_plc,Netcall plc,GB0000060532,missing theme exposure,missing_theme_exposure
 NEU_US_EQ,newmarket_corporation,NewMarket Corporation,US6515871076,missing theme exposure,missing_theme_exposure
 NEWT_US_EQ,newtekone,NewtekOne,US6525262035,missing sector; missing industry,missing_sector;missing_industry
@@ -4870,7 +4749,6 @@ NHIC2_US_EQ,newhold,NewHold,KYG6486E1026,missing sector; missing industry,missin
 NHIC_US_EQ,evolv_technologies,Evolv Technologies,US30049H1023,missing sector; missing industry,missing_sector;missing_industry
 NHNKY_US_EQ,nihon_kohden_corporation,Nihon Kohden Corporation,US65412C1080,missing theme exposure,missing_theme_exposure
 NHYDY_US_EQ,norsk_hydro_asa,Norsk Hydro ASA,US6565316055,missing theme exposure,missing_theme_exposure
-NICE_US_EQ,nice_ltd,NICE Ltd.,US6536561086,missing theme exposure,missing_theme_exposure
 NICK_US_EQ,old_market_capital,Old Market Capital,US65373A1097,missing sector; missing industry,missing_sector;missing_industry
 NICM_US_EQ,nicola_mining_inc,Nicola Mining Inc.,US65405R3021,missing theme exposure,missing_theme_exposure
 NIDB_US_EQ,northeast_indiana_bancorp_inc,"Northeast Indiana Bancorp, Inc.",US6641962013,missing theme exposure,missing_theme_exposure
@@ -4931,7 +4809,6 @@ NOVNs_EQ,novartis_ag_n,NOVARTIS AG                   N,CH0012005267,missing them
 NOVT_US_EQ,novanta,Novanta,CA67000B1040,missing sector; missing industry,missing_sector;missing_industry
 NOVV_US_EQ,real_messenger,Real Messenger,KYG7410G1064,missing sector; missing industry,missing_sector;missing_industry
 NOV_US_EQ,nov_inc,NOV Inc.,US62955J1034,missing theme exposure,missing_theme_exposure
-NOW_US_EQ,servicenow_inc,"ServiceNow, Inc.",US81762P1021,missing theme exposure,missing_theme_exposure
 NP1_US_EQ,neptune_insurance,Neptune Insurance,US64073B1035,missing sector; missing industry,missing_sector;missing_industry
 NP5d_EQ,newron_pharmaceuticals_s_p_a,Newron Pharmaceuticals S.p.A.,IT0004147952,missing theme exposure,missing_theme_exposure
 NPACY_US_EQ,quadient,Quadient,US74738G1085,missing sector; missing industry,missing_sector;missing_industry
@@ -4951,7 +4828,6 @@ NPSNY_US_EQ,naspers,Naspers,US6315122092,missing sector; missing industry,missin
 NPSd_EQ,nippon_steel,Nippon Steel,JP3381000003,missing sector; missing industry,missing_sector;missing_industry
 NRBO_US_EQ,metavia,MetaVia,US64132R5037,missing sector; missing industry,missing_sector;missing_industry
 NRC_US_EQ,nrc_health,NRC Health,US6373722023,missing theme exposure,missing_theme_exposure
-NRDBY_US_EQ,nordea_bank_abp,Nordea Bank Abp,US65558R1095,missing theme exposure,missing_theme_exposure
 NRDd_EQ,nordstrom,Nordstrom,US6556641008,missing sector; missing industry,missing_sector;missing_industry
 NRILY_US_EQ,nomura_research_institute_ltd,"Nomura Research Institute, Ltd.",US65538C2061,missing theme exposure,missing_theme_exposure
 NRIM_US_EQ,northrim_bancorp_inc,"Northrim BanCorp, Inc.",US6667621097,missing theme exposure,missing_theme_exposure
@@ -4964,15 +4840,12 @@ NRZ_US_EQ,rithm_capital,Rithm Capital,US64828T2015,missing sector; missing indus
 NR_US_EQ,npk_international,NPK International,US6517185046,missing sector; missing industry,missing_sector;missing_industry
 NS7d_EQ,northern_star_resources,Northern Star Resources,AU000000NST8,missing sector; missing industry,missing_sector;missing_industry
 NSCO_US_EQ,custom_truck_one_source,Custom Truck One Source,US23204X1037,missing sector; missing industry,missing_sector;missing_industry
-NSC_US_EQ,norfolk_southern,Norfolk Southern,US6558441084,missing sector; missing industry,missing_sector;missing_industry
 NSH_US_EQ,spire_global,Spire Global,US8485603067,missing sector; missing industry,missing_sector;missing_industry
 NSPR_US_EQ,inspiremd_inc,"InspireMD, Inc.",US45779A8466,missing theme exposure,missing_theme_exposure
 NSSC_US_EQ,napco_security_technologies,Napco Security Technologies,US6304021057,missing sector; missing industry,missing_sector;missing_industry
 NSTB_US_EQ,northern_star_investment_corp_ii,Northern Star Investment Corp II,US66573W1071,missing sector; missing industry,missing_sector;missing_industry
 NSTS_US_EQ,nsts_bancorp_inc,"NSTS Bancorp, Inc.",US6293JP1094,missing theme exposure,missing_theme_exposure
 NSYS_US_EQ,nortech_systems,Nortech Systems,US6565531042,missing sector; missing industry,missing_sector;missing_industry
-NTAP_US_EQ,netapp_inc,NetApp Inc,US64110D1046,missing theme exposure,missing_theme_exposure
-NTAd_EQ,netapp_inc,NetApp Inc,US64110D1046,missing theme exposure,missing_theme_exposure
 NTB_US_EQ,bank_of_nt_butterfield_son,Bank of NT Butterfield & Son,BMG0772R2087,missing sector; missing industry,missing_sector;missing_industry
 NTCL_US_EQ,netclass_technology_inc,NetClass Technology Inc,KYG6427C1087,missing theme exposure,missing_theme_exposure
 NTCT_US_EQ,netscout_systems_inc,"NetScout Systems, Inc.",US64115T1043,missing theme exposure,missing_theme_exposure
@@ -5028,7 +4901,6 @@ NWE_US_EQ,northwestern,NorthWestern,US6680743050,missing sector; missing industr
 NWFL_US_EQ,norwood_financial_corp,Norwood Financial Corp.,US6695491075,missing theme exposure,missing_theme_exposure
 NWFl_EQ,nwf_group_plc,NWF Group plc,GB0006523608,missing theme exposure,missing_theme_exposure
 NWGI_US_EQ,elys_bmg_group,Elys BMG Group,US2907341026,missing sector; missing industry,missing_sector;missing_industry
-NWG_US_EQ,natwest_group_plc,NatWest Group plc,US6390572070,missing theme exposure,missing_theme_exposure
 NWIN_US_EQ,finward_bancorp,Finward Bancorp,US31812F1093,missing sector; missing industry,missing_sector;missing_industry
 NWPX_US_EQ,nwpx_infrastructure_inc,"NWPX Infrastructure, Inc.",US6677461013,missing theme exposure,missing_theme_exposure
 NWRNs_EQ,newron_pharmaceuticals_s_p_a,Newron Pharmaceuticals S.p.A.,IT0004147952,missing theme exposure,missing_theme_exposure
@@ -5119,7 +4991,6 @@ OII_US_EQ,oceaneering_international_inc,"Oceaneering International, Inc.",US6752
 OIS_US_EQ,oil_states_international_inc,"Oil States International, Inc.",US6780261052,missing theme exposure,missing_theme_exposure
 OKEYl_EQ,o_key_group,O'Key Group,US6708662019,missing sector; missing industry,missing_sector;missing_industry
 OKE_US_EQ,oneok_inc,"ONEOK, Inc.",US6826801036,missing theme exposure,missing_theme_exposure
-OKTA_US_EQ,okta_inc,"Okta, Inc.",US6792951054,missing theme exposure,missing_theme_exposure
 OKYO_US_EQ,okyo_pharma_limited,OKYO Pharma Limited,GG00BMFG5F62,missing theme exposure,missing_theme_exposure
 OKYOl_EQ,okyo_pharma_limited,OKYO Pharma Limited,GG00BMFG5F62,missing theme exposure,missing_theme_exposure
 OLA_CA_EQ,orla_mining_ltd,Orla Mining Ltd.,CA68634K1066,missing theme exposure,missing_theme_exposure
@@ -5265,7 +5136,6 @@ PACE_US_EQ,nerdy,Nerdy,US64081V1098,missing sector; missing industry,missing_sec
 PACI_US_EQ,volato_group,Volato Group,US74349W3025,missing sector; missing industry,missing_sector;missing_industry
 PACS_US_EQ,pacs_group_inc,"PACS Group, Inc.",US69380Q1076,missing theme exposure,missing_theme_exposure
 PACl_EQ,pacific_assets_trust,Pacific Assets Trust,GB0006674385,missing sector; missing industry,missing_sector;missing_industry
-PAEd_EQ,paccar_inc,PACCAR Inc,US6937181088,missing theme exposure,missing_theme_exposure
 PAFO_US_EQ,high_trend_international_group,High-Trend International Group,KYG1901X1161,missing sector; missing industry,missing_sector;missing_industry
 PAFl_EQ,pan_african_resources_plc,Pan African Resources PLC,GB0004300496,missing theme exposure,missing_theme_exposure
 PAGP_US_EQ,plains_gp,Plains GP,US72651A2078,missing sector; missing industry,missing_sector;missing_industry
@@ -5286,16 +5156,13 @@ PARK_US_EQ,park_dental_partners_inc,"Park Dental Partners, Inc.",US7004021009,mi
 PARROp_EQ,parrot_s_a,Parrot S.A.,FR0004038263,missing theme exposure,missing_theme_exposure
 PARR_US_EQ,par_pacific,Par Pacific,US69888T2078,missing sector; missing industry,missing_sector;missing_industry
 PAR_US_EQ,par_technology,PAR Technology,US6988841036,missing sector; missing industry,missing_sector;missing_industry
-PARd_EQ,parker_hannifin_corporation,Parker-Hannifin Corporation,US7010941042,missing theme exposure,missing_theme_exposure
 PASG_US_EQ,passage_bio_inc,"Passage Bio, Inc.",US7027122099,missing theme exposure,missing_theme_exposure
 PATH_US_EQ,uipath,UiPath,US90364P1057,missing sector; missing industry,missing_sector;missing_industry
 PATl_EQ,panthera_resources_plc,Panthera Resources PLC,GB00BD2B4L05,missing theme exposure,missing_theme_exposure
 PAVM_US_EQ,pavmed,PAVmed,US70387R5028,missing sector; missing industry,missing_sector;missing_industry
-PAYC_US_EQ,paycom_software_inc,"Paycom Software, Inc.",US70432V1026,missing theme exposure,missing_theme_exposure
 PAYD_US_EQ,paid_inc,"PAID, Inc.",US69561N4025,missing theme exposure,missing_theme_exposure
 PAYP_US_EQ,paypay,PayPay,US70450C1018,missing sector; missing industry,missing_sector;missing_industry
 PAYS_US_EQ,paysign_inc,"Paysign, Inc.",US70451A1043,missing theme exposure,missing_theme_exposure
-PAYX_US_EQ,paychex_inc,"Paychex, Inc.",US7043261079,missing theme exposure,missing_theme_exposure
 PAY_BE_EQ,payton_planar_magnetics_ltd,Payton Planar Magnetics Ltd.,IL0010830391,missing theme exposure,missing_theme_exposure
 PAY_US_EQ,paymentus_holdings_inc,"Paymentus Holdings, Inc.",US70439P1084,missing theme exposure,missing_theme_exposure
 PAYl_EQ,paypoint_plc,PayPoint plc,GB00BVMTNR93,missing theme exposure,missing_theme_exposure
@@ -5320,7 +5187,6 @@ PBYI_US_EQ,puma_biotechnology_inc,"Puma Biotechnology, Inc.",US74587V1070,missin
 PBYd_EQ,publity,publity,DE0006972508,missing sector; missing industry,missing_sector;missing_industry
 PB_US_EQ,prosperity_bancshares_inc,"Prosperity Bancshares, Inc.",US7436061052,missing theme exposure,missing_theme_exposure
 PC6d_EQ,petrochina,PetroChina,CNE1000003W8,missing sector; missing industry,missing_sector;missing_industry
-PCAR_US_EQ,paccar_inc,PACCAR Inc,US6937181088,missing theme exposure,missing_theme_exposure
 PCB_US_EQ,pcb_bancorp,PCB Bancorp,US69320M1099,missing theme exposure,missing_theme_exposure
 PCCT_US_EQ,spectaire_holdings,Spectaire Holdings,US84753T1097,missing sector; missing industry,missing_sector;missing_industry
 PCG_US_EQ,pg_e,PG&E,US69331C1080,missing sector; missing industry,missing_sector;missing_industry
@@ -5332,7 +5198,6 @@ PCRX_US_EQ,pacira_biosciences,Pacira BioSciences,US6951271005,missing sector; mi
 PCSA_US_EQ,processa_pharmaceuticals_inc,"Processa Pharmaceuticals, Inc.",US74275C4033,missing theme exposure,missing_theme_exposure
 PCTY_US_EQ,paylocity,Paylocity,US70438V1061,missing sector; missing industry,missing_sector;missing_industry
 PCVX_US_EQ,vaxcyte_inc,"Vaxcyte, Inc.",US92243G1085,missing theme exposure,missing_theme_exposure
-PCXd_EQ,paychex_inc,"Paychex, Inc.",US7043261079,missing theme exposure,missing_theme_exposure
 PCYG_US_EQ,repositrak,ReposiTrak,US7002153044,missing sector; missing industry,missing_sector;missing_industry
 PCYO_US_EQ,pure_cycle,Pure Cycle,US7462283034,missing sector; missing industry,missing_sector;missing_industry
 PCZd_EQ,procredit_holding_ag,ProCredit Holding AG,DE0006223407,missing theme exposure,missing_theme_exposure
@@ -5418,7 +5283,6 @@ PHVS_US_EQ,pharvaris_n_v,Pharvaris N.V.,NL00150005Y4,missing theme exposure,miss
 PHXMp_EQ,phaxiam_therapeutics,PHAXIAM Therapeutics,FR001400K4B1,missing sector; missing industry,missing_sector;missing_industry
 PHX_CA_EQ,phx_energy_services_corp,PHX Energy Services Corp.,CA69338U1012,missing theme exposure,missing_theme_exposure
 PHYT_US_EQ,pyrophyte_acquisition_corp,Pyrophyte Acquisition Corp,KYG7308P1019,missing sector; missing industry,missing_sector;missing_industry
-PH_US_EQ,parker_hannifin_corporation,Parker-Hannifin Corporation,US7010941042,missing theme exposure,missing_theme_exposure
 PIAC_US_EQ,princeton_capital,Princeton Capital,US7418651094,missing sector; missing industry,missing_sector;missing_industry
 PIAI_US_EQ,cheche_group_inc,Cheche Group Inc,KYG207071088,missing sector; missing industry,missing_sector;missing_industry
 PICS_US_EQ,pics_n_v,PicS N.V.,NL0015073TP4,missing theme exposure,missing_theme_exposure
@@ -5587,7 +5451,6 @@ PRTK_US_EQ,paratek_pharmaceuticals,Paratek Pharmaceuticals,US6993743029,missing 
 PRU_CA_EQ,perseus_mining_limited,Perseus Mining Limited,AU000000PRU3,missing theme exposure,missing_theme_exposure
 PRVA_US_EQ,privia_health_group_inc,"Privia Health Group, Inc.",US74276R1023,missing theme exposure,missing_theme_exposure
 PRVl_EQ,porvair_plc,Porvair plc,GB0006963689,missing theme exposure,missing_theme_exposure
-PRYMY_US_EQ,prysmian_s_p_a,Prysmian S.p.A.,US74440L1061,missing theme exposure,missing_theme_exposure
 PRZO_US_EQ,parazero_technologies_ltd,ParaZero Technologies Ltd.,IL0011857013,missing theme exposure,missing_theme_exposure
 PS1_US_EQ,pershing_square,Pershing Square,US71531U1025,missing sector; missing industry,missing_sector;missing_industry
 PSAC_US_EQ,faraday_future_intelligent_electric,Faraday Future Intelligent Electric,US3073598852,missing sector; missing industry,missing_sector;missing_industry
@@ -5613,7 +5476,6 @@ PTALF_US_EQ,petrotal_corp,PetroTal Corp.,CA71677J1012,missing theme exposure,mis
 PTALl_EQ,petrotal_corp,PetroTal Corp.,CA71677J1012,missing theme exposure,missing_theme_exposure
 PTBS_US_EQ,potomac_bancshares_inc,"Potomac Bancshares, Inc.",US7376431067,missing theme exposure,missing_theme_exposure
 PTCT_US_EQ,ptc_therapeutics_inc,"PTC Therapeutics, Inc.",US69366J2006,missing theme exposure,missing_theme_exposure
-PTC_US_EQ,ptc_inc,PTC Inc.,US69370C1009,missing theme exposure,missing_theme_exposure
 PTEN_US_EQ,patterson_uti_energy_inc,"Patterson-UTI Energy, Inc.",US7034811015,missing theme exposure,missing_theme_exposure
 PTGEF_US_EQ,alpha_compute,Alpha Compute,VGG7185A1369,missing sector; missing industry,missing_sector;missing_industry
 PTGX_US_EQ,protagonist_therapeutics_inc,"Protagonist Therapeutics, Inc.",US74366E1029,missing theme exposure,missing_theme_exposure
@@ -5745,7 +5607,6 @@ RBLX_US_EQ,roblox,Roblox,US7710491033,missing sector; missing industry,missing_s
 RBNE_US_EQ,robin_energy_ltd,Robin Energy Ltd.,MHY731181126,missing theme exposure,missing_theme_exposure
 RBRK_US_EQ,rubrik,Rubrik,US7811541090,missing sector; missing industry,missing_sector;missing_industry
 RBSFY_US_EQ,rubis,Rubis,US78116A1043,missing sector; missing industry,missing_sector;missing_industry
-RBSl_EQ,natwest_group_plc,NatWest Group plc,GB00BM8PJY71,missing theme exposure,missing_theme_exposure
 RBTp_EQ,robertet_sa,Robertet SA,FR0000039091,missing theme exposure,missing_theme_exposure
 RBWl_EQ,rainbow_rare_earths_limited,Rainbow Rare Earths Limited,GG00BD59ZW98,missing theme exposure,missing_theme_exposure
 RBY_CA_EQ,rubellite_energy_corp,Rubellite Energy Corp.,CA7811131050,missing theme exposure,missing_theme_exposure
@@ -5889,7 +5750,6 @@ ROC_US_EQ,drilling_tools_international,Drilling Tools International,US26205E1073
 ROG_US_EQ,rogers,Rogers,US7751331015,missing sector; missing industry,missing_sector;missing_industry
 ROGs_EQ,roche_holding_ag,Roche Holding AG,CH1499059983,missing theme exposure,missing_theme_exposure
 ROHCY_US_EQ,rohm_co_ltd,"ROHM Co., Ltd.",US7753761060,missing theme exposure,missing_theme_exposure
-ROK_US_EQ,rockwell_automation_inc,"Rockwell Automation, Inc.",US7739031091,missing theme exposure,missing_theme_exposure
 ROLL_US_EQ,rbc_bearings,RBC Bearings,US75524B1044,missing sector; missing industry,missing_sector;missing_industry
 RONI_US_EQ,net_power,NET Power,US64107A1051,missing sector; missing industry,missing_sector;missing_industry
 ROOFl_EQ,atrato_onsite_energy,Atrato Onsite Energy,GB00BN497V39,missing sector; missing industry,missing_sector;missing_industry
@@ -5972,14 +5832,11 @@ RY6d_EQ,realty_income,Realty Income,US7561091049,missing sector; missing industr
 RYAM_US_EQ,rayonier_advanced_materials_inc,Rayonier Advanced Materials Inc.,US75508B1044,missing theme exposure,missing_theme_exposure
 RYB_US_EQ,mynd_ai,Mynd.ai,US6289881079,missing sector; missing industry,missing_sector;missing_industry
 RYCEY_US_EQ,rolls_royce_holdings_plc,Rolls-Royce Holdings plc,US7757812067,missing theme exposure,missing_theme_exposure
-RYCd_EQ,royal_bank_of_canada,Royal Bank of Canada,CA7800871021,missing theme exposure,missing_theme_exposure
 RYES_US_EQ,rise_gold,Rise Gold,US76760M2008,missing sector; missing industry,missing_sector;missing_industry
 RYHTY_US_EQ,ryman_healthcare_limited,Ryman Healthcare Limited,US78391Y1082,missing theme exposure,missing_theme_exposure
 RYI_US_EQ,ryerson,Ryerson,US7837541041,missing sector; missing industry,missing_sector;missing_industry
 RYKKY_US_EQ,ryohin_keikaku,Ryohin Keikaku,US78392U1051,missing sector; missing industry,missing_sector;missing_industry
 RYTM_US_EQ,rhythm_pharmaceuticals_inc,"Rhythm Pharmaceuticals, Inc.",US76243J1051,missing theme exposure,missing_theme_exposure
-RY_CA_EQ,royal_bank_of_canada,Royal Bank of Canada,CA7800871021,missing theme exposure,missing_theme_exposure
-RY_US_EQ,royal_bank_of_canada,Royal Bank of Canada,CA7800871021,missing theme exposure,missing_theme_exposure
 RZ2d_EQ,veralto_corporation,Veralto Corporation,US92338C1036,missing theme exposure,missing_theme_exposure
 RZLTD_US_EQ,rezolute,Rezolute,US76200L3096,missing sector; missing industry,missing_sector;missing_industry
 S247l_EQ,smarttech247,Smarttech247,GB00BMGNDN03,missing sector; missing industry,missing_sector;missing_industry
@@ -6015,11 +5872,8 @@ SANNs_EQ,santhera_pharmaceuticals_holding_ag,Santhera Pharmaceuticals Holding AG
 SANTd_EQ,kontron_ag,Kontron AG,AT0000A0E9W5,missing theme exposure,missing_theme_exposure
 SANW_US_EQ,s_w_seed,S&W Seed,US7851353026,missing sector; missing industry,missing_sector;missing_industry
 SAN_US_EQ,banco_santander,Banco Santander,US05964H1059,missing sector; missing industry,missing_sector;missing_industry
-SANe_EQ,banco_santander_s_a,"Banco Santander, S.A.",ES0113900J37,missing theme exposure,missing_theme_exposure
 SANp_EQ,sanofi,Sanofi,FR0000120578,missing theme exposure,missing_theme_exposure
 SAOAd_EQ,sasol,Sasol,ZAE000006896,missing sector; missing industry,missing_sector;missing_industry
-SAP_US_EQ,sap_se,SAP SE,US8030542042,missing theme exposure,missing_theme_exposure
-SAPd_EQ,sap_se,SAP SE,DE0007164600,missing theme exposure,missing_theme_exposure
 SAQN_US_EQ,curiositystream,CuriosityStream,US23130Q1076,missing sector; missing industry,missing_sector;missing_industry
 SARO_US_EQ,standardaero_inc,"StandardAero, Inc.",US85423L1035,missing theme exposure,missing_theme_exposure
 SAR_US_EQ,saratoga_investment,Saratoga Investment,US80349A2087,missing sector; missing industry,missing_sector;missing_industry
@@ -6070,7 +5924,6 @@ SCHL_US_EQ,scholastic,Scholastic,US8070661058,missing sector; missing industry,m
 SCHN_US_EQ,radius_recycling,Radius Recycling,US8068821060,missing sector; missing industry,missing_sector;missing_industry
 SCHNs_EQ,schindler_holding_ag,Schindler Holding AG,CH0024638212,missing theme exposure,missing_theme_exposure
 SCHOl_EQ,scholium,Scholium,GB00BJYS2173,missing sector; missing industry,missing_sector;missing_industry
-SCHW_US_EQ,charles_schwab_corp,Charles Schwab Corp,US8085131055,missing theme exposure,missing_theme_exposure
 SCIA_US_EQ,sci_engineered_materials_inc,"SCI Engineered Materials, Inc.",US78402S1087,missing theme exposure,missing_theme_exposure
 SCI_US_EQ,service_corp_international,Service Corp International,US8175651046,missing sector; missing industry,missing_sector;missing_industry
 SCKT_US_EQ,socket_mobile_inc,"Socket Mobile, Inc.",US83368E2000,missing theme exposure,missing_theme_exposure
@@ -6290,7 +6143,6 @@ SLVTF_US_EQ,silver_tiger_metals,Silver Tiger Metals,CA82831T1093,missing sector;
 SM3d_EQ,suncor_energy_inc,Suncor Energy Inc.,CA8672241079,missing theme exposure,missing_theme_exposure
 SMBC_US_EQ,southern_missouri_bancorp_inc,"Southern Missouri Bancorp, Inc.",US8433801060,missing theme exposure,missing_theme_exposure
 SMBK_US_EQ,smartfinancial_inc,"SmartFinancial, Inc.",US83190L2088,missing theme exposure,missing_theme_exposure
-SMCAY_US_EQ,smc_corporation,SMC Corporation,US78445W3060,missing theme exposure,missing_theme_exposure
 SMDM_US_EQ,algorhythm_holdings,Algorhythm Holdings,US8293225020,missing sector; missing industry,missing_sector;missing_industry
 SMFG_US_EQ,sumitomo_mitsui_financial_group_inc,"Sumitomo Mitsui Financial Group, Inc.",US86562M2098,missing theme exposure,missing_theme_exposure
 SMGZY_US_EQ,smiths_group_plc,Smiths Group plc,US83238P2039,missing theme exposure,missing_theme_exposure
@@ -6335,7 +6187,6 @@ SNII_US_EQ,rigetti_computing,Rigetti Computing,US76655K1034,missing sector; miss
 SNNF_US_EQ,seneca_bancorp,Seneca Bancorp,US8169451098,missing sector; missing industry,missing_sector;missing_industry
 SNN_US_EQ,smith_nephew,Smith & Nephew,US83175M2052,missing sector; missing industry,missing_sector;missing_industry
 SNOA_US_EQ,sonoma_pharmaceuticals_inc,"Sonoma Pharmaceuticals, Inc.",US83558L3033,missing theme exposure,missing_theme_exposure
-SNOW_US_EQ,snowflake_inc,Snowflake Inc.,US8334451098,missing theme exposure,missing_theme_exposure
 SNPHY_US_EQ,santen_pharmaceutical_co_ltd,"Santen Pharmaceutical Co., Ltd.",US80287P1003,missing theme exposure,missing_theme_exposure
 SNPX_US_EQ,tao_synergies,Tao Synergies,US87167T3005,missing sector; missing industry,missing_sector;missing_industry
 SNRl_EQ,senior_plc,Senior plc,GB0007958233,missing theme exposure,missing_theme_exposure
@@ -6396,7 +6247,6 @@ SPECl_EQ,inspecs_group_plc,INSPECS Group plc,GB00BK6JPP03,missing theme exposure
 SPFI_US_EQ,south_plains_financial_inc,"South Plains Financial, Inc.",US83946P1075,missing theme exposure,missing_theme_exposure
 SPFR_US_EQ,velo3d,Velo3D,US92259N3026,missing sector; missing industry,missing_sector;missing_industry
 SPGC_US_EQ,newton_golf_company,Newton Golf Company,US78577G3011,missing sector; missing industry,missing_sector;missing_industry
-SPGI_US_EQ,s_p_global_inc,S&P Global Inc.,US78409V1044,missing theme exposure,missing_theme_exposure
 SPGYF_US_EQ,whitecap_resources_inc,Whitecap Resources Inc.,CA96467A2002,missing theme exposure,missing_theme_exposure
 SPHA_US_EQ,pantages_capital_acquisition,Pantages Capital Acquisition,KYG8089R1002,missing sector; missing industry,missing_sector;missing_industry
 SPHL_US_EQ,springview,Springview,KYG837611170,missing sector; missing industry,missing_sector;missing_industry
@@ -6562,7 +6412,6 @@ SWCl1_EQ,the_smarter_web_company_plc,The Smarter Web Company Plc,GB00BPJHZ015,mi
 SWCl_EQ,celadon_pharmaceuticals,CELADON PHARMACEUTICALS,GB00BDQYGP38,missing sector; missing industry,missing_sector;missing_industry
 SWDBY_US_EQ,swedbank_ab_publ,Swedbank AB (publ),US8701951043,missing theme exposure,missing_theme_exposure
 SWEFl_EQ,starwood_european_real_estate_finance,Starwood European Real Estate Finance,GG00BW9KGG29,missing sector; missing industry,missing_sector;missing_industry
-SWGd_EQ,charles_schwab_corp,Charles Schwab Corp,US8085131055,missing theme exposure,missing_theme_exposure
 SWGl_EQ,shearwater_group_plc,Shearwater Group plc,GB00BKT6VH21,missing theme exposure,missing_theme_exposure
 SWIN_US_EQ,solowin_holdings,Solowin Holdings,KYG827591044,missing sector; missing industry,missing_sector;missing_industry
 SWIa_EQ,swi_capital_holding,SWI CAPITAL HOLDING,SGXPZ11CH7U7,missing theme exposure,missing_theme_exposure
@@ -6676,10 +6525,8 @@ TDOC_US_EQ,teladoc_health,Teladoc Health,US87918A1051,missing sector; missing in
 TDSA_PT_EQ,teixeira_duarte_s_a,"Teixeira Duarte, S.A.",PTTD10AM0000,missing theme exposure,missing_theme_exposure
 TDTH_US_EQ,trident_digital_tech,Trident Digital Tech,US89616X2053,missing sector; missing industry,missing_sector;missing_industry
 TDW_US_EQ,tidewater_inc,Tidewater Inc.,US88642R1095,missing theme exposure,missing_theme_exposure
-TDY_US_EQ,teledyne_technologies,Teledyne Technologies,US8793601050,missing sector; missing industry,missing_sector;missing_industry
 TD_CA_EQ,the_toronto_dominion_bank,The Toronto-Dominion Bank,CA8911605092,missing theme exposure,missing_theme_exposure
 TD_US_EQ,the_toronto_dominion_bank,The Toronto-Dominion Bank,CA8911605092,missing theme exposure,missing_theme_exposure
-TEAM_US_EQ,atlassian,Atlassian,US0494681010,missing sector; missing industry,missing_sector;missing_industry
 TECH_US_EQ,bio_techne_corporation,Bio-Techne Corporation,US09073M1045,missing theme exposure,missing_theme_exposure
 TECKA_CA_EQ,teck_resources_class_a,Teck Resources (Class A),CA8787423034,missing sector; missing industry,missing_sector;missing_industry
 TECKB_CA_EQ,teck_resources_limited,Teck Resources Limited,CA8787422044,missing theme exposure,missing_theme_exposure
@@ -6905,7 +6752,6 @@ TRUMY_US_EQ,terumo_corporation,Terumo Corporation,US88156J1051,missing theme exp
 TRUX_US_EQ,truxton_corporation,Truxton Corporation,US89845Y1073,missing theme exposure,missing_theme_exposure
 TRU_US_EQ,transunion,TransUnion,US89400J1079,missing theme exposure,missing_theme_exposure
 TRUl_EQ,trufin_plc,TruFin plc,JE00BYVWJZ03,missing theme exposure,missing_theme_exposure
-TRVCd_EQ,citigroup_inc,Citigroup Inc.,US1729674242,missing theme exposure,missing_theme_exposure
 TRVI_US_EQ,trevi_therapeutics_inc,"Trevi Therapeutics, Inc.",US89532M1018,missing theme exposure,missing_theme_exposure
 TRVN_US_EQ,trevena_inc,"Trevena, Inc.",US89532E3071,missing theme exposure,missing_theme_exposure
 TRX_US_EQ,trx_gold_corporation,TRX Gold Corporation,CA87283P1099,missing theme exposure,missing_theme_exposure
@@ -6961,10 +6807,8 @@ TWCT_US_EQ,cellebrite_di,Cellebrite DI,IL0011794802,missing sector; missing indu
 TWDl_EQ,trackwise_designs,Trackwise Designs,GB00BFYT9999,missing sector; missing industry,missing_sector;missing_industry
 TWEKAa_EQ,tkh_group_n_v,TKH Group N.V.,NL0000852523,missing theme exposure,missing_theme_exposure
 TWG_US_EQ,top_wealth_group_holding,Top Wealth Group Holding,KYG8945S1104,missing sector; missing industry,missing_sector;missing_industry
-TWHd_EQ,twilio_inc,Twilio Inc.,US90138F1021,missing theme exposure,missing_theme_exposure
 TWIN_US_EQ,twin_disc_incorporated,"Twin Disc, Incorporated",US9014761012,missing theme exposure,missing_theme_exposure
 TWI_US_EQ,titan_international,Titan International,US88830M1027,missing sector; missing industry,missing_sector;missing_industry
-TWLO_US_EQ,twilio_inc,Twilio Inc.,US90138F1021,missing theme exposure,missing_theme_exposure
 TWM_CA_EQ,tidewater_midstream_and_infrastructure_ltd,Tidewater Midstream and Infrastructure Ltd.,CA8864535056,missing theme exposure,missing_theme_exposure
 TWND_US_EQ,nuburu,Nuburu,US67021W4006,missing sector; missing industry,missing_sector;missing_industry
 TWNP_US_EQ,twin_hospitality_group,Twin Hospitality Group,US9016431069,missing sector; missing industry,missing_sector;missing_industry
@@ -6982,11 +6826,9 @@ TYDEV_US_EQ,eightco_holdings,Eightco Holdings,US22890A3023,missing sector; missi
 TYFG_US_EQ,tri_county_financial_group_inc,"Tri-County Financial Group, Inc.",US89546P1084,missing theme exposure,missing_theme_exposure
 TYHT_US_EQ,shineco,Shineco,US8245676064,missing sector; missing industry,missing_sector;missing_industry
 TYIDY_US_EQ,toyota_industries,Toyota Industries,US8923301019,missing sector; missing industry,missing_sector;missing_industry
-TYL_US_EQ,tyler_technologies_inc,"Tyler Technologies, Inc.",US9022521051,missing theme exposure,missing_theme_exposure
 TYMl_EQ,tertiary_minerals_plc,Tertiary Minerals plc,GB0008854563,missing theme exposure,missing_theme_exposure
 TYOBY_US_EQ,toyobo,Toyobo,US8923142041,missing sector; missing industry,missing_sector;missing_industry
 TYOYY_US_EQ,taiyo_yuden_co_ltd,"Taiyo Yuden Co., Ltd.",US8740472027,missing theme exposure,missing_theme_exposure
-TYPd_EQ,tyler_technologies_inc,"Tyler Technologies, Inc.",US9022521051,missing theme exposure,missing_theme_exposure
 TYRA_US_EQ,tyra_biosciences_inc,"Tyra Biosciences, Inc.",US90240B1061,missing theme exposure,missing_theme_exposure
 TZ1d_EQ,transalta_corporation,TransAlta Corporation,CA89346D1078,missing theme exposure,missing_theme_exposure
 TZAC_US_EQ,reviva_pharmaceuticals,Reviva Pharmaceuticals,US76152G2093,missing sector; missing industry,missing_sector;missing_industry
@@ -7071,7 +6913,6 @@ URGN_US_EQ,urogen_pharma_ltd,UroGen Pharma Ltd.,IL0011407140,missing theme expos
 URG_US_EQ,ur_energy_inc,Ur-Energy Inc.,CA91688R1082,missing theme exposure,missing_theme_exposure
 UROY_US_EQ,uranium_royalty_corp,Uranium Royalty Corp.,CA91702V1013,missing theme exposure,missing_theme_exposure
 URUl_EQ,uru_metals_limited,URU Metals Limited,VGG930042012,missing theme exposure,missing_theme_exposure
-US3d_EQ,unity_software_inc,Unity Software Inc.,US91332U1016,missing theme exposure,missing_theme_exposure
 USAU_US_EQ,u_s_gold_corp,U.S. Gold Corp.,US90291C2017,missing theme exposure,missing_theme_exposure
 USA_CA_EQ,americas_gold_and_silver_corporation,Americas Gold and Silver Corporation,CA03062D8035,missing theme exposure,missing_theme_exposure
 USB_US_EQ,u_s_bancorp,U.S. Bancorp,US9029733048,missing theme exposure,missing_theme_exposure
@@ -7098,7 +6939,6 @@ UVSP_US_EQ,univest_financial,Univest Financial,US9152711001,missing sector; miss
 UVV_US_EQ,universal,Universal,US9134561094,missing sector; missing industry,missing_sector;missing_industry
 UZQd_EQ,kogan_com,Kogan.com,AU000000KGN2,missing sector; missing industry,missing_sector;missing_industry
 UZUd1_EQ,uzin_utz_se,Uzin Utz SE,DE0007551509,missing theme exposure,missing_theme_exposure
-U_US_EQ,unity_software_inc,Unity Software Inc.,US91332U1016,missing theme exposure,missing_theme_exposure
 V07d_EQ,cavendish_hydrogen,Cavendish Hydrogen,NO0013219535,missing sector; missing industry,missing_sector;missing_industry
 V1Ld_EQ,valero_energy_corporation,Valero Energy Corporation,US91913Y1001,missing theme exposure,missing_theme_exposure
 V1NCd_EQ,vincorion,Vincorion,DE000VNC0014,missing sector; missing industry,missing_sector;missing_industry
@@ -7132,7 +6972,6 @@ VBSNs_EQ,ivf_hartmann_holding_ag,IVF Hartmann Holding AG,CH0187624256,missing th
 VCAPl_EQ,vector_capital,Vector Capital,GB00BMH15P96,missing sector; missing industry,missing_sector;missing_industry
 VCEL_US_EQ,vericel,Vericel,US92346J1088,missing sector; missing industry,missing_sector;missing_industry
 VCIG_US_EQ,vci_global,VCI Global,VGG982184001,missing sector; missing industry,missing_sector;missing_industry
-VCISY_US_EQ,vinci_sa,Vinci SA,US9273201015,missing theme exposure,missing_theme_exposure
 VCM_CA_EQ,vecima_networks_inc,Vecima Networks Inc.,CA92241Y1016,missing theme exposure,missing_theme_exposure
 VCNX_US_EQ,vaccinex,Vaccinex,US9186403013,missing sector; missing industry,missing_sector;missing_industry
 VCTl_EQ,victrex_plc,Victrex plc,GB0009292243,missing theme exposure,missing_theme_exposure
@@ -7220,7 +7059,6 @@ VLPNY_US_EQ,voestalpine,voestalpine,US9285781038,missing sector; missing industr
 VLRTs_EQ,valartis_group_ag,Valartis Group AG,CH0367427686,missing theme exposure,missing_theme_exposure
 VLTO_US_EQ,veralto_corporation,Veralto Corporation,US92338C1036,missing theme exposure,missing_theme_exposure
 VLTSAp_EQ,voltalia_sa,Voltalia SA,FR0011995588,missing theme exposure,missing_theme_exposure
-VLVLY_US_EQ,ab_volvo_publ,AB Volvo (publ),US9288541082,missing theme exposure,missing_theme_exposure
 VLXl_EQ,volex_plc,Volex plc,GB0009390070,missing theme exposure,missing_theme_exposure
 VLY_US_EQ,valley_national_bancorp,Valley National Bancorp,US9197941076,missing theme exposure,missing_theme_exposure
 VMAC_US_EQ,anghami,Anghami,KYG0369L2004,missing sector; missing industry,missing_sector;missing_industry
@@ -7305,7 +7143,6 @@ VYNE_US_EQ,vyne_therapeutics_inc,VYNE Therapeutics Inc.,US92941V3087,missing the
 VZLA_US_EQ,vizsla_silver_corp,Vizsla Silver Corp.,CA92859G6085,missing theme exposure,missing_theme_exposure
 W1Xd_EQ,wix_com_ltd,Wix.com Ltd.,IL0011301780,missing theme exposure,missing_theme_exposure
 W3Ud_EQ,western_union,Western Union,US9598021098,missing sector; missing industry,missing_sector;missing_industry
-W7Dd_EQ,workday_inc,"Workday, Inc.",US98138H1014,missing theme exposure,missing_theme_exposure
 W8Vd_EQ,bank_of_china,Bank of China,CNE1000001Z5,missing sector; missing industry,missing_sector;missing_industry
 WABC_US_EQ,westamerica_bancorp,Westamerica BanCorp,US9570901036,missing sector; missing industry,missing_sector;missing_industry
 WACLY_US_EQ,wacoal,Wacoal,US9300043042,missing sector; missing industry,missing_sector;missing_industry
@@ -7342,7 +7179,6 @@ WCHl_EQ,450,450,JE00BZBYC658,missing sector; missing industry,missing_sector;mis
 WCMKd_EQ,wcm_beteiligungsund_grundbesitz_ag,WCM Beteiligungsund Grundbesitz-AG,DE000A1X3X33,missing sector; missing industry,missing_sector;missing_industry
 WCP_CA_EQ,whitecap_resources_inc,Whitecap Resources Inc.,CA96467A2002,missing theme exposure,missing_theme_exposure
 WCT_US_EQ,wellchange_holdings_company_limited,Wellchange Holdings Company Limited,KYG9545M1235,missing theme exposure,missing_theme_exposure
-WDAY_US_EQ,workday_inc,"Workday, Inc.",US98138H1014,missing theme exposure,missing_theme_exposure
 WDC_US_EQ,western_digital_corp_r,WESTERN DIGITAL CORP.         R,US9581021055,missing theme exposure,missing_theme_exposure
 WDCd_EQ,western_digital_corp_r,WESTERN DIGITAL CORP.         R,US9581021055,missing theme exposure,missing_theme_exposure
 WDFC_US_EQ,wd_40,WD-40,US9292361071,missing sector; missing industry,missing_sector;missing_industry
@@ -7443,7 +7279,6 @@ WSFS_US_EQ,wsfs_financial_corporation,WSFS Financial Corporation,US9293281021,mi
 WSGl_EQ,westminster_group,Westminster Group,GB00B1XLC220,missing sector; missing industry,missing_sector;missing_industry
 WSO/B_US_EQ,watsco_class_b,Watsco (Class B),US9426221019,missing sector; missing industry,missing_sector;missing_industry
 WSO_US_EQ,watsco_inc,"Watsco, Inc.",US9426222009,missing theme exposure,missing_theme_exposure
-WSP_CA_EQ,wsp_global_inc,WSP Global Inc.,CA92938W2022,missing theme exposure,missing_theme_exposure
 WSTG_US_EQ,climb_global_solutions,Climb Global Solutions,US9467601053,missing sector; missing industry,missing_sector;missing_industry
 WSTL_US_EQ,westell_technologies,Westell Technologies,US9575413037,missing sector; missing industry,missing_sector;missing_industry
 WSTRF_US_EQ,western_uranium_vanadium,Western Uranium & Vanadium,CA95985D1006,missing sector; missing industry,missing_sector;missing_industry
@@ -7552,7 +7387,6 @@ YAHOY_US_EQ,ly,LY,US98877X1019,missing sector; missing industry,missing_sector;m
 YALA_US_EQ,yalla_group_limited,Yalla Group Limited,US98459U1034,missing theme exposure,missing_theme_exposure
 YAMHY_US_EQ,yamaha_motor,Yamaha Motor,US9846282062,missing sector; missing industry,missing_sector;missing_industry
 YARIY_US_EQ,yara_international_asa,Yara International ASA,US9848512045,missing theme exposure,missing_theme_exposure
-YASKY_US_EQ,yaskawa_electric_corporation,YASKAWA Electric Corporation,US9850871057,missing theme exposure,missing_theme_exposure
 YATRY_US_EQ,yamato,Yamato,US98463V1052,missing sector; missing industry,missing_sector;missing_industry
 YB_US_EQ,yuanbao_inc,Yuanbao Inc.,US9879101064,missing theme exposure,missing_theme_exposure
 YCAl_EQ,yellow_cake_plc,Yellow Cake plc,JE00BF50RG45,missing theme exposure,missing_theme_exposure
@@ -7617,7 +7451,6 @@ ZKIN_US_EQ,zk_international_group_co_ltd,"ZK International Group Co., Ltd.",VGG9
 ZK_US_EQ,zeekr_intelligent_technology,ZEEKR Intelligent Technology,US98923K1034,missing sector; missing industry,missing_sector;missing_industry
 ZLAB_US_EQ,zai_lab,Zai Lab,US98887Q1040,missing sector; missing industry,missing_sector;missing_industry
 ZMTP_US_EQ,fiee,FiEE,US60365W2017,missing sector; missing industry,missing_sector;missing_industry
-ZM_US_EQ,zoom_communications,Zoom Communications,US98980L1017,missing sector; missing industry,missing_sector;missing_industry
 ZNHHd_EQ,china_southern_airlines,China Southern Airlines,CNE1000002T6,missing sector; missing industry,missing_sector;missing_industry
 ZNKKY_US_EQ,zenkoku_hosho_co_ltd,"ZENKOKU HOSHO Co.,Ltd.",US9894151045,missing theme exposure,missing_theme_exposure
 ZNTE_US_EQ,eve_holding,Eve Holding,US29970N1046,missing sector; missing industry,missing_sector;missing_industry
@@ -7631,7 +7464,6 @@ ZOOl_EQ,zoo_digital_group_plc,ZOO Digital Group plc,GB00B1FQDL10,missing theme e
 ZPHRl_EQ,zephyr_energy_plc,Zephyr Energy plc,GB00BF44KY60,missing theme exposure,missing_theme_exposure
 ZSAN_US_EQ,zosano_pharma,Zosano Pharma,US98979H3012,missing sector; missing industry,missing_sector;missing_industry
 ZSPC_US_EQ,zspace_inc,"zSpace, Inc.",US98980W2061,missing theme exposure,missing_theme_exposure
-ZS_US_EQ,zscaler_inc,"Zscaler, Inc.",US98980G1022,missing theme exposure,missing_theme_exposure
 ZTEK_US_EQ,zentek_ltd,Zentek Ltd.,CA98942X1024,missing theme exposure,missing_theme_exposure
 ZTFl_EQ,zotefoams_plc,Zotefoams plc,GB0009896605,missing theme exposure,missing_theme_exposure
 ZTS_US_EQ,zoetis_inc,Zoetis Inc.,US98978V1035,missing theme exposure,missing_theme_exposure

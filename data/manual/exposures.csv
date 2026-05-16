@@ -189,3 +189,198 @@ commodities,lithium,,,albemarle_corporation,5,manual_high,https://investors.albe
 commodities,lithium,,,sociedad_quimica_y_minera_de_chile,5,manual_high,https://ir.sqm.com/,Lithium and specialty chemicals exposure.,2026-05-16
 commodities,agriculture_inputs,,,mosaic,5,manual_high,https://investors.mosaicco.com/,Fertilizer and crop nutrient exposure.,2026-05-16
 commodities,agriculture_inputs,,,cf_industries_holdings_inc,5,manual_high,https://investors.cfindustries.com/,Nitrogen fertilizer exposure.,2026-05-16
+financial_system,diversified_banks,,,jpmorgan_chase_co,5,manual_high,https://www.jpmorganchase.com/ir,Universal banking and capital markets exposure.,2026-05-16
+financial_system,diversified_banks,,,bank_of_america_corporation,5,manual_high,https://investor.bankofamerica.com/,Universal banking and wealth management exposure.,2026-05-16
+financial_system,diversified_banks,,,citigroup_inc,5,manual_high,https://www.citigroup.com/global/investors,Global banking and markets exposure.,2026-05-16
+financial_system,diversified_banks,,,hsbc_holdings_plc,5,manual_high,https://www.hsbc.com/investors,Global banking and wealth exposure.,2026-05-16
+financial_system,diversified_banks,,,royal_bank_of_canada,5,manual_high,https://www.rbc.com/investor-relations/,Diversified Canadian banking and capital markets exposure.,2026-05-16
+financial_system,diversified_banks,,,mitsubishi_ufj_financial_group_inc,5,manual_high,https://www.mufg.jp/english/ir/,Japanese megabank and financial group exposure.,2026-05-16
+financial_system,diversified_banks,,,commonwealth_bank_of_australia,5,manual_high,https://www.commbank.com.au/about-us/investors.html,Large Australian retail and commercial bank exposure.,2026-05-16
+financial_system,diversified_banks,,,banco_santander_s_a,5,manual_high,https://www.santander.com/en/shareholders-and-investors,International retail and commercial banking exposure.,2026-05-16
+financial_system,regional_banks,,,dbs_group_holdings_ltd,5,manual_high,https://www.dbs.com/investors/default.page,Asian regional banking group exposure.,2026-05-16
+financial_system,regional_banks,,,intesa_sanpaolo_s_p_a,5,manual_high,https://group.intesasanpaolo.com/en/investor-relations,Italian banking and wealth group exposure.,2026-05-16
+financial_system,regional_banks,,,lloyds_banking_group_plc,5,manual_high,https://www.lloydsbankinggroup.com/investors.html,UK retail and commercial banking exposure.,2026-05-16
+financial_system,regional_banks,,,caixabank_s_a,5,manual_high,https://www.caixabank.com/shareholders-investors_en.html,Spanish retail and commercial banking exposure.,2026-05-16
+financial_system,regional_banks,,,nordea_bank_abp,5,manual_high,https://www.nordea.com/en/investors,Nordic banking and wealth group exposure.,2026-05-16
+financial_system,regional_banks,,,natwest_group_plc,5,manual_high,https://www.natwestgroup.com/investors.html,UK retail and commercial banking exposure.,2026-05-16
+financial_system,regional_banks,,,fifth_third_bancorp,4,manual_high,https://ir.53.com/,US regional banking exposure.,2026-05-16
+financial_system,insurance,,,berkshire_hathaway_inc,4,manual_medium,https://www.berkshirehathaway.com/reports.html,Insurance operations are a major part of a diversified holding company.,2026-05-16
+financial_system,insurance,,,allianz_se,5,manual_high,https://www.allianz.com/en/investor_relations.html,Global insurance and asset management exposure.,2026-05-16
+financial_system,insurance,,,axa_sa,5,manual_high,https://www.axa.com/en/investor,Global insurance and asset management exposure.,2026-05-16
+financial_system,insurance,,,aia_group_limited,5,manual_high,https://www.aia.com/en/investor-relations,Asian life insurance exposure.,2026-05-16
+financial_system,insurance,,,ping_an_insurance_group_company_of_china_ltd,5,manual_high,https://group.pingan.com/investor_relations_en/,Chinese insurance and financial services exposure.,2026-05-16
+financial_system,insurance,,,allstate_corp,5,manual_high,https://www.allstateinvestors.com/,Property and casualty insurance exposure.,2026-05-16
+financial_system,asset_management,,,blackrock_inc,5,manual_high,https://www.blackrock.com/corporate/investor-relations,Global asset management platform exposure.,2026-05-16
+financial_system,asset_management,,,brookfield_asset_management_ltd,5,manual_high,https://bam.brookfield.com/investor-relations,Alternative asset management exposure.,2026-05-16
+financial_system,asset_management,,,apollo_global_management_inc,5,manual_high,https://ir.apollo.com/,Alternative asset management exposure.,2026-05-16
+financial_system,asset_management,,,kkr_co_inc,5,manual_high,https://ir.kkr.com/,Alternative asset management exposure.,2026-05-16
+financial_system,asset_management,,,ares_management_corporation,5,manual_high,https://ir.aresmgmt.com/,Alternative credit and asset management exposure.,2026-05-16
+financial_system,capital_markets,,,morgan_stanley,5,manual_high,https://www.morganstanley.com/about-us-ir,Investment banking and wealth management exposure.,2026-05-16
+financial_system,capital_markets,,,the_goldman_sachs_group_inc,5,manual_high,https://www.goldmansachs.com/investor-relations/,Investment banking and trading exposure.,2026-05-16
+financial_system,capital_markets,,,charles_schwab_corp,5,manual_high,https://www.aboutschwab.com/investor-relations,Brokerage and wealth platform exposure.,2026-05-16
+financial_system,capital_markets,,,interactive_brokers_group_inc,5,manual_high,https://investors.interactivebrokers.com/,Electronic brokerage platform exposure.,2026-05-16
+financial_system,capital_markets,,,macquarie_group_limited,4,manual_high,https://www.macquarie.com/us/en/investors.html,Capital markets and asset management exposure.,2026-05-16
+financial_system,exchanges_data,,,cme_group_inc,5,manual_high,https://www.cmegroup.com/investor-relations.html,Derivatives exchange and clearing exposure.,2026-05-16
+financial_system,exchanges_data,,,intercontinental_exchange_inc_r,5,manual_high,https://ir.theice.com/,Exchange clearing and market data exposure.,2026-05-16
+financial_system,exchanges_data,,,nasdaq_inc,5,manual_high,https://ir.nasdaq.com/,Exchange technology and market data exposure.,2026-05-16
+financial_system,exchanges_data,,,london_stock_exchange_group_plc,5,manual_high,https://www.lseg.com/en/investor-relations,Exchange data and analytics infrastructure exposure.,2026-05-16
+financial_system,exchanges_data,,,s_p_global_inc,5,manual_high,https://investor.spglobal.com/,Ratings benchmarks and financial data exposure.,2026-05-16
+financial_system,exchanges_data,,,msci_inc,5,manual_high,https://ir.msci.com/,Index and portfolio analytics exposure.,2026-05-16
+financial_system,credit_payments,,,american_express_company,5,manual_high,https://ir.americanexpress.com/,Card issuer and payments network exposure.,2026-05-16
+financial_system,credit_payments,,,equifax_inc,4,manual_high,https://investor.equifax.com/,Credit bureau and data analytics exposure.,2026-05-16
+financial_system,credit_payments,,,experian_plc,4,manual_high,https://www.experianplc.com/investors,Credit bureau and data analytics exposure.,2026-05-16
+enterprise_software,erp_crm_workflow,,,sap_se,5,manual_high,https://www.sap.com/investors/en.html,ERP and enterprise application software exposure.,2026-05-16
+enterprise_software,erp_crm_workflow,,,salesforce_inc,5,manual_high,https://investor.salesforce.com/,CRM and enterprise workflow software exposure.,2026-05-16
+enterprise_software,erp_crm_workflow,,,servicenow_inc,5,manual_high,https://www.servicenow.com/company/investor-relations.html,Enterprise workflow software platform exposure.,2026-05-16
+enterprise_software,erp_crm_workflow,,,workday_inc,5,manual_high,https://investor.workday.com/,HR and finance enterprise software exposure.,2026-05-16
+enterprise_software,erp_crm_workflow,,,adobe_inc,4,manual_high,https://www.adobe.com/investor-relations.html,Enterprise creative and digital experience software exposure.,2026-05-16
+enterprise_software,erp_crm_workflow,,,automatic_data_processing_inc,5,manual_high,https://investors.adp.com/,Payroll and HCM software exposure.,2026-05-16
+enterprise_software,erp_crm_workflow,,,paychex_inc,5,manual_high,https://investor.paychex.com/,Payroll and HCM software exposure.,2026-05-16
+enterprise_software,erp_crm_workflow,,,paycom_software_inc,5,manual_high,https://investors.paycom.com/,Payroll and HCM software platform exposure.,2026-05-16
+enterprise_software,erp_crm_workflow,,,hubspot_inc,4,manual_high,https://ir.hubspot.com/,CRM and marketing software exposure.,2026-05-16
+enterprise_software,developer_tools,,,atlassian,5,manual_high,https://investors.atlassian.com/,Developer collaboration and DevOps software exposure.,2026-05-16
+enterprise_software,developer_tools,,,gitlab_inc,5,manual_high,https://ir.gitlab.com/,DevSecOps platform exposure.,2026-05-16
+enterprise_software,developer_tools,,,jfrog_ltd,5,manual_high,https://investors.jfrog.com/,Software supply-chain and DevOps platform exposure.,2026-05-16
+enterprise_software,developer_tools,,,unity_software_inc,4,manual_high,https://investors.unity.com/,Developer platform for real-time 3D applications.,2026-05-16
+enterprise_software,data_observability,,,snowflake_inc,5,manual_high,https://investors.snowflake.com/,Cloud data platform exposure.,2026-05-16
+enterprise_software,data_observability,,,datadog_inc,5,manual_high,https://investors.datadoghq.com/,Observability and monitoring platform exposure.,2026-05-16
+enterprise_software,data_observability,,,dynatrace_inc,5,manual_high,https://ir.dynatrace.com/,Observability and application performance software exposure.,2026-05-16
+enterprise_software,data_observability,,,elastic_n_v,5,manual_high,https://ir.elastic.co/,Search logging and observability platform exposure.,2026-05-16
+enterprise_software,data_observability,,,mongodb,5,manual_high,https://investors.mongodb.com/,Developer data platform exposure.,2026-05-16
+enterprise_software,data_observability,,,netapp_inc,4,manual_high,https://investors.netapp.com/,Enterprise data storage and management software exposure.,2026-05-16
+enterprise_software,cybersecurity,,,palo_alto_networks_inc,5,manual_high,https://investors.paloaltonetworks.com/,Cybersecurity platform exposure.,2026-05-16
+enterprise_software,cybersecurity,,,crowdstrike,5,manual_high,https://ir.crowdstrike.com/,Endpoint and cloud cybersecurity platform exposure.,2026-05-16
+enterprise_software,cybersecurity,,,fortinet_inc,5,manual_high,https://investor.fortinet.com/,Network and security platform exposure.,2026-05-16
+enterprise_software,cybersecurity,,,zscaler_inc,5,manual_high,https://ir.zscaler.com/,Zero trust and cloud security exposure.,2026-05-16
+enterprise_software,cybersecurity,,,okta_inc,5,manual_high,https://investor.okta.com/,Identity and access management exposure.,2026-05-16
+enterprise_software,cybersecurity,,,cloudflare,4,manual_high,https://cloudflare.net/,Network and application security platform exposure.,2026-05-16
+enterprise_software,cybersecurity,,,cyberark_software,5,manual_high,https://investors.cyberark.com/,Identity security platform exposure.,2026-05-16
+enterprise_software,cybersecurity,,,check_point_software_technologies,5,manual_high,https://investors.checkpoint.com/,Cybersecurity software exposure.,2026-05-16
+enterprise_software,it_services_consulting,,,accenture_plc,5,manual_high,https://investor.accenture.com/,IT consulting and managed services exposure.,2026-05-16
+enterprise_software,it_services_consulting,,,capgemini_se,5,manual_high,https://investors.capgemini.com/en/,IT consulting and digital transformation exposure.,2026-05-16
+enterprise_software,it_services_consulting,,,cognizant_technology_solutions_corp,5,manual_high,https://investors.cognizant.com/,IT services and consulting exposure.,2026-05-16
+enterprise_software,it_services_consulting,,,fujitsu_limited,4,manual_high,https://www.fujitsu.com/global/about/ir/,IT services and systems integration exposure.,2026-05-16
+enterprise_software,it_services_consulting,,,cgi_inc,4,manual_high,https://www.cgi.com/en/investors,IT consulting and managed services exposure.,2026-05-16
+enterprise_software,vertical_software,,,constellation_software_inc,5,manual_high,https://www.csisoftware.com/category/investors/,Vertical market software exposure.,2026-05-16
+enterprise_software,vertical_software,,,guidewire_software_inc,5,manual_high,https://ir.guidewire.com/,Insurance software platform exposure.,2026-05-16
+enterprise_software,vertical_software,,,tyler_technologies_inc,5,manual_high,https://ir.tylertech.com/,Public-sector software platform exposure.,2026-05-16
+enterprise_software,vertical_software,,,ptc_inc,5,manual_high,https://investor.ptc.com/,Industrial product lifecycle software exposure.,2026-05-16
+enterprise_software,vertical_software,,,the_descartes_systems_group_inc,5,manual_high,https://investors.descartes.com/,Logistics and supply-chain software exposure.,2026-05-16
+enterprise_software,communications_collaboration,,,twilio_inc,5,manual_high,https://investors.twilio.com/,Customer communications software platform exposure.,2026-05-16
+enterprise_software,communications_collaboration,,,nice_ltd,5,manual_high,https://ir.nice.com/,Contact centre and customer engagement software exposure.,2026-05-16
+enterprise_software,communications_collaboration,,,zoom_communications,5,manual_high,https://investors.zoom.us/,Enterprise video communications software exposure.,2026-05-16
+industrial_automation,automation_controls,,,rockwell_automation_inc,5,manual_high,https://ir.rockwellautomation.com/,Factory automation and industrial control exposure.,2026-05-16
+industrial_automation,automation_controls,,,emerson_electric_co_r,5,manual_high,https://www.emerson.com/en-us/investors,Automation and process control exposure.,2026-05-16
+industrial_automation,automation_controls,,,fanuc_corporation,5,manual_high,https://www.fanuc.co.jp/en/ir/,Robotics and factory automation exposure.,2026-05-16
+industrial_automation,automation_controls,,,yaskawa_electric_corporation,5,manual_high,https://www.yaskawa-global.com/ir,Drives motion control and robotics exposure.,2026-05-16
+industrial_automation,automation_controls,,,smc_corporation,5,manual_high,https://www.smcworld.com/ir/,Pneumatic automation component exposure.,2026-05-16
+industrial_automation,automation_controls,,,siemens_aktiengesellschaft,4,manual_medium,https://www.siemens.com/global/en/company/investor-relations.html,Industrial automation exposure within a diversified industrial group.,2026-05-16
+industrial_automation,automation_controls,,,abb_ltd_n,4,manual_medium,https://global.abb/group/en/investors,Automation and motion exposure within a diversified industrial group.,2026-05-16
+industrial_automation,automation_controls,,,schneider_electric_s_e,4,manual_medium,https://www.se.com/ww/en/about-us/investor-relations/,Industrial automation exposure within energy management operations.,2026-05-16
+industrial_automation,electrification_power,,,eaton,5,manual_high,https://www.eaton.com/us/en-us/company/investor-relations.html,Power management and electrical equipment exposure.,2026-05-16
+industrial_automation,electrification_power,,,siemens_energy_ag,5,manual_high,https://www.siemens-energy.com/global/en/home/investor-relations.html,Grid and power equipment exposure.,2026-05-16
+industrial_automation,electrification_power,,,legrand_sa,5,manual_high,https://www.legrandgroup.com/en/finance,Electrical and digital building infrastructure exposure.,2026-05-16
+industrial_automation,electrification_power,,,prysmian_s_p_a,5,manual_high,https://www.prysmian.com/en/company/investors,Power and cable systems exposure.,2026-05-16
+industrial_automation,electrification_power,,,mitsubishi_electric_corporation,4,manual_high,https://www.mitsubishielectric.com/en/investors/,Electrical and factory automation equipment exposure.,2026-05-16
+industrial_automation,machinery_equipment,,,atlas_copco_ab_publ,5,manual_high,https://www.atlascopcogroup.com/en/investor-relations,Compressors vacuum and industrial tools exposure.,2026-05-16
+industrial_automation,machinery_equipment,,,parker_hannifin_corporation,5,manual_high,https://investors.parker.com/,Motion and control technologies exposure.,2026-05-16
+industrial_automation,machinery_equipment,,,cummins_inc,5,manual_high,https://investor.cummins.com/,Engines power systems and components exposure.,2026-05-16
+industrial_automation,machinery_equipment,,,illinois_tool_works_inc,5,manual_high,https://investor.itw.com/,Engineered industrial equipment exposure.,2026-05-16
+industrial_automation,machinery_equipment,,,ingersoll_rand_inc,5,manual_high,https://ir.irco.com/,Compressors pumps and industrial equipment exposure.,2026-05-16
+industrial_automation,machinery_equipment,,,alfa_laval_ab_publ,5,manual_high,https://www.alfalaval.com/investors/,Heat transfer separation and fluid handling exposure.,2026-05-16
+industrial_automation,construction_agriculture_equipment,,,caterpillar_inc,5,manual_high,https://investors.caterpillar.com/,Construction and mining equipment exposure.,2026-05-16
+industrial_automation,construction_agriculture_equipment,,,deere_company,5,manual_high,https://investor.deere.com/,Agriculture and construction equipment exposure.,2026-05-16
+industrial_automation,construction_agriculture_equipment,,,komatsu_ltd,5,manual_high,https://www.komatsu.jp/en/ir/,Construction and mining equipment exposure.,2026-05-16
+industrial_automation,construction_agriculture_equipment,,,ab_volvo_publ,4,manual_high,https://www.volvogroup.com/en/investors.html,Trucks construction equipment and industrial engines exposure.,2026-05-16
+industrial_automation,construction_agriculture_equipment,,,paccar_inc,4,manual_high,https://investor.paccar.com/,Heavy truck manufacturing exposure.,2026-05-16
+industrial_automation,construction_agriculture_equipment,,,cnh_industrial_n_v,5,manual_high,https://www.cnh.com/en-US/investor_relations,Agriculture and construction equipment exposure.,2026-05-16
+industrial_automation,industrial_software,,,autodesk_inc,5,manual_high,https://investors.autodesk.com/,CAD and design software exposure.,2026-05-16
+industrial_automation,industrial_software,,,ptc_inc,5,manual_high,https://investor.ptc.com/,PLM CAD and industrial IoT software exposure.,2026-05-16
+industrial_automation,industrial_software,,,dassault_systèmes_se,5,manual_high,https://investor.3ds.com/,3D design simulation and PLM software exposure.,2026-05-16
+industrial_automation,industrial_software,,,hexagon_ab_publ,5,manual_high,https://hexagon.com/company/investors,Industrial measurement and asset design software exposure.,2026-05-16
+industrial_automation,industrial_software,,,bentley_systems,5,manual_high,https://investors.bentley.com/,Infrastructure engineering software exposure.,2026-05-16
+industrial_automation,testing_measurement,,,keysight_technologies_inc,5,manual_high,https://investor.keysight.com/,Electronic test and measurement exposure.,2026-05-16
+industrial_automation,testing_measurement,,,ametek_inc,5,manual_high,https://investors.ametek.com/,Electronic instruments and electromechanical exposure.,2026-05-16
+industrial_automation,testing_measurement,,,teledyne_technologies,5,manual_high,https://www.teledyne.com/investors,Instrumentation imaging and sensing exposure.,2026-05-16
+industrial_automation,testing_measurement,,,fortive,5,manual_high,https://investors.fortive.com/,Professional instrumentation and industrial technology exposure.,2026-05-16
+industrial_automation,testing_measurement,,,mettler_toledo_international_inc,5,manual_high,https://investors.mt.com/,Precision instruments and industrial measurement exposure.,2026-05-16
+industrial_automation,engineering_services,,,vinci_sa,4,manual_medium,https://www.vinci.com/vinci.nsf/en/finance.htm,Engineering construction and infrastructure concessions exposure.,2026-05-16
+industrial_automation,engineering_services,,,acs_actividades_de_construcción_y_servicios_s_a,4,manual_high,https://www.grupoacs.com/shareholders-investors/,Engineering and construction services exposure.,2026-05-16
+industrial_automation,engineering_services,,,hochtief_aktiengesellschaft,4,manual_high,https://www.hochtief.com/investor-relations,Engineering and construction services exposure.,2026-05-16
+industrial_automation,engineering_services,,,larsen_toubro_limited,4,manual_high,https://investors.larsentoubro.com/,Engineering construction and industrial projects exposure.,2026-05-16
+industrial_automation,engineering_services,,,wsp_global_inc,4,manual_high,https://www.wsp.com/en-gl/investors,Engineering consulting and design services exposure.,2026-05-16
+consumer_brands,mass_retail,,,walmart_inc,5,manual_high,https://stock.walmart.com/investors/default.aspx,Mass retail and grocery channel exposure.,2026-05-16
+consumer_brands,mass_retail,,,costco_wholesale_corporation,5,manual_high,https://investor.costco.com/,Warehouse retail channel exposure.,2026-05-16
+consumer_brands,mass_retail,,,target_corporation,5,manual_high,https://investors.target.com/,Mass retail channel exposure.,2026-05-16
+consumer_brands,mass_retail,,,dollarama_inc,5,manual_high,https://www.dollarama.com/en-CA/corp/investor-relations,Dollar store retail channel exposure.,2026-05-16
+consumer_brands,mass_retail,,,dollar_general_corp_new_r,5,manual_high,https://investor.dollargeneral.com/,Dollar store retail channel exposure.,2026-05-16
+consumer_brands,mass_retail,,,tesco_plc,5,manual_high,https://www.tescoplc.com/investors/,Grocery and mass retail channel exposure.,2026-05-16
+consumer_brands,mass_retail,,,the_kroger_co,5,manual_high,https://ir.kroger.com/,Grocery retail channel exposure.,2026-05-16
+consumer_brands,mass_retail,,,loblaw_companies_limited,5,manual_high,https://www.loblaw.ca/en/investors/,Grocery and pharmacy retail channel exposure.,2026-05-16
+consumer_brands,specialty_retail,,,the_home_depot_inc,5,manual_high,https://ir.homedepot.com/,Home improvement retail exposure.,2026-05-16
+consumer_brands,specialty_retail,,,lowe_s_companies_inc,5,manual_high,https://corporate.lowes.com/investors,Home improvement retail exposure.,2026-05-16
+consumer_brands,specialty_retail,,,alimentation_couche_tard_inc,5,manual_high,https://corpo.couche-tard.com/en/investors/,Convenience store retail exposure.,2026-05-16
+consumer_brands,specialty_retail,,,ulta_beauty_inc,5,manual_high,https://www.ulta.com/investor,Beauty specialty retail exposure.,2026-05-16
+consumer_brands,specialty_retail,,,best_buy_co_inc,5,manual_high,https://investors.bestbuy.com/,Consumer electronics specialty retail exposure.,2026-05-16
+consumer_brands,specialty_retail,,,tractor_supply_company,5,manual_high,https://ir.tractorsupply.com/,Rural lifestyle specialty retail exposure.,2026-05-16
+consumer_brands,luxury_apparel,,,lvmh_moët_hennessy_louis_vuitton_société_européenne,5,manual_high,https://www.lvmh.com/investors,Luxury brands portfolio exposure.,2026-05-16
+consumer_brands,luxury_apparel,,,hermès_international_société_en_commandite_par_actions,5,manual_high,https://finance.hermes.com/en/,Luxury goods brand exposure.,2026-05-16
+consumer_brands,luxury_apparel,,,compagnie_financière_richemont_sa,5,manual_high,https://www.richemont.com/investors/,Luxury jewellery and watch brands exposure.,2026-05-16
+consumer_brands,luxury_apparel,,,kering_sa,5,manual_high,https://www.kering.com/en/finance/,Luxury goods brand exposure.,2026-05-16
+consumer_brands,luxury_apparel,,,nike_inc,5,manual_high,https://investors.nike.com/,Footwear and apparel brand exposure.,2026-05-16
+consumer_brands,luxury_apparel,,,adidas_ag,5,manual_high,https://www.adidas-group.com/en/investors/,Footwear and apparel brand exposure.,2026-05-16
+consumer_brands,luxury_apparel,,,fast_retailing_co_ltd,5,manual_high,https://www.fastretailing.com/eng/ir/,Apparel retail and brand exposure.,2026-05-16
+consumer_brands,luxury_apparel,,,industria_de_diseño_textil_s_a,5,manual_high,https://www.inditex.com/itxcomweb/en/investors,Apparel retail brand exposure.,2026-05-16
+consumer_brands,beverages_tobacco,,,the_coca_cola_company,5,manual_high,https://investors.coca-colacompany.com/,Non-alcoholic beverage brand exposure.,2026-05-16
+consumer_brands,beverages_tobacco,,,pepsico_inc,5,manual_high,https://investors.pepsico.com/,Beverage and snack brand exposure.,2026-05-16
+consumer_brands,beverages_tobacco,,,anheuser_busch_inbev_sa_nv,5,manual_high,https://www.ab-inbev.com/investors/,Global beer brand exposure.,2026-05-16
+consumer_brands,beverages_tobacco,,,heineken_n_v,5,manual_high,https://www.theheinekencompany.com/investors,Global beer brand exposure.,2026-05-16
+consumer_brands,beverages_tobacco,,,diageo_plc,5,manual_high,https://www.diageo.com/en/investors,Spirits and beer brand exposure.,2026-05-16
+consumer_brands,beverages_tobacco,,,philip_morris_international_inc,5,manual_high,https://www.pmi.com/investor-relations,Tobacco and nicotine brand exposure.,2026-05-16
+consumer_brands,household_personal_care,,,the_procter_gamble_company,5,manual_high,https://www.pginvestor.com/,Household and personal care brand exposure.,2026-05-16
+consumer_brands,household_personal_care,,,unilever_plc,5,manual_high,https://www.unilever.com/investors/,Household and personal care brand exposure.,2026-05-16
+consumer_brands,household_personal_care,,,l_oréal_s_a,5,manual_high,https://www.loreal-finance.com/eng,Beauty and personal care brand exposure.,2026-05-16
+consumer_brands,household_personal_care,,,colgate_palmolive_company,5,manual_high,https://investor.colgatepalmolive.com/,Oral care and household brand exposure.,2026-05-16
+consumer_brands,household_personal_care,,,kenvue_inc,5,manual_high,https://investors.kenvue.com/,Consumer health and personal care brand exposure.,2026-05-16
+consumer_brands,household_personal_care,,,kimberly_clark_corporation,5,manual_high,https://investor.kimberly-clark.com/,Personal care and tissue brand exposure.,2026-05-16
+consumer_brands,restaurants_foodservice,,,mcdonald_s_corporation,5,manual_high,https://corporate.mcdonalds.com/corpmcd/investors.html,Global franchised restaurant exposure.,2026-05-16
+consumer_brands,restaurants_foodservice,,,starbucks_corporation,5,manual_high,https://investor.starbucks.com/,Coffee chain and retail beverage exposure.,2026-05-16
+consumer_brands,restaurants_foodservice,,,yum_brands_inc,5,manual_high,https://investors.yum.com/,Franchised restaurant brand exposure.,2026-05-16
+consumer_brands,restaurants_foodservice,,,chipotle_mexican_grill_inc_r,5,manual_high,https://ir.chipotle.com/,Restaurant brand exposure.,2026-05-16
+consumer_brands,consumer_durables,,,haier_smart_home_co_ltd,5,manual_high,https://smart-home.haier.com/en/finance/,Appliance and smart home durable exposure.,2026-05-16
+consumer_brands,consumer_durables,,,sharkninja_inc,5,manual_high,https://ir.sharkninja.com/,Small appliance and home product brand exposure.,2026-05-16
+transport_logistics,railroads,,,union_pacific_corp,5,manual_high,https://www.up.com/investor/,North American freight railroad exposure.,2026-05-16
+transport_logistics,railroads,,,canadian_pacific_kansas_city_limited,5,manual_high,https://investors.cpkcr.com/,North American freight railroad exposure.,2026-05-16
+transport_logistics,railroads,,,canadian_national_railway_company,5,manual_high,https://www.cn.ca/en/investors/,North American freight railroad exposure.,2026-05-16
+transport_logistics,railroads,,,csx_corporation,5,manual_high,https://investors.csx.com/,North American freight railroad exposure.,2026-05-16
+transport_logistics,railroads,,,norfolk_southern,5,manual_high,https://norfolksouthern.investorroom.com/,North American freight railroad exposure.,2026-05-16
+transport_logistics,railroads,,,east_japan_railway_company,5,manual_high,https://www.jreast.co.jp/e/investor/,Passenger rail operator exposure.,2026-05-16
+transport_logistics,parcel_logistics,,,fedex_corporation,5,manual_high,https://investors.fedex.com/,Parcel freight and logistics network exposure.,2026-05-16
+transport_logistics,parcel_logistics,,,united_parcel_service_inc_r,5,manual_high,https://investors.ups.com/,Parcel delivery and logistics network exposure.,2026-05-16
+transport_logistics,parcel_logistics,,,dhl_group,5,manual_high,https://group.dhl.com/en/investors.html,Global parcel and logistics network exposure.,2026-05-16
+transport_logistics,parcel_logistics,,,zto_express_cayman_inc,5,manual_high,https://zto.investorroom.com/,Parcel delivery network exposure.,2026-05-16
+transport_logistics,parcel_logistics,,,gxo_logistics_inc,4,manual_high,https://investors.gxo.com/,Contract logistics and warehouse operations exposure.,2026-05-16
+transport_logistics,shipping_ports,,,a_p_møller_mærsk_a_s,5,manual_high,https://investor.maersk.com/,Container shipping and logistics exposure.,2026-05-16
+transport_logistics,shipping_ports,,,hapag_lloyd_aktiengesellschaft,5,manual_high,https://www.hapag-lloyd.com/en/company/ir.html,Container shipping exposure.,2026-05-16
+transport_logistics,shipping_ports,,,kawasaki_kisen_kaisha_ltd,5,manual_high,https://www.kline.co.jp/en/ir.html,Marine shipping exposure.,2026-05-16
+transport_logistics,shipping_ports,,,matson_inc,5,manual_high,https://investor.matson.com/,Ocean transportation and logistics exposure.,2026-05-16
+transport_logistics,airlines_airports,,,delta_air_lines_inc,5,manual_high,https://ir.delta.com/,Airline operator exposure.,2026-05-16
+transport_logistics,airlines_airports,,,united_airlines_holdings_inc,5,manual_high,https://ir.united.com/,Airline operator exposure.,2026-05-16
+transport_logistics,airlines_airports,,,ryanair_holdings_plc,5,manual_high,https://investor.ryanair.com/,Airline operator exposure.,2026-05-16
+transport_logistics,airlines_airports,,,southwest_airlines_co_r,5,manual_high,https://investors.southwest.com/,Airline operator exposure.,2026-05-16
+transport_logistics,airlines_airports,,,aena_s_m_e_s_a,5,manual_high,https://www.aena.es/en/shareholders-investors.html,Airport operator exposure.,2026-05-16
+transport_logistics,airlines_airports,,,aeroports_de_paris_sa,5,manual_high,https://www.parisaeroport.fr/en/group/finance/investor-relations,Airport operator exposure.,2026-05-16
+transport_logistics,trucking_freight,,,old_dominion_freight_line_inc,5,manual_high,https://ir.odfl.com/,Less-than-truckload freight exposure.,2026-05-16
+transport_logistics,trucking_freight,,,xpo_inc,5,manual_high,https://investors.xpo.com/,Less-than-truckload and freight brokerage exposure.,2026-05-16
+transport_logistics,trucking_freight,,,j_b_hunt_transport_services_inc,5,manual_high,https://investor.jbhunt.com/,Truckload intermodal and logistics exposure.,2026-05-16
+transport_logistics,trucking_freight,,,saia_inc,5,manual_high,https://www.saia.com/about/investors,Less-than-truckload freight exposure.,2026-05-16
+transport_logistics,trucking_freight,,,tfi_international_inc,5,manual_high,https://tfiintl.com/en/investors/,Trucking and logistics exposure.,2026-05-16
+transport_logistics,freight_forwarding,,,dsv_a_s_i,5,manual_high,https://www.dsv.com/en/investor,Freight forwarding and contract logistics exposure.,2026-05-16
+transport_logistics,freight_forwarding,,,kuehne_nagel_international_ag,5,manual_high,https://investor.kuehne-nagel.com/,Freight forwarding and supply-chain management exposure.,2026-05-16
+transport_logistics,freight_forwarding,,,expeditors_international_of_washington_inc,5,manual_high,https://investor.expeditors.com/,Freight forwarding and customs brokerage exposure.,2026-05-16
+transport_logistics,freight_forwarding,,,c_h_robinson_worldwide_inc,5,manual_high,https://investors.chrobinson.com/,Freight brokerage and logistics exposure.,2026-05-16
+transport_logistics,transport_infrastructure,,,vinci_sa,4,manual_medium,https://www.vinci.com/vinci.nsf/en/finance.htm,Toll road airport and transport concession exposure.,2026-05-16
+transport_logistics,transport_infrastructure,,,ferrovial_n_v,4,manual_high,https://www.ferrovial.com/en/ir-shareholders/,Airport toll road and mobility infrastructure exposure.,2026-05-16
+transport_logistics,transport_infrastructure,,,getlink_se,5,manual_high,https://www.getlinkgroup.com/en/shareholders-investors/,Channel Tunnel rail infrastructure exposure.,2026-05-16
+transport_logistics,transport_infrastructure,,,ck_hutchison_holdings_limited,3,manual_medium,https://www.ckh.com.hk/en/ir/,Ports exposure within a diversified infrastructure group.,2026-05-16
+transport_logistics,transport_infrastructure,,,brambles_limited,4,manual_high,https://www.brambles.com/investors,Reusable pallet and logistics infrastructure exposure.,2026-05-16

@@ -311,5 +311,250 @@
         "order": 50
       }
     ]
+  },
+  {
+    "themeId": "financial_system",
+    "name": "Financial system supply chain",
+    "description": "Banks, insurers, asset managers, capital markets, credit, data, and market infrastructure.",
+    "layers": [
+      {
+        "id": "diversified_banks",
+        "name": "Diversified banks",
+        "description": "Global and national universal banks with broad retail, commercial, investment, or wealth operations.",
+        "order": 10
+      },
+      {
+        "id": "regional_banks",
+        "name": "Regional banks",
+        "description": "Regional and local banking groups with lending, deposit, and wealth operations.",
+        "order": 20
+      },
+      {
+        "id": "insurance",
+        "name": "Insurance",
+        "description": "Life, property and casualty, reinsurance, specialty, and diversified insurance groups.",
+        "order": 30
+      },
+      {
+        "id": "asset_management",
+        "name": "Asset management",
+        "description": "Public-market, alternative, and wealth-management platforms.",
+        "order": 40
+      },
+      {
+        "id": "capital_markets",
+        "name": "Capital markets",
+        "description": "Investment banks, brokers, trading platforms, market makers, and wealth brokers.",
+        "order": 50
+      },
+      {
+        "id": "exchanges_data",
+        "name": "Exchanges and financial data",
+        "description": "Exchanges, market data, index, ratings, benchmarks, and financial analytics providers.",
+        "order": 60
+      },
+      {
+        "id": "credit_payments",
+        "name": "Credit and payments",
+        "description": "Credit card issuers, credit bureaus, and non-bank credit platforms.",
+        "order": 70
+      }
+    ]
+  },
+  {
+    "themeId": "enterprise_software",
+    "name": "Enterprise software supply chain",
+    "description": "Enterprise software, developer platforms, data, security, communications, and IT services.",
+    "layers": [
+      {
+        "id": "erp_crm_workflow",
+        "name": "ERP, CRM, and workflow",
+        "description": "ERP, CRM, finance, HR, productivity, collaboration, and workflow software.",
+        "order": 10
+      },
+      {
+        "id": "developer_tools",
+        "name": "Developer tools",
+        "description": "DevOps, CI/CD, API, testing, code, and software-development platforms.",
+        "order": 20
+      },
+      {
+        "id": "data_observability",
+        "name": "Data and observability",
+        "description": "Data platforms, analytics, monitoring, observability, search, logging, and storage software.",
+        "order": 30
+      },
+      {
+        "id": "cybersecurity",
+        "name": "Cybersecurity",
+        "description": "Identity, endpoint, network, cloud, application, and data security platforms.",
+        "order": 40
+      },
+      {
+        "id": "it_services_consulting",
+        "name": "IT services and consulting",
+        "description": "IT consulting, managed services, outsourcing, and systems integration.",
+        "order": 50
+      },
+      {
+        "id": "vertical_software",
+        "name": "Vertical software",
+        "description": "Industry-specific software platforms and application suites.",
+        "order": 60
+      },
+      {
+        "id": "communications_collaboration",
+        "name": "Communications and collaboration",
+        "description": "Enterprise communications, contact centre, collaboration, and customer engagement software.",
+        "order": 70
+      }
+    ]
+  },
+  {
+    "themeId": "industrial_automation",
+    "name": "Industrial automation supply chain",
+    "description": "Automation, controls, electrification, machinery, industrial software, measurement, and engineering.",
+    "layers": [
+      {
+        "id": "automation_controls",
+        "name": "Automation and controls",
+        "description": "Factory automation, robotics, process controls, sensors, drives, and industrial controls.",
+        "order": 10
+      },
+      {
+        "id": "electrification_power",
+        "name": "Electrification and power",
+        "description": "Electrical equipment, power management, switchgear, motors, drives, and grid-adjacent equipment.",
+        "order": 20
+      },
+      {
+        "id": "machinery_equipment",
+        "name": "Machinery and equipment",
+        "description": "Industrial machinery, compressors, pumps, tools, manufacturing equipment, and motion systems.",
+        "order": 30
+      },
+      {
+        "id": "construction_agriculture_equipment",
+        "name": "Construction and agriculture equipment",
+        "description": "Construction, mining, agriculture, trucks, and heavy machinery.",
+        "order": 40
+      },
+      {
+        "id": "industrial_software",
+        "name": "Industrial software",
+        "description": "PLM, CAD/CAM, industrial analytics, simulation, design, and automation software.",
+        "order": 50
+      },
+      {
+        "id": "testing_measurement",
+        "name": "Testing and measurement",
+        "description": "Industrial testing, measurement, instrumentation, sensing, and quality systems.",
+        "order": 60
+      },
+      {
+        "id": "engineering_services",
+        "name": "Engineering services",
+        "description": "Engineering, construction, maintenance, infrastructure delivery, and industrial services.",
+        "order": 70
+      }
+    ]
+  },
+  {
+    "themeId": "consumer_brands",
+    "name": "Consumer brands supply chain",
+    "description": "Retail channels, apparel, luxury, beverages, household care, restaurants, and consumer durables.",
+    "layers": [
+      {
+        "id": "mass_retail",
+        "name": "Mass retail",
+        "description": "Supermarkets, warehouses, discounters, broadline retailers, and grocery chains.",
+        "order": 10
+      },
+      {
+        "id": "specialty_retail",
+        "name": "Specialty retail",
+        "description": "Category specialists, home improvement, off-price, beauty, sporting goods, and auto retail.",
+        "order": 20
+      },
+      {
+        "id": "luxury_apparel",
+        "name": "Luxury and apparel",
+        "description": "Luxury goods, apparel, footwear, accessories, cosmetics, and fashion brands.",
+        "order": 30
+      },
+      {
+        "id": "beverages_tobacco",
+        "name": "Beverages and tobacco",
+        "description": "Alcoholic beverages, non-alcoholic beverages, tobacco, and nicotine franchises.",
+        "order": 40
+      },
+      {
+        "id": "household_personal_care",
+        "name": "Household and personal care",
+        "description": "Household products, personal care, beauty, hygiene, and consumer health brands.",
+        "order": 50
+      },
+      {
+        "id": "restaurants_foodservice",
+        "name": "Restaurants and foodservice",
+        "description": "Restaurants, coffee chains, foodservice operators, and franchised dining.",
+        "order": 60
+      },
+      {
+        "id": "consumer_durables",
+        "name": "Consumer durables",
+        "description": "Appliances, furnishings, leisure products, home goods, and recreational durable products.",
+        "order": 70
+      }
+    ]
+  },
+  {
+    "themeId": "transport_logistics",
+    "name": "Transport and logistics supply chain",
+    "description": "Rail, parcel, freight, shipping, airlines, airports, ports, and transport infrastructure.",
+    "layers": [
+      {
+        "id": "railroads",
+        "name": "Railroads",
+        "description": "Freight and passenger rail operators and rail-network concession operators.",
+        "order": 10
+      },
+      {
+        "id": "parcel_logistics",
+        "name": "Parcel and logistics",
+        "description": "Parcel delivery, contract logistics, postal networks, and warehouse logistics operators.",
+        "order": 20
+      },
+      {
+        "id": "shipping_ports",
+        "name": "Shipping and ports",
+        "description": "Marine shipping, container lines, port operators, and terminal infrastructure.",
+        "order": 30
+      },
+      {
+        "id": "airlines_airports",
+        "name": "Airlines and airports",
+        "description": "Airlines, airport operators, airport services, and aviation infrastructure.",
+        "order": 40
+      },
+      {
+        "id": "trucking_freight",
+        "name": "Trucking and freight",
+        "description": "Trucking, freight brokerage, less-than-truckload, intermodal, and road freight.",
+        "order": 50
+      },
+      {
+        "id": "freight_forwarding",
+        "name": "Freight forwarding",
+        "description": "Freight forwarding, customs brokerage, and supply-chain management networks.",
+        "order": 60
+      },
+      {
+        "id": "transport_infrastructure",
+        "name": "Transport infrastructure",
+        "description": "Toll roads, tunnels, concessions, pooled logistics infrastructure, and intermodal assets.",
+        "order": 70
+      }
+    ]
   }
 ]

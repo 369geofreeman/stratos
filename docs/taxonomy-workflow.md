@@ -19,9 +19,20 @@ Classification precedence is deterministic:
 1. `classification_overrides.csv`
 2. existing ticker/company manual overrides
 3. provider enrichment
-4. raw broker metadata fallback where available
+4. conservative raw broker metadata fallback where available
 
 Within `classification_overrides.csv`, broad company rows are applied first, then ISIN rows, then ticker rows.
+
+## Generated Fund Classification
+
+When provider and manual classification are both missing, the builder classifies clear fund-like and structured instruments from Trading 212 type/name metadata. This fallback does not classify operating companies.
+
+- ETFs and funds use sector `Funds`.
+- Warrants use sector `Structured Products`.
+- Investment trusts use industry `Investment Trust`.
+- ETF/fund industries are chosen from clear markers: `Equity ETF`, `Bond ETF`, `Commodity ETP`, `Crypto ETP`, `Leveraged ETP`, `Inverse ETP`, `Covered Call ETF`, `Money Market Fund`, `Multi-Asset Fund`, `Factor ETF`, or `Fund`.
+
+Manual classification rows still win when a reviewed source supports a more precise classification.
 
 ## Weekly Review
 

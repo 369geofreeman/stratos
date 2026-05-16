@@ -175,8 +175,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 				companyConfidence = "rule_low"
 				companyReasons = append(companyReasons, "depositary_receipt_company_identity_needs_review")
 			case containsString(structureFlags, "fund_like"):
-				companyConfidence = "rule_low"
-				companyReasons = append(companyReasons, "fund_like_company_identity_needs_review")
+				companyReasons = append(companyReasons, "fund_like_company_identity_from_isin")
 			}
 		}
 		if companyBySecurity[securityID] == "" {
@@ -199,8 +198,9 @@ func Build(input BuildInput) (*Catalogue, error) {
 
 		companyOverride := input.Manual.CompanyOverrides[companyID]
 		classificationOverride := resolveClassificationOverrides(raw, companyID, input.Manual.ClassificationOverrides)
-		sector := firstNonEmpty(classificationOverride.Sector, tickerOverride.Sector, companyOverride.Sector, profile.Sector)
-		industry := firstNonEmpty(classificationOverride.Industry, tickerOverride.Industry, companyOverride.Industry, profile.Industry)
+		ruleSector, ruleIndustry := ruleClassification(raw, category, structureFlags, name)
+		sector := firstNonEmpty(classificationOverride.Sector, tickerOverride.Sector, companyOverride.Sector, profile.Sector, ruleSector)
+		industry := firstNonEmpty(classificationOverride.Industry, tickerOverride.Industry, companyOverride.Industry, profile.Industry, ruleIndustry)
 		country := firstNonEmpty(classificationOverride.Country, tickerOverride.Country, companyOverride.Country, profile.Country)
 		yahooSymbol := firstNonEmpty(tickerOverride.YahooSymbol, profile.Symbol)
 		marketCap := firstNonZero(tickerOverride.MarketCap, profile.MarketCap)
@@ -487,6 +487,47 @@ func Build(input BuildInput) (*Catalogue, error) {
 	}
 	addReviewManifestDeltas(&cat.Manifest, input.PreviousManifest)
 	return cat, nil
+}
+
+func ruleClassification(raw trading212.Instrument, category string, structureFlags []string, name string) (string, string) {
+	text := normaliseIdentityText(raw.Ticker, raw.Name, raw.ShortName, name)
+	switch category {
+	case CategoryETF:
+		return "Funds", fundLikeIndustry(text, structureFlags, "Equity ETF")
+	case CategoryFund:
+		return "Funds", fundLikeIndustry(text, structureFlags, "Fund")
+	case CategoryInvestmentTrust:
+		return "Funds", "Investment Trust"
+	case CategoryWarrant:
+		return "Structured Products", "Warrant"
+	default:
+		return "", ""
+	}
+}
+
+func fundLikeIndustry(text string, structureFlags []string, defaultIndustry string) string {
+	switch {
+	case containsString(structureFlags, "inverse") || containsString(structureFlags, "short"):
+		return "Inverse ETP"
+	case containsString(structureFlags, "leveraged"):
+		return "Leveraged ETP"
+	case containsAnyToken(text, "YIELDMAX", "INCOMESHARES") || strings.Contains(text, " COVERED CALL ") || strings.Contains(text, " OPTION INCOME "):
+		return "Covered Call ETF"
+	case containsAnyToken(text, "BITCOIN", "ETHEREUM", "CRYPTO", "CRYPTOCURRENCY"):
+		return "Crypto ETP"
+	case containsAnyToken(text, "COMMODITY", "COMMODITIES", "GOLD", "SILVER", "PRECIOUS", "PLATINUM", "PALLADIUM", "COPPER", "URANIUM", "OIL", "GAS", "WHEAT", "AGRICULTURE"):
+		return "Commodity ETP"
+	case containsAnyToken(text, "BOND", "BONDS", "TREASURY", "GILT", "GOVERNMENT", "AGGREGATE", "DEBT", "CREDIT"):
+		return "Bond ETF"
+	case strings.Contains(text, " MONEY MARKET ") || containsAnyToken(text, "CASH"):
+		return "Money Market Fund"
+	case strings.Contains(text, " MULTI ASSET ") || strings.Contains(text, " MULTI-ASSET "):
+		return "Multi-Asset Fund"
+	case containsAnyToken(text, "QUALITY", "VALUE", "MOMENTUM", "DIVIDEND") || strings.Contains(text, " EQUAL WEIGHT ") || strings.Contains(text, " MINIMUM VOLATILITY "):
+		return "Factor ETF"
+	default:
+		return defaultIndustry
+	}
 }
 
 func sortedRelationships(rows []taxonomy.Relationship) []taxonomy.Relationship {
@@ -935,6 +976,8 @@ func applyExposures(exposures []taxonomy.Exposure, tickers map[string]*Ticker, c
 	}
 }
 
+const maxRelatedTickersPerIndustry = 50
+
 func addRelatedTickers(tickers map[string]*Ticker, companies map[string]*Company) {
 	byIndustry := map[string][]string{}
 	for _, ticker := range tickers {
@@ -942,9 +985,18 @@ func addRelatedTickers(tickers map[string]*Ticker, companies map[string]*Company
 			byIndustry[ticker.Industry] = append(byIndustry[ticker.Industry], ticker.Ticker)
 		}
 	}
+	for industry, tickerIDs := range byIndustry {
+		sort.Strings(tickerIDs)
+		if len(tickerIDs) > maxRelatedTickersPerIndustry {
+			tickerIDs = tickerIDs[:maxRelatedTickersPerIndustry]
+		}
+		byIndustry[industry] = tickerIDs
+	}
 	for _, company := range companies {
 		related := []string{}
-		related = append(related, company.TickerIDs...)
+		ownTickers := append([]string(nil), company.TickerIDs...)
+		sort.Strings(ownTickers)
+		related = append(related, ownTickers...)
 		if company.Industry != "" {
 			related = append(related, byIndustry[company.Industry]...)
 		}

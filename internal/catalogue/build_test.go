@@ -1,6 +1,7 @@
 package catalogue
 
 import (
+	"fmt"
 	"testing"
 	"time"
 
@@ -21,6 +22,8 @@ func TestParseBrokerTickerTrading212Patterns(t *testing.T) {
 		{ticker: "3SQQQ_US_EQ", symbol: "3SQQQ", exchangeCode: "US", assetCode: "EQ"},
 		{ticker: "BRK.B_US_EQ", symbol: "BRK.B", exchangeCode: "US", assetCode: "EQ"},
 		{ticker: "VUSA_L_ETF", symbol: "VUSA", exchangeCode: "L", assetCode: "ETF"},
+		{ticker: "BHP1d_EQ", symbol: "BHP1", assetCode: "EQ"},
+		{ticker: "SANTd_EQ", symbol: "SANT", assetCode: "EQ"},
 		{ticker: "ABC_US", symbol: "ABC", exchangeCode: "US", uncertain: true},
 		{ticker: "RAW-TICKER", symbol: "RAW-TICKER", uncertain: true},
 	}
@@ -29,6 +32,29 @@ func TestParseBrokerTickerTrading212Patterns(t *testing.T) {
 		if got.Symbol != tt.symbol || got.ExchangeCode != tt.exchangeCode || got.AssetCode != tt.assetCode || got.Uncertain != tt.uncertain {
 			t.Fatalf("ParseBrokerTicker(%q) = %#v", tt.ticker, got)
 		}
+	}
+}
+
+func TestBuildISINBackedFundLikeIdentityStaysReviewableButNotLowConfidence(t *testing.T) {
+	cat, err := Build(BuildInput{
+		Instruments: []trading212.Instrument{
+			{Ticker: "VUSA_L_EQ", Name: "Vanguard S&P 500 UCITS ETF Dist", ISIN: "IE00B3XXRP09", Type: "ETF", CurrencyCode: "GBP"},
+		},
+		Manual:  emptyManual(),
+		BuiltAt: time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	ticker := findTicker(t, cat, "VUSA_L_EQ")
+	if ticker.IdentityConfidence != "rule_medium" {
+		t.Fatalf("ticker identity confidence = %q, want rule_medium: %#v", ticker.IdentityConfidence, ticker)
+	}
+	if hasIdentityIssue(cat, "low_confidence_company_identity") {
+		t.Fatalf("ISIN-backed fund-like identity should not require low-confidence company review: %#v", cat.IdentityIssues)
+	}
+	if !containsString(ticker.IdentityReasons, "fund_like_company_identity_from_isin") {
+		t.Fatalf("identity reasons = %#v, want fund_like_company_identity_from_isin", ticker.IdentityReasons)
 	}
 }
 
@@ -70,6 +96,14 @@ func TestDetectStructureFlags(t *testing.T) {
 	flags = DetectStructureFlags(CategoryStock, "ABC_L_EQ", "ABC Global Depositary Receipt GDR")
 	if !containsString(flags, "gdr") {
 		t.Fatalf("flags = %#v, want gdr", flags)
+	}
+	flags = DetectStructureFlags(CategoryStock, "ADS_US_EQ", "Bread Financial")
+	if containsString(flags, "adr") {
+		t.Fatalf("ticker symbol alone should not create adr flag: %#v", flags)
+	}
+	flags = DetectStructureFlags(CategoryETF, "CEBBd_EQ", "iShares MSCI Russia ADR/GDR (Acc)")
+	if containsString(flags, "adr") || containsString(flags, "gdr") {
+		t.Fatalf("ETF underlying ADR/GDR wording should not create depositary receipt flags: %#v", flags)
 	}
 }
 
@@ -397,6 +431,59 @@ func TestBuildClassificationOverridePrecedence(t *testing.T) {
 	}
 	if !foundSource {
 		t.Fatalf("classification source missing: %#v", ticker.Sources)
+	}
+}
+
+func TestBuildRuleClassificationForFundLikeAndStructuredProducts(t *testing.T) {
+	cat, err := Build(BuildInput{
+		Instruments: []trading212.Instrument{
+			{Ticker: "VUSA_L_EQ", Name: "Vanguard S&P 500 UCITS ETF Dist", ISIN: "IE00B3XXRP09", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "AGGH_L_EQ", Name: "iShares Core Global Aggregate Bond UCITS ETF", ISIN: "IE00BDBRDM35", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "3LNVDA_L_EQ", Name: "Leverage Shares 3x Long NVIDIA ETP", ISIN: "XS2820604853", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "ABCW_US_EQ", Name: "ABC Corp Warrant", ISIN: "US0000000004", Type: "WARRANT", CurrencyCode: "USD"},
+		},
+		Manual:  emptyManual(),
+		BuiltAt: time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	for tickerID, want := range map[string][2]string{
+		"VUSA_L_EQ":   {"Funds", "Equity ETF"},
+		"AGGH_L_EQ":   {"Funds", "Bond ETF"},
+		"3LNVDA_L_EQ": {"Funds", "Leveraged ETP"},
+		"ABCW_US_EQ":  {"Structured Products", "Warrant"},
+	} {
+		ticker := findTicker(t, cat, tickerID)
+		if ticker.Sector != want[0] || ticker.Industry != want[1] {
+			t.Fatalf("%s classification = %q/%q, want %q/%q", tickerID, ticker.Sector, ticker.Industry, want[0], want[1])
+		}
+	}
+}
+
+func TestBuildCapsGeneratedRelatedTickersForBroadIndustries(t *testing.T) {
+	instruments := make([]trading212.Instrument, 0, maxRelatedTickersPerIndustry+5)
+	for i := 0; i < maxRelatedTickersPerIndustry+5; i++ {
+		instruments = append(instruments, trading212.Instrument{
+			Ticker:       fmt.Sprintf("ETF%02d_L_EQ", i),
+			Name:         fmt.Sprintf("Example Equity ETF %02d", i),
+			ISIN:         fmt.Sprintf("IE000000%04d", i),
+			Type:         "ETF",
+			CurrencyCode: "GBP",
+		})
+	}
+	cat, err := Build(BuildInput{
+		Instruments: instruments,
+		Manual:      emptyManual(),
+		BuiltAt:     time.Date(2026, 5, 9, 12, 0, 0, 0, time.UTC),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+	for _, ticker := range cat.Tickers {
+		if len(ticker.RelatedTickers) > maxRelatedTickersPerIndustry {
+			t.Fatalf("%s has %d related tickers, want at most %d", ticker.Ticker, len(ticker.RelatedTickers), maxRelatedTickersPerIndustry)
+		}
 	}
 }
 

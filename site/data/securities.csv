@@ -1558,7 +1558,7 @@ isin:DE000A1EK0G3,DE000A1EK0G3,Xtrackers Physical Gold EUR Hedged,ETF,etf,hedged
 isin:DE000A1EK0J7,DE000A1EK0J7,Xtrackers Physical Silver EUR Hedged,ETF,etf,hedged;fund_like,xtrackers_physical_silver_eur_hedged,XAD2d_EQ,XAD2d_EQ,EUR,rule_high,security_id_from_isin
 isin:DE000A1EMHE0,DE000A1EMHE0,Tonkens Agrar AG,STOCK,stock,,tonkens_agrar_ag,GTKd_EQ,GTKd_EQ,EUR,rule_high,security_id_from_isin
 isin:DE000A1EWVY8,DE000A1EWVY8,Formycon AG,STOCK,stock,,formycon_ag,FYBd_EQ,FYBd_EQ,EUR,rule_high,security_id_from_isin
-isin:DE000A1EWWW0,DE000A1EWWW0,adidas AG,STOCK,stock,adr,adidas_ag,ADSd_EQ,ADSd_EQ,EUR,rule_high,security_id_from_isin
+isin:DE000A1EWWW0,DE000A1EWWW0,adidas AG,STOCK,stock,,adidas_ag,ADSd_EQ,ADSd_EQ,EUR,rule_high,security_id_from_isin
 isin:DE000A1EWXA4,DE000A1EWXA4,clearvise AG,STOCK,stock,,clearvise_ag,ABOd_EQ,ABOd_EQ,EUR,rule_high,security_id_from_isin
 isin:DE000A1H8BV3,DE000A1H8BV3,NORMA Group SE,STOCK,stock,,norma_group_se,NOEJd_EQ,NOEJd_EQ,EUR,rule_high,security_id_from_isin
 isin:DE000A1J5RX9,DE000A1J5RX9,Telefonica Deutschland,STOCK,stock,,telefonica_deutschland,O2Dd_EQ,O2Dd_EQ,EUR,rule_high,security_id_from_isin
@@ -2778,7 +2778,7 @@ isin:GB00B1N7Z094,GB00B1N7Z094,Safestore Holdings Plc,STOCK,stock,,safestore_hol
 isin:GB00B1QH8P22,GB00B1QH8P22,Frasers Group Plc,STOCK,stock,,frasers_group_plc,SPDl_EQ,SPDl_EQ,GBX,rule_high,security_id_from_isin
 isin:GB00B1TR0310,GB00B1TR0310,Inland Homes,STOCK,stock,,inland_homes,INLl_EQ,INLl_EQ,GBX,rule_high,security_id_from_isin
 isin:GB00B1V9NW54,GB00B1V9NW54,Hilton Food Group plc,STOCK,stock,,hilton_food_group_plc,HFGl_EQ,HFGl_EQ,GBX,rule_high,security_id_from_isin
-isin:GB00B1VKB244,GB00B1VKB244,genedrive plc,STOCK,stock,gdr,genedrive_plc,GDRl_EQ,GDRl_EQ,GBX,rule_high,security_id_from_isin
+isin:GB00B1VKB244,GB00B1VKB244,genedrive plc,STOCK,stock,,genedrive_plc,GDRl_EQ,GDRl_EQ,GBX,rule_high,security_id_from_isin
 isin:GB00B1VNSX38,GB00B1VNSX38,Drax Group plc,STOCK,stock,,drax_group_plc,DRXl_EQ,DRXl_EQ,GBX,rule_high,security_id_from_isin
 isin:GB00B1VQ6H25,GB00B1VQ6H25,YouGov plc,STOCK,stock,,yougov_plc,YOUl_EQ,YOUl_EQ,GBX,rule_high,security_id_from_isin
 isin:GB00B1VS7G47,GB00B1VS7G47,Alina Holdings Plc,STOCK,stock,,alina_holdings_plc,ALNAl_EQ,ALNAl_EQ,GBX,rule_high,security_id_from_isin
@@ -3997,7 +3997,7 @@ isin:IE000DOZYQJ7,IE000DOZYQJ7,Janus Hend Haitong Asia exJapan High Yield Corp U
 isin:IE000DR59CI3,IE000DR59CI3,iShares Energy Storage & Hydrogen (Acc),ETF,etf,accumulating;fund_like,ishares_energy_storage_hydrogen_acc,STORa_EQ,STORa_EQ,USD,rule_high,security_id_from_isin
 isin:IE000DS9ZCL4,IE000DS9ZCL4,JPMorgan China A Research Enhanced Index Equity Active (Dist),ETF,etf,distributing;fund_like,jpmorgan_china_a_research_enhanced_index_equity_active_dist,JRDCd_EQ,JRDCd_EQ,EUR,rule_high,security_id_from_isin
 isin:IE000DTA2ZH9,IE000DTA2ZH9,JPMorgan US Value Equity Active (Dist),ETF,etf,distributing;fund_like,jpmorgan_us_value_equity_active_dist,JPVDd_EQ,JPVDd_EQ,EUR,rule_high,security_id_from_isin
-isin:IE000DU292E6,IE000DU292E6,Ads-Tec Energy,STOCK,stock,adr,ads_tec_energy,EUSG_US_EQ,EUSG_US_EQ,USD,rule_high,security_id_from_isin
+isin:IE000DU292E6,IE000DU292E6,Ads-Tec Energy,STOCK,stock,,ads_tec_energy,EUSG_US_EQ,EUSG_US_EQ,USD,rule_high,security_id_from_isin
 isin:IE000DVLBQ03,IE000DVLBQ03,iShares S&P 500 Equal Weight (Acc),ETF,etf,accumulating;fund_like,ishares_s_p_500_equal_weight_acc,EFRWd_EQ,EFRWd_EQ,EUR,rule_high,security_id_from_isin
 isin:IE000DYQE2Q3,IE000DYQE2Q3,iShares AT1 Bond Active (Acc),ETF,etf,accumulating;fund_like,ishares_at1_bond_active_acc,GAT1d_EQ,GAT1d_EQ,EUR,rule_high,security_id_from_isin
 isin:IE000E02WFD5,IE000E02WFD5,Franklin US Treasury 0-1 Year (Acc),ETF,etf,accumulating;fund_like,franklin_us_treasury_0_1_year_acc,SHORd_EQ;SHORl_EQ,SHORd_EQ;SHORl_EQ,EUR;USD,rule_high,security_id_from_isin
@@ -4750,7 +4750,7 @@ isin:IE00B5MTZM66,IE00B5MTZM66,Invesco STOXX Europe 600 Optimised Retail (Acc),E
 isin:IE00B5NLX835,IE00B5NLX835,Invesco STOXX Europe 600 Optimised Automobiles & Parts (Acc),ETF,etf,accumulating;fund_like,invesco_stoxx_europe_600_optimised_automobiles_parts_acc,XAPSd_EQ,XAPSd_EQ,EUR,rule_high,security_id_from_isin
 isin:IE00B5SG8Z57,IE00B5SG8Z57,HSBC MSCI Pacific ex Japan (Dist),ETF,etf,distributing;fund_like,hsbc_msci_pacific_ex_japan_dist,HMXJl_EQ,HMXJl_EQ,GBX,rule_high,security_id_from_isin
 isin:IE00B5SSQT16,IE00B5SSQT16,HSBC MSCI EMERGING MARKETS (Dist),ETF,etf,distributing;fund_like,hsbc_msci_emerging_markets_dist,HMEFl_EQ;HMEMl_EQ;HMEMm_EQ,HMEFl_EQ;HMEMl_EQ;HMEMm_EQ,EUR;GBX;USD,rule_high,security_id_from_isin
-isin:IE00B5V87390,IE00B5V87390,iShares MSCI Russia ADR/GDR (Acc),ETF,etf,accumulating;adr;gdr;fund_like,ishares_msci_russia_adr_gdr_acc,CEBBd_EQ;CRU1l_EQ;CSRUs_EQ,CEBBd_EQ;CRU1l_EQ;CSRUs_EQ,EUR;GBX;USD,rule_high,security_id_from_isin
+isin:IE00B5V87390,IE00B5V87390,iShares MSCI Russia ADR/GDR (Acc),ETF,etf,accumulating;fund_like,ishares_msci_russia_adr_gdr_acc,CEBBd_EQ;CRU1l_EQ;CSRUs_EQ,CEBBd_EQ;CRU1l_EQ;CSRUs_EQ,EUR;GBX;USD,rule_high,security_id_from_isin
 isin:IE00B5V94313,IE00B5V94313,iShares Germany Govt Bond (Dist),ETF,etf,distributing;fund_like,ishares_germany_govt_bond_dist,IS0Ld_EQ;SDEUl_EQ,IS0Ld_EQ;SDEUl_EQ,EUR;GBP,rule_high,security_id_from_isin
 isin:IE00B5VX7566,IE00B5VX7566,HSBC MSCI Japan (Dist),ETF,etf,distributing;fund_like,hsbc_msci_japan_dist,H4ZCd_EQ;HMJDl_EQ;HMJPl_EQ;MJPp_EQ,H4ZCd_EQ;HMJDl_EQ;HMJPl_EQ;MJPp_EQ,EUR;GBX;USD,rule_high,security_id_from_isin
 isin:IE00B5W4TY14,IE00B5W4TY14,iShares MSCI Korea USD Acc (Acc),ETF,etf,accumulating;fund_like,ishares_msci_korea_usd_acc_acc,CSKRl_EQ;CSKRm_EQ;CSKRs_EQ,CSKRl_EQ;CSKRm_EQ;CSKRs_EQ,EUR;USD,rule_high,security_id_from_isin
@@ -7837,7 +7837,7 @@ isin:US01741R1023,US01741R1023,ATI Inc.,STOCK,stock,,ati_inc,ATI_US_EQ,ATI_US_EQ
 isin:US01748X1028,US01748X1028,Allegiant Travel,STOCK,stock,,allegiant_travel,ALGT_US_EQ,ALGT_US_EQ,USD,rule_high,security_id_from_isin
 isin:US01749D1054,US01749D1054,"Allegro MicroSystems, Inc.",STOCK,stock,,allegro_microsystems_inc,ALGM_US_EQ,ALGM_US_EQ,USD,rule_high,security_id_from_isin
 isin:US0185223007,US0185223007,ALLETE,STOCK,stock,,allete,ALE_US_EQ,ALE_US_EQ,USD,rule_high,security_id_from_isin
-isin:US0185811082,US0185811082,Bread Financial,STOCK,stock,adr,bread_financial,ADS_US_EQ,ADS_US_EQ,USD,rule_high,security_id_from_isin
+isin:US0185811082,US0185811082,Bread Financial,STOCK,stock,,bread_financial,ADS_US_EQ,ADS_US_EQ,USD,rule_high,security_id_from_isin
 isin:US01861F1021,US01861F1021,Alliance Entertainment,STOCK,stock,,alliance_entertainment,ADRA_US_EQ,ADRA_US_EQ,USD,rule_high,security_id_from_isin
 isin:US01862Q1076,US01862Q1076,Alliance Laundry Holdings Inc.,STOCK,stock,,alliance_laundry_holdings_inc,ALH_US_EQ,ALH_US_EQ,USD,rule_high,security_id_from_isin
 isin:US0188021085,US0188021085,Alliant Energy,STOCK,stock,,alliant_energy,LNT_US_EQ,LNT_US_EQ,USD,rule_high,security_id_from_isin

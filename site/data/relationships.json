@@ -1,1 +1,101 @@
-[]
+[
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "advanced_micro_devices_inc",
+    "targetCompanyId": "nvidia",
+    "themeId": "ai_infrastructure",
+    "layerId": "accelerators",
+    "confidence": "manual_high",
+    "sourceUrl": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-25-000012/amd-20241228.htm",
+    "rationale": "AMD identifies NVIDIA as a data-centre GPU competitor.",
+    "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "lockheed_martin_corporation",
+    "targetCompanyId": "northrop_grumman_corporation",
+    "themeId": "defence",
+    "layerId": "primes",
+    "confidence": "manual_high",
+    "sourceUrl": "https://www.lockheedmartin.com/content/dam/lockheed-martin/eo/documents/annual-reports/lockheed-martin-annual-report-2024.pdf",
+    "rationale": "Lockheed identifies Northrop Grumman among primary competitors.",
+    "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "lockheed_martin_corporation",
+    "targetCompanyId": "rtx_corporation",
+    "themeId": "defence",
+    "layerId": "primes",
+    "confidence": "manual_high",
+    "sourceUrl": "https://www.lockheedmartin.com/content/dam/lockheed-martin/eo/documents/annual-reports/lockheed-martin-annual-report-2024.pdf",
+    "rationale": "Lockheed identifies RTX among primary competitors.",
+    "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "visa_inc",
+    "targetCompanyId": "mastercard_incorporated",
+    "themeId": "fintech",
+    "layerId": "payments",
+    "confidence": "manual_high",
+    "sourceUrl": "https://investor.mastercard.com/files/doc_financials/2024/q4/MA-12-31-2024-10-K-as-filed-with-exhibits.pdf",
+    "rationale": "Mastercard annual report supports Visa as a payment network peer.",
+    "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "related_play",
+    "sourceCompanyId": "nvidia",
+    "targetCompanyId": "microsoft",
+    "themeId": "ai_infrastructure",
+    "layerId": "cloud",
+    "confidence": "manual_high",
+    "sourceUrl": "https://nvidianews.nvidia.com/news/nvidia-microsoft-accelerate-cloud-enterprise-ai",
+    "rationale": "NVIDIA and Microsoft collaborate on Azure AI infrastructure.",
+    "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "related_play",
+    "sourceCompanyId": "synopsys_inc",
+    "targetCompanyId": "nvidia",
+    "themeId": "semiconductors",
+    "layerId": "design_tools",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investor.nvidia.com/news/press-release-details/2024/TSMC-and-Synopsys-Bring-Breakthrough-NVIDIA-Computational-Lithography-Platform-to-Production/default.aspx",
+    "rationale": "Synopsys and NVIDIA collaborate on computational lithography.",
+    "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "related_play",
+    "sourceCompanyId": "taiwan_semiconductor_manufacturing_company_limited",
+    "targetCompanyId": "synopsys_inc",
+    "themeId": "semiconductors",
+    "layerId": "design_tools",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investor.nvidia.com/news/press-release-details/2024/TSMC-and-Synopsys-Bring-Breakthrough-NVIDIA-Computational-Lithography-Platform-to-Production/default.aspx",
+    "rationale": "TSMC and Synopsys collaborate on computational lithography flows.",
+    "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "upstream_supplier",
+    "sourceCompanyId": "taiwan_semiconductor_manufacturing_company_limited",
+    "targetCompanyId": "advanced_micro_devices_inc",
+    "themeId": "semiconductors",
+    "layerId": "foundry_and_packaging",
+    "confidence": "manual_high",
+    "sourceUrl": "https://ir.amd.com/financial-information/sec-filings/content/0000002488-25-000012/amd-20241228.htm",
+    "rationale": "AMD reports using TSMC for wafer production.",
+    "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "upstream_supplier",
+    "sourceCompanyId": "taiwan_semiconductor_manufacturing_company_limited",
+    "targetCompanyId": "nvidia",
+    "themeId": "ai_infrastructure",
+    "layerId": "foundry_and_packaging",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investor.nvidia.com/news/press-release-details/2024/Computer-Industry-Joins-NVIDIA-to-Build-AI-Factories-and-Data-Centers-for-the-Next-Industrial-Revolution/default.aspx",
+    "rationale": "TSMC is identified as an NVIDIA foundry partner.",
+    "lastReviewed": "2026-05-16"
+  }
+]

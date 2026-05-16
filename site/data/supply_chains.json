@@ -29,6 +29,12 @@
         "order": 40
       },
       {
+        "id": "design_tools",
+        "name": "Chip design tools",
+        "description": "EDA, IP, and design software used in advanced chip development.",
+        "order": 45
+      },
+      {
         "id": "foundry_and_packaging",
         "name": "Foundry and packaging",
         "description": "Leading-edge wafer manufacturing and advanced packaging capacity.",
@@ -63,6 +69,234 @@
         "name": "Cloud and hyperscalers",
         "description": "Cloud platforms and AI compute buyers.",
         "order": 100
+      }
+    ]
+  },
+  {
+    "themeId": "energy",
+    "name": "Energy supply chain",
+    "description": "Fuels, services, power generation, grid equipment, renewables, and storage.",
+    "layers": [
+      {
+        "id": "integrated_oil_gas",
+        "name": "Integrated oil and gas",
+        "description": "Integrated upstream, downstream, and trading exposure.",
+        "order": 10
+      },
+      {
+        "id": "upstream",
+        "name": "Upstream producers",
+        "description": "Exploration and production companies.",
+        "order": 20
+      },
+      {
+        "id": "oilfield_services",
+        "name": "Oilfield services",
+        "description": "Equipment, services, and technology for hydrocarbon production.",
+        "order": 30
+      },
+      {
+        "id": "power_generation",
+        "name": "Power generation",
+        "description": "Electricity generation exposed to load growth and reliability needs.",
+        "order": 40
+      },
+      {
+        "id": "grid_equipment",
+        "name": "Grid and electrification equipment",
+        "description": "Grid hardware, power distribution, and electrification equipment.",
+        "order": 50
+      },
+      {
+        "id": "renewables",
+        "name": "Renewables",
+        "description": "Solar, wind, and clean-power generation equipment.",
+        "order": 60
+      },
+      {
+        "id": "energy_storage",
+        "name": "Energy storage",
+        "description": "Batteries, inverters, and storage materials.",
+        "order": 70
+      }
+    ]
+  },
+  {
+    "themeId": "defence",
+    "name": "Defence supply chain",
+    "description": "Defence primes, aerospace systems, components, software, and cyber.",
+    "layers": [
+      {
+        "id": "primes",
+        "name": "Defence primes",
+        "description": "Large defence contractors and systems integrators.",
+        "order": 10
+      },
+      {
+        "id": "aerospace_components",
+        "name": "Aerospace components",
+        "description": "Engineered parts and subsystems for aerospace and defence platforms.",
+        "order": 20
+      },
+      {
+        "id": "defence_software",
+        "name": "Defence software",
+        "description": "Data, decision, and mission software.",
+        "order": 30
+      },
+      {
+        "id": "cyber",
+        "name": "Cybersecurity",
+        "description": "Security software and cyber operations exposure.",
+        "order": 40
+      }
+    ]
+  },
+  {
+    "themeId": "healthcare",
+    "name": "Healthcare supply chain",
+    "description": "Biopharma, tools, devices, care delivery, and health infrastructure.",
+    "layers": [
+      {
+        "id": "biopharma",
+        "name": "Biopharma",
+        "description": "Drug discovery, development, and manufacturing.",
+        "order": 10
+      },
+      {
+        "id": "life_science_tools",
+        "name": "Life science tools",
+        "description": "Instruments, diagnostics, and lab consumables.",
+        "order": 20
+      },
+      {
+        "id": "medical_devices",
+        "name": "Medical devices",
+        "description": "Surgical, implant, and treatment devices.",
+        "order": 30
+      },
+      {
+        "id": "care_delivery",
+        "name": "Care delivery and payors",
+        "description": "Health plans, care delivery, and care infrastructure.",
+        "order": 40
+      }
+    ]
+  },
+  {
+    "themeId": "fintech",
+    "name": "Fintech supply chain",
+    "description": "Payments, capital markets, lending, banking software, and crypto rails.",
+    "layers": [
+      {
+        "id": "payments",
+        "name": "Payments",
+        "description": "Card networks, merchant acquiring, wallets, and payment processors.",
+        "order": 10
+      },
+      {
+        "id": "capital_markets",
+        "name": "Capital markets",
+        "description": "Trading, brokerage, market data, and exchange infrastructure.",
+        "order": 20
+      },
+      {
+        "id": "consumer_finance",
+        "name": "Consumer finance",
+        "description": "Digital banking, lending, and personal finance platforms.",
+        "order": 30
+      },
+      {
+        "id": "crypto_rails",
+        "name": "Crypto rails",
+        "description": "Crypto trading, custody, and blockchain-linked financial platforms.",
+        "order": 40
+      },
+      {
+        "id": "banking_software",
+        "name": "Banking software",
+        "description": "Core banking, risk, and financial workflow software.",
+        "order": 50
+      }
+    ]
+  },
+  {
+    "themeId": "semiconductors",
+    "name": "Semiconductor supply chain",
+    "description": "Design tools, equipment, manufacturing, memory, logic, analog, and materials.",
+    "layers": [
+      {
+        "id": "design_tools",
+        "name": "Design tools and IP",
+        "description": "EDA, verification, and semiconductor IP.",
+        "order": 10
+      },
+      {
+        "id": "equipment",
+        "name": "Semiconductor equipment",
+        "description": "Wafer fabrication, process, and inspection equipment.",
+        "order": 20
+      },
+      {
+        "id": "foundry_and_packaging",
+        "name": "Foundry and packaging",
+        "description": "Wafer manufacturing, assembly, test, and advanced packaging.",
+        "order": 30
+      },
+      {
+        "id": "memory",
+        "name": "Memory",
+        "description": "DRAM, NAND, HBM, and specialty memory.",
+        "order": 40
+      },
+      {
+        "id": "fabless_design",
+        "name": "Fabless and chip design",
+        "description": "Logic, accelerator, networking, and processor designers.",
+        "order": 50
+      },
+      {
+        "id": "analog_power",
+        "name": "Analog and power semiconductors",
+        "description": "Analog, mixed-signal, power, and embedded semiconductors.",
+        "order": 60
+      }
+    ]
+  },
+  {
+    "themeId": "commodities",
+    "name": "Commodities supply chain",
+    "description": "Miners, agricultural inputs, energy materials, and precious metals.",
+    "layers": [
+      {
+        "id": "diversified_mining",
+        "name": "Diversified mining",
+        "description": "Large diversified miners and processors.",
+        "order": 10
+      },
+      {
+        "id": "copper",
+        "name": "Copper",
+        "description": "Copper miners and processors.",
+        "order": 20
+      },
+      {
+        "id": "lithium",
+        "name": "Lithium and battery materials",
+        "description": "Lithium and other battery-material producers.",
+        "order": 30
+      },
+      {
+        "id": "precious_metals",
+        "name": "Precious metals",
+        "description": "Gold and precious-metals miners.",
+        "order": 40
+      },
+      {
+        "id": "agriculture_inputs",
+        "name": "Agricultural inputs",
+        "description": "Fertilizer, crop nutrients, and agriculture commodity inputs.",
+        "order": 50
       }
     ]
   }

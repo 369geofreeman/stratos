@@ -1,1 +1,20 @@
 target_type,ticker,isin,company_id,sector,industry,country,source_url,last_reviewed
+company,,,jd_com,Consumer Cyclical,Internet Retail,China,https://ir.jd.com/,2026-05-16
+company,,,guangzhou_automobile_group,Consumer Cyclical,Auto Manufacturers,China,https://www.gac.com.cn/en/investor/,2026-05-16
+company,,,mosaic,Basic Materials,Agricultural Inputs,United States,https://investors.mosaicco.com/,2026-05-16
+company,,,elf_beauty,Consumer Defensive,Household & Personal Products,United States,https://investor.elfbeauty.com/,2026-05-16
+company,,,vinfast_auto,Consumer Cyclical,Auto Manufacturers,Vietnam,https://ir.vinfastauto.us/,2026-05-16
+company,,,yum_china,Consumer Cyclical,Restaurants,China,https://ir.yumchina.com/,2026-05-16
+company,,,zillow_group,Real Estate,Real Estate Services,United States,https://investors.zillowgroup.com/,2026-05-16
+company,,,xinyi_solar_holdings,Technology,Solar,China,https://www.xinyisolar.com/en/investor_relations/index.html,2026-05-16
+company,,,crowdstrike,Technology,Software - Infrastructure,United States,https://ir.crowdstrike.com/,2026-05-16
+company,,,ge_vernova,Industrials,Specialty Industrial Machinery,United States,https://www.gevernova.com/investors,2026-05-16
+company,,,eaton,Industrials,Electrical Equipment,Ireland,https://www.eaton.com/us/en-us/company/investor-relations.html,2026-05-16
+company,,,baker_hughes,Energy,Oil & Gas Equipment & Services,United States,https://investors.bakerhughes.com/,2026-05-16
+company,,,sofi_technologies,Financial Services,Credit Services,United States,https://investors.sofi.com/,2026-05-16
+company,,,robinhood_markets,Financial Services,Capital Markets,United States,https://investors.robinhood.com/,2026-05-16
+company,,,southern_copper,Basic Materials,Copper,,https://southerncoppercorp.com/investors/,2026-05-16
+company,,,sociedad_quimica_y_minera_de_chile,Basic Materials,Specialty Chemicals,Chile,https://ir.sqm.com/,2026-05-16
+company,,,mp_materials,Basic Materials,Other Industrial Metals & Mining,United States,https://investors.mpmaterials.com/,2026-05-16
+company,,,rocket_lab_corp,Industrials,Aerospace & Defense,United States,https://investors.rocketlabusa.com/,2026-05-16
+company,,,applovin,Technology,Software - Application,United States,https://investors.applovin.com/,2026-05-16

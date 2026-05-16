@@ -166,8 +166,20 @@ textarea {
   margin-bottom: 12px;
 }
 
+.panel-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
 .panel-head h2 {
   font-size: 18px;
+}
+
+.active-filters {
+  margin: -4px 0 12px;
 }
 
 .table-wrap {
@@ -593,14 +605,22 @@ tr:last-child td {
 }
 
 .relationship-list div {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(120px, 0.8fr) minmax(180px, 1.4fr) minmax(120px, 1fr) auto;
   gap: 8px;
+  align-items: start;
   font-size: 13px;
 }
 
-.relationship-list span {
+.relationship-list span,
+.relationship-list small {
   color: var(--muted);
+}
+
+.relationship-list a {
+  color: var(--blue);
+  font-weight: 650;
+  text-decoration: none;
 }
 
 @media (max-width: 980px) {
@@ -623,7 +643,8 @@ tr:last-child td {
 
 @media (max-width: 560px) {
   .facts,
-  .control-row {
+  .control-row,
+  .relationship-list div {
     grid-template-columns: 1fr;
   }
 

@@ -70,6 +70,13 @@ func ParseBrokerTicker(ticker string) BrokerTickerParts {
 		}
 		return parsed
 	}
+	if len(parts) == 2 && looksLikeAssetCode(parts[1]) {
+		return BrokerTickerParts{
+			Symbol:    compactBrokerSymbol(parts[0]),
+			AssetCode: strings.ToUpper(parts[1]),
+			Parsed:    true,
+		}
+	}
 	if len(parts) == 2 && looksLikeVenueCode(parts[1]) {
 		return BrokerTickerParts{
 			Symbol:       parts[0],
@@ -80,6 +87,17 @@ func ParseBrokerTicker(ticker string) BrokerTickerParts {
 		}
 	}
 	return BrokerTickerParts{Symbol: trimmed, Uncertain: true, Reason: "unrecognised_broker_ticker"}
+}
+
+func compactBrokerSymbol(value string) string {
+	value = strings.TrimSpace(value)
+	if len(value) > 1 {
+		last := rune(value[len(value)-1])
+		if last >= 'a' && last <= 'z' {
+			return value[:len(value)-1]
+		}
+	}
+	return value
 }
 
 func ClassifyInstrumentCategory(raw trading212.Instrument) (string, []string) {
@@ -125,6 +143,10 @@ func ClassifyInstrumentCategory(raw trading212.Instrument) (string, []string) {
 
 func DetectStructureFlags(category string, values ...string) []string {
 	joined := normaliseIdentityText(values...)
+	fullNameText := joined
+	if len(values) > 1 {
+		fullNameText = normaliseIdentityText(values[1])
+	}
 	upperRaw := strings.ToUpper(strings.Join(values, " "))
 	parts := ParseBrokerTicker(firstNonEmpty(values...))
 	symbol := strings.ToUpper(parts.Symbol)
@@ -151,10 +173,10 @@ func DetectStructureFlags(category string, values ...string) []string {
 	if containsAnyToken(joined, "DIST", "DISTRIBUTING", "DISTRIBUTION") {
 		flags = appendUnique(flags, "distributing")
 	}
-	if containsAnyToken(joined, "ADR", "ADS") || strings.Contains(joined, " AMERICAN DEPOSITARY ") || strings.Contains(joined, " AMERICAN DEPOSITORY ") {
+	if category == CategoryStock && (containsAnyToken(fullNameText, "ADR") || strings.Contains(fullNameText, " AMERICAN DEPOSITARY ") || strings.Contains(fullNameText, " AMERICAN DEPOSITORY ")) {
 		flags = appendUnique(flags, "adr")
 	}
-	if containsAnyToken(joined, "GDR") || strings.Contains(joined, " GLOBAL DEPOSITARY ") || strings.Contains(joined, " GLOBAL DEPOSITORY ") {
+	if category == CategoryStock && (containsAnyToken(fullNameText, "GDR") || strings.Contains(fullNameText, " GLOBAL DEPOSITARY ") || strings.Contains(fullNameText, " GLOBAL DEPOSITORY ")) {
 		flags = appendUnique(flags, "gdr")
 	}
 	if category == CategoryETF || category == CategoryFund || category == CategoryInvestmentTrust {

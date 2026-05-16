@@ -1,2 +1,1 @@
 queue,reason_code,severity,ticker,isin,company_id,security_id,name,sector,industry,theme_ids,layer_ids,source_file,source_row,suggested_action,suggested_manual_file,suggested_csv_row,last_reviewed,last_refreshed
-stale_review,manual_review_stale,medium,,,ai_infrastructure,,AI infrastructure starting taxonomy,,,,,data/manual/notes/ai-infrastructure.md,1,review note frontmatter and update last_reviewed,data/manual/notes/ai-infrastructure.md,,,

@@ -44,10 +44,23 @@ def main() -> int:
         return 0
 
     failures = []
-    if source_mode != "live_fetch":
-        failures.append(f"expected sourceMode=live_fetch, got {source_mode}")
-    if environment not in {"demo", "live"}:
-        failures.append(f"expected trading212Environment demo/live, got {environment}")
+    raw_snapshot_at = manifest.get("rawSnapshotAt") or ""
+    raw_snapshots = manifest.get("rawSnapshots") or {}
+    raw_replay_live_derived = (
+        source_mode == "raw_replay"
+        and environment == "raw_replay"
+        and bool(raw_snapshot_at)
+        and int(raw_snapshots.get("instrumentFileCount") or 0) >= args.min_instruments
+        and bool(raw_snapshots.get("instrumentsLatest") or raw_snapshots.get("instrumentsPath"))
+    )
+
+    if source_mode == "live_fetch":
+        if environment not in {"demo", "live"}:
+            failures.append(f"expected trading212Environment demo/live, got {environment}")
+    elif not raw_replay_live_derived:
+        failures.append(f"expected sourceMode=live_fetch or live-derived raw_replay, got {source_mode}")
+        if environment not in {"demo", "live", "raw_replay"}:
+            failures.append(f"expected trading212Environment demo/live/raw_replay, got {environment}")
     if instrument_count < args.min_instruments:
         failures.append(f"expected at least {args.min_instruments} instruments, got {instrument_count}")
 

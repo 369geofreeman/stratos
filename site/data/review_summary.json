@@ -1,48 +1,43 @@
 {
   "generatedAt": "2026-05-16T17:59:08Z",
-  "totalCount": 60630,
+  "totalCount": 33245,
   "byQueue": {
     "enrichment": 9348,
-    "identity": 15334,
-    "stale_review": 1,
-    "taxonomy": 35947
+    "identity": 6,
+    "taxonomy": 23891
   },
   "byReasonCode": {
     "enrichment_failed": 9348,
-    "identity_low_confidence": 15334,
-    "manual_review_stale": 1,
-    "missing_industry": 9459,
-    "missing_sector": 9459,
-    "missing_theme_exposure": 17029
+    "identity_low_confidence": 6,
+    "missing_industry": 3495,
+    "missing_sector": 3495,
+    "missing_theme_exposure": 16901
   },
   "bySeverity": {
-    "low": 17029,
-    "medium": 43601
+    "low": 16901,
+    "medium": 16344
   },
   "taxonomyGaps": {
-    "industry": 9459,
-    "sector": 9459,
-    "theme": 17029
+    "industry": 3495,
+    "sector": 3495,
+    "theme": 16901
   },
   "enrichmentStatuses": {
     "failure": 9348
   },
   "identityIssueTypes": {
-    "broker_ticker_parse_uncertain": 9378,
-    "low_confidence_company_identity": 5956
+    "broker_ticker_parse_uncertain": 6
   },
-  "staleReviewBuckets": {
-    "missing_last_reviewed": 1
-  },
+  "staleReviewBuckets": {},
   "staleReviewThresholdDays": {
     "manual_high": 180,
     "manual_medium": 120,
     "rule_low": 60
   },
   "suggestedManualFileCounts": {
-    "data/manual/classification_overrides.csv": 9459,
-    "data/manual/exposures.csv": 17029,
-    "data/manual/identity_overrides.csv": 9385,
+    "data/manual/classification_overrides.csv": 3495,
+    "data/manual/exposures.csv": 16901,
+    "data/manual/identity_overrides.csv": 6,
     "data/manual/ticker_overrides.csv": 9348
   }
 }

@@ -10,3 +10,85 @@ ai_infrastructure,memory,MU_US_EQ,,micron_technology_inc,4,manual_medium,https:/
 ai_infrastructure,systems,SMCI_US_EQ,,super_micro_computer_inc,4,manual_medium,https://ir.supermicro.com/,AI server and rack integration exposure.,2026-05-09
 ai_infrastructure,power_generation,VST_US_EQ,,vistra_corp,4,manual_medium,https://investor.vistracorp.com/,Power generation exposure to data-centre load growth.,2026-05-09
 ai_infrastructure,foundry_and_packaging,TSM_US_EQ,,taiwan_semiconductor_manufacturing_company_limited,5,manual_high,https://investor.tsmc.com/,Leading-edge foundry exposure for AI accelerator production.,2026-05-09
+ai_infrastructure,semiconductor_equipment,,,applied_materials_inc,4,manual_high,https://ir.appliedmaterials.com/,Wafer fabrication equipment exposure for advanced AI chips.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,lam_research_corp_r,4,manual_high,https://investor.lamresearch.com/,Etch and deposition equipment exposure for advanced AI chips.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,kla_corporation,4,manual_high,https://ir.kla.com/,Process control and inspection exposure for advanced AI chips.,2026-05-16
+ai_infrastructure,design_tools,,,synopsys_inc,4,manual_high,https://investor.synopsys.com/,EDA and IP tools used in advanced chip design.,2026-05-16
+ai_infrastructure,design_tools,,,cadence_design_systems_inc,4,manual_high,https://www.cadence.com/en_US/home/company/investor-relations.html,EDA tools used in advanced chip design.,2026-05-16
+ai_infrastructure,networking,,,marvell_technology_inc,4,manual_medium,https://investor.marvell.com/,Data-centre networking silicon exposure.,2026-05-16
+ai_infrastructure,networking,,,arista_networks_inc,4,manual_high,https://investors.arista.com/,Cloud and AI data-centre networking exposure.,2026-05-16
+ai_infrastructure,networking,,,amphenol_corp_r,3,manual_medium,https://investors.amphenol.com/,High-speed interconnect component exposure for data centres.,2026-05-16
+ai_infrastructure,systems,,,dell_technologies_inc,3,manual_medium,https://investors.delltechnologies.com/,Enterprise server and AI infrastructure systems exposure.,2026-05-16
+ai_infrastructure,systems,,,hewlett_packard_enterprise_company,3,manual_medium,https://investors.hpe.com/,Enterprise server and AI infrastructure systems exposure.,2026-05-16
+ai_infrastructure,systems,,,jabil_inc,3,manual_medium,https://investors.jabil.com/,Manufacturing services exposure to AI infrastructure systems.,2026-05-16
+ai_infrastructure,systems,,,flex_ltd,3,manual_medium,https://investors.flex.com/,Manufacturing services exposure to AI infrastructure systems.,2026-05-16
+ai_infrastructure,systems,,,celestica_inc,3,manual_medium,https://investors.celestica.com/,Manufacturing services exposure to AI infrastructure systems.,2026-05-16
+ai_infrastructure,grid_equipment,,,ge_vernova,3,manual_medium,https://www.gevernova.com/investors,Grid and power equipment exposure to data-centre load growth.,2026-05-16
+ai_infrastructure,grid_equipment,,,eaton,4,manual_medium,https://www.eaton.com/us/en-us/company/investor-relations.html,Electrical equipment exposure to data-centre power needs.,2026-05-16
+ai_infrastructure,grid_equipment,,,quanta_services_inc,3,manual_medium,https://investors.quantaservices.com/,Grid infrastructure services exposure to power demand growth.,2026-05-16
+semiconductors,equipment,,,asml,5,manual_high,https://www.asml.com/en/investors,Leading lithography equipment supplier.,2026-05-16
+semiconductors,equipment,,,applied_materials_inc,5,manual_high,https://ir.appliedmaterials.com/,Wafer fabrication equipment supplier.,2026-05-16
+semiconductors,equipment,,,lam_research_corp_r,5,manual_high,https://investor.lamresearch.com/,Etch and deposition equipment supplier.,2026-05-16
+semiconductors,equipment,,,kla_corporation,5,manual_high,https://ir.kla.com/,Process control and inspection equipment supplier.,2026-05-16
+semiconductors,design_tools,,,synopsys_inc,5,manual_high,https://investor.synopsys.com/,Semiconductor EDA and IP supplier.,2026-05-16
+semiconductors,design_tools,,,cadence_design_systems_inc,5,manual_high,https://www.cadence.com/en_US/home/company/investor-relations.html,Semiconductor EDA and IP supplier.,2026-05-16
+semiconductors,foundry_and_packaging,,,taiwan_semiconductor_manufacturing_company_limited,5,manual_high,https://investor.tsmc.com/,Leading semiconductor foundry exposure.,2026-05-16
+semiconductors,foundry_and_packaging,,,intel_corporation,4,manual_medium,https://www.intc.com/,Integrated chipmaker with foundry strategy exposure.,2026-05-16
+semiconductors,memory,,,micron_technology_inc,5,manual_high,https://investors.micron.com/,Memory and HBM semiconductor exposure.,2026-05-16
+semiconductors,fabless_design,,,nvidia,5,manual_high,https://investor.nvidia.com/financial-info/quarterly-results/default.aspx,GPU and accelerator semiconductor design exposure.,2026-05-16
+semiconductors,fabless_design,,,advanced_micro_devices_inc,5,manual_high,https://ir.amd.com/,CPU GPU and accelerator semiconductor design exposure.,2026-05-16
+semiconductors,fabless_design,,,broadcom_inc,5,manual_high,https://investors.broadcom.com/,Networking and custom silicon semiconductor exposure.,2026-05-16
+semiconductors,fabless_design,,,marvell_technology_inc,4,manual_high,https://investor.marvell.com/,Data infrastructure semiconductor design exposure.,2026-05-16
+semiconductors,fabless_design,,,arm_holdings_plc,4,manual_high,https://investors.arm.com/,Processor IP semiconductor exposure.,2026-05-16
+semiconductors,fabless_design,,,qualcomm_incorporated,4,manual_high,https://investor.qualcomm.com/,Wireless and processor semiconductor design exposure.,2026-05-16
+semiconductors,analog_power,,,analog_devices_inc,4,manual_high,https://investor.analog.com/,Analog mixed-signal and power semiconductor exposure.,2026-05-16
+semiconductors,analog_power,,,nxp_semiconductors_n_v,4,manual_high,https://investors.nxp.com/,Embedded and automotive semiconductor exposure.,2026-05-16
+semiconductors,analog_power,,,on_semiconductor_corporation,4,manual_high,https://investor.onsemi.com/,Power and intelligent sensing semiconductor exposure.,2026-05-16
+semiconductors,analog_power,,,monolithic_power_systems_inc,4,manual_high,https://investors.monolithicpower.com/,Power semiconductor exposure.,2026-05-16
+energy,integrated_oil_gas,,,exxon_mobil_corporation,5,manual_high,https://corporate.exxonmobil.com/investors,Integrated oil and gas exposure.,2026-05-16
+energy,integrated_oil_gas,,,chevron_corporation,5,manual_high,https://www.chevron.com/investors,Integrated oil and gas exposure.,2026-05-16
+energy,upstream,,,conocophillips,5,manual_high,https://www.conocophillips.com/investor-relations/,Upstream exploration and production exposure.,2026-05-16
+energy,oilfield_services,,,baker_hughes,5,manual_high,https://investors.bakerhughes.com/,Oilfield services and energy technology exposure.,2026-05-16
+energy,power_generation,,,constellation_energy,5,manual_high,https://www.constellationenergy.com/investors.html,Power generation exposure.,2026-05-16
+energy,power_generation,,,vistra_corp,5,manual_high,https://investor.vistracorp.com/,Power generation exposure.,2026-05-16
+energy,power_generation,,,nextera_energy_inc,4,manual_high,https://investors.nexteraenergy.com/,Power generation and utility exposure.,2026-05-16
+energy,grid_equipment,,,ge_vernova,5,manual_high,https://www.gevernova.com/investors,Power and grid equipment exposure.,2026-05-16
+energy,grid_equipment,,,eaton,5,manual_high,https://www.eaton.com/us/en-us/company/investor-relations.html,Electrical and power management equipment exposure.,2026-05-16
+energy,grid_equipment,,,quanta_services_inc,4,manual_high,https://investors.quantaservices.com/,Grid infrastructure services exposure.,2026-05-16
+energy,renewables,,,first_solar_inc,5,manual_high,https://investor.firstsolar.com/,Solar module manufacturer exposure.,2026-05-16
+energy,energy_storage,,,enphase_energy_inc,4,manual_high,https://investor.enphase.com/,Solar inverter and battery storage exposure.,2026-05-16
+energy,energy_storage,,,tesla_inc,3,manual_medium,https://ir.tesla.com/,Battery storage exposure alongside automotive operations.,2026-05-16
+defence,primes,,,lockheed_martin_corporation,5,manual_high,https://investors.lockheedmartin.com/,Defence prime contractor exposure.,2026-05-16
+defence,primes,,,rtx_corporation,5,manual_high,https://investors.rtx.com/,Aerospace and defence prime exposure.,2026-05-16
+defence,primes,,,northrop_grumman_corporation,5,manual_high,https://investor.northropgrumman.com/,Defence prime contractor exposure.,2026-05-16
+defence,primes,,,general_dynamics_corporation,5,manual_high,https://investorrelations.gd.com/,Defence prime contractor exposure.,2026-05-16
+defence,aerospace_components,,,howmet_aerospace_inc,4,manual_high,https://www.howmet.com/investors/,Aerospace engineered components exposure.,2026-05-16
+defence,defence_software,,,palantir_technologies_inc,4,manual_high,https://investors.palantir.com/,Defence and government data software exposure.,2026-05-16
+defence,cyber,,,crowdstrike,4,manual_high,https://ir.crowdstrike.com/,Cybersecurity platform exposure.,2026-05-16
+defence,cyber,,,palo_alto_networks_inc,4,manual_high,https://investors.paloaltonetworks.com/,Cybersecurity platform exposure.,2026-05-16
+healthcare,biopharma,,,eli_lilly_and_company,5,manual_high,https://investor.lilly.com/,Biopharma drug developer exposure.,2026-05-16
+healthcare,biopharma,,,novo_nordisk_a_s,5,manual_high,https://www.novonordisk.com/investors.html,Biopharma drug developer exposure.,2026-05-16
+healthcare,life_science_tools,,,thermo_fisher_scientific_inc,5,manual_high,https://ir.thermofisher.com/,Life science tools and diagnostics exposure.,2026-05-16
+healthcare,life_science_tools,,,danaher_corporation,5,manual_high,https://investors.danaher.com/,Life science tools and diagnostics exposure.,2026-05-16
+healthcare,medical_devices,,,intuitive_surgical_inc,5,manual_high,https://isrg.intuitive.com/,Robotic surgery medical device exposure.,2026-05-16
+healthcare,medical_devices,,,stryker_corp_r,5,manual_high,https://investors.stryker.com/,Medical device exposure.,2026-05-16
+healthcare,care_delivery,,,unitedhealth_group_incorporated,5,manual_high,https://www.unitedhealthgroup.com/investors.html,Health insurance and care delivery exposure.,2026-05-16
+fintech,payments,,,visa_inc,5,manual_high,https://investor.visa.com/,Global payments network exposure.,2026-05-16
+fintech,payments,,,mastercard_incorporated,5,manual_high,https://investor.mastercard.com/,Global payments network exposure.,2026-05-16
+fintech,payments,,,paypal_holdings_inc,4,manual_high,https://investor.pypl.com/,Digital payments platform exposure.,2026-05-16
+fintech,payments,,,block_inc,4,manual_high,https://investors.block.xyz/,Payments and financial services platform exposure.,2026-05-16
+fintech,payments,,,adyen_n_v,4,manual_high,https://www.adyen.com/ir,Payment processing platform exposure.,2026-05-16
+fintech,capital_markets,,,robinhood_markets,4,manual_high,https://investors.robinhood.com/,Digital brokerage and investing platform exposure.,2026-05-16
+fintech,consumer_finance,,,sofi_technologies,4,manual_high,https://investors.sofi.com/,Digital banking and lending platform exposure.,2026-05-16
+fintech,crypto_rails,,,coinbase_global_inc,5,manual_high,https://investor.coinbase.com/,Crypto trading and custody platform exposure.,2026-05-16
+fintech,payments,,,mercadolibre_inc,3,manual_medium,https://investor.mercadolibre.com/,Mercado Pago gives payments exposure alongside marketplace operations.,2026-05-16
+commodities,diversified_mining,,,bhp_group_limited,5,manual_high,https://www.bhp.com/investors,Diversified mining exposure.,2026-05-16
+commodities,diversified_mining,,,rio_tinto_group,5,manual_high,https://www.riotinto.com/invest/investors,Diversified mining exposure.,2026-05-16
+commodities,copper,,,freeport_mcmoran_inc,5,manual_high,https://investors.fcx.com/,Copper mining exposure.,2026-05-16
+commodities,copper,,,southern_copper,5,manual_high,https://southerncoppercorp.com/investors/,Copper mining exposure.,2026-05-16
+commodities,precious_metals,,,newmont_corporation,5,manual_high,https://investors.newmont.com/,Gold mining exposure.,2026-05-16
+commodities,precious_metals,,,barrick_mining_corporation,5,manual_high,https://www.barrick.com/English/investors/default.aspx,Gold mining exposure.,2026-05-16
+commodities,lithium,,,albemarle_corporation,5,manual_high,https://investors.albemarle.com/,Lithium and battery materials exposure.,2026-05-16
+commodities,lithium,,,sociedad_quimica_y_minera_de_chile,5,manual_high,https://ir.sqm.com/,Lithium and specialty chemicals exposure.,2026-05-16
+commodities,agriculture_inputs,,,mosaic,5,manual_high,https://investors.mosaicco.com/,Fertilizer and crop nutrient exposure.,2026-05-16
+commodities,agriculture_inputs,,,cf_industries_holdings_inc,5,manual_high,https://investors.cfindustries.com/,Nitrogen fertilizer exposure.,2026-05-16

@@ -2,18 +2,16 @@
   "dataContractVersion": 1,
   "schemaVersion": 1,
   "builtAt": "2026-05-16T17:59:08Z",
-  "sourceMode": "live_fetch",
-  "trading212Environment": "live",
-  "trading212BaseUrl": "https://live.trading212.com/api/v0",
-  "trading212FetchAt": "2026-05-16T17:59:08.674764Z",
+  "sourceMode": "raw_replay",
+  "trading212Environment": "raw_replay",
   "instrumentCount": 17050,
   "exchangeCount": 17,
   "securityCount": 13805,
   "companyCount": 13216,
   "listingCount": 17050,
   "themeCount": 7,
-  "exposureCount": 11,
-  "relationshipCount": 0,
+  "exposureCount": 93,
+  "relationshipCount": 9,
   "enrichmentAttempted": 17050,
   "enrichmentSucceeded": 7702,
   "enrichmentFailed": 9348,
@@ -27,27 +25,25 @@
   "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
   "enrichmentOldestRetrievedAt": "2026-05-16T10:27:53Z",
   "enrichmentNewestRetrievedAt": "2026-05-16T17:59:08Z",
-  "unclassifiedCount": 17029,
+  "unclassifiedCount": 16901,
   "emptyTickerCount": 0,
   "duplicateTickerCount": 0,
   "duplicateISINCount": 2219,
   "missingISINCount": 0,
   "identityCollisionCount": 0,
   "identityOverrideCount": 0,
-  "identityIssueCount": 15334,
+  "identityIssueCount": 6,
   "reviewQueueCounts": {
     "enrichment": 9348,
-    "identity": 15334,
-    "stale_review": 1,
-    "taxonomy": 35947
+    "identity": 6,
+    "taxonomy": 23891
   },
   "reviewReasonCounts": {
     "enrichment_failed": 9348,
-    "identity_low_confidence": 15334,
-    "manual_review_stale": 1,
-    "missing_industry": 9459,
-    "missing_sector": 9459,
-    "missing_theme_exposure": 17029
+    "identity_low_confidence": 6,
+    "missing_industry": 3495,
+    "missing_sector": 3495,
+    "missing_theme_exposure": 16901
   },
   "reviewQueueDeltas": {
     "enrichment": -156,
@@ -73,10 +69,8 @@
   },
   "structureFlagCounts": {
     "accumulating": 2840,
-    "adr": 6,
     "distributing": 1654,
     "fund_like": 5952,
-    "gdr": 4,
     "hedged": 84,
     "inverse": 261,
     "leveraged": 844,
@@ -94,108 +88,50 @@
     "instrumentFileCount": 17050,
     "exchangeFileCount": 17
   },
-  "trading212HttpDiagnostics": [
-    {
-      "endpointName": "exchanges",
-      "path": "/equity/metadata/exchanges",
-      "requestStartedAt": "2026-05-16T17:59:08.674777Z",
-      "responseReceivedAt": "2026-05-16T17:59:08.847331Z",
-      "durationMillis": 172,
-      "statusCode": 200,
-      "status": "200 OK",
-      "rateLimit": {
-        "limit": "1",
-        "period": "30",
-        "remaining": "0",
-        "reset": "1778954378",
-        "resetAt": "2026-05-16T17:59:38Z",
-        "used": "1"
-      }
-    },
-    {
-      "endpointName": "instruments",
-      "path": "/equity/metadata/instruments",
-      "requestStartedAt": "2026-05-16T17:59:08.850469Z",
-      "responseReceivedAt": "2026-05-16T17:59:08.956325Z",
-      "durationMillis": 105,
-      "statusCode": 200,
-      "status": "200 OK",
-      "rateLimit": {
-        "limit": "1",
-        "period": "50",
-        "remaining": "0",
-        "reset": "1778954398",
-        "resetAt": "2026-05-16T17:59:58Z",
-        "used": "1"
-      }
-    }
-  ],
-  "trading212RateLimits": [
-    {
-      "endpointName": "exchanges",
-      "path": "/equity/metadata/exchanges",
-      "limit": "1",
-      "period": "30",
-      "remaining": "0",
-      "reset": "1778954378",
-      "resetAt": "2026-05-16T17:59:38Z",
-      "used": "1"
-    },
-    {
-      "endpointName": "instruments",
-      "path": "/equity/metadata/instruments",
-      "limit": "1",
-      "period": "50",
-      "remaining": "0",
-      "reset": "1778954398",
-      "resetAt": "2026-05-16T17:59:58Z",
-      "used": "1"
-    }
-  ],
   "dataFreshness": "0h",
   "generatedFiles": [
     {
       "path": "site/data/app_bootstrap.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "4f01f921b5ae7ef4bba844d30be89b4d5e6db74ede12dfcd5c989eba2b557230",
-      "bytes": 49610,
+      "sha256": "fc5b73d02f0c3d77e6dfba2eafd8c5762f1f7f9c0590dbe311a3efaf92539756",
+      "bytes": 77882,
       "checksumMode": "projection_excludes_generatedFiles"
     },
     {
       "path": "site/data/tickers_index.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "e64c144fb5a8d0a2cb0119cfbf75fae3ef7e2cc91fbd1549175c97ecc96ef61f",
-      "bytes": 21780292
+      "sha256": "61f1bd4d9fe1c52eaf97dff4423e95dd659d11a7bc01fe0626582fff3414e4fd",
+      "bytes": 15757012
     },
     {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "8ab5bd379df5d3e9b04fb6f7df1b77df5a3420f7e6c870d85cebf261745623d5",
-      "bytes": 96185773
+      "sha256": "acb339831ebc67ddea5f071fc8372cddca3cee2c349884c3791f08271e771054",
+      "bytes": 66537463
     },
     {
       "path": "site/data/companies.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "964af335b648a21e8b9d99731186192f8eec27017c2f1ce2d203d9cc6b7b3dee",
-      "bytes": 27266350
+      "sha256": "6dba563425220aaf903ca9260eacda29b3a4308e8b1dfa7bcb3f14125b4f0ad5",
+      "bytes": 16593495
     },
     {
       "path": "site/data/sectors.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "d34d437beffef76440d5ee0915377ad4beee497574e0d57018e421d2d3de0735",
-      "bytes": 320158
+      "sha256": "dc94440bf3e3d498e47d936e0dc750c90b61bdd9f63d7cd9e8941a436e4684f4",
+      "bytes": 320364
     },
     {
       "path": "site/data/industries.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "e67f8ebff7e5a40a1d1163a0d6bd4febeb2e123512734883364afe9536d164d6",
-      "bytes": 336580
+      "sha256": "71a2051fb5cfa54dc28c98dd8115059e42f65e79d89588e5d037f9e0c9786b5a",
+      "bytes": 337815
     },
     {
       "path": "site/data/themes.json",
@@ -208,106 +144,106 @@
       "path": "site/data/supply_chains.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "06ae649a84e198e18eaa3fa48038377a0fe613ed6dff70f8da529676da21383d",
-      "bytes": 2208
+      "sha256": "db261211355118dd6cc7385b624d01520e9c9597e40f2b7b5c0d5865dab0815c",
+      "bytes": 9231
     },
     {
       "path": "site/data/search_index.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "b6fa8a85e88f97cbdf461bcf7d678fecfc960fa721aa5c347143c8d1185f9b4c",
-      "bytes": 7921500
+      "sha256": "f233ef8d57ec11cca3833a125e26099459bb89efda7baa888127bdfb34f515dc",
+      "bytes": 8081280
     },
     {
       "path": "site/data/securities.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "ec960048d706d9db605da28049bcf446fec458abab1d716f1ba7adbb051a9181",
-      "bytes": 6433872
+      "sha256": "79eb2c08776d184c5fa7b8529ab5eb4c43e3f80fc2125be52524d1d6b2ffd5be",
+      "bytes": 6433674
     },
     {
       "path": "site/data/listings.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "3c86d43ec8d3446269f10d228e30e6cea88e06892cbf623a66d60cba4357fc35",
-      "bytes": 3676733
+      "sha256": "f050aacf5b0fa7604ffb78ff94d1ffe727dc2033a561fd93b66972761eea6394",
+      "bytes": 3433061
     },
     {
       "path": "site/data/relationships.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
-      "bytes": 3
+      "sha256": "a5aafaea823a40b52b4a53acd7868b7c87ac7106428ac320a05f32ba0d3651c8",
+      "bytes": 4483
     },
     {
       "path": "site/data/unclassified.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "1521c0118ac304b4fdeb4c7d759cd86165047a7d95ec10c415fc1006af057094",
-      "bytes": 3986146
+      "sha256": "12bf35c124cb62ecaf168d004615bb1cec030d8b424b0df7616560a13943112a",
+      "bytes": 3545253
     },
     {
       "path": "site/data/review_queues.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "8030ce352533c8b04fad6292bf7b09ab0917de79bd20785308ef67b1d9fea134",
-      "bytes": 34734369
+      "sha256": "f5782648c7dfd802b78ee37b111dc25aec2acb403b3664a0f984e46e5c103322",
+      "bytes": 19170181
     },
     {
       "path": "site/data/review_summary.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "d2daa98b48aba447c4b8133a08a43f52d710f01d27e989b1cc3a734bbeec8ae0",
-      "bytes": 1106
+      "sha256": "1783dc49d63f48830ce1a076719a0c7f2f762b563fb83031062e36a300ba820e",
+      "bytes": 960
     },
     {
       "path": "site/data/tickers.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "f04335d3f2ded65b565f6804d89c63102f3966cf0bbe9c70f84e83425aa2e9f8",
-      "bytes": 5639636
+      "sha256": "345499722f2c09293e47c68d4517bc688f2597baae8111806d36421b5e395f72",
+      "bytes": 5501318
     },
     {
       "path": "site/data/securities.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "0bf0080e012885e7f0c879029735134ad02c94b342f494c1b7dbead3123eb710",
-      "bytes": 2197038
+      "sha256": "1ac2f0a14a1014e2c5a4b126ccc441c3a8de1bd2496bbc01169c683065b939e0",
+      "bytes": 2197018
     },
     {
       "path": "site/data/listings.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "1f176c2e544ae890c7f02c513d3e45a5729196d52ab611ff1402abddffdfdb07",
-      "bytes": 1323693
+      "sha256": "8978b509c244aa498112a7eca0de1978df7b859f5f5ce9687b5233f7ceeef14a",
+      "bytes": 1304949
     },
     {
       "path": "site/data/unclassified.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "cae554d624931b4e05c10e2c4babe0610cd361fdafc908d2990f7ff66241adab",
-      "bytes": 2687986
+      "sha256": "85ae3c855790be684b598ec80beab3f3addd98168630692c80170c90566a250a",
+      "bytes": 2280347
     },
     {
       "path": "site/data/taxonomy_issues.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "cbdd3113e407ea712f56b754271af1330d6c46b2bbe56dd809dc5c9b8bf59a43",
-      "bytes": 11714402
+      "sha256": "4e7fc66c2428bd95b728283f09f7b60c22cfde221a6c97da0afe4a2478c7412e",
+      "bytes": 7737732
     },
     {
       "path": "site/data/enrichment_issues.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "b7c54311f7c830f1e614359895e19af960a720fb8afa31ecfb9d00dc712c36d2",
-      "bytes": 3129892
+      "sha256": "7d5e7a9ff719808ba4d803fcc16205866d1ff23d0644ffa0406df49c14ac66fc",
+      "bytes": 3221728
     },
     {
       "path": "site/data/identity_issues.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "bcd6a0c0c8093be1b07afdb16467ce0f6bdcba67ca07eed1489dd1d93d540691",
-      "bytes": 4014319
+      "sha256": "fbd5752697c5d5ceb457dc28ce07bf494416327da0113b0b1798c9851fc83789",
+      "bytes": 1280
     },
     {
       "path": "site/data/enrichment_failures.csv",
@@ -320,22 +256,22 @@
       "path": "site/data/stale_reviews.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "8ad97be49906f581d3f4299798e77306e721440e6f1f564b74ea0eda573248d9",
-      "bytes": 445
+      "sha256": "bf26a4b91ccb765d4c56c17ff3b227fbc59216f678d7333c4f0fbb11d5166bc1",
+      "bytes": 212
     },
     {
       "path": "site/data/suggested_classification_overrides.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "08c21db27734f1ff1ec14d6cc6dcde3398a4e9de52bd1d9bea7c206a29cc5819",
-      "bytes": 223058
+      "sha256": "1fa278f7d8870caccded14cee8da9c64a35f6f3906fc5caddcfb8106726239a1",
+      "bytes": 85584
     },
     {
       "path": "site/data/suggested_exposures.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "7da92be9052b201b0b334d6ab753019863c11d2ae148182c8ed526105d740b4b",
-      "bytes": 941585
+      "sha256": "3b32e890f146ceb74bc673fbfcb10568c32cb84c93e11d5e7851e708b7ea00fa",
+      "bytes": 935325
     },
     {
       "path": "site/data/suggested_ticker_overrides.csv",
@@ -348,15 +284,15 @@
       "path": "site/data/suggested_identity_overrides.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "7f16a0ba08da6b7feaf8ee3e8a56bf8b41012a8dfda03c2647d8b7edddb632be",
-      "bytes": 251792
+      "sha256": "967235ccb0b202cab5f5d9dfabf75402a98f016cc3a840fc11f961029388e9dd",
+      "bytes": 310
     },
     {
       "path": "site/data/build_manifest.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "5e8bc3ad6793f91961ef657306ce59414d1e3727ffdc4b846508e1418d45491f",
-      "bytes": 10764,
+      "sha256": "e2be77350af7f34405a6061c9dac96d41839513f77167ded511f2b0891241c06",
+      "bytes": 9020,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

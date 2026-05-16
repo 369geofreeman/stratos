@@ -46,6 +46,7 @@ const state = {
   view: "tickers",
   query: "",
   theme: "",
+  supplyTheme: "",
   sector: "",
   localFilter: "",
   sort: { key: "ticker", dir: "asc" },
@@ -57,6 +58,8 @@ const state = {
     tickerById: new Map(),
     firstTickerByCompany: new Map(),
     firstTickerByIsin: new Map(),
+    tickersByCompany: new Map(),
+    tickersByIsin: new Map(),
     companyById: new Map(),
     securityById: new Map(),
     listingById: new Map(),
@@ -203,11 +206,16 @@ function renderTickers() {
     return;
   }
   const rows = filteredTickers();
+  const visible = Math.min(visibleCount("tickers", INITIAL_TABLE_ROWS), rows.length);
   content.innerHTML = `
     <div class="panel-head">
       <h2>Tickers</h2>
-      <p class="muted">${num(rows.length)} shown from ${num(state.tickers.length)} loaded rows</p>
+      <div class="panel-actions">
+        <p class="muted">${tickerCountLabel(visible, rows.length, state.tickers.length)}</p>
+        ${hasActiveTickerFilters() ? `<button class="small-button" data-action="clear-filters">Clear filters</button>` : ""}
+      </div>
     </div>
+    ${renderActiveTickerFilters()}
     ${renderTickerTable("tickers", rows)}
   `;
 }
@@ -215,6 +223,25 @@ function renderTickers() {
 function renderTickerIndexLoading(title, detail) {
   ensureTickerIndex().then(render).catch(showContentError);
   content.innerHTML = loadingBlock(title, detail);
+}
+
+function tickerCountLabel(visible, matched, total) {
+  if (matched === total) return `Showing ${num(visible)} of ${num(total)} loaded rows`;
+  return `Showing ${num(visible)} of ${num(matched)} matching rows from ${num(total)} loaded rows`;
+}
+
+function hasActiveTickerFilters() {
+  return Boolean(state.query || state.theme || state.sector || state.localFilter);
+}
+
+function renderActiveTickerFilters() {
+  const filters = [];
+  if (state.query) filters.push(`search: ${state.query}`);
+  if (state.theme) filters.push(`theme: ${themeName(state.theme)}`);
+  if (state.sector) filters.push(`sector: ${state.sector}`);
+  if (state.localFilter) filters.push(`local: ${state.localFilter}`);
+  if (!filters.length) return "";
+  return `<div class="active-filters">${chips(filters)}</div>`;
 }
 
 function renderTickerTable(listID, rows) {
@@ -291,7 +318,7 @@ function renderSupply() {
     content.innerHTML = `<div class="empty">No supply chains are defined yet.</div>`;
     return;
   }
-  const selectedTheme = state.theme || chains[0].themeId;
+  const selectedTheme = state.supplyTheme || state.theme || chains[0].themeId;
   const chain = chains.find((item) => item.themeId === selectedTheme) || chains[0];
   content.innerHTML = `
     <div class="supply-toolbar">
@@ -308,8 +335,7 @@ function renderSupply() {
     </div>
   `;
   $("#supplyThemeSelect").addEventListener("change", (event) => {
-    state.theme = event.target.value;
-    $("#themeFilter").value = state.theme;
+    state.supplyTheme = event.target.value;
     resetListWindows();
     renderSupply();
   });
@@ -551,6 +577,7 @@ function handleContentClick(event) {
   if (action === "open" && button.dataset.ticker) openTicker(button.dataset.ticker);
   if (action === "watch") toggleWatch(button.dataset.ticker);
   if (action === "sort") sortBy(button.dataset.key);
+  if (action === "clear-filters") clearTickerFilters();
   if (action === "export-local") exportLocal();
   if (action === "import-local") $("#importFile").click();
   if (action === "review-reason") {
@@ -715,8 +742,17 @@ function renderRelationships(tickerID) {
   return `
     <div class="relationship-list">
       ${rows.map((row) => {
-        const other = row.sourceTicker === tickerID ? row.targetTicker : row.sourceTicker;
-        return `<div><strong>${esc(row.relationshipType || "related")}</strong><span>${other ? esc(other) : esc(row.targetCompanyId || row.sourceCompanyId || "")}</span></div>`;
+        const isSource = endpointContainsTicker(row, "source", tickerID);
+        const other = isSource ? relationshipEndpointLabel(row, "target") : relationshipEndpointLabel(row, "source");
+        const context = [row.themeId, row.layerId, row.confidence].filter(Boolean).join(" / ");
+        return `
+          <div>
+            <strong>${esc(row.relationshipType || "related")}</strong>
+            <span>${esc(other || "Unresolved")}</span>
+            ${context ? `<small>${esc(context)}</small>` : ""}
+            ${row.sourceUrl ? `<a href="${esc(row.sourceUrl)}">source</a>` : ""}
+          </div>
+        `;
       }).join("")}
     </div>
   `;
@@ -792,6 +828,19 @@ function buildReviewSearchText(row) {
 function sortBy(key) {
   if (state.sort.key === key) state.sort.dir = state.sort.dir === "asc" ? "desc" : "asc";
   else state.sort = { key, dir: "asc" };
+  resetListWindows();
+  render();
+}
+
+function clearTickerFilters() {
+  state.query = "";
+  state.theme = "";
+  state.sector = "";
+  state.localFilter = "";
+  $("#globalSearch").value = "";
+  $("#themeFilter").value = "";
+  $("#sectorFilter").value = "";
+  $("#localFilter").value = "";
   resetListWindows();
   render();
 }
@@ -883,15 +932,27 @@ function indexTickerRows() {
   const tickerById = new Map();
   const firstTickerByCompany = new Map();
   const firstTickerByIsin = new Map();
+  const tickersByCompany = new Map();
+  const tickersByIsin = new Map();
   for (const ticker of state.tickers) {
     ticker._searchText = buildTickerSearchText(ticker);
     tickerById.set(ticker.ticker, ticker);
-    if (ticker.companyId && !firstTickerByCompany.has(ticker.companyId)) firstTickerByCompany.set(ticker.companyId, ticker);
-    if (ticker.isin && !firstTickerByIsin.has(ticker.isin)) firstTickerByIsin.set(ticker.isin, ticker);
+    if (ticker.companyId) {
+      if (!firstTickerByCompany.has(ticker.companyId)) firstTickerByCompany.set(ticker.companyId, ticker);
+      if (!tickersByCompany.has(ticker.companyId)) tickersByCompany.set(ticker.companyId, []);
+      tickersByCompany.get(ticker.companyId).push(ticker.ticker);
+    }
+    if (ticker.isin) {
+      if (!firstTickerByIsin.has(ticker.isin)) firstTickerByIsin.set(ticker.isin, ticker);
+      if (!tickersByIsin.has(ticker.isin)) tickersByIsin.set(ticker.isin, []);
+      tickersByIsin.get(ticker.isin).push(ticker.ticker);
+    }
   }
   state.maps.tickerById = tickerById;
   state.maps.firstTickerByCompany = firstTickerByCompany;
   state.maps.firstTickerByIsin = firstTickerByIsin;
+  state.maps.tickersByCompany = tickersByCompany;
+  state.maps.tickersByIsin = tickersByIsin;
 }
 
 function buildTickerSearchText(ticker) {
@@ -960,7 +1021,7 @@ function indexDetailData() {
   state.maps.listingById = new Map(state.detail.listings.map((listing) => [listing.id, listing]));
   const relationshipsByTicker = new Map();
   for (const row of state.detail.relationships) {
-    for (const ticker of [row.sourceTicker, row.targetTicker]) {
+    for (const ticker of uniqueStrings([...relationshipEndpointTickers(row, "source"), ...relationshipEndpointTickers(row, "target")])) {
       if (!ticker) continue;
       if (!relationshipsByTicker.has(ticker)) relationshipsByTicker.set(ticker, []);
       relationshipsByTicker.get(ticker).push(row);
@@ -1012,10 +1073,41 @@ function relationshipsForTicker(tickerID) {
 function relationshipTickerIDs(tickerID) {
   const out = [];
   for (const row of relationshipsForTicker(tickerID)) {
-    if (row.sourceTicker && row.sourceTicker !== tickerID) out.push(row.sourceTicker);
-    if (row.targetTicker && row.targetTicker !== tickerID) out.push(row.targetTicker);
+    for (const id of [...relationshipEndpointTickers(row, "source"), ...relationshipEndpointTickers(row, "target")]) {
+      if (id && id !== tickerID) out.push(id);
+    }
   }
-  return out;
+  return uniqueStrings(out);
+}
+
+function relationshipEndpointTickers(row, side) {
+  const ticker = row[`${side}Ticker`];
+  if (ticker) return [ticker];
+  const companyID = row[`${side}CompanyId`];
+  if (companyID) return state.maps.tickersByCompany.get(companyID) || [];
+  const isin = row[`${side}Isin`];
+  if (isin) return state.maps.tickersByIsin.get(isin) || [];
+  return [];
+}
+
+function endpointContainsTicker(row, side, tickerID) {
+  return relationshipEndpointTickers(row, side).includes(tickerID);
+}
+
+function relationshipEndpointLabel(row, side) {
+  const ticker = row[`${side}Ticker`];
+  if (ticker) return ticker;
+  const companyID = row[`${side}CompanyId`];
+  if (companyID) {
+    const tickerRow = state.maps.firstTickerByCompany.get(companyID);
+    return tickerRow ? `${tickerRow.ticker} - ${tickerRow.name}` : companyID;
+  }
+  const isin = row[`${side}Isin`];
+  if (isin) {
+    const tickerRow = state.maps.firstTickerByIsin.get(isin);
+    return tickerRow ? `${tickerRow.ticker} - ${tickerRow.name}` : isin;
+  }
+  return "";
 }
 
 function tickerForExposure(exposure) {

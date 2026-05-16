@@ -26,12 +26,75 @@ ai_infrastructure,systems,,,celestica_inc,3,manual_medium,https://investors.cele
 ai_infrastructure,grid_equipment,,,ge_vernova,3,manual_medium,https://www.gevernova.com/investors,Grid and power equipment exposure to data-centre load growth.,2026-05-16
 ai_infrastructure,grid_equipment,,,eaton,4,manual_medium,https://www.eaton.com/us/en-us/company/investor-relations.html,Electrical equipment exposure to data-centre power needs.,2026-05-16
 ai_infrastructure,grid_equipment,,,quanta_services_inc,3,manual_medium,https://investors.quantaservices.com/,Grid infrastructure services exposure to power demand growth.,2026-05-16
+ai_infrastructure,power_generation,,,nrg_energy_inc_r,3,manual_medium,https://investors.nrg.com/,Power generation exposure to data-centre electricity demand.,2026-05-16
+ai_infrastructure,power_generation,,,duke_energy_corp_r,3,manual_medium,https://investors.duke-energy.com/,Electric utility generation capacity exposure to load growth.,2026-05-16
+ai_infrastructure,power_generation,,,american_electric_power_co_inc,3,manual_medium,https://www.aep.com/investors/,Regulated electric utility exposure to grid load growth.,2026-05-16
+ai_infrastructure,power_generation,,,nextera_energy_inc,3,manual_medium,https://investors.nexteraenergy.com/,Power generation and utility exposure to data-centre load growth.,2026-05-16
+ai_infrastructure,grid_equipment,,,abb_ltd_n,4,manual_high,https://global.abb/group/en/investors,Electrical automation and grid equipment exposure.,2026-05-16
+ai_infrastructure,grid_equipment,,,schneider_electric_s_e,4,manual_high,https://www.se.com/ww/en/about-us/investor-relations/,Electrical distribution and energy management exposure.,2026-05-16
+ai_infrastructure,grid_equipment,,,siemens_aktiengesellschaft,3,manual_medium,https://www.siemens.com/en-us/company/investor-relations/,Electrification and automation exposure for power infrastructure.,2026-05-16
+ai_infrastructure,grid_equipment,,,hubbell_incorporated,4,manual_medium,https://investor.hubbell.com/ar2025/,Utility and electrical equipment exposure to data-centre demand.,2026-05-16
+ai_infrastructure,grid_equipment,,,nvent_electric_plc,4,manual_high,https://investors.nvent.com/,Data-centre power distribution and electrical enclosure exposure.,2026-05-16
+ai_infrastructure,grid_equipment,,,powell_industries_inc,3,manual_medium,https://powellindustriesinc.gcs-web.com/investor-relations,Electrical distribution and control equipment exposure.,2026-05-16
+ai_infrastructure,cooling_and_power,,,carrier_global_corp,4,manual_high,https://ir.carrier.com/,HVAC and building systems exposure for data-centre cooling.,2026-05-16
+ai_infrastructure,cooling_and_power,,,trane_technologies_plc,4,manual_high,https://investors.tranetechnologies.com/,Thermal management and HVAC exposure for data-centre cooling.,2026-05-16
+ai_infrastructure,cooling_and_power,,,johnson_controls_international_plc,3,manual_medium,https://investors.johnsoncontrols.com/,Building systems and HVAC exposure for data-centre infrastructure.,2026-05-16
+ai_infrastructure,cooling_and_power,,,comfort_systems_usa_inc,3,manual_medium,https://investors.comfortsystemsusa.com/,Mechanical contracting exposure to data-centre cooling buildout.,2026-05-16
+ai_infrastructure,cooling_and_power,,,emcor_group_inc,3,manual_medium,https://emcorgroup.com/investor-relations,Mechanical and electrical construction exposure to data-centre buildout.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,asm_international_nv,4,manual_high,https://www.asm.com/investors,Wafer deposition equipment exposure for advanced AI chips.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,tokyo_electron_limited,4,manual_high,https://www.tel.com/ir/,Wafer fabrication equipment exposure for advanced AI chips.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,teradyne_inc,3,manual_high,https://investors.teradyne.com/,Semiconductor automated test equipment exposure.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,onto_innovation_inc,3,manual_high,https://investors.ontoinnovation.com/,Semiconductor process-control equipment exposure.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,axcelis_technologies_inc,3,manual_high,https://investor.axcelis.com/,Ion implantation equipment exposure for advanced semiconductors.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,acm_research_inc,3,manual_high,https://ir.acmr.com,Semiconductor wafer-cleaning equipment exposure.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,be_semiconductor_industries_n_v,3,manual_high,https://www.besi.com/investor-relations/,Semiconductor assembly equipment exposure.,2026-05-16
+ai_infrastructure,semiconductor_equipment,,,kulicke_soffa_industries,3,manual_high,https://investor.kns.com/,Semiconductor packaging equipment exposure.,2026-05-16
+ai_infrastructure,design_tools,,,arteris_inc,3,manual_high,https://ir.arteris.com/,Semiconductor IP and SoC interconnect design exposure.,2026-05-16
+ai_infrastructure,design_tools,,,rambus_inc,3,manual_high,https://investor.rambus.com/,Silicon IP exposure for data-centre memory and interface performance.,2026-05-16
+ai_infrastructure,design_tools,,,keysight_technologies_inc,3,manual_medium,https://investor.keysight.com/,Electronic design and validation tools exposure for semiconductor systems.,2026-05-16
+ai_infrastructure,foundry_and_packaging,,,globalfoundries_inc,4,manual_high,https://investors.gf.com/,Semiconductor foundry exposure for AI infrastructure chips.,2026-05-16
+ai_infrastructure,foundry_and_packaging,,,united_microelectronics,3,manual_high,https://www.umc.com/en/IR/Index,Semiconductor foundry exposure.,2026-05-16
+ai_infrastructure,foundry_and_packaging,,,ase_technology,4,manual_high,https://ir.aseglobal.com/,Semiconductor assembly and test exposure.,2026-05-16
+ai_infrastructure,foundry_and_packaging,,,amkor_technology_inc,4,manual_high,https://ir.amkor.com/,Outsourced semiconductor packaging and test exposure.,2026-05-16
+ai_infrastructure,memory,,,samsung_electronics_co_ltd,4,manual_high,https://www.samsung.com/global/ir/,Memory semiconductor exposure.,2026-05-16
+ai_infrastructure,memory,,,sk_hynix,4,manual_high,https://www.skhynix.com/eng/ir/UI-FR-IR01,Memory and HBM semiconductor exposure.,2026-05-16
+ai_infrastructure,memory,,,kioxia_holdings,3,manual_high,https://www.kioxia-holdings.com/en-jp/ir.html,NAND memory semiconductor exposure.,2026-05-16
+ai_infrastructure,networking,,,cisco_systems_inc,4,manual_high,https://investor.cisco.com/,Data-centre and AI networking infrastructure exposure.,2026-05-16
+ai_infrastructure,networking,,,ciena_corp_r,4,manual_high,https://investor.ciena.com/,High-speed optical networking exposure for AI-era bandwidth demand.,2026-05-16
+ai_infrastructure,networking,,,lumentum_holdings_inc,4,manual_high,https://investor.lumentum.com/OVERVIEW/DEFAULT.ASPX,Optical components exposure for data-centre connectivity.,2026-05-16
+ai_infrastructure,networking,,,coherent,4,manual_medium,https://investor.coherent.com/,Optical communications component exposure for data centres.,2026-05-16
+ai_infrastructure,networking,,,fabrinet,3,manual_medium,https://investor.fabrinet.com/,Optical communications manufacturing exposure.,2026-05-16
+ai_infrastructure,networking,,,astera_labs_inc,4,manual_high,https://ir.asteralabs.com/,Data-centre connectivity semiconductor exposure.,2026-05-16
+ai_infrastructure,cloud,,,amazon_com_inc,4,manual_high,https://ir.aboutamazon.com/,AWS hyperscale cloud and AI infrastructure exposure.,2026-05-16
+ai_infrastructure,cloud,,,alphabet_inc,4,manual_high,https://abc.xyz/investor/,Google Cloud hyperscale AI infrastructure exposure.,2026-05-16
+ai_infrastructure,cloud,,,meta_platforms_inc,4,manual_medium,https://investor.atmeta.com/,Hyperscale AI infrastructure buyer exposure.,2026-05-16
+ai_infrastructure,cloud,,,oracle_corporation,4,manual_high,https://investor.oracle.com/,Oracle Cloud infrastructure exposure.,2026-05-16
+ai_infrastructure,cloud,,,international_business_machines_corporation,3,manual_medium,https://www.ibm.com/investor,Hybrid cloud and AI infrastructure exposure.,2026-05-16
+ai_infrastructure,data_centres,,,equinix_inc,4,manual_high,https://investor.equinix.com/,Carrier-neutral colocation and interconnection data-centre platform exposure.,2026-05-16
+ai_infrastructure,data_centres,,,digital_realty_trust_inc,4,manual_high,https://investor.digitalrealty.com/,Data-centre colocation and hyperscale platform exposure.,2026-05-16
+ai_infrastructure,data_centres,,,gds_holdings_limited,3,manual_high,https://www.gds.com/investors/,Data-centre platform exposure in China and international markets.,2026-05-16
+ai_infrastructure,data_centres,,,iron_mountain,3,manual_medium,https://www.ironmountain.com/data-centers,Data-centre business exposure alongside broader information-management operations.,2026-05-16
 semiconductors,equipment,,,asml,5,manual_high,https://www.asml.com/en/investors,Leading lithography equipment supplier.,2026-05-16
 semiconductors,equipment,,,applied_materials_inc,5,manual_high,https://ir.appliedmaterials.com/,Wafer fabrication equipment supplier.,2026-05-16
 semiconductors,equipment,,,lam_research_corp_r,5,manual_high,https://investor.lamresearch.com/,Etch and deposition equipment supplier.,2026-05-16
 semiconductors,equipment,,,kla_corporation,5,manual_high,https://ir.kla.com/,Process control and inspection equipment supplier.,2026-05-16
+semiconductors,equipment,,,advantest_corporation,5,manual_high,https://www.advantest.com/investors/,Semiconductor test equipment supplier.,2026-05-16
+semiconductors,equipment,,,mks_inc,4,manual_high,https://investor.mks.com/,Semiconductor process-control and specialty chemicals technology supplier.,2026-05-16
+semiconductors,equipment,,,nova_ltd,4,manual_high,https://www.novameasuring.com/about-us/,Semiconductor metrology and process-control equipment supplier.,2026-05-16
+semiconductors,equipment,,,camtek_ltd,4,manual_high,https://www.camtek.com/investors/,Semiconductor inspection and metrology equipment supplier.,2026-05-16
+semiconductors,equipment,,,formfactor_inc,4,manual_high,https://investors.formfactor.com/,Semiconductor test and measurement technology supplier.,2026-05-16
+semiconductors,equipment,,,veeco_instruments_inc,3,manual_high,https://ir.veeco.com/,Semiconductor process equipment supplier.,2026-05-16
+semiconductors,equipment,,,ultra_clean_holdings_inc,3,manual_high,https://www.uct.com/home/default.aspx,Semiconductor subsystems and ultra-high purity services supplier.,2026-05-16
+semiconductors,equipment,,,cohu_inc,3,manual_high,https://cohu.gcs-web.com/,Semiconductor test automation and inspection supplier.,2026-05-16
 semiconductors,design_tools,,,synopsys_inc,5,manual_high,https://investor.synopsys.com/,Semiconductor EDA and IP supplier.,2026-05-16
 semiconductors,design_tools,,,cadence_design_systems_inc,5,manual_high,https://www.cadence.com/en_US/home/company/investor-relations.html,Semiconductor EDA and IP supplier.,2026-05-16
+semiconductors,materials_chemicals,,,entegris_inc,4,manual_high,https://investor.entegris.com/overview/default.aspx,Advanced materials and contamination-control exposure for semiconductor manufacturing.,2026-05-16
+semiconductors,materials_chemicals,,,shin_etsu_chemical_co_ltd,4,manual_high,https://www.shinetsu.co.jp/en/products/semiconductor-silicon-business/,Semiconductor silicon wafer exposure.,2026-05-16
+semiconductors,materials_chemicals,,,sumco_corporation,4,manual_high,https://www.sumcosi.com/english/ir/glance/information.html,Silicon wafer exposure for semiconductor fabrication.,2026-05-16
+semiconductors,materials_chemicals,,,linde_plc,3,manual_medium,https://www.linde.com/news-and-media/2021/linde-signs-long-term-agreement-to-supply-new-world-class-semiconductor-manufacturing-complex-in-the-u-s,Specialty gas exposure for semiconductor manufacturing.,2026-05-16
+semiconductors,materials_chemicals,,,l_air_liquide_s_a,3,manual_medium,https://www.airliquide.com/group/activities/electronics,Electronics gases and materials exposure for semiconductor manufacturing.,2026-05-16
+semiconductors,materials_chemicals,,,merck_kgaa,3,manual_medium,https://www.reports.emdgroup.com/en/annualreport/2024/management-report/fundamental-information-about-the-group/company-profile-and-structure/electronics.html,Electronics materials exposure including semiconductor solutions.,2026-05-16
+semiconductors,materials_chemicals,,,dupont_de_nemours,3,manual_medium,https://www.dupont.com/electronics-industrial/advanced-computing-and-artificial-intelligence.html,Semiconductor fabrication and packaging materials exposure.,2026-05-16
 semiconductors,foundry_and_packaging,,,taiwan_semiconductor_manufacturing_company_limited,5,manual_high,https://investor.tsmc.com/,Leading semiconductor foundry exposure.,2026-05-16
 semiconductors,foundry_and_packaging,,,intel_corporation,4,manual_medium,https://www.intc.com/,Integrated chipmaker with foundry strategy exposure.,2026-05-16
 semiconductors,memory,,,micron_technology_inc,5,manual_high,https://investors.micron.com/,Memory and HBM semiconductor exposure.,2026-05-16
@@ -45,6 +108,34 @@ semiconductors,analog_power,,,analog_devices_inc,4,manual_high,https://investor.
 semiconductors,analog_power,,,nxp_semiconductors_n_v,4,manual_high,https://investors.nxp.com/,Embedded and automotive semiconductor exposure.,2026-05-16
 semiconductors,analog_power,,,on_semiconductor_corporation,4,manual_high,https://investor.onsemi.com/,Power and intelligent sensing semiconductor exposure.,2026-05-16
 semiconductors,analog_power,,,monolithic_power_systems_inc,4,manual_high,https://investors.monolithicpower.com/,Power semiconductor exposure.,2026-05-16
+semiconductors,equipment,,,asm_international_nv,5,manual_high,https://www.asm.com/investors,Wafer deposition equipment supplier.,2026-05-16
+semiconductors,equipment,,,tokyo_electron_limited,5,manual_high,https://www.tel.com/ir/,Wafer fabrication equipment supplier.,2026-05-16
+semiconductors,equipment,,,teradyne_inc,4,manual_high,https://investors.teradyne.com/,Semiconductor automated test equipment supplier.,2026-05-16
+semiconductors,equipment,,,onto_innovation_inc,4,manual_high,https://investors.ontoinnovation.com/,Semiconductor process-control equipment supplier.,2026-05-16
+semiconductors,equipment,,,axcelis_technologies_inc,4,manual_high,https://investor.axcelis.com/,Ion implantation equipment supplier.,2026-05-16
+semiconductors,equipment,,,acm_research_inc,4,manual_high,https://ir.acmr.com,Wafer-cleaning equipment supplier.,2026-05-16
+semiconductors,equipment,,,be_semiconductor_industries_n_v,4,manual_high,https://www.besi.com/investor-relations/,Semiconductor assembly equipment supplier.,2026-05-16
+semiconductors,equipment,,,kulicke_soffa_industries,4,manual_high,https://investor.kns.com/,Semiconductor packaging equipment supplier.,2026-05-16
+semiconductors,design_tools,,,arteris_inc,4,manual_high,https://ir.arteris.com/,Semiconductor IP and SoC interconnect design exposure.,2026-05-16
+semiconductors,design_tools,,,rambus_inc,4,manual_high,https://investor.rambus.com/,Semiconductor silicon IP exposure.,2026-05-16
+semiconductors,design_tools,,,keysight_technologies_inc,3,manual_medium,https://investor.keysight.com/,Electronic design and validation tools exposure.,2026-05-16
+semiconductors,foundry_and_packaging,,,globalfoundries_inc,5,manual_high,https://investors.gf.com/,Semiconductor foundry exposure.,2026-05-16
+semiconductors,foundry_and_packaging,,,united_microelectronics,4,manual_high,https://www.umc.com/en/IR/Index,Semiconductor foundry exposure.,2026-05-16
+semiconductors,foundry_and_packaging,,,ase_technology,4,manual_high,https://ir.aseglobal.com/,Semiconductor assembly and test exposure.,2026-05-16
+semiconductors,foundry_and_packaging,,,amkor_technology_inc,4,manual_high,https://ir.amkor.com/,Outsourced semiconductor packaging and test exposure.,2026-05-16
+semiconductors,memory,,,samsung_electronics_co_ltd,5,manual_high,https://www.samsung.com/global/ir/,Memory semiconductor exposure.,2026-05-16
+semiconductors,memory,,,sk_hynix,5,manual_high,https://www.skhynix.com/eng/ir/UI-FR-IR01,Memory and HBM semiconductor exposure.,2026-05-16
+semiconductors,memory,,,kioxia_holdings,4,manual_high,https://www.kioxia-holdings.com/en-jp/ir.html,NAND memory semiconductor exposure.,2026-05-16
+semiconductors,fabless_design,,,astera_labs_inc,4,manual_high,https://ir.asteralabs.com/,Data-centre connectivity semiconductor design exposure.,2026-05-16
+semiconductors,fabless_design,,,skyworks_solutions_inc_r,4,manual_high,https://investors.skyworksinc.com/,Wireless semiconductor design exposure.,2026-05-16
+semiconductors,fabless_design,,,qorvo_inc,4,manual_high,https://ir.qorvo.com/,RF semiconductor design exposure.,2026-05-16
+semiconductors,fabless_design,,,lattice_semiconductor,4,manual_high,https://ir.latticesemi.com/,Low-power FPGA semiconductor design exposure.,2026-05-16
+semiconductors,fabless_design,,,impinj_inc,3,manual_high,https://investor.impinj.com/,RAIN RFID semiconductor design exposure.,2026-05-16
+semiconductors,analog_power,,,texas_instruments_incorporated,5,manual_high,https://investor.ti.com/,Analog and embedded semiconductor exposure.,2026-05-16
+semiconductors,analog_power,,,stmicroelectronics_n_v,4,manual_high,https://investors.st.com/,Power and embedded semiconductor exposure.,2026-05-16
+semiconductors,analog_power,,,infineon_technologies_ag,4,manual_high,https://www.infineon.com/cms/en/about-infineon/investor/,Power and embedded semiconductor exposure.,2026-05-16
+semiconductors,analog_power,,,microchip_technology_inc,4,manual_high,https://www.microchip.com/en-us/about/investors,Embedded semiconductor exposure.,2026-05-16
+semiconductors,analog_power,,,renesas_electronics_corporation,4,manual_high,https://www.renesas.com/en/about/investor-relations,Embedded semiconductor exposure.,2026-05-16
 energy,integrated_oil_gas,,,exxon_mobil_corporation,5,manual_high,https://corporate.exxonmobil.com/investors,Integrated oil and gas exposure.,2026-05-16
 energy,integrated_oil_gas,,,chevron_corporation,5,manual_high,https://www.chevron.com/investors,Integrated oil and gas exposure.,2026-05-16
 energy,upstream,,,conocophillips,5,manual_high,https://www.conocophillips.com/investor-relations/,Upstream exploration and production exposure.,2026-05-16

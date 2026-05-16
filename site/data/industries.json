@@ -14879,7 +14879,7 @@
   {
     "id": "semiconductor_equipment_materials",
     "name": "Semiconductor Equipment \u0026 Materials",
-    "count": 51,
+    "count": 50,
     "tickers": [
       "A8Bd_EQ",
       "ACLS_US_EQ",
@@ -14892,7 +14892,6 @@
       "AMBA_US_EQ",
       "AMKR_US_EQ",
       "AP2d_EQ",
-      "ASMLa_EQ",
       "ASMa_EQ",
       "ASYS_US_EQ",
       "ATEYY_US_EQ",
@@ -18171,9 +18170,10 @@
   {
     "id": "semiconductor_equipment",
     "name": "Semiconductor Equipment",
-    "count": 1,
+    "count": 2,
     "tickers": [
-      "ASML_US_EQ"
+      "ASML_US_EQ",
+      "ASMLa_EQ"
     ]
   }
 ]

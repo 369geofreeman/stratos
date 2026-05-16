@@ -1813,7 +1813,7 @@ ASLN_US_EQ,ASLN_US_EQ,isin:US04522R3093,aslan_pharmaceuticals,US,,USD
 ASLl_EQ,ASLl_EQ,isin:GB0000066554,aberforth_smaller_companies_trust_plc,,Wiener Börse,GBX
 ASMB_US_EQ,ASMB_US_EQ,isin:US0453962070,assembly_biosciences,US,,USD
 ASML_US_EQ,ASML_US_EQ,isin:USN070592100,asml,US,NasdaqGS,USD
-ASMLa_EQ,ASMLa_EQ,isin:NL0010273215,asml_holding_n_v,,Borsa Italiana,EUR
+ASMLa_EQ,ASMLa_EQ,isin:NL0010273215,asml,,Borsa Italiana,EUR
 ASMSl_EQ,ASMSl_EQ,isin:XS3068790222,leverage_shares_3x_short_asml_acc,,,USD
 ASMVY_US_EQ,ASMVY_US_EQ,isin:US00212G1085,asmpt,US,,USD
 ASMYl_EQ,ASMYl_EQ,isin:XS3299469323,incomeshares_asml_options_dist,,,USD

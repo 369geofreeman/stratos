@@ -65,6 +65,12 @@
         "order": 90
       },
       {
+        "id": "data_centres",
+        "name": "Data centres and colocation",
+        "description": "Carrier-neutral data-centre real estate, colocation, and interconnection platforms.",
+        "order": 95
+      },
+      {
         "id": "cloud",
         "name": "Cloud and hyperscalers",
         "description": "Cloud platforms and AI compute buyers.",
@@ -236,6 +242,12 @@
         "name": "Semiconductor equipment",
         "description": "Wafer fabrication, process, and inspection equipment.",
         "order": 20
+      },
+      {
+        "id": "materials_chemicals",
+        "name": "Materials and process chemicals",
+        "description": "Wafers, specialty gases, photoresists, chemicals, and contamination-control materials.",
+        "order": 25
       },
       {
         "id": "foundry_and_packaging",

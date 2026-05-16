@@ -1,24 +1,24 @@
 {
   "generatedAt": "2026-05-16T17:59:08Z",
-  "totalCount": 20561,
+  "totalCount": 20481,
   "byQueue": {
     "enrichment": 9348,
-    "taxonomy": 11213
+    "taxonomy": 11133
   },
   "byReasonCode": {
     "enrichment_failed": 9348,
     "missing_industry": 3492,
     "missing_sector": 3492,
-    "missing_theme_exposure": 4229
+    "missing_theme_exposure": 4149
   },
   "bySeverity": {
-    "low": 4229,
+    "low": 4149,
     "medium": 16332
   },
   "taxonomyGaps": {
     "industry": 3492,
     "sector": 3492,
-    "theme": 4229
+    "theme": 4149
   },
   "enrichmentStatuses": {
     "failure": 9348
@@ -32,7 +32,7 @@
   },
   "suggestedManualFileCounts": {
     "data/manual/classification_overrides.csv": 3492,
-    "data/manual/exposures.csv": 4229,
+    "data/manual/exposures.csv": 4149,
     "data/manual/ticker_overrides.csv": 9348
   }
 }

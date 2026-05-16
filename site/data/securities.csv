@@ -7416,7 +7416,7 @@ isin:NL0009690247,NL0009690247,VanEck iBoxx EUR Corporates (Dist),ETF,etf,distri
 isin:NL0009690254,NL0009690254,VanEck iBoxx EUR Sovereign Diversified 1-10,ETF,etf,fund_like,vaneck_iboxx_eur_sovereign_diversified_1_10,TGBTa_EQ,TGBTa_EQ,EUR,rule_high,security_id_from_isin
 isin:NL0009739416,NL0009739416,PostNL N.V.,STOCK,stock,,postnl_n_v,PNLa_EQ,PNLa_EQ,EUR,rule_high,security_id_from_isin
 isin:NL0009805522,NL0009805522,Nebius Group,STOCK,stock,,nebius_group,YDXd_EQ;YNDX_US_EQ,YDXd_EQ;YNDX_US_EQ,EUR;USD,rule_high,security_id_from_isin
-isin:NL0010273215,NL0010273215,ASML Holding N.V.,STOCK,stock,,asml_holding_n_v,ASMLa_EQ,ASMLa_EQ,EUR,rule_high,security_id_from_isin
+isin:NL0010273215,NL0010273215,ASML Holding N.V.,STOCK,stock,,asml,ASMLa_EQ,ASMLa_EQ,EUR,rule_high,security_id_from_isin
 isin:NL0010273801,NL0010273801,VanEck iBoxx EUR Sovereign Capped AAA-AA 1-5 (Dist),ETF,etf,distributing;fund_like,vaneck_iboxx_eur_sovereign_capped_aaa_aa_1_5_dist,VIGBd_EQ,VIGBd_EQ,EUR,rule_high,security_id_from_isin
 isin:NL0010389508,NL0010389508,ER Capital N.V.,STOCK,stock,,er_capital_n_v,ERCa_EQ,ERCa_EQ,EUR,rule_high,security_id_from_isin
 isin:NL0010391025,NL0010391025,Pharming Group N.V.,STOCK,stock,,pharming_group_n_v,PHARMa_EQ,PHARMa_EQ,EUR,rule_high,security_id_from_isin

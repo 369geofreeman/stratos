@@ -1,1 +1,2 @@
 target_type,ticker,isin,security_id,company_id,override_security_id,override_company_id,category,flags,confidence,reason,source_url,last_reviewed
+company,,,,asml_holding_n_v,,asml,,,manual_high,same issuer ordinary and ADR listings,https://www.asml.com/en/investors,2026-05-16

@@ -8,6 +8,7 @@ IIA_AT_EQ,AT0000A21KS2,CPI Europe,yfinance,IIA.VI;IIA,failure,unable to verify a
 CLEN_AT_EQ,AT0000A38M45,Cleen Energy,yfinance,CLEN.VI;CLEN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BEAG_AT_EQ,AT0000A3LM45,:BE,yfinance,BEAG.VI;BEAG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PMAG_AT_EQ,AT0000KTMI02,BAJAJ Mobility,yfinance,PMAG.VI;PMAG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+1ASTd_EQ,AT100ASTA001,ASTA Energy Solutions,yfinance,1AST.DE;1AST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 REBd_EQ,AU000000ARU5,Arafura Rare Earths,yfinance,REB.DE;REB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ARVl_EQ,AU000000ARV3,Artemis Resources,yfinance,ARV.L;ARV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CWWd_EQ,AU000000CBA7,Commonwealth Bank of Australia,yfinance,CWW.DE;CWW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -43,7 +44,6 @@ LEAS_BE_EQ,BE0003770840,Nextensa,yfinance,LEAS.BR;LEAS,failure,unable to verify 
 ZEN_BB_EQ,BE0003809267,Zenobe Gramme,yfinance,ZEN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EURN_BE_EQ,BE0003816338,CMB Tech,yfinance,EURN.BR;EURN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EURN_US_EQ,BE0003816338,CMB Tech,yfinance,EURN.BR;EURN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-GLPGa_EQ,BE0003818359,Lakefront Biotherapeutics,yfinance,LKFT.AS;LKFT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VAN_BB_EQ,BE0003839561,Van de Velde,yfinance,VAN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UNI_BE_EQ,BE0003847648,Flowsparks,yfinance,UNI.BR;UNI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SCHD_BE_EQ,BE0012378593,Scheerders Van Kerchove's Verenigde Fabrieken,yfinance,SCHD.BR;SCHD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -69,11 +69,9 @@ AXS_US_EQ,BMG0692U1099,Axis Capital,yfinance,AXS,failure,unable to verify a yfin
 NTB_US_EQ,BMG0772R2087,Bank of NT Butterfield & Son,yfinance,NTB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CBAd_EQ,BMG1368B1028,Brilliance China Automotive,yfinance,CBA.DE;CBA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BNRE_CA_EQ,BMG174341047,Brookfield Wealth Solutions,yfinance,BNRE.TO;BNRE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CCL_US_EQ,BMG2004J1036,Carnival Corp,yfinance,CCL;CVC1.DE;CVC1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CVC1d_EQ,BMG2004J1036,Carnival,yfinance,CCL;CVC1.DE;CVC1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CYD_US_EQ,BMG210821051,China Yuchai International,yfinance,CYD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RE_US_EQ,BMG3223R1088,Everest Group,yfinance,RE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-FIHL_US_EQ,BMG3398L1182,Fidelis Insurance Holdings,yfinance,FIHL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+FIHL_US_EQ,BMG3398L1182,Pelagos Insurance Capital,yfinance,FIHL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 G_US_EQ,BMG3922B1072,Genpact,yfinance,G,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HELE_US_EQ,BMG4388N1065,Helen of Troy,yfinance,HELE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GDRZF_US_EQ,BMG4R86G1074,Gold Reserve,yfinance,GDRZF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -123,7 +121,6 @@ BRCN_US_EQ,CA1208313009,Burcon NutraScience,yfinance,BRCN,failure,unable to veri
 TGODF_US_EQ,CA12464X1015,BZAM,yfinance,TGODF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CCLB_CA_EQ,CA1249003098,CCL Industries,yfinance,CCLB.TO;CCLB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CNE_CA_EQ,CA1348083025,Canacol Energy,yfinance,CNE.TO;CNE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CGIl_EQ,CA1358251074,Canadian General Investments,yfinance,CGI.L;CGI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CTCA_CA_EQ,CA1366812024,Canadian Tire (Class A),yfinance,CTCA.TO;CTCA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CCHWF_US_EQ,CA13765Y1034,Cannabist Company Holdings,yfinance,CCHWF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CTST_US_EQ,CA1378002077,CannTrust,yfinance,CTST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -151,7 +148,6 @@ DFPPd_EQ,CA2548481043,District Metals,yfinance,DFPP.DE;DFPP,failure,unable to ve
 DIIB_CA_EQ,CA25822C2058,Dorel Industries,yfinance,DIIB.TO;DIIB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DCA_CA_EQ,CA2649011095,Dundee,yfinance,DCA.TO;DCA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ELBM_US_EQ,CA28474P7065,Electra Battery Materials,yfinance,ELBM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ELEMF_US_EQ,CA28620K1066,Elemental Royalty,yfinance,ELEMF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EMPA_CA_EQ,CA2918434077,Empire Co,yfinance,EMPA.TO;EMPA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ENCUF_US_EQ,CA29259W7008,Encore Energy,yfinance,ENCUF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FRBN_US_EQ,CA29286X1015,enGene Therapeutics,yfinance,FRBN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -174,6 +170,7 @@ IMV_US_EQ,CA44974L3011,IMV,yfinance,IMV,failure,unable to verify a yfinance symb
 ISV_CA_EQ,CA45676A1057,Information Services,yfinance,ISV.TO;ISV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 JCTCF_US_EQ,CA47733C2076,Jewett-Cameron Trading,yfinance,JCTCF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 JE_US_EQ,CA48213W4083,Just Energy,yfinance,JE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+JUSHF_US_EQ,CA48213Y1079,Jushi,yfinance,JUSHF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KRR_CA_EQ,CA48575L2066,Karora Resources,yfinance,KRR.TO;KRR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PDAC_US_EQ,CA50202P2044,Li-Cycle,yfinance,PDAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LASA_CA_EQ,CA5179071017,Lassonde Industries,yfinance,LASA.TO;LASA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -189,6 +186,7 @@ MCLD_US_EQ,CA5822706092,mCloud Technologies,yfinance,MCLD,failure,unable to veri
 AOI_CA_EQ,CA5889141019,Meren Energy,yfinance,AOI.TO;AOI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TMCR_US_EQ,CA5913221027,The Metals Royalty Company,yfinance,TMCR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IPA_US_EQ,CA6026871054,MindWalk Holdings,yfinance,IPA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+MJARF_US_EQ,CA60689X1096,MJardin,yfinance,MJARF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TPXB_CA_EQ,CA6087112067,Molson Coors Canada,yfinance,TPXB.TO;TPXB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 NEPT_US_EQ,CA64079L3039,Neptune Wellness Solutions,yfinance,NEPT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PTHR_US_EQ,CA64550A1075,New Horizon Aircraft Ltd,yfinance,PTHR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -241,6 +239,7 @@ ABEPF_US_EQ,CA92837C1095,Vision Lithium,yfinance,ABEPF,failure,unable to verify 
 VEDU_US_EQ,CA92838F2008,Visionary Holdings,yfinance,VEDU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WSTRF_US_EQ,CA95985D1006,Western Uranium & Vanadium,yfinance,WSTRF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CHAC_US_EQ,CA98390R1029,Xanadu Quantum Technologies,yfinance,CHAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+XRTX_US_EQ,CA98420Q4051,XORTX Therapeutics,yfinance,XRTX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 1XNAd_EQ,CA9858441095,Ynvisible Interactive,yfinance,1XNA.DE;1XNA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FLGC_US_EQ,CA98956L1013,ZeroStack Corp,yfinance,FLGC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ZOM_US_EQ,CA98980M1095,Zomedica,yfinance,ZOM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -310,7 +309,6 @@ SRADD_US_EQ,CH1134239669,Sportradar,yfinance,SRADD,failure,unable to verify a yf
 ONON_US_EQ,CH1134540470,On,yfinance,ONON,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BOLDGBPs_EQ,CH1146882308,21Shares Bitcoin Gold ETP (Acc),yfinance,BOLD.L;BOLD;BOLU.L;BOLU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BOLDUSDs_EQ,CH1146882308,21Shares Bitcoin Gold ETP (Acc),yfinance,BOLD.L;BOLD;BOLU.L;BOLU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-FINs_EQ,CH1169151003,Georg Fischer,yfinance,GF.SW;GF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CBTCl_EQ,CH1199067674,21Shares Bitcoin Core ETP (Acc),yfinance,CBTC.L;CBTC;CBTU.L;CBTU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CBTUl_EQ,CH1199067674,21Shares Bitcoin Core ETP (Acc),yfinance,CBTC.L;CBTC;CBTU.L;CBTU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ETHCl_EQ,CH1209763130,21Shares Ethereum Core Staking (Acc),yfinance,ETHC.L;ETHC;CETU.L;CETU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -353,7 +351,6 @@ CEZd1_EQ,CZ0005112300,CEZ,yfinance,CEZ.DE;CEZ,failure,unable to verify a yfinanc
 EXSHd_EQ,DE0002635299,iShares STOXX Europe Select Dividend 30 DE (Dist),yfinance,EXSH.DE;EXSH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EXSAd_EQ,DE0002635307,iShares STOXX Europe 600 DE (Dist),yfinance,EXSA.DE;EXSA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ADVd_EQ,DE0005103006,ADVA Optical Networking,yfinance,ADV.DE;ADV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BIO3d_EQ,DE0005227235,Biotest (Preferred),yfinance,BIO3.DE;BIO3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VVV3d_EQ,DE0005408686,OEKOWORLD,yfinance,VVV3.DE;VVV3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ULCd_EQ,DE0005489561,United Labels,yfinance,ULC.DE;ULC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DISSd_EQ,DE0005538607,DVS Technology,yfinance,DIS.DE;DIS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -459,6 +456,7 @@ VTWRd_EQ,DE000A3H3LL2,Vantage Towers,yfinance,VTWR.DE;VTWR,failure,unable to ver
 MDG1d_EQ,DE000A40ESG2,Medigene,yfinance,MDG1.DE;MDG1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 B5Ad_EQ,DE000A40ETC9,Bauer,yfinance,B5A0.DE;B5A0,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ENGLd_EQ,DE000A40ZVZ1,EV Digital Invest,yfinance,ENG.DE;ENG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+BIO3d_EQ,DE000A41YE49,Biotest (Preferred),yfinance,BIO0.DE;BIO0,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EVACd_EQ,DE000A420ZL4,Electrovac,yfinance,EVAC.DE;EVAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XK4d_EQ,DE000A421RZ9,Gabler Group,yfinance,XK4.DE;XK4,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BTC3l_EQ,DE000A4AER62,Bitwise Core Bitcoin ETP (Acc),yfinance,BTC3.L;BTC3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -493,7 +491,6 @@ PUIGe_EQ,ES0105777017,Puig Brands,yfinance,PUIG.MC;PUIG,failure,unable to verify
 IMCe_EQ,ES0105836003,Inmocemento,yfinance,IMC.MC;IMC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CDRe_EQ,ES0119256032,Codere,yfinance,CDR.MC;CDR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CMMe_EQ,ES0121071007,Commcenter,yfinance,CMM.MC;CMM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-EDPR_PT_EQ,ES0127797019,EDP Renovaveis,yfinance,EDPR.LS;EDPR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EEPe_EQ,ES0133421000,EuroEspes,yfinance,EEP.MC;EEP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SPSe_EQ,ES0143421073,Innovative Solutions Ecosystem,yfinance,ISE.MC;ISE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AIe_EQ,ES0152768612,Airtificial Intelligence Structures,yfinance,AI.MC;AI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -590,114 +587,41 @@ PHXMp_EQ,FR001400K4B1,PHAXIAM Therapeutics,yfinance,PHXM.PA;PHXM,failure,unable 
 ALCBIB_WAR_FR_EQ,FR001400O408,Crypto Blockchain Industries SA - Warrant B,yfinance,ALCBIB_WAR.PA;ALCBIB_WAR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ALCBI_WAR_FR_EQ,FR001400O416,Crypto Blockchain Industries SA - Warrant A,yfinance,ALCBI_WAR.PA;ALCBI_WAR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LOUPp_EQ,FR001400SF56,Societe LDC,yfinance,LOUP.PA;LOUP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ALPGp_EQ,FR001400WXE7,Preatoni Group,yfinance,ALPG.PA;ALPG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ALHAFp_WAR_FR_EQ,FR001400Y4X9,Haffner Energy SA - Warrant Expiring 04 Oct 2026,yfinance,ALHAFp_WAR.PA;ALHAFp_WAR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LVWCd_EQ,FR0014010HV4,Amundi MSCI World 2X Leveraged (Acc),yfinance,LVWC.DE;LVWC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MKEAp_WAR_FR_EQ,FR00140140W9,Mauna Kea Technologies - Warrant,yfinance,MKEAp_WAR.PA;MKEAp_WAR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ASLl_EQ,GB0000066554,Aberforth Smaller Companies Trust,yfinance,ASL.L;ASL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JEOl_EQ,GB0000197722,European Opportunities Trust,yfinance,EOT.L;EOT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CYNl_EQ,GB0000353929,CQS Natural Resources Growth and Income,yfinance,CYN.L;CYN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BIOGl_EQ,GB0000385517,Biotech Growth Trust,yfinance,BIOG.L;BIOG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BGFDl_EQ,GB0000485838,Baillie Gifford Japan Trust,yfinance,BGFD.L;BGFD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ATYl_EQ,GB0000609296,Athelney Trust,yfinance,ATY.L;ATY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ARRl_EQ,GB0000633262,Aurora UK Alpha,yfinance,ARR.L;ARR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BAFl_EQ,GB0000653112,British & American Investment Trust,yfinance,BAF.L;BAF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ADIGl_EQ,GB0001297562,Abrdn Diversified Income and Growth,yfinance,ADIG.L;ADIG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JAGIl_EQ,GB0001320778,JPMorgan Asia Growth & Income,yfinance,JAGI.L;JAGI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BP.Al_EQ,GB0001385250,BP 8% PRF,yfinance,BP.A.L;BP.A,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BP.Bl_EQ,GB0001385474,BP 9% PRF,yfinance,BP.B.L;BP.B,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BUTl_EQ,GB0001490001,Brunner Investment Trust,yfinance,BUT.L;BUT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CGTl_EQ,GB0001738615,Capital Gearing Trust,yfinance,CGT.L;CGT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CTYl_EQ,GB0001990497,City of London Investment Trust,yfinance,CTY.L;CTY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AVBl_EQ,GB0002114154,Aviva 8.375% PRF,yfinance,AV.B.L;AV.B,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RGPl_EQ,GB0002192606,Ross Group,yfinance,RGP.L;RGP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MNLl_EQ,GB0002258472,Manchester & London Investment,yfinance,MNL.L;MNL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CGWl_EQ,GB0002621349,Chelverton Growth Trust,yfinance,CGW.L;CGW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-NSIl_EQ,GB0002631041,New Star Investment Trust,yfinance,NSI.L;NSI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BVTl_EQ,GB0002631934,Baronsmead Venture Trust,yfinance,BVT.L;BVT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-DEVCl_EQ,GB0002867140,Molten Ventures VCT,yfinance,MVCT.L;MVCT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SLSl_EQ,GB0002959582,Aberdeen UK Smaller Companies Growth Trust,yfinance,AUSC.L;AUSC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-EDINl_EQ,GB0003052338,Edinburgh Investment Trust,yfinance,EDIN.L;EDIN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ELTAl_EQ,GB0003085445,Unbound Group,yfinance,UBG.L;UBG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ICGTl_EQ,GB0003292009,ICG Enterprise Trust,yfinance,ICGT.L;ICGT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-FASl_EQ,GB0003322319,Fidelity Asian Values,yfinance,FAS.L;FAS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JCHl_EQ,GB0003422184,JPMorgan Claverhouse Investment Trust,yfinance,JCH.L;JCH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JCGIl_EQ,GB0003435012,JPMorgan China Growth & Income,yfinance,JCGI.L;JCGI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JIIl_EQ,GB0003450359,JPMorgan India Growth & Income,yfinance,JIGI.L;JIGI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BCIl_EQ,GB0003463287,CT UK Capital & Income Investment Trust,yfinance,CTUK.L;CTUK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JUSl_EQ,GB0003463402,Brown Advisory US Smaller Companies,yfinance,BASC.L;BASC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-FCITl_EQ,GB0003466074,F&C Investment Trust,yfinance,FCIT.L;FCIT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BGCGl_EQ,GB0003656021,Baillie Gifford China Growth Trust,yfinance,BGCG.L;BGCG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GACAl_EQ,GB0003692737,General Accident 8.875% PRF,yfinance,GACA.L;GACA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MIG1l_EQ,GB0004122858,Maven Income & Growth VCT,yfinance,MIG1.L;MIG1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-HRIl_EQ,GB0004228648,Herald Investment Trust,yfinance,HRI.L;HRI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-IATl_EQ,GB0004535307,INVESCO Asia Dragon Trust,yfinance,IAD.L;IAD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IBTl_EQ,GB0004559349,International Biotechnology Trust,yfinance,IBT.L;IBT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SPTl_EQ,GB0004726096,Spirent Communications,yfinance,SPT.L;SPT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BSCl_EQ,GB0005001796,British Smaller Companies,yfinance,BSC.L;BSC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BRLAl_EQ,GB0005058408,BlackRock Latin American Investment Trust,yfinance,BRLA.L;BRLA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-NTVl_EQ,GB0005356430,Northern 2 VCT,yfinance,NTV.L;NTV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MAJEl_EQ,GB0005555221,Majedie Investments,yfinance,MAJE.L;MAJE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AATGl_EQ,GB0005581672,Albion Technology & General,yfinance,AATG.L;AATG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MRCHl_EQ,GB0005800072,Merchants Trust,yfinance,MRCH.L;MRCH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ASEIl_EQ,GB0006039597,aberdeen Equity Income Trust,yfinance,AEI.L;AEI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SCPl_EQ,GB0006108418,Schroder UK Mid Cap Fund,yfinance,SCP.L;SCP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MUTl_EQ,GB0006111123,Murray Income Trust,yfinance,MUT.L;MUT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BRSCl_EQ,GB0006436108,BlackRock Smaller Cos Trust,yfinance,BRSC.L;BRSC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 NTEAl_EQ,GB0006546898,Northern Electric 8.061% PRF,yfinance,NTEA.L;NTEA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SDVl_EQ,GB0006615826,Chelverton UK Dividend Trust,yfinance,SDV.L;SDV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-PHIl_EQ,GB0006667470,Pacific Horizon Investment Trust,yfinance,PHI.L;PHI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PACl_EQ,GB0006674385,Pacific Assets Trust,yfinance,PAC.L;PAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ZYTl_EQ,GB0006971013,Zytronic,yfinance,ZYT.L;ZYT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RE.Bl_EQ,GB0007185639,R.E.A. Holdings 9% PRF,yfinance,RE.B.L;RE.B,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RNOl_EQ,GB0007325078,Renold,yfinance,RNO.L;RNO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-RCPl_EQ,GB0007366395,RIT Capital Partners,yfinance,RCP.L;RCP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-RIIIl_EQ,GB0007392078,Rights and Issues Investment Trust,yfinance,RIII.L;RIII,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SUSl_EQ,GB0007655037,S&U,yfinance,SUS.L;SUS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-FGTl_EQ,GB0007816068,Finsbury Growth & Income Trust,yfinance,FGT.L;FGT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SAINl_EQ,GB0007873697,Scottish American Investment,yfinance,SAIN.L;SAIN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BGUKl_EQ,GB0007913485,Baillie Gifford UK Growth Trust,yfinance,BGUK.L;BGUK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SCFl_EQ,GB0007915860,Schroder Income Growth Fund,yfinance,SCF.L;SCF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SDPl_EQ,GB0007918872,Schroder AsiaPacific Fund,yfinance,SDP.L;SDP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SJGl_EQ,GB0008022849,Schroder Japan Trust,yfinance,SJG.L;SJG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SIXHl_EQ,GB0008121641,600 Group,yfinance,SIXH.L;SIXH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-VINl_EQ,GB0008484718,Value and Indexed Property Income Trust,yfinance,VIP.L;VIP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ATRl_EQ,GB0008710799,Schroder Asian Total Return Investment,yfinance,ATR.L;ATR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SIGTl_EQ,GB0008769993,Momentum Multi-Asset Value Trust,yfinance,MAVT.L;MAVT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-HSLl_EQ,GB0009065060,Henderson Smaller Companies Investment Trust,yfinance,HSL.L;HSL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-HHIl_EQ,GB0009580571,Henderson High Income Trust,yfinance,HHI.L;HHI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DOX_US_EQ,GB0022569080,Amdocs,yfinance,DOX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BMDl_EQ,GB0030028103,Baronsmead Second Venture Trust,yfinance,BMD.L;BMD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SLPEl_EQ,GB0030474687,Patria Private Equity Trust,yfinance,PPET.L;PPET,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MNKSl_EQ,GB0030517261,Monks Investment Trust,yfinance,MNKS.L;MNKS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BPETl_EQ,GB0030738271,CT Private Equity Trust,yfinance,CTPE.L;CTPE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BTl_EQ,GB0030913577,BT Group,yfinance,BT/A.L;BT/A,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BRIGl_EQ,GB0030961691,Blackrock Income & Growth Investment Trust,yfinance,BRIG.L;BRIG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-IEMl_EQ,GB0031232498,Impax Environmental Markets,yfinance,IEM.L;IEM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-HYGl_EQ,GB0031256109,Seneca Growth Capital,yfinance,HYG.L;HYG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-LWDBl_EQ,GB0031429219,Law Debenture,yfinance,LWDB.L;LWDB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 POGl_EQ,GB0031544546,Petropavlovsk,yfinance,POG.L;POG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JRSl_EQ,GB0032164732,"JPMorgan Emerging Europe, Middle East & Africa Securities",yfinance,JEMA.L;JEMA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BEEl_EQ,GB0032273343,Barings Emerging EMEA Opportunities,yfinance,BEMO.L;BEMO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MIGOl_EQ,GB0034365949,MIGO Opportunities Trust,yfinance,MIGO.L;MIGO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GBSl_EQ,GB00B00FHZ82,Gold Bullion Securities Ltd,yfinance,GBS.L;GBS;GBSS.L;GBSS;GG9B.DE;GG9B,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GBSSl_EQ,GB00B00FHZ82,Gold Bullion Ltd,yfinance,GBS.L;GBS;GBSS.L;GBSS;GG9B.DE;GG9B,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GG9Bd1_EQ,GB00B00FHZ82,Gold Bullion Securities Ltd,yfinance,GBS.L;GBS;GBSS.L;GBSS;GG9B.DE;GG9B,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AMOl_EQ,GB00B013SN63,Aferian,yfinance,AFRN.L;AFRN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HRNl_EQ,GB00B01CZ652,Hornby,yfinance,HRN.L;HRN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BRGEl_EQ,GB00B01RDH75,BlackRock Greater Europe Investment Trust,yfinance,BRGE.L;BRGE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MIXl_EQ,GB00B01WL239,Gresham House Income & Growth 2 VCT,yfinance,GHV2.L;GHV2,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 OMYl_EQ,GB00B0381Z20,Synairgen,yfinance,SNG.L;SNG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MAV4l_EQ,GB00B043QW84,Maven Income And Growth,yfinance,MAV4.L;MAV4,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BLVNl_EQ,GB00B04PYL99,BowLeven,yfinance,BLVN.L;BLVN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-STSl_EQ,GB00B09G3N23,STS Global Income & Growth Trust,yfinance,STS.L;STS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SECl_EQ,GB00B0BDCB21,Strategic Equity Capital,yfinance,SEC.L;SEC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SOIl_EQ,GB00B0CRWN59,Schroder Oriental Income Fund,yfinance,SOI.L;SOI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RUSl_EQ,GB00B0D5V538,Raven Property,yfinance,RAV.L;RAV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PFCl_EQ,GB00B0H2K534,Petrofac,yfinance,PFC.L;PFC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BERIl_EQ,GB00B0N8MF98,BlackRock Energy and Resources Income Trust,yfinance,BERI.L;BERI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ATSTl_EQ,GB00B11V7W98,Alliance Witan,yfinance,ALW.L;ALW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PTYl_EQ,GB00B1235860,Partway,yfinance,PTY.L;PTY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-LMSl_EQ,GB00B12MHD28,LMS Capital,yfinance,LMS.L;LMS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ALUMl_EQ,GB00B15KXN58,WisdomTree Aluminium,yfinance,ALUM.L;ALUM;ALUM.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ALUMm_EQ,GB00B15KXN58,WisdomTree Aluminium,yfinance,ALUM.L;ALUM;ALUM.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 COPAl_EQ,GB00B15KXQ89,WisdomTree Copper,yfinance,COPA.L;COPA;COPAP.PA;COPAP;COPB.L;COPB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -750,105 +674,55 @@ AIGLl_EQ,GB00B15KYK92,WisdomTree Livestock,yfinance,AIGL.L;AIGL,failure,unable t
 AGGPl_EQ,GB00B15KYL00,WisdomTree Grains,yfinance,AGGP.L;AGGP;AIGG.L;AIGG;AIGG.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AIGGl_EQ,GB00B15KYL00,WisdomTree Grains,yfinance,AGGP.L;AGGP;AIGG.L;AIGG;AIGG.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AIGGm_EQ,GB00B15KYL00,WisdomTree Grains,yfinance,AGGP.L;AGGP;AIGG.L;AIGG;AIGG.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-OAP3l_EQ,GB00B17B3479,Octopus Apollo VCT,yfinance,OAP3.L;OAP3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-IVPGl_EQ,GB00B1DQ6472,Invesco Global Equity Income Trust,yfinance,IGET.L;IGET,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IPUl_EQ,GB00B1FL3C76,Artemis Uk Future Leaders,yfinance,AFL.L;AFL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AAEVl_EQ,GB00B1G3LR35,Albion Enterprise,yfinance,AAEV.L;AAEV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CHIl_EQ,GB00B1N4G299,CT UK High Income Trust,yfinance,CHI.L;CHI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 INLl_EQ,GB00B1TR0310,Inland Homes,yfinance,INL.L;INL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ALNAl_EQ,GB00B1VS7G47,Alina Holdings,yfinance,ALNA.L;ALNA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+WSGl_EQ,GB00B1XLC220,Westminster Group,yfinance,WSG.L;WSG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ETXl_EQ,GB00B2823H99,e-Therapeutics,yfinance,ETX.L;ETX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-IGVl_EQ,GB00B29BN198,Gresham House Income & Growth VCT,yfinance,GHV1.L;GHV1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BMPGl_EQ,GB00B2PP2527,CT Managed Portfolio Trust,yfinance,CMPG.L;CMPG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CMPIl_EQ,GB00B2PP3J36,CT Managed Portfolio Trust,yfinance,CMPI.L;CMPI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GMAAl_EQ,GB00B3ZP1526,Gama Aviation,yfinance,GMAA.L;GMAA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 NTQl_EQ,GB00B41Q8Q68,Enteq Technologies,yfinance,NTQ.L;NTQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XGLD1l_EQ,GB00B5840F36,Xtrackers Physical Gold,yfinance,XGLD.L;XGLD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-PGOOl_EQ,GB00B5B7YS03,Proven Growth & Income VCT,yfinance,PGOO.L;PGOO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JEMIl_EQ,GB00B5ZZY915,JPMorgan Emerging Markets Dividend Income,yfinance,JEMI.L;JEMI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SGPl_EQ,GB00B60BD277,Superdry,yfinance,SDRY.L;SDRY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-FCSSl_EQ,GB00B62Z3C74,Fidelity China Special Situations,yfinance,FCSS.L;FCSS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-DIVIl_EQ,GB00B65TLW28,Diverse Income Trust,yfinance,DIVI.L;DIVI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-PCGHl_EQ,GB00B6832P16,Polar Capital Global Healthcare Trust,yfinance,PCGH.L;PCGH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XRH0l_EQ,GB00B684MW17,Xtrackers Physical Rhodium,yfinance,XRH0.L;XRH0,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XGLSl_EQ,GB00B68FL050,Xtrackers Physical Gold GBP Hedged,yfinance,XGLS.L;XGLS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-FTVl_EQ,GB00B68K3716,Foresight VCT,yfinance,FTV.L;FTV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MWYl_EQ,GB00B6VTTK07,Mid Wynd International Investment Trust,yfinance,MWY.L;MWY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EVRl_EQ,GB00B71N6K86,Evraz,yfinance,EVR.L;EVR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 NMCl_EQ,GB00B7FC0762,NMC Health,yfinance,NMC.L;NMC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BRNAl_EQ,GB00B7W0XJ61,Blackrock American Income Trust,yfinance,BRAI.L;BRAI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IPELl_EQ,GB00B8HWGJ55,Impellam Group,yfinance,IPEL.L;IPEL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-UKWl_EQ,GB00B8SC6K54,Greencoat UK Wind,yfinance,UKW.L;UKW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VRSl_EQ,GB00B8YZTJ80,Versarien,yfinance,VRS.L;VRS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BIOMl_EQ,GB00B9Z1M820,Biome Technologies,yfinance,BIOM.L;BIOM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-PBLTl_EQ,GB00BD0ND667,Develop North,yfinance,DVNO.L;DVNO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PNPLl_EQ,GB00BD0SN947,Pineapple Power,yfinance,PNPL.L;PNPL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BELLl_EQ,GB00BD3B8Z11,Belluscura,yfinance,BELL.L;BELL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EGLl_EQ,GB00BD3V4641,Ecofin Global Utilities and Infrastructure Trust,yfinance,EGL.L;EGL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VVPR_US_EQ,GB00BD3VDH82,VivoPower,yfinance,VVPR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CRVl_EQ,GB00BD4FQ360,Craven House Capital,yfinance,CRV.L;CRV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BBBl_EQ,GB00BD5JMP10,Bigblu Broadband,yfinance,BBB.L;BBB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AJOTl_EQ,GB00BD6H5D36,AVI Japan Opportunity Trust,yfinance,AJOT.L;AJOT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MRLl_EQ,GB00BD8SLV43,Marlowe,yfinance,MRL.L;MRL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ASLIl_EQ,GB00BD9PXH49,Abrdn European Logistics Income,yfinance,ASLI.L;ASLI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 OXBl_EQ,GB00BDFBVT43,OXB,yfinance,OXB.L;OXB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 INXl_EQ,GB00BDFDLT01,I-Nexus Global,yfinance,INX.L;INX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-USAl_EQ,GB00BDFGHW41,Baillie Gifford US Growth Trust,yfinance,USA.L;USA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BPCRl_EQ,GB00BDGKMY29,BioPharma Credit,yfinance,BPCR.L;BPCR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DESTl_EQ,GB00BDHSP575,Destiny Pharma,yfinance,DEST.L;DEST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SWCl_EQ,GB00BDQYGP38,CELADON PHARMACEUTICALS,yfinance,CEL.L;CEL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AIREl_EQ,GB00BDVK7088,Alternative Income Reit,yfinance,AIRE.L;AIRE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RMGl_EQ,GB00BDVZYZ77,International Distribution Services,yfinance,IDS.L;IDS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RAIl_EQ,GB00BDZV6W26,RA International,yfinance,RAI.L;RAI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PRSRl_EQ,GB00BF01NH51,PRS REIT,yfinance,PRSR.L;PRSR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SOHOl_EQ,GB00BF0P7H59,Social Housing Reit,yfinance,SOHO.L;SOHO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 POLXl_EQ,GB00BF3DT583,Polarean Imaging,yfinance,POLX.L;POLX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IOGl_EQ,GB00BF49WF64,IOG,yfinance,IOG.L;IOG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MRCl_EQ,GB00BF4JDH58,Mercantile Investment Trust,yfinance,MRC.L;MRC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AIEl_EQ,GB00BF50VS41,Ashoka India Equity Investment Trust,yfinance,AIE.L;AIE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RENEl_EQ,GB00BF5G6K95,ReNeuron,yfinance,RENE.L;RENE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JMIl_EQ,GB00BF7L8P11,JPMorgan UK Small CAP Growth & Income,yfinance,JUGI.L;JUGI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-OITl_EQ,GB00BFFK7H57,Odyssean Investment Trust,yfinance,OIT.L;OIT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RBGPl_EQ,GB00BFM6WL52,RBG Holdings,yfinance,RBGP.L;RBGP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-GRIDl_EQ,GB00BFX3K770,Gresham House Energy Storage Fund,yfinance,GRID.L;GRID,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BGSl_EQ,GB00BFXYH242,Baillie Gifford Shin Nippon,yfinance,BGS.L;BGS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TWDl_EQ,GB00BFYT9999,Trackwise Designs,yfinance,TWD.L;TWD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MGCIl_EQ,GB00BFYYL325,M&G Credit Income Investment Trust,yfinance,MGCI.L;MGCI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-GSFl_EQ,GB00BG0P0V73,Gore Street Energy Storage Fund,yfinance,GSF.L;GSF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AUGMl_EQ,GB00BG12XV81,Augmentum Fintech,yfinance,AUGM.L;AUGM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BBOXl_EQ,GB00BG49KP99,Tritax Big Box REIT,yfinance,BBOX.L;BBOX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PIERl_EQ,GB00BG49KW66,Brighton Pier,yfinance,PIER.L;PIER,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BMKl_EQ,GB00BGHPT808,Benchmark,yfinance,BMK.L;BMK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SEITl_EQ,GB00BGHVZM47,SDCL Efficiency Income Trust,yfinance,SEIT.L;SEIT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SSONl_EQ,GB00BGJWTR88,Smithson Investment Trust,yfinance,SSON.L;SSON,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-EWIl_EQ,GB00BHSRZC82,Edinburgh Worldwide Investment Trust,yfinance,EWI.L;EWI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-NAITl_EQ,GB00BJ00Z303,North American Income Trust,yfinance,NAIT.L;NAIT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-HGTl_EQ,GB00BJ0LT190,HgCapital Trust,yfinance,HGT.L;HGT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SDXl_EQ,GB00BJ5JNL69,SDX Energy,yfinance,SDX.L;SDX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-USFl_EQ,GB00BJCWFX49,US Solar Fund,yfinance,USF.L;USF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CREIl_EQ,GB00BJFLFT45,Custodian Property Income Reit,yfinance,CREI.L;CREI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-THRLl_EQ,GB00BJGTLF51,Target Healthcare REIT,yfinance,THRL.L;THRL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JUSCl_EQ,GB00BJL5F346,JPMorgan US Smaller Companies Investment Trust,yfinance,JUSC.L;JUSC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-HICLl_EQ,GB00BJLP1Y77,Hicl Infrastructure,yfinance,HICL.L;HICL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AGFXl_EQ,GB00BJLPH056,Argentex,yfinance,AGFX.L;AGFX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ORITl_EQ,GB00BJM02935,Octopus Renewables Infrastructure Trust,yfinance,ORIT.L;ORIT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SNDl_EQ,GB00BJN54579,Sondrel,yfinance,SND.L;SND,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-HOMEl_EQ,GB00BJP5HK17,Home Reit,yfinance,HOME.L;HOME,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BTCWs_EQ,GB00BJYDH287,WisdomTree Physical Bitcoin,yfinance,BTCW.L;BTCW;WXBT.L;WXBT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WXBTl_EQ,GB00BJYDH287,WisdomTree Physical Bitcoin,yfinance,BTCW.L;BTCW;WXBT.L;WXBT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ETHWUSDs_EQ,GB00BJYDH394,WisdomTree Physical Ethereum,yfinance,ETHW.L;ETHW;WETP.L;WETP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WETPl_EQ,GB00BJYDH394,WisdomTree Physical Ethereum,yfinance,ETHW.L;ETHW;WETP.L;WETP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SCHOl_EQ,GB00BJYS2173,Scholium,yfinance,SCHO.L;SCHO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-FEVl_EQ,GB00BK1PKQ95,Fidelity European Trust,yfinance,FEV.L;FEV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CBXl_EQ,GB00BK964W87,Astrid Intelligence,yfinance,ASTR.L;ASTR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KITl_EQ,GB00BK96BB68,Keystone Positive Change Investment Trust,yfinance,KPC.L;KPC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MNGl_EQ,GB00BKFB1C65,M&G,yfinance,MNG.L;MNG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-NAVFl_EQ,GB00BKLGLS10,Nippon Active Value Fund,yfinance,NAVF.L;NAVF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BGSCl_EQ,GB00BKLXD974,Global Smaller Companies Trust,yfinance,GSCT.L;GSCT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SSITl_EQ,GB00BKPG0138,Seraphim Space Investment Trust,yfinance,SSIT.L;SSIT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-TEMl_EQ,GB00BKPG0S09,Templeton Emerging Markets Investment Trust,yfinance,TEM.L;TEM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SBIl_EQ,GB00BKSB1674,SourceBio International,yfinance,SBI.L;SBI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JAMl_EQ,GB00BKZGVH64,JPMorgan American Investment Trust,yfinance,JAM.L;JAM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BITCUSDs_EQ,GB00BLD4ZL17,CoinShares Bitcoin,yfinance,BITC.L;BITC;BITP.L;BITP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BITPl_EQ,GB00BLD4ZL17,CoinShares Bitcoin,yfinance,BITC.L;BITC;BITP.L;BITP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ETHEUSDs_EQ,GB00BLD4ZM24,CoinShares Ethereum Staking,yfinance,ETHE.L;ETHE;ETHP.L;ETHP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -856,102 +730,60 @@ ETHPl_EQ,GB00BLD4ZM24,CoinShares Ethereum Staking,yfinance,ETHE.L;ETHE;ETHP.L;ET
 OHGl_EQ,GB00BLF79495,Zentra Group PLC,yfinance,ZNT.L;ZNT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VNTR_US_EQ,GB00BLFHRK18,Venator Materials,yfinance,VNTR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 4GBLl_EQ,GB00BLH36N37,4Global,yfinance,4GBL.L;4GBL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BTEMl_EQ,GB00BLH3CY60,Avi Global Trust,yfinance,AGT.L;AGT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 NGHTl_EQ,GB00BLKGVD49,Nightcap,yfinance,NGHT.L;NGHT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AJAXl_EQ,GB00BLNBD412,Ajax Resources,yfinance,AJAX.L;AJAX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-PINTl_EQ,GB00BLNNFL88,Pantheon Infrastructure,yfinance,PINT.L;PINT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HEITl_EQ,GB00BLNNFY18,Harmony Energy Income Trust,yfinance,HEIT.L;HEIT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-RNEPl_EQ,GB00BLPK4430,Ecofin US Renewables Infrastructure Trust,yfinance,RNEP.L;RNEP;RNEW.L;RNEW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-RNEWl_EQ,GB00BLPK4430,Ecofin US Renewables Infrastructure Trust,yfinance,RNEP.L;RNEP;RNEW.L;RNEW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ALMl_EQ,GB00BLRLH124,Allied Minds,yfinance,ALM.L;ALM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-PNLl_EQ,GB00BM8B5H06,Personal Assets Trust,yfinance,PNL.L;PNL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MTEl_EQ,GB00BM8H3X05,Montanaro European Smaller Cos Trust,yfinance,MTE.L;MTE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BRSDl_EQ,GB00BM97CN29,BrandShield Systems,yfinance,BRSD.L;BRSD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TSIl_EQ,GB00BM97CN29,BrandShield Systems,yfinance,BRSD.L;BRSD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CMOl_EQ,GB00BMB5Y385,CMO Group,yfinance,CMO.L;CMO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BGEUl_EQ,GB00BMC7T380,Baillie Gifford European Growth Trust,yfinance,BGEU.L;BGEU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-TRGl_EQ,GB00BMCF8689,European Smaller Companies,yfinance,ESCT.L;ESCT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CPPl_EQ,GB00BMDX5Z93,CPP Group,yfinance,CPP.L;CPP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AASl_EQ,GB00BMF19B58,Abrdn Asia Focus,yfinance,AAS.L;AAS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BOOKl_EQ,GB00BMF1L080,Literacy Capital,yfinance,BOOK.L;BOOK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 S247l_EQ,GB00BMGNDN03,Smarttech247,yfinance,S247.L;S247,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VCAPl_EQ,GB00BMH15P96,Vector Capital,yfinance,VCAP.L;VCAP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KCTl_EQ,GB00BMH30492,Sivota,yfinance,SIV.L;SIV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KLAR_US_EQ,GB00BMHVL512,Klarna,yfinance,KLAR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MRX_US_EQ,GB00BMT7GT62,Marex Group,yfinance,MRX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PPCl_EQ,GB00BMT80K89,Molecular Energies,yfinance,MEN.L;MEN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JESCl_EQ,GB00BMTS0Z37,JPMorgan European Discovery Trust,yfinance,JEDT.L;JEDT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-TMPLl_EQ,GB00BMV92D64,Temple Bar Investment Trust,yfinance,TMPL.L;TMPL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RPRX_US_EQ,GB00BMVP7Y09,Royalty Pharma,yfinance,RPRX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DWLl_EQ,GB00BMWRZ071,Dowlais Group,yfinance,DWL.L;DWL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ZAMZl_EQ,GB00BMWW8Q93,Dispensa Group PLC,yfinance,DISP.L;DISP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CCAPl_EQ,GB00BMX66220,Conduity Capital,yfinance,CCAP.L;CCAP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JMGl_EQ,GB00BMXWN182,JPMorgan Emerging Markets Growth & Income,yfinance,JMGI.L;JMGI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ROOFl_EQ,GB00BN497V39,Atrato Onsite Energy,yfinance,ROOF.L;ROOF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AEEEl_EQ,GB00BN6JYS78,Parvus Energy Efficiency Trust,yfinance,AEEE.L;AEEE;AEET.L;AEET,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AEETl_EQ,GB00BN6JYS78,Parvus Energy Efficiency Trust,yfinance,AEEE.L;AEEE;AEET.L;AEET,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SBOl_EQ,GB00BN7JZR28,Schroder British Opportunities Trust,yfinance,SBO.L;SBO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PODPl_EQ,GB00BNDRD100,Pod Point,yfinance,PODP.L;PODP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ATTl_EQ,GB00BNG2M159,Allianz Technology Trust,yfinance,ATT.L;ATT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MTPHl_EQ,GB00BNGF1L75,Biodexa Pharmaceuticals,yfinance,BDRX.L;BDRX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EPICl_EQ,GB00BNGMZB68,Ediston Property Investment Co,yfinance,EPIC.L;EPIC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 NZIl_EQ,GB00BNK8T635,Net Zero Infrastructure,yfinance,NZI.L;NZI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MEALl_EQ,GB00BNK9TZ56,Parsley Box,yfinance,MEAL.L;MEAL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-GSEOl_EQ,GB00BNKVP754,Vh Global Energy Infrastructure,yfinance,ENRG.L;ENRG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RMGB_US_EQ,GB00BNQMPN80,ReNew Energy Global,yfinance,RMGB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TRXl_EQ,GB00BNTXR104,Tissue Regenix,yfinance,TRX.L;TRX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BVXl_EQ,GB00BNXH3K91,BiVictriX Therapeutics,yfinance,BVX.L;BVX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ETPl_EQ,GB00BNYDGM91,Eneraqua Technologies,yfinance,ETP.L;ETP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-PINl_EQ,GB00BP37WF17,Pantheon International PLC,yfinance,PIN.L;PIN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AGVIl_EQ,GB00BPJMQ253,Aberforth Geared Value & Income Trust,yfinance,AGVI.L;AGVI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JEGIl_EQ,GB00BPR9Y246,JPMorgan European Growth & Income,yfinance,JEGI.L;JEGI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AQSGl_EQ,GB00BPYP3Q26,Aquila Services,yfinance,AQSG.L;AQSG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BOAS_US_EQ,GB00BQ1MW662,Selina Hospitality,yfinance,BOAS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AACI_US_EQ,GB00BQH8G337,Rezolve AI,yfinance,AACI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 C4XDl_EQ,GB00BQQ2RV18,C4X Discovery,yfinance,C4XD.L;C4XD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HEIQl_EQ,GB00BQWNLC77,HeiQ,yfinance,HEIQ.L;HEIQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ALGWl_EQ,GB00BQXMKX73,Alpha Growth,yfinance,ALGW.L;ALGW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MYIl_EQ,GB00BQZCCB79,Murray International Trust,yfinance,MYI.L;MYI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ACRMl_EQ,GB00BR0WHY71,ACUITY RM,yfinance,ACRM.L;ACRM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 INSEl_EQ,GB00BR2Q0V58,Inspired,yfinance,INSE.L;INSE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-PCTl_EQ,GB00BR3YV268,Polar Capital Technology Trust,yfinance,PCT.L;PCT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SSTl_EQ,GB00BRBL6574,Scottish Oriental Smaller Companies Trust,yfinance,SST.L;SST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-DDV1l_EQ,GB00BRBQ0C76,Foresight Ventures Vct,yfinance,FVEN.L;FVEN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-RCOIl_EQ,GB00BRBWLX34,Riverstone Credit Opportunities Income,yfinance,RCOI.L;RCOI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-NASl_EQ,GB00BRDXZ870,North Atlantic Smaller Cos Investment Trust,yfinance,NAS.L;NAS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SPOl_EQ,GB00BRV2F192,Sportech,yfinance,SPO.L;SPO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VOGl_EQ,GB00BRWR3752,Victoria Oil & Gas,yfinance,VOG.L;VOG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AU_US_EQ,GB00BRXH2664,AngloGold Ashanti,yfinance,AU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HOTl_EQ,GB00BSHRGN41,Henderson Opportunities Trust,yfinance,HOT.L;HOT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KATl_EQ,GB00BSNBL022,Focus Xplore,yfinance,FOX.L;FOX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CRWCl_EQ,GB00BSPT6546,Albion Crown VCT,yfinance,CRWC.L;CRWC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GVPl_EQ,GB00BTLJYS47,Gabelli Value Plus + Trust,yfinance,GVP.L;GVP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CLDNl_EQ,GB00BTNQ8K38,Caledonia Investments,yfinance,CLDN.L;CLDN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TIRl_EQ,GB00BTY5RC40,Tiger Alpha,yfinance,TIR.L;TIR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RBGl_EQ,GB00BVDPPV41,The Revel Collective,yfinance,TRC.L;TRC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SUPPl_EQ,GB00BVG1CF25,Schroders Capital Global Innovation,yfinance,INOV.L;INOV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-VSLl_EQ,GB00BVG6X439,VPC Specialty Lending Investments,yfinance,VSL.L;VSL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IGT_US_EQ,GB00BVG7F061,Brightstar Lottery,yfinance,IGT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-AEWUl_EQ,GB00BWD24154,AEW UK REIT,yfinance,AEWU.L;AEWU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MINIl_EQ,GB00BWFGQ085,Miton UK MicroCap Trust,yfinance,MINI.L;MINI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-FSVl_EQ,GB00BWXC7Y93,Fidelity Special Values,yfinance,FSV.L;FSV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-GROWl_EQ,GB00BY7QYJ50,Molten Ventures,yfinance,GROW.L;GROW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DLGl_EQ,GB00BY9D0Y18,Direct Line Insurance,yfinance,DLG.L;DLG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-JGGIl_EQ,GB00BYMKY695,JPMorgan Global Growth & Income,yfinance,JGGI.L;JGGI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-RMDLl_EQ,GB00BYMTBG55,RM Infrastructure Income,yfinance,RMII.L;RMII,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GLOG_BE_EQ,GB00BYN5BY03,Hybrid Software,yfinance,GLOG.BR;GLOG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WTGl_EQ,GB00BYNBFN51,Watchstone Group,yfinance,WTG.L;WTG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LOOPl_EQ,GB00BYQP6S60,LoopUp,yfinance,LOOP.L;LOOP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CCJIl_EQ,GB00BYSRMH16,CC Japan Income & Growth Trust,yfinance,CCJI.L;CCJI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-RESIl_EQ,GB00BYSX1508,Residential Secure Income,yfinance,RESI.L;RESI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-KCRl_EQ,GB00BYWK1Q82,KCR Residential Reit,yfinance,KCR.L;KCR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SUREl_EQ,GB00BYWYZ460,Sure Ventures,yfinance,SURE.L;SURE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GCATl_EQ,GB00BYZC5R04,Imara Gold,yfinance,IGLD.L;IGLD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MHNl_EQ,GB00BZ0XWD04,Menhaden Resource Efficiency,yfinance,MHN.L;MHN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ARBl_EQ,GB00BZ15CS02,Argo Blockchain,yfinance,ARB.L;ARB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MTUl_EQ,GB00BZ1H9L86,Montanaro UK Smaller Companies Investment Trust,yfinance,MTU.L;MTU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GYGl_EQ,GB00BZ4FM652,GYG,yfinance,GYG.L;GYG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BBHl_EQ,GB00BZCNLL95,CT Healthcare Trust,yfinance,CTHT.L;CTHT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TFGSl_EQ,GG00B1RMC548,Tetragon,yfinance,TFGS.L;TFGS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 INDIl_EQ,GG00B39HF298,Indus Gas,yfinance,INDI.L;INDI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BMNl_EQ,GG00B4TM3943,Bushveld Minerals,yfinance,BMN.L;BMN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -961,7 +793,6 @@ SCRFl_EQ,GG00BKQN9M74,SME Credit Realisation Fund,yfinance,SCRF.L;SCRF,failure,u
 DMYD_US_EQ,GG00BMF1JR16,Genius Sports,yfinance,DMYD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SEAH_US_EQ,GG00BMG42V42,Super Group SGHC,yfinance,SEAH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KKVLl_EQ,GG00BN56JF17,SLF Realisation Fund,yfinance,SLFR.L;SLFR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-IFRXl_EQ,GG00BN7RXN80,Iforex Financial Trading Holdings,yfinance,IFRX.L;IFRX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WKOFl_EQ,GG00BPCMLM76,Weiss Korea Opportunity Fund,yfinance,WKOF.L;WKOF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HVPDEl_EQ,GG00BR30MJ80,HarbourVest Global Private Equity Ltd (Acc),yfinance,HVPD.L;HVPD;HVPE.L;HVPE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HVPEDl_EQ,GG00BR30MJ80,HarbourVest Global Private Equity Ltd (Acc),yfinance,HVPD.L;HVPD;HVPE.L;HVPE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -1152,7 +983,6 @@ XQUDd_EQ,IE0004KLW911,Xtrackers ESG USD Emerging Markets Bond Quality Weighted (
 HEURd_EQ,IE0004L7EQG2,HSBC Euro Liquidity Fund (Acc),yfinance,HEUR.DE;HEUR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CEB5d_EQ,IE0004L9EID2,iShares India INR Govt Bond (Dist),yfinance,CEB5.DE;CEB5,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XZEWd_EQ,IE0004MFRED4,Xtrackers S&P 500 Equal Weight Scored & Screened (Acc),yfinance,XZEW.DE;XZEW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-BREA_US_EQ,IE0004OVVKF1,Brera Holdings,yfinance,BREA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BSE6d_EQ,IE0004QWOTD5,Invesco BulletShares 2026 EUR Corporate Bond (Acc),yfinance,BSE6.DE;BSE6,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MWOUd_EQ,IE0004TFW0R5,Amundi MSCI USA ESG Selection Extra (Acc),yfinance,MWOU.DE;MWOU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MTVRd_EQ,IE0004U3TX15,L&G Metaverse (Acc),yfinance,MTVR.DE;MTVR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -1297,6 +1127,7 @@ EUGDl_EQ,IE0007WMHDE3,Making Europe Great Again,yfinance,8GRT.DE;8GRT;GR8.L;GR8,
 QNTGl_EQ,IE0007Y8Y157,VanEck Quantum Computing (Acc),yfinance,QNTG.L;QNTG;QNTM.L;QNTM;QUTM.DE;QUTM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 QNTMl_EQ,IE0007Y8Y157,VanEck Quantum Computing (Acc),yfinance,QNTG.L;QNTG;QNTM.L;QNTM;QUTM.DE;QUTM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 QUTMd_EQ,IE0007Y8Y157,VanEck Quantum Computing (Acc),yfinance,QNTG.L;QNTG;QNTM.L;QNTM;QUTM.DE;QUTM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ID32l_EQ,IE0007YBWBE5,iShares iBonds Dec 2032 Term USD Corp (Acc),yfinance,ID32.L;ID32,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 QQIAd_EQ,IE0007YZZZN7,Invesco Nasdaq-100 Income Advantage (Dist),yfinance,QQIA.DE;QQIA;QQIA.L,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 QQIAl_EQ,IE0007YZZZN7,Invesco Nasdaq-100 Income Advantage (Dist),yfinance,QQIA.DE;QQIA;QQIA.L,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TMGGl_EQ,IE0007Z28IJ7,WisdomTree Tech Megatrends (Acc),yfinance,TMGG.L;TMGG;TMGT.L;TMGT;WTMT.DE;WTMT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -1322,6 +1153,7 @@ ASWMd_EQ,IE0008BA4TY1,Rex Crypto Equity Income & Growth (Dist),yfinance,ASWM.DE;
 CEGIl_EQ,IE0008BA4TY1,Rex Crypto Equity Income & Growth (Dist),yfinance,ASWM.DE;ASWM;CEGI.L;CEGI;CEPG.L;CEPG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CEPGl_EQ,IE0008BA4TY1,Rex Crypto Equity Income & Growth (Dist),yfinance,ASWM.DE;ASWM;CEGI.L;CEGI;CEPG.L;CEPG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ESAEd_EQ,IE0008D0AIU9,BNP Paribas Easy MSCI World Equal Weight Select (Acc),yfinance,ESAE.DE;ESAE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+LION_US_EQ,IE0008D7EWV5,SMX Security Matters,yfinance,LION,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EBXGl_EQ,IE0008F7X0W1,Invesco Euro Government Bond 7-10 Year (Dist),yfinance,EBXG.L;EBXG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BCFKd_EQ,IE0008GBXCA4,UBS S&P 500 Equal Weight SF (Acc),yfinance,BCFK.DE;BCFK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UCLAd_EQ,IE0008GO35B5,Invesco USD AAA CLO (Acc),yfinance,UCLA.DE;UCLA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -1363,6 +1195,7 @@ WBLKm_EQ,IE000940RNE6,Wisdomtree Blockchain,yfinance,BKCN.L;BKCN;WBLK.L;WBLK;WBL
 CAUTd_EQ,IE00094FRAA6,Global X China Electric Vehicle & Battery (Dist),yfinance,CAUT.DE;CAUT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XEEWd_EQ,IE00094GSCQ4,Xtrackers World Equity Enhanced Active (Acc),yfinance,XEEW.DE;XEEW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HPNSl_EQ,IE00096S6AV7,HSBC FTSE EPRA NAREIT Developed Climate Paris Aligned (Acc),yfinance,HPNS.L;HPNS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+BREA_US_EQ,IE0009876H30,Brera Holdings,yfinance,BREA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IU0As_EQ,IE00098ZGGO6,iShares USD Corp Bond 0-3yr ESG (Acc),yfinance,IU0A.SW;IU0A,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CNYEm_EQ,IE00099GAJC6,iShares MSCI China A (Acc),yfinance,CNYE.MI;CNYE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HIEMl_EQ,IE0009BC6K22,HSBC MSCI Emerging Markets Islamic Screened Capped,yfinance,HIEM.L;HIEM;HIES.L;HIES,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -1434,7 +1267,6 @@ FIDEl_EQ,IE000AZOUN82,Franklin MSCI World Catholic Principles (Acc),yfinance,FID
 FLXAd_EQ,IE000AZOUN82,Franklin MSCI World Catholic Principles (Acc),yfinance,FIDE.L;FIDE;FLXA.DE;FLXA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WMMSd_EQ,IE000AZV0AS3,Amundi MSCI World IMI Value Advanced (Acc),yfinance,WMMS.DE;WMMS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VGGFd_EQ,IE000B1A2798,Vanguard Global Government Bond (Acc),yfinance,VGGF.DE;VGGF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-LION_US_EQ,IE000B5COQZ5,SMX Security Matters,yfinance,LION,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FJPId_EQ,IE000B5UZSG9,Fidelity Japan Equity Research Enhanced (Dist),yfinance,FJPI.DE;FJPI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CUREd_EQ,IE000B9PQW54,Vaneck Genomics And Healthcare Innovators (Acc),yfinance,CURE.DE;CURE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CBUSd_EQ,IE000BI0GCN3,iShares Core UK Gilts (Dist),yfinance,CBUS.DE;CBUS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -2136,6 +1968,7 @@ EPIl_EQ,IE000VCYXLY9,WisdomTree India Earnings (Acc),yfinance,EPI.L;EPI;EPIN.DE;
 EPINd_EQ,IE000VCYXLY9,WisdomTree India Earnings (Acc),yfinance,EPI.L;EPI;EPIN.DE;EPIN;EPIP.L;EPIP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EPIPl_EQ,IE000VCYXLY9,WisdomTree India Earnings (Acc),yfinance,EPI.L;EPI;EPIN.DE;EPIN;EPIP.L;EPIP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MEWDd_EQ,IE000VDI16Q5,Invesco MSCI Europe Equal Weight (Dist),yfinance,MEWD.DE;MEWD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+CLGHl_EQ,IE000VHC9HY7,iShares EUR AAA CLO Active (Dist),yfinance,CLGH.L;CLGH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MWOJd_EQ,IE000VML2GZ3,Amundi MSCI USA ESG Selection Extra (Acc),yfinance,MWOJ.DE;MWOJ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SGLHa_EQ,IE000VMQ8IH9,iShares Global Govt Bond (Dist),yfinance,SGLH.AS;SGLH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CEB8d_EQ,IE000VNGJFV0,iShares USD Short Duration Corp Bond (Dist),yfinance,CEB8.DE;CEB8,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -2915,13 +2748,8 @@ IFRBa_EQ,IE00B7LGZ558,iShares France Govt Bond (Dist),yfinance,IFRB.AS;IFRB,fail
 IS0Md_EQ,IE00B7LW6Y90,iShares Italy Govt Bond (Dist),yfinance,IS0M.DE;IS0M,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SSHYl_EQ,IE00B7N3YW49,PIMCO Advantage US Short-Term High Yield Corporate Bond,yfinance,SSHY.L;SSHY;STHY.L;STHY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 STHYl_EQ,IE00B7N3YW49,PIMCO Advantage US Short-Term High Yield Corporate Bond,yfinance,SSHY.L;SSHY;STHY.L;STHY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-3EULl_EQ,IE00B7SD4R47,WisdomTree EURO STOXX 50 3x Leveraged,yfinance,3EUL.L;3EUL;3LEU.L;3LEU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-3LEUl_EQ,IE00B7SD4R47,WisdomTree EURO STOXX 50 3x Daily Leveraged,yfinance,3EUL.L;3EUL;3LEU.L;3LEU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3UKSl_EQ,IE00B7VB3908,WisdomTree FTSE 100 3x Short,yfinance,3UKS.L;3UKS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UIQId_EQ,IE00B7WK2W23,UBS MSCI AC Asia ex Japan SF (Acc),yfinance,UIQI.DE;UIQI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-3LSIl_EQ,IE00B7XD2195,WisdomTree Silver 3x Daily Leveraged,yfinance,3LSI.L;3LSI;3SIL.L;3SIL;3SIL.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-3SILl_EQ,IE00B7XD2195,WisdomTree Silver 3x Leveraged,yfinance,3LSI.L;3LSI;3SIL.L;3SIL;3SIL.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-3SILm_EQ,IE00B7XD2195,WisdomTree Silver 3x Daily Leveraged,yfinance,3LSI.L;3LSI;3SIL.L;3SIL;3SIL.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IJPHl_EQ,IE00B7XYN974,iShares MSCI Japan GBP Hedged (Acc),yfinance,IJPH.L;IJPH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3LUS1l_EQ,IE00B7Y34M31,WisdomTree S&P 500 3x Leveraged,yfinance,3LUS.L;3LUS;3USL.L;3USL;3USL.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3USLl_EQ,IE00B7Y34M31,WisdomTree S&P 500 3x Leveraged,yfinance,3LUS.L;3LUS;3USL.L;3USL;3USL.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -2936,14 +2764,11 @@ IMVl_EQ,IE00B86MWN23,iShares Edge MSCI Europe Minimum Volatility (Acc),yfinance,
 IMVUl_EQ,IE00B86MWN23,iShares Edge MSCI Europe Minimum Volatility (Acc),yfinance,IMV.L;IMV;IMVU.L;IMVU;MVEU.L;MVEU;MVEU.SW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MVEUl_EQ,IE00B86MWN23,iShares Edge MSCI Europe Minimum Volatility (Acc),yfinance,IMV.L;IMV;IMVU.L;IMVU;MVEU.L;MVEU;MVEU.SW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MVEUs_EQ,IE00B86MWN23,iShares Edge MSCI Europe Minimum Volatility (Acc),yfinance,IMV.L;IMV;IMVU.L;IMVU;MVEU.L;MVEU;MVEU.SW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-3DELl_EQ,IE00B878KX55,WisdomTree DAX 3x Leveraged,yfinance,3DEL.L;3DEL;3LDE.L;3LDE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-3LDEl_EQ,IE00B878KX55,WisdomTree DAX 3x Daily Leveraged,yfinance,3DEL.L;3DEL;3LDE.L;3LDE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IAAAl_EQ,IE00B87G8S03,iShares Global AAA-AA Govt Bond (Dist),yfinance,IAAA.L;IAAA;IS0Z.DE;IS0Z;SAAA.L;SAAA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IS0Zd_EQ,IE00B87G8S03,iShares Global AAA-AA Govt Bond (Dist),yfinance,IAAA.L;IAAA;IS0Z.DE;IS0Z;SAAA.L;SAAA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SAAAl_EQ,IE00B87G8S03,iShares Global AAA-AA Govt Bond (Dist),yfinance,IAAA.L;IAAA;IS0Z.DE;IS0Z;SAAA.L;SAAA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IECFs_EQ,IE00B87RLX93,iShares EUR Corp Bond Financials (Dist),yfinance,IECF.SW;IECF;IS3B.DE;IS3B,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IS3Bd_EQ,IE00B87RLX93,iShares EUR Corp Bond Financials (Dist),yfinance,IECF.SW;IECF;IS3B.DE;IS3B,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-3UKLl_EQ,IE00B88D2999,WisdomTree FTSE 100 3x Leveraged,yfinance,3UKL.L;3UKL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IUSC1s_EQ,IE00B88DZ566,iShares S&P 500 CHF Hedged (Acc),yfinance,IUSC.SW;IUSC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MLPDl_EQ,IE00B8CJW150,Invesco Morningstar US Energy Infrastructure MLP (Dist),yfinance,MLPD.L;MLPD;MLPD.MI;MLPP.L;MLPP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MLPDm_EQ,IE00B8CJW150,Invesco Morningstar US Energy Infrastructure MLP (Dist),yfinance,MLPD.L;MLPD;MLPD.MI;MLPP.L;MLPP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -4477,7 +4302,6 @@ WINGm_EQ,IE00BYM31M36,iShares Fallen Angels High Yield Corp Bond (Dist),yfinance
 XREPl_EQ,IE00BYM8JD58,Invesco Real Estate S&P US Select Sector,yfinance,XREP.L;XREP;XRES.L;XRES;XRES.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XRESl_EQ,IE00BYM8JD58,Invesco Real Estate S&P US Select Sector (Acc),yfinance,XREP.L;XREP;XRES.L;XRES;XRES.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XRESm_EQ,IE00BYM8JD58,Invesco Real Estate S&P US Select Sector,yfinance,XREP.L;XREP;XRES.L;XRES;XRES.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ITBLm_EQ,IE00BYMB4Q22,WisdomTree FTSE MIB Banks,yfinance,ITBL.MI;ITBL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SPXDl_EQ,IE00BYML9W36,Invesco S&P 500,yfinance,SPXD.L;SPXD;SPXD.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SPXDm_EQ,IE00BYML9W36,Invesco S&P 500 (Dist),yfinance,SPXD.L;SPXD;SPXD.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WCOAl_EQ,IE00BYMLZY74,Wisdomtree Enhanced Commodity,yfinance,WCOA.L;WCOA;WCOA.MI;WCOB.L;WCOB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -5055,7 +4879,6 @@ ALF1_US_EQ,KYG203151009,Centurion Acquisition,yfinance,ALF1,failure,unable to ve
 CBRG_US_EQ,KYG2061X1025,Chain Bridge I,yfinance,CBRG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PIAI_US_EQ,KYG207071088,Cheche Group Inc,yfinance,PIAI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MCAF_US_EQ,KYG2071T1094,CH AUTO,yfinance,MCAF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CHSN_US_EQ,KYG2104U1159,Chanson International,yfinance,CHSN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CJJD_US_EQ,KYG2124G2037,Ridgetech,yfinance,CJJD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CNGl_EQ,KYG215771042,China Nonferrous Gold,yfinance,CNG.L;CNG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CLEU_US_EQ,KYG2161Y1338,China Liberal Education,yfinance,CLEU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -5083,6 +4906,7 @@ HORI_US_EQ,KYG3033X1051,Emerging Markets Horizon,yfinance,HORI,failure,unable to
 EMCG_US_EQ,KYG3034H1092,Embrace Change Acquisition Corp,yfinance,EMCG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ENCP_US_EQ,KYG304491395,Graphjet Technology,yfinance,ENCP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EPWK_US_EQ,KYG309051145,EPWK Holdings,yfinance,EPWK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+RAYA_US_EQ,KYG3109F1292,Erayak Power Solution Group,yfinance,RAYA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MCAE_US_EQ,KYG313631155,Etao International,yfinance,MCAE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FACT1_US_EQ,KYG329011038,Fact II Acquisition Corp,yfinance,FACT1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DUO_US_EQ,KYG331471287,Fangdd Network,yfinance,DUO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -5092,7 +4916,6 @@ FCRMl_EQ,KYG368851047,Fulcrum Utility Services,yfinance,FCRM.L;FCRM,failure,unab
 GODN_US_EQ,KYG3731B1086,Gamehaus Holdings,yfinance,GODN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GRUd_EQ,KYG3777B1032,Geely Automobile,yfinance,GRU.DE;GRU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BUJA_US_EQ,KYG386171253,GIBO Holdings,yfinance,BUJA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-GIG1_US_EQ,KYG386481041,GigCapital7,yfinance,GIG1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SDH_US_EQ,KYG3932F1147,E-Power,yfinance,SDH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CO_US_EQ,KYG393421030,Global Cord Blood,yfinance,CO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GMM_US_EQ,KYG3937M1143,Global Mofy AI,yfinance,GMM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -5222,7 +5045,6 @@ TLGY_US_EQ,KYG8656T1094,TLGY Acquisition Corp,yfinance,TLGY,failure,unable to ve
 TGAA_US_EQ,KYG8675N1097,Target Global Acquisition I Corp,yfinance,TGAA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TETE_US_EQ,KYG871191063,Technology & Telecommunication Acquisition Corp,yfinance,TETE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 NNNDd_EQ,KYG875721634,Tencent,yfinance,NNND.DE;NNND,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-TLIH_US_EQ,KYG8763W2014,Ten-League International Holdings,yfinance,TLIH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TIRX_US_EQ,KYG8884K1360,Tian Ruixiang,yfinance,TIRX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TCJH_US_EQ,KYG8923U1296,Top Kingwin,yfinance,TCJH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BOCN_US_EQ,KYG8924F1211,TNL Mediagene,yfinance,BOCN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6082,7 +5904,8 @@ TRETl_EQ,NL0009690239,VanEck Global Real Estate (Dist),yfinance,TREG.L;TREG;TRET
 TRETm_EQ,NL0009690239,VanEck Global Real Estate (Dist),yfinance,TREG.L;TREG;TRET.AS;TRET;TRET.L;TRET.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TCBTd_EQ,NL0009690247,VanEck iBoxx EUR Corporates (Dist),yfinance,TCBT.DE;TCBT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TGBTa_EQ,NL0009690254,VanEck iBoxx EUR Sovereign Diversified 1-10,yfinance,TGBT.AS;TGBT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-YNDX_US_EQ,NL0009805522,Nebius Group NV,yfinance,YNDX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YDXd_EQ,NL0009805522,Nebius Group,yfinance,YDX.DE;YDX;YNDX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YNDX_US_EQ,NL0009805522,Nebius Group NV,yfinance,YDX.DE;YDX;YNDX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VIGBd_EQ,NL0010273801,VanEck iBoxx EUR Sovereign Capped AAA-AA 1-5 (Dist),yfinance,VIGB.DE;VIGB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TSGBl_EQ,NL0010408704,VanEck World Equal Weight Screened UCITS ETF,yfinance,TSGB.L;TSGB;TSWE.AS;TSWE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TSWEa_EQ,NL0010408704,VanEck World Equal Weight Screened (Dist),yfinance,TSGB.L;TSGB;TSWE.AS;TSWE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6197,6 +6020,7 @@ ACHC_US_EQ,US00404A1097,Acadia Healthcare Co,yfinance,ACHC,failure,unable to ver
 ACCYY_US_EQ,US00435F3091,Accor,yfinance,ACCYY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ARAY_US_EQ,US0043971052,Accuray,yfinance,ARAY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ACST_US_EQ,US00439U1043,Grace Therapeutics,yfinance,ACST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ACUT_US_EQ,US00444A1016,Accustem Sciences,yfinance,ACUT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ANIOY_US_EQ,US00444E1038,Acerinox,yfinance,ANIOY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ACRX_US_EQ,US00444T2096,Talphera,yfinance,ACRX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IDRA_US_EQ,US00445F1093,Aceragen,yfinance,IDRA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6213,6 +6037,7 @@ ADUS_US_EQ,US0067391062,Addus HomeCare,yfinance,ADUS,failure,unable to verify a 
 AEY_US_EQ,US0067434052,ADDvantage Technologies,yfinance,AEY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AHEXY_US_EQ,US0067542045,Adecco,yfinance,AHEXY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XPER_US_EQ,US00676P1075,Adeia,yfinance,XPER,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ADIL_US_EQ,US00688A3041,Adial Pharmaceuticals,yfinance,ADIL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ACET_US_EQ,US0070022076,Adicet Bio,yfinance,ACET,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ANL_US_EQ,US00704R1095,Adlai Nortye,yfinance,ANL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ATGE_US_EQ,US00737L1035,Covista,yfinance,ATGE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6250,6 +6075,7 @@ AJINY_US_EQ,US0097073086,Ajinomoto,yfinance,AJINY,failure,unable to verify a yfi
 AKBTY_US_EQ,US0097195012,Akbank,yfinance,AKBTY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AK3d_EQ,US00971T1016,Akamai Technologies,yfinance,AK3.DE;AK3;AKAM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AKAM_US_EQ,US00971T1016,Akamai Technologies,yfinance,AK3.DE;AK3;AKAM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+AKTX_US_EQ,US00972G4055,Akari Therapeutics,yfinance,AKTX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AKTS_US_EQ,US00973N1028,Akoustis Technologies,yfinance,AKTS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AKTS1_US_EQ,US01021M1045,Aktis Oncology,yfinance,AKTS1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AIN_US_EQ,US0123481089,Albany International,yfinance,AIN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6270,6 +6096,7 @@ MDRX_US_EQ,US01988P1084,Veradigm,yfinance,MDRX,failure,unable to verify a yfinan
 CPUH_US_EQ,US02008G2012,Allurion Technologies,yfinance,CPUH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CTRA_US_EQ,US0207641061,Alpha Metallurgical Resources,yfinance,CTRA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 APT_US_EQ,US0207721095,Alpha Pro Tech,yfinance,APT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ALPP_US_EQ,US02083E2046,Alpine 4,yfinance,ALPP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 INAQQ_US_EQ,US0209521071,Alpha Modus Holdings,yfinance,INAQQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 APELY_US_EQ,US0210902047,Alps Alpine,yfinance,APELY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HFEN_US_EQ,US02115D2080,Alset,yfinance,HFEN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6284,6 +6111,7 @@ ALTM_US_EQ,US02215L2097,Kinetik,yfinance,ALTM,failure,unable to verify a yfinanc
 AMADY_US_EQ,US02263T1043,Amadeus IT,yfinance,AMADY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AMBC_US_EQ,US0231398845,Octave Specialty Group,yfinance,AMBC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ABEV_US_EQ,US02319V1035,Ambev,yfinance,ABEV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+AMBBY_US_EQ,US02337W1099,Ambu,yfinance,AMBBY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UHAL_US_EQ,US0235861004,U-Haul Holding,yfinance,UHAL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UHALB_US_EQ,US0235865062,U-Haul Holding,yfinance,UHALB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AEE_US_EQ,US0236081024,Ameren,yfinance,AEE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6293,6 +6121,7 @@ ABML_US_EQ,US02451V3096,American Battery Technology,yfinance,ABML,failure,unable
 KERN_US_EQ,US02462A1043,American Bitcoin,yfinance,KERN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AMBZ_US_EQ,US02475L1052,American Business Bank,yfinance,AMBZ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DTOC_US_EQ,US0287191029,American Oncology Network,yfinance,DTOC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ARBV_US_EQ,US02933K1034,American Riviera Bancorp,yfinance,ARBV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AWR_US_EQ,US0298991011,American States Water,yfinance,AWR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AMSC_US_EQ,US0301112076,American Superconductor,yfinance,AMSC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AMT_US_EQ,US03027X1000,American Tower,yfinance,AMT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6332,27 +6161,30 @@ AQU_US_EQ,US03842W1053,Aquaron Acquisition Corp,yfinance,AQU,failure,unable to v
 ARAV_US_EQ,US03890D1081,Aravive,yfinance,ARAV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ARCB_US_EQ,US03937C1053,ArcBest,yfinance,ARCB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MT_US_EQ,US03938L2034,ArcelorMittal,yfinance,MT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ACLX_US_EQ,US03940C1009,Arcellx,yfinance,ACLX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ACIC_US_EQ,US03945R1023,Archer Aviation,yfinance,ACIC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FUV_US_EQ,US0395872098,Arcimoto,yfinance,FUV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AREN_US_EQ,US0400441095,Arena Group,yfinance,AREN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AFAC_US_EQ,US04005A1043,Arena Fortify Acquisition Corp,yfinance,AFAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 9A2d_EQ,US04010L1035,Ares Capital,yfinance,9A2.DE;9A2;ARCC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ARCC_US_EQ,US04010L1035,Ares Capital,yfinance,9A2.DE;9A2;ARCC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ARDS_US_EQ,US0403341045,Aridis Pharmaceuticals,yfinance,ARDS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HYAC_US_EQ,US0412421085,Arko,yfinance,HYAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 APC1_US_EQ,US04124A1007,ARKO Petroleum,yfinance,APC1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AHH_US_EQ,US04208T1088,AH Realty Trust,yfinance,AHH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ARMP_US_EQ,US04216R1023,Armata Pharmaceuticals,yfinance,ARMP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ARR_US_EQ,US0423157058,ARMOUR Residential REIT,yfinance,ARR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AFI_US_EQ,US04238R1068,Armstrong Flooring,yfinance,AFI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+AOGO_US_EQ,US0426441046,Arogo Capital Acquisition Corp,yfinance,AOGO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AROW_US_EQ,US0427441029,Arrow Financial,yfinance,AROW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ARTNA_US_EQ,US0431132085,Artesian Resources (Class A),yfinance,ARTNA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 A6Nd_EQ,US04342Y1047,Asana,yfinance,A6N.DE;A6N;ASAN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ASAN_US_EQ,US04342Y1047,Asana,yfinance,A6N.DE;A6N;ASAN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ASLN_US_EQ,US04522R3093,Aslan Pharmaceuticals,yfinance,ASLN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ASPU_US_EQ,US04530L2034,Aspen Group,yfinance,ASPU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AWH_US_EQ,US04537Y2081,Aspira Women's Health,yfinance,AWH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ASMB_US_EQ,US0453962070,Assembly Biosciences,yfinance,ASMB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ASOZY_US_EQ,US04539A4067,Asseco Poland,yfinance,ASOZY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ASRT_US_EQ,US04546C3043,Assertio,yfinance,ASRT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AC_US_EQ,US0455281065,Associated Capital,yfinance,AC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HOL_US_EQ,US04634X2027,Astra Space,yfinance,HOL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ALOT_US_EQ,US04638F1084,AstroNova,yfinance,ALOT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6417,6 +6249,7 @@ SAN_US_EQ,US05964H1059,Banco Santander,yfinance,SAN,failure,unable to verify a y
 TBBK_US_EQ,US05969A1051,Bancorp,yfinance,TBBK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BNCDY_US_EQ,US05970D1063,Banca Mediolanum,yfinance,BNCDY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BCTF_US_EQ,US05970V1061,Bancorp 34,yfinance,BCTF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+NCBDY_US_EQ,US0598311076,Bandai Namco,yfinance,NCBDY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BFC_US_EQ,US06211J1007,Bank First,yfinance,BFC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BOH_US_EQ,US0625401098,Bank of Hawaii,yfinance,BOH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BKSC_US_EQ,US0650661020,Bank of South Carolina,yfinance,BKSC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6488,6 +6321,7 @@ BMMJ_US_EQ,US09689V1008,Body and Mind,yfinance,BMMJ,failure,unable to verify a y
 BCC_US_EQ,US09739D1000,Boise Cascade,yfinance,BCC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BDNNY_US_EQ,US09752V1026,Boliden,yfinance,BDNNY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GAMC_US_EQ,US09769B2060,Bolt Projects Holdings,yfinance,GAMC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+WLAC_US_EQ,US09940T1007,Boost Run,yfinance,WLAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BWMYD_US_EQ,US1000542043,BorrowMoney.com,yfinance,BWMYD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SAM_US_EQ,US1005571070,Boston Beer,yfinance,SAM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BOMN_US_EQ,US1010441053,Boston Omaha,yfinance,BOMN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6527,7 +6361,6 @@ LGVW_US_EQ,US1241551027,Butterfly Network,yfinance,LGVW,failure,unable to verify
 BZZUY_US_EQ,US12429U1016,Buzzi,yfinance,BZZUY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ENFA_US_EQ,US12430A3005,BuzzFeed,yfinance,ENFA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CFFI_US_EQ,US12466Q1040,C&F Financial,yfinance,CFFI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CCFN_US_EQ,US1248801052,Muncy Columbia Financial,yfinance,CCFN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CBG_US_EQ,US12504L1098,CBRE Group,yfinance,CBG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 OTGLY_US_EQ,US1251051066,CD Projekt,yfinance,OTGLY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DGNR_US_EQ,US12510Q1004,CCC Intelligent Solutions,yfinance,DGNR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6556,14 +6389,13 @@ CAMP1_US_EQ,US13463J1016,CAMP4 Therapeutics,yfinance,CAMP1,failure,unable to ver
 CNBX_US_EQ,US13764M2098,CNBX Pharmaceuticals,yfinance,CNBX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CAJ_US_EQ,US1380063099,Canon,yfinance,CAJ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HCAC_US_EQ,US13803R3003,Canoo,yfinance,HCAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-USAT_US_EQ,US1381031061,Cantaloupe,yfinance,USAT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CPHC_US_EQ,US13811E1010,Canterbury Park,yfinance,CPHC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CFXd_EQ,US14040H1059,Capital One Financial,yfinance,CFX.DE;CFX;COF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 COF_US_EQ,US14040H1059,Capital One Financial,yfinance,CFX.DE;CFX;COF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CSU_US_EQ,US1404752032,Sonida Senior Living,yfinance,CSU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CSWC_US_EQ,US1405011073,Capital Southwest,yfinance,CSWC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CKHGY_US_EQ,US14056U1079,Capitec Bank,yfinance,CKHGY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CPST_US_EQ,US14067D6076,Capstone Green Energy Holdings,yfinance,CPST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+CPST_US_EQ,US14067D6076,Capstone Energy+,yfinance,CPST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CARA_US_EQ,US1407553072,Tvardi Therapeutics,yfinance,CARA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TROV_US_EQ,US14147L1089,Cardiff Oncology,yfinance,TROV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MAAQ_US_EQ,US14159C2026,Cardio Diagnostics,yfinance,MAAQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6603,6 +6435,7 @@ CPBI_US_EQ,US15486W1009,Central Plains Bancshares,yfinance,CPBI,failure,unable t
 CEPU_US_EQ,US1550382014,Central Puerto,yfinance,CEPU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CENX_US_EQ,US1564311082,Century Aluminum,yfinance,CENX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CBBT_US_EQ,US15672M1062,Cerebain Biotech,yfinance,CBBT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+CBRS_US_EQ,US15675D1037,Cerebras Systems,yfinance,CBRS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CERS_US_EQ,US1570851014,Cerus,yfinance,CERS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DFFN_US_EQ,US15713L1098,CervoMed,yfinance,DFFN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CHA1_US_EQ,US15743P1049,Chagee Holdings,yfinance,CHA1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6679,6 +6512,7 @@ CMC_US_EQ,US2017231034,Commercial Metals,yfinance,CMC,failure,unable to verify a
 COMM_US_EQ,US20337X1090,Vistance Networks,yfinance,COMM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CFST_US_EQ,US20344D1046,FFB Bancorp,yfinance,CFST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CBU_US_EQ,US2036071064,Community Financial System,yfinance,CBU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ALBY_US_EQ,US2036344073,Community Capital BancShares Inc,yfinance,ALBY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TCFC_US_EQ,US20368X1019,Community Financial,yfinance,TCFC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CHCT_US_EQ,US20369C1062,Community Healthcare Trust,yfinance,CHCT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CVCY_US_EQ,US2039371073,Community West Bancshares,yfinance,CVCY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6699,7 +6533,6 @@ CNMD_US_EQ,US2074101013,CONMED,yfinance,CNMD,failure,unable to verify a yfinance
 CNTM_US_EQ,US2079442081,ConnectM Technology Solutions,yfinance,CNTM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CEG_US_EQ,US21037T1097,Constellation Energy,yfinance,CEG;E7S.DE;E7S,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 E7S1d_EQ,US21037T1097,Constellation Energy,yfinance,CEG;E7S.DE;E7S,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-CTGO_US_EQ,US21077F1003,Contango Silver & Gold,yfinance,CTGO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CNTX_US_EQ,US21077P1084,Context Therapeutics,yfinance,CNTX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WISH_US_EQ,US21078F1093,ContextLogic,yfinance,WISH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CFRX_US_EQ,US2123264093,ContraFect,yfinance,CFRX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6799,7 +6632,6 @@ DIN_US_EQ,US2544231069,Dine Brands Global,yfinance,DIN,failure,unable to verify 
 DNOPY_US_EQ,US25445T1060,Dino Polska,yfinance,DNOPY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DIOD_US_EQ,US2545431015,Diodes,yfinance,DIOD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FSDC_US_EQ,US2546041011,Disc Medicine,yfinance,FSDC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-DRCT_US_EQ,US25461T3032,Direct Digital,yfinance,DRCT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DCYHY_US_EQ,US25470G1022,Discovery,yfinance,DCYHY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DHC_US_EQ,US25525P1075,Diversified Healthcare Trust,yfinance,DHC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DXYN_US_EQ,US2555191004,Dixie,yfinance,DXYN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6890,6 +6722,7 @@ ENSG_US_EQ,US29358P1012,Ensign Group,yfinance,ENSG,failure,unable to verify a yf
 RSVA_US_EQ,US2935941078,Enovix,yfinance,6Q81.DE;6Q81;RSVA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LACQ_US_EQ,US2936025046,Ensysce Biosciences,yfinance,LACQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ETR_US_EQ,US29364G1031,Entergy,yfinance,ETR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ENZN_US_EQ,US2939048011,Viskase Holdings,yfinance,ENZN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ELA_US_EQ,US29402E1029,Envela,yfinance,ELA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AMRH_US_EQ,US29405E5050,Enveric Biosciences,yfinance,AMRH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ADOM_US_EQ,US29414V3087,Envirotech Vehicles,yfinance,ADOM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6924,6 +6757,7 @@ EOLS_US_EQ,US30052C1071,Evolus Inc,yfinance,EOLS,failure,unable to verify a yfin
 CLII_US_EQ,US30052F1003,EVgo,yfinance,CLII,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WTMA_US_EQ,US30054B1070,Evolution Metals & Technologies,yfinance,WTMA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EXC_US_EQ,US30161N1019,Exelon,yfinance,EXC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+EXPI_US_EQ,US30212W1009,eXp World,yfinance,EXPI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EYEN_US_EQ,US30234E2037,Hyperion DeFi,yfinance,EYEN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FLYW_US_EQ,US3024921039,Flywire,yfinance,FLYW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FNB_US_EQ,US3025201019,FNB Corp,yfinance,FNB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6932,8 +6766,10 @@ FAT_US_EQ,US30258N1054,FAT Brands,yfinance,FAT,failure,unable to verify a yfinan
 FICO_US_EQ,US3032501047,Fair Isaac,yfinance,FICO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PIH_US_EQ,US30329Y4035,FG Nexus,yfinance,PIH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FZT_US_EQ,US3061211047,Falcon's Beyond Global,yfinance,FZT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+FALC_US_EQ,US3061372096,FalconStor Software,yfinance,FALC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SFUN_US_EQ,US30711Y3009,Fang Holdings,yfinance,SFUN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PSAC_US_EQ,US3073598852,Faraday Future Intelligent Electric,yfinance,PSAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+FMFG_US_EQ,US3088561036,Farmers and Merchants Bancshares (MD),yfinance,FMFG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FSLY_US_EQ,US31188V1008,Fastly,yfinance,FSLY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AGM/A_US_EQ,US3131481083,Federal Agricultural Mortgage,yfinance,AGM/A,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AGM_US_EQ,US3131483063,Federal Agricultural Mortgage,yfinance,AGM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -6943,6 +6779,7 @@ FSS_US_EQ,US3138551086,Federal Signal,yfinance,FSS,failure,unable to verify a yf
 FHI_US_EQ,US3142111034,Federated Hermes,yfinance,FHI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FNHC_US_EQ,US31431B1098,FedNat,yfinance,FNHC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FRMI_US_EQ,US3149111086,Fermi,yfinance,FRMI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+FRVO_US_EQ,US31556C1062,Fervo Energy,yfinance,FRVO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AIEV_US_EQ,US31561T1025,Thunder Power Holdings,yfinance,AIEV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FGEN_US_EQ,US31572Q8814,Kyntra Bio,yfinance,FGEN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FIG_US_EQ,US3168411052,Figma,yfinance,FIG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7031,8 +6868,10 @@ GFASY_US_EQ,US3626076083,Gafisa,yfinance,GFASY,failure,unable to verify a yfinan
 GEHC_US_EQ,US36266G1076,GE HealthCare Technologies,yfinance,GEHC;L0T.DE;L0T,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 L0Td_EQ,US36266G1076,GE HealthCare Technologies,yfinance,GEHC;L0T.DE;L0T,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GAIDl_EQ,US36268T2069,Gail India,yfinance,GAID.L;GAID,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+GLPG_US_EQ,US36315X1019,Lakefront Biotherapeutics,yfinance,GLPG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GAXY_US_EQ,US36320A2033,Galaxy Next Generation,yfinance,GAXY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GLTO_US_EQ,US36322Q2066,Damora Therapeutics,yfinance,GLTO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+GRTX_US_EQ,US36338D1081,Galera Therapeutics,yfinance,GRTX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GLPEY_US_EQ,US3640971053,Galp Energia,yfinance,GLPEY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GME_WAR_US_EQ,US36467W1172,GameStop Corp - Warrant Expiring 30/10/2026,yfinance,GME_WAR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GCI_US_EQ,US36472T1097,USA TODAY Co,yfinance,GCI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7058,6 +6897,7 @@ PRPB_US_EQ,US3742751056,Getty Images,yfinance,PRPB,failure,unable to verify a yf
 IPVA_US_EQ,US37427G1013,Getaround,yfinance,IPVA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GTY_US_EQ,US3742971092,Getty Realty Corp,yfinance,GTY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GIGA_US_EQ,US3751753043,Giga-tronics,yfinance,GIGA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+GIG1_US_EQ,US37518P1012,GigCapital7,yfinance,GIG1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SRNG_US_EQ,US37611X2099,Ginkgo Bioworks,yfinance,SRNG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GVDNY_US_EQ,US37636P1084,Givaudan,yfinance,GVDNY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GLAD_US_EQ,US3765358789,Gladstone Capital,yfinance,GLAD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7072,6 +6912,7 @@ DUNE_US_EQ,US37892P1075,Global Gas,yfinance,DUNE,failure,unable to verify a yfin
 GLTRl_EQ,US37949E2046,Globaltrans Investment,yfinance,GLTR.L;GLTR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GLPRl_EQ,US37951Q2021,Global Ports Investments,yfinance,GLPR.L;GLPR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GMRE_US_EQ,US37954A3032,Chiron Real Estate,yfinance,GMRE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+GTII_US_EQ,US37955R1077,Global Tech Industries,yfinance,GTII,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TMK_US_EQ,US37959E1029,Globe Life,yfinance,TMK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GBLI1_US_EQ,US37959R1032,Global Indemnity Group,yfinance,GBLI1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GFI_US_EQ,US38059T1060,Gold Fields,yfinance,GFI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7100,7 +6941,7 @@ GEC_US_EQ,US39037G1094,Great Elm Group,yfinance,GEC,failure,unable to verify a y
 GOFPY_US_EQ,US3924831031,Allwyn,yfinance,GOFPY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GDOT_US_EQ,US39304D1028,Green Dot,yfinance,GDOT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GBX_US_EQ,US3936571013,Greenbrier Companies,yfinance,GBX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-GBOX_US_EQ,US39366L4068,Ryvyl,yfinance,GBOX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+GBOX_US_EQ,US39366L4068,RTB Digital,yfinance,GBOX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GREE_US_EQ,US39531G3083,Greenidge Generation,yfinance,GREE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GNLN_US_EQ,US3953306087,Greenlane,yfinance,GNLN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GNRS_US_EQ,US3953921034,Greenrose Holding Company,yfinance,GNRS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7149,7 +6990,6 @@ HRTH_US_EQ,US4161962026,Harte Hanks,yfinance,HRTH,failure,unable to verify a yfi
 HIG_US_EQ,US4165151048,Hartford Insurance Group,yfinance,HIG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HVT/A_US_EQ,US4195962000,Haverty Furniture Companies (Class A),yfinance,HVT/A,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HAWPY_US_EQ,US4196641074,Haw Par,yfinance,HAWPY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-HAWK_US_EQ,US4202011056,Hawkeye 360,yfinance,HAWK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HHR_US_EQ,US42207L1061,HeadHunter,yfinance,HHR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HTA_US_EQ,US42226K1051,Healthcare Realty Trust,yfinance,HTA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HEWA_US_EQ,US42227G2021,HealthWarehouse.com,yfinance,HEWA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7319,6 +7159,7 @@ JNVR_US_EQ,US47100L3015,DeFi Development,yfinance,JNVR,failure,unable to verify 
 JAN1_US_EQ,US4710241096,Janus Living,yfinance,JAN1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 JIH_US_EQ,US47103N1063,Janus International,yfinance,JIH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 JPPHY_US_EQ,US47109W1009,Japan Post,yfinance,JPPHY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+JPSWY_US_EQ,US4711003057,Japan Steel Works,yfinance,JPSWY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 JCYGY_US_EQ,US47110M2089,Jardine Cycle & Carriage,yfinance,JCYGY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AMHC_US_EQ,US4718712023,Jasper Therapeutics,yfinance,AMHC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LN3d_EQ,US47233W1099,Jefferies Financial Group,yfinance,LN3.DE;LN3;LUK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7347,6 +7188,7 @@ KALU_US_EQ,US4830077040,Kaiser Aluminum,yfinance,KALU,failure,unable to verify a
 KLR_US_EQ,US4833792025,Kaleyra,yfinance,KLR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KLTR_US_EQ,US4834671061,Kaltura,yfinance,KLTR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KAEPY_US_EQ,US4846023053,Kansai Electric Power,yfinance,KAEPY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+KCLI_US_EQ,US4848362004,Kansas City Life Insurance,yfinance,KCLI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BZ_US_EQ,US48553T1060,Kanzhun,yfinance,BZ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KRT_US_EQ,US48563L1017,Karat Packaging,yfinance,KRT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KSPI_US_EQ,US48581R2058,Kaspi.KZ,yfinance,KSPI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7473,6 +7315,7 @@ LL_US_EQ,US55003T1079,LL Flooring,yfinance,LL,failure,unable to verify a yfinanc
 CTL_US_EQ,US5502411037,Lumen Technologies,yfinance,CTL;CYTH.DE;CYTH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CYTHd_EQ,US5502411037,Lumen Technologies,yfinance,CTL;CYTH.DE;CYTH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LFT_US_EQ,US55025L1089,Lument Finance Trust,yfinance,LFT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+LUVU_US_EQ,US55066U1088,Luvu Brands,yfinance,LUVU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LYSDY_US_EQ,US5510733075,Lynas Rare Earths,yfinance,LYSDY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MTB_US_EQ,US55261F1049,M&T Bank,yfinance,MTB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MEIP_US_EQ,US55279B3015,Lite Strategy,yfinance,MEIP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7501,6 +7344,7 @@ RUBI_US_EQ,US55955D1000,Magnite,yfinance,RUBI,failure,unable to verify a yfinanc
 MGY_US_EQ,US5596631094,Magnolia Oil & Gas,yfinance,MGY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MAILl_EQ,US5603172082,VK,yfinance,VKCO.L;VKCO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MSWV_US_EQ,US56035X1081,Main Street Financial Services,yfinance,MSWV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+MSS_US_EQ,US5606673052,Maison Solutions,yfinance,MSS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MMMB_US_EQ,US56146T1034,Mama's Creations,yfinance,MMMB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MTW_US_EQ,US5635714059,Manitowoc,yfinance,MTW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MNKD_US_EQ,US56400P7069,MannKind,yfinance,MNKD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7562,6 +7406,7 @@ CASH_US_EQ,US59100U1088,Pathward Financial,yfinance,CASH,failure,unable to verif
 MGX_US_EQ,US59102M1045,Metagenomi Therapeutics,yfinance,MGX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TRCH_US_EQ,US59134N3026,Meta Materials,yfinance,TRCH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MXC_US_EQ,US5927701012,Mexco Energy,yfinance,MXC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+MWC_US_EQ,US59490A1007,Micware,yfinance,MWC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MIGAd_EQ,US5949724083,Strategy,yfinance,MIGA.DE;MIGA;MSTR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MSTR_US_EQ,US5949724083,Strategy,yfinance,MIGA.DE;MIGA;MSTR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 STRC_US_EQ,US5949728530,Strategy (Preferred),yfinance,STRC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7581,7 +7426,6 @@ MTSUY_US_EQ,US6067694041,Mitsubishi,yfinance,MTSUY,failure,unable to verify a yf
 MITSY_US_EQ,US6068272029,Mitsui & Co,yfinance,MITSY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MMSMY_US_EQ,US6068442077,Mitsui Kinzoku,yfinance,MMSMY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MSLOY_US_EQ,US60685L2088,Mitsui OSK Lines,yfinance,MSLOY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-MOBI_US_EQ,US60705V1035,Mobia Medical,yfinance,MOBI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FWAC_US_EQ,US60739N1019,Mobile Infrastructure,yfinance,FWAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MBT_US_EQ,US6074091090,Mobile TeleSystems,yfinance,MBT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MBLY_US_EQ,US60741F1049,Mobileye Global,yfinance,MBLY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7599,6 +7443,7 @@ SRAC_US_EQ,US60879E4089,Momentus,yfinance,SRAC,failure,unable to verify a yfinan
 MCEM_US_EQ,US6090313072,Monarch Cement,yfinance,MCEM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 526d_EQ,US60937P1066,MongoDB,yfinance,526.DE;526;MDB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MDB_US_EQ,US60937P1066,MongoDB,yfinance,526.DE;526;MDB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+MRCC_US_EQ,US6103351010,Monroe Capital,yfinance,MRCC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MNST_US_EQ,US61174X1090,Monster Beverage,yfinance,MNST;MOB.DE;MOB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MOBd_EQ,US61174X1090,Monster Beverage,yfinance,MNST;MOB.DE;MOB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XPDB_US_EQ,US6121601016,AirJoule Technologies,yfinance,XPDB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7610,9 +7455,11 @@ MOG/B_US_EQ,US6153943013,Moog (Class B),yfinance,MOG/B,failure,unable to verify 
 02Md_EQ,US61945C1036,Mosaic,yfinance,02M.DE;02M;MOS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MOS_US_EQ,US61945C1036,Mosaic,yfinance,02M.DE;02M;MOS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MOHCY_US_EQ,US6200341088,Motor Oil Hellas Corinth Refineries,yfinance,MOHCY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+MCBI_US_EQ,US6240041078,Mountain Commerce Bancorp,yfinance,MCBI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MCAG_US_EQ,US62404B1070,Mountain Crest Acquisition Corp V,yfinance,MCAG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MOVE_US_EQ,US62459M3051,Corvex,yfinance,MOVE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PFDR_US_EQ,US62459N1054,Movella Holdings,yfinance,PFDR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+XDSL_US_EQ,US62472C2017,mPhase Technologies,yfinance,XDSL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MRPLY_US_EQ,US62476L2079,Mr Price,yfinance,MRPLY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 NETE_US_EQ,US62526P8775,Bollinger Innovations,yfinance,NETE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CCXX_US_EQ,US62548M2098,Claritev,yfinance,CCXX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7729,7 +7576,6 @@ OAS_US_EQ,US6742152076,Chord Energy,yfinance,OAS,failure,unable to verify a yfin
 OBLG_US_EQ,US6744343038,TaoWeave,yfinance,OBLG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 OCN_US_EQ,US6757466064,Onity Group,yfinance,OCN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 REXN_US_EQ,US67577R1023,Opus Genetics,yfinance,REXN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-ODTX_US_EQ,US67613T1043,Odyssey Therapeutics,yfinance,ODTX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 OPI_US_EQ,US67623C1099,Office Properties Income Trust,yfinance,OPI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SPNV_US_EQ,US67623L3078,Offerpad Solutions,yfinance,SPNV,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AEHA_US_EQ,US67644C1045,Ocean Biomedical,yfinance,AEHA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7879,12 +7725,13 @@ MCAC_US_EQ,US72814P1093,Playboy,yfinance,MCAC,failure,unable to verify a yfinanc
 ACAC_US_EQ,US72815G1085,Playstudios,yfinance,ACAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PLXP_US_EQ,US72942A1079,PLx Pharma,yfinance,PLXP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PSTI_US_EQ,US72942G2030,Pluri,yfinance,PSTI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ELAB_US_EQ,US73017P5089,PMGC Holdings,yfinance,ELAB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PII_US_EQ,US7310681025,Polaris,yfinance,PII,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GGPI_US_EQ,US7311054099,Polestar Automotive Holding UK,yfinance,GGPI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 OPYGY_US_EQ,US73181P1021,Polyus,yfinance,OPYGY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PTAC_US_EQ,US7332451043,Porch Group,yfinance,PTAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PTMN_US_EQ,US73688F2011,BCP Investment,yfinance,PTMN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-PWUP_US_EQ,US7389202067,Aspire Biopharma Holdings,yfinance,PWUP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+PWUP_US_EQ,US7389203057,Aspire Biopharma Holdings,yfinance,PWUP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PWFL_US_EQ,US73931J1097,Powerfleet,yfinance,PWFL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PW_US_EQ,US73933H1014,Power REIT,yfinance,PW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PGEN_US_EQ,US74017N1054,Precigen,yfinance,PGEN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7902,6 +7749,7 @@ SONA_US_EQ,US74167B1098,Primis Financial,yfinance,SONA,failure,unable to verify 
 PIAC_US_EQ,US7418651094,Princeton Capital,yfinance,PIAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PDEX_US_EQ,US74265M2052,Pro-Dex,yfinance,PDEX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PRA_US_EQ,US74267C1062,ProAssurance,yfinance,PRA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+PBAM_US_EQ,US74274F1003,Private Bancorp of America,yfinance,PBAM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CCCM_US_EQ,US74277P1057,ProCap Financial,yfinance,CCCM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 DNAC_US_EQ,US74291D1046,ProKidney,yfinance,DNAC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PROG_US_EQ,US74319F4046,Biora Therapeutics,yfinance,PROG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7962,11 +7810,11 @@ METC_US_EQ,US75134P6007,Ramaco Resources,yfinance,METC,failure,unable to verify 
 RRC_US_EQ,US75281A1097,Range Resources,yfinance,RRC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RNGR_US_EQ,US75282U1043,Ranger Energy Services,yfinance,RNGR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ROC1_US_EQ,US7530401048,Rank One Computing,yfinance,ROC1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-REA_US_EQ,US75381A1088,Rare Earths Americas,yfinance,REA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ROLL_US_EQ,US75524B1044,RBC Bearings,yfinance,ROLL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RC_US_EQ,US75574U1016,Ready Capital,yfinance,RC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RGF_US_EQ,US75601G3074,Real Good Food,yfinance,RGF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BLBX_US_EQ,US75606V1017,REalloys,yfinance,BLBX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+AIRE_US_EQ,US75607T2042,reAlpha Tech,yfinance,AIRE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 O_US_EQ,US7561091049,Realty Income,yfinance,O;RY6.DE;RY6,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RY6d_EQ,US7561091049,Realty Income,yfinance,O;RY6.DE;RY6,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RCRUY_US_EQ,US75629J1016,Recruit,yfinance,RCRUY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -7986,6 +7834,7 @@ RELID_US_EQ,US75946W4050,Reliance Global,yfinance,RELID,failure,unable to verify
 RS_US_EQ,US7595091023,Reliance,yfinance,RS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RNST_US_EQ,US75970E1073,Renasant,yfinance,RNST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RNLX_US_EQ,US75973T2006,Renalytix,yfinance,RNLX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+RNVA_US_EQ,US7597578670,Rennova Health,yfinance,RNVA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RENN_US_EQ,US7598923008,Moatable,yfinance,RENN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KRMD_US_EQ,US7599101026,KORU Medical Systems,yfinance,KRMD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RGEN_US_EQ,US7599161095,Repligen,yfinance,RGEN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8005,8 +7854,10 @@ SNII_US_EQ,US76655K1034,Rigetti Computing,yfinance,SNII,failure,unable to verify
 RTMVY_US_EQ,US76657Y2000,Rightmove,yfinance,RTMVY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TGC_US_EQ,US76665T1025,Riley Exploration Permian,yfinance,TGC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RMNI_US_EQ,US76674Q1076,Rimini Street,yfinance,RMNI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+RYES_US_EQ,US76760M2008,Rise Gold,yfinance,RYES,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 99Ud_EQ,US76954A1034,Rivian Automotive,yfinance,99U.DE;99U;RIVN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RIVN_US_EQ,US76954A1034,Rivian Automotive,yfinance,99U.DE;99U;RIVN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+RRTS_US_EQ,US76973Q2049,Roadrunner Transportation Systems,yfinance,RRTS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RHI_US_EQ,US7703231032,Robert Half,yfinance,RHI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 7KYd_EQ,US7707001027,Robinhood Markets,yfinance,7KY.DE;7KY;HOOD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HOOD_US_EQ,US7707001027,Robinhood Markets,yfinance,7KY.DE;7KY;HOOD,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8164,6 +8015,7 @@ IPOE_US_EQ,US83406F1021,SoFi Technologies,yfinance,6B0.DE;6B0;IPOE,failure,unabl
 SLOIY_US_EQ,US83409F2083,SOITEC,yfinance,SLOIY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SOHU_US_EQ,US83410S1087,Sohu.com,yfinance,SOHU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SLRC_US_EQ,US83413U1007,SLR Investment,yfinance,SLRC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+WNDW_US_EQ,US83417L1061,SolarWindow Technologies,yfinance,WNDW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SEDG_US_EQ,US83417M1045,SolarEdge Technologies,yfinance,SEDG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SOI_US_EQ,US83418M1036,Solaris Energy Infrastructure,yfinance,SOI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CIAN_US_EQ,US83418T1088,Cian,yfinance,CIAN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8183,6 +8035,7 @@ SONM_US_EQ,US83548F4081,DNA X,yfinance,SONM,failure,unable to verify a yfinance 
 SON_US_EQ,US8354951027,Sonoco Products,yfinance,SON,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SNE_US_EQ,US8356993076,Sony,yfinance,SNE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SOUN_US_EQ,US8361001071,SoundHound AI,yfinance,SOUN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SABK_US_EQ,US83636T1043,South Atlantic Bancshares,yfinance,SABK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SBNC_US_EQ,US8422431077,Southern BancShares NC,yfinance,SBNC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SCCO_US_EQ,US84265V1052,Southern Copper,yfinance,SCCO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LGTO_US_EQ,US84445C1009,Southland Holdings,yfinance,LGTO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8220,7 +8073,6 @@ SAUHY_US_EQ,US86317T1034,Straumann,yfinance,SAUHY,failure,unable to verify a yfi
 ANDA_US_EQ,US8636852027,Stryve Foods,yfinance,ANDA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RGR_US_EQ,US8641591081,Sturm Ruger & Co,yfinance,RGR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 FUJHY_US_EQ,US86428V1044,Subaru,yfinance,FUJHY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-SUJA_US_EQ,US86508F1021,Suja Life,yfinance,SUJA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SOHVY_US_EQ,US8656201089,Sumitomo Heavy Industries,yfinance,SOHVY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SUTNY_US_EQ,US86562X1063,Sumitomo Mitsui Trust,yfinance,SUTNY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WISA_US_EQ,US86633R6099,Datavault AI,yfinance,WISA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8300,6 +8152,7 @@ TX_US_EQ,US8808901081,Ternium,yfinance,TX,failure,unable to verify a yfinance sy
 HOND_US_EQ,US8814541020,Terrestrial Energy,yfinance,HOND,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TRNO_US_EQ,US88146M1018,Terreno Realty,yfinance,TRNO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 LGST_US_EQ,US88165K2006,Tevogen Bio Holdings,yfinance,LGST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+TMRC_US_EQ,US88256L1098,Texas Mineral Resources,yfinance,TMRC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TPL_US_EQ,US88262P1021,Texas Pacific Land,yfinance,TPL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 THLLY_US_EQ,US8832192061,Thales,yfinance,THLLY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VSPR_US_EQ,US88331L1089,SkinHealth Systems,yfinance,VSPR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8357,7 +8210,6 @@ XXII_US_EQ,US90137F6088,22nd Century,yfinance,XXII,failure,unable to verify a yf
 CEP_US_EQ,US90138L1098,Twenty One Capital,yfinance,CEP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ADER_US_EQ,US90138P1003,26 Capital Acquisition Corp,yfinance,ADER,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 TWNP_US_EQ,US9016431069,Twin Hospitality Group,yfinance,TWNP,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
-UDMY_US_EQ,US9026851066,Udemy,yfinance,UDMY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 USGO_US_EQ,US90291W1080,US Goldmining,yfinance,USGO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 USPH_US_EQ,US90337L1089,US Physical Therapy,yfinance,USPH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UBSFY_US_EQ,US90348R1023,Ubisoft Entertainment,yfinance,UBSFY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8375,6 +8227,7 @@ UNCRY_US_EQ,US9046784065,UniCredit,yfinance,UNCRY,failure,unable to verify a yfi
 UNF_US_EQ,US9047081040,UniFirst,yfinance,UNF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UN_US_EQ,US9047678035,Unilever,yfinance,UN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UFAB_US_EQ,US90915J1034,Unique Fabricating,yfinance,UFAB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+UNIR_US_EQ,US90916U2069,Uniroyal Global Engineered Products,yfinance,UNIR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UIS_US_EQ,US9092143067,Unisys,yfinance,UIS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UNTC_US_EQ,US9092184061,Unit Corp,yfinance,UNTC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 UBAB_US_EQ,US90944R1005,United BanCorp of Alabama,yfinance,UBAB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8439,6 +8292,7 @@ MGEN_US_EQ,US92790C1045,Viridian Therapeutics,yfinance,MGEN,failure,unable to ve
 BNIX_US_EQ,US9279501053,VisionWave Holdings,yfinance,BNIX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VHC_US_EQ,US92823T2078,VirnetX,yfinance,VHC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VIRI_US_EQ,US92829J2033,Dogwood Therapeutics,yfinance,VIRI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+VISL_US_EQ,US92836Y4098,Vislink Technologies,yfinance,VISL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VIST_US_EQ,US92837L1098,Vista Energy,yfinance,VIST,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VC_US_EQ,US92839U2069,Visteon,yfinance,VC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VTGN_US_EQ,US92840H4002,VistaGen Therapeutics,yfinance,VTGN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8455,6 +8309,7 @@ DHAC_US_EQ,US92919Y1029,VSee Health,yfinance,DHAC,failure,unable to verify a yfi
 WDFC_US_EQ,US9292361071,WD-40,yfinance,WDFC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WTBFA_US_EQ,US9293341007,WTB Financial (Class A),yfinance,WTBFA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WPC_US_EQ,US92936U1097,WP Carey,yfinance,WPC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+WCFB_US_EQ,US92940L1035,WCF Bancorp,yfinance,WCFB,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 OBLN_US_EQ,US92943X1046,Vyome Holdings,yfinance,OBLN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WNC_US_EQ,US9295661071,Wabash National,yfinance,WNC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SSPK_US_EQ,US92971A1097,WM Technology,yfinance,SSPK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8481,6 +8336,7 @@ WEN_US_EQ,US95058W1009,Wendy's,yfinance,WEN,failure,unable to verify a yfinance 
 WTBA_US_EQ,US95123P1066,West BanCorp,yfinance,WTBA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SCZC_US_EQ,US9521701089,West Coast Community Bancorp,yfinance,SCZC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WABC_US_EQ,US9570901036,Westamerica BanCorp,yfinance,WABC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+WSTL_US_EQ,US9575413037,Westell Technologies,yfinance,WSTL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WAVS_US_EQ,US95758L3050,Cycurion,yfinance,WAVS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 W3Ud_EQ,US9598021098,Western Union,yfinance,W3U.DE;W3U;WU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WU_US_EQ,US9598021098,Western Union,yfinance,W3U.DE;W3U;WU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -8615,12 +8471,14 @@ HEBT_US_EQ,VGG6593L1307,AIOS Tech,yfinance,HEBT,failure,unable to verify a yfina
 SEED_US_EQ,VGG678282051,Origin Agritech,yfinance,SEED,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MOXC_US_EQ,VGG6S34K1136,Abits Group,yfinance,MOXC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 PTGEF_US_EQ,VGG7185A1369,Alpha Compute,yfinance,PTGEF,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+PTLE_US_EQ,VGG7377S1276,PTL,yfinance,PTLE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RETO_US_EQ,VGG752711330,Reto Eco-solutions,yfinance,RETO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 VHNA_US_EQ,VGG7606H1082,Roadzen,yfinance,VHNA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SJ_US_EQ,VGG7864D1125,Scienjoy,yfinance,SJ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 GMBT_US_EQ,VGG863021256,Swvl,yfinance,GMBT,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 MASK_US_EQ,VGG8849D1289,3 E Network Technology Group,yfinance,MASK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WAFU_US_EQ,VGG941841014,Wah Fu Education,yfinance,WAFU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+VCIG_US_EQ,VGG982184001,VCI Global,yfinance,VCIG,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 WLGS_US_EQ,VGG9T22C1003,Wang & Lee Group,yfinance,WLGS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 AAMC_US_EQ,VI02153X3060,Accelitron Advanced Motor Controls,yfinance,AAMC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 RM8Ud_EQ,XS2115336336,HANetf Royal Mint Responsibly Sourced Physical Gold,yfinance,RM8U.DE;RM8U;RMAP.L;RMAP;RMAU.L;RMAU;RMAU.SW,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -9328,6 +9186,8 @@ CRC3l_EQ,XS3299464100,Leverage Shares 3x Long Circle CRCL (Acc),yfinance,3CRC.L;
 3CRWl_EQ,XS3299464282,Leverage Shares 3x Long CoreWeave CRWV (Acc),yfinance,3CRW.L;3CRW;CRW3.AS;CRW3;CRW3.L,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CRW3a_EQ,XS3299464282,Leverage Shares 3x Long CoreWeave CRWV (Acc),yfinance,3CRW.L;3CRW;CRW3.AS;CRW3;CRW3.L,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 CRW3l_EQ,XS3299464282,Leverage Shares 3x Long CoreWeave CRWV (Acc),yfinance,3CRW.L;3CRW;CRW3.AS;CRW3;CRW3.L,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3ORCl_EQ,XS3299464365,Leverage Shares 3x Long Oracle ORCL (Acc),yfinance,3ORC.L;3ORC;ORC3.L;ORC3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ORC3l_EQ,XS3299464365,Leverage Shares 3x Long Oracle ORCL (Acc),yfinance,3ORC.L;3ORC;ORC3.L;ORC3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ION3a_EQ,XS3299464795,Leverage Shares 3x Long IONQ (Acc),yfinance,ION3.AS;ION3;ION3.L;IONQ.L;IONQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ION3l1_EQ,XS3299464795,Leverage Shares 3x Long IONQ (Acc),yfinance,ION3.AS;ION3;ION3.L;IONQ.L;IONQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 IONQl1_EQ,XS3299464795,Leverage Shares 3x Long IONQ (Acc),yfinance,ION3.AS;ION3;ION3.L;IONQ.L;IONQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -9393,6 +9253,16 @@ YSEMl_EQ,XS3299469752,IncomeShares Semiconductors Leaders (Dist),yfinance,ISDY.D
 ARDYd_EQ,XS3299469919,IncomeShares Artificial Intelligence Leaders (Dist),yfinance,ARDY.DE;ARDY;ARIY.L;ARIY;YARI.L;YARI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 ARIYl_EQ,XS3299469919,IncomeShares Artificial Intelligence Leaders (Dist),yfinance,ARDY.DE;ARDY;ARIY.L;ARIY;YARI.L;YARI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 YARIl_EQ,XS3299469919,IncomeShares Artificial Intelligence Leaders (Dist),yfinance,ARDY.DE;ARDY;ARIY.L;ARIY;YARI.L;YARI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3SLMl_EQ,XS3299470172,Leverage Shares 3x Long Silver Miners (Acc),yfinance,3SLM.L;3SLM;SLM3.L;SLM3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SLM3l_EQ,XS3299470172,Leverage Shares 3x Long Silver Miners (Acc),yfinance,3SLM.L;3SLM;SLM3.L;SLM3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SLMSl_EQ,XS3299470339,Leverage Shares -3x Short Silver Miners (Acc),yfinance,SLMS.L;SLMS;SLS3.L;SLS3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SLS3l_EQ,XS3299470339,Leverage Shares -3x Short Silver Miners (Acc),yfinance,SLMS.L;SLMS;SLS3.L;SLS3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3OKLl_EQ,XS3299470503,Leverage Shares 3x Long Oklo (Acc),yfinance,3OKL.L;3OKL;OKL3.L;OKL3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+OKL3l_EQ,XS3299470503,Leverage Shares 3x Long Oklo (Acc),yfinance,3OKL.L;3OKL;OKL3.L;OKL3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3RKLl_EQ,XS3299470768,Leverage Shares 3x Long Rocket Lab RKLB (Acc),yfinance,3RKL.L;3RKL;RKL3.L;RKL3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+RKL3l_EQ,XS3299470768,Leverage Shares 3x Long Rocket Lab RKLB (Acc),yfinance,3RKL.L;3RKL;RKL3.L;RKL3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3BLCl_EQ,XS3299470842,Leverage Shares 3x Long Blockchain Leaders (Acc),yfinance,3BLC.L;3BLC;BLC3.L;BLC3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+BLC3l_EQ,XS3299470842,Leverage Shares 3x Long Blockchain Leaders (Acc),yfinance,3BLC.L;3BLC;BLC3.L;BLC3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3BMNl_EQ,XS3302918423,Leverage Shares 3x Long Bitmine Immersion BMNR (Acc),yfinance,3BMN.L;3BMN;BMN3.AS;BMN3;BMN3.L,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BMN3a_EQ,XS3302918423,Leverage Shares 3x Long Bitmine Immersion BMNR (Acc),yfinance,3BMN.L;3BMN;BMN3.AS;BMN3;BMN3.L,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 BMN3l_EQ,XS3302918423,Leverage Shares 3x Long Bitmine Immersion BMNR (Acc),yfinance,3BMN.L;3BMN;BMN3.AS;BMN3;BMN3.L,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -9401,6 +9271,9 @@ BMN3l_EQ,XS3302918423,Leverage Shares 3x Long Bitmine Immersion BMNR (Acc),yfina
 MST3l_EQ,XS3304269429,Leverage Shares 3x Long MicroStrategy MSTR,yfinance,3MST.L;3MST;3MST.MI;MST3.L;MST3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3HIMl_EQ,XS3304270351,Leverage Shares 3x Long Hims & Hers Health Securities (Acc),yfinance,3HIM.L;3HIM;HIM3.L;HIM3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HIM3l_EQ,XS3304270351,Leverage Shares 3x Long Hims & Hers Health Securities (Acc),yfinance,3HIM.L;3HIM;HIM3.L;HIM3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3LSIl_EQ,XS3306516876,WisdomTree Silver 3x Daily Leveraged,yfinance,3LSI.L;3LSI;3SIL.L;3SIL;3SIL.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3SILl_EQ,XS3306516876,WisdomTree Silver 3x Daily Leveraged,yfinance,3LSI.L;3LSI;3SIL.L;3SIL;3SIL.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3SILm_EQ,XS3306516876,WisdomTree Silver 3x Daily Leveraged,yfinance,3LSI.L;3LSI;3SIL.L;3SIL;3SIL.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3HCSl_EQ,XS3306516959,WisdomTree Copper 3x Short,yfinance,3HCS.L;3HCS;3HCS.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3HCSm_EQ,XS3306516959,WisdomTree Copper 3x Daily Short,yfinance,3HCS.L;3HCS;3HCS.MI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3BRSl_EQ,XS3306517098,WisdomTree Brent Crude Oil 3x Daily Short,yfinance,3BRS.L;3BRS;3BRS.MI;3BSR.L;3BSR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
@@ -9413,11 +9286,61 @@ HIM3l_EQ,XS3304270351,Leverage Shares 3x Long Hims & Hers Health Securities (Acc
 3SISl_EQ,XS3306517924,WisdomTree Silver 3x Short,yfinance,3SIS.L;3SIS;3SIS.MI;3SSI.L;3SSI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3SISm_EQ,XS3306517924,WisdomTree Silver 3x Short,yfinance,3SIS.L;3SIS;3SIS.MI;3SSI.L;3SSI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3SSIl_EQ,XS3306517924,WisdomTree Silver 3x Short,yfinance,3SIS.L;3SIS;3SIS.MI;3SSI.L;3SSI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3DELl_EQ,XS3306518492,WisdomTree DAX 3x Leveraged,yfinance,3DEL.L;3DEL;3LDE.L;3LDE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3LDEl_EQ,XS3306518492,WisdomTree DAX 3x Daily Leveraged,yfinance,3DEL.L;3DEL;3LDE.L;3LDE,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3EULl_EQ,XS3306518658,WisdomTree EURO STOXX 50 3x Leveraged,yfinance,3EUL.L;3EUL;3LEU.L;3LEU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3LEUl_EQ,XS3306518658,WisdomTree EURO STOXX 50 3x Daily Leveraged,yfinance,3EUL.L;3EUL;3LEU.L;3LEU,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ITBLm_EQ,XS3306519201,WisdomTree FTSE MIB Banks,yfinance,ITBL.MI;ITBL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3UKLl_EQ,XS3306519896,WisdomTree FTSE 100 3x Leveraged,yfinance,3UKL.L;3UKL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 3SEEl_EQ,XS3308592610,Leverage Shares -3x Short Oil & Gas,yfinance,3SEE.L;3SEE;SXLG.L;SXLG;XLGS.L;XLGS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SXLGl_EQ,XS3308592610,Leverage Shares -3x Short Oil & Gas,yfinance,3SEE.L;3SEE;SXLG.L;SXLG;XLGS.L;XLGS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 XLGSl_EQ,XS3308592610,Leverage Shares -3x Short Oil & Gas,yfinance,3SEE.L;3SEE;SXLG.L;SXLG;XLGS.L;XLGS,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 KORSl_EQ,XS3324655540,Leverage Shares -3x Short South Korea,yfinance,KORS.L;KORS;SKOR.L;SKOR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SKORl_EQ,XS3324655540,Leverage Shares -3x Short South Korea,yfinance,KORS.L;KORS;SKOR.L;SKOR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3JOBl_EQ,XS3337011384,Leverage Shares 3x Long Joby Aviation JOBY (Acc),yfinance,3JOB.L;3JOB;JOB3.L;JOB3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+JOB3l_EQ,XS3337011384,Leverage Shares 3x Long Joby Aviation JOBY (Acc),yfinance,3JOB.L;3JOB;JOB3.L;JOB3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3QBTl_EQ,XS3337011541,Leverage Shares 3x Long D-Wave Quantum QBTS (Acc),yfinance,3QBT.L;3QBT;QBT3.L;QBT3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+QBT3l_EQ,XS3337011541,Leverage Shares 3x Long D-Wave Quantum QBTS (Acc),yfinance,3QBT.L;3QBT;QBT3.L;QBT3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3RGTl_EQ,XS3337012515,Leverage Shares 3x Long Rigetti Computing RGTI (Acc),yfinance,3RGT.L;3RGT;RGT3.L;RGT3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+RGT3l_EQ,XS3337012515,Leverage Shares 3x Long Rigetti Computing RGTI (Acc),yfinance,3RGT.L;3RGT;RGT3.L;RGT3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+3SMRl_EQ,XS3337012861,Leverage Shares 3x Long NuScale Power SMR (Acc),yfinance,3SMR.L;3SMR;SMR3.L;SMR3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SMR3l_EQ,XS3337012861,Leverage Shares 3x Long NuScale Power SMR (Acc),yfinance,3SMR.L;3SMR;SMR3.L;SMR3,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+5SX5l_EQ,XS3337013166,Leverage Shares 5x Long EURO STOXX 50 (Acc),yfinance,5SX5.L;5SX5;SXS5.L;SXS5,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SXS5l_EQ,XS3337013166,Leverage Shares 5x Long EURO STOXX 50 (Acc),yfinance,5SX5.L;5SX5;SXS5.L;SXS5,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SST3l_EQ,XS3337051174,Leverage Shares -3x Short EURO STOXX 50 (Acc),yfinance,SST3.L;SST3;ST3S.L;ST3S,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ST3Sl_EQ,XS3337051174,Leverage Shares -3x Short EURO STOXX 50 (Acc),yfinance,SST3.L;SST3;ST3S.L;ST3S,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+HOOYl_EQ,XS3337099884,IncomeShares Robinhood HOOD Options (Dist),yfinance,HOOY.L;HOOY;YHOO.L;YHOO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YHOOl_EQ,XS3337099884,IncomeShares Robinhood HOOD Options (Dist),yfinance,HOOY.L;HOOY;YHOO.L;YHOO,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+BRKYl_EQ,XS3337164027,IncomeShares Berkshire Hathaway BRK-B Options (Dist),yfinance,BRKY.L;BRKY;YBRK.L;YBRK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YBRKl_EQ,XS3337164027,IncomeShares Berkshire Hathaway BRK-B Options (Dist),yfinance,BRKY.L;BRKY;YBRK.L;YBRK,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+NFLYl_EQ,XS3337171154,IncomeShares Netflix NFLX Options (Dist),yfinance,NFLY.L;NFLY;YNFL.L;YNFL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YNFLl_EQ,XS3337171154,IncomeShares Netflix NFLX Options (Dist),yfinance,NFLY.L;NFLY;YNFL.L;YNFL,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+UNHYl_EQ,XS3337173440,IncomeShares UnitedHealth UNH Options (Dist),yfinance,UNHY.L;UNHY;YUNH.L;YUNH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YUNHl_EQ,XS3337173440,IncomeShares UnitedHealth UNH Options (Dist),yfinance,UNHY.L;UNHY;YUNH.L;YUNH,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ORCYl_EQ,XS3337192234,IncomeShares Oracle ORCL Options (Dist),yfinance,ORCY.L;ORCY;YORC.L;YORC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YORCl_EQ,XS3337192234,IncomeShares Oracle ORCL Options (Dist),yfinance,ORCY.L;ORCY;YORC.L;YORC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+BLCYl_EQ,XS3337192408,IncomeShares Blockchain Leaders (Dist),yfinance,BLCY.L;BLCY;YBLC.L;YBLC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YBLCl_EQ,XS3337192408,IncomeShares Blockchain Leaders (Dist),yfinance,BLCY.L;BLCY;YBLC.L;YBLC,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+TSMYl_EQ,XS3337205077,IncomeShares Taiwan Semiconductors TSM Options (Dist),yfinance,TSMY.L;TSMY;YTSM.L;YTSM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YTSMl_EQ,XS3337205077,IncomeShares Taiwan Semiconductors TSM Options (Dist),yfinance,TSMY.L;TSMY;YTSM.L;YTSM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SLMYl_EQ,XS3337307741,IncomeShares Silver Miners+ Yield (Dist),yfinance,SLMY.L;SLMY;YSLM.L;YSLM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YSLMl_EQ,XS3337307741,IncomeShares Silver Miners+ Yield (Dist),yfinance,SLMY.L;SLMY;YSLM.L;YSLM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+GLMYl_EQ,XS3337373370,IncomeShares Gold Miners+ Yield (Dist),yfinance,GLMY.L;GLMY;YGLM.L;YGLM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YGLMl_EQ,XS3337373370,IncomeShares Gold Miners+ Yield (Dist),yfinance,GLMY.L;GLMY;YGLM.L;YGLM,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+URNYl_EQ,XS3337373701,IncomeShares Uranium+ Yield (Dist),yfinance,URNY.L;URNY;YURN.L;YURN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YURNl_EQ,XS3337373701,IncomeShares Uranium+ Yield (Dist),yfinance,URNY.L;URNY;YURN.L;YURN,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+WTIYl_EQ,XS3337373966,IncomeShares WTI Oil+ Yield (Dist),yfinance,WTIY.L;WTIY;YWTI.L;YWTI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YWTIl_EQ,XS3337373966,IncomeShares WTI Oil+ Yield (Dist),yfinance,WTIY.L;WTIY;YWTI.L;YWTI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+CPRYl_EQ,XS3337374261,IncomeShares Copper Miners+ Yield (Dist),yfinance,CPRY.L;CPRY;YCPR.L;YCPR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YCPRl_EQ,XS3337374261,IncomeShares Copper Miners+ Yield (Dist),yfinance,CPRY.L;CPRY;YCPR.L;YCPR,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+MUIYl_EQ,XS3337374691,IncomeShares Micron MU Options (Dist),yfinance,MUIY.L;MUIY;YMUI.L;YMUI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YMUIl_EQ,XS3337374691,IncomeShares Micron MU Options (Dist),yfinance,MUIY.L;MUIY;YMUI.L;YMUI,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+GRWIl_EQ,XS3337374774,IncomeShares 75/10/15 Multi-Asset Growth (Dist),yfinance,GRWI.L;GRWI;GRWY.L;GRWY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+GRWYl_EQ,XS3337374774,IncomeShares 75/10/15 Multi-Asset Growth (Dist),yfinance,GRWI.L;GRWI;GRWY.L;GRWY,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SCLEl_EQ,XS3337375078,CoreShares Short Contango Long Equity (Acc),yfinance,SCLE.L;SCLE;SCLQ.L;SCLQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+SCLQl_EQ,XS3337375078,CoreShares Short Contango Long Equity (Acc),yfinance,SCLE.L;SCLE;SCLQ.L;SCLQ,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+ESXYl_EQ,XS3343238971,IncomeShares Eurostoxx 50 Options (Dist),yfinance,ESXY.L;ESXY;YESX.L;YESX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
+YESXl_EQ,XS3343238971,IncomeShares Eurostoxx 50 Options (Dist),yfinance,ESXY.L;ESXY;YESX.L;YESX,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 SAOAd_EQ,ZAE000006896,Sasol,yfinance,SAOA.DE;SAOA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 HAM1d_EQ,ZAE000015228,Harmony Gold Mining,yfinance,HAM1.DE;HAM1,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override
 EDGAd_EQ,ZAE000018123,Gold Fields,yfinance,EDGA.DE;EDGA,failure,unable to verify a yfinance symbol for this identity,retry provider later or add manual ticker override

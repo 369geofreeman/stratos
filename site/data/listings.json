@@ -1785,6 +1785,15 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "3BLCl_EQ",
+    "ticker": "3BLCl_EQ",
+    "securityId": "isin:XS3299470842",
+    "companyId": "leverage_shares_3x_long_blockchain_leaders_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "3BLRl_EQ",
     "ticker": "3BLRl_EQ",
     "securityId": "isin:IE00BMTM6D55",
@@ -2006,7 +2015,7 @@
   {
     "id": "3DELl_EQ",
     "ticker": "3DELl_EQ",
-    "securityId": "isin:IE00B878KX55",
+    "securityId": "isin:XS3306518492",
     "companyId": "wisdomtree_dax_3x_leveraged",
     "exchangeCode": "EQ",
     "currencyCode": "EUR"
@@ -2097,7 +2106,7 @@
   {
     "id": "3EULl_EQ",
     "ticker": "3EULl_EQ",
-    "securityId": "isin:IE00B7SD4R47",
+    "securityId": "isin:XS3306518658",
     "companyId": "wisdomtree_euro_stoxx_50_3x_leveraged",
     "exchangeCode": "EQ",
     "currencyCode": "EUR"
@@ -2427,6 +2436,15 @@
     "currencyCode": "GBX"
   },
   {
+    "id": "3JOBl_EQ",
+    "ticker": "3JOBl_EQ",
+    "securityId": "isin:XS3337011384",
+    "companyId": "leverage_shares_3x_long_joby_aviation_joby_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "3JPEl_EQ",
     "ticker": "3JPEl_EQ",
     "securityId": "isin:XS2472196844",
@@ -2589,7 +2607,7 @@
   {
     "id": "3LDEl_EQ",
     "ticker": "3LDEl_EQ",
-    "securityId": "isin:IE00B878KX55",
+    "securityId": "isin:XS3306518492",
     "companyId": "wisdomtree_dax_3x_leveraged",
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
@@ -2616,7 +2634,7 @@
   {
     "id": "3LEUl_EQ",
     "ticker": "3LEUl_EQ",
-    "securityId": "isin:IE00B7SD4R47",
+    "securityId": "isin:XS3306518658",
     "companyId": "wisdomtree_euro_stoxx_50_3x_leveraged",
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
@@ -2937,7 +2955,7 @@
   {
     "id": "3LSIl_EQ",
     "ticker": "3LSIl_EQ",
-    "securityId": "isin:IE00B7XD2195",
+    "securityId": "isin:XS3306516876",
     "companyId": "wisdomtree_silver_3x_daily_leveraged",
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
@@ -3287,6 +3305,24 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "3OKLl_EQ",
+    "ticker": "3OKLl_EQ",
+    "securityId": "isin:XS3299470503",
+    "companyId": "leverage_shares_3x_long_oklo_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "3ORCl_EQ",
+    "ticker": "3ORCl_EQ",
+    "securityId": "isin:XS3299464365",
+    "companyId": "leverage_shares_3x_long_oracle_orcl_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "3P7d_EQ",
     "ticker": "3P7d_EQ",
     "securityId": "isin:DK0060252690",
@@ -3325,6 +3361,15 @@
     "ticker": "3PYPl_EQ",
     "securityId": "isin:XS2663695067",
     "companyId": "leverage_shares_3x_paypal",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "3QBTl_EQ",
+    "ticker": "3QBTl_EQ",
+    "securityId": "isin:XS3337011541",
+    "companyId": "leverage_shares_3x_long_d_wave_quantum_qbts_acc",
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
     "currencyCode": "GBX"
@@ -3382,10 +3427,28 @@
     "currencyCode": "GBX"
   },
   {
+    "id": "3RGTl_EQ",
+    "ticker": "3RGTl_EQ",
+    "securityId": "isin:XS3337012515",
+    "companyId": "leverage_shares_3x_long_rigetti_computing_rgti_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "3RHMl_EQ",
     "ticker": "3RHMl_EQ",
     "securityId": "isin:XS3103698299",
     "companyId": "leverage_shares_3x_long_rheinmetall_rhm_securities_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "3RKLl_EQ",
+    "ticker": "3RKLl_EQ",
+    "securityId": "isin:XS3299470768",
+    "companyId": "leverage_shares_3x_long_rocket_lab_rklb_acc",
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
     "currencyCode": "GBX"
@@ -3631,7 +3694,7 @@
   {
     "id": "3SILl_EQ",
     "ticker": "3SILl_EQ",
-    "securityId": "isin:IE00B7XD2195",
+    "securityId": "isin:XS3306516876",
     "companyId": "wisdomtree_silver_3x_daily_leveraged",
     "exchangeCode": "EQ",
     "currencyCode": "USD"
@@ -3639,7 +3702,7 @@
   {
     "id": "3SILm_EQ",
     "ticker": "3SILm_EQ",
-    "securityId": "isin:IE00B7XD2195",
+    "securityId": "isin:XS3306516876",
     "companyId": "wisdomtree_silver_3x_daily_leveraged",
     "exchangeCode": "EQ",
     "currencyCode": "EUR"
@@ -3699,6 +3762,15 @@
     "ticker": "3SLLl_EQ",
     "securityId": "isin:XS2703639893",
     "companyId": "graniteshares_3x_short_lloyds_banking_group",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "3SLMl_EQ",
+    "ticker": "3SLMl_EQ",
+    "securityId": "isin:XS3299470172",
+    "companyId": "leverage_shares_3x_long_silver_miners_acc",
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
     "currencyCode": "GBX"
@@ -3784,6 +3856,15 @@
     "ticker": "3SMPl_EQ",
     "securityId": "isin:XS2722160707",
     "companyId": "graniteshares_3x_short_microsoft",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "3SMRl_EQ",
+    "ticker": "3SMRl_EQ",
+    "securityId": "isin:XS3337012861",
+    "companyId": "leverage_shares_3x_long_nuscale_power_smr_acc",
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
     "currencyCode": "GBX"
@@ -4284,7 +4365,7 @@
   {
     "id": "3UKLl_EQ",
     "ticker": "3UKLl_EQ",
-    "securityId": "isin:IE00B88D2999",
+    "securityId": "isin:XS3306519896",
     "companyId": "wisdomtree_ftse_100_3x_leveraged",
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
@@ -5115,6 +5196,14 @@
     "currencyCode": "GBX"
   },
   {
+    "id": "5SX5l_EQ",
+    "ticker": "5SX5l_EQ",
+    "securityId": "isin:XS3337013166",
+    "companyId": "leverage_shares_5x_long_euro_stoxx_50_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "5TIPl_EQ",
     "ticker": "5TIPl_EQ",
     "securityId": "isin:XS2595670501",
@@ -5753,6 +5842,15 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "9VYd_EQ",
+    "ticker": "9VYd_EQ",
+    "securityId": "isin:US6877931096",
+    "companyId": "oscar_health_inc",
+    "exchangeCode": "EQ",
+    "exchangeName": "NYSE",
+    "currencyCode": "EUR"
+  },
+  {
     "id": "A1Gd_EQ",
     "ticker": "A1Gd_EQ",
     "securityId": "isin:US02376R1023",
@@ -5960,7 +6058,7 @@
     "id": "AAEVl_EQ",
     "ticker": "AAEVl_EQ",
     "securityId": "isin:GB00B1G3LR35",
-    "companyId": "albion_enterprise",
+    "companyId": "albion_enterprise_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -6209,7 +6307,7 @@
     "id": "AASl_EQ",
     "ticker": "AASl_EQ",
     "securityId": "isin:GB00BMF19B58",
-    "companyId": "abrdn_asia_focus",
+    "companyId": "aberdeen_asia_focus_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -6218,7 +6316,7 @@
     "id": "AATGl_EQ",
     "ticker": "AATGl_EQ",
     "securityId": "isin:GB0005581672",
-    "companyId": "albion_technology_general",
+    "companyId": "albion_technology_general_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -7017,9 +7115,8 @@
     "id": "ACLX_US_EQ",
     "ticker": "ACLX_US_EQ",
     "securityId": "isin:US03940C1009",
-    "companyId": "arcellx_inc",
+    "companyId": "arcellx",
     "exchangeCode": "US",
-    "exchangeName": "NMS",
     "currencyCode": "USD"
   },
   {
@@ -7141,8 +7238,9 @@
     "id": "ACRMl_EQ",
     "ticker": "ACRMl_EQ",
     "securityId": "isin:GB00BR0WHY71",
-    "companyId": "acuity_rm",
+    "companyId": "acuity_rm_group_plc",
     "exchangeCode": "EQ",
+    "exchangeName": "LSE",
     "currencyCode": "GBX"
   },
   {
@@ -7294,9 +7392,8 @@
     "id": "ACUT_US_EQ",
     "ticker": "ACUT_US_EQ",
     "securityId": "isin:US00444A1016",
-    "companyId": "accustem_sciences_inc",
+    "companyId": "accustem_sciences",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQB",
     "currencyCode": "USD"
   },
   {
@@ -7631,9 +7728,8 @@
     "id": "ADIL_US_EQ",
     "ticker": "ADIL_US_EQ",
     "securityId": "isin:US00688A3041",
-    "companyId": "adial_pharmaceuticals_inc",
+    "companyId": "adial_pharmaceuticals",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -8139,15 +8235,16 @@
     "id": "AEEEl_EQ",
     "ticker": "AEEEl_EQ",
     "securityId": "isin:GB00BN6JYS78",
-    "companyId": "parvus_energy_efficiency_trust",
+    "companyId": "parvus_energy_efficiency_trust_plc",
     "exchangeCode": "EQ",
+    "exchangeName": "LSE",
     "currencyCode": "EUR"
   },
   {
     "id": "AEETl_EQ",
     "ticker": "AEETl_EQ",
     "securityId": "isin:GB00BN6JYS78",
-    "companyId": "parvus_energy_efficiency_trust",
+    "companyId": "parvus_energy_efficiency_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -8357,7 +8454,7 @@
     "id": "AERIl_EQ",
     "ticker": "AERIl_EQ",
     "securityId": "isin:GB00BK6RLF66",
-    "companyId": "aquila_european_renewables_ord",
+    "companyId": "aquila_european_renewables_plc",
     "exchangeCode": "EQ",
     "exchangeName": "LSE",
     "currencyCode": "EUR"
@@ -8375,7 +8472,7 @@
     "id": "AERSl_EQ",
     "ticker": "AERSl_EQ",
     "securityId": "isin:GB00BK6RLF66",
-    "companyId": "aquila_european_renewables_ord",
+    "companyId": "aquila_european_renewables_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -8454,7 +8551,7 @@
     "id": "AEWUl_EQ",
     "ticker": "AEWUl_EQ",
     "securityId": "isin:GB00BWD24154",
-    "companyId": "aew_uk_reit",
+    "companyId": "aew_uk_reit_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -8556,7 +8653,7 @@
     "id": "AFENl_EQ",
     "ticker": "AFENl_EQ",
     "securityId": "isin:GB00B18S7B29",
-    "companyId": "afc_energy_plc",
+    "companyId": "h_power_plc",
     "exchangeCode": "EQ",
     "exchangeName": "LSE",
     "currencyCode": "GBX"
@@ -9175,7 +9272,7 @@
     "id": "AGVIl_EQ",
     "ticker": "AGVIl_EQ",
     "securityId": "isin:GB00BPJMQ253",
-    "companyId": "aberforth_geared_value_income_trust",
+    "companyId": "aberforth_geared_value_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -9460,6 +9557,15 @@
     "currencyCode": "GBX"
   },
   {
+    "id": "AIAI_US_EQ",
+    "ticker": "AIAI_US_EQ",
+    "securityId": "isin:US0089331039",
+    "companyId": "aiai_holdings_corporation_class_a_common_stock",
+    "exchangeCode": "US",
+    "exchangeName": "NasdaqGM",
+    "currencyCode": "USD"
+  },
+  {
     "id": "AIAIl_EQ",
     "ticker": "AIAIl_EQ",
     "securityId": "isin:IE00BK5BCD43",
@@ -9539,7 +9645,7 @@
     "id": "AIEl_EQ",
     "ticker": "AIEl_EQ",
     "securityId": "isin:GB00BF50VS41",
-    "companyId": "ashoka_india_equity_investment_trust",
+    "companyId": "ashoka_india_equity_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -9848,16 +9954,15 @@
     "id": "AIRE_US_EQ",
     "ticker": "AIRE_US_EQ",
     "securityId": "isin:US75607T2042",
-    "companyId": "realpha_tech_corp",
+    "companyId": "realpha_tech",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
     "id": "AIREl_EQ",
     "ticker": "AIREl_EQ",
     "securityId": "isin:GB00BDVK7088",
-    "companyId": "alternative_income_reit",
+    "companyId": "alternative_income_reit_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -9990,7 +10095,7 @@
   {
     "id": "AIXI_US_EQ",
     "ticker": "AIXI_US_EQ",
-    "securityId": "isin:US98423X2099",
+    "securityId": "isin:US98423X3089",
     "companyId": "xiao_i_corporation",
     "exchangeCode": "US",
     "exchangeName": "NasdaqGM",
@@ -10096,7 +10201,7 @@
     "id": "AJOTl_EQ",
     "ticker": "AJOTl_EQ",
     "securityId": "isin:GB00BD6H5D36",
-    "companyId": "avi_japan_opportunity_trust",
+    "companyId": "avi_japan_opportunity_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -10283,9 +10388,8 @@
     "id": "AKTX_US_EQ",
     "ticker": "AKTX_US_EQ",
     "securityId": "isin:US00972G4055",
-    "companyId": "akari_therapeutics_plc",
+    "companyId": "akari_therapeutics",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -10474,7 +10578,6 @@
     "securityId": "isin:US2036344073",
     "companyId": "community_capital_bancshares_inc",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQX",
     "currencyCode": "USD"
   },
   {
@@ -10632,7 +10735,7 @@
     "securityId": "isin:KYG0232F1090",
     "companyId": "alchemy_investments_acquisition_corp_1",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
+    "exchangeName": "NasdaqGM",
     "currencyCode": "USD"
   },
   {
@@ -11450,7 +11553,7 @@
     "id": "ALNAl_EQ",
     "ticker": "ALNAl_EQ",
     "securityId": "isin:GB00B1VS7G47",
-    "companyId": "alina_holdings",
+    "companyId": "alina_holdings_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -11570,6 +11673,14 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "ALPGp_EQ",
+    "ticker": "ALPGp_EQ",
+    "securityId": "isin:FR001400WXE7",
+    "companyId": "preatoni_group",
+    "exchangeCode": "EQ",
+    "currencyCode": "EUR"
+  },
+  {
     "id": "ALPHEp_EQ",
     "ticker": "ALPHEp_EQ",
     "securityId": "isin:FR0011651694",
@@ -11599,9 +11710,8 @@
     "id": "ALPP_US_EQ",
     "ticker": "ALPP_US_EQ",
     "securityId": "isin:US02083E2046",
-    "companyId": "alpine_4_holdings_inc",
+    "companyId": "alpine_4",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -12222,9 +12332,8 @@
     "id": "AMBBY_US_EQ",
     "ticker": "AMBBY_US_EQ",
     "securityId": "isin:US02337W1099",
-    "companyId": "ambu_a_s",
+    "companyId": "ambu",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -12693,15 +12802,6 @@
     "companyId": "aferian",
     "exchangeCode": "EQ",
     "currencyCode": "GBX"
-  },
-  {
-    "id": "AMPE_US_EQ",
-    "ticker": "AMPE_US_EQ",
-    "securityId": "isin:US03209T3077",
-    "companyId": "ampio_pharmaceuticals_inc",
-    "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
-    "currencyCode": "USD"
   },
   {
     "id": "AMPG_US_EQ",
@@ -13317,7 +13417,7 @@
     "id": "ANIIl_EQ",
     "ticker": "ANIIl_EQ",
     "securityId": "isin:GB0006048770",
-    "companyId": "aberdeen_new_india_investment_trust",
+    "companyId": "aberdeen_new_india_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -13556,7 +13656,6 @@
     "securityId": "isin:US0426441046",
     "companyId": "arogo_capital_acquisition_corp",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -14362,7 +14461,6 @@
     "securityId": "isin:US02933K1034",
     "companyId": "american_riviera_bancorp",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQX",
     "currencyCode": "USD"
   },
   {
@@ -14483,9 +14581,8 @@
     "id": "ARDS_US_EQ",
     "ticker": "ARDS_US_EQ",
     "securityId": "isin:US0403341045",
-    "companyId": "aridis_pharmaceuticals_inc",
+    "companyId": "aridis_pharmaceuticals",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -14520,7 +14617,7 @@
     "securityId": "isin:US02919L8853",
     "companyId": "american_rebel_holdings_inc",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
+    "exchangeName": "NasdaqGM",
     "currencyCode": "USD"
   },
   {
@@ -15015,7 +15112,7 @@
     "id": "ARRl_EQ",
     "ticker": "ARRl_EQ",
     "securityId": "isin:GB0000633262",
-    "companyId": "aurora_uk_alpha",
+    "companyId": "aurora_uk_alpha_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -15328,7 +15425,7 @@
     "id": "ASEIl_EQ",
     "ticker": "ASEIl_EQ",
     "securityId": "isin:GB0006039597",
-    "companyId": "aberdeen_equity_income_trust",
+    "companyId": "aberdeen_equity_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -15467,7 +15564,7 @@
     "id": "ASLIl_EQ",
     "ticker": "ASLIl_EQ",
     "securityId": "isin:GB00BD9PXH49",
-    "companyId": "abrdn_european_logistics_income",
+    "companyId": "abrdn_european_logistics_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -15484,7 +15581,7 @@
     "id": "ASLl_EQ",
     "ticker": "ASLl_EQ",
     "securityId": "isin:GB0000066554",
-    "companyId": "aberforth_smaller_companies_trust",
+    "companyId": "aberforth_smaller_companies_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -15571,7 +15668,7 @@
     "securityId": "isin:US00503R5081",
     "companyId": "actelis_networks_inc",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
+    "exchangeName": "OTC Markets OTCQB",
     "currencyCode": "USD"
   },
   {
@@ -15688,9 +15785,8 @@
     "id": "ASPU_US_EQ",
     "ticker": "ASPU_US_EQ",
     "securityId": "isin:US04530L2034",
-    "companyId": "aspen_group_inc",
+    "companyId": "aspen_group",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQB",
     "currencyCode": "USD"
   },
   {
@@ -15723,8 +15819,9 @@
     "id": "ASRT_US_EQ",
     "ticker": "ASRT_US_EQ",
     "securityId": "isin:US04546C3043",
-    "companyId": "assertio",
+    "companyId": "assertio_holdings_inc",
     "exchangeCode": "US",
+    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -16509,7 +16606,7 @@
     "id": "ATRl_EQ",
     "ticker": "ATRl_EQ",
     "securityId": "isin:GB0008710799",
-    "companyId": "schroder_asian_total_return_investment",
+    "companyId": "schroders_investment_trusts_schroder_asian_total_return_investment_company_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -16527,7 +16624,7 @@
     "id": "ATSTl_EQ",
     "ticker": "ATSTl_EQ",
     "securityId": "isin:GB00B11V7W98",
-    "companyId": "alliance_witan",
+    "companyId": "alliance_witan_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -16571,7 +16668,7 @@
     "id": "ATTl_EQ",
     "ticker": "ATTl_EQ",
     "securityId": "isin:GB00BNG2M159",
-    "companyId": "allianz_technology_trust",
+    "companyId": "allianz_technology_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -16650,7 +16747,7 @@
     "id": "ATYl_EQ",
     "ticker": "ATYl_EQ",
     "securityId": "isin:GB0000609296",
-    "companyId": "athelney_trust",
+    "companyId": "athelney_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -16755,7 +16852,7 @@
     "id": "AUGMl_EQ",
     "ticker": "AUGMl_EQ",
     "securityId": "isin:GB00BG12XV81",
-    "companyId": "augmentum_fintech",
+    "companyId": "augmentum_fintech_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -18346,7 +18443,7 @@
     "id": "BAFl_EQ",
     "ticker": "BAFl_EQ",
     "securityId": "isin:GB0000653112",
-    "companyId": "british_american_investment_trust",
+    "companyId": "british_american_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -18911,7 +19008,7 @@
     "id": "BBHl_EQ",
     "ticker": "BBHl_EQ",
     "securityId": "isin:GB00BZCNLL95",
-    "companyId": "ct_healthcare_trust",
+    "companyId": "ct_healthcare_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -19005,7 +19102,7 @@
     "id": "BBOXl_EQ",
     "ticker": "BBOXl_EQ",
     "securityId": "isin:GB00BG49KP99",
-    "companyId": "tritax_big_box_reit",
+    "companyId": "tritax_big_box_reit_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -19450,7 +19547,7 @@
     "id": "BCIl_EQ",
     "ticker": "BCIl_EQ",
     "securityId": "isin:GB0003463287",
-    "companyId": "ct_uk_capital_income_investment_trust",
+    "companyId": "ct_uk_capital_and_income_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -19915,7 +20012,7 @@
     "id": "BEEl_EQ",
     "ticker": "BEEl_EQ",
     "securityId": "isin:GB0032273343",
-    "companyId": "barings_emerging_emea_opportunities",
+    "companyId": "barings_emerging_emea_opportunities_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -20056,7 +20153,7 @@
     "id": "BERIl_EQ",
     "ticker": "BERIl_EQ",
     "securityId": "isin:GB00B0N8MF98",
-    "companyId": "blackrock_energy_and_resources_income_trust",
+    "companyId": "blackrock_energy_and_resources_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -20258,7 +20355,7 @@
     "id": "BGCGl_EQ",
     "ticker": "BGCGl_EQ",
     "securityId": "isin:GB0003656021",
-    "companyId": "baillie_gifford_china_growth_trust",
+    "companyId": "baillie_gifford_china_growth_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -20284,7 +20381,7 @@
     "id": "BGEUl_EQ",
     "ticker": "BGEUl_EQ",
     "securityId": "isin:GB00BMC7T380",
-    "companyId": "baillie_gifford_european_growth_trust",
+    "companyId": "baillie_gifford_european_growth_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -20293,7 +20390,7 @@
     "id": "BGFDl_EQ",
     "ticker": "BGFDl_EQ",
     "securityId": "isin:GB0000485838",
-    "companyId": "baillie_gifford_japan_trust",
+    "companyId": "the_baillie_gifford_japan_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -20346,7 +20443,7 @@
     "id": "BGSCl_EQ",
     "ticker": "BGSCl_EQ",
     "securityId": "isin:GB00BKLXD974",
-    "companyId": "global_smaller_companies_trust",
+    "companyId": "the_global_smaller_companies_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -20373,7 +20470,7 @@
     "id": "BGSl_EQ",
     "ticker": "BGSl_EQ",
     "securityId": "isin:GB00BFXYH242",
-    "companyId": "baillie_gifford_shin_nippon",
+    "companyId": "baillie_gifford_shin_nippon_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -20382,7 +20479,7 @@
     "id": "BGUKl_EQ",
     "ticker": "BGUKl_EQ",
     "securityId": "isin:GB0007913485",
-    "companyId": "baillie_gifford_uk_growth_trust",
+    "companyId": "baillie_gifford_uk_growth_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -20783,7 +20880,7 @@
   {
     "id": "BIO3d_EQ",
     "ticker": "BIO3d_EQ",
-    "securityId": "isin:DE0005227235",
+    "securityId": "isin:DE000A41YE49",
     "companyId": "biotest_preferred",
     "exchangeCode": "EQ",
     "currencyCode": "EUR"
@@ -20809,7 +20906,7 @@
     "id": "BIOGl_EQ",
     "ticker": "BIOGl_EQ",
     "securityId": "isin:GB0000385517",
-    "companyId": "biotech_growth_trust",
+    "companyId": "the_biotech_growth_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -21422,7 +21519,7 @@
     "securityId": "isin:US09060C6066",
     "companyId": "bio_key_international_inc",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
+    "exchangeName": "NasdaqGM",
     "currencyCode": "USD"
   },
   {
@@ -21468,6 +21565,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "BLC3l_EQ",
+    "ticker": "BLC3l_EQ",
+    "securityId": "isin:XS3299470842",
+    "companyId": "leverage_shares_3x_long_blockchain_leaders_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "BLCHd_EQ",
     "ticker": "BLCHd_EQ",
     "securityId": "isin:IE000XAGSCY5",
@@ -21491,6 +21596,14 @@
     "companyId": "bausch_lomb_corporation",
     "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "BLCYl_EQ",
+    "ticker": "BLCYl_EQ",
+    "securityId": "isin:XS3337192408",
+    "companyId": "incomeshares_blockchain_leaders_dist",
+    "exchangeCode": "EQ",
     "currencyCode": "USD"
   },
   {
@@ -21838,7 +21951,7 @@
     "id": "BMDl_EQ",
     "ticker": "BMDl_EQ",
     "securityId": "isin:GB0030028103",
-    "companyId": "baronsmead_second_venture_trust",
+    "companyId": "baronsmead_second_venture_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -21983,7 +22096,7 @@
     "id": "BMPGl_EQ",
     "ticker": "BMPGl_EQ",
     "securityId": "isin:GB00B2PP2527",
-    "companyId": "ct_managed_portfolio_trust",
+    "companyId": "ct_global_managed_portfolio_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -22239,7 +22352,7 @@
     "id": "BNKRl_EQ",
     "ticker": "BNKRl_EQ",
     "securityId": "isin:GB00BN4NDR39",
-    "companyId": "bankers_ord",
+    "companyId": "the_bankers_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -22615,7 +22728,7 @@
     "id": "BOOKl_EQ",
     "ticker": "BOOKl_EQ",
     "securityId": "isin:GB00BMF1L080",
-    "companyId": "literacy_capital",
+    "companyId": "literacy_capital_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -22886,8 +22999,9 @@
     "id": "BPCRl_EQ",
     "ticker": "BPCRl_EQ",
     "securityId": "isin:GB00BDGKMY29",
-    "companyId": "biopharma_credit",
+    "companyId": "biopharma_credit_plc",
     "exchangeCode": "EQ",
+    "exchangeName": "LSE",
     "currencyCode": "USD"
   },
   {
@@ -22903,7 +23017,7 @@
     "id": "BPETl_EQ",
     "ticker": "BPETl_EQ",
     "securityId": "isin:GB0030738271",
-    "companyId": "ct_private_equity_trust",
+    "companyId": "ct_private_equity_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -23114,7 +23228,7 @@
   {
     "id": "BREA_US_EQ",
     "ticker": "BREA_US_EQ",
-    "securityId": "isin:IE0004OVVKF1",
+    "securityId": "isin:IE0009876H30",
     "companyId": "brera_holdings",
     "exchangeCode": "US",
     "currencyCode": "USD"
@@ -23184,7 +23298,7 @@
     "id": "BRFIl_EQ",
     "ticker": "BRFIl_EQ",
     "securityId": "isin:GB00B3SXM832",
-    "companyId": "blackrock_frontiers_ord",
+    "companyId": "blackrock_frontiers_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -23202,7 +23316,7 @@
     "id": "BRGEl_EQ",
     "ticker": "BRGEl_EQ",
     "securityId": "isin:GB00B01RDH75",
-    "companyId": "blackrock_greater_europe_investment_trust",
+    "companyId": "blackrock_greater_europe_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -23245,7 +23359,7 @@
     "id": "BRIGl_EQ",
     "ticker": "BRIGl_EQ",
     "securityId": "isin:GB0030961691",
-    "companyId": "blackrock_income_growth_investment_trust",
+    "companyId": "blackrock_income_and_growth_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -23326,6 +23440,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "BRKYl_EQ",
+    "ticker": "BRKYl_EQ",
+    "securityId": "isin:XS3337164027",
+    "companyId": "incomeshares_berkshire_hathaway_brk_b_options_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "BRK_B_US_EQ",
     "ticker": "BRK_B_US_EQ",
     "securityId": "isin:US0846707026",
@@ -23347,7 +23469,7 @@
     "id": "BRLAl_EQ",
     "ticker": "BRLAl_EQ",
     "securityId": "isin:GB0005058408",
-    "companyId": "blackrock_latin_american_investment_trust",
+    "companyId": "blackrock_latin_american_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -23391,7 +23513,7 @@
     "id": "BRNAl_EQ",
     "ticker": "BRNAl_EQ",
     "securityId": "isin:GB00B7W0XJ61",
-    "companyId": "blackrock_american_income_trust",
+    "companyId": "blackrock_american_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -23536,7 +23658,7 @@
     "id": "BRSCl_EQ",
     "ticker": "BRSCl_EQ",
     "securityId": "isin:GB0006436108",
-    "companyId": "blackrock_smaller_cos_trust",
+    "companyId": "blackrock_smaller_companies_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -23622,7 +23744,7 @@
     "id": "BRWMl_EQ",
     "ticker": "BRWMl_EQ",
     "securityId": "isin:GB0005774855",
-    "companyId": "blackrock_world_mining_trust_ord",
+    "companyId": "blackrock_world_mining_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -23742,7 +23864,7 @@
     "id": "BSCl_EQ",
     "ticker": "BSCl_EQ",
     "securityId": "isin:GB0005001796",
-    "companyId": "british_smaller_companies",
+    "companyId": "british_smaller_companies_vct_2_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -23915,7 +24037,7 @@
     "id": "BSVl_EQ",
     "ticker": "BSVl_EQ",
     "securityId": "isin:GB0001403152",
-    "companyId": "british_smaller_companies_vct_ord",
+    "companyId": "british_smaller_companies_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -24087,7 +24209,7 @@
     "id": "BTEMl_EQ",
     "ticker": "BTEMl_EQ",
     "securityId": "isin:GB00BLH3CY60",
-    "companyId": "avi_global_trust",
+    "companyId": "avi_global_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -24185,7 +24307,7 @@
     "securityId": "isin:US0422551095",
     "companyId": "armlogi_holding_corp",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqGM",
+    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -24476,7 +24598,7 @@
     "id": "BUTl_EQ",
     "ticker": "BUTl_EQ",
     "securityId": "isin:GB0001490001",
-    "companyId": "brunner_investment_trust",
+    "companyId": "the_brunner_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -24599,7 +24721,7 @@
     "id": "BVTl_EQ",
     "ticker": "BVTl_EQ",
     "securityId": "isin:GB0002631934",
-    "companyId": "baronsmead_venture_trust",
+    "companyId": "baronsmead_venture_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -24801,6 +24923,15 @@
     "ticker": "BXC_US_EQ",
     "securityId": "isin:US09624H2085",
     "companyId": "bluelinx_holdings_inc",
+    "exchangeCode": "US",
+    "exchangeName": "Bolsa de Madrid",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "BXDC_US_EQ",
+    "ticker": "BXDC_US_EQ",
+    "securityId": "isin:US09264B1070",
+    "companyId": "blackstone_digital_infrastructure_trust_inc",
     "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
     "currencyCode": "USD"
@@ -26387,6 +26518,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "CBRS_US_EQ",
+    "ticker": "CBRS_US_EQ",
+    "securityId": "isin:US15675D1037",
+    "companyId": "cerebras_systems",
+    "exchangeCode": "US",
+    "currencyCode": "USD"
+  },
+  {
     "id": "CBRSd_EQ",
     "ticker": "CBRSd_EQ",
     "securityId": "isin:IE00BF16M727",
@@ -26897,14 +27036,6 @@
     "currencyCode": "USD"
   },
   {
-    "id": "CCFN_US_EQ",
-    "ticker": "CCFN_US_EQ",
-    "securityId": "isin:US1248801052",
-    "companyId": "muncy_columbia_financial",
-    "exchangeCode": "US",
-    "currencyCode": "USD"
-  },
-  {
     "id": "CCHGY_US_EQ",
     "ticker": "CCHGY_US_EQ",
     "securityId": "isin:US1912232055",
@@ -26986,7 +27117,7 @@
     "id": "CCJIl_EQ",
     "ticker": "CCJIl_EQ",
     "securityId": "isin:GB00BYSRMH16",
-    "companyId": "cc_japan_income_growth_trust",
+    "companyId": "cc_japan_income_growth_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -27021,7 +27152,7 @@
     "id": "CCL_US_EQ",
     "ticker": "CCL_US_EQ",
     "securityId": "isin:BMG2004J1036",
-    "companyId": "carnival_corp",
+    "companyId": "carnival_corporation_ltd",
     "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
     "currencyCode": "USD"
@@ -28692,7 +28823,7 @@
     "id": "CGIl_EQ",
     "ticker": "CGIl_EQ",
     "securityId": "isin:CA1358251074",
-    "companyId": "canadian_general_investments",
+    "companyId": "canadian_general_investments_limited",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -28816,7 +28947,7 @@
     "id": "CGTl_EQ",
     "ticker": "CGTl_EQ",
     "securityId": "isin:GB0001738615",
-    "companyId": "capital_gearing_trust",
+    "companyId": "capital_gearing_trust_p_l_c",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -29198,7 +29329,7 @@
     "id": "CHIl_EQ",
     "ticker": "CHIl_EQ",
     "securityId": "isin:GB00B1N4G299",
-    "companyId": "ct_uk_high_income_trust",
+    "companyId": "ct_uk_high_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -29309,7 +29440,7 @@
   {
     "id": "CHPl_EQ",
     "ticker": "CHPl_EQ",
-    "securityId": "isin:GB00BYZ9XC29",
+    "securityId": "isin:GB00BW9JXM40",
     "companyId": "caledonian_holdings_plc",
     "exchangeCode": "EQ",
     "exchangeName": "LSE",
@@ -29452,8 +29583,9 @@
     "id": "CHSN_US_EQ",
     "ticker": "CHSN_US_EQ",
     "securityId": "isin:KYG2104U1159",
-    "companyId": "chanson_international",
+    "companyId": "chanson_international_holding",
     "exchangeCode": "US",
+    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -30254,7 +30386,7 @@
     "id": "CLDNl_EQ",
     "ticker": "CLDNl_EQ",
     "securityId": "isin:GB00BTNQ8K38",
-    "companyId": "caledonia_investments",
+    "companyId": "caledonia_investments_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -30310,6 +30442,15 @@
     "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
     "currencyCode": "USD"
+  },
+  {
+    "id": "CLGHl_EQ",
+    "ticker": "CLGHl_EQ",
+    "securityId": "isin:IE000VHC9HY7",
+    "companyId": "ishares_eur_aaa_clo_active_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBP"
   },
   {
     "id": "CLGN_US_EQ",
@@ -31175,7 +31316,7 @@
     "id": "CMPIl_EQ",
     "ticker": "CMPIl_EQ",
     "securityId": "isin:GB00B2PP3J36",
-    "companyId": "ct_managed_portfolio_trust",
+    "companyId": "ct_global_managed_portfolio_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -33243,6 +33384,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "CPRYl_EQ",
+    "ticker": "CPRYl_EQ",
+    "securityId": "isin:XS3337374261",
+    "companyId": "incomeshares_copper_miners_yield_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "CPSH_US_EQ",
     "ticker": "CPSH_US_EQ",
     "securityId": "isin:US12619F1049",
@@ -33280,7 +33429,7 @@
     "id": "CPST_US_EQ",
     "ticker": "CPST_US_EQ",
     "securityId": "isin:US14067D6076",
-    "companyId": "capstone_green_energy_holdings",
+    "companyId": "capstone_energy",
     "exchangeCode": "US",
     "currencyCode": "USD"
   },
@@ -33621,7 +33770,7 @@
     "id": "CREIl_EQ",
     "ticker": "CREIl_EQ",
     "securityId": "isin:GB00BJFLFT45",
-    "companyId": "custodian_property_income_reit",
+    "companyId": "custodian_property_income_reit_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -34165,7 +34314,7 @@
     "id": "CRWCl_EQ",
     "ticker": "CRWCl_EQ",
     "securityId": "isin:GB00BSPT6546",
-    "companyId": "albion_crown_vct",
+    "companyId": "albion_crown_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -35100,11 +35249,21 @@
     "currencyCode": "CHF"
   },
   {
+    "id": "CTGO_CA_EQ",
+    "ticker": "CTGO_CA_EQ",
+    "securityId": "isin:US21077F1003",
+    "companyId": "contango_silver_gold_inc",
+    "exchangeCode": "CA",
+    "exchangeName": "Toronto",
+    "currencyCode": "CAD"
+  },
+  {
     "id": "CTGO_US_EQ",
     "ticker": "CTGO_US_EQ",
     "securityId": "isin:US21077F1003",
-    "companyId": "contango_silver_gold",
+    "companyId": "contango_silver_gold_inc",
     "exchangeCode": "US",
+    "exchangeName": "Toronto",
     "currencyCode": "USD"
   },
   {
@@ -35357,7 +35516,7 @@
     "id": "CTW_US_EQ",
     "ticker": "CTW_US_EQ",
     "securityId": "isin:KYG2589A1058",
-    "companyId": "ctw_cayman",
+    "companyId": "ctw",
     "exchangeCode": "US",
     "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
@@ -35384,7 +35543,7 @@
     "id": "CTYl_EQ",
     "ticker": "CTYl_EQ",
     "securityId": "isin:GB0001990497",
-    "companyId": "city_of_london_investment_trust",
+    "companyId": "the_city_of_london_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -35687,8 +35846,9 @@
     "id": "CVC1d_EQ",
     "ticker": "CVC1d_EQ",
     "securityId": "isin:BMG2004J1036",
-    "companyId": "carnival_corp",
+    "companyId": "carnival_corporation_ltd",
     "exchangeCode": "EQ",
+    "exchangeName": "NYSE",
     "currencyCode": "EUR"
   },
   {
@@ -36455,7 +36615,7 @@
     "id": "CYNl_EQ",
     "ticker": "CYNl_EQ",
     "securityId": "isin:GB0000353929",
-    "companyId": "cqs_natural_resources_growth_and_income",
+    "companyId": "cqs_natural_resources_growth_and_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -37604,7 +37764,7 @@
     "id": "DDV1l_EQ",
     "ticker": "DDV1l_EQ",
     "securityId": "isin:GB00BRBQ0C76",
-    "companyId": "foresight_ventures_vct",
+    "companyId": "foresight_ventures_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -37989,7 +38149,7 @@
     "id": "DEVCl_EQ",
     "ticker": "DEVCl_EQ",
     "securityId": "isin:GB0002867140",
-    "companyId": "molten_ventures_vct",
+    "companyId": "molten_ventures_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -38854,7 +39014,7 @@
     "id": "DIGl_EQ",
     "ticker": "DIGl_EQ",
     "securityId": "isin:GB0003406096",
-    "companyId": "dunedin_income_growth_ord",
+    "companyId": "dunedin_income_growth_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -38984,7 +39144,7 @@
     "id": "DIVIl_EQ",
     "ticker": "DIVIl_EQ",
     "securityId": "isin:GB00B65TLW28",
-    "companyId": "diverse_income_trust",
+    "companyId": "the_diverse_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -40188,8 +40348,9 @@
     "id": "DRCT_US_EQ",
     "ticker": "DRCT_US_EQ",
     "securityId": "isin:US25461T3032",
-    "companyId": "direct_digital",
+    "companyId": "direct_digital_holdings_inc",
     "exchangeCode": "US",
+    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -42460,7 +42621,7 @@
     "id": "EDINl_EQ",
     "ticker": "EDINl_EQ",
     "securityId": "isin:GB0003052338",
-    "companyId": "edinburgh_investment_trust",
+    "companyId": "the_edinburgh_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -42643,8 +42804,9 @@
     "id": "EDPR_PT_EQ",
     "ticker": "EDPR_PT_EQ",
     "securityId": "isin:ES0127797019",
-    "companyId": "edp_renovaveis",
+    "companyId": "edp_renewables_s_a",
     "exchangeCode": "PT",
+    "exchangeName": "Lisbon",
     "currencyCode": "EUR"
   },
   {
@@ -42759,6 +42921,15 @@
     "companyId": "endeavour_mining_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "EDXl_EQ",
+    "ticker": "EDXl_EQ",
+    "securityId": "isin:GB00BNDMJS47",
+    "companyId": "edx_medical_group_plc",
+    "exchangeCode": "EQ",
+    "exchangeName": "LSE",
     "currencyCode": "GBX"
   },
   {
@@ -43877,9 +44048,8 @@
     "id": "ELAB_US_EQ",
     "ticker": "ELAB_US_EQ",
     "securityId": "isin:US73017P5089",
-    "companyId": "pmgc_holdings_inc",
+    "companyId": "pmgc_holdings",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -43964,8 +44134,9 @@
     "id": "ELEMF_US_EQ",
     "ticker": "ELEMF_US_EQ",
     "securityId": "isin:CA28620K1066",
-    "companyId": "elemental_royalty",
+    "companyId": "elemental_royalty_corporation",
     "exchangeCode": "US",
+    "exchangeName": "Toronto",
     "currencyCode": "USD"
   },
   {
@@ -43975,6 +44146,15 @@
     "companyId": "endesa",
     "exchangeCode": "US",
     "currencyCode": "USD"
+  },
+  {
+    "id": "ELE_CA_EQ",
+    "ticker": "ELE_CA_EQ",
+    "securityId": "isin:CA28620K1066",
+    "companyId": "elemental_royalty_corporation",
+    "exchangeCode": "CA",
+    "exchangeName": "Toronto",
+    "currencyCode": "CAD"
   },
   {
     "id": "ELEe_EQ",
@@ -45088,15 +45268,6 @@
     "currencyCode": "USD"
   },
   {
-    "id": "EM_US_EQ",
-    "ticker": "EM_US_EQ",
-    "securityId": "isin:US83193E1029",
-    "companyId": "smart_share_global_limited",
-    "exchangeCode": "US",
-    "exchangeName": "NCM",
-    "currencyCode": "USD"
-  },
-  {
     "id": "EN3d_EQ",
     "ticker": "EN3d_EQ",
     "securityId": "isin:CA29250N1050",
@@ -45353,6 +45524,15 @@
     "companyId": "bnp_paribas_easy_ecpi_global_esg_infrastructure_ucits_etf",
     "exchangeCode": "EQ",
     "currencyCode": "EUR"
+  },
+  {
+    "id": "ENHA_US_EQ",
+    "ticker": "ENHA_US_EQ",
+    "securityId": "isin:US29333R1077",
+    "companyId": "enhanced_group_inc",
+    "exchangeCode": "US",
+    "exchangeName": "Bolsa de Madrid",
+    "currencyCode": "USD"
   },
   {
     "id": "ENIC_US_EQ",
@@ -45645,9 +45825,8 @@
     "id": "ENZN_US_EQ",
     "ticker": "ENZN_US_EQ",
     "securityId": "isin:US2939048011",
-    "companyId": "enzon_pharmaceuticals_inc",
+    "companyId": "viskase_holdings",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQB",
     "currencyCode": "USD"
   },
   {
@@ -46436,6 +46615,15 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "EROK_US_EQ",
+    "ticker": "EROK_US_EQ",
+    "securityId": "isin:US27005A1051",
+    "companyId": "eaglerock_land_llc",
+    "exchangeCode": "US",
+    "exchangeName": "Bolsa de Madrid",
+    "currencyCode": "USD"
+  },
+  {
     "id": "ERO_CA_EQ",
     "ticker": "ERO_CA_EQ",
     "securityId": "isin:CA2960061091",
@@ -46760,15 +46948,6 @@
     "companyId": "invesco_msci_europe_ex_uk_universal_screened_acc",
     "exchangeCode": "EQ",
     "currencyCode": "EUR"
-  },
-  {
-    "id": "ESHA_US_EQ",
-    "ticker": "ESHA_US_EQ",
-    "securityId": "isin:US2964241044",
-    "companyId": "esh_acquisition_corp",
-    "exchangeCode": "US",
-    "exchangeName": "NCM",
-    "currencyCode": "USD"
   },
   {
     "id": "ESICd_EQ",
@@ -47120,6 +47299,14 @@
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
     "currencyCode": "GBP"
+  },
+  {
+    "id": "ESXYl_EQ",
+    "ticker": "ESXYl_EQ",
+    "securityId": "isin:XS3343238971",
+    "companyId": "incomeshares_eurostoxx_50_options_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
   },
   {
     "id": "ESYJY_US_EQ",
@@ -48272,19 +48459,10 @@
     "currencyCode": "USD"
   },
   {
-    "id": "EWCZ_US_EQ",
-    "ticker": "EWCZ_US_EQ",
-    "securityId": "isin:US29882P1066",
-    "companyId": "european_wax_center_inc",
-    "exchangeCode": "US",
-    "exchangeName": "NasdaqGS",
-    "currencyCode": "USD"
-  },
-  {
     "id": "EWIl_EQ",
     "ticker": "EWIl_EQ",
     "securityId": "isin:GB00BHSRZC82",
-    "companyId": "edinburgh_worldwide_investment_trust",
+    "companyId": "edinburgh_worldwide_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -48619,9 +48797,8 @@
     "id": "EXPI_US_EQ",
     "ticker": "EXPI_US_EQ",
     "securityId": "isin:US30212W1009",
-    "companyId": "exp_world_holdings_inc",
+    "companyId": "exp_world",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqGM",
     "currencyCode": "USD"
   },
   {
@@ -49180,21 +49357,11 @@
     "currencyCode": "EUR"
   },
   {
-    "id": "FAIRl_EQ",
-    "ticker": "FAIRl_EQ",
-    "securityId": "isin:GG00BS874H38",
-    "companyId": "fair_oaks_income_limited",
-    "exchangeCode": "EQ",
-    "exchangeName": "LSE",
-    "currencyCode": "USD"
-  },
-  {
     "id": "FALC_US_EQ",
     "ticker": "FALC_US_EQ",
     "securityId": "isin:US3061372096",
-    "companyId": "falconstor_software_inc",
+    "companyId": "falconstor_software",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCID",
     "currencyCode": "USD"
   },
   {
@@ -49357,7 +49524,7 @@
     "id": "FASl_EQ",
     "ticker": "FASl_EQ",
     "securityId": "isin:GB0003322319",
-    "companyId": "fidelity_asian_values",
+    "companyId": "fidelity_asian_values_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -49747,8 +49914,8 @@
   {
     "id": "FCITl_EQ",
     "ticker": "FCITl_EQ",
-    "securityId": "isin:GB0003466074",
-    "companyId": "f_c_investment_trust",
+    "securityId": "isin:GB00BS88V647",
+    "companyId": "f_c_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -49860,7 +50027,7 @@
     "id": "FCSSl_EQ",
     "ticker": "FCSSl_EQ",
     "securityId": "isin:GB00B62Z3C74",
-    "companyId": "fidelity_china_special_situations",
+    "companyId": "fidelity_china_special_situations_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -50477,7 +50644,7 @@
     "id": "FEVl_EQ",
     "ticker": "FEVl_EQ",
     "securityId": "isin:GB00BK1PKQ95",
-    "companyId": "fidelity_european_trust",
+    "companyId": "fidelity_european_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -50917,7 +51084,7 @@
     "id": "FGTl_EQ",
     "ticker": "FGTl_EQ",
     "securityId": "isin:GB0007816068",
-    "companyId": "finsbury_growth_income_trust",
+    "companyId": "finsbury_growth_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -51083,7 +51250,7 @@
     "id": "FIHL_US_EQ",
     "ticker": "FIHL_US_EQ",
     "securityId": "isin:BMG3398L1182",
-    "companyId": "fidelis_insurance_holdings",
+    "companyId": "pelagos_insurance_capital",
     "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
     "currencyCode": "USD"
@@ -51202,8 +51369,9 @@
     "id": "FINs_EQ",
     "ticker": "FINs_EQ",
     "securityId": "isin:CH1169151003",
-    "companyId": "georg_fischer",
+    "companyId": "georg_fischer_ag",
     "exchangeCode": "EQ",
+    "exchangeName": "Swiss",
     "currencyCode": "CHF"
   },
   {
@@ -52171,9 +52339,8 @@
     "id": "FMFG_US_EQ",
     "ticker": "FMFG_US_EQ",
     "securityId": "isin:US3088561036",
-    "companyId": "farmers_and_merchants_bancshares_inc",
+    "companyId": "farmers_and_merchants_bancshares_md",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCID",
     "currencyCode": "USD"
   },
   {
@@ -53358,6 +53525,14 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "FRVO_US_EQ",
+    "ticker": "FRVO_US_EQ",
+    "securityId": "isin:US31556C1062",
+    "companyId": "fervo_energy",
+    "exchangeCode": "US",
+    "currencyCode": "USD"
+  },
+  {
     "id": "FRXEl_EQ",
     "ticker": "FRXEl_EQ",
     "securityId": "isin:IE00BFWXDY69",
@@ -53734,7 +53909,7 @@
     "id": "FSVl_EQ",
     "ticker": "FSVl_EQ",
     "securityId": "isin:GB00BWXC7Y93",
-    "companyId": "fidelity_special_values",
+    "companyId": "fidelity_investment_trust_fidelity_special_values_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -54200,7 +54375,7 @@
     "id": "FTVl_EQ",
     "ticker": "FTVl_EQ",
     "securityId": "isin:GB00B68K3716",
-    "companyId": "foresight_vct",
+    "companyId": "foresight_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -55582,7 +55757,7 @@
     "id": "GBOX_US_EQ",
     "ticker": "GBOX_US_EQ",
     "securityId": "isin:US39366L4068",
-    "companyId": "ryvyl",
+    "companyId": "rtb_digital",
     "exchangeCode": "US",
     "currencyCode": "USD"
   },
@@ -57016,7 +57191,7 @@
   {
     "id": "GIG1_US_EQ",
     "ticker": "GIG1_US_EQ",
-    "securityId": "isin:KYG386481041",
+    "securityId": "isin:US37518P1012",
     "companyId": "gigcapital7",
     "exchangeCode": "US",
     "currencyCode": "USD"
@@ -57675,6 +57850,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "GLMYl_EQ",
+    "ticker": "GLMYl_EQ",
+    "securityId": "isin:XS3337373370",
+    "companyId": "incomeshares_gold_miners_yield_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "GLND_US_EQ",
     "ticker": "GLND_US_EQ",
     "securityId": "isin:US70580B1061",
@@ -57757,9 +57940,8 @@
     "id": "GLPG_US_EQ",
     "ticker": "GLPG_US_EQ",
     "securityId": "isin:US36315X1019",
-    "companyId": "lakefront_biotherapeutics_nv",
+    "companyId": "lakefront_biotherapeutics",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqGS",
     "currencyCode": "USD"
   },
   {
@@ -58166,6 +58348,15 @@
     "ticker": "GMRE_US_EQ",
     "securityId": "isin:US37954A3032",
     "companyId": "chiron_real_estate",
+    "exchangeCode": "US",
+    "exchangeName": "Bolsa de Madrid",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "GMRS_US_EQ",
+    "ticker": "GMRS_US_EQ",
+    "securityId": "isin:US38013D1063",
+    "companyId": "gmr_solutions_inc",
     "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
     "currencyCode": "USD"
@@ -59252,7 +59443,7 @@
     "id": "GRIDl_EQ",
     "ticker": "GRIDl_EQ",
     "securityId": "isin:GB00BFX3K770",
-    "companyId": "gresham_house_energy_storage_fund",
+    "companyId": "gresham_house_energy_storage_fund_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -59383,7 +59574,7 @@
     "id": "GROWl_EQ",
     "ticker": "GROWl_EQ",
     "securityId": "isin:GB00BY7QYJ50",
-    "companyId": "molten_ventures",
+    "companyId": "molten_ventures_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -59453,9 +59644,8 @@
     "id": "GRTX_US_EQ",
     "ticker": "GRTX_US_EQ",
     "securityId": "isin:US36338D1081",
-    "companyId": "galera_therapeutics_inc",
+    "companyId": "galera_therapeutics",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQB",
     "currencyCode": "USD"
   },
   {
@@ -59507,6 +59697,23 @@
     "companyId": "growgeneration_corp",
     "exchangeCode": "US",
     "exchangeName": "NasdaqCM",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "GRWIl_EQ",
+    "ticker": "GRWIl_EQ",
+    "securityId": "isin:XS3337374774",
+    "companyId": "incomeshares_75_10_15_multi_asset_growth_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "GRWYl_EQ",
+    "ticker": "GRWYl_EQ",
+    "securityId": "isin:XS3337374774",
+    "companyId": "incomeshares_75_10_15_multi_asset_growth_dist",
+    "exchangeCode": "EQ",
     "currencyCode": "USD"
   },
   {
@@ -59610,7 +59817,7 @@
     "id": "GSEOl_EQ",
     "ticker": "GSEOl_EQ",
     "securityId": "isin:GB00BNKVP754",
-    "companyId": "vh_global_energy_infrastructure",
+    "companyId": "vh_global_energy_infrastructure_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -59619,7 +59826,7 @@
     "id": "GSFl_EQ",
     "ticker": "GSFl_EQ",
     "securityId": "isin:GB00BG0P0V73",
-    "companyId": "gore_street_energy_storage_fund",
+    "companyId": "gore_street_energy_storage_fund_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -59935,9 +60142,8 @@
     "id": "GTII_US_EQ",
     "ticker": "GTII_US_EQ",
     "securityId": "isin:US37955R1077",
-    "companyId": "global_tech_industries_group_inc",
+    "companyId": "global_tech_industries",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -61005,7 +61211,7 @@
     "id": "HAWK_US_EQ",
     "ticker": "HAWK_US_EQ",
     "securityId": "isin:US4202011056",
-    "companyId": "hawkeye_360",
+    "companyId": "hawkeye_360_inc",
     "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
     "currencyCode": "USD"
@@ -62237,7 +62443,7 @@
     "id": "HGTl_EQ",
     "ticker": "HGTl_EQ",
     "securityId": "isin:GB00BJ0LT190",
-    "companyId": "hgcapital_trust",
+    "companyId": "hgcapital_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -62282,7 +62488,7 @@
     "id": "HHIl_EQ",
     "ticker": "HHIl_EQ",
     "securityId": "isin:GB0009580571",
-    "companyId": "henderson_high_income_trust",
+    "companyId": "henderson_high_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -62333,7 +62539,7 @@
     "id": "HICLl_EQ",
     "ticker": "HICLl_EQ",
     "securityId": "isin:GB00BJLP1Y77",
-    "companyId": "hicl_infrastructure",
+    "companyId": "hicl_infrastructure_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -62848,7 +63054,7 @@
     "securityId": "isin:US4233253073",
     "companyId": "hellenic_telecommunications_organization_s_a",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCID",
+    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -63424,7 +63630,7 @@
     "id": "HOMEl_EQ",
     "ticker": "HOMEl_EQ",
     "securityId": "isin:GB00BJP5HK17",
-    "companyId": "home_reit",
+    "companyId": "home_reit_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -63488,6 +63694,14 @@
     "companyId": "hookipa_pharma_inc",
     "exchangeCode": "US",
     "exchangeName": "OTC Markets OTCID",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "HOOYl_EQ",
+    "ticker": "HOOYl_EQ",
+    "securityId": "isin:XS3337099884",
+    "companyId": "incomeshares_robinhood_hood_options_dist",
+    "exchangeCode": "EQ",
     "currencyCode": "USD"
   },
   {
@@ -63840,7 +64054,7 @@
     "id": "HRIl_EQ",
     "ticker": "HRIl_EQ",
     "securityId": "isin:GB0004228648",
-    "companyId": "herald_investment_trust",
+    "companyId": "herald_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -64089,7 +64303,7 @@
     "id": "HSLl_EQ",
     "ticker": "HSLl_EQ",
     "securityId": "isin:GB0009065060",
-    "companyId": "henderson_smaller_companies_investment_trust",
+    "companyId": "the_henderson_smaller_companies_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -65059,7 +65273,7 @@
     "id": "HYGl_EQ",
     "ticker": "HYGl_EQ",
     "securityId": "isin:GB0031256109",
-    "companyId": "seneca_growth_capital",
+    "companyId": "seneca_growth_capital_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -65520,7 +65734,7 @@
     "id": "IATl_EQ",
     "ticker": "IATl_EQ",
     "securityId": "isin:GB0004535307",
-    "companyId": "invesco_asia_dragon_trust",
+    "companyId": "invesco_asia_dragon_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -66241,7 +66455,7 @@
     "id": "ICGTl_EQ",
     "ticker": "ICGTl_EQ",
     "securityId": "isin:GB0003292009",
-    "companyId": "icg_enterprise_trust",
+    "companyId": "icg_enterprise_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -66445,6 +66659,14 @@
     "ticker": "ID30l_EQ",
     "securityId": "isin:IE0008TDJ461",
     "companyId": "ishares_ibonds_dec_2030_term_corp_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "ID32l_EQ",
+    "ticker": "ID32l_EQ",
+    "securityId": "isin:IE0007YBWBE5",
+    "companyId": "ishares_ibonds_dec_2032_term_usd_corp_acc",
     "exchangeCode": "EQ",
     "currencyCode": "USD"
   },
@@ -67139,7 +67361,7 @@
     "id": "IEMl_EQ",
     "ticker": "IEMl_EQ",
     "securityId": "isin:GB0031232498",
-    "companyId": "impax_environmental_markets",
+    "companyId": "impax_environmental_markets_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -67439,7 +67661,7 @@
     "id": "IFRXl_EQ",
     "ticker": "IFRXl_EQ",
     "securityId": "isin:GG00BN7RXN80",
-    "companyId": "iforex_financial_trading_holdings",
+    "companyId": "iforex_financial_trading_holdin",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -67890,7 +68112,7 @@
     "id": "IGVl_EQ",
     "ticker": "IGVl_EQ",
     "securityId": "isin:GB00B29BN198",
-    "companyId": "gresham_house_income_growth_vct",
+    "companyId": "gresham_house_income_growth_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -68096,7 +68318,7 @@
     "id": "IIGl_EQ",
     "ticker": "IIGl_EQ",
     "securityId": "isin:GB00BPTH6Y20",
-    "companyId": "intuitive_investments_group_plc_ord",
+    "companyId": "intuitive_investments_group_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -68141,7 +68363,7 @@
     "id": "IIIl_EQ",
     "ticker": "IIIl_EQ",
     "securityId": "isin:GB00B1YW4409",
-    "companyId": "3i_group_ord",
+    "companyId": "3i_group_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -71489,7 +71711,7 @@
   {
     "id": "ITBLm_EQ",
     "ticker": "ITBLm_EQ",
-    "securityId": "isin:IE00BYMB4Q22",
+    "securityId": "isin:XS3306519201",
     "companyId": "wisdomtree_ftse_mib_banks",
     "exchangeCode": "EQ",
     "currencyCode": "EUR"
@@ -72439,7 +72661,7 @@
     "id": "IVPGl_EQ",
     "ticker": "IVPGl_EQ",
     "securityId": "isin:GB00B1DQ6472",
-    "companyId": "invesco_global_equity_income_trust",
+    "companyId": "invesco_perpetual_select_trust_plc_global_equity_income_share_portfolio",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -72967,7 +73189,7 @@
     "id": "JAGIl_EQ",
     "ticker": "JAGIl_EQ",
     "securityId": "isin:GB0001320778",
-    "companyId": "jpmorgan_asia_growth_income",
+    "companyId": "jpmorgan_asia_growth_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -73011,7 +73233,7 @@
     "id": "JAMl_EQ",
     "ticker": "JAMl_EQ",
     "securityId": "isin:GB00BKZGVH64",
-    "companyId": "jpmorgan_american_investment_trust",
+    "companyId": "jpmorgan_american_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -73271,7 +73493,7 @@
     "id": "JCGIl_EQ",
     "ticker": "JCGIl_EQ",
     "securityId": "isin:GB0003435012",
-    "companyId": "jpmorgan_china_growth_income",
+    "companyId": "jpmorgan_china_growth_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -73280,7 +73502,7 @@
     "id": "JCHl_EQ",
     "ticker": "JCHl_EQ",
     "securityId": "isin:GB0003422184",
-    "companyId": "jpmorgan_claverhouse_investment_trust",
+    "companyId": "jpmorgan_claverhouse_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -73585,7 +73807,7 @@
     "id": "JEGIl_EQ",
     "ticker": "JEGIl_EQ",
     "securityId": "isin:GB00BPR9Y246",
-    "companyId": "jpmorgan_european_growth_income",
+    "companyId": "jpmorgan_european_growth_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -73670,7 +73892,7 @@
     "id": "JEMIl_EQ",
     "ticker": "JEMIl_EQ",
     "securityId": "isin:GB00B5ZZY915",
-    "companyId": "jpmorgan_emerging_markets_dividend_income",
+    "companyId": "jpmorgan_emerging_markets_dividend_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -73697,7 +73919,7 @@
     "id": "JEOl_EQ",
     "ticker": "JEOl_EQ",
     "securityId": "isin:GB0000197722",
-    "companyId": "european_opportunities_trust",
+    "companyId": "european_opportunities_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -73788,7 +74010,7 @@
     "id": "JESCl_EQ",
     "ticker": "JESCl_EQ",
     "securityId": "isin:GB00BMTS0Z37",
-    "companyId": "jpmorgan_european_discovery_trust",
+    "companyId": "jpmorgan_european_discovery_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -73905,7 +74127,7 @@
     "id": "JFJl_EQ",
     "ticker": "JFJl_EQ",
     "securityId": "isin:GB0001740025",
-    "companyId": "jpmorgan_japanese_ord",
+    "companyId": "jpmorgan_japanese_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -73983,7 +74205,7 @@
     "id": "JGGIl_EQ",
     "ticker": "JGGIl_EQ",
     "securityId": "isin:GB00BYMKY695",
-    "companyId": "jpmorgan_global_growth_income",
+    "companyId": "jpmorgan_global_growth_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -74200,7 +74422,7 @@
     "id": "JIIl_EQ",
     "ticker": "JIIl_EQ",
     "securityId": "isin:GB0003450359",
-    "companyId": "jpmorgan_india_growth_income",
+    "companyId": "jpmorgan_india_growth_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -74388,7 +74610,7 @@
     "id": "JMGl_EQ",
     "ticker": "JMGl_EQ",
     "securityId": "isin:GB00BMXWN182",
-    "companyId": "jpmorgan_emerging_markets_growth_income",
+    "companyId": "jpmorgan_emerging_markets_growth_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -74415,7 +74637,7 @@
     "id": "JMIl_EQ",
     "ticker": "JMIl_EQ",
     "securityId": "isin:GB00BF7L8P11",
-    "companyId": "jpmorgan_uk_small_cap_growth_income",
+    "companyId": "jpmorgan_uk_small_cap_growth_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -74514,6 +74736,14 @@
     "securityId": "isin:US47100L3015",
     "companyId": "defi_development",
     "exchangeCode": "US",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "JOB3l_EQ",
+    "ticker": "JOB3l_EQ",
+    "securityId": "isin:XS3337011384",
+    "companyId": "leverage_shares_3x_long_joby_aviation_joby_acc",
+    "exchangeCode": "EQ",
     "currencyCode": "USD"
   },
   {
@@ -74911,9 +75141,8 @@
     "id": "JPSWY_US_EQ",
     "ticker": "JPSWY_US_EQ",
     "securityId": "isin:US4711003057",
-    "companyId": "the_japan_steel_works_ltd",
+    "companyId": "japan_steel_works",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -75231,7 +75460,7 @@
     "id": "JRSl_EQ",
     "ticker": "JRSl_EQ",
     "securityId": "isin:GB0032164732",
-    "companyId": "jpmorgan_emerging_europe_middle_east_africa_securities",
+    "companyId": "jpmorgan_emerging_europe_middle_east_africa_securities_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -75558,7 +75787,7 @@
     "id": "JUSCl_EQ",
     "ticker": "JUSCl_EQ",
     "securityId": "isin:GB00BJL5F346",
-    "companyId": "jpmorgan_us_smaller_companies_investment_trust",
+    "companyId": "jpmorgan_us_smaller_companies_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -75567,16 +75796,15 @@
     "id": "JUSHF_US_EQ",
     "ticker": "JUSHF_US_EQ",
     "securityId": "isin:CA48213Y1079",
-    "companyId": "jushi_holdings_inc",
+    "companyId": "jushi",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQX",
     "currencyCode": "USD"
   },
   {
     "id": "JUSl_EQ",
     "ticker": "JUSl_EQ",
     "securityId": "isin:GB0003463402",
-    "companyId": "brown_advisory_us_smaller_companies",
+    "companyId": "brown_advisory_us_smaller_companies_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -75799,7 +76027,7 @@
   {
     "id": "KALA_US_EQ",
     "ticker": "KALA_US_EQ",
-    "securityId": "isin:US4831192020",
+    "securityId": "isin:US4831193010",
     "companyId": "kala_bio_inc",
     "exchangeCode": "US",
     "exchangeName": "NasdaqCM",
@@ -76061,9 +76289,8 @@
     "id": "KCLI_US_EQ",
     "ticker": "KCLI_US_EQ",
     "securityId": "isin:US4848362004",
-    "companyId": "kansas_city_life_insurance_company",
+    "companyId": "kansas_city_life_insurance",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQX",
     "currencyCode": "USD"
   },
   {
@@ -76079,8 +76306,9 @@
     "id": "KCRl_EQ",
     "ticker": "KCRl_EQ",
     "securityId": "isin:GB00BYWK1Q82",
-    "companyId": "kcr_residential_reit",
+    "companyId": "kcr_residential_reit_plc",
     "exchangeCode": "EQ",
+    "exchangeName": "LSE",
     "currencyCode": "GBX"
   },
   {
@@ -78158,15 +78386,6 @@
     "securityId": "isin:US48669G3039",
     "companyId": "kazia_therapeutics",
     "exchangeCode": "US",
-    "currencyCode": "USD"
-  },
-  {
-    "id": "KZR_US_EQ",
-    "ticker": "KZR_US_EQ",
-    "securityId": "isin:US49372L2097",
-    "companyId": "kezar_life_sciences_inc",
-    "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -80316,7 +80535,7 @@
   {
     "id": "LION_US_EQ",
     "ticker": "LION_US_EQ",
-    "securityId": "isin:IE000B5COQZ5",
+    "securityId": "isin:IE0008D7EWV5",
     "companyId": "smx_security_matters",
     "exchangeCode": "US",
     "currencyCode": "USD"
@@ -80874,7 +81093,7 @@
     "id": "LMSl_EQ",
     "ticker": "LMSl_EQ",
     "securityId": "isin:GB00B12MHD28",
-    "companyId": "lms_capital",
+    "companyId": "lms_capital_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -82119,7 +82338,7 @@
     "id": "LTIl_EQ",
     "ticker": "LTIl_EQ",
     "securityId": "isin:GB00BNKDVV71",
-    "companyId": "lindsell_train_ord",
+    "companyId": "lindsell_train_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBP"
@@ -82380,9 +82599,8 @@
     "id": "LUVU_US_EQ",
     "ticker": "LUVU_US_EQ",
     "securityId": "isin:US55066U1088",
-    "companyId": "luvu_brands_inc",
+    "companyId": "luvu_brands",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQB",
     "currencyCode": "USD"
   },
   {
@@ -82566,7 +82784,7 @@
     "id": "LWDBl_EQ",
     "ticker": "LWDBl_EQ",
     "securityId": "isin:GB0031429219",
-    "companyId": "law_debenture",
+    "companyId": "the_law_debenture_corporation_p_l_c",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -82608,7 +82826,7 @@
     "id": "LWIl_EQ",
     "ticker": "LWIl_EQ",
     "securityId": "isin:GB00BNXGHS27",
-    "companyId": "lowland_ord",
+    "companyId": "lowland_investment_company_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -83677,7 +83895,7 @@
     "id": "MAJEl_EQ",
     "ticker": "MAJEl_EQ",
     "securityId": "isin:GB0005555221",
-    "companyId": "majedie_investments",
+    "companyId": "majedie_investments_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -84065,7 +84283,7 @@
     "id": "MAV4l_EQ",
     "ticker": "MAV4l_EQ",
     "securityId": "isin:GB00B043QW84",
-    "companyId": "maven_income_and_growth",
+    "companyId": "maven_income_and_growth_vct_4_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -84449,9 +84667,8 @@
     "id": "MCBI_US_EQ",
     "ticker": "MCBI_US_EQ",
     "securityId": "isin:US6240041078",
-    "companyId": "mountain_commerce_bancorp_inc",
+    "companyId": "mountain_commerce_bancorp",
     "exchangeCode": "US",
-    "exchangeName": "PNK",
     "currencyCode": "USD"
   },
   {
@@ -85769,7 +85986,7 @@
     "id": "MGCIl_EQ",
     "ticker": "MGCIl_EQ",
     "securityId": "isin:GB00BFYYL325",
-    "companyId": "m_g_credit_income_investment_trust",
+    "companyId": "m_g_credit_income_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -86230,7 +86447,7 @@
     "id": "MIG1l_EQ",
     "ticker": "MIG1l_EQ",
     "securityId": "isin:GB0004122858",
-    "companyId": "maven_income_growth_vct",
+    "companyId": "maven_income_and_growth_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -86239,7 +86456,7 @@
     "id": "MIG3l_EQ",
     "ticker": "MIG3l_EQ",
     "securityId": "isin:GB0031153769",
-    "companyId": "maven_income_growth_vct_3_ord",
+    "companyId": "maven_income_and_growth_vct_3_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -86264,7 +86481,7 @@
     "id": "MIGOl_EQ",
     "ticker": "MIGOl_EQ",
     "securityId": "isin:GB0034365949",
-    "companyId": "migo_opportunities_trust",
+    "companyId": "migo_opportunities_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -86531,7 +86748,7 @@
     "id": "MIXl_EQ",
     "ticker": "MIXl_EQ",
     "securityId": "isin:GB00B01WL239",
-    "companyId": "gresham_house_income_growth_2_vct",
+    "companyId": "gresham_house_income_growth_2_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -86540,9 +86757,8 @@
     "id": "MJARF_US_EQ",
     "ticker": "MJARF_US_EQ",
     "securityId": "isin:CA60689X1096",
-    "companyId": "mjardin_group_inc",
+    "companyId": "mjardin",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -87100,7 +87316,7 @@
     "id": "MMITl_EQ",
     "ticker": "MMITl_EQ",
     "securityId": "isin:GB00BFZ7R980",
-    "companyId": "mobius_investment_trust_ord",
+    "companyId": "mobius_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -87298,7 +87514,7 @@
     "id": "MNKSl_EQ",
     "ticker": "MNKSl_EQ",
     "securityId": "isin:GB0030517261",
-    "companyId": "monks_investment_trust",
+    "companyId": "the_monks_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -87307,7 +87523,7 @@
     "id": "MNLl_EQ",
     "ticker": "MNLl_EQ",
     "securityId": "isin:GB0002258472",
-    "companyId": "manchester_london_investment",
+    "companyId": "manchester_london_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -87480,8 +87696,9 @@
     "id": "MOBI_US_EQ",
     "ticker": "MOBI_US_EQ",
     "securityId": "isin:US60705V1035",
-    "companyId": "mobia_medical",
+    "companyId": "mobia_medical_inc",
     "exchangeCode": "US",
+    "exchangeName": "NasdaqGS",
     "currencyCode": "USD"
   },
   {
@@ -88094,10 +88311,18 @@
     "currencyCode": "USD"
   },
   {
+    "id": "MRCC_US_EQ",
+    "ticker": "MRCC_US_EQ",
+    "securityId": "isin:US6103351010",
+    "companyId": "monroe_capital",
+    "exchangeCode": "US",
+    "currencyCode": "USD"
+  },
+  {
     "id": "MRCHl_EQ",
     "ticker": "MRCHl_EQ",
     "securityId": "isin:GB0005800072",
-    "companyId": "merchants_trust",
+    "companyId": "the_merchants_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -88124,7 +88349,7 @@
     "id": "MRCl_EQ",
     "ticker": "MRCl_EQ",
     "securityId": "isin:GB00BF4JDH58",
-    "companyId": "mercantile_investment_trust",
+    "companyId": "the_mercantile_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -88777,9 +89002,8 @@
     "id": "MSS_US_EQ",
     "ticker": "MSS_US_EQ",
     "securityId": "isin:US5606673052",
-    "companyId": "maison_solutions_inc",
+    "companyId": "maison_solutions",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -89052,7 +89276,7 @@
     "id": "MTEl_EQ",
     "ticker": "MTEl_EQ",
     "securityId": "isin:GB00BM8H3X05",
-    "companyId": "montanaro_european_smaller_cos_trust",
+    "companyId": "montanaro_european_smaller_companies_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -89318,7 +89542,7 @@
     "id": "MTUl_EQ",
     "ticker": "MTUl_EQ",
     "securityId": "isin:GB00BZ1H9L86",
-    "companyId": "montanaro_uk_smaller_companies_investment_trust",
+    "companyId": "montanaro_uk_smaller_companies_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -89448,6 +89672,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "MUIYl_EQ",
+    "ticker": "MUIYl_EQ",
+    "securityId": "isin:XS3337374691",
+    "companyId": "incomeshares_micron_mu_options_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "MULl_EQ",
     "ticker": "MULl_EQ",
     "securityId": "isin:GB0006094303",
@@ -89546,7 +89778,7 @@
     "id": "MUTl_EQ",
     "ticker": "MUTl_EQ",
     "securityId": "isin:GB0006111123",
-    "companyId": "murray_income_trust",
+    "companyId": "murray_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -89790,6 +90022,14 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "MWC_US_EQ",
+    "ticker": "MWC_US_EQ",
+    "securityId": "isin:US59490A1007",
+    "companyId": "micware",
+    "exchangeCode": "US",
+    "currencyCode": "USD"
+  },
+  {
     "id": "MWEPl_EQ",
     "ticker": "MWEPl_EQ",
     "securityId": "isin:IE000OEF25S1",
@@ -89992,7 +90232,7 @@
     "id": "MWYl_EQ",
     "ticker": "MWYl_EQ",
     "securityId": "isin:GB00B6VTTK07",
-    "companyId": "mid_wynd_international_investment_trust",
+    "companyId": "mid_wynd_international_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -90183,7 +90423,7 @@
     "id": "MYIl_EQ",
     "ticker": "MYIl_EQ",
     "securityId": "isin:GB00BQZCCB79",
-    "companyId": "murray_international_trust",
+    "companyId": "murray_international_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -90462,7 +90702,7 @@
     "id": "NAITl_EQ",
     "ticker": "NAITl_EQ",
     "securityId": "isin:GB00BJ00Z303",
-    "companyId": "north_american_income_trust",
+    "companyId": "the_north_american_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -90601,7 +90841,7 @@
     "id": "NASl_EQ",
     "ticker": "NASl_EQ",
     "securityId": "isin:GB00BRDXZ870",
-    "companyId": "north_atlantic_smaller_cos_investment_trust",
+    "companyId": "north_atlantic_smaller_companies_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -90722,7 +90962,7 @@
     "id": "NAVFl_EQ",
     "ticker": "NAVFl_EQ",
     "securityId": "isin:GB00BKLGLS10",
-    "companyId": "nippon_active_value_fund",
+    "companyId": "nippon_active_value_fund_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -90981,9 +91221,8 @@
     "id": "NCBDY_US_EQ",
     "ticker": "NCBDY_US_EQ",
     "securityId": "isin:US0598311076",
-    "companyId": "bandai_namco_holdings_inc",
+    "companyId": "bandai_namco",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -91785,6 +92024,14 @@
     "companyId": "netflix_inc",
     "exchangeCode": "US",
     "exchangeName": "XETRA",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "NFLYl_EQ",
+    "ticker": "NFLYl_EQ",
+    "securityId": "isin:XS3337171154",
+    "companyId": "incomeshares_netflix_nflx_options_dist",
+    "exchangeCode": "EQ",
     "currencyCode": "USD"
   },
   {
@@ -93465,7 +93712,7 @@
     "id": "NSIl_EQ",
     "ticker": "NSIl_EQ",
     "securityId": "isin:GB0002631041",
-    "companyId": "new_star_investment_trust",
+    "companyId": "new_star_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -93883,7 +94130,7 @@
     "id": "NTVl_EQ",
     "ticker": "NTVl_EQ",
     "securityId": "isin:GB0005356430",
-    "companyId": "northern_2_vct",
+    "companyId": "northern_2_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -94819,7 +95066,7 @@
     "id": "OAP3l_EQ",
     "ticker": "OAP3l_EQ",
     "securityId": "isin:GB00B17B3479",
-    "companyId": "octopus_apollo_vct",
+    "companyId": "octopus_apollo_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -95214,8 +95461,9 @@
     "id": "ODTX_US_EQ",
     "ticker": "ODTX_US_EQ",
     "securityId": "isin:US67613T1043",
-    "companyId": "odyssey_therapeutics",
+    "companyId": "odyssey_therapeutics_inc",
     "exchangeCode": "US",
+    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -95572,7 +95820,7 @@
     "id": "OITl_EQ",
     "ticker": "OITl_EQ",
     "securityId": "isin:GB00BFFK7H57",
-    "companyId": "odyssean_investment_trust",
+    "companyId": "odyssean_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -95601,6 +95849,14 @@
     "companyId": "oneok_inc",
     "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "OKL3l_EQ",
+    "ticker": "OKL3l_EQ",
+    "securityId": "isin:XS3299470503",
+    "companyId": "leverage_shares_3x_long_oklo_acc",
+    "exchangeCode": "EQ",
     "currencyCode": "USD"
   },
   {
@@ -96525,6 +96781,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "ORC3l_EQ",
+    "ticker": "ORC3l_EQ",
+    "securityId": "isin:XS3299464365",
+    "companyId": "leverage_shares_3x_long_oracle_orcl_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "ORCAl_EQ",
     "ticker": "ORCAl_EQ",
     "securityId": "isin:GB00BN0TY502",
@@ -96568,6 +96832,14 @@
     "exchangeCode": "EQ",
     "exchangeName": "LSE",
     "currencyCode": "GBX"
+  },
+  {
+    "id": "ORCYl_EQ",
+    "ticker": "ORCYl_EQ",
+    "securityId": "isin:XS3337192234",
+    "companyId": "incomeshares_oracle_orcl_options_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
   },
   {
     "id": "ORC_US_EQ",
@@ -96662,7 +96934,7 @@
     "id": "ORITl_EQ",
     "ticker": "ORITl_EQ",
     "securityId": "isin:GB00BJM02935",
-    "companyId": "octopus_renewables_infrastructure_trust",
+    "companyId": "octopus_renewables_infrastructure_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -98043,9 +98315,8 @@
     "id": "PBAM_US_EQ",
     "ticker": "PBAM_US_EQ",
     "securityId": "isin:US74274F1003",
-    "companyId": "private_bancorp_of_america_inc",
+    "companyId": "private_bancorp_of_america",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQX",
     "currencyCode": "USD"
   },
   {
@@ -98167,7 +98438,7 @@
     "id": "PBLTl_EQ",
     "ticker": "PBLTl_EQ",
     "securityId": "isin:GB00BD0ND667",
-    "companyId": "develop_north",
+    "companyId": "develop_north_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -98351,7 +98622,7 @@
     "id": "PCFTl_EQ",
     "ticker": "PCFTl_EQ",
     "securityId": "isin:GB00B9XQT119",
-    "companyId": "polar_capital_global_financials_ord",
+    "companyId": "polar_capital_global_financials_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -98360,7 +98631,7 @@
     "id": "PCGHl_EQ",
     "ticker": "PCGHl_EQ",
     "securityId": "isin:GB00B6832P16",
-    "companyId": "polar_capital_global_healthcare_trust",
+    "companyId": "polar_capital_global_healthcare_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -98490,7 +98761,7 @@
     "id": "PCTl_EQ",
     "ticker": "PCTl_EQ",
     "securityId": "isin:GB00BR3YV268",
-    "companyId": "polar_capital_technology_trust",
+    "companyId": "polar_capital_technology_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -99339,7 +99610,7 @@
     "id": "PGOOl_EQ",
     "ticker": "PGOOl_EQ",
     "securityId": "isin:GB00B5B7YS03",
-    "companyId": "proven_growth_income_vct",
+    "companyId": "proven_growth_income_vct_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -99529,7 +99800,7 @@
     "id": "PHIl_EQ",
     "ticker": "PHIl_EQ",
     "securityId": "isin:GB0006667470",
-    "companyId": "pacific_horizon_investment_trust",
+    "companyId": "pacific_horizon_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -99834,7 +100105,7 @@
     "id": "PINTl_EQ",
     "ticker": "PINTl_EQ",
     "securityId": "isin:GB00BLNNFL88",
-    "companyId": "pantheon_infrastructure",
+    "companyId": "pantheon_infrastructure_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -100676,7 +100947,7 @@
     "id": "PNLl_EQ",
     "ticker": "PNLl_EQ",
     "securityId": "isin:GB00BM8B5H06",
-    "companyId": "personal_assets_trust",
+    "companyId": "personal_assets_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -102614,9 +102885,8 @@
     "id": "PTLE_US_EQ",
     "ticker": "PTLE_US_EQ",
     "securityId": "isin:VGG7377S1276",
-    "companyId": "ptl_limited",
+    "companyId": "ptl",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -103003,7 +103273,7 @@
   {
     "id": "PWUP_US_EQ",
     "ticker": "PWUP_US_EQ",
-    "securityId": "isin:US7389202067",
+    "securityId": "isin:US7389203057",
     "companyId": "aspire_biopharma_holdings",
     "exchangeCode": "US",
     "currencyCode": "USD"
@@ -103303,6 +103573,14 @@
     "companyId": "quebecor_class_b",
     "exchangeCode": "CA",
     "currencyCode": "CAD"
+  },
+  {
+    "id": "QBT3l_EQ",
+    "ticker": "QBT3l_EQ",
+    "securityId": "isin:XS3337011541",
+    "companyId": "leverage_shares_3x_long_d_wave_quantum_qbts_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
   },
   {
     "id": "QBTl_EQ",
@@ -103606,7 +103884,7 @@
     "securityId": "isin:US74841A1051",
     "companyId": "quetta_acquisition_corporation",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqGM",
+    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -104682,9 +104960,8 @@
     "id": "RAYA_US_EQ",
     "ticker": "RAYA_US_EQ",
     "securityId": "isin:KYG3109F1292",
-    "companyId": "erayak_power_solution_group_inc",
+    "companyId": "erayak_power_solution_group",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -105179,8 +105456,9 @@
     "id": "RCOIl_EQ",
     "ticker": "RCOIl_EQ",
     "securityId": "isin:GB00BRBWLX34",
-    "companyId": "riverstone_credit_opportunities_income",
+    "companyId": "riverstone_credit_opportunities_income_plc",
     "exchangeCode": "EQ",
+    "exchangeName": "LSE",
     "currencyCode": "USD"
   },
   {
@@ -105204,7 +105482,7 @@
     "id": "RCPl_EQ",
     "ticker": "RCPl_EQ",
     "securityId": "isin:GB0007366395",
-    "companyId": "rit_capital_partners",
+    "companyId": "rit_capital_partners_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -105435,8 +105713,9 @@
     "id": "REA_US_EQ",
     "ticker": "REA_US_EQ",
     "securityId": "isin:US75381A1088",
-    "companyId": "rare_earths_americas",
+    "companyId": "rare_earths_americas_inc",
     "exchangeCode": "US",
+    "exchangeName": "NYSE American",
     "currencyCode": "USD"
   },
   {
@@ -105815,7 +106094,7 @@
     "id": "RESIl_EQ",
     "ticker": "RESIl_EQ",
     "securityId": "isin:GB00BYSX1508",
-    "companyId": "residential_secure_income",
+    "companyId": "residential_secure_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -106163,6 +106442,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "RGT3l_EQ",
+    "ticker": "RGT3l_EQ",
+    "securityId": "isin:XS3337012515",
+    "companyId": "leverage_shares_3x_long_rigetti_computing_rgti_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "RHEPZ_US_EQ",
     "ticker": "RHEPZ_US_EQ",
     "securityId": "isin:US75903M5076",
@@ -106358,7 +106645,7 @@
     "id": "RIIIl_EQ",
     "ticker": "RIIIl_EQ",
     "securityId": "isin:GB0007392078",
-    "companyId": "rights_and_issues_investment_trust",
+    "companyId": "rights_and_issues_investment_trust_public_limited_company",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -106553,6 +106840,14 @@
     "exchangeCode": "EQ",
     "exchangeName": "LSE",
     "currencyCode": "GBX"
+  },
+  {
+    "id": "RKL3l_EQ",
+    "ticker": "RKL3l_EQ",
+    "securityId": "isin:XS3299470768",
+    "companyId": "leverage_shares_3x_long_rocket_lab_rklb_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
   },
   {
     "id": "RKT_US_EQ",
@@ -106768,7 +107063,7 @@
     "id": "RMDLl_EQ",
     "ticker": "RMDLl_EQ",
     "securityId": "isin:GB00BYMTBG55",
-    "companyId": "rm_infrastructure_income",
+    "companyId": "rm_infrastructure_income_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -106953,7 +107248,7 @@
     "id": "RNEPl_EQ",
     "ticker": "RNEPl_EQ",
     "securityId": "isin:GB00BLPK4430",
-    "companyId": "ecofin_us_renewables_infrastructure_trust",
+    "companyId": "ecofin_u_s_renewables_infrastructure_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -106970,8 +107265,9 @@
     "id": "RNEWl_EQ",
     "ticker": "RNEWl_EQ",
     "securityId": "isin:GB00BLPK4430",
-    "companyId": "ecofin_us_renewables_infrastructure_trust",
+    "companyId": "ecofin_u_s_renewables_infrastructure_trust_plc",
     "exchangeCode": "EQ",
+    "exchangeName": "LSE",
     "currencyCode": "USD"
   },
   {
@@ -107099,9 +107395,8 @@
     "id": "RNVA_US_EQ",
     "ticker": "RNVA_US_EQ",
     "securityId": "isin:US7597578670",
-    "companyId": "rennova_health_inc",
+    "companyId": "rennova_health",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -107666,9 +107961,8 @@
     "id": "RRTS_US_EQ",
     "ticker": "RRTS_US_EQ",
     "securityId": "isin:US76973Q2049",
-    "companyId": "roadrunner_transportation_systems_inc",
+    "companyId": "roadrunner_transportation_systems",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -108410,9 +108704,8 @@
     "id": "RYES_US_EQ",
     "ticker": "RYES_US_EQ",
     "securityId": "isin:US76760M2008",
-    "companyId": "rise_gold_corp",
+    "companyId": "rise_gold",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQB",
     "currencyCode": "USD"
   },
   {
@@ -108733,9 +109026,8 @@
     "id": "SABK_US_EQ",
     "ticker": "SABK_US_EQ",
     "securityId": "isin:US83636T1043",
-    "companyId": "south_atlantic_bancshares_inc",
+    "companyId": "south_atlantic_bancshares",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQX",
     "currencyCode": "USD"
   },
   {
@@ -108958,7 +109250,7 @@
     "id": "SAINl_EQ",
     "ticker": "SAINl_EQ",
     "securityId": "isin:GB0007873697",
-    "companyId": "scottish_american_investment",
+    "companyId": "the_scottish_american_investment_company_p_l_c",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -109768,7 +110060,7 @@
     "id": "SBOl_EQ",
     "ticker": "SBOl_EQ",
     "securityId": "isin:GB00BN7JZR28",
-    "companyId": "schroder_british_opportunities_trust",
+    "companyId": "schroder_british_opportunities_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -109838,7 +110130,7 @@
     "id": "SBSIl_EQ",
     "ticker": "SBSIl_EQ",
     "securityId": "isin:GB00BF781319",
-    "companyId": "schroder_bsc_social_impact_trust_ord",
+    "companyId": "schroder_bsc_social_impact_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -110051,7 +110343,7 @@
     "id": "SCFl_EQ",
     "ticker": "SCFl_EQ",
     "securityId": "isin:GB0007915860",
-    "companyId": "schroder_income_growth_fund",
+    "companyId": "schroder_income_growth_fund_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -110179,12 +110471,29 @@
     "currencyCode": "USD"
   },
   {
+    "id": "SCLEl_EQ",
+    "ticker": "SCLEl_EQ",
+    "securityId": "isin:XS3337375078",
+    "companyId": "coreshares_short_contango_long_equity_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "SCLPl_EQ",
     "ticker": "SCLPl_EQ",
     "securityId": "isin:GB00B63D3314",
     "companyId": "scancell_holdings_plc",
     "exchangeCode": "EQ",
     "exchangeName": "LSE",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "SCLQl_EQ",
+    "ticker": "SCLQl_EQ",
+    "securityId": "isin:XS3337375078",
+    "companyId": "coreshares_short_contango_long_equity_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
     "currencyCode": "GBX"
   },
   {
@@ -110312,7 +110621,7 @@
     "id": "SCPl_EQ",
     "ticker": "SCPl_EQ",
     "securityId": "isin:GB0006108418",
-    "companyId": "schroder_uk_mid_cap_fund",
+    "companyId": "schroder_uk_mid_cap_fund_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -110765,7 +111074,7 @@
     "id": "SDPl_EQ",
     "ticker": "SDPl_EQ",
     "securityId": "isin:GB0007918872",
-    "companyId": "schroder_asiapacific_fund",
+    "companyId": "schroder_investment_trust_schroder_asiapacific_fund_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -110817,7 +111126,7 @@
     "id": "SDVl_EQ",
     "ticker": "SDVl_EQ",
     "securityId": "isin:GB0006615826",
-    "companyId": "chelverton_uk_dividend_trust",
+    "companyId": "chelverton_uk_dividend_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -111062,7 +111371,7 @@
     "id": "SECl_EQ",
     "ticker": "SECl_EQ",
     "securityId": "isin:GB00B0BDCB21",
-    "companyId": "strategic_equity_capital",
+    "companyId": "strategic_equity_capital_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -111219,7 +111528,7 @@
     "id": "SEITl_EQ",
     "ticker": "SEITl_EQ",
     "securityId": "isin:GB00BGHVZM47",
-    "companyId": "sdcl_efficiency_income_trust",
+    "companyId": "sdcl_efficiency_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -111509,7 +111818,7 @@
     "id": "SEREl_EQ",
     "ticker": "SEREl_EQ",
     "securityId": "isin:GB00BY7R8K77",
-    "companyId": "schroder_european_real_estate_inv_trust",
+    "companyId": "schroder_european_real_estate_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -113416,7 +113725,7 @@
     "id": "SJGl_EQ",
     "ticker": "SJGl_EQ",
     "securityId": "isin:GB0008022849",
-    "companyId": "schroder_japan_trust",
+    "companyId": "schroder_japan_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -113941,6 +114250,14 @@
     "currencyCode": "GBX"
   },
   {
+    "id": "SLM3l_EQ",
+    "ticker": "SLM3l_EQ",
+    "securityId": "isin:XS3299470172",
+    "companyId": "leverage_shares_3x_long_silver_miners_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "SLMAs_EQ",
     "ticker": "SLMAs_EQ",
     "securityId": "isin:IE00BFNM3B99",
@@ -113980,6 +114297,22 @@
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Brussels",
     "currencyCode": "EUR"
+  },
+  {
+    "id": "SLMSl_EQ",
+    "ticker": "SLMSl_EQ",
+    "securityId": "isin:XS3299470339",
+    "companyId": "leverage_shares_3x_short_silver_miners_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "SLMYl_EQ",
+    "ticker": "SLMYl_EQ",
+    "securityId": "isin:XS3337307741",
+    "companyId": "incomeshares_silver_miners_yield_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
   },
   {
     "id": "SLM_US_EQ",
@@ -114026,7 +114359,7 @@
     "id": "SLPEl_EQ",
     "ticker": "SLPEl_EQ",
     "securityId": "isin:GB0030474687",
-    "companyId": "patria_private_equity_trust",
+    "companyId": "patria_private_equity_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -114084,6 +114417,15 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "SLS3l_EQ",
+    "ticker": "SLS3l_EQ",
+    "securityId": "isin:XS3299470339",
+    "companyId": "leverage_shares_3x_short_silver_miners_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "SLSAd_EQ",
     "ticker": "SLSAd_EQ",
     "securityId": "isin:DE000A32VN59",
@@ -114123,7 +114465,7 @@
     "id": "SLSl_EQ",
     "ticker": "SLSl_EQ",
     "securityId": "isin:GB0002959582",
-    "companyId": "aberdeen_uk_smaller_companies_growth_trust",
+    "companyId": "abrdn_uk_smaller_companies_growth_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -114712,6 +115054,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "SMR3l_EQ",
+    "ticker": "SMR3l_EQ",
+    "securityId": "isin:XS3337012861",
+    "companyId": "leverage_shares_3x_long_nuscale_power_smr_acc",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "SMSDl_EQ",
     "ticker": "SMSDl_EQ",
     "securityId": "isin:US7960502018",
@@ -114859,7 +115209,7 @@
     "id": "SMTl_EQ",
     "ticker": "SMTl_EQ",
     "securityId": "isin:GB00BLDYK618",
-    "companyId": "scottish_mortgage_ord",
+    "companyId": "scottish_mortgage_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -115024,15 +115374,6 @@
     "securityId": "isin:US6963894026",
     "companyId": "palisade_bio",
     "exchangeCode": "US",
-    "currencyCode": "USD"
-  },
-  {
-    "id": "SNCY_US_EQ",
-    "ticker": "SNCY_US_EQ",
-    "securityId": "isin:US8666831057",
-    "companyId": "sun_country_airlines_holdings_inc",
-    "exchangeCode": "US",
-    "exchangeName": "NasdaqGS",
     "currencyCode": "USD"
   },
   {
@@ -115599,7 +115940,7 @@
     "id": "SOHOl_EQ",
     "ticker": "SOHOl_EQ",
     "securityId": "isin:GB00BF0P7H59",
-    "companyId": "social_housing_reit",
+    "companyId": "social_housing_reit_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -115666,7 +116007,7 @@
     "id": "SOIl_EQ",
     "ticker": "SOIl_EQ",
     "securityId": "isin:GB00B0CRWN59",
-    "companyId": "schroder_oriental_income_fund",
+    "companyId": "schroder_oriental_income_fund_limited",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -116176,15 +116517,6 @@
     "exchangeCode": "BE",
     "exchangeName": "Gettex",
     "currencyCode": "EUR"
-  },
-  {
-    "id": "SPAl_EQ",
-    "ticker": "SPAl_EQ",
-    "securityId": "isin:GB00BFZ45C84",
-    "companyId": "1spatial_plc",
-    "exchangeCode": "EQ",
-    "exchangeName": "LSE",
-    "currencyCode": "GBX"
   },
   {
     "id": "SPB_CA_EQ",
@@ -118137,7 +118469,7 @@
     "id": "SSITl_EQ",
     "ticker": "SSITl_EQ",
     "securityId": "isin:GB00BKPG0138",
-    "companyId": "seraphim_space_investment_trust",
+    "companyId": "seraphim_space_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -118350,6 +118682,15 @@
     "currencyCode": "USD"
   },
   {
+    "id": "SST3l_EQ",
+    "ticker": "SST3l_EQ",
+    "securityId": "isin:XS3337051174",
+    "companyId": "leverage_shares_3x_short_euro_stoxx_50_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "SSTI_US_EQ",
     "ticker": "SSTI_US_EQ",
     "securityId": "isin:US82536T1079",
@@ -118416,6 +118757,14 @@
     "securityId": "isin:US86737U1025",
     "companyId": "sunlink_health_systems",
     "exchangeCode": "US",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "ST3Sl_EQ",
+    "ticker": "ST3Sl_EQ",
+    "securityId": "isin:XS3337051174",
+    "companyId": "leverage_shares_3x_short_euro_stoxx_50_acc",
+    "exchangeCode": "EQ",
     "currencyCode": "USD"
   },
   {
@@ -119058,7 +119407,7 @@
     "id": "STSl_EQ",
     "ticker": "STSl_EQ",
     "securityId": "isin:GB00B09G3N23",
-    "companyId": "sts_global_income_growth_trust",
+    "companyId": "sts_global_income_growth_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -119319,8 +119668,9 @@
     "id": "SUJA_US_EQ",
     "ticker": "SUJA_US_EQ",
     "securityId": "isin:US86508F1021",
-    "companyId": "suja_life",
+    "companyId": "suja_life_inc",
     "exchangeCode": "US",
+    "exchangeName": "NasdaqGS",
     "currencyCode": "USD"
   },
   {
@@ -119542,7 +119892,7 @@
     "id": "SUPPl_EQ",
     "ticker": "SUPPl_EQ",
     "securityId": "isin:GB00BVG1CF25",
-    "companyId": "schroders_capital_global_innovation",
+    "companyId": "schroders_capital_global_innovation_trust_plc_inov",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -119587,7 +119937,7 @@
     "id": "SUREl_EQ",
     "ticker": "SUREl_EQ",
     "securityId": "isin:GB00BYWYZ460",
-    "companyId": "sure_ventures",
+    "companyId": "sure_ventures_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -120745,6 +121095,15 @@
     "companyId": "ishares_nikkei_225_acc",
     "exchangeCode": "EQ",
     "currencyCode": "EUR"
+  },
+  {
+    "id": "SXS5l_EQ",
+    "ticker": "SXS5l_EQ",
+    "securityId": "isin:XS3337013166",
+    "companyId": "leverage_shares_5x_long_euro_stoxx_50_acc",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
   },
   {
     "id": "SXTC_US_EQ",
@@ -122468,7 +122827,7 @@
     "id": "TEMl_EQ",
     "ticker": "TEMl_EQ",
     "securityId": "isin:GB00BKPG0S09",
-    "companyId": "templeton_emerging_markets_investment_trust",
+    "companyId": "templeton_emerging_markets_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -123210,7 +123569,7 @@
     "id": "THRLl_EQ",
     "ticker": "THRLl_EQ",
     "securityId": "isin:GB00BJGTLF51",
-    "companyId": "target_healthcare_reit",
+    "companyId": "target_healthcare_reit_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -123940,8 +124299,9 @@
     "id": "TLIH_US_EQ",
     "ticker": "TLIH_US_EQ",
     "securityId": "isin:KYG8763W2014",
-    "companyId": "ten_league_international_holdings",
+    "companyId": "ten_league_international_holdings_limited",
     "exchangeCode": "US",
+    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -124258,7 +124618,7 @@
   {
     "id": "TMIPl_EQ",
     "ticker": "TMIPl_EQ",
-    "securityId": "isin:GG00BTZC2850",
+    "securityId": "isin:GG00BWZ6KJ56",
     "companyId": "taylor_maritime_limited",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
@@ -124267,7 +124627,7 @@
   {
     "id": "TMIl_EQ",
     "ticker": "TMIl_EQ",
-    "securityId": "isin:GG00BTZC2850",
+    "securityId": "isin:GG00BWZ6KJ56",
     "companyId": "taylor_maritime_limited",
     "exchangeCode": "EQ",
     "exchangeName": "LSE",
@@ -124322,7 +124682,7 @@
     "id": "TMPLl_EQ",
     "ticker": "TMPLl_EQ",
     "securityId": "isin:GB00BMV92D64",
-    "companyId": "temple_bar_investment_trust",
+    "companyId": "temple_bar_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -124382,9 +124742,8 @@
     "id": "TMRC_US_EQ",
     "ticker": "TMRC_US_EQ",
     "securityId": "isin:US88256L1098",
-    "companyId": "texas_mineral_resources_corp",
+    "companyId": "texas_mineral_resources",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCQB",
     "currencyCode": "USD"
   },
   {
@@ -125396,7 +125755,7 @@
     "id": "TRGl_EQ",
     "ticker": "TRGl_EQ",
     "securityId": "isin:GB00BMCF8689",
-    "companyId": "european_smaller_companies",
+    "companyId": "the_european_smaller_companies_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -125944,7 +126303,7 @@
     "id": "TRYl_EQ",
     "ticker": "TRYl_EQ",
     "securityId": "isin:GB0009064097",
-    "companyId": "tr_property_ord",
+    "companyId": "tr_property_investment_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -126122,6 +126481,15 @@
     "currencyCode": "CAD"
   },
   {
+    "id": "TSKe_EQ",
+    "ticker": "TSKe_EQ",
+    "securityId": "isin:ES0105394003",
+    "companyId": "tsk_electronica_y_electricidad",
+    "exchangeCode": "EQ",
+    "exchangeName": "MCE",
+    "currencyCode": "EUR"
+  },
+  {
     "id": "TSL1l_EQ",
     "ticker": "TSL1l_EQ",
     "securityId": "isin:XS2337093798",
@@ -126245,6 +126613,14 @@
     "ticker": "TSMSl_EQ",
     "securityId": "isin:XS2944880066",
     "companyId": "leverage_shares_3x_short_taiwan_semiconductor_tsm",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
+    "id": "TSMYl_EQ",
+    "ticker": "TSMYl_EQ",
+    "securityId": "isin:XS3337205077",
+    "companyId": "incomeshares_taiwan_semiconductors_tsm_options_dist",
     "exchangeCode": "EQ",
     "currencyCode": "USD"
   },
@@ -127811,14 +128187,6 @@
     "currencyCode": "USD"
   },
   {
-    "id": "UDMY_US_EQ",
-    "ticker": "UDMY_US_EQ",
-    "securityId": "isin:US9026851066",
-    "companyId": "udemy",
-    "exchangeCode": "US",
-    "currencyCode": "USD"
-  },
-  {
     "id": "UDR_US_EQ",
     "ticker": "UDR_US_EQ",
     "securityId": "isin:US9026531049",
@@ -128009,7 +128377,7 @@
     "id": "UEMl_EQ",
     "ticker": "UEMl_EQ",
     "securityId": "isin:GB00BD45S967",
-    "companyId": "utilico_emerging_markets_ord",
+    "companyId": "utilico_emerging_markets_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -128706,7 +129074,7 @@
     "id": "UKWl_EQ",
     "ticker": "UKWl_EQ",
     "securityId": "isin:GB00B8SC6K54",
-    "companyId": "greencoat_uk_wind",
+    "companyId": "greencoat_uk_wind_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -129011,6 +129379,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "UNHYl_EQ",
+    "ticker": "UNHYl_EQ",
+    "securityId": "isin:XS3337173440",
+    "companyId": "incomeshares_unitedhealth_unh_options_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "UNH_US_EQ",
     "ticker": "UNH_US_EQ",
     "securityId": "isin:US91324P1021",
@@ -129067,9 +129443,8 @@
     "id": "UNIR_US_EQ",
     "ticker": "UNIR_US_EQ",
     "securityId": "isin:US90916U2069",
-    "companyId": "uniroyal_global_engineered_products_inc",
+    "companyId": "uniroyal_global_engineered_products",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -129586,6 +129961,14 @@
     "currencyCode": "CHF"
   },
   {
+    "id": "URNYl_EQ",
+    "ticker": "URNYl_EQ",
+    "securityId": "isin:XS3337373701",
+    "companyId": "incomeshares_uranium_yield_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "UROY_US_EQ",
     "ticker": "UROY_US_EQ",
     "securityId": "isin:CA91702V1013",
@@ -129718,14 +130101,6 @@
     "currencyCode": "USD"
   },
   {
-    "id": "USAT_US_EQ",
-    "ticker": "USAT_US_EQ",
-    "securityId": "isin:US1381031061",
-    "companyId": "cantaloupe",
-    "exchangeCode": "US",
-    "currencyCode": "USD"
-  },
-  {
     "id": "USAU_US_EQ",
     "ticker": "USAU_US_EQ",
     "securityId": "isin:US90291C2017",
@@ -129756,7 +130131,7 @@
     "id": "USAl_EQ",
     "ticker": "USAl_EQ",
     "securityId": "isin:GB00BDFGHW41",
-    "companyId": "baillie_gifford_us_growth_trust",
+    "companyId": "baillie_gifford_us_growth_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -129935,8 +130310,9 @@
     "id": "USFl_EQ",
     "ticker": "USFl_EQ",
     "securityId": "isin:GB00BJCWFX49",
-    "companyId": "us_solar_fund",
+    "companyId": "us_solar_fund_plc",
     "exchangeCode": "EQ",
+    "exchangeName": "LSE",
     "currencyCode": "USD"
   },
   {
@@ -131199,9 +131575,8 @@
     "id": "VCIG_US_EQ",
     "ticker": "VCIG_US_EQ",
     "securityId": "isin:VGG982184001",
-    "companyId": "vci_global_limited",
+    "companyId": "vci_global",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -131593,7 +131968,7 @@
     "id": "VEILl_EQ",
     "ticker": "VEILl_EQ",
     "securityId": "isin:KYG9361H1092",
-    "companyId": "vietnam_enterprise_ord",
+    "companyId": "vietnam_enterprise_investments_limited",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -132429,6 +132804,15 @@
     "currencyCode": "GBX"
   },
   {
+    "id": "VIDA_US_EQ",
+    "ticker": "VIDA_US_EQ",
+    "securityId": "isin:US92649G1085",
+    "companyId": "vida_global_inc",
+    "exchangeCode": "US",
+    "exchangeName": "NYSE American",
+    "currencyCode": "USD"
+  },
+  {
     "id": "VIDE_US_EQ",
     "ticker": "VIDE_US_EQ",
     "securityId": "isin:US9265551039",
@@ -132570,7 +132954,7 @@
     "id": "VINl_EQ",
     "ticker": "VINl_EQ",
     "securityId": "isin:GB0008484718",
-    "companyId": "value_and_indexed_property_income_trust",
+    "companyId": "value_and_indexed_property_income_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -132665,9 +133049,8 @@
     "id": "VISL_US_EQ",
     "ticker": "VISL_US_EQ",
     "securityId": "isin:US92836Y4098",
-    "companyId": "vislink_technologies_inc",
+    "companyId": "vislink_technologies",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCID",
     "currencyCode": "USD"
   },
   {
@@ -134035,7 +134418,7 @@
     "id": "VSLl_EQ",
     "ticker": "VSLl_EQ",
     "securityId": "isin:GB00BVG6X439",
-    "companyId": "vpc_specialty_lending_investments",
+    "companyId": "vpc_specialty_lending_investments_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -135329,9 +135712,8 @@
     "id": "WCFB_US_EQ",
     "ticker": "WCFB_US_EQ",
     "securityId": "isin:US92940L1035",
-    "companyId": "wcf_bancorp_inc",
+    "companyId": "wcf_bancorp",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCID",
     "currencyCode": "USD"
   },
   {
@@ -136994,8 +137376,8 @@
   {
     "id": "WISEl_EQ",
     "ticker": "WISEl_EQ",
-    "securityId": "isin:GB00BL9YR756",
-    "companyId": "wise_plc",
+    "securityId": "isin:JE00BQKY0816",
+    "companyId": "wise_group_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -137162,10 +137544,9 @@
   {
     "id": "WLAC_US_EQ",
     "ticker": "WLAC_US_EQ",
-    "securityId": "isin:KYG9675P1028",
-    "companyId": "willow_lane_acquisition_corp",
+    "securityId": "isin:US09940T1007",
+    "companyId": "boost_run",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqGM",
     "currencyCode": "USD"
   },
   {
@@ -137511,9 +137892,8 @@
     "id": "WNDW_US_EQ",
     "ticker": "WNDW_US_EQ",
     "securityId": "isin:US83417L1061",
-    "companyId": "solarwindow_technologies_inc",
+    "companyId": "solarwindow_technologies",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -137769,7 +138149,7 @@
     "securityId": "isin:US78396V3078",
     "companyId": "scworx_corp",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
+    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -138262,6 +138642,15 @@
     "currencyCode": "GBX"
   },
   {
+    "id": "WSE_US_EQ",
+    "ticker": "WSE_US_EQ",
+    "securityId": "isin:JE00BQKY0816",
+    "companyId": "wise_group_plc",
+    "exchangeCode": "US",
+    "exchangeName": "LSE",
+    "currencyCode": "USD"
+  },
+  {
     "id": "WSFS_US_EQ",
     "ticker": "WSFS_US_EQ",
     "securityId": "isin:US9293281021",
@@ -138274,9 +138663,8 @@
     "id": "WSGl_EQ",
     "ticker": "WSGl_EQ",
     "securityId": "isin:GB00B1XLC220",
-    "companyId": "westminster_group_plc",
+    "companyId": "westminster_group",
     "exchangeCode": "EQ",
-    "exchangeName": "LSE",
     "currencyCode": "GBX"
   },
   {
@@ -138403,9 +138791,8 @@
     "id": "WSTL_US_EQ",
     "ticker": "WSTL_US_EQ",
     "securityId": "isin:US9575413037",
-    "companyId": "westell_technologies_inc",
+    "companyId": "westell_technologies",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCID",
     "currencyCode": "USD"
   },
   {
@@ -138717,6 +139104,14 @@
     "currencyCode": "USD"
   },
   {
+    "id": "WTIYl_EQ",
+    "ticker": "WTIYl_EQ",
+    "securityId": "isin:XS3337373966",
+    "companyId": "incomeshares_wti_oil_yield_dist",
+    "exchangeCode": "EQ",
+    "currencyCode": "USD"
+  },
+  {
     "id": "WTI_US_EQ",
     "ticker": "WTI_US_EQ",
     "securityId": "isin:US92922P1066",
@@ -138983,7 +139378,7 @@
     "id": "WWHl_EQ",
     "ticker": "WWHl_EQ",
     "securityId": "isin:GB00BN455J50",
-    "companyId": "worldwide_healthcare_ord",
+    "companyId": "worldwide_healthcare_trust_plc",
     "exchangeCode": "EQ",
     "exchangeName": "Wiener Börse",
     "currencyCode": "GBX"
@@ -140385,9 +140780,8 @@
     "id": "XDSL_US_EQ",
     "ticker": "XDSL_US_EQ",
     "securityId": "isin:US62472C2017",
-    "companyId": "mphase_technologies_inc",
+    "companyId": "mphase_technologies",
     "exchangeCode": "US",
-    "exchangeName": "OTC Markets OTCPK",
     "currencyCode": "USD"
   },
   {
@@ -142579,9 +142973,8 @@
     "id": "XRTX_US_EQ",
     "ticker": "XRTX_US_EQ",
     "securityId": "isin:CA98420Q4051",
-    "companyId": "xortx_therapeutics_inc",
+    "companyId": "xortx_therapeutics",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
     "currencyCode": "USD"
   },
   {
@@ -144216,10 +144609,28 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "YBLCl_EQ",
+    "ticker": "YBLCl_EQ",
+    "securityId": "isin:XS3337192408",
+    "companyId": "incomeshares_blockchain_leaders_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "YBMNl_EQ",
     "ticker": "YBMNl_EQ",
     "securityId": "isin:XS3299465172",
     "companyId": "incomeshares_bitmine_bmnr_options_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "YBRKl_EQ",
+    "ticker": "YBRKl_EQ",
+    "securityId": "isin:XS3337164027",
+    "companyId": "incomeshares_berkshire_hathaway_brk_b_options_dist",
     "exchangeCode": "EQ",
     "exchangeName": "Euronext Lisbon",
     "currencyCode": "GBX"
@@ -144260,6 +144671,15 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "YCPRl_EQ",
+    "ticker": "YCPRl_EQ",
+    "securityId": "isin:XS3337374261",
+    "companyId": "incomeshares_copper_miners_yield_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "YCPd_EQ",
     "ticker": "YCPd_EQ",
     "securityId": "isin:US20825C1045",
@@ -144295,6 +144715,14 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "YDXd_EQ",
+    "ticker": "YDXd_EQ",
+    "securityId": "isin:NL0009805522",
+    "companyId": "nebius_group",
+    "exchangeCode": "EQ",
+    "currencyCode": "EUR"
+  },
+  {
     "id": "YELP_US_EQ",
     "ticker": "YELP_US_EQ",
     "securityId": "isin:US9858171054",
@@ -144302,6 +144730,15 @@
     "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
     "currencyCode": "USD"
+  },
+  {
+    "id": "YESXl_EQ",
+    "ticker": "YESXl_EQ",
+    "securityId": "isin:XS3343238971",
+    "companyId": "incomeshares_eurostoxx_50_options_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
   },
   {
     "id": "YETI_US_EQ",
@@ -144344,6 +144781,15 @@
     "companyId": "incomeshares_gold_yield",
     "exchangeCode": "EQ",
     "currencyCode": "EUR"
+  },
+  {
+    "id": "YGLMl_EQ",
+    "ticker": "YGLMl_EQ",
+    "securityId": "isin:XS3337373370",
+    "companyId": "incomeshares_gold_miners_yield_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
   },
   {
     "id": "YGLXl_EQ",
@@ -144396,6 +144842,15 @@
     "exchangeCode": "US",
     "exchangeName": "NasdaqGM",
     "currencyCode": "USD"
+  },
+  {
+    "id": "YHOOl_EQ",
+    "ticker": "YHOOl_EQ",
+    "securityId": "isin:XS3337099884",
+    "companyId": "incomeshares_robinhood_hood_options_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
   },
   {
     "id": "YIBO_US_EQ",
@@ -144536,12 +144991,30 @@
     "currencyCode": "USD"
   },
   {
+    "id": "YMUIl_EQ",
+    "ticker": "YMUIl_EQ",
+    "securityId": "isin:XS3337374691",
+    "companyId": "incomeshares_micron_mu_options_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "YNDX_US_EQ",
     "ticker": "YNDX_US_EQ",
     "securityId": "isin:NL0009805522",
-    "companyId": "nebius_group_nv",
+    "companyId": "nebius_group",
     "exchangeCode": "US",
     "currencyCode": "USD"
+  },
+  {
+    "id": "YNFLl_EQ",
+    "ticker": "YNFLl_EQ",
+    "securityId": "isin:XS3337171154",
+    "companyId": "incomeshares_netflix_nflx_options_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
   },
   {
     "id": "YNGAl_EQ",
@@ -144577,6 +145050,15 @@
     "companyId": "yokogawa_electric",
     "exchangeCode": "US",
     "currencyCode": "USD"
+  },
+  {
+    "id": "YORCl_EQ",
+    "ticker": "YORCl_EQ",
+    "securityId": "isin:XS3337192234",
+    "companyId": "incomeshares_oracle_orcl_options_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
   },
   {
     "id": "YORUY_US_EQ",
@@ -144718,6 +145200,15 @@
     "currencyCode": "EUR"
   },
   {
+    "id": "YSLMl_EQ",
+    "ticker": "YSLMl_EQ",
+    "securityId": "isin:XS3337307741",
+    "companyId": "incomeshares_silver_miners_yield_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "YSLVd_EQ",
     "ticker": "YSLVd_EQ",
     "securityId": "isin:XS3068774614",
@@ -144787,6 +145278,15 @@
     "currencyCode": "USD"
   },
   {
+    "id": "YTSMl_EQ",
+    "ticker": "YTSMl_EQ",
+    "securityId": "isin:XS3337205077",
+    "companyId": "incomeshares_taiwan_semiconductors_tsm_options_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "YTXNl_EQ",
     "ticker": "YTXNl_EQ",
     "securityId": "isin:XS3299465768",
@@ -144821,6 +145321,24 @@
     "currencyCode": "USD"
   },
   {
+    "id": "YUNHl_EQ",
+    "ticker": "YUNHl_EQ",
+    "securityId": "isin:XS3337173440",
+    "companyId": "incomeshares_unitedhealth_unh_options_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
+    "id": "YURNl_EQ",
+    "ticker": "YURNl_EQ",
+    "securityId": "isin:XS3337373701",
+    "companyId": "incomeshares_uranium_yield_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
+  },
+  {
     "id": "YUVSe_EQ",
     "ticker": "YUVSe_EQ",
     "securityId": "isin:ES0105392007",
@@ -144853,6 +145371,15 @@
     "companyId": "liquid_media",
     "exchangeCode": "US",
     "currencyCode": "USD"
+  },
+  {
+    "id": "YWTIl_EQ",
+    "ticker": "YWTIl_EQ",
+    "securityId": "isin:XS3337373966",
+    "companyId": "incomeshares_wti_oil_yield_dist",
+    "exchangeCode": "EQ",
+    "exchangeName": "Euronext Lisbon",
+    "currencyCode": "GBX"
   },
   {
     "id": "YXT_US_EQ",
@@ -145701,7 +146228,7 @@
     "securityId": "isin:US98980W2061",
     "companyId": "zspace_inc",
     "exchangeCode": "US",
-    "exchangeName": "NasdaqCM",
+    "exchangeName": "OTC Markets OTCQB",
     "currencyCode": "USD"
   },
   {

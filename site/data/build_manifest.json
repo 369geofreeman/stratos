@@ -1,130 +1,131 @@
 {
   "dataContractVersion": 1,
   "schemaVersion": 1,
-  "builtAt": "2026-05-10T19:00:01Z",
+  "builtAt": "2026-05-16T17:59:08Z",
   "sourceMode": "live_fetch",
   "trading212Environment": "live",
   "trading212BaseUrl": "https://live.trading212.com/api/v0",
-  "trading212FetchAt": "2026-05-10T19:00:01.417147Z",
-  "instrumentCount": 16985,
+  "trading212FetchAt": "2026-05-16T17:59:08.674764Z",
+  "instrumentCount": 17050,
   "exchangeCount": 17,
-  "securityCount": 13772,
-  "companyCount": 13186,
-  "listingCount": 16985,
+  "securityCount": 13805,
+  "companyCount": 13216,
+  "listingCount": 17050,
   "themeCount": 7,
   "exposureCount": 11,
   "relationshipCount": 0,
-  "enrichmentAttempted": 16985,
-  "enrichmentSucceeded": 7560,
-  "enrichmentFailed": 9425,
+  "enrichmentAttempted": 17050,
+  "enrichmentSucceeded": 7702,
+  "enrichmentFailed": 9348,
   "enrichmentCacheSchemaVersion": 1,
   "enrichmentProvider": "cache",
-  "enrichmentCacheHitCount": 13772,
+  "enrichmentCacheHitCount": 13805,
   "enrichmentCacheMissCount": 0,
   "enrichmentCacheStaleCount": 0,
   "enrichmentAmbiguousCount": 0,
-  "enrichmentFailureCount": 9425,
+  "enrichmentFailureCount": 9348,
   "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
-  "enrichmentOldestRetrievedAt": "2026-05-10T10:00:05Z",
-  "enrichmentNewestRetrievedAt": "2026-05-10T18:02:26Z",
-  "unclassifiedCount": 16964,
+  "enrichmentOldestRetrievedAt": "2026-05-16T10:27:53Z",
+  "enrichmentNewestRetrievedAt": "2026-05-16T17:59:08Z",
+  "unclassifiedCount": 17029,
   "emptyTickerCount": 0,
   "duplicateTickerCount": 0,
-  "duplicateISINCount": 2187,
+  "duplicateISINCount": 2219,
   "missingISINCount": 0,
   "identityCollisionCount": 0,
   "identityOverrideCount": 0,
-  "identityIssueCount": 15215,
+  "identityIssueCount": 15334,
   "reviewQueueCounts": {
-    "enrichment": 9425,
-    "identity": 15215,
+    "enrichment": 9348,
+    "identity": 15334,
     "stale_review": 1,
-    "taxonomy": 36066
+    "taxonomy": 35947
   },
   "reviewReasonCounts": {
-    "enrichment_failed": 9425,
-    "identity_low_confidence": 15215,
+    "enrichment_failed": 9348,
+    "identity_low_confidence": 15334,
     "manual_review_stale": 1,
-    "missing_industry": 9551,
-    "missing_sector": 9551,
-    "missing_theme_exposure": 16964
+    "missing_industry": 9459,
+    "missing_sector": 9459,
+    "missing_theme_exposure": 17029
   },
   "reviewQueueDeltas": {
-    "enrichment": 0,
+    "enrichment": -156,
     "identity": 0,
     "stale_review": 0,
-    "taxonomy": 0
+    "taxonomy": -342
   },
   "reviewReasonDeltas": {
-    "enrichment_failed": 0,
+    "enrichment_cache_miss": -94,
+    "enrichment_failed": -62,
     "identity_low_confidence": 0,
     "manual_review_stale": 0,
-    "missing_industry": 0,
-    "missing_sector": 0,
+    "missing_industry": -171,
+    "missing_sector": -171,
     "missing_theme_exposure": 0
   },
-  "previousBuildAt": "2026-05-10T18:59:00Z",
+  "previousBuildAt": "2026-05-16T10:27:42Z",
   "instrumentCategoryCounts": {
-    "etf": 5849,
+    "etf": 5907,
     "investment_trust": 45,
-    "stock": 11069,
+    "stock": 11076,
     "warrant": 22
   },
   "structureFlagCounts": {
-    "accumulating": 2813,
+    "accumulating": 2840,
     "adr": 6,
-    "distributing": 1623,
-    "fund_like": 5894,
+    "distributing": 1654,
+    "fund_like": 5952,
     "gdr": 4,
     "hedged": 84,
-    "inverse": 255,
-    "leveraged": 820,
-    "short": 416,
+    "inverse": 261,
+    "leveraged": 844,
+    "short": 424,
     "synthetic": 143
   },
-  "rawSnapshotAt": "2026-05-10T19:00:01Z",
+  "rawSnapshotAt": "2026-05-16T17:59:08Z",
   "rawSnapshots": {
-    "timestamp": "2026-05-10T19:00:01Z",
+    "timestamp": "2026-05-16T17:59:08Z",
     "directory": "data/raw/trading212",
-    "instrumentsPath": "data/raw/trading212/instruments_20260510T190001Z.json",
-    "exchangesPath": "data/raw/trading212/exchanges_20260510T190001Z.json",
+    "instrumentsPath": "data/raw/trading212/instruments_20260516T175908Z.json",
+    "exchangesPath": "data/raw/trading212/exchanges_20260516T175908Z.json",
     "instrumentsLatest": "data/raw/trading212/instruments_latest.json",
     "exchangesLatest": "data/raw/trading212/exchanges_latest.json",
-    "instrumentFileCount": 16985,
+    "instrumentFileCount": 17050,
     "exchangeFileCount": 17
   },
   "trading212HttpDiagnostics": [
     {
       "endpointName": "exchanges",
       "path": "/equity/metadata/exchanges",
-      "requestStartedAt": "2026-05-10T19:00:01.417298Z",
-      "responseReceivedAt": "2026-05-10T19:00:01.527862Z",
-      "durationMillis": 110,
+      "requestStartedAt": "2026-05-16T17:59:08.674777Z",
+      "responseReceivedAt": "2026-05-16T17:59:08.847331Z",
+      "durationMillis": 172,
       "statusCode": 200,
       "status": "200 OK",
       "rateLimit": {
         "limit": "1",
         "period": "30",
         "remaining": "0",
-        "reset": "1778439631",
-        "resetAt": "2026-05-10T19:00:31Z",
+        "reset": "1778954378",
+        "resetAt": "2026-05-16T17:59:38Z",
         "used": "1"
       }
     },
     {
       "endpointName": "instruments",
       "path": "/equity/metadata/instruments",
-      "requestStartedAt": "2026-05-10T19:00:01.533624Z",
-      "responseReceivedAt": "2026-05-10T19:00:01.659859Z",
-      "durationMillis": 126,
+      "requestStartedAt": "2026-05-16T17:59:08.850469Z",
+      "responseReceivedAt": "2026-05-16T17:59:08.956325Z",
+      "durationMillis": 105,
       "statusCode": 200,
       "status": "200 OK",
       "rateLimit": {
         "limit": "1",
         "period": "50",
         "remaining": "0",
-        "reset": "1778439651",
-        "resetAt": "2026-05-10T19:00:51Z",
+        "reset": "1778954398",
+        "resetAt": "2026-05-16T17:59:58Z",
         "used": "1"
       }
     }
@@ -136,8 +137,8 @@
       "limit": "1",
       "period": "30",
       "remaining": "0",
-      "reset": "1778439631",
-      "resetAt": "2026-05-10T19:00:31Z",
+      "reset": "1778954378",
+      "resetAt": "2026-05-16T17:59:38Z",
       "used": "1"
     },
     {
@@ -146,8 +147,8 @@
       "limit": "1",
       "period": "50",
       "remaining": "0",
-      "reset": "1778439651",
-      "resetAt": "2026-05-10T19:00:51Z",
+      "reset": "1778954398",
+      "resetAt": "2026-05-16T17:59:58Z",
       "used": "1"
     }
   ],
@@ -157,44 +158,44 @@
       "path": "site/data/app_bootstrap.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "f27551fcd71288297ad0b394eda38b1a6fde19b6b3d81f99e9fbf211f51374ac",
-      "bytes": 49592,
+      "sha256": "4f01f921b5ae7ef4bba844d30be89b4d5e6db74ede12dfcd5c989eba2b557230",
+      "bytes": 49610,
       "checksumMode": "projection_excludes_generatedFiles"
     },
     {
       "path": "site/data/tickers_index.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "39b4c591380fb8e6a80b9fd7337c1e70d90e69fc9bf88af40c3dee51d5c47e3d",
-      "bytes": 20619338
+      "sha256": "e64c144fb5a8d0a2cb0119cfbf75fae3ef7e2cc91fbd1549175c97ecc96ef61f",
+      "bytes": 21780292
     },
     {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "f2724edf4ade795bd9ad2e95a9a65e30391205be0dd818c1da83aaf2e461913a",
-      "bytes": 91884671
+      "sha256": "8ab5bd379df5d3e9b04fb6f7df1b77df5a3420f7e6c870d85cebf261745623d5",
+      "bytes": 96185773
     },
     {
       "path": "site/data/companies.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "d1f42f378832842f23cb8b7faad84208d038343c9cfe9bf6ddb5e9c354b237f8",
-      "bytes": 25459286
+      "sha256": "964af335b648a21e8b9d99731186192f8eec27017c2f1ce2d203d9cc6b7b3dee",
+      "bytes": 27266350
     },
     {
       "path": "site/data/sectors.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "83ac9f0660951e0d9e8b9496d8d54336dcd5f0e65d32fc3aada1585b8a78ceca",
-      "bytes": 318983
+      "sha256": "d34d437beffef76440d5ee0915377ad4beee497574e0d57018e421d2d3de0735",
+      "bytes": 320158
     },
     {
       "path": "site/data/industries.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "75966696c8384479b6ef7a9421e034c8c178cf944387d6030c0c621a26e2dcd4",
-      "bytes": 335405
+      "sha256": "e67f8ebff7e5a40a1d1163a0d6bd4febeb2e123512734883364afe9536d164d6",
+      "bytes": 336580
     },
     {
       "path": "site/data/themes.json",
@@ -214,22 +215,22 @@
       "path": "site/data/search_index.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "ea0cbf2999a6aff825b5eb6f05080cb6ee51c666ae0ab28b5c18da36122b9e1c",
-      "bytes": 7873624
+      "sha256": "b6fa8a85e88f97cbdf461bcf7d678fecfc960fa721aa5c347143c8d1185f9b4c",
+      "bytes": 7921500
     },
     {
       "path": "site/data/securities.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "6b55ff87fe1015471cbf2c4530ac1b972796b85fa68424a839ec6c7a2dbc1777",
-      "bytes": 6412529
+      "sha256": "ec960048d706d9db605da28049bcf446fec458abab1d716f1ba7adbb051a9181",
+      "bytes": 6433872
     },
     {
       "path": "site/data/listings.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "f4b72946b08babedc322c22271890a720aefe2413a34251384fb5fa91fb4b145",
-      "bytes": 3662052
+      "sha256": "3c86d43ec8d3446269f10d228e30e6cea88e06892cbf623a66d60cba4357fc35",
+      "bytes": 3676733
     },
     {
       "path": "site/data/relationships.json",
@@ -242,78 +243,78 @@
       "path": "site/data/unclassified.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "48512c551c030b10d244aea643327358b82a6b695bfb198c327fbeb6a2f2ed65",
-      "bytes": 3976094
+      "sha256": "1521c0118ac304b4fdeb4c7d759cd86165047a7d95ec10c415fc1006af057094",
+      "bytes": 3986146
     },
     {
       "path": "site/data/review_queues.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "204b440dbef3680b5ce200a06b79d71bd422b8c87ab9af10aeabd28f46240163",
-      "bytes": 34734482
+      "sha256": "8030ce352533c8b04fad6292bf7b09ab0917de79bd20785308ef67b1d9fea134",
+      "bytes": 34734369
     },
     {
       "path": "site/data/review_summary.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "34b88fbc7b8d75b28b78bef1085d89ff17e40b9ca495910a8bfc4275ae4491fd",
+      "sha256": "d2daa98b48aba447c4b8133a08a43f52d710f01d27e989b1cc3a734bbeec8ae0",
       "bytes": 1106
     },
     {
       "path": "site/data/tickers.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "428fdee80dc90afd526ac532969448850ab351a4626175a5ca72d57663ea203d",
-      "bytes": 5602752
+      "sha256": "f04335d3f2ded65b565f6804d89c63102f3966cf0bbe9c70f84e83425aa2e9f8",
+      "bytes": 5639636
     },
     {
       "path": "site/data/securities.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "c44fe594543adfb363efc4371f87e9821b2c3cd6add19d6fc4d38f49a418a87c",
-      "bytes": 2187742
+      "sha256": "0bf0080e012885e7f0c879029735134ad02c94b342f494c1b7dbead3123eb710",
+      "bytes": 2197038
     },
     {
       "path": "site/data/listings.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "c03f2513aefaac6e07f0b481ab81974120f8daa21eca2eef8df5fd8d230a085d",
-      "bytes": 1317240
+      "sha256": "1f176c2e544ae890c7f02c513d3e45a5729196d52ab611ff1402abddffdfdb07",
+      "bytes": 1323693
     },
     {
       "path": "site/data/unclassified.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "0ac3536593e7b227527d316f562af74b168a80ba3e2feba358a4f1a762e8fd11",
-      "bytes": 2682399
+      "sha256": "cae554d624931b4e05c10e2c4babe0610cd361fdafc908d2990f7ff66241adab",
+      "bytes": 2687986
     },
     {
       "path": "site/data/taxonomy_issues.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "10e029a213399c5a55dacddbeb54a11fb63ca332d522059cf410e46e4173859e",
-      "bytes": 11738773
+      "sha256": "cbdd3113e407ea712f56b754271af1330d6c46b2bbe56dd809dc5c9b8bf59a43",
+      "bytes": 11714402
     },
     {
       "path": "site/data/enrichment_issues.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "5845c58e9a68948fbcde7a4bde5f293d6dad21b406a6e52edefb4ad0f114ef7f",
-      "bytes": 3153575
+      "sha256": "b7c54311f7c830f1e614359895e19af960a720fb8afa31ecfb9d00dc712c36d2",
+      "bytes": 3129892
     },
     {
       "path": "site/data/identity_issues.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "a5ad5ac9679787f74b34a70e0b0dbcd9866b7938d10f18c63a147ada2cc2b375",
-      "bytes": 3977046
+      "sha256": "bcd6a0c0c8093be1b07afdb16467ce0f6bdcba67ca07eed1489dd1d93d540691",
+      "bytes": 4014319
     },
     {
       "path": "site/data/enrichment_failures.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "a371daeedc24dc7aacc2471801695da746cd2d49f449e63a361315a1ec9f108c",
-      "bytes": 1806783
+      "sha256": "40e2f214f19573fa9e3deb62f2a48e6a4a6b74e7c9cd5a23e0b884710110c5df",
+      "bytes": 1793914
     },
     {
       "path": "site/data/stale_reviews.csv",
@@ -326,36 +327,36 @@
       "path": "site/data/suggested_classification_overrides.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "06030292ee67ffecef8d725f6119417c18957be9918bfc85172caade6ab8e487",
-      "bytes": 225022
+      "sha256": "08c21db27734f1ff1ec14d6cc6dcde3398a4e9de52bd1d9bea7c206a29cc5819",
+      "bytes": 223058
     },
     {
       "path": "site/data/suggested_exposures.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "c0cc8722be2b77db602de7f500e23dc09b53f87f301e6d68524ed2ad55a59041",
-      "bytes": 936116
+      "sha256": "7da92be9052b201b0b334d6ab753019863c11d2ae148182c8ed526105d740b4b",
+      "bytes": 941585
     },
     {
       "path": "site/data/suggested_ticker_overrides.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "80eb45501548292c8bfa7dd80638f26e3bd455b7c95a843777465ce2c748d584",
-      "bytes": 456178
+      "sha256": "de202de1332f468ee88fa72dcbcbcb82fa768b15a45796dadf683b29eb8fd417",
+      "bytes": 453151
     },
     {
       "path": "site/data/suggested_identity_overrides.csv",
       "format": "csv",
       "schemaVersion": 1,
-      "sha256": "fa7756b0e6a91b45d482d37b27980fd8cbfbc01dafad979fb1c3e5144a99adcb",
-      "bytes": 250148
+      "sha256": "7f16a0ba08da6b7feaf8ee3e8a56bf8b41012a8dfda03c2647d8b7edddb632be",
+      "bytes": 251792
     },
     {
       "path": "site/data/build_manifest.json",
       "format": "json",
       "schemaVersion": 1,
-      "sha256": "7e9479abe6f70562f6f48888c18bf548d9b06cd39c461ada86fd3da2781a88b8",
-      "bytes": 10716,
+      "sha256": "5e8bc3ad6793f91961ef657306ce59414d1e3727ffdc4b846508e1418d45491f",
+      "bytes": 10764,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

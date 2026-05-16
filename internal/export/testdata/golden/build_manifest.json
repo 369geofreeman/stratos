@@ -47,7 +47,7 @@
       "format": "json",
       "schemaVersion": 2,
       "sha256": "2adaae7c15bd78a81cfc5b520f07687bc95ef1d5b2185b8f01d3a9504cfbca4a",
-      "bytes": 6679,
+      "bytes": 6842,
       "checksumMode": "projection_excludes_generatedFiles"
     },
     {
@@ -58,11 +58,18 @@
       "bytes": 509
     },
     {
+      "path": "site/data/explorer_index.json",
+      "format": "json",
+      "schemaVersion": 2,
+      "sha256": "6cc69596c4be108eee4dea27739f6bb491a94838a18e2c1efec6b68266274a36",
+      "bytes": 999
+    },
+    {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "889857341ee25a772545f7a8c717885396c22005133bc2fadce367e9082352b3",
-      "bytes": 4914
+      "sha256": "e5a8b78105d7d0f917998f6bb12830b9100dd84940d519228d332daa18b903e3",
+      "bytes": 5034
     },
     {
       "path": "site/data/companies.json",
@@ -244,7 +251,7 @@
       "format": "json",
       "schemaVersion": 2,
       "sha256": "794bb31f90ac352c0a22e6fc739135ffee8af0047843d8f7e6540fe0e14cc1a4",
-      "bytes": 7435,
+      "bytes": 7648,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

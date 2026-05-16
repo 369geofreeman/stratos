@@ -46,6 +46,7 @@ These files are intended for frontend loading:
 
 - `app_bootstrap.json`: startup slice used by `site/assets/app.js`; includes manifest counts, taxonomy summaries, supply-chain definitions, exposure rows, generated file metadata, and truncated sector/industry ticker samples.
 - `tickers_index.json`: compact ticker rows used for the main table, watchlist, filtering, sorting, search, and modal identity fields.
+- `explorer_index.json`: compact group-to-ticker index used by the Explorer view for sectors, industries, instrument categories, structure flags, pipelines, supply-chain layers, and reviewed relationship types.
 - `review_queues.json`: compact structured review queue used by the review UI.
 - `review_summary.json`: aggregate review counts by queue, reason, severity, gap, enrichment status, identity type, stale bucket, and suggested manual file.
 - `unclassified.json`: legacy taxonomy gap queue mirroring `unclassified.csv`; retained for compatibility.
@@ -91,6 +92,14 @@ The embedded `manifest` intentionally omits its own `generatedFiles` field. Use 
 Top-level object with `dataContractVersion`, `schemaVersion`, optional `generatedAt`, and `tickers`.
 
 Each ticker row is intentionally compact and includes table/filter/search fields plus identifiers needed for lazy detail loading: `ticker`, `name`, optional `isin`, `companyId`, `securityId`, `listingId`, optional `type`, optional `instrumentCategory`, optional `structureFlags`, optional `currencyCode`, optional `exchangeCode`, optional `exchangeName`, optional `yahooSymbol`, optional `sector`, optional `industry`, optional `country`, optional `marketCap`, optional `directionality`, optional `identityConfidence`, optional `themeIds`, optional `layerIds`, optional `relatedTickers`, optional `lastReviewed`, optional `lastRefreshed`, and `unclassified`.
+
+### explorer_index.json
+
+Top-level object with `dataContractVersion`, `schemaVersion`, optional `generatedAt`, and `groups`.
+
+Each group row includes `id`, `type`, optional `value`, `label`, optional `parentId`, optional `parentLabel`, optional `description`, `count`, optional `edgeCount`, and `tickers`. Stable `type` values are `theme`, `layer`, `sector`, `industry`, `category`, `flag`, and `relationship`.
+
+`sector`, `industry`, `category`, and `flag` groups are derived from normalized ticker rows. `theme` and `layer` groups are derived from reviewed exposure rows and resolved onto Trading 212 ticker IDs. `relationship` groups are derived only from reviewed manual relationship rows and include `edgeCount`; endpoint identifiers are resolved onto Trading 212 ticker IDs where possible.
 
 ### build_manifest.json
 
@@ -159,7 +168,7 @@ Generated reason codes are stable snake_case values:
 
 - `missing_sector`: ticker has no sector after manual overrides and enrichment.
 - `missing_industry`: ticker has no industry after manual overrides and enrichment.
-- `missing_theme_exposure`: ticker has no reviewed theme/layer exposure.
+- `missing_theme_exposure`: ticker looks like a likely pipeline candidate but has no reviewed theme/layer exposure. Themes are selective pipeline mappings, not a universal taxonomy for every ticker.
 - `missing_company_id`: row cannot be attached to a stable company ID.
 - `missing_isin`: Trading 212 metadata lacks an ISIN or an identity row needs ISIN review.
 - `missing_ticker`: Trading 212 metadata lacks a broker ticker.

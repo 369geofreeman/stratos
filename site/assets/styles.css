@@ -298,6 +298,37 @@ tr:last-child td {
   margin-bottom: 10px;
 }
 
+.explorer-toolbar {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) minmax(260px, 1fr);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.group-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.group-summary strong,
+.group-summary span {
+  display: block;
+}
+
+.group-summary span {
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
 .reason-counts {
   display: flex;
   flex-wrap: wrap;
@@ -349,6 +380,10 @@ tr:last-child td {
   line-height: 1.35;
 }
 
+.card-actions {
+  margin-top: 12px;
+}
+
 .supply-toolbar {
   display: flex;
   align-items: center;
@@ -390,6 +425,10 @@ tr:last-child td {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.35;
+}
+
+.layer-label .small-button {
+  margin-top: 10px;
 }
 
 .layer-cards {
@@ -627,6 +666,7 @@ tr:last-child td {
   .topbar,
   .searchbar,
   .review-toolbar,
+  .explorer-toolbar,
   .detail-grid,
   .layer-row {
     grid-template-columns: 1fr;

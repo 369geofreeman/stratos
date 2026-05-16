@@ -69,6 +69,11 @@
       "format": "json"
     },
     {
+      "name": "explorer_index.json",
+      "path": "site/data/explorer_index.json",
+      "format": "json"
+    },
+    {
       "name": "companies.json",
       "path": "site/data/companies.json",
       "format": "json"

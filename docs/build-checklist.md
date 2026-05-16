@@ -64,6 +64,7 @@ The builder should write:
 
 - `site/data/app_bootstrap.json`
 - `site/data/tickers_index.json`
+- `site/data/explorer_index.json`
 - `site/data/catalogue.json`
 - `site/data/tickers.csv`
 - `site/data/companies.json`

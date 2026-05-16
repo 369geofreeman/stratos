@@ -28,14 +28,21 @@ func TestBuildReviewQueuesSummarySuggestionsStaleAndDeltas(t *testing.T) {
 		t.Fatal(err)
 	}
 
-	for _, code := range []string{ReasonMissingSector, ReasonMissingIndustry, ReasonMissingThemeExposure} {
+	for _, code := range []string{ReasonMissingSector, ReasonMissingIndustry} {
 		row := findReviewRow(t, cat.ReviewQueues, ReviewQueueTaxonomy, code, "ABC_US_EQ")
 		if row.SuggestedCSVRow == "" || row.SuggestedManualFile == "" {
 			t.Fatalf("taxonomy row %s missing suggestion: %#v", code, row)
 		}
 	}
-	if got := findUnclassified(t, cat, "ABC_US_EQ").ReasonCodes; !containsString(got, ReasonMissingSector) || !containsString(got, ReasonMissingIndustry) || !containsString(got, ReasonMissingThemeExposure) {
+	themeRow := findReviewRow(t, cat.ReviewQueues, ReviewQueueTaxonomy, ReasonMissingThemeExposure, "CHIP_US_EQ")
+	if themeRow.SuggestedCSVRow == "" || themeRow.SuggestedManualFile == "" {
+		t.Fatalf("taxonomy theme row missing suggestion: %#v", themeRow)
+	}
+	if got := findUnclassified(t, cat, "ABC_US_EQ").ReasonCodes; !containsString(got, ReasonMissingSector) || !containsString(got, ReasonMissingIndustry) || containsString(got, ReasonMissingThemeExposure) {
 		t.Fatalf("unclassified reason codes = %#v", got)
+	}
+	if got := findUnclassified(t, cat, "CHIP_US_EQ").ReasonCodes; !containsString(got, ReasonMissingThemeExposure) || containsString(got, ReasonMissingSector) || containsString(got, ReasonMissingIndustry) {
+		t.Fatalf("pipeline candidate reason codes = %#v", got)
 	}
 
 	cacheMiss := findReviewRow(t, cat.ReviewQueues, ReviewQueueEnrichment, ReasonEnrichmentCacheMiss, "ABC_US_EQ")
@@ -69,7 +76,7 @@ func TestBuildReviewQueuesSummarySuggestionsStaleAndDeltas(t *testing.T) {
 	}
 
 	assertSuggestedRecordShape(t, findReviewRow(t, cat.ReviewQueues, ReviewQueueTaxonomy, ReasonMissingSector, "ABC_US_EQ"), taxonomy.ClassificationOverridesCSVHeader, []string{"ticker", "ABC_US_EQ"})
-	assertSuggestedRecordShape(t, findReviewRow(t, cat.ReviewQueues, ReviewQueueTaxonomy, ReasonMissingThemeExposure, "ABC_US_EQ"), taxonomy.ExposureCSVHeader, []string{"", "", "ABC_US_EQ", "US0000000001", "abc_corp"})
+	assertSuggestedRecordShape(t, themeRow, taxonomy.ExposureCSVHeader, []string{"", "", "CHIP_US_EQ", "US0000000004", "chip_corp"})
 	assertSuggestedRecordShape(t, cacheMiss, taxonomy.TickerOverridesCSVHeader, []string{"ABC_US_EQ", "abc_corp"})
 	assertSuggestedRecordShape(t, findReviewRow(t, cat.ReviewQueues, ReviewQueueIdentity, ReasonMissingISIN, "NOISIN_US_EQ"), taxonomy.IdentityOverridesCSVHeader, []string{"ticker", "NOISIN_US_EQ"})
 
@@ -218,12 +225,16 @@ func reviewFixtureInput() BuildInput {
 	return BuildInput{
 		Instruments: []trading212.Instrument{
 			{Ticker: "ABC_US_EQ", Name: "ABC Corp", ISIN: "US0000000001", Type: "STOCK", CurrencyCode: "USD"},
+			{Ticker: "CHIP_US_EQ", Name: "Chip Corp", ISIN: "US0000000004", Type: "STOCK", CurrencyCode: "USD"},
 			{Ticker: "NOISIN_US_EQ", Name: "No ISIN Corp", Type: "STOCK", CurrencyCode: "USD"},
 			{Ticker: "DUP_US_EQ", Name: "Duplicate One", ISIN: "US0000000002", Type: "STOCK", CurrencyCode: "USD"},
 			{Ticker: "DUP_US_EQ", Name: "Duplicate Two", ISIN: "US0000000003", Type: "STOCK", CurrencyCode: "USD"},
 		},
 		Manual:  manual,
 		BuiltAt: builtAt,
+		Profiles: map[string]enrichment.Profile{
+			"CHIP_US_EQ": {Name: "Chip Corp", Sector: "Technology", Industry: "Semiconductors", Country: "United States"},
+		},
 		EnrichmentFailures: []EnrichmentFailure{
 			{Ticker: "ABC_US_EQ", ISIN: "US0000000001", Name: "ABC Corp", Provider: "cache", AttemptedSymbols: "ABC;ABC_US_EQ", Status: enrichment.StatusCacheMiss, Error: "enrichment cache miss", NextAction: "populate cache"},
 			{Ticker: "NOISIN_US_EQ", Name: "No ISIN Corp", Provider: "cache", AttemptedSymbols: "NOISIN", Status: enrichment.StatusAmbiguous, Error: "ambiguous enrichment match", NextAction: "add manual ticker override"},

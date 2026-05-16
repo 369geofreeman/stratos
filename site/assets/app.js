@@ -7,6 +7,7 @@ const EMPTY_LOCAL = Object.freeze({ watchlist: false, notes: "", tags: [], color
 const DEFAULT_EXPORTS = [
   "app_bootstrap.json",
   "tickers_index.json",
+  "explorer_index.json",
   "catalogue.json",
   "companies.json",
   "sectors.json",
@@ -39,6 +40,7 @@ const DEFAULT_EXPORTS = [
 const state = {
   bootstrap: null,
   tickers: null,
+  explorerIndex: null,
   reviewQueues: null,
   reviewSummary: null,
   visibleReviewRows: [],
@@ -47,6 +49,8 @@ const state = {
   query: "",
   theme: "",
   supplyTheme: "",
+  explorerType: "",
+  explorerGroup: "",
   sector: "",
   localFilter: "",
   sort: { key: "ticker", dir: "asc" },
@@ -63,6 +67,7 @@ const state = {
     companyById: new Map(),
     securityById: new Map(),
     listingById: new Map(),
+    explorerGroupById: new Map(),
     relationshipsByTicker: new Map()
   },
   local: loadLocal()
@@ -154,6 +159,7 @@ function render() {
   renderMetrics();
   syncTabs();
   if (state.view === "tickers") renderTickers();
+  if (state.view === "explorer") renderExplorer();
   if (state.view === "themes") renderThemes();
   if (state.view === "supply") renderSupply();
   if (state.view === "sectors") renderSectors();
@@ -291,6 +297,120 @@ function renderTickerRow(ticker) {
   `;
 }
 
+function renderExplorer() {
+  if (!state.tickers || !state.explorerIndex) {
+    Promise.all([ensureTickerIndex(), ensureExplorerIndex()]).then(render).catch(showContentError);
+    content.innerHTML = loadingBlock("Loading explorer", "Fetching grouped ticker links for sectors, pipelines, categories, and relationships.");
+    return;
+  }
+  const groups = state.explorerIndex.groups || [];
+  if (!groups.length) {
+    content.innerHTML = `<div class="empty">No explorer groups are available.</div>`;
+    return;
+  }
+  const types = uniqueStrings(groups.map((group) => group.type));
+  if (!state.explorerType || !types.includes(state.explorerType)) state.explorerType = types[0];
+  const typeGroups = groups.filter((group) => group.type === state.explorerType);
+  if (!state.explorerGroup || !typeGroups.some((group) => group.id === state.explorerGroup)) {
+    state.explorerGroup = typeGroups[0]?.id || "";
+  }
+  const group = state.maps.explorerGroupById.get(state.explorerGroup) || typeGroups[0];
+  const rows = explorerRows(group);
+  const visible = Math.min(visibleCount(explorerListID(group), INITIAL_TABLE_ROWS), rows.length);
+  content.innerHTML = `
+    <div class="panel-head">
+      <div>
+        <h2>Explorer</h2>
+        <p class="muted">${group ? esc(explorerGroupSubtitle(group, rows.length)) : "Select a group"}</p>
+      </div>
+      <div class="panel-actions">
+        <p class="muted">${tickerCountLabel(visible, rows.length, group?.count || 0)}</p>
+      </div>
+    </div>
+    ${renderExplorerToolbar(types, typeGroups, group)}
+    ${renderExplorerSummary(group)}
+    ${group ? renderTickerTable(explorerListID(group), rows) : `<div class="empty">Select a group to inspect related tickers.</div>`}
+  `;
+}
+
+function renderExplorerToolbar(types, groups, selectedGroup) {
+  return `
+    <div class="explorer-toolbar">
+      <select data-explorer-filter="type" aria-label="Explorer group type">
+        ${types.map((type) => `<option value="${esc(type)}" ${type === state.explorerType ? "selected" : ""}>${esc(explorerTypeLabel(type))}</option>`).join("")}
+      </select>
+      <select data-explorer-filter="group" aria-label="Explorer group">
+        ${groups.map((group) => `<option value="${esc(group.id)}" ${selectedGroup && group.id === selectedGroup.id ? "selected" : ""}>${esc(explorerGroupOptionLabel(group))}</option>`).join("")}
+      </select>
+    </div>
+  `;
+}
+
+function renderExplorerSummary(group) {
+  if (!group) return "";
+  const details = [
+    explorerTypeLabel(group.type),
+    group.parentLabel,
+    group.edgeCount ? `${num(group.edgeCount)} reviewed edges` : "",
+    `${num(group.count)} tickers`
+  ].filter(Boolean);
+  return `
+    <div class="group-summary">
+      <div>
+        <strong>${esc(group.label)}</strong>
+        ${group.description ? `<span>${esc(group.description)}</span>` : ""}
+      </div>
+      <div class="chips">${chips(details)}</div>
+    </div>
+  `;
+}
+
+function explorerRows(group) {
+  if (!group) return [];
+  const rows = (group.tickers || []).map((id) => tickerByID(id)).filter(Boolean).filter(explorerTickerMatches);
+  rows.sort((a, b) => compareValues(a[state.sort.key], b[state.sort.key]) * (state.sort.dir === "asc" ? 1 : -1));
+  return rows;
+}
+
+function explorerTickerMatches(ticker) {
+  const local = getLocal(ticker.ticker);
+  if (state.localFilter === "watchlist" && !local.watchlist) return false;
+  if (state.localFilter === "tagged" && !(local.tags || []).length) return false;
+  if (state.localFilter === "coloured" && !local.color) return false;
+  if (!state.query) return true;
+  const localText = `${(local.tags || []).join(" ")} ${local.notes || ""}`.toLowerCase();
+  return (ticker._searchText || "").includes(state.query) || localText.includes(state.query);
+}
+
+function explorerListID(group) {
+  return group ? `explorer:${group.id}` : "explorer";
+}
+
+function explorerGroupSubtitle(group, matchedCount) {
+  const total = group.count || 0;
+  if (matchedCount === total) return `${explorerTypeLabel(group.type)} group with ${num(total)} linked tickers`;
+  return `${explorerTypeLabel(group.type)} group with ${num(matchedCount)} matching tickers from ${num(total)} linked tickers`;
+}
+
+function explorerGroupOptionLabel(group) {
+  const prefix = group.parentLabel ? `${group.parentLabel} / ` : "";
+  const suffix = group.edgeCount ? `, ${num(group.edgeCount)} edges` : "";
+  return `${prefix}${group.label} (${num(group.count)}${suffix})`;
+}
+
+function explorerTypeLabel(type) {
+  const labels = {
+    theme: "Pipeline",
+    layer: "Pipeline layer",
+    sector: "Sector",
+    industry: "Industry",
+    category: "Category",
+    flag: "Structure flag",
+    relationship: "Relationship"
+  };
+  return labels[type] || type;
+}
+
 function renderThemes() {
   const themes = state.bootstrap.themes || [];
   const counts = state.bootstrap.themeCounts || {};
@@ -302,6 +422,7 @@ function renderThemes() {
           <h3>${esc(theme.name)}</h3>
           <p>${esc(theme.description || "")}</p>
           <div class="chips" style="margin-top:10px">${chips([`${num(counts[theme.id] || 0)} mapped tickers`])}</div>
+          <div class="card-actions"><button class="small-button" data-action="explore-group" data-group-id="theme:${esc(theme.id)}">Open tickers</button></div>
         </article>
       `).join("")}
     </div>
@@ -360,7 +481,11 @@ function renderLayer(themeID, layer) {
   }).join("");
   return `
     <section class="layer-row">
-      <div class="layer-label"><strong>${esc(layer.name)}</strong><span>${esc(layer.description || "")}</span></div>
+      <div class="layer-label">
+        <strong>${esc(layer.name)}</strong>
+        <span>${esc(layer.description || "")}</span>
+        <button class="small-button" data-action="explore-group" data-group-id="layer:${esc(themeID)}:${esc(layer.id)}">Open layer</button>
+      </div>
       <div>
         <div class="layer-cards">${cards || `<div class="empty">No mapped tickers in this layer yet.</div>`}</div>
         ${renderListFooter(listID, exposures.length, visible, "cards", CARD_INCREMENT)}
@@ -384,10 +509,12 @@ function renderGroupCard(group) {
   const extra = Math.max(0, Number(group.count || 0) - (group.tickers || []).length);
   const chipValues = [...(group.tickers || [])];
   if (extra > 0) chipValues.push(`+${num(extra)} more`);
+  const groupType = group.kind.toLowerCase();
   return `
     <article class="card">
       <h3>${esc(group.kind)}: ${esc(group.name)} (${num(group.count)})</h3>
       <div class="chips">${chips(chipValues)}</div>
+      <div class="card-actions"><button class="small-button" data-action="explore-group" data-group-id="${esc(groupType)}:${esc(group.id)}">Open tickers</button></div>
     </article>
   `;
 }
@@ -575,6 +702,7 @@ function handleContentClick(event) {
     render();
   }
   if (action === "open" && button.dataset.ticker) openTicker(button.dataset.ticker);
+  if (action === "explore-group" && button.dataset.groupId) openExplorerGroup(button.dataset.groupId);
   if (action === "watch") toggleWatch(button.dataset.ticker);
   if (action === "sort") sortBy(button.dataset.key);
   if (action === "clear-filters") clearTickerFilters();
@@ -599,6 +727,19 @@ function handleContentClick(event) {
 }
 
 function handleContentChange(event) {
+  const explorerField = event.target.closest("[data-explorer-filter]");
+  if (explorerField) {
+    if (explorerField.dataset.explorerFilter === "type") {
+      state.explorerType = explorerField.value;
+      state.explorerGroup = "";
+    }
+    if (explorerField.dataset.explorerFilter === "group") {
+      state.explorerGroup = explorerField.value;
+    }
+    resetListWindows();
+    render();
+    return;
+  }
   const field = event.target.closest("[data-review-filter]");
   if (!field) return;
   state.reviewFilters[field.dataset.reviewFilter] = field.value;
@@ -609,6 +750,19 @@ function handleContentChange(event) {
 function handleContentInput(event) {
   if (event.target.id !== "reviewSearch") return;
   applyReviewSearch(event.target.value);
+}
+
+function openExplorerGroup(groupID) {
+  const group = state.maps.explorerGroupById.get(groupID);
+  state.view = "explorer";
+  state.explorerGroup = groupID;
+  state.explorerType = group ? group.type : (groupID.split(":")[0] || state.explorerType);
+  state.theme = "";
+  state.sector = "";
+  $("#themeFilter").value = "";
+  $("#sectorFilter").value = "";
+  resetListWindows();
+  render();
 }
 
 async function openTicker(tickerID) {
@@ -926,6 +1080,22 @@ async function ensureTickerIndex() {
     });
   }
   return state.promises.tickers;
+}
+
+async function ensureExplorerIndex() {
+  if (state.explorerIndex) return state.explorerIndex;
+  if (!state.promises.explorerIndex) {
+    state.promises.explorerIndex = fetchJSON("data/explorer_index.json").then((data) => {
+      state.explorerIndex = data && typeof data === "object" ? data : { groups: [] };
+      indexExplorerGroups();
+      return state.explorerIndex;
+    });
+  }
+  return state.promises.explorerIndex;
+}
+
+function indexExplorerGroups() {
+  state.maps.explorerGroupById = new Map((state.explorerIndex.groups || []).map((group) => [group.id, group]));
 }
 
 function indexTickerRows() {

@@ -88,6 +88,18 @@ func TestStandaloneJSONExportsMatchCatalogue(t *testing.T) {
 		t.Fatalf("tickers_index identity fields = %#v", tickerIndex.Tickers[0])
 	}
 
+	var explorer ExplorerIndex
+	readJSON(t, filepath.Join(dir, "explorer_index.json"), &explorer)
+	assertExplorerGroup(t, explorer, "sector:technology", "sector", []string{"ABC_US_EQ"})
+	assertExplorerGroup(t, explorer, "industry:semiconductors", "industry", []string{"ABC_US_EQ"})
+	assertExplorerGroup(t, explorer, "category:stock", "category", []string{"ABC_US_EQ"})
+	assertExplorerGroup(t, explorer, "theme:ai", "theme", []string{"ABC_US_EQ"})
+	assertExplorerGroup(t, explorer, "layer:ai:chips", "layer", []string{"ABC_US_EQ"})
+	relationshipGroup := assertExplorerGroup(t, explorer, "relationship:peer", "relationship", []string{"ABC_US_EQ"})
+	if relationshipGroup.EdgeCount != 1 {
+		t.Fatalf("relationship edge count = %d, want 1", relationshipGroup.EdgeCount)
+	}
+
 	var securities []catalogue.Security
 	readJSON(t, filepath.Join(dir, "securities.json"), &securities)
 	if !reflect.DeepEqual(securities, cat.Securities) {
@@ -296,6 +308,7 @@ func TestWriteSiteDataGoldenSnapshot(t *testing.T) {
 	for _, name := range []string{
 		"app_bootstrap.json",
 		"tickers_index.json",
+		"explorer_index.json",
 		"build_manifest.json",
 		"catalogue.json",
 		"unclassified.json",
@@ -510,6 +523,21 @@ func readCSVHeader(t *testing.T, path string) []string {
 		t.Fatalf("%s is empty", path)
 	}
 	return records[0]
+}
+
+func assertExplorerGroup(t *testing.T, index ExplorerIndex, id string, groupType string, tickers []string) ExplorerGroup {
+	t.Helper()
+	for _, group := range index.Groups {
+		if group.ID != id {
+			continue
+		}
+		if group.Type != groupType || !reflect.DeepEqual(group.Tickers, tickers) || group.Count != len(tickers) {
+			t.Fatalf("explorer group %s = %#v, want type=%s tickers=%#v", id, group, groupType, tickers)
+		}
+		return group
+	}
+	t.Fatalf("missing explorer group %s in %#v", id, index.Groups)
+	return ExplorerGroup{}
 }
 
 func assertGolden(t *testing.T, name string, got []byte) {

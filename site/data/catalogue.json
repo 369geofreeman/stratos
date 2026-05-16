@@ -29,7 +29,7 @@
     "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
     "enrichmentOldestRetrievedAt": "2026-05-16T10:27:53Z",
     "enrichmentNewestRetrievedAt": "2026-05-16T17:59:08Z",
-    "unclassifiedCount": 16891,
+    "unclassifiedCount": 7721,
     "emptyTickerCount": 0,
     "duplicateTickerCount": 0,
     "duplicateISINCount": 2219,
@@ -39,13 +39,13 @@
     "identityIssueCount": 0,
     "reviewQueueCounts": {
       "enrichment": 9348,
-      "taxonomy": 23875
+      "taxonomy": 11213
     },
     "reviewReasonCounts": {
       "enrichment_failed": 9348,
       "missing_industry": 3492,
       "missing_sector": 3492,
-      "missing_theme_exposure": 16891
+      "missing_theme_exposure": 4229
     },
     "reviewQueueDeltas": {
       "enrichment": -156,
@@ -101,7 +101,7 @@
     "supplyChainCount": 7,
     "exposureCount": 99,
     "relationshipCount": 9,
-    "unclassifiedCount": 16891
+    "unclassifiedCount": 7721
   },
   "slices": [
     {
@@ -112,6 +112,11 @@
     {
       "name": "tickers_index.json",
       "path": "site/data/tickers_index.json",
+      "format": "json"
+    },
+    {
+      "name": "explorer_index.json",
+      "path": "site/data/explorer_index.json",
       "format": "json"
     },
     {

@@ -4,6 +4,7 @@ set -eu
 expected_files="
 site/data/app_bootstrap.json
 site/data/tickers_index.json
+site/data/explorer_index.json
 site/data/catalogue.json
 site/data/tickers.csv
 site/data/companies.json
@@ -58,6 +59,7 @@ ok = True
 for path in (
     "site/data/app_bootstrap.json",
     "site/data/tickers_index.json",
+    "site/data/explorer_index.json",
     "site/data/catalogue.json",
     "site/data/companies.json",
     "site/data/sectors.json",

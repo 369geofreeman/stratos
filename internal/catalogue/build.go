@@ -1021,7 +1021,7 @@ func buildUnclassified(tickers []*Ticker) []UnclassifiedRow {
 		if ticker.Industry == "" {
 			reasons = append(reasons, "missing industry")
 		}
-		if len(ticker.ThemeIDs) == 0 {
+		if len(ticker.ThemeIDs) == 0 && shouldReviewMissingThemeExposure(ticker) {
 			reasons = append(reasons, "missing theme exposure")
 		}
 		if len(reasons) == 0 {
@@ -1040,7 +1040,92 @@ func buildUnclassified(tickers []*Ticker) []UnclassifiedRow {
 }
 
 func isUnclassified(ticker *Ticker) bool {
-	return ticker.Sector == "" || ticker.Industry == "" || len(ticker.ThemeIDs) == 0
+	return ticker.Sector == "" || ticker.Industry == "" || (len(ticker.ThemeIDs) == 0 && shouldReviewMissingThemeExposure(ticker))
+}
+
+func shouldReviewMissingThemeExposure(ticker *Ticker) bool {
+	if ticker == nil || len(ticker.ThemeIDs) > 0 {
+		return false
+	}
+	if ticker.InstrumentCategory != CategoryStock || ticker.Sector == "" || ticker.Industry == "" {
+		return false
+	}
+	industry := strings.TrimSpace(ticker.Industry)
+	switch strings.TrimSpace(ticker.Sector) {
+	case "Healthcare", "Energy":
+		return true
+	case "Technology":
+		return industryMatchesAny(industry,
+			"Communication Equipment",
+			"Computer Hardware",
+			"Electronic Components",
+			"Information Technology Services",
+			"Scientific & Technical Instruments",
+			"Security & Protection Services",
+			"Semiconductor Equipment",
+			"Semiconductor Equipment & Materials",
+			"Semiconductors",
+			"Software - Application",
+			"Software - Infrastructure",
+			"Solar",
+		)
+	case "Financial Services":
+		return industryMatchesAny(industry,
+			"Banks - Diversified",
+			"Banks - Regional",
+			"Capital Markets",
+			"Credit Services",
+			"Financial Data & Stock Exchanges",
+		)
+	case "Basic Materials":
+		return industryMatchesAny(industry,
+			"Agricultural Inputs",
+			"Aluminum",
+			"Chemicals",
+			"Coking Coal",
+			"Copper",
+			"Gold",
+			"Lithium",
+			"Other Industrial Metals & Mining",
+			"Other Precious Metals & Mining",
+			"Silver",
+			"Specialty Chemicals",
+			"Steel",
+			"Thermal Coal",
+			"Uranium",
+		)
+	case "Industrials":
+		return industryMatchesAny(industry,
+			"Aerospace & Defense",
+			"Electrical Equipment",
+			"Electrical Equipment & Parts",
+			"Engineering & Construction",
+			"Farm & Heavy Construction Machinery",
+			"Industrial Distribution",
+			"Infrastructure Operations",
+			"Pollution & Treatment Controls",
+			"Specialty Industrial Machinery",
+		)
+	case "Utilities":
+		return industryMatchesAny(industry,
+			"Independent Power Producers",
+			"Utilities - Diversified",
+			"Utilities - Independent Power Producers",
+			"Utilities - Regulated Electric",
+			"Utilities - Renewable",
+		)
+	default:
+		return false
+	}
+}
+
+func industryMatchesAny(industry string, candidates ...string) bool {
+	for _, candidate := range candidates {
+		if strings.EqualFold(industry, candidate) {
+			return true
+		}
+	}
+	return false
 }
 
 func groupTickers(tickers []*Ticker, keyFn func(*Ticker) string) []GroupCount {

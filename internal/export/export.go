@@ -29,6 +29,7 @@ var ReviewIssuesCSVHeader = []string{"queue", "reason_code", "severity", "ticker
 var GeneratedSiteDataFiles = []string{
 	"app_bootstrap.json",
 	"tickers_index.json",
+	"explorer_index.json",
 	"catalogue.json",
 	"companies.json",
 	"sectors.json",
@@ -151,6 +152,26 @@ type SearchDocument struct {
 	Tickers  []string `json:"tickers,omitempty"`
 }
 
+type ExplorerIndex struct {
+	DataContractVersion int             `json:"dataContractVersion"`
+	SchemaVersion       int             `json:"schemaVersion"`
+	GeneratedAt         string          `json:"generatedAt,omitempty"`
+	Groups              []ExplorerGroup `json:"groups"`
+}
+
+type ExplorerGroup struct {
+	ID          string   `json:"id"`
+	Type        string   `json:"type"`
+	Value       string   `json:"value,omitempty"`
+	Label       string   `json:"label"`
+	ParentID    string   `json:"parentId,omitempty"`
+	ParentLabel string   `json:"parentLabel,omitempty"`
+	Description string   `json:"description,omitempty"`
+	Count       int      `json:"count"`
+	EdgeCount   int      `json:"edgeCount,omitempty"`
+	Tickers     []string `json:"tickers"`
+}
+
 type CatalogueIndex struct {
 	DataContractVersion int                     `json:"dataContractVersion"`
 	SchemaVersion       int                     `json:"schemaVersion"`
@@ -216,6 +237,7 @@ func buildSiteDataOutputs(cat *catalogue.Catalogue) ([]generatedOutput, error) {
 		value any
 	}{
 		{"tickers_index.json", BuildTickerIndex(&contractCat)},
+		{"explorer_index.json", BuildExplorerIndex(&contractCat)},
 		{"catalogue.json", BuildCatalogueIndex(&contractCat)},
 		{"companies.json", contractCat.Companies},
 		{"sectors.json", contractCat.Sectors},
@@ -233,7 +255,7 @@ func buildSiteDataOutputs(cat *catalogue.Catalogue) ([]generatedOutput, error) {
 	outputByName := map[string]generatedOutput{}
 	for _, def := range defs {
 		marshal := marshalJSON
-		if def.name == "tickers_index.json" || def.name == "unclassified.json" || def.name == "review_queues.json" {
+		if def.name == "tickers_index.json" || def.name == "explorer_index.json" || def.name == "unclassified.json" || def.name == "review_queues.json" {
 			marshal = marshalCompactJSON
 		}
 		b, err := marshal(def.value)
@@ -363,6 +385,340 @@ func BuildTickerIndex(cat *catalogue.Catalogue) TickerIndex {
 		GeneratedAt:         cat.GeneratedAt,
 		Tickers:             rows,
 	}
+}
+
+func BuildExplorerIndex(cat *catalogue.Catalogue) ExplorerIndex {
+	if cat == nil {
+		return ExplorerIndex{
+			DataContractVersion: catalogue.DataContractVersion,
+			SchemaVersion:       catalogue.DataContractSchemaVersion,
+		}
+	}
+	builder := newExplorerIndexBuilder(cat)
+	builder.addSectorGroups()
+	builder.addIndustryGroups()
+	builder.addCategoryGroups()
+	builder.addStructureFlagGroups()
+	builder.addThemeGroups()
+	builder.addLayerGroups()
+	builder.addRelationshipGroups()
+	return ExplorerIndex{
+		DataContractVersion: catalogue.DataContractVersion,
+		SchemaVersion:       catalogue.DataContractSchemaVersion,
+		GeneratedAt:         cat.GeneratedAt,
+		Groups:              builder.groups(),
+	}
+}
+
+type explorerIndexBuilder struct {
+	cat              *catalogue.Catalogue
+	groupsByID       map[string]*ExplorerGroup
+	themeByID        map[string]taxonomy.Theme
+	tickerByID       map[string]bool
+	tickersByCompany map[string][]string
+	tickersByISIN    map[string][]string
+}
+
+func newExplorerIndexBuilder(cat *catalogue.Catalogue) *explorerIndexBuilder {
+	builder := &explorerIndexBuilder{
+		cat:              cat,
+		groupsByID:       map[string]*ExplorerGroup{},
+		themeByID:        map[string]taxonomy.Theme{},
+		tickerByID:       map[string]bool{},
+		tickersByCompany: map[string][]string{},
+		tickersByISIN:    map[string][]string{},
+	}
+	for _, theme := range cat.Themes {
+		builder.themeByID[theme.ID] = theme
+	}
+	for _, company := range cat.Companies {
+		builder.tickersByCompany[company.ID] = appendUniqueStrings(builder.tickersByCompany[company.ID], company.TickerIDs...)
+	}
+	for _, ticker := range cat.Tickers {
+		builder.tickerByID[ticker.Ticker] = true
+		if ticker.CompanyID != "" {
+			builder.tickersByCompany[ticker.CompanyID] = appendUniqueStrings(builder.tickersByCompany[ticker.CompanyID], ticker.Ticker)
+		}
+		if ticker.ISIN != "" {
+			builder.tickersByISIN[ticker.ISIN] = appendUniqueStrings(builder.tickersByISIN[ticker.ISIN], ticker.Ticker)
+		}
+	}
+	return builder
+}
+
+func (builder *explorerIndexBuilder) addSectorGroups() {
+	for _, group := range builder.cat.Sectors {
+		builder.addGroup(ExplorerGroup{
+			ID:      "sector:" + group.ID,
+			Type:    "sector",
+			Value:   group.Name,
+			Label:   group.Name,
+			Tickers: group.Tickers,
+		})
+	}
+}
+
+func (builder *explorerIndexBuilder) addIndustryGroups() {
+	for _, group := range builder.cat.Industries {
+		builder.addGroup(ExplorerGroup{
+			ID:      "industry:" + group.ID,
+			Type:    "industry",
+			Value:   group.Name,
+			Label:   group.Name,
+			Tickers: group.Tickers,
+		})
+	}
+}
+
+func (builder *explorerIndexBuilder) addCategoryGroups() {
+	byCategory := map[string][]string{}
+	for _, ticker := range builder.cat.Tickers {
+		if ticker.InstrumentCategory == "" {
+			continue
+		}
+		byCategory[ticker.InstrumentCategory] = appendUniqueStrings(byCategory[ticker.InstrumentCategory], ticker.Ticker)
+	}
+	for category, tickers := range byCategory {
+		builder.addGroup(ExplorerGroup{
+			ID:      "category:" + category,
+			Type:    "category",
+			Value:   category,
+			Label:   humanizeIdentifier(category),
+			Tickers: tickers,
+		})
+	}
+}
+
+func (builder *explorerIndexBuilder) addStructureFlagGroups() {
+	byFlag := map[string][]string{}
+	for _, ticker := range builder.cat.Tickers {
+		for _, flag := range ticker.StructureFlags {
+			byFlag[flag] = appendUniqueStrings(byFlag[flag], ticker.Ticker)
+		}
+	}
+	for flag, tickers := range byFlag {
+		builder.addGroup(ExplorerGroup{
+			ID:      "flag:" + flag,
+			Type:    "flag",
+			Value:   flag,
+			Label:   humanizeIdentifier(flag),
+			Tickers: tickers,
+		})
+	}
+}
+
+func (builder *explorerIndexBuilder) addThemeGroups() {
+	for _, theme := range builder.cat.Themes {
+		var tickers []string
+		for _, ticker := range builder.cat.Tickers {
+			if containsString(ticker.ThemeIDs, theme.ID) {
+				tickers = appendUniqueStrings(tickers, ticker.Ticker)
+			}
+		}
+		builder.addGroup(ExplorerGroup{
+			ID:          "theme:" + theme.ID,
+			Type:        "theme",
+			Value:       theme.ID,
+			Label:       theme.Name,
+			Description: theme.Description,
+			Tickers:     tickers,
+		})
+	}
+}
+
+func (builder *explorerIndexBuilder) addLayerGroups() {
+	for _, chain := range builder.cat.SupplyChains {
+		theme := builder.themeByID[chain.ThemeID]
+		for _, layer := range chain.Layers {
+			var tickers []string
+			for _, exposure := range builder.cat.Exposures {
+				if exposure.ThemeID == chain.ThemeID && exposure.LayerID == layer.ID {
+					tickers = appendUniqueStrings(tickers, builder.tickersForExposure(exposure)...)
+				}
+			}
+			builder.addGroup(ExplorerGroup{
+				ID:          "layer:" + chain.ThemeID + ":" + layer.ID,
+				Type:        "layer",
+				Value:       layer.ID,
+				Label:       layer.Name,
+				ParentID:    chain.ThemeID,
+				ParentLabel: firstNonEmpty(theme.Name, chain.ThemeID),
+				Description: layer.Description,
+				Tickers:     tickers,
+			})
+		}
+	}
+}
+
+func (builder *explorerIndexBuilder) addRelationshipGroups() {
+	type relationshipGroup struct {
+		tickers []string
+		edges   int
+	}
+	byType := map[string]relationshipGroup{}
+	for _, relationship := range builder.cat.Relationships {
+		if relationship.RelationshipType == "" {
+			continue
+		}
+		group := byType[relationship.RelationshipType]
+		group.edges++
+		group.tickers = appendUniqueStrings(group.tickers, builder.relationshipEndpointTickers(relationship, "source")...)
+		group.tickers = appendUniqueStrings(group.tickers, builder.relationshipEndpointTickers(relationship, "target")...)
+		byType[relationship.RelationshipType] = group
+	}
+	for relationshipType, group := range byType {
+		builder.addGroup(ExplorerGroup{
+			ID:        "relationship:" + relationshipType,
+			Type:      "relationship",
+			Value:     relationshipType,
+			Label:     humanizeIdentifier(relationshipType),
+			EdgeCount: group.edges,
+			Tickers:   group.tickers,
+		})
+	}
+}
+
+func (builder *explorerIndexBuilder) tickersForExposure(exposure taxonomy.Exposure) []string {
+	switch {
+	case exposure.Ticker != "" && builder.tickerByID[exposure.Ticker]:
+		return []string{exposure.Ticker}
+	case exposure.CompanyID != "":
+		return builder.tickersByCompany[exposure.CompanyID]
+	case exposure.ISIN != "":
+		return builder.tickersByISIN[exposure.ISIN]
+	default:
+		return nil
+	}
+}
+
+func (builder *explorerIndexBuilder) relationshipEndpointTickers(row taxonomy.Relationship, side string) []string {
+	switch side {
+	case "source":
+		return builder.tickersForEndpoint(row.SourceTicker, row.SourceISIN, row.SourceCompanyID)
+	case "target":
+		return builder.tickersForEndpoint(row.TargetTicker, row.TargetISIN, row.TargetCompanyID)
+	default:
+		return nil
+	}
+}
+
+func (builder *explorerIndexBuilder) tickersForEndpoint(ticker string, isin string, companyID string) []string {
+	switch {
+	case ticker != "" && builder.tickerByID[ticker]:
+		return []string{ticker}
+	case companyID != "":
+		return builder.tickersByCompany[companyID]
+	case isin != "":
+		return builder.tickersByISIN[isin]
+	default:
+		return nil
+	}
+}
+
+func (builder *explorerIndexBuilder) addGroup(group ExplorerGroup) {
+	group.Tickers = sortedUniqueStrings(group.Tickers)
+	group.Count = len(group.Tickers)
+	if group.Count == 0 {
+		return
+	}
+	builder.groupsByID[group.ID] = &group
+}
+
+func (builder *explorerIndexBuilder) groups() []ExplorerGroup {
+	out := make([]ExplorerGroup, 0, len(builder.groupsByID))
+	for _, group := range builder.groupsByID {
+		out = append(out, *group)
+	}
+	sort.SliceStable(out, func(i, j int) bool {
+		leftOrder := explorerTypeOrder(out[i].Type)
+		rightOrder := explorerTypeOrder(out[j].Type)
+		if leftOrder != rightOrder {
+			return leftOrder < rightOrder
+		}
+		if out[i].ParentLabel != out[j].ParentLabel {
+			return out[i].ParentLabel < out[j].ParentLabel
+		}
+		if out[i].Count != out[j].Count {
+			return out[i].Count > out[j].Count
+		}
+		if out[i].Label != out[j].Label {
+			return out[i].Label < out[j].Label
+		}
+		return out[i].ID < out[j].ID
+	})
+	return out
+}
+
+func explorerTypeOrder(value string) int {
+	switch value {
+	case "theme":
+		return 10
+	case "layer":
+		return 20
+	case "sector":
+		return 30
+	case "industry":
+		return 40
+	case "category":
+		return 50
+	case "flag":
+		return 60
+	case "relationship":
+		return 70
+	default:
+		return 100
+	}
+}
+
+func humanizeIdentifier(value string) string {
+	parts := strings.Fields(strings.ReplaceAll(strings.ReplaceAll(value, "_", " "), "-", " "))
+	for index, part := range parts {
+		if strings.EqualFold(part, "etf") || strings.EqualFold(part, "etp") || strings.EqualFold(part, "adr") || strings.EqualFold(part, "gdr") {
+			parts[index] = strings.ToUpper(part)
+			continue
+		}
+		parts[index] = strings.ToUpper(part[:1]) + strings.ToLower(part[1:])
+	}
+	return strings.Join(parts, " ")
+}
+
+func appendUniqueStrings(existing []string, additions ...string) []string {
+	seen := map[string]bool{}
+	for _, value := range existing {
+		seen[value] = true
+	}
+	for _, value := range additions {
+		if value == "" || seen[value] {
+			continue
+		}
+		existing = append(existing, value)
+		seen[value] = true
+	}
+	return existing
+}
+
+func sortedUniqueStrings(values []string) []string {
+	out := appendUniqueStrings(nil, values...)
+	sort.Strings(out)
+	return out
+}
+
+func firstNonEmpty(values ...string) string {
+	for _, value := range values {
+		if strings.TrimSpace(value) != "" {
+			return value
+		}
+	}
+	return ""
+}
+
+func containsString(values []string, value string) bool {
+	for _, existing := range values {
+		if existing == value {
+			return true
+		}
+	}
+	return false
 }
 
 func generatedFileFormat(name string) string {

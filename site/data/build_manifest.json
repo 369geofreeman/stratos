@@ -25,7 +25,7 @@
   "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
   "enrichmentOldestRetrievedAt": "2026-05-16T10:27:53Z",
   "enrichmentNewestRetrievedAt": "2026-05-16T17:59:08Z",
-  "unclassifiedCount": 16891,
+  "unclassifiedCount": 7721,
   "emptyTickerCount": 0,
   "duplicateTickerCount": 0,
   "duplicateISINCount": 2219,
@@ -35,13 +35,13 @@
   "identityIssueCount": 0,
   "reviewQueueCounts": {
     "enrichment": 9348,
-    "taxonomy": 23875
+    "taxonomy": 11213
   },
   "reviewReasonCounts": {
     "enrichment_failed": 9348,
     "missing_industry": 3492,
     "missing_sector": 3492,
-    "missing_theme_exposure": 16891
+    "missing_theme_exposure": 4229
   },
   "reviewQueueDeltas": {
     "enrichment": -156,
@@ -92,23 +92,30 @@
       "path": "site/data/app_bootstrap.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "2b73b3c6fc02c445dff3972e13be7a23798fee63d6cfe7da1aecf2749771519d",
-      "bytes": 79431,
+      "sha256": "77164d25fad93fd24d346388d504ea1152444374fad749c8c58eafdcf244a8b8",
+      "bytes": 79593,
       "checksumMode": "projection_excludes_generatedFiles"
     },
     {
       "path": "site/data/tickers_index.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "5c821d67133af4d3d5fc9b79561b731af3a047876e2e0ea32dda39bd258605d7",
-      "bytes": 15759673
+      "sha256": "3d9c1128d47da6707d2bc7b23eb444d8e98c03a6f7b8c773de88a7f20a12325a",
+      "bytes": 15768843
+    },
+    {
+      "path": "site/data/explorer_index.json",
+      "format": "json",
+      "schemaVersion": 2,
+      "sha256": "ada911433638d484a9e5ce149195239c50584cee3793540ccf5f69bd2fef9d2a",
+      "bytes": 776063
     },
     {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "6bc7dac802a332574f6f760a13646142e129b2f1d531fdbf280aaa7ff7ab27c3",
-      "bytes": 6473
+      "sha256": "8a5b48d0f62a5f19cbb28bd60f1b79ab81c36f5d2180eaa4cbc5d7df7e6147fe",
+      "bytes": 6590
     },
     {
       "path": "site/data/companies.json",
@@ -177,29 +184,29 @@
       "path": "site/data/unclassified.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "e7762bf27e6660445947981077fc33b1ac1bcff879fc7b0fd962aaee71f7eb36",
-      "bytes": 3543205
+      "sha256": "bb71dd720a0fd50d76e50212ae8765f514cd18e6a25f8a8a082af071b8ee8f4f",
+      "bytes": 1467474
     },
     {
       "path": "site/data/review_queues.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "6554d83dc3d0eb77568e7a1053180231a5673deef4073ee518d7b01413baa937",
-      "bytes": 19157794
+      "sha256": "b70018c6a3b38a74d90dc9904d32619c19f84304320cd2ba9e63d036ecb933e8",
+      "bytes": 11654844
     },
     {
       "path": "site/data/review_summary.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "51031f51dfa3a1ac0fcf7960bb3b612faa93cc5999e5e746756bac1d82bb08bc",
-      "bytes": 820
+      "sha256": "deae55060e61dea097650ebe5c30a7570ff6568761a54c477d6fdc9d50657608",
+      "bytes": 816
     },
     {
       "path": "site/data/tickers.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "39af821028894f18d125a8e3606f02c2d65864bd8eebe8cafd615a708add6f70",
-      "bytes": 5501538
+      "sha256": "8ba0c50b9f121928792d989e38ebee1c0b9e18427edf29af7ac2bc35b8554a54",
+      "bytes": 5510708
     },
     {
       "path": "site/data/securities.csv",
@@ -219,15 +226,15 @@
       "path": "site/data/unclassified.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "8462fdc4d1fa6b48393e6f1c3356d9658b2436b48953ed6dbf8ef13b02c0caf9",
-      "bytes": 2279042
+      "sha256": "901d6906737b6617f94c64afe6c970a436d73d800b01c03ab779b16109182d97",
+      "bytes": 890949
     },
     {
       "path": "site/data/taxonomy_issues.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "fa4006fcea9b97132f5c4333be4950ea57324844228cff4c05cc21d8bbfb5d2b",
-      "bytes": 7732771
+      "sha256": "18bf7af408ec53b7966620d9391932729c969df573a6c3557c56dae7d4d8f782",
+      "bytes": 3475190
     },
     {
       "path": "site/data/enrichment_issues.csv",
@@ -268,8 +275,8 @@
       "path": "site/data/suggested_exposures.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "878a6620065b35ae72f02eb20494fca8af779be147bf2705e6bafa869e8e50fc",
-      "bytes": 934832
+      "sha256": "e09b15a8ae26869b52fb6c81e18963d1e0a3b30fa9c7b6a363ac2aa6f54bd01e",
+      "bytes": 213910
     },
     {
       "path": "site/data/suggested_ticker_overrides.csv",
@@ -289,8 +296,8 @@
       "path": "site/data/build_manifest.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "c06fa7fc986764d3ef8de4ea6d2ac17b6f7bb61fd76aa5c4ac60c630291e5d21",
-      "bytes": 8961,
+      "sha256": "b570ea41a81fbfc7a303d798d08914e22a5f4b4d62b0629f82cbd49c0fd9fccb",
+      "bytes": 9174,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

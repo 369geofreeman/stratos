@@ -1,7 +1,1 @@
 issue_code,ticker,isin,security_id,company_id,name,reason,suggested_action
-broker_ticker_parse_uncertain,ABBNsEQ,CH0012221716,isin:CH0012221716,abb_ltd_n,ABB LTD.                      N,unrecognised_broker_ticker,review whether the broker ticker suffix should be handled by the parser
-broker_ticker_parse_uncertain,AVAV__US_EQ,US0080731088,isin:US0080731088,aerovironment,AeroVironment,empty_ticker_component,review whether the broker ticker suffix should be handled by the parser
-broker_ticker_parse_uncertain,ELF_EQ_US,US26856L1035,isin:US26856L1035,elf_beauty,elf Beauty,unrecognised_broker_ticker_suffix,review whether the broker ticker suffix should be handled by the parser
-broker_ticker_parse_uncertain,LFUS_EQ_US,US5370081045,isin:US5370081045,littelfuse_inc,"Littelfuse, Inc.",unrecognised_broker_ticker_suffix,review whether the broker ticker suffix should be handled by the parser
-broker_ticker_parse_uncertain,TPR_EQ_US,US8760301072,isin:US8760301072,tapestry_inc,Tapestry Inc,unrecognised_broker_ticker_suffix,review whether the broker ticker suffix should be handled by the parser
-broker_ticker_parse_uncertain,YUMC,US98850P1093,isin:US98850P1093,yum_china,Yum China,unrecognised_broker_ticker,review whether the broker ticker suffix should be handled by the parser

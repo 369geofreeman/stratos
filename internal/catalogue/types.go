@@ -7,7 +7,7 @@ import (
 )
 
 const DataContractVersion = 1
-const DataContractSchemaVersion = 1
+const DataContractSchemaVersion = 2
 
 type Catalogue struct {
 	DataContractVersion int                     `json:"dataContractVersion"`

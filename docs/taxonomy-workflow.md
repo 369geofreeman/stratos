@@ -92,7 +92,7 @@ Print paste-friendly taxonomy coverage without network calls:
 GOCACHE="$PWD/.gocache" go run ./cmd/statos-build taxonomy coverage
 ```
 
-Use another generated catalogue if needed:
+Use another generated catalogue directory if needed. Contract v2 `catalogue.json` is a compact index, so keep it next to its generated slice files:
 
 ```sh
 GOCACHE="$PWD/.gocache" go run ./cmd/statos-build taxonomy coverage --catalogue /tmp/catalogue.json

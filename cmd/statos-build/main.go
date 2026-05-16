@@ -225,7 +225,73 @@ func readCatalogue(path string) (*catalogue.Catalogue, error) {
 	if err := json.Unmarshal(b, &cat); err != nil {
 		return nil, fmt.Errorf("decode catalogue %s: %w", path, err)
 	}
+	if len(cat.Tickers) == 0 && len(cat.Themes) == 0 {
+		var index siteexport.CatalogueIndex
+		if err := json.Unmarshal(b, &index); err == nil && len(index.Slices) > 0 {
+			if err := hydrateCatalogueFromSlices(filepath.Dir(path), &cat); err != nil {
+				return nil, err
+			}
+		}
+	}
 	return &cat, nil
+}
+
+func hydrateCatalogueFromSlices(dir string, cat *catalogue.Catalogue) error {
+	var bootstrap siteexport.AppBootstrap
+	if err := readJSONFile(filepath.Join(dir, "app_bootstrap.json"), &bootstrap); err != nil {
+		return err
+	}
+	var tickerIndex siteexport.TickerIndex
+	if err := readJSONFile(filepath.Join(dir, "tickers_index.json"), &tickerIndex); err != nil {
+		return err
+	}
+	var companies []catalogue.Company
+	if err := readJSONFile(filepath.Join(dir, "companies.json"), &companies); err != nil {
+		return err
+	}
+	var sectors []catalogue.GroupCount
+	if err := readJSONFile(filepath.Join(dir, "sectors.json"), &sectors); err != nil {
+		return err
+	}
+	var industries []catalogue.GroupCount
+	if err := readJSONFile(filepath.Join(dir, "industries.json"), &industries); err != nil {
+		return err
+	}
+	var unclassified []catalogue.UnclassifiedRow
+	if err := readJSONFile(filepath.Join(dir, "unclassified.json"), &unclassified); err != nil {
+		return err
+	}
+
+	cat.Themes = bootstrap.Themes
+	cat.SupplyChains = bootstrap.SupplyChains
+	cat.Exposures = bootstrap.Exposures
+	cat.Companies = companies
+	cat.Sectors = sectors
+	cat.Industries = industries
+	cat.Unclassified = unclassified
+	cat.Tickers = make([]catalogue.Ticker, 0, len(tickerIndex.Tickers))
+	for _, row := range tickerIndex.Tickers {
+		cat.Tickers = append(cat.Tickers, catalogue.Ticker{
+			Ticker:    row.Ticker,
+			CompanyID: row.CompanyID,
+			ThemeIDs:  row.ThemeIDs,
+			LayerIDs:  row.LayerIDs,
+			Sector:    row.Sector,
+			Industry:  row.Industry,
+		})
+	}
+	return nil
+}
+
+func readJSONFile(path string, target any) error {
+	b, err := os.ReadFile(path)
+	if err != nil {
+		return err
+	}
+	if err := json.Unmarshal(b, target); err != nil {
+		return fmt.Errorf("decode %s: %w", path, err)
+	}
+	return nil
 }
 
 func taxonomyCoverageReport(cat *catalogue.Catalogue) string {

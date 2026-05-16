@@ -7,7 +7,7 @@
 Current contract versions:
 
 - `dataContractVersion`: `1`
-- `schemaVersion`: `1`
+- `schemaVersion`: `2`
 
 `catalogue.json` and `build_manifest.json` include these fields directly. Array-shaped JSON files keep their top-level array shape for frontend compatibility; their schema version is recorded in `build_manifest.json.generatedFiles`.
 
@@ -54,7 +54,7 @@ These files are intended for frontend loading:
 - `sectors.json`, `industries.json`, `themes.json`, `supply_chains.json`: standalone exports matching the bundled catalogue arrays.
 - `search_index.json`: compact searchable documents for future grouped search surfaces.
 - `build_manifest.json`: metadata for review/export tooling.
-- `catalogue.json`: complete bundle retained as a full export/download artifact. The frontend must not fetch this file during startup.
+- `catalogue.json`: compact catalogue index with counts and slice-file references. The frontend must not fetch this file during startup.
 
 These files are primarily for human review and spreadsheet workflows:
 
@@ -76,9 +76,9 @@ These files are primarily for human review and spreadsheet workflows:
 
 ### catalogue.json
 
-Top-level object. Stable keys include `dataContractVersion`, `schemaVersion`, `generatedAt`, `manifest`, `tickers`, `securities`, `listings`, `companies`, `sectors`, `industries`, `themes`, `supplyChains`, `exposures`, `relationships`, `notes`, `unclassified`, and optional `identityIssues`.
+Top-level object. Stable keys include `dataContractVersion`, `schemaVersion`, `generatedAt`, `manifest`, `counts`, and `slices`.
 
-This remains the complete export artifact. Do not wrap this file in a `data` envelope without a compatible frontend migration.
+This file is a compact index, not a complete bundle. Large arrays live in the standalone slice files such as `tickers_index.json`, `companies.json`, `securities.json`, `listings.json`, `relationships.json`, `review_queues.json`, and the CSV exports. The `slices` array lists generated file names, canonical paths, and file formats. Use `build_manifest.json.generatedFiles` when checksums and byte sizes are needed.
 
 ### app_bootstrap.json
 

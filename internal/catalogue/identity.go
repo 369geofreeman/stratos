@@ -48,13 +48,23 @@ func ParseBrokerTicker(ticker string) BrokerTickerParts {
 	if trimmed == "" {
 		return BrokerTickerParts{Uncertain: true, Reason: "missing_ticker"}
 	}
-	parts := strings.Split(trimmed, "_")
-	for _, part := range parts {
-		if strings.TrimSpace(part) == "" {
-			return BrokerTickerParts{Symbol: trimmed, Uncertain: true, Reason: "empty_ticker_component"}
+	rawParts := strings.Split(trimmed, "_")
+	parts := make([]string, 0, len(rawParts))
+	for _, part := range rawParts {
+		part = strings.TrimSpace(part)
+		if part != "" {
+			parts = append(parts, part)
 		}
 	}
 	if len(parts) >= 3 {
+		if looksLikeAssetCode(parts[len(parts)-2]) && looksLikeVenueCode(parts[len(parts)-1]) {
+			return BrokerTickerParts{
+				Symbol:       strings.Join(parts[:len(parts)-2], "_"),
+				ExchangeCode: parts[len(parts)-1],
+				AssetCode:    strings.ToUpper(parts[len(parts)-2]),
+				Parsed:       true,
+			}
+		}
 		exchangeCode := parts[len(parts)-2]
 		assetCode := parts[len(parts)-1]
 		symbol := strings.Join(parts[:len(parts)-2], "_")
@@ -77,6 +87,18 @@ func ParseBrokerTicker(ticker string) BrokerTickerParts {
 			Parsed:    true,
 		}
 	}
+	if len(parts) == 1 {
+		if symbol, assetCode, ok := compactAssetSuffix(trimmed); ok {
+			return BrokerTickerParts{
+				Symbol:    symbol,
+				AssetCode: assetCode,
+				Parsed:    true,
+			}
+		}
+		if looksLikeStandaloneBrokerSymbol(trimmed) {
+			return BrokerTickerParts{Symbol: trimmed, Parsed: true}
+		}
+	}
 	if len(parts) == 2 && looksLikeVenueCode(parts[1]) {
 		return BrokerTickerParts{
 			Symbol:       parts[0],
@@ -87,6 +109,24 @@ func ParseBrokerTicker(ticker string) BrokerTickerParts {
 		}
 	}
 	return BrokerTickerParts{Symbol: trimmed, Uncertain: true, Reason: "unrecognised_broker_ticker"}
+}
+
+func compactAssetSuffix(value string) (string, string, bool) {
+	for _, assetCode := range brokerAssetCodes() {
+		if len(value) <= len(assetCode) || !strings.HasSuffix(strings.ToUpper(value), assetCode) {
+			continue
+		}
+		prefix := value[:len(value)-len(assetCode)]
+		if !hasTrailingLowercaseASCII(prefix) {
+			continue
+		}
+		symbol := compactBrokerSymbol(prefix)
+		if symbol == "" {
+			continue
+		}
+		return symbol, assetCode, true
+	}
+	return "", "", false
 }
 
 func compactBrokerSymbol(value string) string {
@@ -267,12 +307,44 @@ func looksLikeVenueCode(value string) bool {
 }
 
 func looksLikeAssetCode(value string) bool {
-	switch strings.ToUpper(value) {
-	case "EQ", "ETF", "FUND", "WARRANT", "WAR", "RIGHT", "CRYPTO", "FOREX", "FX", "BOND", "COMMODITY", "ETC", "ETN":
-		return true
-	default:
+	upper := strings.ToUpper(value)
+	for _, assetCode := range brokerAssetCodes() {
+		if upper == assetCode {
+			return true
+		}
+	}
+	return false
+}
+
+func brokerAssetCodes() []string {
+	return []string{"COMMODITY", "WARRANT", "CRYPTO", "FOREX", "RIGHT", "FUND", "BOND", "ETF", "ETC", "ETN", "WAR", "EQ", "FX"}
+}
+
+func looksLikeStandaloneBrokerSymbol(value string) bool {
+	if value == "" || len(value) > 12 {
 		return false
 	}
+	hasSymbolChar := false
+	for _, r := range value {
+		switch {
+		case r >= 'A' && r <= 'Z':
+			hasSymbolChar = true
+		case r >= '0' && r <= '9':
+			hasSymbolChar = true
+		case r == '.':
+		default:
+			return false
+		}
+	}
+	return hasSymbolChar
+}
+
+func hasTrailingLowercaseASCII(value string) bool {
+	if value == "" {
+		return false
+	}
+	last := value[len(value)-1]
+	return last >= 'a' && last <= 'z'
 }
 
 func mergeFlags(existing []string, additions ...[]string) []string {

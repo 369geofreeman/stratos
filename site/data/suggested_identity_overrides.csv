@@ -1,7 +1,1 @@
 target_type,ticker,isin,security_id,company_id,override_security_id,override_company_id,category,flags,confidence,reason,source_url,last_reviewed
-ticker,ABBNsEQ,,,,,,,,,,,
-ticker,AVAV__US_EQ,,,,,,,,,,,
-ticker,ELF_EQ_US,,,,,,,,,,,
-ticker,LFUS_EQ_US,,,,,,,,,,,
-ticker,TPR_EQ_US,,,,,,,,,,,
-ticker,YUMC,,,,,,,,,,,

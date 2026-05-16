@@ -1984,7 +1984,7 @@ AVAC_US_EQ,AVAC_US_EQ,isin:US08178Q5071,beneficient,US,,USD
 AVAH_US_EQ,AVAH_US_EQ,isin:US05356F1057,aveanna_healthcare_holdings_inc,US,NasdaqGS,USD
 AVAL_US_EQ,AVAL_US_EQ,isin:US40053W1018,grupo_aval_acciones_y_valores_s_a,US,Bolsa de Madrid,USD
 AVAPl_EQ,AVAPl_EQ,isin:GB00B196F554,avation_plc,,Wiener Börse,GBX
-AVAV__US_EQ,AVAV__US_EQ,isin:US0080731088,aerovironment,,,USD
+AVAV__US_EQ,AVAV__US_EQ,isin:US0080731088,aerovironment,US,,USD
 AVA_US_EQ,AVA_US_EQ,isin:US05379B1070,avista,US,Bolsa de Madrid,USD
 AVBC_US_EQ,AVBC_US_EQ,isin:US05369T1007,avidia_bancorp_inc,US,Bolsa de Madrid,USD
 AVBH_US_EQ,AVBH_US_EQ,isin:US05368J1034,avidbank_holdings_inc,US,NasdaqGS,USD
@@ -5133,7 +5133,7 @@ ELEZY_US_EQ,ELEZY_US_EQ,isin:US29258N2062,endesa,US,,USD
 ELE_CA_EQ,ELE_CA_EQ,isin:CA28620K1066,elemental_royalty_corporation,CA,Toronto,CAD
 ELEe_EQ,ELEe_EQ,isin:ES0130670112,endesa_s_a,,MCE,EUR
 ELF_CA_EQ,ELF_CA_EQ,isin:CA2685751075,e_l_financial_corporation_limited,CA,Toronto,CAD
-ELF_EQ_US,ELF_EQ_US,isin:US26856L1035,elf_beauty,EQ,Bolsa de Madrid,USD
+ELF_EQ_US,ELF_EQ_US,isin:US26856L1035,elf_beauty,US,Bolsa de Madrid,USD
 ELGd_EQ,ELGd_EQ,isin:DE0005677108,elmos_semiconductor_se,,Euronext Brussels,EUR
 ELIORp_EQ,ELIORp_EQ,isin:FR0011950732,elior_group_sa,,Paris,EUR
 ELISp_EQ,ELISp_EQ,isin:FR0012435121,elis_sa,,Paris,EUR
@@ -9296,7 +9296,7 @@ LFGP_US_EQ,LFGP_US_EQ,isin:US5233381012,ledyard_financial_group_inc,US,OTC Marke
 LFODd_EQ,LFODd_EQ,isin:LU1834985845,amundi_stoxx_europe_600_consumer_staples_acc,,,EUR
 LFST_US_EQ,LFST_US_EQ,isin:US53228F1012,lifestance_health_group_inc,US,NasdaqGS,USD
 LFT_US_EQ,LFT_US_EQ,isin:US55025L1089,lument_finance_trust,US,Bolsa de Madrid,USD
-LFUS_EQ_US,LFUS_EQ_US,isin:US5370081045,littelfuse_inc,EQ,NasdaqGS,USD
+LFUS_EQ_US,LFUS_EQ_US,isin:US5370081045,littelfuse_inc,US,NasdaqGS,USD
 LFVN_US_EQ,LFVN_US_EQ,isin:US53222K2050,lifevantage,US,,USD
 LGAGl_EQ,LGAGl_EQ,isin:IE00BFXR5W90,l_g_asia_pacific_ex_japan_equity_acc,,Euronext Lisbon,GBX
 LGAPl_EQ,LGAPl_EQ,isin:IE00BFXR5W90,l_g_asia_pacific_ex_japan_equity_acc,,,USD
@@ -14571,7 +14571,7 @@ TPOUl_EQ,TPOUl_EQ,isin:KYG8827C1006,malibu_life_holdings_limited,,LSE,USD
 TPPRF_US_EQ,TPPRF_US_EQ,isin:CA92260V1031,vencanna_ventures,US,,USD
 TPRE_US_EQ,TPRE_US_EQ,isin:BMG8192H1060,siriuspoint,US,Bolsa de Madrid,USD
 TPRKY_US_EQ,TPRKY_US_EQ,isin:US89455F3073,travis_perkins_plc,US,OTC Markets OTCPK,USD
-TPR_EQ_US,TPR_EQ_US,isin:US8760301072,tapestry_inc,EQ,Bolsa de Madrid,USD
+TPR_EQ_US,TPR_EQ_US,isin:US8760301072,tapestry_inc,US,Bolsa de Madrid,USD
 TPSAa_EQ,TPSAa_EQ,isin:IE00B1FZSC47,ishares_usd_tips_acc,,,EUR
 TPTl_EQ,TPTl_EQ,isin:GB00B18P5K83,topps_tiles_plc,,Wiener Börse,GBX
 TPVG_US_EQ,TPVG_US_EQ,isin:US89677Y1001,triplepoint_venture_growth_bdc_corp,US,Bolsa de Madrid,USD

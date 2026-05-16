@@ -24,6 +24,10 @@ func TestParseBrokerTickerTrading212Patterns(t *testing.T) {
 		{ticker: "VUSA_L_ETF", symbol: "VUSA", exchangeCode: "L", assetCode: "ETF"},
 		{ticker: "BHP1d_EQ", symbol: "BHP1", assetCode: "EQ"},
 		{ticker: "SANTd_EQ", symbol: "SANT", assetCode: "EQ"},
+		{ticker: "ABBNsEQ", symbol: "ABBN", assetCode: "EQ"},
+		{ticker: "AVAV__US_EQ", symbol: "AVAV", exchangeCode: "US", assetCode: "EQ"},
+		{ticker: "ELF_EQ_US", symbol: "ELF", exchangeCode: "US", assetCode: "EQ"},
+		{ticker: "YUMC", symbol: "YUMC"},
 		{ticker: "ABC_US", symbol: "ABC", exchangeCode: "US", uncertain: true},
 		{ticker: "RAW-TICKER", symbol: "RAW-TICKER", uncertain: true},
 	}

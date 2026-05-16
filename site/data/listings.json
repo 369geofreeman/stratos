@@ -15811,6 +15811,7 @@
     "ticker": "AVAV__US_EQ",
     "securityId": "isin:US0080731088",
     "companyId": "aerovironment",
+    "exchangeCode": "US",
     "currencyCode": "USD"
   },
   {
@@ -41352,7 +41353,7 @@
     "ticker": "ELF_EQ_US",
     "securityId": "isin:US26856L1035",
     "companyId": "elf_beauty",
-    "exchangeCode": "EQ",
+    "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
     "currencyCode": "USD"
   },
@@ -74573,7 +74574,7 @@
     "ticker": "LFUS_EQ_US",
     "securityId": "isin:US5370081045",
     "companyId": "littelfuse_inc",
-    "exchangeCode": "EQ",
+    "exchangeCode": "US",
     "exchangeName": "NasdaqGS",
     "currencyCode": "USD"
   },
@@ -117655,7 +117656,7 @@
     "ticker": "TPR_EQ_US",
     "securityId": "isin:US8760301072",
     "companyId": "tapestry_inc",
-    "exchangeCode": "EQ",
+    "exchangeCode": "US",
     "exchangeName": "Bolsa de Madrid",
     "currencyCode": "USD"
   },

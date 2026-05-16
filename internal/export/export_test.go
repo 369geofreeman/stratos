@@ -256,21 +256,22 @@ func TestDataContractDocsListCSVHeaders(t *testing.T) {
 	}
 }
 
-func TestCatalogueJSONShapeRemainsFrontendCompatible(t *testing.T) {
+func TestCatalogueJSONIsCompactSliceIndex(t *testing.T) {
 	dir := t.TempDir()
 	if err := WriteSiteData(dir, testCatalogue()); err != nil {
 		t.Fatal(err)
 	}
 	var raw map[string]json.RawMessage
 	readJSON(t, filepath.Join(dir, "catalogue.json"), &raw)
-	for _, key := range []string{"dataContractVersion", "schemaVersion", "manifest", "tickers", "securities", "listings", "relationships"} {
+	for _, key := range []string{"dataContractVersion", "schemaVersion", "manifest", "counts", "slices"} {
 		if _, ok := raw[key]; !ok {
 			t.Fatalf("catalogue.json missing key %q", key)
 		}
 	}
-	var tickers []catalogue.Ticker
-	if err := json.Unmarshal(raw["tickers"], &tickers); err != nil {
-		t.Fatalf("tickers is no longer a frontend-compatible array: %v", err)
+	for _, removed := range []string{"tickers", "securities", "listings", "companies", "reviewQueues"} {
+		if _, ok := raw[removed]; ok {
+			t.Fatalf("catalogue.json should not duplicate heavy slice %q", removed)
+		}
 	}
 	var manifest catalogue.BuildManifest
 	if err := json.Unmarshal(raw["manifest"], &manifest); err != nil {
@@ -278,6 +279,11 @@ func TestCatalogueJSONShapeRemainsFrontendCompatible(t *testing.T) {
 	}
 	if len(manifest.GeneratedFiles) != 0 {
 		t.Fatalf("catalogue embedded manifest should not carry generatedFiles checksum projection: %#v", manifest.GeneratedFiles)
+	}
+	var index CatalogueIndex
+	readJSON(t, filepath.Join(dir, "catalogue.json"), &index)
+	if index.Counts.TickerCount != len(testCatalogue().Tickers) || len(index.Slices) == 0 {
+		t.Fatalf("catalogue index = %#v", index)
 	}
 }
 

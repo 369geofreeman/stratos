@@ -151,6 +151,21 @@ type SearchDocument struct {
 	Tickers  []string `json:"tickers,omitempty"`
 }
 
+type CatalogueIndex struct {
+	DataContractVersion int                     `json:"dataContractVersion"`
+	SchemaVersion       int                     `json:"schemaVersion"`
+	GeneratedAt         string                  `json:"generatedAt,omitempty"`
+	Manifest            catalogue.BuildManifest `json:"manifest"`
+	Counts              AppBootstrapCounts      `json:"counts"`
+	Slices              []CatalogueSlice        `json:"slices"`
+}
+
+type CatalogueSlice struct {
+	Name   string `json:"name"`
+	Path   string `json:"path"`
+	Format string `json:"format"`
+}
+
 func CSVHeaders() map[string][]string {
 	headers := map[string][]string{
 		"tickers.csv":             TickersCSVHeader,
@@ -201,7 +216,7 @@ func buildSiteDataOutputs(cat *catalogue.Catalogue) ([]generatedOutput, error) {
 		value any
 	}{
 		{"tickers_index.json", BuildTickerIndex(&contractCat)},
-		{"catalogue.json", contractCat},
+		{"catalogue.json", BuildCatalogueIndex(&contractCat)},
 		{"companies.json", contractCat.Companies},
 		{"sectors.json", contractCat.Sectors},
 		{"industries.json", contractCat.Industries},
@@ -289,6 +304,28 @@ func buildSiteDataOutputs(cat *catalogue.Catalogue) ([]generatedOutput, error) {
 	return outputs, nil
 }
 
+func BuildCatalogueIndex(cat *catalogue.Catalogue) CatalogueIndex {
+	slices := make([]CatalogueSlice, 0, len(GeneratedSiteDataFiles)-1)
+	for _, name := range GeneratedSiteDataFiles {
+		if name == "catalogue.json" {
+			continue
+		}
+		slices = append(slices, CatalogueSlice{
+			Name:   name,
+			Path:   canonicalSiteDataPath(name),
+			Format: generatedFileFormat(name),
+		})
+	}
+	return CatalogueIndex{
+		DataContractVersion: catalogue.DataContractVersion,
+		SchemaVersion:       catalogue.DataContractSchemaVersion,
+		GeneratedAt:         cat.GeneratedAt,
+		Manifest:            cat.Manifest,
+		Counts:              appBootstrapCounts(cat),
+		Slices:              slices,
+	}
+}
+
 func BuildTickerIndex(cat *catalogue.Catalogue) TickerIndex {
 	rows := make([]TickerIndexRow, 0, len(cat.Tickers))
 	for _, ticker := range cat.Tickers {
@@ -326,6 +363,13 @@ func BuildTickerIndex(cat *catalogue.Catalogue) TickerIndex {
 		GeneratedAt:         cat.GeneratedAt,
 		Tickers:             rows,
 	}
+}
+
+func generatedFileFormat(name string) string {
+	if strings.HasSuffix(name, ".csv") {
+		return "csv"
+	}
+	return "json"
 }
 
 func BuildSearchIndex(cat *catalogue.Catalogue) []SearchDocument {
@@ -573,18 +617,25 @@ func buildAppBootstrap(cat catalogue.Catalogue, generatedFiles []catalogue.Gener
 		ThemeCounts:         countTickersByTheme(cat.Tickers),
 		Sectors:             summarizeGroups(cat.Sectors, groupSummaryTickerLimit),
 		Industries:          summarizeGroups(cat.Industries, groupSummaryTickerLimit),
-		Counts: AppBootstrapCounts{
-			TickerCount:       len(cat.Tickers),
-			CompanyCount:      len(cat.Companies),
-			SecurityCount:     len(cat.Securities),
-			ListingCount:      len(cat.Listings),
-			ThemeCount:        len(cat.Themes),
-			SupplyChainCount:  len(cat.SupplyChains),
-			ExposureCount:     len(cat.Exposures),
-			RelationshipCount: len(cat.Relationships),
-			UnclassifiedCount: len(cat.Unclassified),
-		},
-		GeneratedFiles: files,
+		Counts:              appBootstrapCounts(&cat),
+		GeneratedFiles:      files,
+	}
+}
+
+func appBootstrapCounts(cat *catalogue.Catalogue) AppBootstrapCounts {
+	if cat == nil {
+		return AppBootstrapCounts{}
+	}
+	return AppBootstrapCounts{
+		TickerCount:       len(cat.Tickers),
+		CompanyCount:      len(cat.Companies),
+		SecurityCount:     len(cat.Securities),
+		ListingCount:      len(cat.Listings),
+		ThemeCount:        len(cat.Themes),
+		SupplyChainCount:  len(cat.SupplyChains),
+		ExposureCount:     len(cat.Exposures),
+		RelationshipCount: len(cat.Relationships),
+		UnclassifiedCount: len(cat.Unclassified),
 	}
 }
 

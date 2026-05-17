@@ -465,6 +465,74 @@ func TestBuildRuleClassificationForFundLikeAndStructuredProducts(t *testing.T) {
 	}
 }
 
+func TestBuildProductRuleExposuresForPart4Pipelines(t *testing.T) {
+	manual := productPipelineManual()
+	cat, err := Build(BuildInput{
+		Instruments: []trading212.Instrument{
+			{Ticker: "VUSA_L_EQ", Name: "Vanguard S&P 500 UCITS ETF Dist", ISIN: "IE00B3XXRP09", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "AGGH_L_EQ", Name: "iShares Core Global Aggregate Bond UCITS ETF", ISIN: "IE00BDBRDM35", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "3SAGGH_L_EQ", Name: "iShares Core Global Aggregate Bond UCITS ETF", ISIN: "IE00SHORTBND", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "STAP_L_EQ", Name: "iShares Consumer Staples Sector UCITS ETF", ISIN: "IE00CONFLICT", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "3SSTAP_L_EQ", Name: "iShares Consumer Staples Sector UCITS ETF", ISIN: "IE00CONFLICT", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "QUAL_L_EQ", Name: "iShares MSCI World Quality Factor UCITS ETF", ISIN: "IE00QUALITY1", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "QYLD_L_EQ", Name: "Global X Nasdaq 100 Covered Call UCITS ETF", ISIN: "IE00COVERED1", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "BLCN_L_EQ", Name: "Global X Blockchain UCITS ETF", ISIN: "IE00BLOCKCH", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "3LNVDA_L_EQ", Name: "Leverage Shares 3x Long NVIDIA ETP", ISIN: "XS2820604853", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "SQQQ_L_EQ", Name: "ProShares Short QQQ ETF", ISIN: "US000SHORT01", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "ABCW_US_EQ", Name: "ABC Corp Warrant", ISIN: "US0000000004", Type: "WARRANT", CurrencyCode: "USD"},
+			{Ticker: "GOLD_L_EQ", Name: "WisdomTree Physical Gold ETC", ISIN: "JE00GOLD0001", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "BTC_L_EQ", Name: "21Shares Bitcoin ETP", ISIN: "CH000BITCO1", Type: "ETF", CurrencyCode: "GBP"},
+			{Ticker: "GFI_US_EQ", Name: "Gold Fields Limited", ISIN: "US0000000009", Type: "STOCK", CurrencyCode: "USD"},
+		},
+		Profiles: map[string]enrichment.Profile{
+			"GFI_US_EQ": {Sector: "Basic Materials", Industry: "Gold"},
+		},
+		Manual:  manual,
+		BuiltAt: time.Date(2026, 5, 17, 12, 0, 0, 0, time.UTC),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	assertTickerThemeLayer(t, cat, "VUSA_L_EQ", "funds_core", "equity_etfs")
+	assertTickerThemeLayer(t, cat, "AGGH_L_EQ", "funds_core", "bond_etfs")
+	assertTickerThemeLayer(t, cat, "3SAGGH_L_EQ", "leveraged_structured", "inverse_etps")
+	assertTickerThemeLayer(t, cat, "STAP_L_EQ", "funds_core", "equity_etfs")
+	assertTickerThemeLayer(t, cat, "3SSTAP_L_EQ", "leveraged_structured", "inverse_etps")
+	assertTickerThemeLayer(t, cat, "QUAL_L_EQ", "funds_core", "factor_etfs")
+	assertTickerThemeLayer(t, cat, "QYLD_L_EQ", "funds_core", "covered_call_etfs")
+	assertTickerThemeLayer(t, cat, "BLCN_L_EQ", "funds_core", "equity_etfs")
+	assertTickerThemeLayer(t, cat, "3LNVDA_L_EQ", "leveraged_structured", "leveraged_etps")
+	assertTickerThemeLayer(t, cat, "SQQQ_L_EQ", "leveraged_structured", "inverse_etps")
+	assertTickerThemeLayer(t, cat, "ABCW_US_EQ", "leveraged_structured", "warrants")
+	assertTickerThemeLayer(t, cat, "GOLD_L_EQ", "commodity_crypto_etps", "gold_etps")
+	assertTickerThemeLayer(t, cat, "BTC_L_EQ", "commodity_crypto_etps", "crypto_etps")
+
+	operatingCompany := findTicker(t, cat, "GFI_US_EQ")
+	for _, themeID := range []string{"funds_core", "leveraged_structured", "commodity_crypto_etps"} {
+		if containsString(operatingCompany.ThemeIDs, themeID) {
+			t.Fatalf("operating company was mapped to product theme %q: %#v", themeID, operatingCompany)
+		}
+	}
+	blockchainETF := findTicker(t, cat, "BLCN_L_EQ")
+	if containsString(blockchainETF.ThemeIDs, "commodity_crypto_etps") {
+		t.Fatalf("blockchain equity ETF should not be treated as a crypto ETP: %#v", blockchainETF)
+	}
+	if !hasExposure(cat, "funds_core", "equity_etfs", "IE00B3XXRP09") {
+		t.Fatalf("expected ISIN-targeted rule exposure for VUSA: %#v", cat.Exposures)
+	}
+	shortBond := findTicker(t, cat, "3SAGGH_L_EQ")
+	if containsString(shortBond.ThemeIDs, "funds_core") {
+		t.Fatalf("ISIN-scoped product exposure leaked through shared company identity: %#v", shortBond)
+	}
+	conflictingListing := findTicker(t, cat, "STAP_L_EQ")
+	if containsString(conflictingListing.ThemeIDs, "leveraged_structured") ||
+		containsString(conflictingListing.LayerIDs, "inverse_etps") ||
+		containsString(conflictingListing.LayerIDs, "leveraged_inverse_etps") {
+		t.Fatalf("conflicted same-ISIN inverse exposure leaked into normal listing: %#v", conflictingListing)
+	}
+}
+
 func TestBuildCapsGeneratedRelatedTickersForBroadIndustries(t *testing.T) {
 	instruments := make([]trading212.Instrument, 0, maxRelatedTickersPerIndustry+5)
 	for i := 0; i < maxRelatedTickersPerIndustry+5; i++ {
@@ -607,6 +675,57 @@ func emptyManual() taxonomy.ManualData {
 	}
 }
 
+func productPipelineManual() taxonomy.ManualData {
+	manual := emptyManual()
+	manual.Themes = []taxonomy.Theme{
+		{ID: "funds_core", Name: "Core funds"},
+		{ID: "leveraged_structured", Name: "Leveraged and structured products"},
+		{ID: "commodity_crypto_etps", Name: "Commodity and crypto ETPs"},
+	}
+	manual.SupplyChains = []taxonomy.SupplyChain{
+		{
+			ThemeID: "funds_core",
+			Name:    "Core funds product map",
+			Layers: []taxonomy.SupplyChainLayer{
+				{ID: "equity_etfs", Name: "Equity ETFs", Order: 10},
+				{ID: "bond_etfs", Name: "Bond ETFs", Order: 20},
+				{ID: "factor_etfs", Name: "Factor ETFs", Order: 30},
+				{ID: "covered_call_etfs", Name: "Covered-call ETFs", Order: 40},
+				{ID: "money_market_funds", Name: "Money-market funds", Order: 50},
+				{ID: "multi_asset_funds", Name: "Multi-asset funds", Order: 60},
+				{ID: "investment_trusts", Name: "Investment trusts", Order: 70},
+			},
+		},
+		{
+			ThemeID: "leveraged_structured",
+			Name:    "Leveraged and structured product map",
+			Layers: []taxonomy.SupplyChainLayer{
+				{ID: "leveraged_etps", Name: "Leveraged ETPs", Order: 10},
+				{ID: "inverse_etps", Name: "Inverse ETPs", Order: 20},
+				{ID: "leveraged_inverse_etps", Name: "Leveraged inverse ETPs", Order: 30},
+				{ID: "warrants", Name: "Warrants", Order: 40},
+				{ID: "structured_products", Name: "Structured products", Order: 50},
+				{ID: "complex_payoff_products", Name: "Complex payoff products", Order: 60},
+			},
+		},
+		{
+			ThemeID: "commodity_crypto_etps",
+			Name:    "Commodity and crypto ETP map",
+			Layers: []taxonomy.SupplyChainLayer{
+				{ID: "broad_commodity_etps", Name: "Broad commodity ETPs", Order: 10},
+				{ID: "precious_metals_etps", Name: "Precious-metals ETPs", Order: 20},
+				{ID: "gold_etps", Name: "Gold ETPs", Order: 30},
+				{ID: "silver_etps", Name: "Silver ETPs", Order: 40},
+				{ID: "energy_commodity_etps", Name: "Energy commodity ETPs", Order: 50},
+				{ID: "agriculture_commodity_etps", Name: "Agriculture commodity ETPs", Order: 60},
+				{ID: "industrial_metals_etps", Name: "Industrial-metals ETPs", Order: 70},
+				{ID: "crypto_etps", Name: "Crypto ETPs", Order: 80},
+			},
+		},
+	}
+	return manual
+}
+
 func findTicker(t *testing.T, cat *Catalogue, ticker string) Ticker {
 	t.Helper()
 	for _, row := range cat.Tickers {
@@ -616,6 +735,23 @@ func findTicker(t *testing.T, cat *Catalogue, ticker string) Ticker {
 	}
 	t.Fatalf("missing ticker %q in %#v", ticker, cat.Tickers)
 	return Ticker{}
+}
+
+func assertTickerThemeLayer(t *testing.T, cat *Catalogue, tickerID string, themeID string, layerID string) {
+	t.Helper()
+	ticker := findTicker(t, cat, tickerID)
+	if !containsString(ticker.ThemeIDs, themeID) || !containsString(ticker.LayerIDs, layerID) {
+		t.Fatalf("%s theme/layers = %#v/%#v, want %s/%s", tickerID, ticker.ThemeIDs, ticker.LayerIDs, themeID, layerID)
+	}
+}
+
+func hasExposure(cat *Catalogue, themeID string, layerID string, isin string) bool {
+	for _, exposure := range cat.Exposures {
+		if exposure.ThemeID == themeID && exposure.LayerID == layerID && exposure.ISIN == isin && exposure.Confidence == "rule_low" {
+			return true
+		}
+	}
+	return false
 }
 
 func hasIdentityIssue(cat *Catalogue, code string) bool {

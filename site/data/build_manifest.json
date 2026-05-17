@@ -9,8 +9,8 @@
   "securityCount": 13805,
   "companyCount": 13215,
   "listingCount": 17050,
-  "themeCount": 17,
-  "exposureCount": 785,
+  "themeCount": 20,
+  "exposureCount": 4523,
   "relationshipCount": 9,
   "enrichmentAttempted": 17050,
   "enrichmentSucceeded": 7702,
@@ -92,37 +92,37 @@
       "path": "site/data/app_bootstrap.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "3b34c58710276126115f388a212f5ca1d3f6b9a092a98d27a5425a4698c2644f",
-      "bytes": 287940,
+      "sha256": "d8ed985b540a7b14149e190567ea76b51be998dec9bc12b56db71507c7f246cb",
+      "bytes": 1127952,
       "checksumMode": "projection_excludes_generatedFiles"
     },
     {
       "path": "site/data/tickers_index.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "83475be30fef602522ea5a91901b68b0e6ab0794fea499f7041334e282010058",
-      "bytes": 15885199
+      "sha256": "2c250dd0854bed25f3693c383f6819371e95e692c27289675ecd1af2c36e8a14",
+      "bytes": 16231580
     },
     {
       "path": "site/data/explorer_index.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "6ea122c43205df12a189a023f446dd804a4e267af4f1982730df7ec2fc151a24",
-      "bytes": 834703
+      "sha256": "da63ef2c8f3bfcc31d25fde4b9158c62cf169f52ee1cf603f53394fe52203059",
+      "bytes": 979164
     },
     {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "b40a60c08daedd0667236ed1c0cfd69ed84bf37f70f92ce5ced92d9983cf9142",
-      "bytes": 6595
+      "sha256": "e996a07ef4a5feba5d2c1b404bf4e75900df2cbc598b78c1b826598bc1a52084",
+      "bytes": 6597
     },
     {
       "path": "site/data/companies.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "fffa9881e41bd5c1f422d2e2f567255fc031ccddafeb604bb07a3937d9fb4d4d",
-      "bytes": 16729060
+      "sha256": "cb40d93a036ebb93bdd076418d369bdc40fa2e645f3db57e5a4e22ace805311a",
+      "bytes": 17027453
     },
     {
       "path": "site/data/sectors.json",
@@ -142,22 +142,22 @@
       "path": "site/data/themes.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "601d0760a4945690e0cdc20be8dd20efac656aa10d454186ca671823a863a394",
-      "bytes": 3381
+      "sha256": "6e2b4f4dbe6fb4bc5229aeac656efdc869e1c68f01961e8208d3fce228feabe5",
+      "bytes": 3968
     },
     {
       "path": "site/data/supply_chains.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "3ba9cccdac6467ced61b445b6d4cb0be3657f834c7614a9554eadd5afcccef46",
-      "bytes": 33773
+      "sha256": "977f49dce461617135ecc6326638648cf281a1b616392e09c9e070581ce2fa40",
+      "bytes": 38565
     },
     {
       "path": "site/data/search_index.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "c31907a0bbb1afdb6f7a25bbbf907fbc3559a63e393df935b0bbf7654e7473ee",
-      "bytes": 8088632
+      "sha256": "8062a5360cd302f0571a87f3774e9c6edeb9314377d68326c61d261e52dc4754",
+      "bytes": 8089317
     },
     {
       "path": "site/data/securities.json",
@@ -191,8 +191,8 @@
       "path": "site/data/review_queues.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "f11747b0b47e7850a3d0988ce6ffdaea8bf782f7c1d38acd17476c5d6a7fabc6",
-      "bytes": 11297962
+      "sha256": "0846c76ebef5f0ede7bccc4253a7975f9f7a63f729e239e4fc0abcc81c316383",
+      "bytes": 11639805
     },
     {
       "path": "site/data/review_summary.json",
@@ -205,8 +205,8 @@
       "path": "site/data/tickers.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "ed45b9391fa6154da475fb547063062fde088342abbcaace2f3b07b2b554d6f7",
-      "bytes": 5547904
+      "sha256": "8075cc6415b2103f47ab798a5173b1e888f45e7a82320af88aa311ed45c5682a",
+      "bytes": 5703141
     },
     {
       "path": "site/data/securities.csv",
@@ -240,8 +240,8 @@
       "path": "site/data/enrichment_issues.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "bd84e410e5366688f8c7c8761e081d383959929c14070cb3a8741bbb0f7bdb66",
-      "bytes": 3228068
+      "sha256": "b6e532b4eba92cba36abf0da40fb4b82c7adf05411e3354dbbf0cb41fb68a9c3",
+      "bytes": 3381431
     },
     {
       "path": "site/data/identity_issues.csv",
@@ -296,8 +296,8 @@
       "path": "site/data/build_manifest.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "e53fae12fd2162a0a089029e643a1d5e33aa88b3ce442b48ce717fd7b454d0f8",
-      "bytes": 9178,
+      "sha256": "39a31bd38837d50ab72d7a4ea48dd0a1d76892654f00555da56b5965e8fba14f",
+      "bytes": 9180,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

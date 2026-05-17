@@ -647,3 +647,99 @@ supply_chains:
         name: Housing services
         description: Construction software, trade services, repair and remodel, rental services, and residential service platforms.
         order: 70
+  - theme_id: funds_core
+    name: Core funds product map
+    description: Long-only and income-oriented fund wrappers for Explorer product navigation.
+    layers:
+      - id: equity_etfs
+        name: Equity ETFs
+        description: Broad, regional, sector, thematic, and single-country equity ETFs.
+        order: 10
+      - id: bond_etfs
+        name: Bond ETFs
+        description: Government, corporate, aggregate, high-yield, inflation-linked, and duration bond ETFs.
+        order: 20
+      - id: factor_etfs
+        name: Factor ETFs
+        description: Quality, value, momentum, dividend, minimum-volatility, equal-weight, and factor-screened ETFs.
+        order: 30
+      - id: covered_call_etfs
+        name: Covered-call ETFs
+        description: Covered-call, buy-write, option-income, and derivative-income ETF wrappers.
+        order: 40
+      - id: money_market_funds
+        name: Money-market funds
+        description: Money-market and cash-management fund products.
+        order: 50
+      - id: multi_asset_funds
+        name: Multi-asset funds
+        description: Mixed-asset, allocation, balanced, and fund-of-funds products.
+        order: 60
+      - id: investment_trusts
+        name: Investment trusts
+        description: Investment trusts and closed-end fund-like securities in the Trading 212 universe.
+        order: 70
+  - theme_id: leveraged_structured
+    name: Leveraged and structured product map
+    description: Product wrappers whose payoff profile, leverage, short exposure, or legal structure differs from core funds.
+    layers:
+      - id: leveraged_etps
+        name: Leveraged ETPs
+        description: Leveraged long ETPs and leveraged ETFs.
+        order: 10
+      - id: inverse_etps
+        name: Inverse ETPs
+        description: Inverse, short, and bear ETPs.
+        order: 20
+      - id: leveraged_inverse_etps
+        name: Leveraged inverse ETPs
+        description: Products with both leveraged and inverse or short exposure.
+        order: 30
+      - id: warrants
+        name: Warrants
+        description: Exchange-traded warrants.
+        order: 40
+      - id: structured_products
+        name: Structured products
+        description: Structured notes, certificates, and other structured instruments.
+        order: 50
+      - id: complex_payoff_products
+        name: Complex payoff products
+        description: Path-dependent, daily-reset, or non-core payoff products not better captured by a narrower layer.
+        order: 60
+  - theme_id: commodity_crypto_etps
+    name: Commodity and crypto ETP map
+    description: Exchange-traded products that provide commodity, precious-metal, basket, or crypto exposure.
+    layers:
+      - id: broad_commodity_etps
+        name: Broad commodity ETPs
+        description: Diversified commodity baskets and broad commodity index products.
+        order: 10
+      - id: precious_metals_etps
+        name: Precious-metals ETPs
+        description: Precious-metals baskets and platinum or palladium products.
+        order: 20
+      - id: gold_etps
+        name: Gold ETPs
+        description: Gold-linked exchange-traded products.
+        order: 30
+      - id: silver_etps
+        name: Silver ETPs
+        description: Silver-linked exchange-traded products.
+        order: 40
+      - id: energy_commodity_etps
+        name: Energy commodity ETPs
+        description: Oil, gas, carbon, uranium, and energy-linked commodity products.
+        order: 50
+      - id: agriculture_commodity_etps
+        name: Agriculture commodity ETPs
+        description: Agriculture, grain, livestock, and soft-commodity products.
+        order: 60
+      - id: industrial_metals_etps
+        name: Industrial-metals ETPs
+        description: Copper, aluminium, nickel, battery-metal, and industrial-metal products.
+        order: 70
+      - id: crypto_etps
+        name: Crypto ETPs
+        description: Bitcoin, ether, basket crypto, and other crypto exchange-traded products.
+        order: 80

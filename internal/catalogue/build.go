@@ -393,7 +393,8 @@ func Build(input BuildInput) (*Catalogue, error) {
 
 	addIdentityGroupIssues(tickersByISIN, companiesByISIN, isinsBySecurity, companiesBySecurity, categoriesBySecurity, state)
 	addUnknownOverrideIssues(input.Manual.IdentityOverrides, state)
-	applyExposures(input.Manual.Exposures, tickerByID, companyByID, securityByISIN)
+	exposures := combinedExposures(input.Manual.Exposures, buildProductRuleExposures(tickerByID, input.Manual))
+	applyExposures(exposures, tickerByID, companyByID, securityByISIN)
 	addRelatedTickers(tickerByID, companyByID)
 
 	tickers := sortedValues(tickerByID)
@@ -429,7 +430,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 		Industries:          industries,
 		Themes:              input.Manual.Themes,
 		SupplyChains:        input.Manual.SupplyChains,
-		Exposures:           input.Manual.Exposures,
+		Exposures:           exposures,
 		Relationships:       sortedRelationships(input.Manual.Relationships),
 		Notes:               input.Manual.Notes,
 		Unclassified:        unclassified,
@@ -933,45 +934,53 @@ func appendUniqueMany(values []string, additions ...string) []string {
 }
 
 func applyExposures(exposures []taxonomy.Exposure, tickers map[string]*Ticker, companies map[string]*Company, securityByISIN map[string][]string) {
-	companyIDsForExposure := func(exposure taxonomy.Exposure) []string {
-		ids := []string{}
-		if exposure.CompanyID != "" {
-			ids = append(ids, exposure.CompanyID)
+	applyToCompanySummary := func(companyID string, exposure taxonomy.Exposure) {
+		company := companies[companyID]
+		if company == nil {
+			return
 		}
-		if exposure.Ticker != "" {
-			if ticker := tickers[exposure.Ticker]; ticker != nil {
-				ids = append(ids, ticker.CompanyID)
+		company.ThemeIDs = appendUnique(company.ThemeIDs, exposure.ThemeID)
+		company.LayerIDs = appendUnique(company.LayerIDs, exposure.LayerID)
+	}
+	applyToTicker := func(ticker *Ticker, exposure taxonomy.Exposure) {
+		if ticker == nil {
+			return
+		}
+		ticker.ThemeIDs = appendUnique(ticker.ThemeIDs, exposure.ThemeID)
+		ticker.LayerIDs = appendUnique(ticker.LayerIDs, exposure.LayerID)
+		applyToCompanySummary(ticker.CompanyID, exposure)
+	}
+	applyToCompanyAndTickers := func(companyID string, exposure taxonomy.Exposure) {
+		company := companies[companyID]
+		if company == nil {
+			return
+		}
+		applyToCompanySummary(companyID, exposure)
+		for _, tickerID := range company.TickerIDs {
+			applyToTicker(tickers[tickerID], exposure)
+		}
+	}
+	applyToISIN := func(isin string, exposure taxonomy.Exposure) {
+		securityIDs := map[string]bool{}
+		for _, securityID := range securityByISIN[isin] {
+			securityIDs[securityID] = true
+		}
+		for _, ticker := range tickers {
+			if securityIDs[ticker.SecurityID] {
+				applyToTicker(ticker, exposure)
 			}
 		}
-		if exposure.ISIN != "" {
-			for _, securityID := range securityByISIN[exposure.ISIN] {
-				for _, ticker := range tickers {
-					if ticker.SecurityID == securityID {
-						ids = append(ids, ticker.CompanyID)
-					}
-				}
-			}
-		}
-		return unique(ids)
 	}
 
 	for _, exposure := range exposures {
-		companyIDs := companyIDsForExposure(exposure)
-		for _, companyID := range companyIDs {
-			company := companies[companyID]
-			if company == nil {
-				continue
-			}
-			company.ThemeIDs = appendUnique(company.ThemeIDs, exposure.ThemeID)
-			company.LayerIDs = appendUnique(company.LayerIDs, exposure.LayerID)
-			for _, tickerID := range company.TickerIDs {
-				ticker := tickers[tickerID]
-				if ticker == nil {
-					continue
-				}
-				ticker.ThemeIDs = appendUnique(ticker.ThemeIDs, exposure.ThemeID)
-				ticker.LayerIDs = appendUnique(ticker.LayerIDs, exposure.LayerID)
-			}
+		if exposure.CompanyID != "" {
+			applyToCompanyAndTickers(exposure.CompanyID, exposure)
+		}
+		if exposure.Ticker != "" {
+			applyToTicker(tickers[exposure.Ticker], exposure)
+		}
+		if exposure.ISIN != "" {
+			applyToISIN(exposure.ISIN, exposure)
 		}
 	}
 }

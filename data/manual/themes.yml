@@ -67,3 +67,15 @@ themes:
     name: Building and housing
     description: Homebuilders, building materials, tools, HVAC, furnishings, home improvement, and housing infrastructure.
     color: "#ca8a04"
+  - id: funds_core
+    name: Core funds
+    description: Long-only and income-oriented fund wrappers used as portfolio building blocks.
+    color: "#0284c7"
+  - id: leveraged_structured
+    name: Leveraged and structured products
+    description: Leveraged, inverse, warrant, and structured payoff instruments.
+    color: "#e11d48"
+  - id: commodity_crypto_etps
+    name: Commodity and crypto ETPs
+    description: Exchange-traded commodity, precious-metal, and crypto exposure products.
+    color: "#14b8a6"

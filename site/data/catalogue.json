@@ -14,7 +14,7 @@
     "companyCount": 13215,
     "listingCount": 17050,
     "themeCount": 12,
-    "exposureCount": 385,
+    "exposureCount": 576,
     "relationshipCount": 9,
     "enrichmentAttempted": 17050,
     "enrichmentSucceeded": 7702,
@@ -29,7 +29,7 @@
     "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
     "enrichmentOldestRetrievedAt": "2026-05-16T10:27:53Z",
     "enrichmentNewestRetrievedAt": "2026-05-16T17:59:08Z",
-    "unclassifiedCount": 7473,
+    "unclassifiedCount": 7217,
     "emptyTickerCount": 0,
     "duplicateTickerCount": 0,
     "duplicateISINCount": 2219,
@@ -39,13 +39,13 @@
     "identityIssueCount": 0,
     "reviewQueueCounts": {
       "enrichment": 9348,
-      "taxonomy": 10949
+      "taxonomy": 10678
     },
     "reviewReasonCounts": {
       "enrichment_failed": 9348,
-      "missing_industry": 3476,
-      "missing_sector": 3476,
-      "missing_theme_exposure": 3997
+      "missing_industry": 3461,
+      "missing_sector": 3461,
+      "missing_theme_exposure": 3756
     },
     "reviewQueueDeltas": {
       "enrichment": -156,
@@ -99,9 +99,9 @@
     "listingCount": 17050,
     "themeCount": 12,
     "supplyChainCount": 12,
-    "exposureCount": 385,
+    "exposureCount": 576,
     "relationshipCount": 9,
-    "unclassifiedCount": 7473
+    "unclassifiedCount": 7217
   },
   "slices": [
     {

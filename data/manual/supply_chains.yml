@@ -63,14 +63,30 @@ supply_chains:
         name: Upstream producers
         description: Exploration and production companies.
         order: 20
+      - id: midstream_lng
+        name: Midstream and LNG
+        description: Pipelines, storage, LNG terminals, and gas infrastructure.
+        order: 25
+      - id: refining_marketing
+        name: Refining and marketing
+        description: Refiners, fuel marketing, and downstream products.
+        order: 28
       - id: oilfield_services
         name: Oilfield services
         description: Equipment, services, and technology for hydrocarbon production.
         order: 30
+      - id: uranium_nuclear
+        name: Uranium and nuclear
+        description: Uranium mining, nuclear fuel-cycle exposure, and nuclear power specialists.
+        order: 35
       - id: power_generation
         name: Power generation
         description: Electricity generation exposed to load growth and reliability needs.
         order: 40
+      - id: regulated_utilities
+        name: Regulated utilities
+        description: Regulated electric, gas, water, and multi-utility operators.
+        order: 45
       - id: grid_equipment
         name: Grid and electrification equipment
         description: Grid hardware, power distribution, and electrification equipment.
@@ -79,6 +95,14 @@ supply_chains:
         name: Renewables
         description: Solar, wind, and clean-power generation equipment.
         order: 60
+      - id: renewable_developers
+        name: Renewable developers
+        description: Renewable generation owners, operators, and project developers.
+        order: 62
+      - id: solar_wind_equipment
+        name: Solar and wind equipment
+        description: Solar modules, wind turbines, inverters, and renewable-power equipment.
+        order: 65
       - id: energy_storage
         name: Energy storage
         description: Batteries, inverters, and storage materials.
@@ -95,14 +119,42 @@ supply_chains:
         name: Aerospace components
         description: Engineered parts and subsystems for aerospace and defence platforms.
         order: 20
+      - id: aerospace_engines
+        name: Aerospace engines and propulsion
+        description: Engines, propulsion systems, and aircraft power systems.
+        order: 22
+      - id: sensors_electronics
+        name: Sensors and electronics
+        description: Radars, sensors, avionics, electronics, and secure communications.
+        order: 25
+      - id: missiles_munitions
+        name: Missiles and munitions
+        description: Missiles, tactical weapons, munitions, and explosive systems.
+        order: 30
+      - id: shipbuilding_naval
+        name: Shipbuilding and naval systems
+        description: Naval shipbuilding, submarines, marine systems, and naval weapons.
+        order: 35
       - id: defence_software
         name: Defence software
         description: Data, decision, and mission software.
-        order: 30
+        order: 40
       - id: cyber
         name: Cybersecurity
         description: Security software and cyber operations exposure.
-        order: 40
+        order: 45
+      - id: space_defence
+        name: Space defence
+        description: Launch, satellites, space systems, and missile-warning platforms.
+        order: 50
+      - id: autonomy_drones
+        name: Autonomy and drones
+        description: Autonomous systems, drones, robotics, and unmanned platforms.
+        order: 55
+      - id: defence_services
+        name: Defence services
+        description: Defence maintenance, logistics, training, engineering, and government services.
+        order: 60
   - theme_id: healthcare
     name: Healthcare supply chain
     description: Biopharma, tools, devices, care delivery, and health infrastructure.
@@ -111,18 +163,42 @@ supply_chains:
         name: Biopharma
         description: Drug discovery, development, and manufacturing.
         order: 10
+      - id: large_pharma
+        name: Large pharma
+        description: Diversified pharmaceutical companies with global drug portfolios.
+        order: 12
+      - id: biotech
+        name: Biotech
+        description: Biotech drug developers and platform companies.
+        order: 14
       - id: life_science_tools
         name: Life science tools
         description: Instruments, diagnostics, and lab consumables.
         order: 20
+      - id: diagnostics_tools
+        name: Diagnostics and testing
+        description: Diagnostics, testing, instruments, and lab workflows.
+        order: 25
       - id: medical_devices
         name: Medical devices
         description: Surgical, implant, and treatment devices.
         order: 30
+      - id: healthcare_distributors
+        name: Healthcare distributors
+        description: Drug distributors, medical distributors, pharmacies, and healthcare supply-chain services.
+        order: 35
       - id: care_delivery
         name: Care delivery and payors
         description: Health plans, care delivery, and care infrastructure.
         order: 40
+      - id: managed_care
+        name: Managed care
+        description: Health insurers and managed-care platforms.
+        order: 45
+      - id: healthcare_it
+        name: Healthcare IT
+        description: Healthcare software, data, revenue-cycle, and clinical workflow platforms.
+        order: 50
   - theme_id: fintech
     name: Fintech supply chain
     description: Payments, capital markets, lending, banking software, and crypto rails.
@@ -131,14 +207,30 @@ supply_chains:
         name: Payments
         description: Card networks, merchant acquiring, wallets, and payment processors.
         order: 10
+      - id: merchant_acquiring
+        name: Merchant acquiring
+        description: Merchant acquirers, processors, POS, and commerce payments.
+        order: 12
+      - id: digital_wallets
+        name: Digital wallets
+        description: Wallets, super-app payments, and digital account ecosystems.
+        order: 14
       - id: capital_markets
         name: Capital markets
         description: Trading, brokerage, market data, and exchange infrastructure.
         order: 20
+      - id: wealth_brokerage_apps
+        name: Wealth and brokerage apps
+        description: Digital brokers, investing apps, and app-led wealth platforms.
+        order: 22
       - id: consumer_finance
         name: Consumer finance
         description: Digital banking, lending, and personal finance platforms.
         order: 30
+      - id: embedded_finance
+        name: Embedded finance
+        description: Embedded lending, payroll finance, commerce finance, and BNPL platforms.
+        order: 32
       - id: crypto_rails
         name: Crypto rails
         description: Crypto trading, custody, and blockchain-linked financial platforms.
@@ -147,6 +239,14 @@ supply_chains:
         name: Banking software
         description: Core banking, risk, and financial workflow software.
         order: 50
+      - id: risk_identity_data
+        name: Risk, identity, and data
+        description: Fraud, identity, risk, compliance, credit, and financial data tools.
+        order: 55
+      - id: insurtech
+        name: Insurtech
+        description: Insurance software and digital-native insurance platforms.
+        order: 60
   - theme_id: semiconductors
     name: Semiconductor supply chain
     description: Design tools, equipment, manufacturing, memory, logic, analog, and materials.
@@ -195,14 +295,38 @@ supply_chains:
         name: Lithium and battery materials
         description: Lithium and other battery-material producers.
         order: 30
+      - id: uranium
+        name: Uranium
+        description: Uranium miners and nuclear fuel-cycle materials.
+        order: 35
       - id: precious_metals
         name: Precious metals
         description: Gold and precious-metals miners.
         order: 40
+      - id: steel_iron_ore
+        name: Steel and iron ore
+        description: Steelmakers, iron ore, and metallurgical coal producers.
+        order: 45
+      - id: aluminum
+        name: Aluminum
+        description: Aluminum miners, smelters, and processors.
+        order: 48
       - id: agriculture_inputs
         name: Agricultural inputs
         description: Fertilizer, crop nutrients, and agriculture commodity inputs.
         order: 50
+      - id: specialty_chemicals
+        name: Specialty chemicals
+        description: Specialty chemical producers linked to industrial, agriculture, and materials supply.
+        order: 52
+      - id: fertilizer_agriculture
+        name: Fertilizer and agriculture
+        description: Fertilizer, seeds, crop nutrients, and agricultural inputs.
+        order: 55
+      - id: commodity_processors
+        name: Commodity processors
+        description: Commodity merchants, processors, and royalty or streaming companies.
+        order: 60
   - theme_id: financial_system
     name: Financial system supply chain
     description: Banks, insurers, asset managers, capital markets, credit, data, and market infrastructure.

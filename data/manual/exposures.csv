@@ -384,3 +384,194 @@ transport_logistics,transport_infrastructure,,,ferrovial_n_v,4,manual_high,https
 transport_logistics,transport_infrastructure,,,getlink_se,5,manual_high,https://www.getlinkgroup.com/en/shareholders-investors/,Channel Tunnel rail infrastructure exposure.,2026-05-16
 transport_logistics,transport_infrastructure,,,ck_hutchison_holdings_limited,3,manual_medium,https://www.ckh.com.hk/en/ir/,Ports exposure within a diversified infrastructure group.,2026-05-16
 transport_logistics,transport_infrastructure,,,brambles_limited,4,manual_high,https://www.brambles.com/investors,Reusable pallet and logistics infrastructure exposure.,2026-05-16
+healthcare,large_pharma,,,johnson_johnson,5,manual_high,https://www.investor.jnj.com/,Diversified global pharmaceutical portfolio exposure.,2026-05-16
+healthcare,large_pharma,,,abbvie_inc,5,manual_high,https://investors.abbvie.com/,Diversified global pharmaceutical portfolio exposure.,2026-05-16
+healthcare,large_pharma,,,roche_holding_ag,5,manual_high,https://www.roche.com/investors,Diversified pharmaceutical and diagnostics portfolio exposure.,2026-05-16
+healthcare,large_pharma,,,novartis_ag,5,manual_high,https://www.novartis.com/investors,Diversified global pharmaceutical portfolio exposure.,2026-05-16
+healthcare,large_pharma,,,merck_co_inc,5,manual_high,https://www.merck.com/investor-relations/,Diversified global pharmaceutical portfolio exposure.,2026-05-16
+healthcare,large_pharma,,,astrazeneca_plc,5,manual_high,https://www.astrazeneca.com/investors.html,Diversified global pharmaceutical portfolio exposure.,2026-05-16
+healthcare,large_pharma,,,pfizer_inc,5,manual_high,https://investors.pfizer.com/,Diversified global pharmaceutical portfolio exposure.,2026-05-16
+healthcare,large_pharma,,,sanofi,5,manual_high,https://www.sanofi.com/en/investors,Diversified global pharmaceutical portfolio exposure.,2026-05-16
+healthcare,biotech,,,vertex_pharmaceuticals_incorporated,5,manual_high,https://investors.vrtx.com/,Biotech drug developer exposure.,2026-05-16
+healthcare,biotech,,,regeneron_pharmaceuticals_inc,5,manual_high,https://investor.regeneron.com/,Biotech drug developer exposure.,2026-05-16
+healthcare,biotech,,,argenx_se,5,manual_high,https://www.argenx.com/investors,Biotech drug developer exposure.,2026-05-16
+healthcare,biotech,,,alnylam_pharmaceuticals_inc,5,manual_high,https://investors.alnylam.com/,RNA therapeutics biotech exposure.,2026-05-16
+healthcare,biotech,,,biontech_se,5,manual_high,https://investors.biontech.de/,Immunotherapy and mRNA biotech exposure.,2026-05-16
+healthcare,life_science_tools,,,agilent_technologies_inc,5,manual_high,https://www.agilent.com/about/investor-relations/,Analytical instruments and lab workflow exposure.,2026-05-16
+healthcare,life_science_tools,,,lonza_group_ag,4,manual_high,https://www.lonza.com/investors,Life-science manufacturing and tools exposure.,2026-05-16
+healthcare,diagnostics_tools,,,abbott_laboratories,4,manual_medium,https://www.abbottinvestor.com/,Diagnostics exposure within a diversified healthcare group.,2026-05-16
+healthcare,diagnostics_tools,,,idexx_laboratories_inc,5,manual_high,https://www.idexx.com/en/about-idexx/investor-relations/,Veterinary diagnostics and testing exposure.,2026-05-16
+healthcare,diagnostics_tools,,,siemens_healthineers_ag,5,manual_high,https://www.siemens-healthineers.com/investor-relations,Diagnostics imaging and lab workflow exposure.,2026-05-16
+healthcare,diagnostics_tools,,,natera_inc,5,manual_high,https://investor.natera.com/,Genetic testing and diagnostics exposure.,2026-05-16
+healthcare,diagnostics_tools,,,labcorp_holdings_inc,5,manual_high,https://ir.labcorp.com/,Clinical laboratory testing exposure.,2026-05-16
+healthcare,medical_devices,,,medtronic_plc,5,manual_high,https://investorrelations.medtronic.com/,Medical technology and device exposure.,2026-05-16
+healthcare,medical_devices,,,boston_scientific_corporation,5,manual_high,https://investors.bostonscientific.com/,Medical device and interventional tools exposure.,2026-05-16
+healthcare,medical_devices,,,edwards_lifesciences_corporation,5,manual_high,https://ir.edwards.com/,Structural heart medical device exposure.,2026-05-16
+healthcare,medical_devices,,,becton_dickinson_and_company,5,manual_high,https://investors.bd.com/,Medical technology and supplies exposure.,2026-05-16
+healthcare,medical_devices,,,alcon_inc,5,manual_high,https://investor.alcon.com/,Eye-care medical device exposure.,2026-05-16
+healthcare,healthcare_distributors,,,cardinal_health_inc,5,manual_high,https://ir.cardinalhealth.com/,Pharmaceutical and medical distribution exposure.,2026-05-16
+healthcare,healthcare_distributors,,,mckesson,5,manual_high,https://investor.mckesson.com/,Pharmaceutical distribution exposure.,2026-05-16
+healthcare,healthcare_distributors,,,cencora,5,manual_high,https://investor.cencora.com/,Pharmaceutical distribution exposure.,2026-05-16
+healthcare,managed_care,,,cvs_health_corporation,4,manual_medium,https://investors.cvshealth.com/,Managed care exposure through health benefits operations.,2026-05-16
+healthcare,managed_care,,,the_cigna_group,5,manual_high,https://investors.thecignagroup.com/,Health benefits and managed care exposure.,2026-05-16
+healthcare,managed_care,,,elevance_health_inc,5,manual_high,https://ir.elevancehealth.com/,Health benefits and managed care exposure.,2026-05-16
+healthcare,managed_care,,,humana_inc,5,manual_high,https://humana.gcs-web.com/,Health benefits and managed care exposure.,2026-05-16
+healthcare,healthcare_it,,,veeva_system_inc_r,5,manual_high,https://ir.veeva.com/,Life-sciences cloud software exposure.,2026-05-16
+healthcare,healthcare_it,,,doximity_inc,4,manual_high,https://investors.doximity.com/,Digital clinical workflow platform exposure.,2026-05-16
+healthcare,healthcare_it,,,healthequity_inc,4,manual_high,https://ir.healthequity.com/,Healthcare benefits administration platform exposure.,2026-05-16
+healthcare,care_delivery,,,hca_healthcare,5,manual_high,https://investor.hcahealthcare.com/,Hospital care delivery exposure.,2026-05-16
+healthcare,care_delivery,,,davita_inc,5,manual_high,https://investors.davita.com/,Dialysis care delivery exposure.,2026-05-16
+energy,integrated_oil_gas,,,shell_plc,5,manual_high,https://www.shell.com/investors.html,Integrated oil and gas exposure.,2026-05-16
+energy,integrated_oil_gas,,,totalenergies_se,5,manual_high,https://totalenergies.com/investors,Integrated oil and gas exposure.,2026-05-16
+energy,integrated_oil_gas,,,bp_p_l_c,5,manual_high,https://www.bp.com/en/global/corporate/investors.html,Integrated oil and gas exposure.,2026-05-16
+energy,integrated_oil_gas,,,equinor_asa,5,manual_high,https://www.equinor.com/investors,Integrated oil and gas exposure.,2026-05-16
+energy,integrated_oil_gas,,,suncor_energy_inc,5,manual_high,https://www.suncor.com/en-ca/investors,Integrated oil and gas exposure.,2026-05-16
+energy,upstream,,,canadian_natural_resources_limited,5,manual_high,https://www.cnrl.com/investors/,Upstream oil and gas production exposure.,2026-05-16
+energy,upstream,,,eog_resources_inc_r,5,manual_high,https://investors.eogresources.com/,Upstream oil and gas production exposure.,2026-05-16
+energy,upstream,,,occidental_petroleum_corporation,5,manual_high,https://www.oxy.com/investors/,Upstream oil and gas production exposure.,2026-05-16
+energy,upstream,,,devon_energy_corporation,5,manual_high,https://investors.devonenergy.com/,Upstream oil and gas production exposure.,2026-05-16
+energy,upstream,,,diamondback_energy_inc,5,manual_high,https://ir.diamondbackenergy.com/,Upstream oil and gas production exposure.,2026-05-16
+energy,oilfield_services,,,slb_n_v,5,manual_high,https://investorcenter.slb.com/,Oilfield services and technology exposure.,2026-05-16
+energy,oilfield_services,,,halliburton_company,5,manual_high,https://ir.halliburton.com/,Oilfield services and completion exposure.,2026-05-16
+energy,oilfield_services,,,tenaris_s_a,4,manual_high,https://ir.tenaris.com/,Oil country tubular goods and services exposure.,2026-05-16
+energy,midstream_lng,,,enbridge_inc,5,manual_high,https://www.enbridge.com/investment-center,Pipeline and gas infrastructure exposure.,2026-05-16
+energy,midstream_lng,,,tc_energy_corporation,5,manual_high,https://www.tcenergy.com/investors/,Pipeline and gas infrastructure exposure.,2026-05-16
+energy,midstream_lng,,,kinder_morgan_inc_r,5,manual_high,https://ir.kindermorgan.com/,Pipeline and terminal infrastructure exposure.,2026-05-16
+energy,midstream_lng,,,oneok_inc,5,manual_high,https://ir.oneok.com/,Midstream natural gas liquids infrastructure exposure.,2026-05-16
+energy,midstream_lng,,,cheniere_energy_inc,5,manual_high,https://lngir.cheniere.com/,LNG infrastructure and marketing exposure.,2026-05-16
+energy,midstream_lng,,,pembina_pipeline_corporation,5,manual_high,https://www.pembina.com/investors/,Pipeline and midstream infrastructure exposure.,2026-05-16
+energy,refining_marketing,,,marathon_petroleum_corporation,5,manual_high,https://ir.marathonpetroleum.com/,Refining and fuels marketing exposure.,2026-05-16
+energy,refining_marketing,,,phillips_66,5,manual_high,https://investor.phillips66.com/,Refining and fuels marketing exposure.,2026-05-16
+energy,refining_marketing,,,valero_energy_corporation,5,manual_high,https://investorvalero.com/,Refining and fuels marketing exposure.,2026-05-16
+energy,refining_marketing,,,reliance_industries_limited,4,manual_medium,https://www.ril.com/investors,Refining and petrochemicals exposure within a diversified group.,2026-05-16
+energy,uranium_nuclear,,,cameco_corporation,5,manual_high,https://www.cameco.com/investors,Uranium mining and fuel-cycle exposure.,2026-05-16
+energy,uranium_nuclear,,,nexgen_energy_ltd,5,manual_high,https://www.nexgenenergy.ca/investors/,Uranium development exposure.,2026-05-16
+energy,uranium_nuclear,,,uranium_energy_corp,5,manual_high,https://www.uraniumenergy.com/investors/,Uranium mining and development exposure.,2026-05-16
+energy,uranium_nuclear,,,denison_mines_corp,5,manual_high,https://denisonmines.com/investors/,Uranium mining and development exposure.,2026-05-16
+energy,regulated_utilities,,,duke_energy_corp_r,5,manual_high,https://investors.duke-energy.com/,Regulated electric utility exposure.,2026-05-16
+energy,regulated_utilities,,,southern_co,5,manual_high,https://investor.southerncompany.com/,Regulated electric utility exposure.,2026-05-16
+energy,regulated_utilities,,,american_electric_power_co_inc,5,manual_high,https://www.aep.com/investors/,Regulated electric utility exposure.,2026-05-16
+energy,regulated_utilities,,,national_grid_plc,5,manual_high,https://www.nationalgrid.com/investors,Regulated electricity and gas network exposure.,2026-05-16
+energy,regulated_utilities,,,xcel_energy_inc,5,manual_high,https://investors.xcelenergy.com/,Regulated electric and gas utility exposure.,2026-05-16
+energy,regulated_utilities,,,dominion_energy_inc,5,manual_high,https://investors.dominionenergy.com/,Regulated electric and gas utility exposure.,2026-05-16
+energy,renewable_developers,,,iberdrola_s_a,4,manual_medium,https://www.iberdrola.com/shareholders-investors,Renewable generation developer exposure within a utility group.,2026-05-16
+energy,renewable_developers,,,enel_spa,4,manual_medium,https://www.enel.com/investors,Renewable generation developer exposure within a utility group.,2026-05-16
+energy,renewable_developers,,,engie_sa,4,manual_medium,https://www.engie.com/en/finance,Renewable generation developer exposure within a utility group.,2026-05-16
+energy,renewable_developers,,,rwe_aktiengesellschaft,4,manual_medium,https://www.rwe.com/en/investor-relations/,Renewable generation developer exposure within a utility group.,2026-05-16
+energy,solar_wind_equipment,,,vestas_wind_systems_a_s,5,manual_high,https://www.vestas.com/en/investor,Wind turbine equipment exposure.,2026-05-16
+energy,solar_wind_equipment,,,first_solar_inc,5,manual_high,https://investor.firstsolar.com/,Solar module equipment exposure.,2026-05-16
+energy,solar_wind_equipment,,,enphase_energy_inc,5,manual_high,https://investor.enphase.com/,Solar inverter and battery equipment exposure.,2026-05-16
+energy,solar_wind_equipment,,,xinyi_solar_holdings,5,manual_high,https://www.xinyisolar.com/en/investor_relations/index.html,Solar glass equipment supply exposure.,2026-05-16
+energy,energy_storage,,,fluence_energy,5,manual_high,https://ir.fluenceenergy.com/,Grid-scale energy storage platform exposure.,2026-05-16
+energy,grid_equipment,,,abb_ltd_n,5,manual_high,https://global.abb/group/en/investors,Grid automation and electrification equipment exposure.,2026-05-16
+energy,grid_equipment,,,schneider_electric_s_e,5,manual_high,https://www.se.com/ww/en/about-us/investor-relations/,Energy management and grid equipment exposure.,2026-05-16
+energy,grid_equipment,,,siemens_aktiengesellschaft,4,manual_medium,https://www.siemens.com/global/en/company/investor-relations.html,Grid and electrification exposure within a diversified industrial group.,2026-05-16
+defence,primes,,,bae_systems_plc,5,manual_high,https://investors.baesystems.com/,Defence prime contractor exposure.,2026-05-16
+defence,primes,,,the_boeing_company,4,manual_medium,https://investors.boeing.com/,Defence prime exposure alongside commercial aerospace.,2026-05-16
+defence,primes,,,airbus_se,4,manual_medium,https://www.airbus.com/en/investors,Defence and space prime exposure alongside commercial aerospace.,2026-05-16
+defence,primes,,,rheinmetall_ag,5,manual_high,https://ir.rheinmetall.com/,Defence prime and military systems exposure.,2026-05-16
+defence,primes,,,l3harris_technologies_inc_r,5,manual_high,https://www.l3harris.com/company/investors,Defence technology prime exposure.,2026-05-16
+defence,aerospace_components,,,safran_sa,5,manual_high,https://www.safran-group.com/finance,Aerospace systems and components exposure.,2026-05-16
+defence,aerospace_components,,,rolls_royce_holdings_plc,5,manual_high,https://www.rolls-royce.com/investors.aspx,Aerospace propulsion and systems exposure.,2026-05-16
+defence,aerospace_components,,,woodward_inc,4,manual_medium,https://ir.woodward.com/,Aerospace control systems exposure.,2026-05-16
+defence,aerospace_engines,,,general_electric_company,5,manual_high,https://www.geaerospace.com/investor-relations,Aircraft engine and propulsion exposure.,2026-05-16
+defence,aerospace_engines,,,safran_sa,5,manual_high,https://www.safran-group.com/finance,Aircraft engine and propulsion exposure.,2026-05-16
+defence,aerospace_engines,,,rolls_royce_holdings_plc,5,manual_high,https://www.rolls-royce.com/investors.aspx,Aircraft engine and propulsion exposure.,2026-05-16
+defence,sensors_electronics,,,l3harris_technologies_inc_r,5,manual_high,https://www.l3harris.com/company/investors,Defence sensors and communications electronics exposure.,2026-05-16
+defence,sensors_electronics,,,thales_s_a,5,manual_high,https://www.thalesgroup.com/en/investor,Defence electronics and secure communications exposure.,2026-05-16
+defence,sensors_electronics,,,elbit_systems_ltd,5,manual_high,https://elbitsystems.com/investor-relations/,Defence electronics and avionics exposure.,2026-05-16
+defence,sensors_electronics,,,teledyne_technologies,4,manual_medium,https://www.teledyne.com/investors,Defence sensing exposure within a diversified instrumentation group.,2026-05-16
+defence,missiles_munitions,,,rtx_corporation,5,manual_high,https://investors.rtx.com/,Missile and tactical weapons exposure.,2026-05-16
+defence,missiles_munitions,,,lockheed_martin_corporation,5,manual_high,https://investors.lockheedmartin.com/,Missile and tactical weapons exposure.,2026-05-16
+defence,missiles_munitions,,,rheinmetall_ag,5,manual_high,https://ir.rheinmetall.com/,Munitions and military systems exposure.,2026-05-16
+defence,missiles_munitions,,,saab_ab_publ,5,manual_high,https://www.saab.com/investors,Missiles weapons and defence systems exposure.,2026-05-16
+defence,missiles_munitions,,,kongsberg_gruppen_asa,5,manual_high,https://www.kongsberg.com/investor-relations/,Missile and defence systems exposure.,2026-05-16
+defence,shipbuilding_naval,,,general_dynamics_corporation,5,manual_high,https://investorrelations.gd.com/,Naval shipbuilding and marine systems exposure.,2026-05-16
+defence,shipbuilding_naval,,,huntington_ingalls_industries_inc,5,manual_high,https://ir.hii.com/,Naval shipbuilding exposure.,2026-05-16
+defence,shipbuilding_naval,,,bae_systems_plc,5,manual_high,https://investors.baesystems.com/,Naval shipbuilding and combat systems exposure.,2026-05-16
+defence,space_defence,,,lockheed_martin_corporation,5,manual_high,https://investors.lockheedmartin.com/,Space and missile systems exposure.,2026-05-16
+defence,space_defence,,,northrop_grumman_corporation,5,manual_high,https://investor.northropgrumman.com/,Space and missile warning exposure.,2026-05-16
+defence,space_defence,,,the_boeing_company,4,manual_medium,https://investors.boeing.com/,Space systems exposure alongside commercial aerospace.,2026-05-16
+defence,space_defence,,,rocket_lab_corp,4,manual_high,https://investors.rocketlabusa.com/,Launch and space systems exposure.,2026-05-16
+defence,autonomy_drones,,,aerovironment,5,manual_high,https://investor.avinc.com/,Unmanned systems and tactical drone exposure.,2026-05-16
+defence,autonomy_drones,,,kratos_defense_security_solutions_inc,5,manual_high,https://ir.kratosdefense.com/,Unmanned systems and defence technology exposure.,2026-05-16
+defence,autonomy_drones,,,elbit_systems_ltd,4,manual_high,https://elbitsystems.com/investor-relations/,Unmanned aircraft systems exposure.,2026-05-16
+defence,defence_services,,,leidos_holdings_inc,5,manual_high,https://investors.leidos.com/,Government technology and defence services exposure.,2026-05-16
+defence,defence_services,,,booz_allen_hamilton_holding_corporation,4,manual_high,https://investors.boozallen.com/,Defence and government consulting exposure.,2026-05-16
+defence,defence_services,,,caci_international_inc,5,manual_high,https://investor.caci.com/,Defence IT and government services exposure.,2026-05-16
+defence,defence_services,,,science_applications_international_corporation,5,manual_high,https://investors.saic.com/,Defence technology and services exposure.,2026-05-16
+defence,defence_software,,,leidos_holdings_inc,4,manual_high,https://investors.leidos.com/,Mission software and defence technology exposure.,2026-05-16
+defence,defence_software,,,caci_international_inc,4,manual_high,https://investor.caci.com/,Mission technology and defence software exposure.,2026-05-16
+defence,cyber,,,fortinet_inc,4,manual_high,https://investor.fortinet.com/,Cybersecurity platform exposure.,2026-05-16
+defence,cyber,,,zscaler_inc,4,manual_high,https://ir.zscaler.com/,Cybersecurity platform exposure.,2026-05-16
+defence,cyber,,,check_point_software_technologies,4,manual_high,https://investors.checkpoint.com/,Cybersecurity platform exposure.,2026-05-16
+commodities,diversified_mining,,,vale_s_a,4,manual_medium,https://www.vale.com/investors,Diversified iron ore copper and nickel mining exposure.,2026-05-16
+commodities,diversified_mining,,,glencore_plc,5,manual_high,https://www.glencore.com/investors,Diversified mining and marketing exposure.,2026-05-16
+commodities,diversified_mining,,,anglo_american_plc,5,manual_high,https://www.angloamerican.com/investors,Diversified mining exposure.,2026-05-16
+commodities,diversified_mining,,,teck_resources_limited,4,manual_medium,https://www.teck.com/investors/,Diversified mining exposure.,2026-05-16
+commodities,diversified_mining,,,south32_limited,4,manual_medium,https://www.south32.net/investors-media,Diversified mining exposure.,2026-05-16
+commodities,copper,,,antofagasta_plc,5,manual_high,https://www.antofagasta.co.uk/investors/,Copper mining exposure.,2026-05-16
+commodities,copper,,,first_quantum_minerals_ltd,5,manual_high,https://www.first-quantum.com/English/investors/default.aspx,Copper mining exposure.,2026-05-16
+commodities,copper,,,lundin_mining_corporation,5,manual_high,https://lundinmining.com/investors/,Copper mining exposure.,2026-05-16
+commodities,copper,,,ivanhoe_mines_ltd,5,manual_high,https://ivanhoemines.com/investors/,Copper mining exposure.,2026-05-16
+commodities,copper,,,hudbay_minerals_inc,5,manual_high,https://hudbayminerals.com/investors/default.aspx,Copper mining exposure.,2026-05-16
+commodities,lithium,,,lithium_americas_corp,5,manual_high,https://www.lithiumamericas.com/investors/,Lithium development exposure.,2026-05-16
+commodities,precious_metals,,,agnico_eagle_mines_limited,5,manual_high,https://www.agnicoeagle.com/English/investor-relations/default.aspx,Gold mining exposure.,2026-05-16
+commodities,precious_metals,,,franco_nevada_corporation,5,manual_high,https://www.franco-nevada.com/investors/,Precious metals royalty exposure.,2026-05-16
+commodities,precious_metals,,,wheaton_precious_metals_corp,5,manual_high,https://www.wheatonpm.com/investors/,Precious metals streaming exposure.,2026-05-16
+commodities,precious_metals,,,kinross_gold_corporation,5,manual_high,https://www.kinross.com/investors/default.aspx,Gold mining exposure.,2026-05-16
+commodities,precious_metals,,,pan_american_silver_corp,5,manual_high,https://www.panamericansilver.com/invest/,Precious metals mining exposure.,2026-05-16
+commodities,uranium,,,cameco_corporation,5,manual_high,https://www.cameco.com/investors,Uranium mining and fuel-cycle exposure.,2026-05-16
+commodities,uranium,,,nexgen_energy_ltd,5,manual_high,https://www.nexgenenergy.ca/investors/,Uranium development exposure.,2026-05-16
+commodities,uranium,,,uranium_energy_corp,5,manual_high,https://www.uraniumenergy.com/investors/,Uranium mining and development exposure.,2026-05-16
+commodities,uranium,,,denison_mines_corp,5,manual_high,https://denisonmines.com/investors/,Uranium mining and development exposure.,2026-05-16
+commodities,steel_iron_ore,,,arcelormittal_s_a,5,manual_high,https://corporate.arcelormittal.com/investors,Steelmaking exposure.,2026-05-16
+commodities,steel_iron_ore,,,nucor,5,manual_high,https://investors.nucor.com/,Steelmaking exposure.,2026-05-16
+commodities,steel_iron_ore,,,steel_dynamics_inc,5,manual_high,https://ir.steeldynamics.com/,Steelmaking exposure.,2026-05-16
+commodities,steel_iron_ore,,,nippon_steel_corporation,5,manual_high,https://www.nipponsteel.com/en/ir/,Steelmaking exposure.,2026-05-16
+commodities,steel_iron_ore,,,gerdau_s_a,5,manual_high,https://ri.gerdau.com/en/,Steelmaking exposure.,2026-05-16
+commodities,aluminum,,,norsk_hydro_asa,5,manual_high,https://www.hydro.com/en/investors/,Aluminum production exposure.,2026-05-16
+commodities,aluminum,,,alcoa_corporation,5,manual_high,https://investors.alcoa.com/,Aluminum production exposure.,2026-05-16
+commodities,specialty_chemicals,,,linde_plc,5,manual_high,https://investors.linde.com/,Industrial gas and specialty chemicals exposure.,2026-05-16
+commodities,specialty_chemicals,,,l_air_liquide_s_a,5,manual_high,https://www.airliquide.com/investors,Industrial gas and specialty chemicals exposure.,2026-05-16
+commodities,specialty_chemicals,,,basf_se,4,manual_medium,https://www.basf.com/global/en/investors,Diversified chemicals exposure.,2026-05-16
+commodities,specialty_chemicals,,,shin_etsu_chemical_co_ltd,4,manual_high,https://www.shinetsu.co.jp/en/ir/,Specialty chemicals exposure.,2026-05-16
+commodities,specialty_chemicals,,,air_products_and_chemicals_inc,5,manual_high,https://investors.airproducts.com/,Industrial gas and specialty chemicals exposure.,2026-05-16
+commodities,fertilizer_agriculture,,,nutrien_ltd,5,manual_high,https://www.nutrien.com/investors,Fertilizer and crop nutrient exposure.,2026-05-16
+commodities,fertilizer_agriculture,,,corteva_inc,5,manual_high,https://investors.corteva.com/,Seed and crop protection exposure.,2026-05-16
+commodities,fertilizer_agriculture,,,yara_international_asa,5,manual_high,https://www.yara.com/investors/,Nitrogen fertilizer exposure.,2026-05-16
+commodities,fertilizer_agriculture,,,icl_group_ltd,5,manual_high,https://investors.icl-group.com/,Fertilizer and specialty minerals exposure.,2026-05-16
+commodities,commodity_processors,,,archer_daniels_midland_company,5,manual_high,https://investors.adm.com/,Agricultural commodity processing exposure.,2026-05-16
+commodities,commodity_processors,,,bunge,5,manual_high,https://investors.bunge.com/,Agricultural commodity processing exposure.,2026-05-16
+commodities,commodity_processors,,,glencore_plc,5,manual_high,https://www.glencore.com/investors,Commodity marketing and processing exposure.,2026-05-16
+commodities,commodity_processors,,,franco_nevada_corporation,4,manual_medium,https://www.franco-nevada.com/investors/,Commodity royalty and streaming exposure.,2026-05-16
+fintech,merchant_acquiring,,,global_payments_inc_r,5,manual_high,https://investors.globalpayments.com/,Merchant acquiring and payment processing exposure.,2026-05-16
+fintech,merchant_acquiring,,,fiserv_inc,5,manual_high,https://investors.fiserv.com/,Merchant acquiring and payment processing exposure.,2026-05-16
+fintech,merchant_acquiring,,,adyen_n_v,5,manual_high,https://www.adyen.com/ir,Merchant acquiring and payment processing exposure.,2026-05-16
+fintech,merchant_acquiring,,,block_inc,5,manual_high,https://investors.block.xyz/,Seller payments and merchant services exposure.,2026-05-16
+fintech,merchant_acquiring,,,toast,5,manual_high,https://investors.toasttab.com/,Restaurant POS and merchant payments exposure.,2026-05-16
+fintech,digital_wallets,,,paypal_holdings_inc,5,manual_high,https://investor.pypl.com/,Digital wallet and online payments exposure.,2026-05-16
+fintech,digital_wallets,,,block_inc,5,manual_high,https://investors.block.xyz/,Cash App digital wallet exposure.,2026-05-16
+fintech,digital_wallets,,,mercadolibre_inc,4,manual_medium,https://investor.mercadolibre.com/,Mercado Pago wallet exposure within a marketplace group.,2026-05-16
+fintech,digital_wallets,,,wise_group_plc,5,manual_high,https://wise.com/owners,Digital account and cross-border payments exposure.,2026-05-16
+fintech,embedded_finance,,,affirm_holdings_inc,5,manual_high,https://investors.affirm.com/,Embedded BNPL and commerce finance exposure.,2026-05-16
+fintech,embedded_finance,,,shopify_inc,4,manual_medium,https://investors.shopify.com/,Merchant payments and finance exposure within a commerce platform.,2026-05-16
+fintech,embedded_finance,,,marqeta,5,manual_high,https://investors.marqeta.com/,Card issuing and embedded finance platform exposure.,2026-05-16
+fintech,embedded_finance,,,sofi_technologies,4,manual_high,https://investors.sofi.com/,Digital banking and lending platform exposure.,2026-05-16
+fintech,risk_identity_data,,,fair_isaac,5,manual_high,https://investors.fico.com/,Credit scoring and decisioning exposure.,2026-05-16
+fintech,risk_identity_data,,,experian_plc,5,manual_high,https://www.experianplc.com/investors,Credit data and decisioning exposure.,2026-05-16
+fintech,risk_identity_data,,,equifax_inc,5,manual_high,https://investor.equifax.com/,Credit data and identity risk exposure.,2026-05-16
+fintech,risk_identity_data,,,transunion,5,manual_high,https://investors.transunion.com/,Credit data and risk information exposure.,2026-05-16
+fintech,risk_identity_data,,,riskified_ltd,5,manual_high,https://ir.riskified.com/,Ecommerce fraud and risk platform exposure.,2026-05-16
+fintech,wealth_brokerage_apps,,,robinhood_markets,5,manual_high,https://investors.robinhood.com/,Digital brokerage app exposure.,2026-05-16
+fintech,wealth_brokerage_apps,,,futu_holdings_limited,5,manual_high,https://ir.futuholdings.com/,Digital brokerage app exposure.,2026-05-16
+fintech,wealth_brokerage_apps,,,interactive_brokers_group_inc,4,manual_high,https://investors.interactivebrokers.com/,Electronic brokerage platform exposure.,2026-05-16
+fintech,insurtech,,,guidewire_software_inc,5,manual_high,https://ir.guidewire.com/,Insurance software platform exposure.,2026-05-16
+fintech,insurtech,,,lemonade_inc,5,manual_high,https://investor.lemonade.com/,Digital-native insurance platform exposure.,2026-05-16
+fintech,consumer_finance,,,affirm_holdings_inc,5,manual_high,https://investors.affirm.com/,Digital consumer finance exposure.,2026-05-16
+fintech,consumer_finance,,,upstart_holdings_inc,5,manual_high,https://ir.upstart.com/,Digital lending platform exposure.,2026-05-16
+fintech,capital_markets,,,tradeweb_markets,5,manual_high,https://investors.tradeweb.com/,Electronic fixed-income trading platform exposure.,2026-05-16
+fintech,capital_markets,,,marketaxess_holdings_inc,5,manual_high,https://investor.marketaxess.com/,Electronic credit trading platform exposure.,2026-05-16
+fintech,crypto_rails,,,galaxy_digital,5,manual_high,https://investors.galaxy.com/,Crypto financial services platform exposure.,2026-05-16
+fintech,banking_software,,,ss_c_technologies_holdings_inc,4,manual_high,https://investor.ssctech.com/,Financial services software exposure.,2026-05-16
+fintech,banking_software,,,broadridge_financial_solutions_inc,4,manual_high,https://www.broadridge-ir.com/,Financial services technology platform exposure.,2026-05-16

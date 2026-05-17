@@ -4,6 +4,7 @@ const INITIAL_CARD_COUNT = 120;
 const CARD_INCREMENT = 120;
 const EMPTY_LOCAL = Object.freeze({ watchlist: false, notes: "", tags: [], color: "" });
 const LOCAL_STORAGE_KEY = "statos.local.v1";
+const DEFAULT_SORT = Object.freeze({ key: "marketCap", dir: "desc" });
 const VALID_VIEWS = ["tickers", "explorer", "themes", "supply", "sectors", "watchlist", "unclassified", "exports"];
 const VALID_LOCAL_FILTERS = ["watchlist", "tagged", "coloured"];
 const VALID_SORT_KEYS = ["ticker", "name", "sector", "industry", "marketCap"];
@@ -57,7 +58,7 @@ const state = {
   explorerGroup: "",
   sector: "",
   localFilter: "",
-  sort: { key: "ticker", dir: "asc" },
+  sort: { ...DEFAULT_SORT },
   reviewFilters: { queue: "", reason: "", severity: "", gap: "", search: "" },
   listWindows: {},
   savedViewSelection: "",
@@ -1460,8 +1461,8 @@ function sanitizeViewSnapshot(snapshot) {
 
 function sanitizeSort(sort) {
   const raw = sort && typeof sort === "object" ? sort : {};
-  const key = VALID_SORT_KEYS.includes(raw.key) ? raw.key : "ticker";
-  const dir = raw.dir === "desc" ? "desc" : "asc";
+  const key = VALID_SORT_KEYS.includes(raw.key) ? raw.key : DEFAULT_SORT.key;
+  const dir = raw.dir === "asc" || raw.dir === "desc" ? raw.dir : (key === DEFAULT_SORT.key ? DEFAULT_SORT.dir : "asc");
   return { key, dir };
 }
 

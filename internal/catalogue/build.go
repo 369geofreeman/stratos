@@ -394,6 +394,7 @@ func Build(input BuildInput) (*Catalogue, error) {
 	addIdentityGroupIssues(tickersByISIN, companiesByISIN, isinsBySecurity, companiesBySecurity, categoriesBySecurity, state)
 	addUnknownOverrideIssues(input.Manual.IdentityOverrides, state)
 	exposures := combinedExposures(input.Manual.Exposures, buildProductRuleExposures(tickerByID, input.Manual))
+	exposures = combinedExposures(exposures, buildStockRuleExposures(tickerByID, input.Manual))
 	applyExposures(exposures, tickerByID, companyByID, securityByISIN)
 	addRelatedTickers(tickerByID, companyByID)
 

@@ -533,6 +533,89 @@ func TestBuildProductRuleExposuresForPart4Pipelines(t *testing.T) {
 	}
 }
 
+func TestBuildStockRuleExposuresForClassifiedOperatingCompanies(t *testing.T) {
+	manual := stockPipelineManual()
+	cat, err := Build(BuildInput{
+		Instruments: []trading212.Instrument{
+			{Ticker: "TD_US_EQ", Name: "The Toronto-Dominion Bank", ISIN: "US0000000101", Type: "STOCK", CurrencyCode: "USD"},
+			{Ticker: "TMUS_US_EQ", Name: "T-Mobile US Inc", ISIN: "US0000000102", Type: "STOCK", CurrencyCode: "USD"},
+			{Ticker: "AMGN_US_EQ", Name: "Amgen Inc", ISIN: "US0000000103", Type: "STOCK", CurrencyCode: "USD"},
+			{Ticker: "INTU_US_EQ", Name: "Intuit Inc", ISIN: "US0000000104", Type: "STOCK", CurrencyCode: "USD"},
+			{Ticker: "COIN_US_EQ", Name: "Coinbase Global Inc", ISIN: "US0000000105", Type: "STOCK", CurrencyCode: "USD"},
+			{Ticker: "LMND_US_EQ", Name: "Lemonade Inc", ISIN: "US0000000106", Type: "STOCK", CurrencyCode: "USD"},
+		},
+		Profiles: map[string]enrichment.Profile{
+			"TD_US_EQ":   {Sector: "Financial Services", Industry: "Banks - Diversified"},
+			"TMUS_US_EQ": {Sector: "Communication Services", Industry: "Telecom Services"},
+			"AMGN_US_EQ": {Sector: "Healthcare", Industry: "Drug Manufacturers - General"},
+			"INTU_US_EQ": {Sector: "Technology", Industry: "Software - Application"},
+			"COIN_US_EQ": {Sector: "Financial Services", Industry: "Capital Markets"},
+			"LMND_US_EQ": {Sector: "Financial Services", Industry: "Insurance - Property & Casualty"},
+		},
+		Manual:  manual,
+		BuiltAt: time.Date(2026, 5, 17, 12, 0, 0, 0, time.UTC),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	assertTickerThemeLayer(t, cat, "TD_US_EQ", "financial_system", "diversified_banks")
+	assertTickerThemeLayer(t, cat, "TMUS_US_EQ", "connectivity_infrastructure", "telecom_operators")
+	assertTickerThemeLayer(t, cat, "AMGN_US_EQ", "healthcare", "large_pharma")
+	assertTickerThemeLayer(t, cat, "INTU_US_EQ", "enterprise_software", "erp_crm_workflow")
+	assertTickerThemeLayer(t, cat, "COIN_US_EQ", "fintech", "crypto_rails")
+	assertTickerThemeLayer(t, cat, "LMND_US_EQ", "fintech", "insurtech")
+	assertTickerThemeLayer(t, cat, "LMND_US_EQ", "financial_system", "insurance")
+	if hasReviewReason(cat.ReviewQueues, ReviewQueueTaxonomy, ReasonMissingThemeExposure) {
+		t.Fatalf("stock rule exposures should clear missing theme review rows: %#v", cat.ReviewQueues)
+	}
+	if !hasExposure(cat, "financial_system", "diversified_banks", "US0000000101") {
+		t.Fatalf("expected ISIN-targeted stock rule exposure for TD: %#v", cat.Exposures)
+	}
+}
+
+func TestBuildStockRuleExposuresYieldToResolvedManualExposures(t *testing.T) {
+	manual := stockPipelineManual()
+	manual.Exposures = []taxonomy.Exposure{{
+		ThemeID:       "financial_system",
+		LayerID:       "diversified_banks",
+		Ticker:        "TD_US_EQ",
+		ExposureScore: 5,
+		Confidence:    "manual_high",
+		SourceURL:     "https://example.com/td",
+		LastReviewed:  "2026-05-17",
+	}}
+	cat, err := Build(BuildInput{
+		Instruments: []trading212.Instrument{
+			{Ticker: "TD_US_EQ", Name: "The Toronto-Dominion Bank", ISIN: "US0000000101", Type: "STOCK", CurrencyCode: "USD"},
+			{Ticker: "TDBd_EQ", Name: "The Toronto-Dominion Bank", ISIN: "US0000000101", Type: "STOCK", CurrencyCode: "EUR"},
+		},
+		Profiles: map[string]enrichment.Profile{
+			"TD_US_EQ": {Sector: "Financial Services", Industry: "Banks - Diversified"},
+			"TDBd_EQ":  {Sector: "Financial Services", Industry: "Banks - Diversified"},
+		},
+		Manual:  manual,
+		BuiltAt: time.Date(2026, 5, 17, 12, 0, 0, 0, time.UTC),
+	})
+	if err != nil {
+		t.Fatal(err)
+	}
+
+	assertTickerThemeLayer(t, cat, "TD_US_EQ", "financial_system", "diversified_banks")
+	assertTickerThemeLayer(t, cat, "TDBd_EQ", "financial_system", "diversified_banks")
+	for _, exposure := range cat.Exposures {
+		if exposure.ThemeID == "financial_system" &&
+			exposure.LayerID == "diversified_banks" &&
+			exposure.ISIN == "US0000000101" &&
+			exposure.Confidence == confidenceStockRule {
+			t.Fatalf("stock rule emitted ISIN exposure that would duplicate the reviewed ticker exposure: %#v", exposure)
+		}
+	}
+	if !hasTickerExposure(cat, "financial_system", "diversified_banks", "TDBd_EQ", confidenceStockRule) {
+		t.Fatalf("expected stock rule to keep non-shadowed same-ISIN listing covered: %#v", cat.Exposures)
+	}
+}
+
 func TestBuildCapsGeneratedRelatedTickersForBroadIndustries(t *testing.T) {
 	instruments := make([]trading212.Instrument, 0, maxRelatedTickersPerIndustry+5)
 	for i := 0; i < maxRelatedTickersPerIndustry+5; i++ {
@@ -726,6 +809,51 @@ func productPipelineManual() taxonomy.ManualData {
 	return manual
 }
 
+func stockPipelineManual() taxonomy.ManualData {
+	manual := emptyManual()
+	manual.Themes = []taxonomy.Theme{
+		{ID: "financial_system", Name: "Financial system"},
+		{ID: "connectivity_infrastructure", Name: "Connectivity infrastructure"},
+		{ID: "healthcare", Name: "Healthcare"},
+		{ID: "enterprise_software", Name: "Enterprise software"},
+		{ID: "fintech", Name: "Fintech"},
+	}
+	manual.SupplyChains = []taxonomy.SupplyChain{
+		{
+			ThemeID: "financial_system",
+			Name:    "Financial system supply chain",
+			Layers: []taxonomy.SupplyChainLayer{
+				{ID: "diversified_banks", Name: "Diversified banks", Order: 10},
+				{ID: "insurance", Name: "Insurance", Order: 20},
+			},
+		},
+		{
+			ThemeID: "connectivity_infrastructure",
+			Name:    "Connectivity infrastructure supply chain",
+			Layers:  []taxonomy.SupplyChainLayer{{ID: "telecom_operators", Name: "Telecom operators", Order: 10}},
+		},
+		{
+			ThemeID: "healthcare",
+			Name:    "Healthcare supply chain",
+			Layers:  []taxonomy.SupplyChainLayer{{ID: "large_pharma", Name: "Large pharma", Order: 10}},
+		},
+		{
+			ThemeID: "enterprise_software",
+			Name:    "Enterprise software supply chain",
+			Layers:  []taxonomy.SupplyChainLayer{{ID: "erp_crm_workflow", Name: "ERP and workflow", Order: 10}},
+		},
+		{
+			ThemeID: "fintech",
+			Name:    "Fintech supply chain",
+			Layers: []taxonomy.SupplyChainLayer{
+				{ID: "crypto_rails", Name: "Crypto rails", Order: 10},
+				{ID: "insurtech", Name: "Insurtech", Order: 20},
+			},
+		},
+	}
+	return manual
+}
+
 func findTicker(t *testing.T, cat *Catalogue, ticker string) Ticker {
 	t.Helper()
 	for _, row := range cat.Tickers {
@@ -748,6 +876,15 @@ func assertTickerThemeLayer(t *testing.T, cat *Catalogue, tickerID string, theme
 func hasExposure(cat *Catalogue, themeID string, layerID string, isin string) bool {
 	for _, exposure := range cat.Exposures {
 		if exposure.ThemeID == themeID && exposure.LayerID == layerID && exposure.ISIN == isin && exposure.Confidence == "rule_low" {
+			return true
+		}
+	}
+	return false
+}
+
+func hasTickerExposure(cat *Catalogue, themeID string, layerID string, tickerID string, confidence string) bool {
+	for _, exposure := range cat.Exposures {
+		if exposure.ThemeID == themeID && exposure.LayerID == layerID && exposure.Ticker == tickerID && exposure.Confidence == confidence {
 			return true
 		}
 	}

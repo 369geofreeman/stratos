@@ -9,9 +9,9 @@
   "securityCount": 13805,
   "companyCount": 13215,
   "listingCount": 17050,
-  "themeCount": 20,
-  "exposureCount": 4523,
-  "relationshipCount": 9,
+  "themeCount": 21,
+  "exposureCount": 11800,
+  "relationshipCount": 33,
   "enrichmentAttempted": 17050,
   "enrichmentSucceeded": 7702,
   "enrichmentFailed": 9348,
@@ -25,7 +25,7 @@
   "enrichmentFailureCSV": "site/data/enrichment_failures.csv",
   "enrichmentOldestRetrievedAt": "2026-05-16T10:27:53Z",
   "enrichmentNewestRetrievedAt": "2026-05-16T17:59:08Z",
-  "unclassifiedCount": 7148,
+  "unclassifiedCount": 3418,
   "emptyTickerCount": 0,
   "duplicateTickerCount": 0,
   "duplicateISINCount": 2219,
@@ -35,13 +35,12 @@
   "identityIssueCount": 0,
   "reviewQueueCounts": {
     "enrichment": 9348,
-    "taxonomy": 10571
+    "taxonomy": 6836
   },
   "reviewReasonCounts": {
     "enrichment_failed": 9348,
-    "missing_industry": 3423,
-    "missing_sector": 3423,
-    "missing_theme_exposure": 3725
+    "missing_industry": 3418,
+    "missing_sector": 3418
   },
   "reviewQueueDeltas": {
     "enrichment": -156,
@@ -92,72 +91,72 @@
       "path": "site/data/app_bootstrap.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "d8ed985b540a7b14149e190567ea76b51be998dec9bc12b56db71507c7f246cb",
-      "bytes": 1127952,
+      "sha256": "11c7e6dce6d8a471e236db19e8532bbc7f4a80664fd38972523b974e5f65f7c7",
+      "bytes": 2923923,
       "checksumMode": "projection_excludes_generatedFiles"
     },
     {
       "path": "site/data/tickers_index.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "2c250dd0854bed25f3693c383f6819371e95e692c27289675ecd1af2c36e8a14",
-      "bytes": 16231580
+      "sha256": "398ce6ca6aeac9a5bbcf67a9e31a495b1c82fa4891c809d5b4abc896119c5536",
+      "bytes": 16702093
     },
     {
       "path": "site/data/explorer_index.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "da63ef2c8f3bfcc31d25fde4b9158c62cf169f52ee1cf603f53394fe52203059",
-      "bytes": 979164
+      "sha256": "96d439175bb7b4906737ce44d3e86c2b836c3c1d91baa90d4f7659d96d22de9e",
+      "bytes": 1164977
     },
     {
       "path": "site/data/catalogue.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "e996a07ef4a5feba5d2c1b404bf4e75900df2cbc598b78c1b826598bc1a52084",
-      "bytes": 6597
+      "sha256": "ec208564d64bc73db5eaceb68fb62b0450ec541b2e19d5889f08ca68e6634867",
+      "bytes": 6562
     },
     {
       "path": "site/data/companies.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "cb40d93a036ebb93bdd076418d369bdc40fa2e645f3db57e5a4e22ace805311a",
-      "bytes": 17027453
+      "sha256": "e7d268df1806c3eee471f13ec4b638d541283ea4a199a378ab07eb12c9f3c19a",
+      "bytes": 17673469
     },
     {
       "path": "site/data/sectors.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "b690817af3eda677b7c0fd7ccfabcbb7a9ff5b6917028acabed16b283e03162c",
+      "sha256": "8f073f160d211311b62112137b13821b35ef6d2819507f362eafda2f4712d47a",
       "bytes": 320364
     },
     {
       "path": "site/data/industries.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "6a1e2ecec5e6b014570c83434b82383ed121478211b85e9d4710e82ed590ccd2",
+      "sha256": "6f1cdd249c966a623f5c429a3a90cb5d9432a2407dfe99b328146024bdb06c36",
       "bytes": 337815
     },
     {
       "path": "site/data/themes.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "6e2b4f4dbe6fb4bc5229aeac656efdc869e1c68f01961e8208d3fce228feabe5",
-      "bytes": 3968
+      "sha256": "514ee2d25366439671a0db122f769d36d4c720538323e61e7781bcebbb29be19",
+      "bytes": 4224
     },
     {
       "path": "site/data/supply_chains.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "977f49dce461617135ecc6326638648cf281a1b616392e09c9e070581ce2fa40",
-      "bytes": 38565
+      "sha256": "1d984ebe2c79ee435002ce9a0913c4c8645706dc929fb52407435085be604a2b",
+      "bytes": 40162
     },
     {
       "path": "site/data/search_index.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "8062a5360cd302f0571a87f3774e9c6edeb9314377d68326c61d261e52dc4754",
-      "bytes": 8089317
+      "sha256": "617f2b5fc34c2e5a7432873681eac464326cfc5754b0f0b6b6cee34843a182de",
+      "bytes": 8090011
     },
     {
       "path": "site/data/securities.json",
@@ -177,36 +176,36 @@
       "path": "site/data/relationships.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "a5aafaea823a40b52b4a53acd7868b7c87ac7106428ac320a05f32ba0d3651c8",
-      "bytes": 4483
+      "sha256": "1a84336f0bbe199ba0f0484621d23a8bd14bd422fd667f1755aaa4c47059b3b6",
+      "bytes": 14597
     },
     {
       "path": "site/data/unclassified.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "952a25f565ad5e5963865438166c9f281cc5872c20241cf9eec425ea1f6fc83f",
-      "bytes": 1362721
+      "sha256": "79bec70f6ec27e609a07045518ecef6a642df1d036c2bfd5692284270187fbde",
+      "bytes": 669797
     },
     {
       "path": "site/data/review_queues.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "0846c76ebef5f0ede7bccc4253a7975f9f7a63f729e239e4fc0abcc81c316383",
-      "bytes": 11639805
+      "sha256": "bd6c1ddcac98e0c8a262088b1e3823b610a22a394259eaf625eb52c6199483a2",
+      "bytes": 9434744
     },
     {
       "path": "site/data/review_summary.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "8718c9e2b61daa5a8c0a8c8b548b5d7caebf157dfa3064207cb75289d18a0c00",
-      "bytes": 816
+      "sha256": "ea4f2513483649da54ed7f771c7d48c0d918fdbf137582a86ac68899b02e2274",
+      "bytes": 704
     },
     {
       "path": "site/data/tickers.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "8075cc6415b2103f47ab798a5173b1e888f45e7a82320af88aa311ed45c5682a",
-      "bytes": 5703141
+      "sha256": "2a06dd38a1b86ef5b212a202a179c5c20df2d332f5a95b5ea800f3bba2c05fa0",
+      "bytes": 5953462
     },
     {
       "path": "site/data/securities.csv",
@@ -226,22 +225,22 @@
       "path": "site/data/unclassified.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "8d9043cb8162acaab2babbc4207c45930eec6d6ff1980ad8a5b257db8641b011",
-      "bytes": 828591
+      "sha256": "82c8d8d283e092fb8f5ddd27787e47547a9c54906c8006d5e3b63a68de98e1dc",
+      "bytes": 409669
     },
     {
       "path": "site/data/taxonomy_issues.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "5902dc22401a257dbf6a83ed2c30bab49ab3fd62f596ff44f3fc5f5bd0b6e3d2",
-      "bytes": 3270809
+      "sha256": "4fd7f2ca96fee81880d6086694a4477d34b5cfeaddf0bba0d795db974111e3d1",
+      "bytes": 2024546
     },
     {
       "path": "site/data/enrichment_issues.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "b6e532b4eba92cba36abf0da40fb4b82c7adf05411e3354dbbf0cb41fb68a9c3",
-      "bytes": 3381431
+      "sha256": "35044355f62df260dbc6f993f42b313a91d8f5c5c059d70ee453d7b314f3cd67",
+      "bytes": 3406843
     },
     {
       "path": "site/data/identity_issues.csv",
@@ -268,15 +267,15 @@
       "path": "site/data/suggested_classification_overrides.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "a74904348c99b2bc357890121a48dfa954cd9aef9090f08202e433840c999930",
-      "bytes": 83876
+      "sha256": "874e44d7c89fbd9a4aa207450b038ae1de1302ce299d2b9a1f5aedc7a63c40a9",
+      "bytes": 83757
     },
     {
       "path": "site/data/suggested_exposures.csv",
       "format": "csv",
       "schemaVersion": 2,
-      "sha256": "773b0ca62947f1d89ae938b077fa1062f83dd29346f0b3f1716f39600587a595",
-      "bytes": 189400
+      "sha256": "884b92a779b657f4d6e974cb4f2ef028db3ee94ac1345e20669699cd0cb1dc24",
+      "bytes": 102
     },
     {
       "path": "site/data/suggested_ticker_overrides.csv",
@@ -296,8 +295,8 @@
       "path": "site/data/build_manifest.json",
       "format": "json",
       "schemaVersion": 2,
-      "sha256": "39a31bd38837d50ab72d7a4ea48dd0a1d76892654f00555da56b5965e8fba14f",
-      "bytes": 9180,
+      "sha256": "c525d694d61e1b2fa71658855085d8b4dfa608861347186fb080a2357e367c61",
+      "bytes": 9142,
       "checksumMode": "projection_excludes_generatedFiles"
     }
   ]

@@ -213,16 +213,30 @@ func productRuleAssignments(ticker Ticker) []productRuleAssignment {
 	}
 
 	if ticker.InstrumentCategory == CategoryWarrant || industry == "Warrant" {
-		out = append(out, productRuleAssignment{
-			themeID: themeLeveragedStructured,
-			layerID: "warrants",
-			reason:  "warrant instrument category or industry",
-		})
+		out = append(out,
+			productRuleAssignment{
+				themeID: themeLeveragedStructured,
+				layerID: "warrants",
+				reason:  "warrant instrument category or industry",
+			},
+			productRuleAssignment{
+				themeID: themeLeveragedStructured,
+				layerID: "structured_products",
+				reason:  "warrant instrument category or industry",
+			},
+		)
 	} else if strings.TrimSpace(ticker.Sector) == "Structured Products" {
 		out = append(out, productRuleAssignment{
 			themeID: themeLeveragedStructured,
 			layerID: "structured_products",
 			reason:  "structured product sector",
+		})
+	}
+	if isLeveraged || isInverse {
+		out = append(out, productRuleAssignment{
+			themeID: themeLeveragedStructured,
+			layerID: "complex_payoff_products",
+			reason:  "leveraged, inverse, or short exchange-traded product metadata",
 		})
 	}
 

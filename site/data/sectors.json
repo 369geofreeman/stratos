@@ -5919,7 +5919,7 @@
   {
     "id": "unclassified",
     "name": "Unclassified",
-    "count": 3423,
+    "count": 3418,
     "tickers": [
       "11Cd_EQ",
       "1ASTd_EQ",
@@ -6120,7 +6120,6 @@
       "ALPGp_EQ",
       "ALPHEp_EQ",
       "ALPP_US_EQ",
-      "ALPS_US_EQ",
       "ALRN_US_EQ",
       "ALRS_US_EQ",
       "ALSA_US_EQ",
@@ -6415,7 +6414,6 @@
       "BOREF_US_EQ",
       "BOSC_US_EQ",
       "BOTHE_BE_EQ",
-      "BOWN_US_EQ",
       "BOXL_US_EQ",
       "BOX_US_EQ",
       "BOZTY_US_EQ",
@@ -7169,7 +7167,6 @@
       "GACAl_EQ",
       "GAIDl_EQ",
       "GAIN_US_EQ",
-      "GALQe_EQ",
       "GAMC_US_EQ",
       "GARENA_US_EQ",
       "GASNY_US_EQ",
@@ -7334,7 +7331,6 @@
       "HBAN_US_EQ",
       "HBIA_US_EQ",
       "HBNC_US_EQ",
-      "HBXe_EQ",
       "HC1d_EQ",
       "HCAC_US_EQ",
       "HCAI_US_EQ",
@@ -8107,7 +8103,6 @@
       "NILSY_US_EQ",
       "NINE1_US_EQ",
       "NIPMY_US_EQ",
-      "NIQ_US_EQ",
       "NJBd_EQ",
       "NJMC_US_EQ",
       "NJR_US_EQ",
@@ -9349,7 +9344,7 @@
   {
     "id": "financial_services",
     "name": "Financial Services",
-    "count": 1344,
+    "count": 1345,
     "tickers": [
       "04Qd_EQ",
       "0QNd_EQ",
@@ -9563,6 +9558,7 @@
       "BOOKl_EQ",
       "BORT_US_EQ",
       "BOTJ_US_EQ",
+      "BOWN_US_EQ",
       "BOW_US_EQ",
       "BPCRl_EQ",
       "BPETl_EQ",
@@ -10700,7 +10696,7 @@
   {
     "id": "industrials",
     "name": "Industrials",
-    "count": 1124,
+    "count": 1125,
     "tickers": [
       "1ZBd_EQ",
       "2GBd_EQ",
@@ -11139,6 +11135,7 @@
       "FTT_CA_EQ",
       "FUJIY_US_EQ",
       "G1Ad_EQ",
+      "GALQe_EQ",
       "GASS_US_EQ",
       "GATCl_EQ",
       "GATX_US_EQ",
@@ -11831,7 +11828,7 @@
   {
     "id": "healthcare",
     "name": "Healthcare",
-    "count": 1115,
+    "count": 1116,
     "tickers": [
       "0MEd_EQ",
       "0QFd_EQ",
@@ -11932,6 +11929,7 @@
       "ALNOVp_EQ",
       "ALNY_US_EQ",
       "ALPMY_US_EQ",
+      "ALPS_US_EQ",
       "ALSPWp_EQ",
       "ALTMEp_EQ",
       "ALT_US_EQ",
@@ -12953,7 +12951,7 @@
   {
     "id": "technology",
     "name": "Technology",
-    "count": 988,
+    "count": 989,
     "tickers": [
       "096d_EQ",
       "0GSd_EQ",
@@ -13588,6 +13586,7 @@
       "NETl_EQ",
       "NFNd_EQ",
       "NICE_US_EQ",
+      "NIQ_US_EQ",
       "NLST_US_EQ",
       "NNDM_US_EQ",
       "NNMd_EQ",
@@ -13948,7 +13947,7 @@
   {
     "id": "consumer_cyclical",
     "name": "Consumer Cyclical",
-    "count": 786,
+    "count": 787,
     "tickers": [
       "013Cd_EQ",
       "02Gd_EQ",
@@ -14300,6 +14299,7 @@
       "HASd_EQ",
       "HBB_US_EQ",
       "HBHd_EQ",
+      "HBXe_EQ",
       "HDId_EQ",
       "HDL_US_EQ",
       "HD_US_EQ",

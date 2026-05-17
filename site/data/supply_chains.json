@@ -842,6 +842,49 @@
     ]
   },
   {
+    "themeId": "connectivity_infrastructure",
+    "name": "Connectivity infrastructure supply chain",
+    "description": "Telecom access, broadband, tower, fibre, network-equipment, interconnection, and satellite connectivity economics.",
+    "layers": [
+      {
+        "id": "telecom_operators",
+        "name": "Telecom operators",
+        "description": "Mobile, fixed-line, converged, and national telecom operators.",
+        "order": 10
+      },
+      {
+        "id": "broadband_cable",
+        "name": "Broadband and cable",
+        "description": "Cable networks, broadband access providers, and fixed connectivity platforms.",
+        "order": 20
+      },
+      {
+        "id": "tower_infrastructure",
+        "name": "Tower infrastructure",
+        "description": "Tower owners, neutral-host networks, and communications real estate linked to mobile networks.",
+        "order": 30
+      },
+      {
+        "id": "network_equipment",
+        "name": "Network equipment",
+        "description": "Radio access, routing, switching, optical, access, and telecom network equipment.",
+        "order": 40
+      },
+      {
+        "id": "fiber_interconnection",
+        "name": "Fibre and interconnection",
+        "description": "Fibre networks, carrier interconnection, backhaul, and enterprise connectivity.",
+        "order": 50
+      },
+      {
+        "id": "satellite_connectivity",
+        "name": "Satellite connectivity",
+        "description": "Satellite communications, orbital connectivity networks, and related ground infrastructure.",
+        "order": 60
+      }
+    ]
+  },
+  {
     "themeId": "food_agriculture",
     "name": "Food and agriculture supply chain",
     "description": "Food brands, agriculture inputs, farm equipment, ingredients, grocery distribution, and processors.",

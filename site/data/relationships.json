@@ -12,6 +12,149 @@
   },
   {
     "relationshipType": "peer",
+    "sourceCompanyId": "amgen_inc",
+    "targetCompanyId": "gilead_sciences_inc",
+    "themeId": "healthcare",
+    "layerId": "large_pharma",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investors.amgen.com/",
+    "rationale": "Large biopharma manufacturers reviewed as healthcare peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "blackstone",
+    "targetCompanyId": "kkr_co_inc",
+    "themeId": "financial_system",
+    "layerId": "asset_management",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.blackstone.com/investors/",
+    "rationale": "Alternative asset managers reviewed as asset-management peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "brookfield_corporation",
+    "targetCompanyId": "blackstone",
+    "themeId": "financial_system",
+    "layerId": "asset_management",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://bn.brookfield.com/",
+    "rationale": "Alternative asset managers reviewed as asset-management peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "brookfield_corporation",
+    "targetCompanyId": "brookfield_asset_management_ltd",
+    "themeId": "financial_system",
+    "layerId": "asset_management",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://bn.brookfield.com/",
+    "rationale": "Brookfield listed entities reviewed as related asset-management exposures.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "deutsche_telekom_ag",
+    "targetCompanyId": "t_mobile_us_inc",
+    "themeId": "connectivity_infrastructure",
+    "layerId": "telecom_operators",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.telekom.com/en/investor-relations",
+    "rationale": "Deutsche Telekom and T-Mobile US are reviewed as connected telecom operator exposures.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "emerson_electric_co_r",
+    "targetCompanyId": "abb_ltd_n",
+    "themeId": "industrial_automation",
+    "layerId": "automation_controls",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.emerson.com/en-us/investors",
+    "rationale": "Industrial automation and electrification companies reviewed as peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "honeywell_international_inc",
+    "targetCompanyId": "emerson_electric_co_r",
+    "themeId": "industrial_automation",
+    "layerId": "automation_controls",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investor.honeywell.com/",
+    "rationale": "Industrial automation and controls companies reviewed as peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "honeywell_international_inc",
+    "targetCompanyId": "siemens_aktiengesellschaft",
+    "themeId": "industrial_automation",
+    "layerId": "automation_controls",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investor.honeywell.com/",
+    "rationale": "Industrial automation and controls companies reviewed as peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "intuit_inc",
+    "targetCompanyId": "automatic_data_processing_inc",
+    "themeId": "enterprise_software",
+    "layerId": "erp_crm_workflow",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investors.intuit.com/",
+    "rationale": "Application software franchises reviewed as enterprise workflow peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "intuit_inc",
+    "targetCompanyId": "fiserv_inc",
+    "themeId": "fintech",
+    "layerId": "banking_software",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investors.intuit.com/",
+    "rationale": "Financial workflow software franchises reviewed as fintech-adjacent peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "intuit_inc",
+    "targetCompanyId": "paychex_inc",
+    "themeId": "enterprise_software",
+    "layerId": "erp_crm_workflow",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investors.intuit.com/",
+    "rationale": "Payroll and small-business software franchises reviewed as enterprise workflow peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "jpmorgan_chase_co",
+    "targetCompanyId": "wells_fargo_company",
+    "themeId": "financial_system",
+    "layerId": "diversified_banks",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.jpmorganchase.com/ir/annual-report",
+    "rationale": "Large US banks reviewed as diversified bank peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "kkr_co_inc",
+    "targetCompanyId": "ares_management_corporation",
+    "themeId": "financial_system",
+    "layerId": "asset_management",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://ir.kkr.com/",
+    "rationale": "Alternative asset managers reviewed as asset-management peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
     "sourceCompanyId": "lockheed_martin_corporation",
     "targetCompanyId": "northrop_grumman_corporation",
     "themeId": "defence",
@@ -34,6 +177,72 @@
   },
   {
     "relationshipType": "peer",
+    "sourceCompanyId": "novartis_ag_n",
+    "targetCompanyId": "amgen_inc",
+    "themeId": "healthcare",
+    "layerId": "large_pharma",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.novartis.com/investors",
+    "rationale": "Large drug manufacturers reviewed as healthcare peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "novartis_ag_n",
+    "targetCompanyId": "gilead_sciences_inc",
+    "themeId": "healthcare",
+    "layerId": "large_pharma",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.novartis.com/investors",
+    "rationale": "Large drug manufacturers reviewed as healthcare peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "t_mobile_us_inc",
+    "targetCompanyId": "at_t_inc",
+    "themeId": "connectivity_infrastructure",
+    "layerId": "telecom_operators",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investor.t-mobile.com/financial-performance/annual-reports/default.aspx",
+    "rationale": "US mobile network operators reviewed as telecom operator peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "t_mobile_us_inc",
+    "targetCompanyId": "verizon_communications_inc",
+    "themeId": "connectivity_infrastructure",
+    "layerId": "telecom_operators",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investor.t-mobile.com/financial-performance/annual-reports/default.aspx",
+    "rationale": "US mobile network operators reviewed as telecom operator peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "the_toronto_dominion_bank",
+    "targetCompanyId": "wells_fargo_company",
+    "themeId": "financial_system",
+    "layerId": "diversified_banks",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.td.com/ca/en/about-td/for-investors/investor-relations",
+    "rationale": "Large North American banks reviewed as diversified bank peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "verizon_communications_inc",
+    "targetCompanyId": "at_t_inc",
+    "themeId": "connectivity_infrastructure",
+    "layerId": "telecom_operators",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.verizon.com/about/investors",
+    "rationale": "US telecom incumbents reviewed as telecom operator peers.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "peer",
     "sourceCompanyId": "visa_inc",
     "targetCompanyId": "mastercard_incorporated",
     "themeId": "fintech",
@@ -42,6 +251,17 @@
     "sourceUrl": "https://investor.mastercard.com/files/doc_financials/2024/q4/MA-12-31-2024-10-K-as-filed-with-exhibits.pdf",
     "rationale": "Mastercard annual report supports Visa as a payment network peer.",
     "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "peer",
+    "sourceCompanyId": "wells_fargo_company",
+    "targetCompanyId": "bank_of_america_corporation",
+    "themeId": "financial_system",
+    "layerId": "diversified_banks",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.wellsfargo.com/about/investor-relations/annual-reports/",
+    "rationale": "Large US banks reviewed as diversified bank peers.",
+    "lastReviewed": "2026-05-17"
   },
   {
     "relationshipType": "related_play",
@@ -75,6 +295,50 @@
     "sourceUrl": "https://investor.nvidia.com/news/press-release-details/2024/TSMC-and-Synopsys-Bring-Breakthrough-NVIDIA-Computational-Lithography-Platform-to-Production/default.aspx",
     "rationale": "TSMC and Synopsys collaborate on computational lithography flows.",
     "lastReviewed": "2026-05-16"
+  },
+  {
+    "relationshipType": "upstream_supplier",
+    "sourceCompanyId": "american_tower",
+    "targetCompanyId": "t_mobile_us_inc",
+    "themeId": "connectivity_infrastructure",
+    "layerId": "tower_infrastructure",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.americantower.com/investor-relations/",
+    "rationale": "Tower infrastructure supports mobile network operator deployment.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "upstream_supplier",
+    "sourceCompanyId": "american_tower",
+    "targetCompanyId": "verizon_communications_inc",
+    "themeId": "connectivity_infrastructure",
+    "layerId": "tower_infrastructure",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://www.americantower.com/investor-relations/",
+    "rationale": "Tower infrastructure supports mobile network operator deployment.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "upstream_supplier",
+    "sourceCompanyId": "crown_castle",
+    "targetCompanyId": "at_t_inc",
+    "themeId": "connectivity_infrastructure",
+    "layerId": "tower_infrastructure",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investor.crowncastle.com/",
+    "rationale": "Tower and fibre infrastructure supports mobile network operator deployment.",
+    "lastReviewed": "2026-05-17"
+  },
+  {
+    "relationshipType": "upstream_supplier",
+    "sourceCompanyId": "crown_castle",
+    "targetCompanyId": "verizon_communications_inc",
+    "themeId": "connectivity_infrastructure",
+    "layerId": "tower_infrastructure",
+    "confidence": "manual_medium",
+    "sourceUrl": "https://investor.crowncastle.com/",
+    "rationale": "Tower and fibre infrastructure supports mobile network operator deployment.",
+    "lastReviewed": "2026-05-17"
   },
   {
     "relationshipType": "upstream_supplier",

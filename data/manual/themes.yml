@@ -55,6 +55,10 @@ themes:
     name: Real estate infrastructure
     description: REITs, towers, logistics property, storage, property services, and infrastructure-like real estate.
     color: "#059669"
+  - id: connectivity_infrastructure
+    name: Connectivity infrastructure
+    description: Telecom operators, broadband networks, towers, network equipment, fibre, interconnection, and satellite connectivity.
+    color: "#0e7490"
   - id: food_agriculture
     name: Food and agriculture
     description: Food production, ingredients, grocery, agriculture equipment, fertilizer, and food supply chains.

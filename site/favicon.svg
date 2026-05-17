@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="STRATOS">
+  <rect width="64" height="64" fill="#06080b"/>
+  <path d="M8 0h48v2H8zM8 62h48v2H8zM0 8h2v48H0zM62 8h2v48h-2z" fill="#56402c"/>
+  <path d="M18 12l28 20-28 20V39l10-7-10-7z" fill="#ffb000"/>
+  <path d="M18 12l28 20-28 20V39l10-7-10-7z" fill="none" stroke="#b56a2a" stroke-width="3" stroke-linejoin="round"/>
+</svg>

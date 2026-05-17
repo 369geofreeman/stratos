@@ -57,6 +57,7 @@ const state = {
   explorerType: "",
   explorerGroup: "",
   sector: "",
+  industry: "",
   localFilter: "",
   sort: { ...DEFAULT_SORT },
   reviewFilters: { queue: "", reason: "", severity: "", gap: "", search: "" },
@@ -129,7 +130,15 @@ function bindEvents() {
     render();
   });
   $("#sectorFilter").addEventListener("change", (event) => {
-    state.sector = event.target.value;
+    state.sector = validSectorName(event.target.value);
+    reconcileIndustryForSector();
+    renderIndustryFilterOptions();
+    $("#industryFilter").value = state.industry;
+    resetListWindows();
+    render();
+  });
+  $("#industryFilter").addEventListener("change", (event) => {
+    state.industry = validIndustryName(event.target.value);
     resetListWindows();
     render();
   });
@@ -196,7 +205,17 @@ function hydrateFilters() {
 
   const sectorSelect = $("#sectorFilter");
   sectorSelect.innerHTML = `<option value="">All sectors</option>` + sectors.map((sector) => `<option value="${esc(sector.name)}">${esc(sector.name)} (${num(sector.count)})</option>`).join("");
+  renderIndustryFilterOptions();
   renderLocalFilterOptions();
+}
+
+function renderIndustryFilterOptions() {
+  const current = state.industry;
+  const industries = industryOptionsForCurrentSector();
+  const suffix = state.sector ? ` in ${state.sector}` : "";
+  const industrySelect = $("#industryFilter");
+  industrySelect.innerHTML = `<option value="">All industries${esc(suffix)}</option>` + industries.map((industry) => `<option value="${esc(industry.name)}">${esc(industry.name)} (${num(industry.count)})</option>`).join("");
+  industrySelect.value = industries.some((industry) => industry.name === current) ? current : "";
 }
 
 function renderLocalFilterOptions() {
@@ -333,7 +352,7 @@ function tickerCountLabel(visible, matched, total) {
 }
 
 function hasActiveTickerFilters() {
-  return Boolean(state.query || state.theme || state.sector || state.localFilter);
+  return Boolean(state.query || state.theme || state.sector || state.industry || state.localFilter);
 }
 
 function renderGlobalFilterStatus() {
@@ -341,6 +360,7 @@ function renderGlobalFilterStatus() {
   if (state.query) filters.push(`search: ${state.query}`);
   if (state.theme) filters.push(`theme: ${themeName(state.theme)}`);
   if (state.sector) filters.push(`sector: ${state.sector}`);
+  if (state.industry) filters.push(`industry: ${state.industry}`);
   if (state.localFilter) filters.push(`local: ${localFilterLabel(state.localFilter)}`);
   if (!filters.length) return "";
   return `
@@ -543,7 +563,7 @@ function explorerRows(group) {
 
 function explorerTickerMatches(ticker) {
   if (state.theme && !(ticker.themeIds || []).includes(state.theme)) return false;
-  if (state.sector && ticker.sector !== state.sector) return false;
+  if (!matchesClassificationFilters(ticker)) return false;
   const local = getLocal(ticker.ticker);
   if (state.localFilter === "watchlist" && !local.watchlist) return false;
   if (state.localFilter === "tagged" && !(local.tags || []).length) return false;
@@ -680,7 +700,7 @@ function renderLayerEmptyState(total) {
 
 function supplyExposureMatches(exposure) {
   const ticker = tickerForExposure(exposure);
-  if (state.sector && (!ticker || ticker.sector !== state.sector)) return false;
+  if (!matchesClassificationFilters(ticker)) return false;
   if (state.localFilter) {
     if (!ticker) return false;
     const local = getLocal(ticker.ticker);
@@ -1019,15 +1039,24 @@ function openExplorerGroup(groupID) {
     state.theme = group?.value || parts[1] || "";
     state.supplyTheme = state.theme;
     state.sector = "";
+    state.industry = "";
   }
   if (groupType === "layer") {
     state.theme = group?.parentId || parts[1] || "";
     state.supplyTheme = state.theme;
     state.sector = "";
+    state.industry = "";
   }
   if (groupType === "sector") {
     const sector = group || (state.bootstrap.sectors || []).find((item) => item.id === parts[1]);
-    state.sector = sector?.label || sector?.name || state.sector;
+    state.sector = validSectorName(sector?.label || sector?.name || "");
+    reconcileIndustryForSector();
+    state.theme = "";
+  }
+  if (groupType === "industry") {
+    const industry = group || (state.bootstrap.industries || []).find((item) => item.id === parts[1]);
+    state.industry = validIndustryName(industry?.label || industry?.name || "");
+    if (state.sector && !industryBelongsToSector(state.industry, state.sector)) state.sector = "";
     state.theme = "";
   }
   syncTopFilterControls();
@@ -1043,7 +1072,12 @@ function selectExplorerThemeGroup(themeID) {
 function syncTopFilterControls() {
   $("#globalSearch").value = state.query;
   $("#themeFilter").value = state.theme;
+  state.sector = validSectorName(state.sector);
+  state.industry = validIndustryName(state.industry);
+  reconcileIndustryForSector();
   $("#sectorFilter").value = state.sector;
+  renderIndustryFilterOptions();
+  $("#industryFilter").value = state.industry;
   $("#localFilter").value = state.localFilter;
 }
 
@@ -1266,7 +1300,7 @@ function filteredReviewRows() {
     if (filters.severity && row.severity !== filters.severity) return false;
     if (filters.gap && !reviewMatchesGap(row, filters.gap)) return false;
     if (state.theme && !(row.themeIds || []).includes(state.theme)) return false;
-    if (state.sector && row.sector !== state.sector) return false;
+    if (!matchesClassificationFilters(row)) return false;
     if (filters.search && !(row._searchText || "").includes(filters.search)) return false;
     if (state.query && !(row._searchText || "").includes(state.query)) return false;
     return true;
@@ -1282,7 +1316,7 @@ function reviewMatchesGap(row, gap) {
 
 function tickerMatches(ticker) {
   if (state.theme && !(ticker.themeIds || []).includes(state.theme)) return false;
-  if (state.sector && ticker.sector !== state.sector) return false;
+  if (!matchesClassificationFilters(ticker)) return false;
   const local = getLocal(ticker.ticker);
   if (state.localFilter === "watchlist" && !local.watchlist) return false;
   if (state.localFilter === "tagged" && !(local.tags || []).length) return false;
@@ -1325,6 +1359,7 @@ function clearTickerFilters() {
   state.query = "";
   state.theme = "";
   state.sector = "";
+  state.industry = "";
   state.localFilter = "";
   syncTopFilterControls();
   resetListWindows();
@@ -1450,6 +1485,7 @@ function sanitizeViewSnapshot(snapshot) {
     query: String(raw.query || "").trim().toLowerCase(),
     theme: String(raw.theme || ""),
     sector: String(raw.sector || ""),
+    industry: String(raw.industry || ""),
     localFilter: VALID_LOCAL_FILTERS.includes(raw.localFilter) ? raw.localFilter : "",
     explorerType: String(raw.explorerType || ""),
     explorerGroup: String(raw.explorerGroup || ""),
@@ -1520,6 +1556,7 @@ function captureCurrentView() {
     query: $("#globalSearch").value,
     theme: $("#themeFilter").value,
     sector: $("#sectorFilter").value,
+    industry: $("#industryFilter").value,
     localFilter: $("#localFilter").value,
     explorerType: explorerType?.value || state.explorerType,
     explorerGroup: explorerGroup?.value || state.explorerGroup,
@@ -1548,7 +1585,9 @@ async function applyViewSnapshot(snapshot) {
   state.view = saved.view;
   state.query = saved.query;
   state.theme = validThemeID(saved.theme);
-  state.sector = validSectorName(saved.sector);
+  const classification = restoreClassificationFilters(saved);
+  state.sector = classification.sector;
+  state.industry = classification.industry;
   state.localFilter = saved.localFilter;
   state.supplyTheme = validSupplyTheme(saved.supplyTheme) || (validSupplyTheme(state.theme) ? state.theme : "");
   if (state.view === "supply" && state.supplyTheme) state.theme = state.supplyTheme;
@@ -1615,13 +1654,80 @@ function validThemeID(id) {
 }
 
 function validSectorName(name) {
-  if (!name) return "";
-  return (state.bootstrap?.sectors || []).some((sector) => sector.name === name) ? name : "";
+  const raw = String(name || "");
+  if (!raw) return "";
+  const legacy = legacyClassificationParts(raw);
+  const value = legacy.kind === "sector" ? legacy.name : raw;
+  return (state.bootstrap?.sectors || []).some((sector) => sector.name === value) ? value : "";
+}
+
+function validIndustryName(name) {
+  const raw = String(name || "");
+  if (!raw) return "";
+  const legacy = legacyClassificationParts(raw);
+  const value = legacy.kind === "industry" ? legacy.name : raw;
+  return (state.bootstrap?.industries || []).some((industry) => industry.name === value) ? value : "";
 }
 
 function validSupplyTheme(id) {
   if (!id) return "";
   return (state.bootstrap?.supplyChains || []).some((chain) => chain.themeId === id) ? id : "";
+}
+
+function legacyClassificationParts(value) {
+  const raw = String(value || "");
+  const parts = raw.split(":");
+  if (parts.length < 2) return { kind: "", name: raw };
+  const kind = parts.shift();
+  if (kind !== "sector" && kind !== "industry") return { kind: "", name: raw };
+  return { kind, name: parts.join(":") };
+}
+
+function restoreClassificationFilters(saved) {
+  const legacy = legacyClassificationParts(saved.sector);
+  let sector = "";
+  let industry = "";
+  if (legacy.kind === "sector") {
+    sector = validSectorName(legacy.name);
+    industry = validIndustryName(saved.industry);
+  } else if (legacy.kind === "industry") {
+    industry = validIndustryName(legacy.name);
+  } else {
+    sector = validSectorName(saved.sector);
+    industry = validIndustryName(saved.industry);
+  }
+  if (sector && industry && !industryBelongsToSector(industry, sector)) industry = "";
+  return { sector, industry };
+}
+
+function matchesClassificationFilters(row) {
+  if (!state.sector && !state.industry) return true;
+  if (!row) return false;
+  if (state.sector && row.sector !== state.sector) return false;
+  if (state.industry && row.industry !== state.industry) return false;
+  return true;
+}
+
+function reconcileIndustryForSector() {
+  if (state.industry && state.sector && !industryBelongsToSector(state.industry, state.sector)) state.industry = "";
+}
+
+function industryBelongsToSector(industry, sector) {
+  if (!industry || !sector || !state.tickers) return true;
+  return state.tickers.some((ticker) => ticker.sector === sector && ticker.industry === industry);
+}
+
+function industryOptionsForCurrentSector() {
+  const industries = state.bootstrap?.industries || [];
+  if (!state.sector || !state.tickers) return industries;
+  const counts = {};
+  for (const ticker of state.tickers) {
+    if (ticker.sector !== state.sector || !ticker.industry) continue;
+    counts[ticker.industry] = (counts[ticker.industry] || 0) + 1;
+  }
+  return industries
+    .filter((industry) => counts[industry.name])
+    .map((industry) => ({ ...industry, count: counts[industry.name] }));
 }
 
 function localExportSummary() {
@@ -1894,6 +2000,8 @@ async function ensureTickerIndex() {
     state.promises.tickers = fetchJSON("data/tickers_index.json").then((data) => {
       state.tickers = Array.isArray(data) ? data : (data.tickers || []);
       indexTickerRows();
+      reconcileIndustryForSector();
+      renderIndustryFilterOptions();
       return state.tickers;
     });
   }

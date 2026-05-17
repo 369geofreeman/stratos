@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Statos</title>
-    <link rel="icon" href="data:,">
+    <title>STRATOS</title>
+    <meta name="theme-color" content="#06080b">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" sizes="any">
     <link rel="stylesheet" href="assets/styles.css">
   </head>
   <body>
     <main class="app">
       <header class="topbar">
         <div>
-          <h1>Statos</h1>
+          <h1 class="brand"><span class="brand-prompt" aria-hidden="true">&gt;</span><span>STRATOS</span></h1>
           <p id="buildMeta">Loading catalogue...</p>
         </div>
         <div class="top-controls">
@@ -19,6 +20,7 @@
             <input id="globalSearch" type="search" aria-label="Global search" placeholder="Search ticker, company, ISIN, industry, theme, or note">
             <select id="themeFilter" aria-label="Theme filter"></select>
             <select id="sectorFilter" aria-label="Sector filter"></select>
+            <select id="industryFilter" aria-label="Industry filter"></select>
             <select id="localFilter" aria-label="Local filter">
               <option value="">All local states</option>
               <option value="watchlist">Watchlist</option>

@@ -293,6 +293,34 @@ tr:last-child td {
   font-weight: 650;
 }
 
+.cell-open-button {
+  display: block;
+  width: calc(100% + 12px);
+  min-height: 34px;
+  margin: -5px -6px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: inherit;
+  padding: 5px 6px;
+  text-align: left;
+}
+
+.cell-open-button:hover {
+  background: var(--surface-2);
+}
+
+.ticker-cell-button {
+  color: var(--blue);
+  font-weight: 650;
+}
+
+.name-cell-button strong,
+.name-cell-button span {
+  display: block;
+  overflow-wrap: anywhere;
+}
+
 .row-actions {
   display: flex;
   gap: 6px;
@@ -416,6 +444,34 @@ button.chip {
   grid-template-columns: minmax(180px, 240px) minmax(260px, 1fr);
   gap: 8px;
   margin-bottom: 10px;
+}
+
+.breadcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.breadcrumb-link {
+  border: 0;
+  background: transparent;
+  color: var(--blue);
+  font-weight: 650;
+  padding: 0;
+}
+
+.breadcrumb-current {
+  color: var(--text);
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.breadcrumb-separator {
+  color: var(--muted);
 }
 
 .group-summary {

@@ -165,6 +165,7 @@ function bindEvents() {
   $("#detailModal").addEventListener("close", () => {
     state.modalTicker = "";
   });
+  $("#detailModal").addEventListener("click", closeModalOnBackdropClick);
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && state.comparisonOpen) closeComparisonPanel();
   });
@@ -395,8 +396,13 @@ function renderTickerRow(ticker) {
   const local = getLocal(ticker.ticker);
   return `
     <tr>
-      <td><button class="ticker-link" data-action="open" data-ticker="${esc(ticker.ticker)}">${esc(ticker.ticker)}</button></td>
-      <td><strong>${esc(ticker.name)}</strong><div class="muted">${esc(ticker.isin || "No ISIN")} - ${esc(ticker.currencyCode || "")} ${esc(ticker.exchangeName || ticker.exchangeCode || "")}</div></td>
+      <td><button class="cell-open-button ticker-cell-button" data-action="open" data-ticker="${esc(ticker.ticker)}">${esc(ticker.ticker)}</button></td>
+      <td>
+        <button class="cell-open-button name-cell-button" data-action="open" data-ticker="${esc(ticker.ticker)}">
+          <strong>${esc(ticker.name)}</strong>
+          <span class="muted">${esc(ticker.isin || "No ISIN")} - ${esc(ticker.currencyCode || "")} ${esc(ticker.exchangeName || ticker.exchangeCode || "")}</span>
+        </button>
+      </td>
       <td>${esc(ticker.sector || "Unclassified")}</td>
       <td>${esc(ticker.industry || "Unclassified")}</td>
       <td>${chips(themeNames(ticker.themeIds))}</td>
@@ -445,6 +451,7 @@ function renderExplorer() {
     </div>
     ${renderGlobalFilterStatus()}
     ${renderExplorerToolbar(types, typeGroups, group, typeCounts)}
+    ${renderExplorerBreadcrumbs(group, rows.length)}
     ${renderExplorerSummary(group)}
     ${group ? renderTickerTable(explorerListID(group), rows) : `<div class="empty">Select a group to inspect related tickers.</div>`}
   `;
@@ -480,6 +487,50 @@ function renderExplorerSummary(group) {
       <div class="chips">${chips(details)}</div>
     </div>
   `;
+}
+
+function renderExplorerBreadcrumbs(group, matchedCount) {
+  if (!group) return "";
+  const crumbs = explorerBreadcrumbItems(group);
+  if (!crumbs.length) return "";
+  crumbs.push({ label: explorerBreadcrumbTickerLabel(group, matchedCount) });
+  return `
+    <nav class="breadcrumbs" aria-label="Pipeline breadcrumbs">
+      ${crumbs.map((crumb, index) => `
+        ${index > 0 ? `<span class="breadcrumb-separator" aria-hidden="true">&gt;</span>` : ""}
+        ${crumb.groupId
+          ? `<button class="breadcrumb-link" data-action="explore-group" data-group-id="${esc(crumb.groupId)}">${esc(crumb.label)}</button>`
+          : `<span class="breadcrumb-current">${esc(crumb.label)}</span>`}
+      `).join("")}
+    </nav>
+  `;
+}
+
+function explorerBreadcrumbItems(group) {
+  if (group.type === "layer") {
+    const themeID = group.parentId || group.id.split(":")[1] || "";
+    return [
+      { label: group.parentLabel || themeName(themeID), groupId: themeID ? `theme:${themeID}` : "" },
+      { label: group.label }
+    ];
+  }
+  if (group.type === "theme") {
+    return [{ label: group.label || themeName(group.value), groupId: group.id }];
+  }
+  if (group.parentLabel) {
+    return [
+      { label: group.parentLabel },
+      { label: group.label }
+    ];
+  }
+  return [{ label: group.label }];
+}
+
+function explorerBreadcrumbTickerLabel(group, matchedCount) {
+  const total = Number(group.count || 0);
+  const matched = Number(matchedCount || 0);
+  if (!total || matched === total) return `${num(total || matched)} tickers`;
+  return `${num(matched)} of ${num(total)} tickers`;
 }
 
 function explorerRows(group) {
@@ -1119,6 +1170,20 @@ function showModal() {
   if (modal.open) return;
   if (modal.showModal) modal.showModal();
   else modal.setAttribute("open", "open");
+}
+
+function closeModalOnBackdropClick(event) {
+  const modal = event.currentTarget;
+  const rect = modal.getBoundingClientRect();
+  const insideModal = (
+    event.clientX >= rect.left &&
+    event.clientX <= rect.right &&
+    event.clientY >= rect.top &&
+    event.clientY <= rect.bottom
+  );
+  if (insideModal) return;
+  if (modal.close) modal.close();
+  else modal.removeAttribute("open");
 }
 
 function fact(label, value) {

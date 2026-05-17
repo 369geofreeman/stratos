@@ -575,3 +575,212 @@ fintech,capital_markets,,,marketaxess_holdings_inc,5,manual_high,https://investo
 fintech,crypto_rails,,,galaxy_digital,5,manual_high,https://investors.galaxy.com/,Crypto financial services platform exposure.,2026-05-16
 fintech,banking_software,,,ss_c_technologies_holdings_inc,4,manual_high,https://investor.ssctech.com/,Financial services software exposure.,2026-05-16
 fintech,banking_software,,,broadridge_financial_solutions_inc,4,manual_high,https://www.broadridge-ir.com/,Financial services technology platform exposure.,2026-05-16
+digital_platforms,marketplaces_ecommerce,,,amazon_com_inc,4,manual_medium,https://ir.aboutamazon.com/,Marketplace and internet retail exposure alongside AWS and media.,2026-05-17
+digital_platforms,marketplaces_ecommerce,,,alibaba_group_holding_limited,5,manual_high,https://www.alibabagroup.com/en-US/ir/home,Ecommerce marketplace and digital commerce platform exposure.,2026-05-17
+digital_platforms,marketplaces_ecommerce,,,pdd_holdings_inc,5,manual_high,https://investor.pddholdings.com/,Pinduoduo and Temu marketplace exposure.,2026-05-17
+digital_platforms,marketplaces_ecommerce,,,jd_com_inc,5,manual_high,https://ir.jd.com/,Online retail and marketplace platform exposure.,2026-05-17
+digital_platforms,marketplaces_ecommerce,,,ebay_inc,5,manual_high,https://investors.ebayinc.com/,Global ecommerce marketplace exposure.,2026-05-17
+digital_platforms,marketplaces_ecommerce,,,mercadolibre_inc,5,manual_high,https://investor.mercadolibre.com/,Latin American marketplace and ecommerce ecosystem exposure.,2026-05-17
+digital_platforms,marketplaces_ecommerce,,,shopify_inc,5,manual_high,https://investors.shopify.com/,Merchant commerce platform exposure.,2026-05-17
+digital_platforms,digital_advertising,,,alphabet_inc,5,manual_high,https://abc.xyz/investor/,Google advertising platform exposure.,2026-05-17
+digital_platforms,digital_advertising,,,meta_platforms_inc,5,manual_high,https://investor.atmeta.com/,Family of Apps advertising platform exposure.,2026-05-17
+digital_platforms,digital_advertising,,,the_trade_desk_inc,5,manual_high,https://investors.thetradedesk.com/,Programmatic advertising platform exposure.,2026-05-17
+digital_platforms,digital_advertising,,,applovin,5,manual_high,https://investors.applovin.com/,App monetization and advertising platform exposure.,2026-05-17
+digital_platforms,digital_advertising,,,doubleverify_holdings_inc,4,manual_high,https://ir.doubleverify.com/,Digital ad measurement and verification platform exposure.,2026-05-17
+digital_platforms,digital_advertising,,,publicis_groupe_s_a,3,manual_medium,https://www.publicisgroupe.com/en/investors,Digital advertising services and media platform exposure.,2026-05-17
+digital_platforms,digital_advertising,,,baidu_inc,4,manual_high,https://ir.baidu.com/,Search advertising and AI internet platform exposure.,2026-05-17
+digital_platforms,social_platforms,,,meta_platforms_inc,5,manual_high,https://investor.atmeta.com/,Facebook Instagram and messaging social platform exposure.,2026-05-17
+digital_platforms,social_platforms,,,tencent_holdings_limited,4,manual_medium,https://www.tencent.com/en-us/investors.html,Weixin QQ and social platform ecosystem exposure.,2026-05-17
+digital_platforms,social_platforms,,,snap_inc,5,manual_high,https://investor.snap.com/,Snapchat social and creator platform exposure.,2026-05-17
+digital_platforms,social_platforms,,,pinterest,5,manual_high,https://investor.pinterestinc.com/,Visual discovery social platform exposure.,2026-05-17
+digital_platforms,social_platforms,,,match_group_inc,5,manual_high,https://ir.mtch.com/,Dating app and social discovery platform exposure.,2026-05-17
+digital_platforms,streaming_media,,,netflix_inc,5,manual_high,https://ir.netflix.net/,Subscription streaming video platform exposure.,2026-05-17
+digital_platforms,streaming_media,,,spotify_technology_s_a,5,manual_high,https://investors.spotify.com/,Streaming audio platform exposure.,2026-05-17
+digital_platforms,streaming_media,,,the_walt_disney_company,4,manual_medium,https://thewaltdisneycompany.com/investor-relations/,Streaming media exposure through Disney platforms.,2026-05-17
+digital_platforms,streaming_media,,,roku_inc,5,manual_high,https://ir.roku.com/,Connected TV streaming platform exposure.,2026-05-17
+digital_platforms,streaming_media,,,tencent_music_entertainment_group,5,manual_high,https://ir.tencentmusic.com/,Online music and audio entertainment platform exposure.,2026-05-17
+digital_platforms,gaming_interactive,,,nintendo_co_ltd,5,manual_high,https://www.nintendo.co.jp/ir/en/,Video game platform and software exposure.,2026-05-17
+digital_platforms,gaming_interactive,,,netease_inc,5,manual_high,https://ir.netease.com/,Online gaming and interactive entertainment exposure.,2026-05-17
+digital_platforms,gaming_interactive,,,electronic_arts_inc,5,manual_high,https://ir.ea.com/,Interactive entertainment and game publishing exposure.,2026-05-17
+digital_platforms,gaming_interactive,,,take_two_interactive_softw_incr,5,manual_high,https://www.take2games.com/ir,Game publishing and interactive entertainment exposure.,2026-05-17
+digital_platforms,gaming_interactive,,,roblox,5,manual_high,https://ir.roblox.com/,User generated gaming and immersive platform exposure.,2026-05-17
+digital_platforms,gaming_interactive,,,tencent_holdings_limited,4,manual_medium,https://www.tencent.com/en-us/investors.html,Online games exposure within a diversified internet platform.,2026-05-17
+digital_platforms,travel_local_platforms,,,booking_holdings_inc,5,manual_high,https://ir.bookingholdings.com/,Online travel booking platform exposure.,2026-05-17
+digital_platforms,travel_local_platforms,,,airbnb_inc,5,manual_high,https://investors.airbnb.com/,Travel marketplace and lodging platform exposure.,2026-05-17
+digital_platforms,travel_local_platforms,,,expedia_group_inc_r,5,manual_high,https://www.expediagroup.com/investors/,Online travel marketplace exposure.,2026-05-17
+digital_platforms,travel_local_platforms,,,uber_technologies_inc,5,manual_high,https://investor.uber.com/,Mobility and delivery marketplace platform exposure.,2026-05-17
+digital_platforms,travel_local_platforms,,,doordash,5,manual_high,https://ir.doordash.com/,Local commerce and delivery marketplace exposure.,2026-05-17
+digital_platforms,travel_local_platforms,,,meituan,5,manual_high,https://about.meituan.com/en/investor-relations,Local services and delivery platform exposure.,2026-05-17
+digital_platforms,platform_infrastructure,,,apple_inc,5,manual_high,https://investor.apple.com/,App Store and consumer device ecosystem platform exposure.,2026-05-17
+digital_platforms,platform_infrastructure,,,alphabet_inc,4,manual_high,https://abc.xyz/investor/,Android Play and Google platform infrastructure exposure.,2026-05-17
+digital_platforms,platform_infrastructure,,,amazon_com_inc,4,manual_medium,https://ir.aboutamazon.com/,AWS marketplace and ecommerce platform infrastructure exposure.,2026-05-17
+digital_platforms,platform_infrastructure,,,shopify_inc,5,manual_high,https://investors.shopify.com/,Commerce infrastructure for merchants and apps.,2026-05-17
+real_estate_infrastructure,industrial_logistics_reits,,,prologis_inc,5,manual_high,https://ir.prologis.com/,Global logistics real estate platform exposure.,2026-05-17
+real_estate_infrastructure,industrial_logistics_reits,,,segro_plc,5,manual_high,https://www.segro.com/investors,Warehouse and industrial property platform exposure.,2026-05-17
+real_estate_infrastructure,industrial_logistics_reits,,,rexford_industrial_realty_inc,5,manual_high,https://ir.rexfordindustrial.com/,Southern California industrial property REIT exposure.,2026-05-17
+real_estate_infrastructure,industrial_logistics_reits,,,lineage_inc,5,manual_high,https://ir.onelineage.com/,Temperature controlled warehouse REIT exposure.,2026-05-17
+real_estate_infrastructure,industrial_logistics_reits,,,first_industrial_realty_trust_inc,5,manual_high,https://investor.firstindustrial.com/,Industrial real estate REIT exposure.,2026-05-17
+real_estate_infrastructure,tower_reits,,,american_tower,5,manual_high,https://www.americantower.com/investor-relations/,Communications tower real estate exposure.,2026-05-17
+real_estate_infrastructure,tower_reits,,,crown_castle,5,manual_high,https://investor.crowncastle.com/,US tower and fiber communications real estate exposure.,2026-05-17
+real_estate_infrastructure,tower_reits,,,sba_communications_corporation,5,manual_high,https://ir.sbasite.com/,Wireless tower infrastructure REIT exposure.,2026-05-17
+real_estate_infrastructure,tower_reits,,,cellnex_telecom_s_a,5,manual_high,https://www.cellnex.com/investors/,European tower infrastructure platform exposure.,2026-05-17
+real_estate_infrastructure,data_centre_reits,,,equinix_inc,5,manual_high,https://investor.equinix.com/,Carrier neutral data-centre and interconnection REIT exposure.,2026-05-17
+real_estate_infrastructure,data_centre_reits,,,digital_realty_trust_inc,5,manual_high,https://investor.digitalrealty.com/,Data-centre real estate platform exposure.,2026-05-17
+real_estate_infrastructure,data_centre_reits,,,iron_mountain,3,manual_medium,https://investors.ironmountain.com/,Data-centre real estate exposure within broader storage operations.,2026-05-17
+real_estate_infrastructure,data_centre_reits,,,gds_holdings_limited,4,manual_high,https://www.gds.com/investors/,Data-centre platform exposure in Asia.,2026-05-17
+real_estate_infrastructure,self_storage,,,public_storage,5,manual_high,https://investors.publicstorage.com/,Self-storage REIT platform exposure.,2026-05-17
+real_estate_infrastructure,self_storage,,,extra_space_storage_inc,5,manual_high,https://ir.extraspace.com/,Self-storage REIT platform exposure.,2026-05-17
+real_estate_infrastructure,self_storage,,,cubesmart,5,manual_high,https://investors.cubesmart.com/,Self-storage property platform exposure.,2026-05-17
+real_estate_infrastructure,self_storage,,,national_storage_affiliates_trust,5,manual_high,https://investors.nationalstorageaffiliates.com/,Self-storage REIT exposure.,2026-05-17
+real_estate_infrastructure,self_storage,,,big_yellow_group_plc,5,manual_high,https://corporate.bigyellow.co.uk/investors,UK self-storage property exposure.,2026-05-17
+real_estate_infrastructure,residential_reits,,,avalonbay_communities_inc,5,manual_high,https://investors.avalonbay.com/,Apartment REIT exposure.,2026-05-17
+real_estate_infrastructure,residential_reits,,,equity_residential,5,manual_high,https://investors.equityapartments.com/,Apartment REIT exposure.,2026-05-17
+real_estate_infrastructure,residential_reits,,,mid_america_apartment_communities_inc,5,manual_high,https://ir.maac.com/,Apartment community REIT exposure.,2026-05-17
+real_estate_infrastructure,residential_reits,,,invitation_homes_inc,5,manual_high,https://www.invh.com/investor-relations,Single-family rental REIT exposure.,2026-05-17
+real_estate_infrastructure,residential_reits,,,american_homes_4_rent,5,manual_high,https://investors.amh.com/,Single-family rental REIT exposure.,2026-05-17
+real_estate_infrastructure,retail_office_healthcare_reits,,,simon_property_group_inc,5,manual_high,https://investors.simon.com/,Retail property REIT exposure.,2026-05-17
+real_estate_infrastructure,retail_office_healthcare_reits,,,realty_income,4,manual_medium,https://www.realtyincome.com/investors,Net lease property REIT exposure.,2026-05-17
+real_estate_infrastructure,retail_office_healthcare_reits,,,vici_properties_inc,5,manual_high,https://investors.viciproperties.com/,Gaming and experiential property REIT exposure.,2026-05-17
+real_estate_infrastructure,retail_office_healthcare_reits,,,ventas_inc,5,manual_high,https://ir.ventasreit.com/,Healthcare and senior housing REIT exposure.,2026-05-17
+real_estate_infrastructure,retail_office_healthcare_reits,,,bxp_inc,5,manual_high,https://investors.bxp.com/,Office property REIT exposure.,2026-05-17
+real_estate_infrastructure,retail_office_healthcare_reits,,,host_hotels_resorts_inc,5,manual_high,https://www.hosthotels.com/investors,Hotel property REIT exposure.,2026-05-17
+real_estate_infrastructure,property_services,,,cbre_group,5,manual_high,https://ir.cbre.com/,Commercial real estate services platform exposure.,2026-05-17
+real_estate_infrastructure,property_services,,,jones_lang_lasalle,5,manual_high,https://ir.jll.com/,Commercial real estate services platform exposure.,2026-05-17
+real_estate_infrastructure,property_services,,,costar_group_inc,5,manual_high,https://investors.costargroup.com/,Property data and marketplace platform exposure.,2026-05-17
+real_estate_infrastructure,property_services,,,zillow_group,5,manual_high,https://investors.zillowgroup.com/,Residential real estate marketplace exposure.,2026-05-17
+real_estate_infrastructure,property_services,,,colliers_international_group_inc,5,manual_high,https://corporate.colliers.com/en/investors,Real estate services and investment management exposure.,2026-05-17
+real_estate_infrastructure,property_services,,,ke_holdings_inc,5,manual_high,https://investors.ke.com/,Housing transaction and services platform exposure.,2026-05-17
+food_agriculture,packaged_foods,,,nestlé_s_a,5,manual_high,https://www.nestle.com/investors,Packaged food and nutrition brand portfolio exposure.,2026-05-17
+food_agriculture,packaged_foods,,,mondelez_international_inc,5,manual_high,https://ir.mondelezinternational.com/,Snacks and confectionery brand portfolio exposure.,2026-05-17
+food_agriculture,packaged_foods,,,general_mills_inc,5,manual_high,https://investors.generalmills.com/,Packaged food brand portfolio exposure.,2026-05-17
+food_agriculture,packaged_foods,,,the_kraft_heinz_company,5,manual_high,https://ir.kraftheinzcompany.com/,Packaged food brand portfolio exposure.,2026-05-17
+food_agriculture,packaged_foods,,,danone_s_a,5,manual_high,https://www.danone.com/investor-relations.html,Dairy water and nutrition food brand exposure.,2026-05-17
+food_agriculture,packaged_foods,,,the_hershey_co,5,manual_high,https://investors.thehersheycompany.com/,Confectionery and snack brand exposure.,2026-05-17
+food_agriculture,packaged_foods,,,the_campbell_s_company,5,manual_high,https://investor.thecampbellscompany.com/,Meals beverages and snacks brand exposure.,2026-05-17
+food_agriculture,protein_fresh_food,,,tyson_foods_inc,5,manual_high,https://ir.tyson.com/,Protein production and prepared foods exposure.,2026-05-17
+food_agriculture,protein_fresh_food,,,mowi_asa,5,manual_high,https://mowi.com/investors/,Salmon farming and seafood protein exposure.,2026-05-17
+food_agriculture,protein_fresh_food,,,cal_maine_foods_inc,5,manual_high,https://www.calmainefoods.com/investors/,Shell egg producer exposure.,2026-05-17
+food_agriculture,protein_fresh_food,,,smithfield_foods_inc,5,manual_high,https://investors.smithfieldfoods.com/,Pork and packaged meat producer exposure.,2026-05-17
+food_agriculture,protein_fresh_food,,,dole_plc,5,manual_high,https://investors.doleplc.com/,Fresh produce distribution and farming exposure.,2026-05-17
+food_agriculture,protein_fresh_food,,,fresh_del_monte_produce_inc,5,manual_high,https://investors.freshdelmonte.com/,Fresh produce and fruit distribution exposure.,2026-05-17
+food_agriculture,ingredients_flavors,,,givaudan_sa,5,manual_high,https://www.givaudan.com/investors,Flavor and fragrance ingredient exposure.,2026-05-17
+food_agriculture,ingredients_flavors,,,symrise_ag,5,manual_high,https://www.symrise.com/investors/,Flavor nutrition and ingredient exposure.,2026-05-17
+food_agriculture,ingredients_flavors,,,international_flavors_fragrances_inc,5,manual_high,https://ir.iff.com/,Food ingredients and flavors exposure.,2026-05-17
+food_agriculture,ingredients_flavors,,,kerry_group_plc,5,manual_high,https://www.kerry.com/investors,Taste nutrition and food ingredient exposure.,2026-05-17
+food_agriculture,ingredients_flavors,,,dsm_firmenich_ag,5,manual_high,https://www.dsm-firmenich.com/corporate/investors.html,Nutrition flavor and ingredient exposure.,2026-05-17
+food_agriculture,ingredients_flavors,,,novozymes_a_s,5,manual_high,https://www.novonesis.com/en/investors,Food enzymes and biosolutions exposure.,2026-05-17
+food_agriculture,agriculture_machinery,,,deere_company,5,manual_high,https://investor.deere.com/,Agriculture machinery and precision agriculture exposure.,2026-05-17
+food_agriculture,agriculture_machinery,,,cnh_industrial_n_v,5,manual_high,https://www.cnh.com/en-US/investor_relations,Agriculture equipment and precision technology exposure.,2026-05-17
+food_agriculture,agriculture_machinery,,,agco_corporation,5,manual_high,https://investors.agcocorp.com/,Agriculture equipment and farm machinery exposure.,2026-05-17
+food_agriculture,agriculture_machinery,,,kubota_corporation,4,manual_high,https://www.kubota.com/ir/,Tractors and agriculture machinery exposure.,2026-05-17
+food_agriculture,fertiliser_crop_inputs,,,nutrien_ltd,5,manual_high,https://www.nutrien.com/investors,Fertilizer and retail crop input exposure.,2026-05-17
+food_agriculture,fertiliser_crop_inputs,,,cf_industries_holdings_inc,5,manual_high,https://investors.cfindustries.com/,Nitrogen fertilizer producer exposure.,2026-05-17
+food_agriculture,fertiliser_crop_inputs,,,corteva_inc,5,manual_high,https://investors.corteva.com/,Seeds and crop protection exposure.,2026-05-17
+food_agriculture,fertiliser_crop_inputs,,,yara_international_asa,5,manual_high,https://www.yara.com/investor-relations/,Crop nutrition and fertilizer exposure.,2026-05-17
+food_agriculture,fertiliser_crop_inputs,,,mosaic,5,manual_high,https://investors.mosaicco.com/,Phosphate and potash fertilizer exposure.,2026-05-17
+food_agriculture,grocery_distribution,,,koninklijke_ahold_delhaize_n_v,5,manual_high,https://www.aholddelhaize.com/investors/,Grocery retail and food distribution exposure.,2026-05-17
+food_agriculture,grocery_distribution,,,the_kroger_co,5,manual_high,https://ir.kroger.com/,Grocery retail exposure.,2026-05-17
+food_agriculture,grocery_distribution,,,tesco_plc,5,manual_high,https://www.tescoplc.com/investors/,Grocery retail exposure.,2026-05-17
+food_agriculture,grocery_distribution,,,sysco,5,manual_high,https://investors.sysco.com/,Foodservice distribution exposure.,2026-05-17
+food_agriculture,grocery_distribution,,,us_foods_holding_corp,5,manual_high,https://ir.usfoods.com/,Foodservice distribution exposure.,2026-05-17
+food_agriculture,agriculture_processing,,,bunge,5,manual_high,https://investors.bunge.com/,Oilseed processing and agribusiness merchant exposure.,2026-05-17
+food_agriculture,agriculture_processing,,,archer_daniels_midland_company,5,manual_high,https://investors.adm.com/,Agricultural processing and global grain merchant exposure.,2026-05-17
+mobility_ev,auto_oems,,,toyota_motor,5,manual_high,https://global.toyota/en/ir/,Global passenger vehicle manufacturer exposure.,2026-05-17
+mobility_ev,auto_oems,,,volkswagen_ag,5,manual_high,https://www.volkswagen-group.com/en/investor-relations-157,Global auto OEM exposure.,2026-05-17
+mobility_ev,auto_oems,,,mercedes_benz_group_ag,5,manual_high,https://group.mercedes-benz.com/investors/,Global premium auto OEM exposure.,2026-05-17
+mobility_ev,auto_oems,,,bayerische_motoren_werke_aktiengesellschaft,5,manual_high,https://www.bmwgroup.com/en/investor-relations.html,Global premium auto OEM exposure.,2026-05-17
+mobility_ev,auto_oems,,,general_motors_company,5,manual_high,https://investor.gm.com/,Global auto OEM and EV transition exposure.,2026-05-17
+mobility_ev,auto_oems,,,ford_motor_company,5,manual_high,https://shareholder.ford.com/,Global auto OEM and commercial vehicle exposure.,2026-05-17
+mobility_ev,auto_oems,,,stellantis_n_v,5,manual_high,https://www.stellantis.com/en/investors,Global auto OEM exposure.,2026-05-17
+mobility_ev,auto_oems,,,honda_motor,5,manual_high,https://global.honda/en/investors/,Global auto and motorcycle OEM exposure.,2026-05-17
+mobility_ev,auto_oems,,,suzuki_motor_corporation,5,manual_high,https://www.suzuki.co.jp/ir/index_en.html,Small vehicle and motorcycle OEM exposure.,2026-05-17
+mobility_ev,ev_pure_play,,,tesla_inc,5,manual_high,https://ir.tesla.com/,EV-first vehicle and charging ecosystem exposure.,2026-05-17
+mobility_ev,ev_pure_play,,,byd_company_limited,5,manual_high,https://www.byd.com/content/byd-site/us/about-byd,EV and battery integrated manufacturer exposure.,2026-05-17
+mobility_ev,ev_pure_play,,,rivian_automotive,5,manual_high,https://rivian.com/investors,EV-first truck and commercial vehicle maker exposure.,2026-05-17
+mobility_ev,ev_pure_play,,,nio_inc,5,manual_high,https://ir.nio.com/,EV-first vehicle maker exposure.,2026-05-17
+mobility_ev,ev_pure_play,,,li_auto_inc,5,manual_high,https://ir.lixiang.com/,EV-first vehicle maker exposure.,2026-05-17
+mobility_ev,ev_pure_play,,,xpeng,5,manual_high,https://ir.xiaopeng.com/,EV-first vehicle maker exposure.,2026-05-17
+mobility_ev,ev_pure_play,,,lucid,5,manual_high,https://ir.lucidmotors.com/,EV-first vehicle maker exposure.,2026-05-17
+mobility_ev,batteries_powertrain,,,panasonic,4,manual_medium,https://holdings.panasonic/global/corporate/investors.html,Automotive battery cell exposure within diversified electronics.,2026-05-17
+mobility_ev,batteries_powertrain,,,quantumscape,5,manual_high,https://ir.quantumscape.com/,Solid state battery developer exposure.,2026-05-17
+mobility_ev,batteries_powertrain,,,borgwarner_inc,5,manual_high,https://investors.borgwarner.com/,Vehicle powertrain and electrification component exposure.,2026-05-17
+mobility_ev,batteries_powertrain,,,denso_corporation,5,manual_high,https://www.denso.com/global/en/about-us/investors/,Vehicle electrification and powertrain component exposure.,2026-05-17
+mobility_ev,batteries_powertrain,,,aptiv_plc,4,manual_high,https://ir.aptiv.com/,Vehicle electrical architecture and software exposure.,2026-05-17
+mobility_ev,batteries_powertrain,,,mobileye_global,5,manual_high,https://ir.mobileye.com/,Advanced driver assistance and autonomy platform exposure.,2026-05-17
+mobility_ev,charging_infrastructure,,,chargepoint,5,manual_high,https://investors.chargepoint.com/,EV charging network and equipment exposure.,2026-05-17
+mobility_ev,charging_infrastructure,,,evgo,5,manual_high,https://investors.evgo.com/,Fast charging network exposure.,2026-05-17
+mobility_ev,charging_infrastructure,,,blink_charging_co,5,manual_high,https://ir.blinkcharging.com/,EV charging network and equipment exposure.,2026-05-17
+mobility_ev,charging_infrastructure,,,wallbox,5,manual_high,https://investors.wallbox.com/,EV charging equipment exposure.,2026-05-17
+mobility_ev,charging_infrastructure,,,allego,5,manual_high,https://www.allego.eu/investors,EV charging network exposure.,2026-05-17
+mobility_ev,auto_components,,,magna_international_inc,5,manual_high,https://www.magna.com/company/investors,Automotive systems and components supplier exposure.,2026-05-17
+mobility_ev,auto_components,,,autoliv_inc,5,manual_high,https://www.autoliv.com/investors,Automotive safety systems supplier exposure.,2026-05-17
+mobility_ev,auto_components,,,continental_aktiengesellschaft,5,manual_high,https://www.continental.com/en/investors/,Automotive tyres electronics and components exposure.,2026-05-17
+mobility_ev,auto_components,,,bridgestone_corporation,5,manual_high,https://www.bridgestone.com/ir/,Tyre and mobility products exposure.,2026-05-17
+mobility_ev,auto_components,,,valeo_se,5,manual_high,https://www.valeo.com/en/finance/,Automotive electrification and component exposure.,2026-05-17
+mobility_ev,dealers_retail_services,,,carvana_co,5,manual_high,https://investors.carvana.com/,Online used vehicle retail platform exposure.,2026-05-17
+mobility_ev,dealers_retail_services,,,autozone_inc,5,manual_high,https://investors.autozone.com/,Automotive aftermarket parts retail exposure.,2026-05-17
+mobility_ev,dealers_retail_services,,,carmax_inc,5,manual_high,https://investors.carmax.com/,Used vehicle retail and auction platform exposure.,2026-05-17
+mobility_ev,dealers_retail_services,,,autonation_inc,5,manual_high,https://investors.autonation.com/,Auto dealership group exposure.,2026-05-17
+mobility_ev,dealers_retail_services,,,penske_automotive_group_inc,5,manual_high,https://investors.penskeautomotive.com/,Auto dealership and commercial vehicle services exposure.,2026-05-17
+mobility_ev,ride_hailing_mobility,,,uber_technologies_inc,5,manual_high,https://investor.uber.com/,Ride-hailing delivery and mobility platform exposure.,2026-05-17
+mobility_ev,ride_hailing_mobility,,,lyft_inc,5,manual_high,https://investor.lyft.com/,Ride-hailing platform exposure.,2026-05-17
+mobility_ev,ride_hailing_mobility,,,grab,5,manual_high,https://investors.grab.com/,Southeast Asian mobility delivery and superapp exposure.,2026-05-17
+mobility_ev,ride_hailing_mobility,,,doordash,4,manual_medium,https://ir.doordash.com/,Delivery logistics platform exposure.,2026-05-17
+mobility_ev,ride_hailing_mobility,,,meituan,4,manual_medium,https://about.meituan.com/en/investor-relations,Local delivery and mobility services exposure.,2026-05-17
+building_housing,homebuilders_developers,,,d_r_horton_inc,5,manual_high,https://investor.drhorton.com/,US homebuilder exposure.,2026-05-17
+building_housing,homebuilders_developers,,,lennar_class_a,5,manual_high,https://investors.lennar.com/,US homebuilder exposure.,2026-05-17
+building_housing,homebuilders_developers,,,pultegroup_inc,5,manual_high,https://investors.pultegroupinc.com/,US homebuilder exposure.,2026-05-17
+building_housing,homebuilders_developers,,,nvr_inc,5,manual_high,https://www.nvrinc.com/investor-relations,US homebuilder exposure.,2026-05-17
+building_housing,homebuilders_developers,,,toll_brothers_inc,5,manual_high,https://investors.tollbrothers.com/,Luxury homebuilder exposure.,2026-05-17
+building_housing,building_materials,,,crh_plc,5,manual_high,https://www.crh.com/investors,Aggregates cement and building materials exposure.,2026-05-17
+building_housing,building_materials,,,holcim_ag,5,manual_high,https://www.holcim.com/investors,Cement aggregates and building solutions exposure.,2026-05-17
+building_housing,building_materials,,,heidelberg_materials_ag,5,manual_high,https://www.heidelbergmaterials.com/en/investors,Cement aggregates and building materials exposure.,2026-05-17
+building_housing,building_materials,,,compagnie_de_saint_gobain_s_a,5,manual_high,https://www.saint-gobain.com/en/finance,Building products and construction materials exposure.,2026-05-17
+building_housing,building_materials,,,martin_marietta_materials_inc,5,manual_high,https://ir.martinmarietta.com/,Aggregates and heavy building materials exposure.,2026-05-17
+building_housing,building_materials,,,james_hardie_industries_plc,5,manual_high,https://ir.jameshardie.com.au/,Fiber cement siding and building products exposure.,2026-05-17
+building_housing,home_improvement_retail,,,the_home_depot_inc,5,manual_high,https://ir.homedepot.com/,Home improvement retail and pro channel exposure.,2026-05-17
+building_housing,home_improvement_retail,,,lowe_s_companies_inc,5,manual_high,https://corporate.lowes.com/investors,Home improvement retail exposure.,2026-05-17
+building_housing,home_improvement_retail,,,builders_firstsource_inc,5,manual_high,https://investors.bldr.com/,Structural building products and pro supply exposure.,2026-05-17
+building_housing,home_improvement_retail,,,ferguson_enterprises_inc,5,manual_high,https://www.ferguson.com/en/investor-relations,Plumbing HVAC and building supply distribution exposure.,2026-05-17
+building_housing,home_improvement_retail,,,kingfisher_plc,5,manual_high,https://www.kingfisher.com/en/investors.html,Home improvement retail exposure.,2026-05-17
+building_housing,hvac_building_systems,,,carrier_global_corp,5,manual_high,https://ir.carrier.com/,HVAC and building systems exposure.,2026-05-17
+building_housing,hvac_building_systems,,,trane_technologies_plc,5,manual_high,https://investors.tranetechnologies.com/,HVAC and building efficiency systems exposure.,2026-05-17
+building_housing,hvac_building_systems,,,johnson_controls_international_plc,5,manual_high,https://investors.johnsoncontrols.com/,Building controls HVAC and fire systems exposure.,2026-05-17
+building_housing,hvac_building_systems,,,lennox_international_inc,5,manual_high,https://investor.lennox.com/,Residential and commercial HVAC exposure.,2026-05-17
+building_housing,hvac_building_systems,,,watsco_inc,5,manual_high,https://www.watsco.com/investors/,HVAC distribution exposure.,2026-05-17
+building_housing,tools_hardware,,,stanley_black_decker_inc,5,manual_high,https://ir.stanleyblackanddecker.com/,Tools and outdoor equipment exposure.,2026-05-17
+building_housing,tools_hardware,,,techtronic_industries_company_limited,5,manual_high,https://www.ttigroup.com/investor-relations/,Power tools and floorcare equipment exposure.,2026-05-17
+building_housing,tools_hardware,,,makita_corporation,5,manual_high,https://www.makita.biz/ir/,Power tools and outdoor power equipment exposure.,2026-05-17
+building_housing,tools_hardware,,,snap_on,5,manual_high,https://www.snapon.com/EN/Investors,Professional tools and diagnostics exposure.,2026-05-17
+building_housing,tools_hardware,,,lincoln_electric_holdings_inc,4,manual_high,https://ir.lincolnelectric.com/,Welding equipment and fabrication tool exposure.,2026-05-17
+building_housing,furnishings_fixtures,,,mohawk_industries_inc,5,manual_high,https://ir.mohawkind.com/,Flooring products exposure.,2026-05-17
+building_housing,furnishings_fixtures,,,whirlpool,5,manual_high,https://investors.whirlpoolcorp.com/,Home appliance exposure.,2026-05-17
+building_housing,furnishings_fixtures,,,nitori_holdings_co_ltd,5,manual_high,https://www.nitorihd.co.jp/en/ir/,Home furnishings retail and products exposure.,2026-05-17
+building_housing,furnishings_fixtures,,,howden_joinery_group_plc,5,manual_high,https://www.howdenjoinerygroupplc.com/investors/,Kitchen cabinets and joinery exposure.,2026-05-17
+building_housing,furnishings_fixtures,,,masco,5,manual_high,https://investor.masco.com/investor-relations/default.aspx,Home improvement and building products exposure.,2026-05-17
+building_housing,housing_services,,,procore_technologies_inc,5,manual_high,https://investors.procore.com/,Construction management software platform exposure.,2026-05-17
+building_housing,housing_services,,,servicetitan_inc,5,manual_high,https://investors.servicetitan.com/,Operating software for residential and commercial trades.,2026-05-17
+building_housing,housing_services,,,rollins_inc,4,manual_high,https://investors.rollins.com/,Residential and commercial pest control services exposure.,2026-05-17
+building_housing,housing_services,,,siteone_landscape_supply_inc,5,manual_high,https://investors.siteone.com/,Landscape supply and outdoor living products exposure.,2026-05-17
+digital_platforms,marketplaces_ecommerce,,,prosus_n_v,3,manual_medium,https://www.prosus.com/investors,Consumer internet marketplace portfolio exposure.,2026-05-17
+digital_platforms,streaming_media,,,warner_bros_discovery_inc,4,manual_medium,https://ir.wbd.com/,Streaming video platform exposure through Max and related services.,2026-05-17
+real_estate_infrastructure,retail_office_healthcare_reits,,,mitsubishi_estate_co_ltd,4,manual_medium,https://www.mec.co.jp/en/ir/,Office retail and mixed-use property operator exposure.,2026-05-17
+real_estate_infrastructure,retail_office_healthcare_reits,,,mitsui_fudosan_co_ltd,4,manual_medium,https://www.mitsuifudosan.co.jp/english/ir/,Office retail and mixed-use property operator exposure.,2026-05-17
+real_estate_infrastructure,retail_office_healthcare_reits,,,sun_hung_kai_properties_limited,4,manual_medium,https://www.shkp.com/en-US/investor-relations,Large property owner and developer exposure.,2026-05-17
+food_agriculture,packaged_foods,,,chocoladefabriken_lindt_sprüngli_ag,5,manual_high,https://www.lindt-spruengli.com/investors,Premium chocolate and confectionery exposure.,2026-05-17
+food_agriculture,packaged_foods,,,coca_cola_europacific_partners_plc,5,manual_high,https://www.cocacolaep.com/investors/,Beverage bottling and distribution exposure.,2026-05-17
+food_agriculture,grocery_distribution,,,fomento_económico_mexicano_s_a_b_de_c_v,4,manual_medium,https://femsa.gcs-web.com/,Beverage bottling and convenience retail exposure.,2026-05-17
+food_agriculture,grocery_distribution,,,george_weston_limited,5,manual_high,https://www.weston.ca/en/Investors,Grocery retail and food processing exposure.,2026-05-17
+food_agriculture,grocery_distribution,,,seven_i_holdings_co_ltd,5,manual_high,https://www.7andi.com/en/ir.html,Convenience and grocery retail exposure.,2026-05-17
+mobility_ev,auto_oems,,,ferrari_n_v,5,manual_high,https://www.ferrari.com/en-EN/corporate/investors,Premium auto OEM exposure.,2026-05-17
+mobility_ev,auto_oems,,,dr_ing_h_c_f_porsche_ag,5,manual_high,https://investorrelations.porsche.com/en/,Premium auto OEM exposure.,2026-05-17
+mobility_ev,auto_oems,,,daimler_truck_holding_ag,5,manual_high,https://www.daimlertruck.com/en/investors,Commercial truck OEM exposure.,2026-05-17
+mobility_ev,batteries_powertrain,,,sumitomo_electric_industries_ltd,4,manual_medium,https://global-sei.com/ir/,Automotive wiring harness and electrification component exposure.,2026-05-17
+building_housing,hvac_building_systems,,,daikin_industries_ltd,5,manual_high,https://www.daikin.com/investor,HVAC equipment and building comfort systems exposure.,2026-05-17
+building_housing,hvac_building_systems,,,otis_worldwide_corporation,5,manual_high,https://www.otis.com/en/us/investors/,Elevator and escalator systems exposure.,2026-05-17
+building_housing,hvac_building_systems,,,kone_oyj,5,manual_high,https://www.kone.com/en/investors/,Elevator and building people-flow systems exposure.,2026-05-17
+building_housing,hvac_building_systems,,,schindler_holding_ag,5,manual_high,https://group.schindler.com/en/investor-relations.html,Elevator and escalator systems exposure.,2026-05-17
+building_housing,building_materials,,,sherwin_williams_co_r,5,manual_high,https://investors.sherwin-williams.com/,Architectural paints and coatings exposure.,2026-05-17
+building_housing,tools_hardware,,,assa_abloy_ab_publ,5,manual_high,https://www.assaabloy.com/group/en/investors,Locks access hardware and security products exposure.,2026-05-17
+building_housing,home_improvement_retail,,,wesfarmers_limited,4,manual_medium,https://www.wesfarmers.com.au/investor-centre,Home improvement retail exposure through Bunnings.,2026-05-17
+building_housing,tools_hardware,,,fastenal_co_r,4,manual_medium,https://investor.fastenal.com/,Fasteners tools and industrial supply exposure.,2026-05-17

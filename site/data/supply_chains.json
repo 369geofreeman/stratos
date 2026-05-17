@@ -742,5 +742,250 @@
         "order": 70
       }
     ]
+  },
+  {
+    "themeId": "digital_platforms",
+    "name": "Digital platforms supply chain",
+    "description": "Internet-native marketplace, advertising, media, gaming, social, and ecommerce platform economics.",
+    "layers": [
+      {
+        "id": "marketplaces_ecommerce",
+        "name": "Marketplaces and ecommerce",
+        "description": "Ecommerce marketplaces, internet retail, merchant platforms, and marketplace operators.",
+        "order": 10
+      },
+      {
+        "id": "digital_advertising",
+        "name": "Digital advertising",
+        "description": "Digital ad platforms, ad tech, performance marketing, and app monetization platforms.",
+        "order": 20
+      },
+      {
+        "id": "social_platforms",
+        "name": "Social platforms",
+        "description": "Social networks, creator platforms, messaging, community platforms, and dating networks.",
+        "order": 30
+      },
+      {
+        "id": "streaming_media",
+        "name": "Streaming media",
+        "description": "Streaming video, music, subscription media, and connected TV platforms.",
+        "order": 40
+      },
+      {
+        "id": "gaming_interactive",
+        "name": "Gaming and interactive",
+        "description": "Video games, interactive entertainment, game engines, and esports platforms.",
+        "order": 50
+      },
+      {
+        "id": "travel_local_platforms",
+        "name": "Travel and local platforms",
+        "description": "Online travel, local services, delivery, classifieds, and booking platforms.",
+        "order": 60
+      },
+      {
+        "id": "platform_infrastructure",
+        "name": "Platform infrastructure",
+        "description": "App stores, ecosystem services, commerce infrastructure, and cloud-linked marketplace platforms.",
+        "order": 70
+      }
+    ]
+  },
+  {
+    "themeId": "real_estate_infrastructure",
+    "name": "Real estate infrastructure supply chain",
+    "description": "Property ownership, communications real estate, storage, property operators, REITs, and real estate services.",
+    "layers": [
+      {
+        "id": "industrial_logistics_reits",
+        "name": "Industrial and logistics property",
+        "description": "Logistics, warehouse, industrial, fulfilment, and temperature-controlled property owners and operators.",
+        "order": 10
+      },
+      {
+        "id": "tower_reits",
+        "name": "Tower infrastructure",
+        "description": "Cell towers, communications real estate, and tower infrastructure owners and operators.",
+        "order": 20
+      },
+      {
+        "id": "data_centre_reits",
+        "name": "Data-centre property",
+        "description": "Data-centre real estate, colocation property platforms, and interconnection facilities.",
+        "order": 30
+      },
+      {
+        "id": "self_storage",
+        "name": "Self storage",
+        "description": "Self-storage property owners and operators.",
+        "order": 40
+      },
+      {
+        "id": "residential_reits",
+        "name": "Residential property",
+        "description": "Apartment, single-family rental, manufactured housing, student housing, and residential community operators.",
+        "order": 50
+      },
+      {
+        "id": "retail_office_healthcare_reits",
+        "name": "Retail, office, and healthcare property",
+        "description": "Retail, office, healthcare, hotel, gaming, and specialty property owners and operators.",
+        "order": 60
+      },
+      {
+        "id": "property_services",
+        "name": "Property services",
+        "description": "Real estate services, brokerage, property data, property management, and facilities services.",
+        "order": 70
+      }
+    ]
+  },
+  {
+    "themeId": "food_agriculture",
+    "name": "Food and agriculture supply chain",
+    "description": "Food brands, agriculture inputs, farm equipment, ingredients, grocery distribution, and processors.",
+    "layers": [
+      {
+        "id": "packaged_foods",
+        "name": "Packaged foods",
+        "description": "Packaged food, snacks, meals, confectionery, and consumer food brands.",
+        "order": 10
+      },
+      {
+        "id": "protein_fresh_food",
+        "name": "Protein and fresh food",
+        "description": "Meat, dairy, seafood, produce, and fresh-food producers.",
+        "order": 20
+      },
+      {
+        "id": "ingredients_flavors",
+        "name": "Ingredients and flavors",
+        "description": "Ingredients, flavours, enzymes, sweeteners, cultures, and specialty food inputs.",
+        "order": 30
+      },
+      {
+        "id": "agriculture_machinery",
+        "name": "Agriculture machinery",
+        "description": "Tractors, crop equipment, precision agriculture hardware, and farm machinery.",
+        "order": 40
+      },
+      {
+        "id": "fertiliser_crop_inputs",
+        "name": "Fertilizer and crop inputs",
+        "description": "Fertilizer, crop protection, seeds, biologicals, and farm inputs.",
+        "order": 50
+      },
+      {
+        "id": "grocery_distribution",
+        "name": "Grocery and distribution",
+        "description": "Grocery retailers, food distributors, wholesalers, and foodservice distributors.",
+        "order": 60
+      },
+      {
+        "id": "agriculture_processing",
+        "name": "Agriculture processing",
+        "description": "Grain merchants, oilseed processors, commodity processors, and farm-product platforms.",
+        "order": 70
+      }
+    ]
+  },
+  {
+    "themeId": "mobility_ev",
+    "name": "Mobility and EV supply chain",
+    "description": "Vehicle makers, EV specialists, battery and powertrain suppliers, charging, components, dealers, and mobility services.",
+    "layers": [
+      {
+        "id": "auto_oems",
+        "name": "Auto OEMs",
+        "description": "Incumbent passenger vehicle, truck, and commercial vehicle manufacturers.",
+        "order": 10
+      },
+      {
+        "id": "ev_pure_play",
+        "name": "EV pure-play",
+        "description": "EV-first vehicle makers and electrified mobility manufacturers.",
+        "order": 20
+      },
+      {
+        "id": "batteries_powertrain",
+        "name": "Batteries and powertrain",
+        "description": "Battery cells, battery systems, drivetrains, power electronics, fuel cells, and vehicle autonomy systems.",
+        "order": 30
+      },
+      {
+        "id": "charging_infrastructure",
+        "name": "Charging infrastructure",
+        "description": "EV charging networks, charging equipment, and fleet charging infrastructure.",
+        "order": 40
+      },
+      {
+        "id": "auto_components",
+        "name": "Auto components",
+        "description": "Auto parts, tyres, safety systems, electronics, interiors, and component suppliers.",
+        "order": 50
+      },
+      {
+        "id": "dealers_retail_services",
+        "name": "Dealers and retail services",
+        "description": "Auto dealers, auto service, rental, fleet, auctions, and aftermarket platforms.",
+        "order": 60
+      },
+      {
+        "id": "ride_hailing_mobility",
+        "name": "Ride-hailing and mobility",
+        "description": "Ride-hailing, delivery mobility, car sharing, and mobility platforms.",
+        "order": 70
+      }
+    ]
+  },
+  {
+    "themeId": "building_housing",
+    "name": "Building and housing supply chain",
+    "description": "Housing production, building materials, home improvement, building systems, tools, furnishings, and housing services.",
+    "layers": [
+      {
+        "id": "homebuilders_developers",
+        "name": "Homebuilders and developers",
+        "description": "Homebuilders, residential developers, manufactured housing builders, and land developers.",
+        "order": 10
+      },
+      {
+        "id": "building_materials",
+        "name": "Building materials",
+        "description": "Cement, aggregates, insulation, roofing, wallboard, timber, coatings, and building products.",
+        "order": 20
+      },
+      {
+        "id": "home_improvement_retail",
+        "name": "Home improvement retail",
+        "description": "Home improvement retailers, pro channels, and building supply distribution.",
+        "order": 30
+      },
+      {
+        "id": "hvac_building_systems",
+        "name": "HVAC and building systems",
+        "description": "HVAC, controls, elevators, fire and security, water systems, and building efficiency.",
+        "order": 40
+      },
+      {
+        "id": "tools_hardware",
+        "name": "Tools and hardware",
+        "description": "Tools, hardware, fasteners, locks, welding equipment, and professional construction tools.",
+        "order": 50
+      },
+      {
+        "id": "furnishings_fixtures",
+        "name": "Furnishings and fixtures",
+        "description": "Furnishings, fixtures, appliances, flooring, cabinets, and home goods.",
+        "order": 60
+      },
+      {
+        "id": "housing_services",
+        "name": "Housing services",
+        "description": "Construction software, trade services, repair and remodel, rental services, and residential service platforms.",
+        "order": 70
+      }
+    ]
   }
 ]

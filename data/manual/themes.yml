@@ -47,3 +47,23 @@ themes:
     name: Transport and logistics
     description: Rail, parcel, freight, shipping, airlines, airports, ports, and transport infrastructure.
     color: "#475569"
+  - id: digital_platforms
+    name: Digital platforms
+    description: Internet-native marketplaces, ads, social, streaming, gaming, app stores, and ecommerce platforms.
+    color: "#9333ea"
+  - id: real_estate_infrastructure
+    name: Real estate infrastructure
+    description: REITs, towers, logistics property, storage, property services, and infrastructure-like real estate.
+    color: "#059669"
+  - id: food_agriculture
+    name: Food and agriculture
+    description: Food production, ingredients, grocery, agriculture equipment, fertilizer, and food supply chains.
+    color: "#84cc16"
+  - id: mobility_ev
+    name: Mobility and EV
+    description: Autos, EVs, batteries, charging, components, dealers, and mobility services.
+    color: "#dc2626"
+  - id: building_housing
+    name: Building and housing
+    description: Homebuilders, building materials, tools, HVAC, furnishings, home improvement, and housing infrastructure.
+    color: "#ca8a04"

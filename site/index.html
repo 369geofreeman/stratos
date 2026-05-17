@@ -13,16 +13,29 @@
           <h1>Statos</h1>
           <p id="buildMeta">Loading catalogue...</p>
         </div>
-        <div class="searchbar">
-          <input id="globalSearch" type="search" placeholder="Search ticker, company, ISIN, industry, theme, or note">
-          <select id="themeFilter" aria-label="Theme filter"></select>
-          <select id="sectorFilter" aria-label="Sector filter"></select>
-          <select id="localFilter" aria-label="Local filter">
-            <option value="">All local states</option>
-            <option value="watchlist">Watchlist</option>
-            <option value="tagged">Tagged</option>
-            <option value="coloured">Colour labelled</option>
-          </select>
+        <div class="top-controls">
+          <div class="searchbar">
+            <input id="globalSearch" type="search" aria-label="Global search" placeholder="Search ticker, company, ISIN, industry, theme, or note">
+            <select id="themeFilter" aria-label="Theme filter"></select>
+            <select id="sectorFilter" aria-label="Sector filter"></select>
+            <select id="localFilter" aria-label="Local filter">
+              <option value="">All local states</option>
+              <option value="watchlist">Watchlist</option>
+              <option value="tagged">Tagged</option>
+              <option value="coloured">Colour labelled</option>
+            </select>
+          </div>
+          <div class="research-tools" aria-label="Saved views and comparison controls">
+            <div class="saved-view-controls">
+              <input id="savedViewName" type="text" maxlength="40" aria-label="Saved view name" placeholder="View name">
+              <button id="saveCurrentView" class="small-button primary" type="button">Save view</button>
+              <select id="savedViewSelect" aria-label="Saved views"></select>
+              <button id="applySavedView" class="small-button" type="button">Apply</button>
+              <button id="deleteSavedView" class="small-button" type="button">Delete</button>
+            </div>
+            <button id="comparisonToggle" class="small-button compare-entry" type="button" aria-expanded="false" aria-controls="comparisonPanel">Compare <span id="comparisonCount">0</span></button>
+            <span id="savedViewStatus" class="sr-status" aria-live="polite"></span>
+          </div>
         </div>
       </header>
 
@@ -41,6 +54,21 @@
 
       <section id="content" class="content"></section>
     </main>
+
+    <div id="comparisonBackdrop" class="comparison-backdrop" hidden></div>
+    <aside id="comparisonPanel" class="comparison-panel" hidden role="dialog" aria-modal="true" aria-labelledby="comparisonTitle">
+      <div class="comparison-head">
+        <div>
+          <h2 id="comparisonTitle">Ticker comparison</h2>
+          <p id="comparisonSubtitle"></p>
+        </div>
+        <div class="panel-actions">
+          <button id="clearComparison" class="small-button" type="button">Clear all</button>
+          <button id="closeComparison" class="icon-button" type="button">Close</button>
+        </div>
+      </div>
+      <div id="comparisonBody" class="comparison-body"></div>
+    </aside>
 
     <dialog id="detailModal" class="modal">
       <form method="dialog" class="modal-head">

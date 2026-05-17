@@ -25,6 +25,10 @@ body {
   color: var(--text);
 }
 
+[hidden] {
+  display: none !important;
+}
+
 button,
 input,
 select,
@@ -35,6 +39,15 @@ textarea {
 button,
 select {
   cursor: pointer;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.35);
+  outline-offset: 2px;
 }
 
 .app {
@@ -77,6 +90,42 @@ h1 {
   display: grid;
   grid-template-columns: minmax(220px, 1fr) 180px 160px 170px;
   gap: 8px;
+}
+
+.top-controls {
+  display: grid;
+  gap: 8px;
+}
+
+.research-tools {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(110px, auto);
+  gap: 8px;
+  align-items: center;
+}
+
+.saved-view-controls {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.saved-view-controls input {
+  flex: 1 1 130px;
+  max-width: 180px;
+}
+
+.saved-view-controls select {
+  flex: 2 1 210px;
+  min-width: 190px;
+}
+
+.sr-status {
+  color: var(--muted);
+  font-size: 12px;
+  min-height: 18px;
+  overflow-wrap: anywhere;
 }
 
 input,
@@ -147,6 +196,13 @@ textarea {
   padding: 0 10px;
 }
 
+.small-button:disabled,
+.icon-button:disabled,
+select:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 .tabs button.active,
 .small-button.primary {
   border-color: var(--blue);
@@ -180,6 +236,19 @@ textarea {
 
 .active-filters {
   margin: -4px 0 12px;
+}
+
+.filter-status {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin: -4px 0 12px;
+  flex-wrap: wrap;
+}
+
+.filter-status .active-filters {
+  margin: 0;
 }
 
 .table-wrap {
@@ -224,6 +293,14 @@ tr:last-child td {
   font-weight: 650;
 }
 
+.row-actions {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
 .chips {
   display: flex;
   flex-wrap: wrap;
@@ -233,6 +310,7 @@ tr:last-child td {
 .chip {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 22px;
   padding: 2px 7px;
   border: 1px solid var(--line);
@@ -240,7 +318,42 @@ tr:last-child td {
   background: var(--surface-2);
   color: #334155;
   font-size: 12px;
-  white-space: nowrap;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
+button.chip {
+  cursor: pointer;
+}
+
+.ticker-chip-actions {
+  display: inline-flex;
+  align-items: stretch;
+  max-width: 100%;
+}
+
+.ticker-chip-actions .chip {
+  border-radius: 999px 0 0 999px;
+}
+
+.ticker-chip-actions .chip-compare {
+  min-width: 26px;
+  border-left: 0;
+  border-radius: 0 999px 999px 0;
+  font-weight: 700;
+}
+
+.related-chips {
+  align-items: center;
+}
+
+.sort-button {
+  text-align: left;
+}
+
+.sort-marker {
+  color: var(--muted);
+  font-weight: 500;
 }
 
 .chip.green {
@@ -390,6 +503,10 @@ tr:last-child td {
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 12px;
+}
+
+.supply-toolbar select {
+  max-width: 440px;
 }
 
 .supply-map {
@@ -575,6 +692,14 @@ tr:last-child td {
   background: var(--surface);
 }
 
+.empty p {
+  margin-bottom: 12px;
+}
+
+.empty p:last-child {
+  margin-bottom: 0;
+}
+
 .loading {
   display: grid;
   gap: 5px;
@@ -599,6 +724,7 @@ tr:last-child td {
   justify-content: flex-end;
   gap: 10px;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .exports {
@@ -634,6 +760,111 @@ tr:last-child td {
   margin-top: 18px;
 }
 
+.comparison-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 15;
+  background: rgba(15, 23, 42, 0.18);
+}
+
+.comparison-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  display: flex;
+  width: min(1080px, calc(100vw - 28px));
+  flex-direction: column;
+  border-left: 1px solid var(--line);
+  background: var(--bg);
+  box-shadow: var(--shadow);
+}
+
+.comparison-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.comparison-head h2 {
+  font-size: 18px;
+}
+
+.comparison-head p {
+  margin-top: 3px;
+  color: var(--muted);
+}
+
+.comparison-body {
+  min-height: 0;
+  flex: 1;
+  overflow: auto;
+  padding: 16px 18px 18px;
+}
+
+.comparison-note {
+  margin-bottom: 10px;
+  font-size: 13px;
+}
+
+.comparison-scroll {
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.compare-table {
+  min-width: max(760px, calc(150px + (var(--compare-count) * 230px)));
+}
+
+.compare-table th,
+.compare-table td {
+  min-width: 220px;
+  max-width: 280px;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.compare-table thead th {
+  z-index: 2;
+}
+
+.compare-table thead th:first-child,
+.compare-table tbody th {
+  left: 0;
+  z-index: 3;
+  min-width: 150px;
+  max-width: 170px;
+}
+
+.compare-table tbody th {
+  position: sticky;
+  background: var(--surface-2);
+}
+
+.compare-item-head {
+  display: grid;
+  gap: 6px;
+  align-items: start;
+}
+
+.comparison-relations {
+  display: grid;
+  gap: 6px;
+}
+
+.notes-preview {
+  display: block;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
 .detail-card {
   margin-top: 12px;
 }
@@ -641,6 +872,22 @@ tr:last-child td {
 .relationship-list {
   display: grid;
   gap: 7px;
+}
+
+.membership-list {
+  display: grid;
+  gap: 7px;
+}
+
+.membership-list div {
+  display: grid;
+  gap: 2px;
+  font-size: 13px;
+}
+
+.membership-list span {
+  color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .relationship-list div {
@@ -654,6 +901,7 @@ tr:last-child td {
 .relationship-list span,
 .relationship-list small {
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .relationship-list a {
@@ -665,6 +913,7 @@ tr:last-child td {
 @media (max-width: 980px) {
   .topbar,
   .searchbar,
+  .research-tools,
   .review-toolbar,
   .explorer-toolbar,
   .detail-grid,
@@ -679,6 +928,20 @@ tr:last-child td {
   .content {
     padding: 14px;
   }
+
+  .supply-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .supply-toolbar select {
+    max-width: none;
+  }
+
+  .saved-view-controls input,
+  .saved-view-controls select {
+    max-width: none;
+  }
 }
 
 @media (max-width: 560px) {
@@ -686,6 +949,36 @@ tr:last-child td {
   .control-row,
   .relationship-list div {
     grid-template-columns: 1fr;
+  }
+
+  .panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .panel-actions,
+  .list-footer {
+    justify-content: flex-start;
+  }
+
+  .saved-view-controls {
+    align-items: stretch;
+  }
+
+  .saved-view-controls input,
+  .saved-view-controls select,
+  .saved-view-controls .small-button,
+  .compare-entry {
+    width: 100%;
+  }
+
+  .comparison-panel {
+    width: 100vw;
+  }
+
+  .comparison-head {
+    flex-direction: column;
+    align-items: stretch;
   }
 
   .topbar {
